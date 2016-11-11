@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1474978083886
+Build-Jdk: 1.8.0_101
+Built-By: Nandor
+Bundle-Activator: org.karaf.event_create.Activator
+Bundle-Description: Dummy application for the CNC stuff
+Bundle-ManifestVersion: 2
+Bundle-Name: Dummy app for CNC
+Bundle-SymbolicName: dummy_app
+Bundle-Version: 0.0.1.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: org.karaf.event_create;version="0.0.1.SNAPSHOT";uses:="o
+ rg.osgi.framework,org.osgi.service.event"
+Import-Package: org.osgi.framework;version="[1.6,2)",org.osgi.service.ev
+ ent;version="[1.2,2)",org.slf4j;version="[1.5,2)"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.5))"
+Tool: Bnd-3.0.0.201509101326

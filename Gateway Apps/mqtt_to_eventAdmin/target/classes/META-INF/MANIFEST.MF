@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1474978113408
+Build-Jdk: 1.8.0_101
+Built-By: Nandor
+Bundle-Activator: org.rabbitmq.test.Activator
+Bundle-Description: mqtt_to_eventAdminSend Bundle
+Bundle-ManifestVersion: 2
+Bundle-Name: mqtt_to_eventAdminSend Bundle
+Bundle-SymbolicName: amqp_to_eventAdmin
+Bundle-Version: 0.0.1.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: org.rabbitmq.test;version="0.0.1.SNAPSHOT";uses:="org.os
+ gi.framework"
+Import-Package: com.rabbitmq.client;version="[3.3,4)",org.json;version="
+ [20090211.0,20090212)",org.osgi.framework;version="[1.6,2)",org.osgi.se
+ rvice.event;version="[1.2,2)",org.slf4j;version="[1.5,2)"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.5))"
+Tool: Bnd-3.0.0.201509101326
