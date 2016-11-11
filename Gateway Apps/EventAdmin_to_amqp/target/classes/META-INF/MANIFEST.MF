@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1476443830323
-Build-Jdk: 1.7.0_80
+Bnd-LastModified: 1478864295341
+Build-Jdk: 1.8.0_101
 Built-By: Nandor
 Bundle-Activator: org.karaf.event_create.Activator
 Bundle-Description: eventAdmin to Amqp Bundle project.
