@@ -1,0 +1,157 @@
+Starting New Session at 09:38:07 10/19/16 UTC
+Connected with result code 0
+Starting New Session at 11:44:58 10/21/16 UTC
+Connected with result code 0
+Keyboard baby
+Expected Disconnect
+Exiting Main Thread
+Starting New Session at 11:46:46 10/21/16 UTC
+Connected with result code 0
+------Received Message-------
+Message: receive/gateway2 "controller":"raspi01","source":"test1","uuid":"test1abc","api_key":"abc123ef","payload":"bundle deploy {
+  'name': 'Broker_App',
+  'file': 'devtransApp-0.0.1-SNAPSHOT.jar',
+  'description': 'Brokers Messages from the cloud and Dev1 to Dev2 ',
+  'comm': {
+    'cloud': ['mqtt_conn1'],
+    'devices': [
+      {
+        'type': 'ardUnoTemp',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      },
+      {
+        'type': 'AndroidPhone',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      }
+    ]
+  },
+  'deployment': {
+    'config': {
+      'file': 'org.karaf.broker',
+      'custom_params': {
+        'my_param': 'just_a_test'
+      }
+    },
+    'qos': {
+      'main': 'dev_latency',
+      'secondary': [
+        'cloud_latency,response_time'
+      ]
+    }
+  }
+}
+"
+{"controller":"raspi01","source":"test1","uuid":"test1abc","api_key":"abc123ef","payload":"bundle deploy {  'name': 'Broker_App',  'file': 'devtransApp-0.0.1-SNAPSHOT.jar',  'description': 'Brokers Messages from the cloud and Dev1 to Dev2 ',  'comm': {    'cloud': ['mqtt_conn1'],    'devices': [      {        'type': 'ardUnoTemp',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'deployment': {    'config': {      'file': 'org.karaf.broker',      'custom_params': {        'my_param': 'just_a_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"}
+{
+ "api_key": "abc123ef", 
+ "controller": "raspi01", 
+ "payload": "bundle deploy {  'name': 'Broker_App',  'file': 'devtransApp-0.0.1-SNAPSHOT.jar',  'description': 'Brokers Messages from the cloud and Dev1 to Dev2 ',  'comm': {    'cloud': ['mqtt_conn1'],    'devices': [      {        'type': 'ardUnoTemp',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'deployment': {    'config': {      'file': 'org.karaf.broker',      'custom_params': {        'my_param': 'just_a_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}", 
+ "source": "test1", 
+ "uuid": "test1abc"
+}
+{u'source': u'test1', u'controller': u'raspi01', u'api_key': u'abc123ef', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+"bundle deploy {  'name': 'Broker_App',  'file': 'devtransApp-0.0.1-SNAPSHOT.jar',  'description': 'Brokers Messages from the cloud and Dev1 to Dev2 ',  'comm': {    'cloud': ['mqtt_conn1'],    'devices': [      {        'type': 'ardUnoTemp',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'deployment': {    'config': {      'file': 'org.karaf.broker',      'custom_params': {        'my_param': 'just_a_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"
+Other message
+------Received Message-------
+Message: receive/gateway2 "controller":"raspi01","source":"test1","uuid":"test1abc","api_key":"abc123ef","payload":"bundle deploy {
+  'name': 'Broker_App',
+  'file': 'devtransApp-0.0.1-SNAPSHOT.jar',
+  'description': 'Brokers Messages from the cloud and Dev1 to Dev2 ',
+  'comm': {
+    'cloud': ['mqtt_conn1'],
+    'devices': [
+      {
+        'type': 'ardUnoTemp',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      },
+      {
+        'type': 'AndroidPhone',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      }
+    ]
+  },
+  'deployment': {
+    'config': {
+      'file': 'org.karaf.broker',
+      'custom_params': {
+        'my_param': 'just_a_test'
+      }
+    },
+    'qos': {
+      'main': 'dev_latency',
+      'secondary': [
+        'cloud_latency,response_time'
+      ]
+    }
+  }
+}
+"
+{"controller":"raspi01","source":"test1","uuid":"test1abc","api_key":"abc123ef","payload":"bundle deploy {  'name': 'Broker_App',  'file': 'devtransApp-0.0.1-SNAPSHOT.jar',  'description': 'Brokers Messages from the cloud and Dev1 to Dev2 ',  'comm': {    'cloud': ['mqtt_conn1'],    'devices': [      {        'type': 'ardUnoTemp',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'deployment': {    'config': {      'file': 'org.karaf.broker',      'custom_params': {        'my_param': 'just_a_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"}
+{
+ "api_key": "abc123ef", 
+ "controller": "raspi01", 
+ "payload": "bundle deploy {  'name': 'Broker_App',  'file': 'devtransApp-0.0.1-SNAPSHOT.jar',  'description': 'Brokers Messages from the cloud and Dev1 to Dev2 ',  'comm': {    'cloud': ['mqtt_conn1'],    'devices': [      {        'type': 'ardUnoTemp',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'deployment': {    'config': {      'file': 'org.karaf.broker',      'custom_params': {        'my_param': 'just_a_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}", 
+ "source": "test1", 
+ "uuid": "test1abc"
+}
+{u'source': u'test1', u'controller': u'raspi01', u'api_key': u'abc123ef', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+"bundle deploy {  'name': 'Broker_App',  'file': 'devtransApp-0.0.1-SNAPSHOT.jar',  'description': 'Brokers Messages from the cloud and Dev1 to Dev2 ',  'comm': {    'cloud': ['mqtt_conn1'],    'devices': [      {        'type': 'ardUnoTemp',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'deployment': {    'config': {      'file': 'org.karaf.broker',      'custom_params': {        'my_param': 'just_a_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"
+Other message
+------Received Message-------
+Message: receive/gateway2 "controller":"raspi01","source":"test1","uuid":"test1abc","api_key":"abc123ef","payload":"bundle deploy {
+  'name': 'Broker_App',
+  'file': 'devtransApp-0.0.1-SNAPSHOT.jar',
+  'description': 'Brokers Messages from the cloud and Dev1 to Dev2 ',
+  'comm': {
+    'cloud': ['mqtt_conn1'],
+    'devices': [
+      {
+        'type': 'ardUnoTemp',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      },
+      {
+        'type': 'AndroidPhone',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      }
+    ]
+  },
+  'deployment': {
+    'config': {
+      'file': 'org.karaf.broker',
+      'custom_params': {
+        'my_param': 'just_a_test'
+      }
+    },
+    'qos': {
+      'main': 'dev_latency',
+      'secondary': [
+        'cloud_latency,response_time'
+      ]
+    }
+  }
+}
+"
+{"controller":"raspi01","source":"test1","uuid":"test1abc","api_key":"abc123ef","payload":"bundle deploy {  'name': 'Broker_App',  'file': 'devtransApp-0.0.1-SNAPSHOT.jar',  'description': 'Brokers Messages from the cloud and Dev1 to Dev2 ',  'comm': {    'cloud': ['mqtt_conn1'],    'devices': [      {        'type': 'ardUnoTemp',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'deployment': {    'config': {      'file': 'org.karaf.broker',      'custom_params': {        'my_param': 'just_a_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"}
+{
+ "api_key": "abc123ef", 
+ "controller": "raspi01", 
+ "payload": "bundle deploy {  'name': 'Broker_App',  'file': 'devtransApp-0.0.1-SNAPSHOT.jar',  'description': 'Brokers Messages from the cloud and Dev1 to Dev2 ',  'comm': {    'cloud': ['mqtt_conn1'],    'devices': [      {        'type': 'ardUnoTemp',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'deployment': {    'config': {      'file': 'org.karaf.broker',      'custom_params': {        'my_param': 'just_a_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}", 
+ "source": "test1", 
+ "uuid": "test1abc"
+}
+{u'source': u'test1', u'controller': u'raspi01', u'api_key': u'abc123ef', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+"bundle deploy {  'name': 'Broker_App',  'file': 'devtransApp-0.0.1-SNAPSHOT.jar',  'description': 'Brokers Messages from the cloud and Dev1 to Dev2 ',  'comm': {    'cloud': ['mqtt_conn1'],    'devices': [      {        'type': 'ardUnoTemp',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'deployment': {    'config': {      'file': 'org.karaf.broker',      'custom_params': {        'my_param': 'just_a_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"
+Other message
+Unexpected Disconnect 12:13:11 10/21/16 UTC Reconnecting
