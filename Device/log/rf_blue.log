@@ -1,0 +1,4091 @@
+Bluetooth Radio started: 09:37:39 10/19/16 UTC
+Working Deviecs
+[]
+found 2 devices
+Dev: 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Dev: AC:72:89:FC:4A:BC - NANDOR-PC 
+Started Server Thread
+Waiting for connection on RFCOMM channel 1
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 1 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Bluetooth Radio started: 11:33:36 10/21/16 UTC
+Working Deviecs
+[]
+found 2 devices
+Dev: B8:27:EB:A8:18:7B - raspberrypi 
+(111, 'Connection refused')
+Dev: 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Started Server Thread
+Waiting for connection on RFCOMM channel 1
+Keyboard baby
+Exiting Main Thread
+Exiting Server
+Bluetooth Radio started: 12:34:36 11/07/16 UTC
+Working Deviecs
+[]
+found 1 devices
+Dev: AC:72:89:FC:4A:BC - NANDOR-PC 
+Started Server Thread
+Waiting for connection on RFCOMM channel 1
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details UyUUZUyY
+UyUUZUyY-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:672','urn:dev:id:UyUUZUyY']}
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Normal data received
+UyUUZUyY
+[{'v': 'msg:hello', 'n': 'cmd'}]
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ B0:E2:35:01:99:E6 - 小米手机 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 3 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ B0:E2:35:01:99:E6 - 小米手机 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ B0:E2:35:01:99:E6 - 小米手机 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 2 devices
+ B0:E2:35:01:99:E6 - 小米手机 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 3 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ B0:E2:35:01:99:E6 - 小米手机 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ B0:E2:35:01:99:E6 - 小米手机 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ B0:E2:35:01:99:E6 - 小米手机 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ B0:E2:35:01:99:E6 - 小米手机 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details UyUUZUyY
+UyUUZUyY-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:987','urn:dev:id:UyUUZUyY']}
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Normal data received
+UyUUZUyY
+[{'v': 'msg:hello', 'n': 'cmd'}]
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details UyUUZUyY
+UyUUZUyY-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:830','urn:dev:id:UyUUZUyY']}
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ B0:E2:35:01:99:E6 - 小米手机 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 3 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ B0:E2:35:01:99:E6 - 小米手机 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ B0:E2:35:01:99:E6 - 小米手机 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ B0:E2:35:01:99:E6 - 小米手机 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ B0:E2:35:01:99:E6 - 小米手机 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 2 devices
+ 04:88:E2:4F:AA:99 - Powerbeats Wireless 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 04:88:E2:4F:AA:99 - Powerbeats Wireless 
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 1 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 2 devices
+ 04:88:E2:4F:AA:99 - Powerbeats Wireless 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ B0:E2:35:01:99:E6 - 小米手机 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ B0:E2:35:01:99:E6 - 小米手机 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ B0:E2:35:01:99:E6 - 小米手机 
+Scanning timeout
+found 2 devices
+ B0:E2:35:01:99:E6 - 小米手机 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ B0:E2:35:01:99:E6 - 小米手机 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+No details found
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:985','urn:dev:id:z7SxrXO5']}
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ B0:E2:35:01:99:E6 - 小米手机 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ B0:E2:35:01:99:E6 - 小米手机 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ B0:E2:35:01:99:E6 - 小米手机 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ B0:E2:35:01:99:E6 - 小米手机 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 3 devices
+ B0:E2:35:01:99:E6 - 小米手机 
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details z7SxrXO5
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:121','urn:dev:id:z7SxrXO5']}
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ B0:E2:35:01:99:E6 - 小米手机 
+Scanning timeout
+found 0 devices
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details z7SxrXO5
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:250','urn:dev:id:z7SxrXO5']}
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details z7SxrXO5
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:166','urn:dev:id:z7SxrXO5']}
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details z7SxrXO5
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:706','urn:dev:id:z7SxrXO5']}
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+found 0 devices
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details z7SxrXO5
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:598','urn:dev:id:z7SxrXO5']}
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 44:6D:57:AA:C3:30 - ECB-STFLP-88 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details z7SxrXO5
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:735','urn:dev:id:z7SxrXO5']}
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+                                                                                                                                                   Bluetooth Radio started: 11:51:37 11/09/16 UTC
+Working Deviecs
+[]
+found 2 devices
+Dev: 8C:71:F8:35:55:95 - B2100 
+Dev: AC:72:89:FC:4A:BC - NANDOR-PC 
+Started Server Thread
+Waiting for connection on RFCOMM channel 1
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 8C:71:F8:35:55:95 - B2100 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 8C:71:F8:35:55:95 - B2100 
+Scanning timeout
+found 2 devices
+ 8C:71:F8:35:55:95 - B2100 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 8C:71:F8:35:55:95 - B2100 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 8C:71:F8:35:55:95 - B2100 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 8C:71:F8:35:55:95 - B2100 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ 8C:71:F8:35:55:95 - B2100 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 8C:71:F8:35:55:95 - B2100 
+Scanning timeout
+found 2 devices
+ 8C:71:F8:35:55:95 - B2100 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details z7SxrXO5
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:425','urn:dev:id:z7SxrXO5']}
+Scanning timeout
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Normal data received
+z7SxrXO5
+[{'v': 'get:state', 'n': 'cmd'}]
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+---------Send Data---------
+{['n':'msg','v':'this is msg']}
+z7SxrXO5
+Found details
+{'e':{['n':'msg','v':'this_is_msg']},'bn':'urn:dev:id:z7SxrXO5'}
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'e':{['n':'msg','v':'this_is_msg']},'bn':'urn:dev:id:z7SxrXO5'}
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Normal data received
+z7SxrXO5
+[{'v': 'ok', 'n': 'Resp'}]
+Scanning timeout
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details UyUUZUyY
+UyUUZUyY-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:224','urn:dev:id:UyUUZUyY']}
+---------Send Data---------
+{['n':'msg','v':'this is msg']}
+UyUUZUyY
+Found details
+{'e':{['n':'msg','v':'this_is_msg']},'bn':'urn:dev:id:UyUUZUyY'}
+UyUUZUyY-14:DD:A9:32:E9:A4
+Sending: {'e':{['n':'msg','v':'this_is_msg']},'bn':'urn:dev:id:UyUUZUyY'}
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+---------Send Data---------
+[{'n':'msg','v':'this is msg']}
+UyUUZUyY
+Found details
+{'e':[{'n':'msg','v':'this_is_msg']},'bn':'urn:dev:id:UyUUZUyY'}
+UyUUZUyY-14:DD:A9:32:E9:A4
+Sending: {'e':[{'n':'msg','v':'this_is_msg']},'bn':'urn:dev:id:UyUUZUyY'}
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details UyUUZUyY
+UyUUZUyY-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:362','urn:dev:id:UyUUZUyY']}
+---------Send Data---------
+[{'n':'msg','v':'this is msg'}]
+UyUUZUyY
+Found details
+{'e':[{'n':'msg','v':'this_is_msg'}],'bn':'urn:dev:id:UyUUZUyY'}
+UyUUZUyY-14:DD:A9:32:E9:A4
+Sending: {'e':[{'n':'msg','v':'this_is_msg'}],'bn':'urn:dev:id:UyUUZUyY'}
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details z7SxrXO5
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:253','urn:dev:id:z7SxrXO5']}
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Normal data received
+z7SxrXO5
+[{'v': 'get:state', 'n': 'cmd'}]
+---------Send Data---------
+[{'n':'msg','v':'this is msg'}]
+z7SxrXO5
+Found details
+{'e':[{'n':'msg','v':'this_is_msg'}],'bn':'urn:dev:id:z7SxrXO5'}
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'e':[{'n':'msg','v':'this_is_msg'}],'bn':'urn:dev:id:z7SxrXO5'}
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+---------Send Data---------
+[{'n':'msg','v':'this is msg'}]
+z7SxrXO5
+Found details
+{'e':[{'n':'msg','v':'this_is_msg'}],'bn':'urn:dev:id:z7SxrXO5'}
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'e':[{'n':'msg','v':'this_is_msg'}],'bn':'urn:dev:id:z7SxrXO5'}
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details z7SxrXO5
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:293','urn:dev:id:z7SxrXO5']}
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details z7SxrXO5
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:843','urn:dev:id:z7SxrXO5']}
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Normal data received
+z7SxrXO5
+[{'v': 'get:state', 'n': 'cmd'}]
+---------Send Data---------
+[{'n':'msg','v':'Temperature: 18.00C Boiler: On'}]
+z7SxrXO5
+Found details
+{'e':[{'n':'msg','v':'Temperature:_18.00C_Boiler:_On'}],'bn':'urn:dev:id:z7SxrXO5'}
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'e':[{'n':'msg','v':'Temperature:_18.00C_Boiler:_On'}],'bn':'urn:dev:id:z7SxrXO5'}
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+---------Send Data---------
+[{'n':'msg','v':'Sched Period:00-18,06-20,10-18,17-20,23-18'}]
+z7SxrXO5
+Found details
+{'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details z7SxrXO5
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:169','urn:dev:id:z7SxrXO5']}
+---------Send Data---------
+[{'n':'msg','v':'Sched Period:00-18,06-20,10-18,17-20,23-18'}]
+z7SxrXO5
+Found details
+{'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details z7SxrXO5
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:786','urn:dev:id:z7SxrXO5']}
+---------Send Data---------
+[{'n':'msg','v':'Sched Period:00-18,06-20,10-18,17-20,23-18'}]
+z7SxrXO5
+Found details
+{'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Normal data received
+z7SxrXO5
+[{'v': 'get:state', 'n': 'cmd'}]
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details z7SxrXO5
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:493','urn:dev:id:z7SxrXO5']}
+---------Send Data---------
+[{'n':'msg','v':'Sched Period:00-18,06-20,10-18,17-20,23-18'}]
+z7SxrXO5
+Found details
+{'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+Scanning timeout
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details UyUUZUyY
+UyUUZUyY-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:453','urn:dev:id:UyUUZUyY']}
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+Scanning timeout
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details z7SxrXO5
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:353','urn:dev:id:z7SxrXO5']}
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+---------Send Data---------
+[{'n':'msg','v':'Sched Period:00-18,06-20,10-18,17-20,23-18'}]
+z7SxrXO5
+Found details
+{'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+Scanning timeout
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+---------Send Data---------
+[{'n':'msg','v':'Sched Period:00-18,06-20,10-18,17-20,23-18'}]
+z7SxrXO5
+Found details
+{'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details z7SxrXO5
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:244','urn:dev:id:z7SxrXO5']}
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details z7SxrXO5
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:225','urn:dev:id:z7SxrXO5']}
+---------Send Data---------
+[{'n':'msg','v':'Sched Period:00-18,06-20,10-18,17-20,23-18'}]
+z7SxrXO5
+Found details
+{'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details z7SxrXO5
+found 0 devices
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:327','urn:dev:id:z7SxrXO5']}
+---------Send Data---------
+[{'n':'msg','v':'Sched Period:00-18,06-20,10-18,17-20,23-18'}]
+z7SxrXO5
+Found details
+{'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Normal data received
+z7SxrXO5
+[{'v': 'get:state', 'n': 'cmd'}]
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details z7SxrXO5
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:998','urn:dev:id:z7SxrXO5']}
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+---------Send Data---------
+[{'n':'msg','v':'Sched Period:00-18,06-20,10-18,17-20,23-18'}]
+z7SxrXO5
+Found details
+{'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+---------Send Data---------
+[{'n':'msg','v':'Sched Period:00-18,06-20,10-18,17-20,23-18'}]
+z7SxrXO5
+Found details
+{'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details z7SxrXO5
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:811','urn:dev:id:z7SxrXO5']}
+---------Send Data---------
+[{'n':'msg','v':'Sched Period:00-18,06-20,10-18,17-20,23-18'}]
+z7SxrXO5
+Found details
+{'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+Scanning timeout
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+found 1 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details z7SxrXO5
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:144','urn:dev:id:z7SxrXO5']}
+---------Send Data---------
+[{'n':'msg','v':'Sched Period:00-18,06-20,10-18,17-20,23-18'}]
+z7SxrXO5
+Found details
+{'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details z7SxrXO5
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:787','urn:dev:id:z7SxrXO5']}
+---------Send Data---------
+[{'n':'msg','v':'Sched Period:00-18,06-20,10-18,17-20,23-18'}]
+z7SxrXO5
+Found details
+{'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+Scanning timeout
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details z7SxrXO5
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:134','urn:dev:id:z7SxrXO5']}
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Normal data received
+z7SxrXO5
+[{'v': 'get:state', 'n': 'cmd'}]
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Normal data received
+z7SxrXO5
+[{'v': 'get:ref', 'n': 'cmd'}]
+---------Send Data---------
+[{'n':'msg','v':'Sched Period:00-18,06-20,10-18,17-20,23-18'}]
+z7SxrXO5
+Found details
+{'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+Scanning timeout
+---------Send Data---------
+[{'n':'msg','v':'Temperature: 18.00C Boiler: On'}]
+z7SxrXO5
+Found details
+{'e':[{'n':'msg','v':'Temperature:_18.00C_Boiler:_On'}],'bn':'urn:dev:id:z7SxrXO5'}
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'e':[{'n':'msg','v':'Temperature:_18.00C_Boiler:_On'}],'bn':'urn:dev:id:z7SxrXO5'}
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+---------Send Data---------
+[{'n':'msg','v':'Temperature: 18.00 Boiler: On'}]
+z7SxrXO5
+Found details
+{'e':[{'n':'msg','v':'Temperature:_18.00_Boiler:_On'}],'bn':'urn:dev:id:z7SxrXO5'}
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'e':[{'n':'msg','v':'Temperature:_18.00_Boiler:_On'}],'bn':'urn:dev:id:z7SxrXO5'}
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Normal data received
+z7SxrXO5
+[{'v': 'get:ref', 'n': 'cmd'}]
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details z7SxrXO5
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:233','urn:dev:id:z7SxrXO5']}
+Scanning timeout
+---------Send Data---------
+[{'n':'msg','v':'Temperature: 18.00 Boiler: On'}]
+z7SxrXO5
+Found details
+{'e':[{'n':'msg','v':'Temperature:_18.00_Boiler:_On'}],'bn':'urn:dev:id:z7SxrXO5'}
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'e':[{'n':'msg','v':'Temperature:_18.00_Boiler:_On'}],'bn':'urn:dev:id:z7SxrXO5'}
+---------Send Data---------
+[{'n':'msg','v':'Sched Period:00-18,06-20,10-18,17-20,23-18'}]
+z7SxrXO5
+Found details
+{'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Normal data received
+z7SxrXO5
+[{'v': 'set:00-18,06-20,10-18,17-20,23-1', 'n': 'cmd'}]
+Scanning timeout
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Normal data received
+z7SxrXO5
+[{'v': 'set:00-18,06-20,17-2', 'n': 'cmd'}]
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Normal data received
+z7SxrXO5
+[{'v': 'set:00-18,06-20,17-20,20-2', 'n': 'cmd'}]
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details z7SxrXO5
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:492','urn:dev:id:z7SxrXO5']}
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+---------Send Data---------
+[{'n':'msg','v':'Sched Period:00-18,06-20,10-18,17-20,23-18'}]
+z7SxrXO5
+Found details
+{'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Normal data received
+z7SxrXO5
+[{'v': 'set:23-18,00-00', 'n': 'cmd'}]
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Normal data received
+z7SxrXO5
+[{'v': 'set:23-18', 'n': 'cmd'}]
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details z7SxrXO5
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:161','urn:dev:id:z7SxrXO5']}
+---------Send Data---------
+[{'n':'msg','v':'Sched Period:00-18,06-20,10-18,17-20,23-18'}]
+z7SxrXO5
+Found details
+{'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details z7SxrXO5
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:318','urn:dev:id:z7SxrXO5']}
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+---------Send Data---------
+[{'n':'msg','v':'Sched Period:00-18,06-20,10-18,17-20,23-18'}]
+z7SxrXO5
+Found details
+{'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Normal data received
+z7SxrXO5
+[{'v': 'set:06-20,10-15,17-15,24-18', 'n': 'cmd'}]
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details z7SxrXO5
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:497','urn:dev:id:z7SxrXO5']}
+---------Send Data---------
+[{'n':'msg','v':'Sched Period:00-18,06-20,10-18,17-20,23-18'}]
+z7SxrXO5
+Found details
+{'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'e':[{'n':'msg','v':'Sched_Period:00-18,06-20,10-18,17-20,23-18'}],'bn':'urn:dev:id:z7SxrXO5'}
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Normal data received
+z7SxrXO5
+[{'v': 'set:05-18,11-19,23-18,25-25', 'n': 'cmd'}]
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 1 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 1 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details z7SxrXO5
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:282','urn:dev:id:z7SxrXO5']}
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 0 devices
+Scanning timeout
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 2 devices
+ 6C:40:08:E6:90:CB - EC Mini iPad 1 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 2 devices
+ 80:D2:1D:55:0E:A8 - DESKTOP-M0DRLEH 
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Bluetooth Radio started: 09:22:07 11/11/16 UTC
+Working Deviecs
+[]
+found 1 devices
+Dev: AC:72:89:FC:4A:BC - NANDOR-PC 
+Started Server Thread
+Waiting for connection on RFCOMM channel 1
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details z7SxrXO5
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:776','urn:dev:id:z7SxrXO5']}
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Normal data received
+z7SxrXO5
+[{'v': 'get:state', 'n': 'cmd'}]
+Scanning timeout
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Normal data received
+z7SxrXO5
+[{'v': 'get:ref', 'n': 'cmd'}]
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+---------Send Data---------
+{"timestamp": "1478856065900", "app": "Thermostat_App", "payload": "Sched Period:00-17,06-19,10-17,17-19,22-17", "cloud": "mqtt_conn1"}
+z7SxrXO5
+Found details
+{'e':{"timestamp":_"1478856065900",_"app":_"Thermostat_App",_"payload":_"Sched_Period:00-17,06-19,10-17,17-19,22-17",_"cloud":_"mqtt_conn1"},'bn':'urn:dev:id:z7SxrXO5'}
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'e':{"timestamp":_"1478856065900",_"app":_"Thermostat_App",_"payload":_"Sched_Period:00-17,06-19,10-17,17-19,22-17",_"cloud":_"mqtt_conn1"},'bn':'urn:dev:id:z7SxrXO5'}
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details z7SxrXO5
+z7SxrXO5-14:DD:A9:32:E9:A4
+---------Send Data---------
+{"timestamp":"1478856065900","app": "Thermostat_App","payload":"Sched Period:00-17,06-19,10-17,17-19,22-17","cloud":"mqtt_conn1"}
+z7SxrXO5
+Found details
+{'e':{"timestamp":"1478856065900","app":_"Thermostat_App","payload":"Sched_Period:00-17,06-19,10-17,17-19,22-17","cloud":"mqtt_conn1"},'bn':'urn:dev:id:z7SxrXO5'}
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:139','urn:dev:id:z7SxrXO5']}
+Sending: {'e':{"timestamp":"1478856065900","app":_"Thermostat_App","payload":"Sched_Period:00-17,06-19,10-17,17-19,22-17","cloud":"mqtt_conn1"},'bn':'urn:dev:id:z7SxrXO5'}
+Scanning timeout
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details z7SxrXO5
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:960','urn:dev:id:z7SxrXO5']}
+---------Send Data---------
+{"timestamp":"1478856065900","app":"Thermostat_App","payload":"Sched Period:00-17,06-19,10-17,17-19,22-17","cloud":"mqtt_conn1"}
+z7SxrXO5
+Found details
+{'e':{"timestamp":"1478856065900","app":"Thermostat_App","payload":"Sched_Period:00-17,06-19,10-17,17-19,22-17","cloud":"mqtt_conn1"},'bn':'urn:dev:id:z7SxrXO5'}
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'e':{"timestamp":"1478856065900","app":"Thermostat_App","payload":"Sched_Period:00-17,06-19,10-17,17-19,22-17","cloud":"mqtt_conn1"},'bn':'urn:dev:id:z7SxrXO5'}
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details z7SxrXO5
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:990','urn:dev:id:z7SxrXO5']}
+---------Send Data---------
+{"timestamp":"1478856065900","app":"Thermostat_App","payload":"Sched Period:00-17,06-19,10-17,17-19,22-17","cloud":"mqtt_conn1"}
+z7SxrXO5
+Found details
+{'e':{"timestamp":"1478856065900","app":"Thermostat_App","payload":"Sched_Period:00-17,06-19,10-17,17-19,22-17","cloud":"mqtt_conn1"},'bn':'urn:dev:id:z7SxrXO5'}
+z7SxrXO5-14:DD:A9:32:E9:A4
+Sending: {'e':{"timestamp":"1478856065900","app":"Thermostat_App","payload":"Sched_Period:00-17,06-19,10-17,17-19,22-17","cloud":"mqtt_conn1"},'bn':'urn:dev:id:z7SxrXO5'}
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Error: (104, 'Connection reset by peer')
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
+Scanning timeout
+found 1 devices
+ AC:72:89:FC:4A:BC - NANDOR-PC 
