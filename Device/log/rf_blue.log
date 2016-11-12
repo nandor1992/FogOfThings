@@ -5144,6 +5144,32 @@ Scanning timeout
 found 0 devices
 Scanning timeout
 found 0 devices
+<<<<<<< HEAD
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 0 devices
+=======
 Scanning timeout
 found 0 devices
 Scanning timeout
@@ -5174,6 +5200,7 @@ found 1 devices
 Scanning timeout
 found 1 devices
  4C:80:93:2B:4A:A2 - HOME-PC 
+>>>>>>> home_pi
 Scanning timeout
 found 1 devices
  4C:80:93:2B:4A:A2 - HOME-PC 
@@ -5186,6 +5213,8 @@ found 1 devices
 Scanning timeout
 found 1 devices
  4C:80:93:2B:4A:A2 - HOME-PC 
+<<<<<<< HEAD
+=======
 Scanning timeout
 found 0 devices
 Scanning timeout
@@ -5204,6 +5233,34 @@ Scanning timeout
 found 0 devices
 Scanning timeout
 found 0 devices
+>>>>>>> home_pi
+Scanning timeout
+found 1 devices
+ 4C:80:93:2B:4A:A2 - HOME-PC 
+Scanning timeout
+found 1 devices
+ 4C:80:93:2B:4A:A2 - HOME-PC 
+<<<<<<< HEAD
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 0 devices
+Scanning timeout
+found 0 devices
+=======
+>>>>>>> home_pi
 Scanning timeout
 found 1 devices
  4C:80:93:2B:4A:A2 - HOME-PC 
