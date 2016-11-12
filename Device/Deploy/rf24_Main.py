@@ -63,10 +63,10 @@ def try_read_data(channel=0):
                 print("--------Message Received on CH=1-------")
                 handle_data(message)
                 message=""
-            if message[0:1]!='{':
+            elif message[0:1]!='{':
                 print("Wrong Start to msg delete rest")
                 message=""
-            if (len(message)>300 and message[-1]=='}' ):
+            elif len(message)>300:
                 print("length error")
                 message=""
             #print(message)
@@ -203,7 +203,17 @@ def timeout(dev,val,cnt):
         updateDevTime(c,conn,dev,"Max Retransmit")
         conn.close()
     sys.stdout.flush()
-    
+
+def resetTimeout():
+    global radio
+    global t_reset
+    global message
+    print("Timeout for Reset")
+    sendRf("{'e':'This_is_a_test'}")
+    t_reset=Timer(30,resetTimeout)
+    t_reset.start()
+    sys.stdout.flush()
+        
 def updateDev(c,conn,dev_id,status):
     #ToDo update Date of Device
     string="UPDATE devices SET status='"+status+"' WHERE dev_id='"+dev_id+"'"
@@ -226,7 +236,7 @@ print("RF24 Radio started: "+time.strftime('%X %x %Z'))
 radio.begin()
 radio.enableDynamicPayloads()
 radio.setPALevel(RF24_PA_MAX);
-radio.setRetries(15,15);
+radio.setRetries(5,15);
 
 if irq_gpio_pin is not None:
     # set up callback for irq pin
@@ -267,11 +277,8 @@ channel.basic_consume(callback,queue='ardu_rf24',no_ack=True)
 
 
 #Timer Stuff
-#t=Timer(1,timeout,["OWaDMY9V","{'e':[{'n':'led','v':'1'}],'bn':'urn:dev:id:OWaDMY9V'}"])
-#timer_list["OWaDMY9V"]=t
-#t.start()
-#time.sleep(5)
-#timer_list["OWaDMY9V"].cancel()    
+t_reset=Timer(30,resetTimeout)
+t_reset.start()  
         
 # forever loop
 try:
@@ -281,5 +288,6 @@ except KeyboardInterrupt:
     radio.stopListening()
     channel.close()
     connection.close()
+    t_reset.cancel()
     print ("Exiting Main Thread")
     sys.stdout.flush()

@@ -18,3 +18,321 @@ Message Sent with result: 0 Message Id: 2
 Non json payload
 {"source": "test1", "controller": "raspi01", "uuid": "test1abc", "payload": "success {'state':'Active','id':'102'}", "cloud": "mqtt_conn1", "datetime": "2016-10-21 12:04:20"}
 Message Sent with result: 0 Message Id: 3
+Broker started: 11:28:51 10/31/16 UTC
+ [*] Waiting for messages. To exit press CTRL+C
+Broker started: 11:10:45 11/01/16 UTC
+ [*] Waiting for messages. To exit press CTRL+C
+[x] Received "success {'state':'Resolved','id':'103'}"
+Non json payload
+{"source": "test1", "controller": "raspi01", "uuid": "test1abc", "payload": "success {'state':'Resolved','id':'103'}", "cloud": "mqtt_conn1", "datetime": "2016-11-01 11:42:43"}
+Message Sent with result: 0 Message Id: 1
+Broker started: 17:40:04 11/03/16 UTC
+ [*] Waiting for messages. To exit press CTRL+C
+Broker started: 17:49:11 11/03/16 UTC
+ [*] Waiting for messages. To exit press CTRL+C
+Broker started: 18:02:31 11/03/16 UTC
+ [*] Waiting for messages. To exit press CTRL+C
+[x] Received 'test'
+Non json payload
+{"payload": "test"}
+Message Sent with result: 0 Message Id: 1
+Keyboard baby
+Exiting Main Thread
+Broker started: 18:04:51 11/03/16 UTC
+ [*] Waiting for messages. To exit press CTRL+C
+Broker started: 18:47:28 11/03/16 UTC
+ [*] Waiting for messages. To exit press CTRL+C
+[x] Received 'Temp: 18.0'
+Non json payload
+{"timestamp": "1478199373369", "app": "Thermostat_App", "payload": "Temp: 18.0", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 1
+[x] Received 'Sched Period:00-18,06-20,10-18,17-20,23-18'
+Non json payload
+{"timestamp": "1478199395594", "app": "Thermostat_App", "payload": "Sched Period:00-18,06-20,10-18,17-20,23-18", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 2
+[x] Received 'Sched Period:00-18,06-20,10-18,17-20,23-18'
+Non json payload
+{"timestamp": "1478200441624", "app": "Thermostat_App", "payload": "Sched Period:00-18,06-20,10-18,17-20,23-18", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 3
+[x] Received 'Sched Period:00-18,06-20,10-18,17-20,23-18'
+Non json payload
+{"timestamp": "1478201042944", "app": "Thermostat_App", "payload": "Sched Period:00-18,06-20,10-18,17-20,23-18", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 4
+Broker started: 12:32:20 11/04/16 UTC
+ [*] Waiting for messages. To exit press CTRL+C
+Broker started: 12:36:13 11/04/16 UTC
+ [*] Waiting for messages. To exit press CTRL+C
+Broker started: 13:05:06 11/04/16 UTC
+ [*] Waiting for messages. To exit press CTRL+C
+[x] Received 'Temp: 17.0'
+Non json payload
+{"timestamp": "1478285645389", "app": "Thermostat_App", "payload": "Temp: 17.0", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 1
+[x] Received 'Temp: 17.0'
+Non json payload
+{"timestamp": "1478285874130", "app": "Thermostat_App", "payload": "Temp: 17.0", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 2
+[x] Received 'Temp: 18.0'
+Non json payload
+{"timestamp": "1478289586859", "app": "Thermostat_App", "payload": "Temp: 18.0", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 3
+[x] Received 'Sched Period:00-17'
+Non json payload
+{"timestamp": "1478289600498", "app": "Thermostat_App", "payload": "Sched Period:00-17", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 4
+[x] Received 'Temp: 18.0'
+Non json payload
+{"timestamp": "1478295307376", "app": "Thermostat_App", "payload": "Temp: 18.0", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 5
+[x] Received 'Sched Period:00-17,06-18,11-17,16-18,22-17'
+Non json payload
+{"timestamp": "1478295420357", "app": "Thermostat_App", "payload": "Sched Period:00-17,06-18,11-17,16-18,22-17", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 6
+[x] Received 'Temp: 18.0'
+Non json payload
+{"timestamp": "1478295466321", "app": "Thermostat_App", "payload": "Temp: 18.0", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 7
+[x] Received 'Temp: 17.0'
+Non json payload
+{"timestamp": "1478301454742", "app": "Thermostat_App", "payload": "Temp: 17.0", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 8
+[x] Received 'Sched Period:00-18,06-20,10-18,17-20,23-18'
+Non json payload
+{"timestamp": "1478301463561", "app": "Thermostat_App", "payload": "Sched Period:00-18,06-20,10-18,17-20,23-18", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 9
+[x] Received 'Sched Period:00-16,06-18,10-17,17-18,23-16'
+Non json payload
+{"timestamp": "1478301549329", "app": "Thermostat_App", "payload": "Sched Period:00-16,06-18,10-17,17-18,23-16", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 10
+[x] Received 'Sched Period:00-15,06-17,10-16,16-17,22-16'
+Non json payload
+{"timestamp": "1478376791018", "app": "Thermostat_App", "payload": "Sched Period:00-15,06-17,10-16,16-17,22-16", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 11
+[x] Received 'Temp: NaN'
+Non json payload
+{"timestamp": "1478376819399", "app": "Thermostat_App", "payload": "Temp: NaN", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 12
+[x] Received 'Temp: NaN'
+Non json payload
+{"timestamp": "1478376858898", "app": "Thermostat_App", "payload": "Temp: NaN", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 13
+[x] Received 'Temp: 18.0'
+Non json payload
+{"timestamp": "1478376884208", "app": "Thermostat_App", "payload": "Temp: 18.0", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 14
+[x] Received 'Sched Period:00-16,06-17,10-16,16-17,22-16'
+Non json payload
+{"timestamp": "1478396312102", "app": "Thermostat_App", "payload": "Sched Period:00-16,06-17,10-16,16-17,22-16", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 15
+[x] Received 'Sched Period:00-17,06-18,10-17,16-18,22-17'
+Non json payload
+{"timestamp": "1478396594399", "app": "Thermostat_App", "payload": "Sched Period:00-17,06-18,10-17,16-18,22-17", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 16
+[x] Received 'Temp: NaN'
+Non json payload
+{"timestamp": "1478434834673", "app": "Thermostat_App", "payload": "Temp: NaN", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 17
+[x] Received 'Temp: NaN'
+Non json payload
+{"timestamp": "1478435062817", "app": "Thermostat_App", "payload": "Temp: NaN", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 18
+[x] Received 'Temp: 16.0'
+Non json payload
+{"timestamp": "1478435078672", "app": "Thermostat_App", "payload": "Temp: 16.0", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 19
+[x] Received 'Sched Period:00-17,06-18,10-17,16-18,22-17'
+Non json payload
+{"timestamp": "1478461315985", "app": "Thermostat_App", "payload": "Sched Period:00-17,06-18,10-17,16-18,22-17", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 20
+[x] Received 'Sched Period:00-16,06-18,10-17,16-18,22-17'
+Non json payload
+{"timestamp": "1478461348894", "app": "Thermostat_App", "payload": "Sched Period:00-16,06-18,10-17,16-18,22-17", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 21
+[x] Received 'Temp: 17.0'
+Non json payload
+{"timestamp": "1478471739571", "app": "Thermostat_App", "payload": "Temp: 17.0", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 22
+[x] Received 'Sched Period:00-16,06-18,10-17,16-18,22-17'
+Non json payload
+{"timestamp": "1478471746182", "app": "Thermostat_App", "payload": "Sched Period:00-16,06-18,10-17,16-18,22-17", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 23
+[x] Received 'Sched Period:0-17,06-19,10-18,16-19,23-18'
+Non json payload
+{"timestamp": "1478471859838", "app": "Thermostat_App", "payload": "Sched Period:0-17,06-19,10-18,16-19,23-18", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 24
+[x] Received 'Temp: 18.7'
+Non json payload
+{"timestamp": "1478715677187", "app": "Thermostat_App", "payload": "Temp: 18.7", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 25
+[x] Received 'Sched Period:00-16,06-19,10-17,17-19,22-17'
+Non json payload
+{"timestamp": "1478715738509", "app": "Thermostat_App", "payload": "Sched Period:00-16,06-19,10-17,17-19,22-17", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 26
+[x] Received 'Sched Period:00-16,06-19,10-17,17-19,22-17'
+Non json payload
+{"timestamp": "1478716315564", "app": "Thermostat_App", "payload": "Sched Period:00-16,06-19,10-17,17-19,22-17", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 27
+[x] Received 'Temperature: 0.0 Boiler: Off'
+Non json payload
+{"timestamp": "1478716344728", "app": "Thermostat_App", "payload": "Temperature: 0.0 Boiler: Off", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 28
+[x] Received 'Temperature: 19.0 Boiler: Off'
+Non json payload
+{"timestamp": "1478716685279", "app": "Thermostat_App", "payload": "Temperature: 19.0 Boiler: Off", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 29
+[x] Received 'Temperature: 19.0 Boiler: Off'
+Non json payload
+{"timestamp": "1478716759117", "app": "Thermostat_App", "payload": "Temperature: 19.0 Boiler: Off", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 30
+[x] Received 'Temperature: 19.0 Boiler: Off'
+Non json payload
+{"timestamp": "1478716779852", "app": "Thermostat_App", "payload": "Temperature: 19.0 Boiler: Off", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 31
+[x] Received 'Temperature: 19.0 Boiler: Off'
+Non json payload
+{"timestamp": "1478717472295", "app": "Thermostat_App", "payload": "Temperature: 19.0 Boiler: Off", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 32
+[x] Received 'Sched Period:00-16,06-19,10-17,17-19,22-17'
+Non json payload
+{"timestamp": "1478717488945", "app": "Thermostat_App", "payload": "Sched Period:00-16,06-19,10-17,17-19,22-17", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 33
+[x] Received 'Temperature: 16.3 Boiler: On'
+Non json payload
+{"timestamp": "1478855208453", "app": "Thermostat_App", "payload": "Temperature: 16.3 Boiler: On", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 34
+[x] Received 'Sched Period:00-16,06-19,10-17,17-19,22-17'
+Non json payload
+{"timestamp": "1478855274530", "app": "Thermostat_App", "payload": "Sched Period:00-16,06-19,10-17,17-19,22-17", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 35
+[x] Received 'Sched Period:00-17,06-19,10-17,17-19,22-17'
+Non json payload
+{"timestamp": "1478855309367", "app": "Thermostat_App", "payload": "Sched Period:00-17,06-19,10-17,17-19,22-17", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 36
+[x] Received 'Temperature: 16.2 Boiler: On'
+Non json payload
+{"timestamp": "1478855642477", "app": "Thermostat_App", "payload": "Temperature: 16.2 Boiler: On", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 37
+[x] Received 'Temperature: 16.2 Boiler: On'
+Non json payload
+{"timestamp": "1478855768305", "app": "Thermostat_App", "payload": "Temperature: 16.2 Boiler: On", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 38
+[x] Received 'Temperature: 16.8 Boiler: On'
+Non json payload
+{"timestamp": "1478855818538", "app": "Thermostat_App", "payload": "Temperature: 16.8 Boiler: On", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 39
+[x] Received 'Sched Period:00-17,06-19,10-17,17-19,22-17'
+Non json payload
+{"timestamp": "1478855830059", "app": "Thermostat_App", "payload": "Sched Period:00-17,06-19,10-17,17-19,22-17", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 40
+[x] Received 'Sched Period:00-18,06-19,10-17,17-19,22-17'
+Non json payload
+{"timestamp": "1478855851420", "app": "Thermostat_App", "payload": "Sched Period:00-18,06-19,10-17,17-19,22-17", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 41
+[x] Received 'Temperature: 16.8 Boiler: On'
+Non json payload
+{"timestamp": "1478856049602", "app": "Thermostat_App", "payload": "Temperature: 16.8 Boiler: On", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 42
+[x] Received 'Sched Period:00-18,06-19,10-17,17-19,22-17'
+Non json payload
+{"timestamp": "1478856052368", "app": "Thermostat_App", "payload": "Sched Period:00-18,06-19,10-17,17-19,22-17", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 43
+[x] Received 'Sched Period:00-17,06-19,10-17,17-19,22-17'
+Non json payload
+{"timestamp": "1478856065900", "app": "Thermostat_App", "payload": "Sched Period:00-17,06-19,10-17,17-19,22-17", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 44
+[x] Received 'Temperature: 17.0 Boiler: On'
+Non json payload
+{"timestamp": "1478856909839", "app": "Thermostat_App", "payload": "Temperature: 17.0 Boiler: On", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 45
+[x] Received 'Sched Period:00-17,06-19,10-17,17-19,22-17'
+Non json payload
+{"timestamp": "1478856915477", "app": "Thermostat_App", "payload": "Sched Period:00-17,06-19,10-17,17-19,22-17", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 46
+[x] Received 'Sched Period:00-17,06-19,10-17,17-19,22-17'
+Non json payload
+{"timestamp": "1478858034028", "app": "Thermostat_App", "payload": "Sched Period:00-17,06-19,10-17,17-19,22-17", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 47
+[x] Received 'Sched Period:00-17,06-19,10-17,17-19,22-17'
+Non json payload
+{"timestamp": "1478858211322", "app": "Thermostat_App", "payload": "Sched Period:00-17,06-19,10-17,17-19,22-17", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 48
+[x] Received 'Sched Period:00-17,06-19,10-17,17-19,22-17'
+Non json payload
+{"timestamp": "1478858216348", "app": "Thermostat_App", "payload": "Sched Period:00-17,06-19,10-17,17-19,22-17", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 49
+[x] Received 'Temperature: 17.5 Boiler: On'
+Non json payload
+{"timestamp": "1478858226779", "app": "Thermostat_App", "payload": "Temperature: 17.5 Boiler: On", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 50
+[x] Received 'Temperature: 17.5 Boiler: On'
+Non json payload
+{"timestamp": "1478858293399", "app": "Thermostat_App", "payload": "Temperature: 17.5 Boiler: On", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 51
+[x] Received 'Sched Period:00-17,06-19,10-17,17-19,22-17'
+Non json payload
+{"timestamp": "1478858295083", "app": "Thermostat_App", "payload": "Sched Period:00-17,06-19,10-17,17-19,22-17", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 52
+[x] Received 'Temperature: 20.5 Boiler: Off'
+Non json payload
+{"timestamp": "1478869757983", "app": "Thermostat_App", "payload": "Temperature: 20.5 Boiler: Off", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 53
+[x] Received 'Sched Period:00-17,06-19,10-17,17-19,22-17'
+Non json payload
+{"timestamp": "1478869782740", "app": "Thermostat_App", "payload": "Sched Period:00-17,06-19,10-17,17-19,22-17", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 54
+[x] Received 'Temperature: 20.5 Boiler: Off'
+Non json payload
+{"timestamp": "1478869792980", "app": "Thermostat_App", "payload": "Temperature: 20.5 Boiler: Off", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 55
+[x] Received 'Temperature: 18.0 Boiler: Off'
+Non json payload
+{"timestamp": "1478903110794", "app": "Thermostat_App", "payload": "Temperature: 18.0 Boiler: Off", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 56
+[x] Received 'Sched Period:00-16,06-18,10-17,17-18,22-17'
+Non json payload
+{"timestamp": "1478903112695", "app": "Thermostat_App", "payload": "Sched Period:00-16,06-18,10-17,17-18,22-17", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 57
+[x] Received 'Temperature: 16.444444444444443 Boiler: Off'
+Non json payload
+{"timestamp": "1478907705243", "app": "Thermostat_App", "payload": "Temperature: 16.444444444444443 Boiler: Off", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 58
+[x] Received 'Sched Period:00-16,06-18,10-17,17-18,22-17'
+Non json payload
+{"timestamp": "1478907713290", "app": "Thermostat_App", "payload": "Sched Period:00-16,06-18,10-17,17-18,22-17", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 59
+[x] Received 'Temperature: 16.444444444444443 Boiler: Off'
+Non json payload
+{"timestamp": "1478907737304", "app": "Thermostat_App", "payload": "Temperature: 16.444444444444443 Boiler: Off", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 60
+[x] Received 'Temperature: 16.444444444444443 Boiler: Off'
+Non json payload
+{"timestamp": "1478907750784", "app": "Thermostat_App", "payload": "Temperature: 16.444444444444443 Boiler: Off", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 61
+[x] Received 'Temperature: 16.444444444444443 Boiler: Off'
+Non json payload
+{"timestamp": "1478907755714", "app": "Thermostat_App", "payload": "Temperature: 16.444444444444443 Boiler: Off", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 62
+[x] Received 'Temperature: 16.444444444444443 Boiler: Off'
+Non json payload
+{"timestamp": "1478907760394", "app": "Thermostat_App", "payload": "Temperature: 16.444444444444443 Boiler: Off", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 63
+[x] Received 'Temperature: 16.444444444444443 Boiler: Off'
+Non json payload
+{"timestamp": "1478907786665", "app": "Thermostat_App", "payload": "Temperature: 16.444444444444443 Boiler: Off", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 64
+[x] Received 'Sched Period:00-16,06-18,10-17,17-18,22-18'
+Non json payload
+{"timestamp": "1478907806385", "app": "Thermostat_App", "payload": "Sched Period:00-16,06-18,10-17,17-18,22-18", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 65
+[x] Received 'Temperature: 16.444444444444443 Boiler: Off'
+Non json payload
+{"timestamp": "1478907829382", "app": "Thermostat_App", "payload": "Temperature: 16.444444444444443 Boiler: Off", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 66
+[x] Received 'Temperature: 17.9 Boiler: Off'
+Non json payload
+{"timestamp": "1478954822393", "app": "Thermostat_App", "payload": "Temperature: 17.9 Boiler: Off", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 67
+[x] Received 'Sched Period:00-16,06-18,10-17,17-18,22-18'
+Non json payload
+{"timestamp": "1478954823600", "app": "Thermostat_App", "payload": "Sched Period:00-16,06-18,10-17,17-18,22-18", "cloud": "mqtt_conn1"}
+Message Sent with result: 0 Message Id: 68

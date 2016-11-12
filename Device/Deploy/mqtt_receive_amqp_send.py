@@ -48,7 +48,7 @@ def on_message(client, userdata, msg):
             while retr==False:
                 retr=publish('app',payload,properties_m)
             #channel.basic_publish(exchange='',routing_key='test_queue',body=msg.payload)
-    except ValueError:
+    except (ValueError,TypeError) as e:
         print "Value Erro, probs something stupid happened"
     sys.stdout.flush()
 
@@ -87,7 +87,7 @@ client.username_pw_set('admin','hunter')
 client.on_connect = on_connect
 client.on_message = on_message
 client.on_disconnect = on_disconnect
-client.connect("10.0.0.137", 1883,10)
+client.connect("clem-rasp01.coventry.ac.uk",15672,10)
 
 credentials = pika.PlainCredentials('admin', 'hunter')
 parameters = pika.ConnectionParameters('localhost',5672,'test', credentials)
