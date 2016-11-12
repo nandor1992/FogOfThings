@@ -303,7 +303,7 @@ def scan():
             except bluetooth.BluetoothError as error:
                 print (error)
     if not exitFlag:
-        mainTimer=Timer(20,scan)
+        mainTimer=Timer(1200,scan)
         timer_list["main"]=mainTimer
         mainTimer.start()
     sys.stdout.flush()
@@ -395,7 +395,7 @@ servT.start()
 threads["serv"]=servT
 
 
-mainTimer=Timer(60,scan)
+mainTimer=Timer(1200,scan)
 timer_list["main"]=mainTimer
 mainTimer.start()
 

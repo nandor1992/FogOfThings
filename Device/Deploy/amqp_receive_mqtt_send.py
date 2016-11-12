@@ -17,7 +17,7 @@ channel = connection.channel()
 
 client = mqtt.Client(client_id=clientId+"_Send",clean_session=True);
 client.username_pw_set('admin','hunter')
-client.connect("10.0.0.137", 1883,60)
+client.connect("clem-rasp01.coventry.ac.uk",15672 ,10)
 
 f=open('/home/pi/log/amqp_to_mqtt.log','a')
 sys.stdout=f
@@ -47,7 +47,7 @@ def callback(ch,method,properties,body):
             (result,mid)=client.publish("send/"+clientId,payload=data,qos=1)
         print("Message Sent with result: "+str(result)+" Message Id: "+str(mid))
             
-    except ValueError:
+    except (ValueError, TypeError) as e:
             print "Nor Json or valid string data"
     sys.stdout.flush()
     
