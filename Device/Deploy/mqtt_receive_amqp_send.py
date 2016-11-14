@@ -64,17 +64,20 @@ def publish(route,body,properties):
         connection = pika.BlockingConnection(parameters);
         channel=connection.channel()
         return False
-        
+    
 def on_disconnect(client,userdata,rc):
     if rc!=0:
         print "Unexpected Disconnect "+time.strftime('%X %x %Z')+ " Reconnecting"
-        try:
-            client.reconnect()
-        except socket.error:
-            print "Socket Exception"
-            client.loop_stop()
-            client.disconnect()
-            connection.close()
+       #  client.reconnect()
+        client.loop_stop()
+        client.reinitialise()
+        client = mqtt.Client(client_id=""+clientId+"_Receive",clean_session=True);
+        client.username_pw_set('admin','hunter')
+        client.on_connect = on_connect
+        client.on_message = on_message
+        client.on_disconnect = on_disconnect
+        client.connect("clem-rasp01.coventry.ac.uk",15672,10)
+        client.loop_forever(timeout=1.0, max_packets=1,retry_first_connection=False)
     else:
         print "Expected Disconnect"
     sys.stdout.flush()
