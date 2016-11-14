@@ -84,7 +84,7 @@ def messageResolv(my_json):
         print(dev_id)
         message_amqp=my_json.get("v")
         properties_m=pika.BasicProperties(headers={'device':""+dev_id,'comm': ""+gw_name,'datetime':""+datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
-        channel.basic_publish(exchange='devices', routing_key='', body=message_amqp, properties=properties_m)
+        channel.basic_publish(exchange='device', routing_key='', body=message_amqp, properties=properties_m)
     except ValueError:
         print("Value Erro, probs something stupid happened")
     except IndexError:
