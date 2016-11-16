@@ -1,25 +1,32 @@
-
 #!/usr/bin/env python
 import pika
 import time
 import paho.mqtt.client as mqtt
 import json
 import os,sys
+import ConfigParser
+#Config Settings
+Config=ConfigParser.ConfigParser()
+Config.read(os.path.dirname(os.path.dirname(os.path.realpath(__file__)))+"/config.ini")
 
-clientId="gateway2"
-conn_name='mqtt_conn1'
 
-credentials = pika.PlainCredentials('admin', 'hunter')
-parameters = pika.ConnectionParameters('localhost',5672,'test', credentials)
+# Modified to work from FogOf Thinggs and with Ini Fie
+#No To-Do's Here
+
+clientId=Config.get("General","Gateway_Name")
+conn_name=Config.get("Mqtt1","name")
+
+credentials = pika.PlainCredentials(Config.get("Amqp","user"),Config.get("Amqp","pass"))
+parameters = pika.ConnectionParameters('localhost',int(Config.get("Amqp","port")),Config.get("Amqp","virt"), credentials)
 connection = pika.BlockingConnection(parameters);
 
 channel = connection.channel()
 
 client = mqtt.Client(client_id=clientId+"_Send",clean_session=True);
-client.username_pw_set('admin','hunter')
-client.connect("clem-rasp01.coventry.ac.uk",15672 ,10)
+client.username_pw_set(Config.get("Mqtt1","user"),Config.get("Mqtt1","pass"))
+client.connect(Config.get("Mqtt1","address"),int(Config.get("Mqtt1","port")) ,10)
 
-f=open('/home/pi/log/amqp_to_mqtt.log','a')
+f=open(Config.get("Log","location")+'/amqp_to_mqtt.log','a')
 sys.stdout=f
     
 print("Broker started: "+time.strftime('%X %x %Z'))

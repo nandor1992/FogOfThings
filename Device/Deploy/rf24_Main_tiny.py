@@ -5,6 +5,8 @@
 # 
 #  This is an example of how to use payloads of a varying (dynamic) size.
 # 
+# Modified to work from FogOf Thinggs and with Ini Fie
+# To-Do: Nothing Really for this
 
 from __future__ import print_function
 import time
@@ -16,8 +18,14 @@ import json
 import datetime
 import string
 import random
+import ConfigParser
+import os,sys
+#Config Settings
+Config=ConfigParser.ConfigParser()
+Config.read(os.path.dirname(os.path.dirname(os.path.realpath(__file__)))+"/config.ini")
 
-irq_gpio_pin = None
+
+irq_gpio_pin = 25
 
 ########### USER CONFIGURATION ###########
 # See https://github.com/TMRh20/RF24/blob/master/RPi/pyRF24/readme.md
@@ -101,8 +109,8 @@ def callback(ch,method,properties,body):
     print("[x] Received %r"%body)
     sendMssgResolv(body,properties) 
     
-pipes = ['1Node','2Node']
-gw_name="Gateway-tiny-RF24"
+pipes = [Config.get("RF24-tiny","pipe_write"),Config.get("RF24-tiny","pipe_read")]
+gw_name=Config.get("RF24-tiny","name")
 
 
 print('Receive Example')
@@ -120,13 +128,13 @@ if irq_gpio_pin is not None:
 
 #AMQP Stuff
 
-credentials = pika.PlainCredentials('admin', 'hunter')
-parameters = pika.ConnectionParameters('localhost',5672,'test', credentials)
+credentials = pika.PlainCredentials(Config.get("Amqp","user"),Config.get("Amqp","pass"))
+parameters = pika.ConnectionParameters('localhost',int(Config.get("Amqp","port")),Config.get("Amqp","virt"), credentials)
 connection = pika.BlockingConnection(parameters);
 
 channel = connection.channel()
 channel.basic_qos(prefetch_count=1)
-channel.basic_consume(callback,queue='tiny_rf24',no_ack=True)
+channel.basic_consume(callback,queue=Config.get("RF24-tiny","queue"),no_ack=True)
 
 
 # forever loop

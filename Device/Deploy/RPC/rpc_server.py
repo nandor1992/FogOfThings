@@ -7,11 +7,20 @@ import Device
 import Resource
 import json
 import time
-credentials = pika.PlainCredentials('admin', 'hunter')
-parameters = pika.ConnectionParameters('localhost',5672,'test', credentials)
+import os,sys
+import ConfigParser
+#Config Settings
+Config=ConfigParser.ConfigParser()
+Config.read(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))+"/config.ini")
+
+Config.read(os.getcwd()+"/config.ini")
+
+credentials = pika.PlainCredentials(Config.get("Amqp","user"),Config.get("Amqp","pass"))
+parameters = pika.ConnectionParameters('localhost',int(Config.get("Amqp","port")),Config.get("Amqp","virt"), credentials)
 connection = pika.BlockingConnection(parameters);
 
 channel = connection.channel()
+channel.basic_qos(prefetch_count=1)
 
 def resolve(payload):
     response="Error"
@@ -304,14 +313,13 @@ def on_request(ch, method, properties, body):
     else:
         print("Missing components or failed Auth")
     ch.basic_ack(delivery_tag = method.delivery_tag)
-
-channel.basic_qos(prefetch_count=1)
-channel.basic_consume(on_request, queue='controller')
-apiKey="abc123ef"
-dev_status="Idle"
+controller_name= Config.get("General","Gateway_Name")
+channel.basic_consume(on_request, queue=Config.get("Admin","queue"))
+apiKey=Config.get("Admin","api_key")
+dev_status=Config.get("Admin","dev_status")
 route = Route.Route(channel)
-karaf=Karaf.Karaf('karaf','karaf',"http://10.0.0.63/swift/v1/test/","/home/pi/apps/","/home/pi/configs/","/home/pi/apache-karaf-4.0.5/etc/")
-device=Device.Device("/home/pi/databases/")
+karaf=Karaf.Karaf(Config.get("Karaf","user"),Config.get("Karaf","pass"),Config.get("Admin","app_storage"),Config.get("General","location")+"/apps/",Config.get("General","location")+"/configs/",Config.get("Karaf","location")+"/")
+device=Device.Device(Config.get("General","location")+"/databases/")
 res=Resource.Resource()
 
 print(" [x] Awaiting RPC requests")

@@ -6,6 +6,10 @@
 #  This is an example of how to use payloads of a varying (dynamic) size.
 # 
 
+# Modified to work from FogOf Thinggs and with Ini Fie
+# To-Do: Modify Driver to work with CouchDB not sqlLite
+
+
 from __future__ import print_function
 from threading import Timer
 import time
@@ -22,29 +26,11 @@ import Queue
 import threading
 import os,sys
 
-irq_gpio_pin = None
-########### USER CONFIGURATION ###########
-# See https://github.com/TMRh20/RF24/blob/master/RPi/pyRF24/readme.md
+import ConfigParser
+#Config Settings
+Config=ConfigParser.ConfigParser()
+Config.read(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))+"/config.ini")
 
-# CE Pin, CSN Pin, SPI Speed
-
-# Setup for GPIO 22 CE and CE0 CSN with SPI Speed @ 8Mhz
-radio = RF24(RPI_V2_GPIO_P1_15, BCM2835_SPI_CS0, BCM2835_SPI_SPEED_8MHZ)
-
-#RPi B
-# Setup for GPIO 15 CE and CE1 CSN with SPI Speed @ 8Mhz
-#radio = RF24(RPI_V2_GPIO_P1_15, BCM2835_SPI_CS0, BCM2835_SPI_SPEED_8MHZ)
-
-#RPi B+
-# Setup for GPIO 22 CE and CE0 CSN for RPi B+ with SPI Speed @ 8Mhz
-#radio = RF24(RPI_BPLUS_GPIO_J8_15, RPI_BPLUS_GPIO_J8_24, BCM2835_SPI_SPEED_8MHZ)
-
-# RPi Alternate, with SPIDEV - Note: Edit RF24/arch/BBB/spi.cpp and  set 'this->device = "/dev/spidev0.0";;' or as listed in /dev
-#radio = RF24(22, 0);
-
-
-# Setup for connected IRQ pin, GPIO 24 on RPi B+; uncomment to activate
-#irq_gpio_pin = RPI_BPLUS_GPIO_J8_18
 message="";
 exitFlag = 0
 port=1
@@ -52,7 +38,7 @@ port=1
 #Threading These stuff
 ##########################################
 
-f=open('/home/pi/log/rf_blue.log','a')
+f=open(Config.get("Log","location")+'/rf_blue.log','a')
 sys.stdout=f
 
 class BlueThread(threading.Thread):
@@ -159,6 +145,7 @@ def handle_data(key,data):
     except KeyError:
         print("Key Error, probs something bad happened")
     sys.stdout.flush()
+
 def messageResolv(my_json):
     conn = sqlite3.connect(path)
     c=conn.cursor()
@@ -317,26 +304,15 @@ def shutdown():
     for key in timer_list:
 	timer_list[key].cancel()
 
-gw_name="Gateway-Blue"
+gw_name=Config.get("Bluetooth","name")
 dev_list= []
 timer_list = {}
-
+find_devs = []
 print("Bluetooth Radio started: "+time.strftime('%X %x %Z'))
 
-
-if irq_gpio_pin is not None:
-    # set up callback for irq pin
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setup(irq_gpio_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-    GPIO.add_event_detect(irq_gpio_pin, GPIO.FALLING, callback=try_read_data)
-
-    radio.openWritingPipe(pipes[0])
-    radio.openReadingPipe(1,pipes[1])
-    radio.startListening()
-
 #Create sql stuff and initialize
-path ='/home/pi/databases/ardu_blue.db'
-
+path =Config.get("Database","path")+'/ardu_blue.db'
+find_devs=Config.get("Bluetooth","peers").split(',')
 #Get Database deviecs
 conn = sqlite3.connect(path)
 c2=conn.cursor()
@@ -362,12 +338,11 @@ nearby_devices=bluetooth.discover_devices(lookup_names=True)
 print("found %d devices" %len(nearby_devices))
 for addr,name in nearby_devices:
     print("Dev: %s - %s "% (addr,name))
-    if (name=="NAN-BLU" or name=="raspberrypi_client"):
+    if name in find_devs:
         try:
             socket=bluetooth.BluetoothSocket(bluetooth.RFCOMM)
             socket.connect((addr,port))
             print('Connected to %s on port %s'%(name,port))
-#            port=port+1
             socket.send('x')
             socket.settimeout(0.1)
             send_q[addr]=Queue.Queue(10)
@@ -379,8 +354,8 @@ for addr,name in nearby_devices:
             print(error)
 #AMQP Stuff
 
-credentials = pika.PlainCredentials('admin', 'hunter')
-parameters = pika.ConnectionParameters('localhost',5672,'test', credentials)
+credentials = pika.PlainCredentials(Config.get("Amqp","user"),Config.get("Amqp","pass"))
+parameters = pika.ConnectionParameters('localhost',int(Config.get("Amqp","port")),Config.get("Amqp","virt"), credentials)
 connection = pika.BlockingConnection(parameters);
 
 channel = connection.channel()
@@ -399,13 +374,6 @@ mainTimer=Timer(1200,scan)
 timer_list["main"]=mainTimer
 mainTimer.start()
 
-#Timer Stuff
-#t=Timer(1,timeout,["OWaDMY9V","{'e':[{'n':'led','v':'1'}],'bn':'urn:dev:id:OWaDMY9V'}"])
-#timer_list["OWaDMY9V"]=t
-#t.start()
-#time.sleep(5)
-#timer_list["OWaDMY9V"].cancel()    
-        
 # forever loop
 sys.stdout.flush()
 try:
@@ -414,7 +382,7 @@ try:
             if not receive_q[key].empty():
                 message=receive_q[key].get()
                 handle_data(key,message)
-        frame,header,body=channel.basic_get(queue='ardu_blue',no_ack=False)
+        frame,header,body=channel.basic_get(queue=Config.get("Bluetooth","queue"),no_ack=False)
         if frame:
             channel.basic_ack(frame.delivery_tag)
             sendMssgResolv(body,header)

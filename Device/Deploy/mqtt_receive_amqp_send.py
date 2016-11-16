@@ -6,9 +6,18 @@ import datetime
 import json
 import os,sys
 import time
+import ConfigParser
+#Config Settings
 
-clientId="gateway2"
-conn_name='mqtt_conn1'
+# Modified to work from FogOf Thinggs and with Ini Fie
+#No To-Do's Here
+
+Config=ConfigParser.ConfigParser()
+Config.read(os.path.dirname(os.path.dirname(os.path.realpath(__file__)))+"/config.ini")
+
+
+clientId=Config.get("General","Gateway_Name")
+conn_name=Config.get("Mqtt1","name")
 # The callback for when the client receives a CONNACK response from the server.
 def on_connect(client, userdata, rc):
     global gw_name
@@ -66,34 +75,37 @@ def publish(route,body,properties):
         return False
     
 def on_disconnect(client,userdata,rc):
+    global Config
     if rc!=0:
         print "Unexpected Disconnect "+time.strftime('%X %x %Z')+ " Reconnecting"
        #  client.reconnect()
         client.loop_stop()
+        client.disconnect()
         client.reinitialise()
         client = mqtt.Client(client_id=""+clientId+"_Receive",clean_session=True);
-        client.username_pw_set('admin','hunter')
+        client.username_pw_set(Config.get("Mqtt1","user"),Config.get("Mqtt1","pass"))
         client.on_connect = on_connect
         client.on_message = on_message
         client.on_disconnect = on_disconnect
-        client.connect("clem-rasp01.coventry.ac.uk",15672,10)
+        client.connect(Config.get("Mqtt1","address"),int(Config.get("Mqtt1","port")) ,10)
         client.loop_forever(timeout=1.0, max_packets=1,retry_first_connection=False)
     else:
         print "Expected Disconnect"
     sys.stdout.flush()
-f=open('/home/pi/log/mqtt_to_amqp.log','a')
+
+f=open(Config.get("Log","location")+'/mqtt_to_amqp.log','a')
 sys.stdout=f
 print("Starting New Session at "+time.strftime('%X %x %Z'))
-client = mqtt.Client(client_id=""+clientId+"_Receive",clean_session=True);
-client.username_pw_set('admin','hunter')
-#client.tls_set("./")
+sys.stdout.flush()
+client = mqtt.Client(client_id=clientId+"_Receive",clean_session=True);
+client.username_pw_set(Config.get("Mqtt1","user"),Config.get("Mqtt1","pass"))
 client.on_connect = on_connect
 client.on_message = on_message
 client.on_disconnect = on_disconnect
-client.connect("clem-rasp01.coventry.ac.uk",15672,10)
+client.connect(Config.get("Mqtt1","address"),int(Config.get("Mqtt1","port")) ,10)
 
-credentials = pika.PlainCredentials('admin', 'hunter')
-parameters = pika.ConnectionParameters('localhost',5672,'test', credentials)
+credentials = pika.PlainCredentials(Config.get("Amqp","user"),Config.get("Amqp","pass"))
+parameters = pika.ConnectionParameters('localhost',int(Config.get("Amqp","port")),Config.get("Amqp","virt"), credentials)
 connection = pika.BlockingConnection(parameters);
 channel = connection.channel()
 # Blocking call that processes network traffic, dispatches callbacks and

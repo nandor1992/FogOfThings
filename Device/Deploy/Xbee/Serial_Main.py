@@ -10,7 +10,11 @@ import random
 import string
 import datetime
 import pika
-
+import os,sys
+import ConfigParser
+#Config Settings
+Config=ConfigParser.ConfigParser()
+Config.read(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))+"/config.ini")
 exitFlag = 0        
     
 class UARTThread(threading.Thread):
@@ -178,11 +182,11 @@ receive_q = Queue.Queue(10)
 threads = []
 try:
     ser = serial.Serial(
-        port='/dev/ttyUSB0',
-        baudrate=9600,
-        bytesize=8,
-        parity='N',
-        stopbits=1,
+        port=Config.get("Xbee","port"),
+        baudrate=int(Config.get("Xbee","baud")),
+        bytesize=int(Config.get("Xbee","bytesize")),
+        parity=Config.get("Xbee","parity"),
+        stopbits=int(Config.get("Xbee","stopbits")),
         timeout=None, xonxoff=0, rtscts=0
     )
     ser.isOpen()
@@ -191,18 +195,19 @@ except serial.SerialException:
     gratiousExit()
 
 #Create sql stuff and initialize
-path ='/home/pi/databases/zigbeedb.db'
+path =Config.get("Database","path")+'/zigbeedb.db'
 conn = sqlite3.connect(path)
 c=conn.cursor()
 
 #amqp connn
-credentials = pika.PlainCredentials('admin', 'hunter')
-parameters = pika.ConnectionParameters('localhost',5672,'test', credentials)
-connection = pika.BlockingConnection(parameters)
-channel =connection.channel()
+credentials = pika.PlainCredentials(Config.get("Amqp","user"),Config.get("Amqp","pass"))
+parameters = pika.ConnectionParameters('localhost',int(Config.get("Amqp","port")),Config.get("Amqp","virt"), credentials)
+connection = pika.BlockingConnection(parameters);
+
+channel = connection.channel()
 channel.basic_qos(prefetch_count=1)
         
-gw_name="Gateway-Xbee"
+gw_name=Config.get("Xbee","name")
 # Create new threads
 uart=UARTThread(ser,send_q,receive_q)
 uart.start()
@@ -214,7 +219,7 @@ try:
         if not receive_q.empty():
             message=receive_q.get()
             handle_data(message)
-        frame,header,body=channel.basic_get(queue='ardu_xbee',no_ack=False)
+        frame,header,body=channel.basic_get(queue=Config.get("Xbee","queue"),no_ack=False)
         if frame:
             channel.basic_ack(frame.delivery_tag)
             sendMssgResolv(body,header)

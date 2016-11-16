@@ -5,6 +5,8 @@
 # 
 #  This is an example of how to use payloads of a varying (dynamic) size.
 # 
+# Modified to work from FogOf Thinggs and with Ini Fie
+# To-Do: Modify Driver to work with CouchDB not sqlLite
 
 from __future__ import print_function
 from threading import Timer
@@ -18,8 +20,12 @@ import datetime
 import string
 import random
 import os,sys
+import ConfigParser
+#Config Settings
+Config=ConfigParser.ConfigParser()
+Config.read(os.path.dirname(os.path.dirname(os.path.realpath(__file__)))+"/config.ini")
 
-irq_gpio_pin = None
+irq_gpio_pin = 25
 
 ########### USER CONFIGURATION ###########
 # See https://github.com/TMRh20/RF24/blob/master/RPi/pyRF24/readme.md
@@ -46,7 +52,7 @@ radio = RF24(RPI_V2_GPIO_P1_15, BCM2835_SPI_CS0, BCM2835_SPI_SPEED_8MHZ)
 irq_gpio_pin = 25
 message="";
 
-f=open('/home/pi/log/rf24.log','a')
+f=open(Config.get("Log","location")+'/rf24.log','a')
 sys.stdout=f
 
 ##########################################
@@ -208,9 +214,8 @@ def resetTimeout():
     global radio
     global t_reset
     global message
-    print("Timeout for Reset")
     sendRf("{'e':'This_is_a_test'}")
-    t_reset=Timer(30,resetTimeout)
+    t_reset=Timer(90,resetTimeout)
     t_reset.start()
     sys.stdout.flush()
         
@@ -226,8 +231,8 @@ def updateDevTime(c,conn,dev_id,status):
     c.execute(string)
     conn.commit()    
     
-pipes = ['1Node','2Node','3Node','4Node']
-gw_name="Gateway-RF24"
+pipes = [Config.get("RF24","pipe_write"),Config.get("RF24","pipe_read")]
+gw_name=Config.get("RF24","name")
 dev_list= []
 timer_list = {}
 
@@ -249,7 +254,7 @@ if irq_gpio_pin is not None:
     radio.startListening()
 
 #Create sql stuff and initialize
-path ='/home/pi/databases/ardu_rf24.db'
+path =Config.get("Database","path")+'/ardu_rf24.db'
 
 #Get Database deviecs
 conn = sqlite3.connect(path)
@@ -267,17 +272,17 @@ conn.close()
 sys.stdout.flush()
 #AMQP Stuff
 
-credentials = pika.PlainCredentials('admin', 'hunter')
-parameters = pika.ConnectionParameters('localhost',5672,'test', credentials)
+credentials = pika.PlainCredentials(Config.get("Amqp","user"),Config.get("Amqp","pass"))
+parameters = pika.ConnectionParameters('localhost',int(Config.get("Amqp","port")),Config.get("Amqp","virt"), credentials)
 connection = pika.BlockingConnection(parameters);
 
 channel = connection.channel()
 channel.basic_qos(prefetch_count=1)
-channel.basic_consume(callback,queue='ardu_rf24',no_ack=True)
+channel.basic_consume(callback,queue=Config.get("RF24","queue"),no_ack=True)
 
 
 #Timer Stuff
-t_reset=Timer(30,resetTimeout)
+t_reset=Timer(90,resetTimeout)
 t_reset.start()  
         
 # forever loop
