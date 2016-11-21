@@ -194,7 +194,7 @@ public class Activator extends Thread implements BundleActivator, ManagedService
 					relayValue=proprelayValue;
 				}
 			}
-			logger.warn("Received from:"+comm+"what"+value);
+			logger.warn("Received from: "+comm+"what"+value);
 		
 		}
 
@@ -218,7 +218,7 @@ public class Activator extends Thread implements BundleActivator, ManagedService
 		if (parts[0].equals("get")){
 			if (parts[1].equals("temp"))
 			{
-				return "Temp: "+String.valueOf(recAvg);
+				return "Temp: "+String.format("%.2f", recAvg);
 			}else if (parts[1].equals("ref"))
 			{
 				return "Sched Period:"+mySched.getSched();
@@ -231,7 +231,7 @@ public class Activator extends Thread implements BundleActivator, ManagedService
 				} else{
 					boiler="Off";
 				}
-				return "Temperature: "+String.valueOf(recAvg)+" Boiler: "+boiler;
+				return "Temperature: "+String.format("%.2f", recAvg)+" Boiler: "+boiler;
 			}
 		}else if (parts[0].equals("set"))
 		{
@@ -255,6 +255,10 @@ public class Activator extends Thread implements BundleActivator, ManagedService
 		props.put("app", app_name);
 		props.put("payload", payload);
 		props.put("device", device);
+		int dev_ind=dev_names.indexOf(device);
+		if (dev_ind==2){
+			props.put("qos","1");
+		}
 		Event event = new Event(DEVICE_SEND, props);
 		ea.sendEvent(event);
 	}
