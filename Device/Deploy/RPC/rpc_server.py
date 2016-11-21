@@ -319,7 +319,7 @@ apiKey=Config.get("Admin","api_key")
 dev_status=Config.get("Admin","dev_status")
 route = Route.Route(channel)
 karaf=Karaf.Karaf(Config.get("Karaf","user"),Config.get("Karaf","pass"),Config.get("Admin","app_storage"),Config.get("General","location")+"/apps/",Config.get("General","location")+"/configs/",Config.get("Karaf","location")+"/")
-device=Device.Device(Config.get("General","location")+"/databases/")
+device=Device.Device(Config.get("couchDB","user"),Config.get("couchDB","pass"))
 res=Resource.Resource()
 
 print(" [x] Awaiting RPC requests")
