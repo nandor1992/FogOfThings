@@ -1415,3 +1415,41 @@ Connected with result code 0
 Keyboard baby
 Expected Disconnect
 Exiting Main Thread
+Starting New Session at 10:06:35 11/23/16 UTC
+Connected with result code 0
+------Received Message-------
+Message: mqtt-subscription-Gateway_Work_2_Receiveqos1 es
+test
+Value Erro, probs something stupid happened
+Unexpected Disconnect 10:08:36 11/23/16 UTC Reconnecting
+Starting New Session at 10:17:58 11/23/16 UTC
+Starting New Session at 10:18:31 11/23/16 UTC
+Connected with result code 0
+------Received Message-------
+Message: mqtt-subscription-Gateway_Work_2_Receiveqos1 est
+test2
+Value Erro, probs something stupid happened
+Unexpected Disconnect 10:19:02 11/23/16 UTC Reconnecting
+Exception hit at mqtt reconnect
+Exception hit at mqtt reconnect
+Exception hit at mqtt reconnect
+Exception hit at mqtt reconnect
+Connected with result code 0
+Exception hit at mqtt reconnect
+Connected with result code 0
+Starting New Session at 10:21:49 11/23/16 UTC
+Connected with result code 0
+------Received Message-------
+Message: mqtt-subscription-Gateway_Work_2_Receiveqos1 es
+test
+Value Erro, probs something stupid happened
+Unexpected Disconnect 10:22:31 11/23/16 UTC Reconnecting
+Exception hit at mqtt reconnect
+Exception hit at mqtt reconnect
+Exception hit at mqtt reconnect
+Exception hit at mqtt reconnect
+Connected with result code 0
+------Received Message-------
+Message: mqtt-subscription-Gateway_Work_2_Receiveqos1 es
+test
+Value Erro, probs something stupid happened

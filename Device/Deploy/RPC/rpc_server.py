@@ -147,7 +147,8 @@ def deployTask(payload):
                     return "Error: Devices Connection Setup"
                 print ("Device connection configuration successfull")               
 
-            #Region Stuff    
+            #Region Stuff
+            #ToDO: Add Part to Notify Region of this maybe
             if region!=None:
                 print("Region Config Started")
                 region_conf=""
@@ -179,7 +180,8 @@ def deployTask(payload):
                 list_conf.append("apps = "+apps_list)
                 print ("Apps connection configuration successfull")
 
-            #Resource Stuff     
+            #Resource Stuff
+            #ToDo: Add part to notify/resolve Resource
             if resource!=None:
                 print("Resource Config Started")
                 res_list=""
@@ -313,6 +315,7 @@ def on_request(ch, method, properties, body):
     else:
         print("Missing components or failed Auth")
     ch.basic_ack(delivery_tag = method.delivery_tag)
+
 controller_name= Config.get("General","Gateway_Name")
 channel.basic_consume(on_request, queue=Config.get("Admin","queue"))
 apiKey=Config.get("Admin","api_key")
@@ -320,7 +323,7 @@ dev_status=Config.get("Admin","dev_status")
 route = Route.Route(channel)
 karaf=Karaf.Karaf(Config.get("Karaf","user"),Config.get("Karaf","pass"),Config.get("Admin","app_storage"),Config.get("General","location")+"/apps/",Config.get("General","location")+"/configs/",Config.get("Karaf","location")+"/")
 device=Device.Device(Config.get("couchDB","user"),Config.get("couchDB","pass"))
-res=Resource.Resource()
+res=Resource.Resource(Config.get("couchDB","user"),Config.get("couchDB","pass"))
 
 print(" [x] Awaiting RPC requests")
 try:
