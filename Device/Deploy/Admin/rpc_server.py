@@ -13,7 +13,6 @@ import ConfigParser
 Config=ConfigParser.ConfigParser()
 Config.read(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))+"/config.ini")
 
-Config.read(os.getcwd()+"/config.ini")
 
 credentials = pika.PlainCredentials(Config.get("Amqp","user"),Config.get("Amqp","pass"))
 parameters = pika.ConnectionParameters('localhost',int(Config.get("Amqp","port")),Config.get("Amqp","virt"), credentials)
