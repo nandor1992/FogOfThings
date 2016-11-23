@@ -20,7 +20,7 @@ import os,sys
 import ConfigParser
 #Config Settings
 Config=ConfigParser.ConfigParser()
-Config.read(os.path.dirname(os.path.dirname(os.path.realpath(__file__)))+"/config.ini")
+Config.read(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))+"/config.ini")
 
 exitFlag = 0        
     
