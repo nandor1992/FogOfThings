@@ -9,6 +9,7 @@ import json
 import time
 import os,sys
 import ConfigParser
+import Region
 #Config Settings
 Config=ConfigParser.ConfigParser()
 Config.read(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))+"/config.ini")
@@ -44,12 +45,16 @@ def resolve(payload):
             response=removeTask(" ".join(components[1:]))
         else:
             print("No subtask found")
-    elif components[0]=='region':
-        print("Region Add Task")
-        if components[1]=='add':
-            print("Add region")
+    elif components[0]=='cluster':
+        print("Cluster")
+        if components[1]=='dicover':
+            print("Discover Cluster")
             #To-DO Create Queue add route to karaf
-        elif components[1]=='remove':
+            response=discoverRegion()
+        elif components[1]=='new':
+            print("Delete region")
+            #To-Do Delete Queue add route to karaf
+        elif components[1]=='join':
             print("Delete region")
             #To-Do Delete Queue add route to karaf
         else:
@@ -58,6 +63,8 @@ def resolve(payload):
         print("No task found")
     return response
 
+def discoverRegion():
+    return reg.reg.getDevsOnWan(Config.get("Cluster","peer_hawrdware"))
 
 def routeTask(kind,payload):
     my_j=jsonize(payload)
@@ -157,12 +164,14 @@ def deployTask(payload):
                     if str(reg["key"])=="":
                         result2b=route.add("region_resolve","reg_"+str(reg["name"]),{"app":name,"region":str(reg["name"])})
                         result2d=route.addExBind("region","apps_resolve",{"app":name,"region":str(reg["name"])})
+                        result3=route.add("apps_resolve","karaf_app",{"app":name})
                     else:
                         result2b=route.add("region_resolve","reg_"+str(reg["name"]),{"app":name,"region":str(reg["name"])})
                         result2d=route.addExBind("region","apps_resolve",{"app":name,"region":str(reg["name"]),"key":str(reg["key"])})
+                        esult3=route.add("apps_resolve","karaf_app",{"app":name})
                 result2c=route.add("apps_resolve","karaf_app",{"app":name})
                 list_conf.append("region = "+region_conf[:-1])
-                if result2!="ok" or result2b!="ok" or result2c!="ok" or result2b!="ok":
+                if result2!="ok" or result2b!="ok" or result2c!="ok" or result2b!="ok" or result3!="ok":
                     return "Error: Region Connection Setup"
                 else:
                     print ("Region connection configuration successfull")
@@ -323,6 +332,7 @@ route = Route.Route(channel)
 karaf=Karaf.Karaf(Config.get("Karaf","user"),Config.get("Karaf","pass"),Config.get("Admin","app_storage"),Config.get("General","location")+"/apps/",Config.get("General","location")+"/configs/",Config.get("Karaf","location")+"/")
 device=Device.Device(Config.get("couchDB","user"),Config.get("couchDB","pass"))
 res=Resource.Resource(Config.get("couchDB","user"),Config.get("couchDB","pass"))
+reg=Region.Region()
 
 print(" [x] Awaiting RPC requests")
 try:

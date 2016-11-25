@@ -12,8 +12,95 @@ import scapy.route
 import socket
 import math
 import errno
+import pycurl
+import os, sys
+import json
+from StringIO import StringIO
 
 class Region:
+    def __init__(self,rab_user,rab_pass,vhost,c_user,c_pass):
+        self.rab_user=rab_user
+        self.rab_pass=rab_pass
+        self.rab_vhost=vhost
+        self.c_user=c_user
+        self.c_pass=c_pass
+
+    def getCouchNodes(self):
+        buffer=StringIO()
+        c=pycurl.Curl()
+        host="http://localhost:5986/_membership"
+        c.setopt(c.URL,host)
+        c.setopt(c.WRITEDATA,buffer)
+        c.setopt(c.USERPWD,'%s:%s' %(self.c_user,self.c_pass))
+        c.setopt(c.CUSTOMREQUEST,"GET")
+        c.perform()
+        resp=c.getinfo(c.RESPONSE_CODE)
+        print(resp)
+        print(buffer.getvalue())
+        c.close()
+        if resp==204:
+            return "ok"
+        else:
+            return "Error"         
+
+    def setClustQueue(self,name):
+        c=pycurl.Curl()
+        #c.setopt(c.URL,"http://localhost:15672/api/paremeters/federation-upstream/%2f/my-upstream")
+        c.setopt(c.URL,"http://localhost:15672/api/exchanges/"+self.rab_vhost+"/federation."+name)
+        c.setopt(c.CUSTOMREQUEST,"PUT")
+        c.setopt(pycurl.HTTPHEADER,['Content-type: application/json'])
+        data = '{"auto_delete":false,"durable":true}'
+        c.setopt(c.POSTFIELDS,data)
+        c.setopt(c.USERPWD,'%s:%s' %(self.rab_user,self.rab_pass))
+        c.perform()
+        resp=c.getinfo(c.HTTP_CODE)
+        c.close()
+        if resp==204:
+            return "ok"
+        else:
+            return "Error"
+
+    def createFedPolicy(self):
+        buffer=StringIO()
+        c=pycurl.Curl()
+        #c.setopt(c.URL,"http://localhost:15672/api/paremeters/federation-upstream/%2f/my-upstream")
+        host="http://localhost:15672/api/policies/"+self.rab_vhost+"/federate-me"
+        c.setopt(c.URL,host)
+        c.setopt(c.WRITEDATA,buffer)
+        c.setopt(c.USERPWD,'%s:%s' %(self.rab_user,self.rab_pass))
+        c.setopt(pycurl.HTTPHEADER,['Content-type: application/json'])
+        data2 = json.dumps({"pattern":"^federation\.","definition":{"federation-upstream-set":"all"},"apply-to":"exchanges"})
+        c.setopt(pycurl.POSTFIELDS,data2)
+        c.setopt(c.CUSTOMREQUEST,"PUT")
+        c.perform()
+        resp=c.getinfo(c.RESPONSE_CODE)
+        c.close()
+        if resp==204:
+            return "ok"
+        else:
+            return "Error"
+
+    def addUpstream(self,user,passw,addr,virt):
+        buffer=StringIO()
+        c=pycurl.Curl()
+        host="http://localhost:15672/api/parameters/federation-upstream/"+self.rab_vhost+"/Fed-upstream"
+        c.setopt(c.URL,host)
+        c.setopt(c.WRITEDATA,buffer)
+        c.setopt(c.USERPWD,'%s:%s' %(self.rab_user,self.rab_pass))
+        c.setopt(pycurl.HTTPHEADER,['Content-type: application/json'])
+        data2 = json.dumps({"value":{"uri":"amqp://"+user+":"+passw+"@"+addr+"/"+virt,"ack-mode":"on-confirm","trust-user-id":True}})
+        print(data2)
+        c.setopt(pycurl.POSTFIELDS,data2)
+        c.setopt(c.CUSTOMREQUEST,"PUT")
+        c.perform()
+        resp=c.getinfo(c.RESPONSE_CODE)
+        c.close()
+        if resp==204:
+            return "ok"
+        else:
+            return "Error"        
+        
+    ## Below only for Discovery of Stuff
     def long2net(self,arg):
         if (arg <= 0 or arg >= 0xFFFFFFFF):
             raise ValueError("illegal netmask value", hex(arg))
@@ -37,7 +124,6 @@ class Region:
             for s, r in ans.res:
                 try:
                     hostname = socket.gethostbyaddr(r.psrc)
-                    print(r.sprintf("%Ether.src%")[0:8]+" - "+r.sprintf("%ARP.psrc%"))
                     if (r.sprintf("%Ether.src%")[0:8].upper()==ref.upper()):
                         results.append([r.sprintf("%Ether.src%"),r.sprintf("%ARP.psrc%"),hostname[0]])
                 except socket.herror:
@@ -74,5 +160,8 @@ class Region:
         return res
     
 if __name__ == "__main__":
-        reg=Region()
-        print(reg.getDevsOnWan("B8:27:EB")) # This is Raspi
+    reg=Region("admin","hunter","test","admin","hunter")
+    print(reg.getCouchNodes())
+    #print(reg.setClustQueue('test'))
+    #print(reg.createFedPolicy()) # This is Raspi
+    #print(reg.addUpstream("admin","hunter","10.0.0.68","test"))
