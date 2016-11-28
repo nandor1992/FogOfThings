@@ -21,15 +21,12 @@ channel = connection.channel()
 channel.basic_qos(prefetch_count=1)
 
 
-map_databases = '''function(doc){
-        emit(doc.datetime,doc.payload);
-        }'''
 couch=couchdb.Server('http://'+Config.get("couchDB","user")+':'+Config.get("couchDB","pass")+'@127.0.0.1:5984/')
 
 def getData(db,first,last):
     resp=""
     print ("Data: "+first+" "+last)
-    look=db.query(map_databases)
+    look=db.view('views/payload')
     for p in look[first:last]:
         print(p.value)
         resp=resp+p.value+";"
@@ -41,7 +38,7 @@ def on_request(ch, method, properties, body):
     if (req_type=="add"):
         print("Received Add Message")
         db=couch["app_"+app_name.lower()]
-        db.save({'datetime':datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),'payload':body})
+        db.save({'datetime':datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),'gateway':Config.get("General","Gateway_Name"),'payload':body})
     if (req_type=="get"):
         print("Received Get Message")
         db=couch["app_"+app_name.lower()]

@@ -100,3 +100,31 @@ Keyboard baby
 Exiting Main Thread
 Exiting Blue Stuff for 14:DD:A9:32:E9:A4
 Exiting Server
+Bluetooth Radio started: 13:14:23 11/28/16 UTC
+Bluetooth Radio started: 13:15:33 11/28/16 UTC
+found 1 devices
+Dev: AC:72:89:FC:4A:BC - NANDOR-PC 
+Started Server Thread
+Waiting for connection on RFCOMM channel 1
+Starting Blue Stuff for 14:DD:A9:32:E9:A4
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Register data received
+Json Parts!
+Found details UyUUZUyY
+UyUUZUyY-14:DD:A9:32:E9:A4
+Sending: {'bn':['trans:id:239','urn:dev:id:UyUUZUyY']}
+--------Message Received from: 14:DD:A9:32:E9:A4-------
+Normal data received
+UyUUZUyY
+[{'v': 'msg:test', 'n': 'cmd'}]
+---------Send Data---------
+[{'n':'test','v':'nothing'}]
+UyUUZUyY
+Found details
+{'e':[{'n':'test','v':'nothing'}],'bn':'urn:dev:id:UyUUZUyY'}
+UyUUZUyY-14:DD:A9:32:E9:A4
+Sending: {'e':[{'n':'test','v':'nothing'}],'bn':'urn:dev:id:UyUUZUyY'}
+Keyboard baby
+Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+Exiting Main Thread
+Exiting Server

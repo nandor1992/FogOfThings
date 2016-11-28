@@ -4,7 +4,9 @@ import sqlite3
 import datetime
 import couchdb
 couch = couchdb.Server('http://admin:hunter@127.0.0.1:5984/')
-db=couch['xbee']
+#db=couch['blue']
+#db=couch['rf24']
+db=couch['rf434']
 #db = couch.create('xbee') # newly created
 #db= couch['test']
 #print(db['2fd23a3905ce773e2c5acc63ec000bba'])
@@ -14,7 +16,7 @@ db=couch['xbee']
 #path='/home/pi/databases/zigbeedb.db'
 #path ='/home/pi/FogOfThings/Device/databases/ardu_blue.db'
 #path ='/home/pi/FogOfThings/Device/databases/ardu_rf24.db'
-path ='/home/pi/FogOfThings/Device/databases/zigbeedb.db'
+path ='/home/pi/FogOfThings/Device/databases/atmega128rfa1.db'
 conn = sqlite3.connect(path)
 c=conn.cursor()
 c.execute("SELECT * FROM devices")

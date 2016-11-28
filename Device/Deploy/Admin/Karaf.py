@@ -1,6 +1,5 @@
 #!/usr/bin/env/python
 import pycurl
-import sqlite3
 from StringIO import StringIO
 import os, sys
 import json
@@ -176,7 +175,8 @@ class Karaf:
         os.remove(self.apach+fname+".cfg")
         return "ok"
 
-#k=Karaf('karaf','karaf',"http://10.0.0.63/swift/v1/test/","/home/pi/apps/","/home/pi/configs/","/home/pi/apache-karaf-4.0.5/etc/")
+if __name__ == "__main__":
+    k=Karaf('karaf','karaf',"http://10.0.0.63/swift/v1/test/","/home/pi/apps/","/home/pi/configs/","/home/pi/apache-karaf-4.0.5/etc/")
 #result=k.getBundleInfo(123)
 #result=k.deployBundle("dummy_app-0.0.1-SNAPSHOT.jar")
 #result=k.modifyConfig("org.karaf.test","test","test1")

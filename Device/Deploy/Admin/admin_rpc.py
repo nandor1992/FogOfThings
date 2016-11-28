@@ -49,14 +49,16 @@ def resolve(payload):
         print("Cluster")
         if components[1]=='dicover':
             print("Discover Cluster")
-            #To-DO Create Queue add route to karaf
             response=discoverRegion()
         elif components[1]=='new':
-            print("Delete region")
-            #To-Do Delete Queue add route to karaf
+            print("Create new Cluster")
+            #To-Do Create new Cluster 
         elif components[1]=='join':
             print("Delete region")
-            #To-Do Delete Queue add route to karaf
+            #Join cluster on ip
+        elif components[1]=='resolve':
+            print("Delete region")
+            #Do discovery and everything to find peers
         else:
             print("No subtask found")
     else:
@@ -331,8 +333,8 @@ dev_status=Config.get("Admin","dev_status")
 route = Route.Route(channel)
 karaf=Karaf.Karaf(Config.get("Karaf","user"),Config.get("Karaf","pass"),Config.get("Admin","app_storage"),Config.get("General","location")+"/apps/",Config.get("General","location")+"/configs/",Config.get("Karaf","location")+"/")
 device=Device.Device(Config.get("couchDB","user"),Config.get("couchDB","pass"))
-res=Resource.Resource(Config.get("couchDB","user"),Config.get("couchDB","pass"))
-reg=Region.Region()
+res=Resource.Resource(Config.get("couchDB","user"),Config.get("couchDB","pass"),Config.get("General","Gateway_Name"))
+reg=Region.Region(Config.get("Amqp","user"),Config.get("Amqp","pass"),Config.get("Amqp","virt"),Config.get("couchDB","user"),Config.get("couchDB","pass"))
 
 print(" [x] Awaiting RPC requests")
 try:
