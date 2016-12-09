@@ -25,21 +25,60 @@ class Region:
         self.c_user=c_user
         self.c_pass=c_pass
 
+    def addCouchNode(self,ip,user,passw):
+        buffer=StringIO()
+        c=pycurl.Curl()
+        host="http://10.0.0.68:5986/_nodes/couchdb@"+ip
+        c.setopt(c.URL,host)
+        c.setopt(c.WRITEDATA,buffer)
+        c.setopt(c.USERPWD,'%s:%s' %(self.c_user,self.c_pass))
+        data = '{}'
+        c.setopt(c.POSTFIELDS,data)
+        c.setopt(c.CUSTOMREQUEST,"PUT")
+        c.perform()
+        resp=c.getinfo(c.RESPONSE_CODE)
+        c.close()
+        print(resp)
+        print(buffer.getvalue())
+        if resp==200:
+            return buffer.getvalue()
+        else:
+            return "Error"         
+
+    def removeCouchNode(self,ip,user,passw):
+        buffer=StringIO()
+        c=pycurl.Curl()
+        host="http://10.0.0.68:5984/_nodes/couchdb@"+ip
+        c.setopt(c.URL,host)
+        c.setopt(c.WRITEDATA,buffer)
+        c.setopt(c.USERPWD,'%s:%s' %(self.c_user,self.c_pass))
+        data = '{}'
+        c.setopt(c.POSTFIELDS,data)
+        c.setopt(c.CUSTOMREQUEST,"DELETE")
+        c.perform()
+        resp=c.getinfo(c.RESPONSE_CODE)
+        c.close()
+        print(resp)
+        print(buffer.getvalue())
+        if resp==200:
+            return buffer.getvalue()
+        else:
+            return "Error"     
+
+        
     def getCouchNodes(self):
         buffer=StringIO()
         c=pycurl.Curl()
-        host="http://localhost:5986/_membership"
+        host="http://127.0.0.1:5984/_membership"
         c.setopt(c.URL,host)
         c.setopt(c.WRITEDATA,buffer)
         c.setopt(c.USERPWD,'%s:%s' %(self.c_user,self.c_pass))
         c.setopt(c.CUSTOMREQUEST,"GET")
         c.perform()
         resp=c.getinfo(c.RESPONSE_CODE)
-        print(resp)
-        print(buffer.getvalue())
         c.close()
-        if resp==204:
-            return "ok"
+        if resp==200:
+            return buffer.getvalue()
         else:
             return "Error"         
 
@@ -162,6 +201,8 @@ class Region:
 if __name__ == "__main__":
     reg=Region("admin","hunter","test","admin","hunter")
     print(reg.getCouchNodes())
+   # print(reg.removeCouchNode("10.0.0.68","admin","hunter"))
+    print(reg.addCouchNode("10.0.0.67","admin","hunter"))
     #print(reg.setClustQueue('test'))
     #print(reg.createFedPolicy()) # This is Raspi
     #print(reg.addUpstream("admin","hunter","10.0.0.68","test"))
