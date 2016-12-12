@@ -121,13 +121,13 @@ class AmqpClient:
             print "Non json payload"
         try:
             #gw_name=method.routing_key.split(".")[2]
-            if 'source' and 'uuid' and 'name'and 'payload' and 'datetime' and 'api_key' in my_json:
+            if set(['source','uuid' , 'name', 'payload' ,'datetime' , 'api_key']).issubset(my_json):
                 if my_json["api_key"]==self.api_key:
                     print("Response Values okay")
                     self.responseResolve(my_json['uuid'],my_json['name'],my_json['payload'],my_json['datetime'])
                 else:
                     print("Wrong Api Key!")
-            elif 'local_ip' and 'uuid' and 'name' and "hw_addr" and "peers" and "info" and "request" and "api_key" in my_json:
+            elif set(['local_ip' , 'uuid' , 'name' ,"hw_addr" , "peers" , "info" , "request" , "api_key"]).issubset(my_json):
                 gw_name=my_json["name"]
                 uuid=my_json["uuid"]
                 ip=my_json["local_ip"]
@@ -143,6 +143,8 @@ class AmqpClient:
                         print("It wants to do something else")
                 else:
                     print("Wrong Api Key!")
+            else:
+                print("Doesn't fit anything!)
         except:
             print("Key Error or Incomplete Values!")
 
