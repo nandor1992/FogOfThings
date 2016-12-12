@@ -96,6 +96,9 @@ class AmqpClient:
             del(resp['old_peers'])
             self.publishMsg(gw_name,"self init",resp)
 
+    def responseResolve(self,uuid,name,payload,datetime):
+        print("Response Received with uuid: "+,uuid+" name: "+name+" datetime: "+datetime+" payload: "+payload)
+    
     def publishMsg(self,name,what,msg):
         uuid=reg_api=''.join(random.choice(ascii_letters) for i in range(16))
         send={'type':'admin','source':'Cloud_Controller','uuid':uuid,'api_key':self.api_key}
@@ -118,22 +121,29 @@ class AmqpClient:
             print "Non json payload"
         try:
             #gw_name=method.routing_key.split(".")[2]
-            gw_name=my_json["name"]
-            uuid=my_json["uuid"]
-            ip=my_json["local_ip"]
-            hw_addr=my_json["hw_addr"]
-            peers=my_json["peers"]
-            gw_info=my_json["info"]
-            req=my_json["request"]
-            if my_json["api_key"]==self.api_key:
-                print("All values okay")
-                if (req=="register"):
-                    self.resolveReg(gw_name,uuid,ip,hw_addr,peers,gw_info)
+            if 'source' and 'uuid' and 'name'and 'payload' and 'datetime' and 'api_key' in my_json:
+                if my_json["api_key"]==self.api_key:
+                    print("Response Values okay")
+                    self.responseResolve(my_json['uuid'],my_json['name'],my_json['payload'],my_json['datetime'])
                 else:
-                    print("It wants to do something else")
-            else:
-                print("Wrong Api Key!")
-        except ValueError or IndexError:
+                    print("Wrong Api Key!")
+            elif 'local_ip' and 'uuid' and 'name' and "hw_addr" and "peers" and "info" and "request" and "api_key" in my_json:
+                gw_name=my_json["name"]
+                uuid=my_json["uuid"]
+                ip=my_json["local_ip"]
+                hw_addr=my_json["hw_addr"]
+                peers=my_json["peers"]
+                gw_info=my_json["info"]
+                req=my_json["request"]
+                if my_json["api_key"]==self.api_key:
+                    print("All values okay")
+                        if (req=="register"):
+                            self.resolveReg(gw_name,uuid,ip,hw_addr,peers,gw_info)
+                        else:
+                            print("It wants to do something else")
+                else:
+                    print("Wrong Api Key!")
+        except:
             print("Key Error or Incomplete Values!")
 
 

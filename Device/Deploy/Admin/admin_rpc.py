@@ -23,6 +23,7 @@ channel = connection.channel()
 channel.basic_qos(prefetch_count=1)
 
 def resolve(payload):
+    print(payload)
     response="Error"
     components=payload.split(' ')
     if components[0]=='route':
@@ -61,6 +62,25 @@ def resolve(payload):
             #Do discovery and everything to find peers
         else:
             print("No subtask found")
+    elif components[0]=='register':
+        print("Register")
+        response="ok"
+        if components[1]=='add':
+            print("Add Node")
+        elif components[1]=='remove':
+            print("Remove Node")
+        elif components[1]=='update':
+            print("Update Node, for new master ip")
+        elif components[1]=='deregister':
+            print("Deregistter node and start over ")
+        elif components[1]=='self':
+            print("Self")
+            if components[2]=='nothing':
+                print("Update Variables received but nothing else to do")
+            elif components[2]=='init':
+                print("Initialize node to 0 and add itself to cluster received")
+            elif components[2]=='update':
+                print("New Ip for me the Master")
     else:
         print("No task found")
     return response
@@ -305,8 +325,9 @@ def jsonize(payload):
         print "Value Erro, probs something stupid happened"
         return None
 
-def checkAuth(key):
-    if apiKey==key:
+def checkAuth(key,source):
+    #Maybe need to consider other mqtt-keys or maybe not 
+    if key==Config.get("Mqtt1","admin_api"):
         return True
     else:
         return False
@@ -316,10 +337,10 @@ def on_request(ch, method, properties, body):
     source=properties.headers.get("source")
     uuid=properties.headers.get("uuid")
     api_key=properties.headers.get("api_key")
-    if (cloud_conn!=None and source!=None and uuid != None and checkAuth(api_key)):
+    if (cloud_conn!=None and source!=None and uuid != None and checkAuth(api_key,cloud_conn)):
         print("-----Received Request from Cloud-----")
         response = resolve(body)
-        properties_m=pika.BasicProperties(headers={'cloud': ""+cloud_conn, 'source':""+source ,'controller':'raspi01', 'uuid':uuid, 'datetime':""+datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
+        properties_m=pika.BasicProperties(headers={'name':controller_name,'api_key':api_key,'cloud':""+cloud_conn, 'source':""+source , 'uuid':uuid, 'datetime':""+datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
         ch.basic_publish(exchange='cloud_resolve', routing_key='', properties=properties_m ,body=str(response))
         print("---Request processed and Reponse Sent----")
     else:

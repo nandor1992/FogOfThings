@@ -6,3 +6,69 @@ Broker started: 14:04:01 11/16/16 UTC
  [*] Waiting for messages. To exit press CTRL+C
 Keyboard baby
 Exiting Main Thread
+Broker started: 18:00:58 12/12/16 UTC
+ [*] Waiting for messages. To exit press CTRL+C
+[x] Received 'Error'
+Non json payload
+{"source": "Cloud_Controller", "datetime": "2016-12-12 18:02:25", "payload": "Error", "cloud": "mqtt_conn1", "uuid": "CwXPFvIxZmVqUvVw"}
+Message Sent with result: 0 Message Id: 1
+[x] Received 'Error'
+Non json payload
+{"source": "Cloud_Controller", "datetime": "2016-12-12 18:03:23", "payload": "Error", "cloud": "mqtt_conn1", "uuid": "eUxFoHgEQfhHTwEe"}
+Message Sent with result: 0 Message Id: 2
+[x] Received 'Error'
+Non json payload
+{"source": "Cloud_Controller", "datetime": "2016-12-12 18:03:36", "payload": "Error", "cloud": "mqtt_conn1", "uuid": "VIlmcSpozEDkkthW"}
+Message Sent with result: 0 Message Id: 3
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "datetime": "2016-12-12 18:13:40", "payload": "ok", "cloud": "mqtt_conn1", "uuid": "HyKHGtpFlsfLtbVQ"}
+Message Sent with result: 0 Message Id: 4
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "datetime": "2016-12-12 18:15:56", "payload": "ok", "cloud": "mqtt_conn1", "uuid": "pMNAMoaJbzftNMBB"}
+Message Sent with result: 0 Message Id: 5
+Broker started: 18:26:14 12/12/16 UTC
+ [*] Waiting for messages. To exit press CTRL+C
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "datetime": "2016-12-12 18:26:20", "payload": "ok", "cloud": "mqtt_conn1", "uuid": "UunJjItoIjDbfhhs"}
+Message Sent with result: 0 Message Id: 1
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "name": "Gateway_Work_2", "datetime": "2016-12-12 18:26:39", "payload": "ok", "cloud": "mqtt_conn1", "uuid": "jmLJBqWsNhSqtBDg"}
+Message Sent with result: 0 Message Id: 2
+Keyboard baby
+Exiting Main Thread
+Broker started: 18:30:01 12/12/16 UTC
+ [*] Waiting for messages. To exit press CTRL+C
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "name": "Gateway_Work_2", "datetime": "2016-12-12 18:30:06", "payload": "ok", "cloud": "mqtt_conn1", "uuid": "cvlfzkTZhroJrLfF"}
+Message Sent with result: 0 Message Id: 1
+Keyboard baby
+Exiting Main Thread
+Broker started: 18:30:27 12/12/16 UTC
+ [*] Waiting for messages. To exit press CTRL+C
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "name": "Gateway_Work_2", "datetime": "2016-12-12 18:30:29", "payload": "ok", "cloud": "mqtt_conn1", "uuid": "bkxbITlMuNCKRrmn"}
+Message Sent with result: 0 Message Id: 1
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "TCqvPiousFrvUtit", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 18:50:39"}
+Message Sent with result: 0 Message Id: 2
+Keyboard baby
+Exiting Main Thread
+Broker started: 18:51:52 12/12/16 UTC
+ [*] Waiting for messages. To exit press CTRL+C
+Broker started: 18:53:07 12/12/16 UTC
+ [*] Waiting for messages. To exit press CTRL+C
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "APHDgvQERlsJfYkX", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 18:53:22"}
+Message Sent with result: 0 Message Id: 1
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "qmVftvqrMBeCTOCE", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 18:53:23"}
+Message Sent with result: 0 Message Id: 2
