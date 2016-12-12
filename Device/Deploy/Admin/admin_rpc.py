@@ -67,20 +67,29 @@ def resolve(payload):
         response="ok"
         if components[1]=='add':
             print("Add Node")
+            ##Do This for basic Add new GW
+            ##Add node to Couchdb and Rabbitmq cluster, update Database with it's value
         elif components[1]=='remove':
             print("Remove Node")
+            ##Remove node from Rabbitmq and Couchdb, update Database with it's value 
         elif components[1]=='update':
             print("Update Node, for new master ip")
+            ##De-register rabbitmq and CLuster and register with new Admin 
         elif components[1]=='deregister':
-            print("Deregistter node and start over ")
+            print("Deregister node and start over ")
+            ##Delete all nodes from CouchDB and Rabbitmq and start registration process again
         elif components[1]=='self':
             print("Self")
             if components[2]=='nothing':
                 print("Update Variables received but nothing else to do")
+                #Do This for Existing gateway return stuff
+                ##Just update values for cluster inside config.ini
             elif components[2]=='init':
                 print("Initialize node to 0 and add itself to cluster received")
+                #Add cluster in couchdb and rabbitmq to cluster and modify existing init stuff
             elif components[2]=='update':
                 print("New Ip for me the Master")
+                ##Find out how to modify couchdb ip, rest should be fine, update values in Database
     else:
         print("No task found")
     return response
@@ -358,6 +367,7 @@ res=Resource.Resource(Config.get("couchDB","user"),Config.get("couchDB","pass"),
 reg=Region.Region(Config.get("Amqp","user"),Config.get("Amqp","pass"),Config.get("Amqp","virt"),Config.get("couchDB","user"),Config.get("couchDB","pass"))
 
 print(" [x] Awaiting RPC requests")
+#To-Do: Send initail request to Cloud and then notify the main process maybe....or am I the main process
 try:
     channel.start_consuming()     
 except KeyboardInterrupt:
