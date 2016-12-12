@@ -97,7 +97,7 @@ class AmqpClient:
             self.publishMsg(gw_name,"self init",resp)
 
     def responseResolve(self,uuid,name,payload,datetime):
-        print("Response Received with uuid: "+,uuid+" name: "+name+" datetime: "+datetime+" payload: "+payload)
+        print("Response Received with uuid: "+uuid+" name: "+name+" datetime: "+datetime+" payload: "+payload)
     
     def publishMsg(self,name,what,msg):
         uuid=reg_api=''.join(random.choice(ascii_letters) for i in range(16))
@@ -137,10 +137,10 @@ class AmqpClient:
                 req=my_json["request"]
                 if my_json["api_key"]==self.api_key:
                     print("All values okay")
-                        if (req=="register"):
-                            self.resolveReg(gw_name,uuid,ip,hw_addr,peers,gw_info)
-                        else:
-                            print("It wants to do something else")
+                    if (req=="register"):
+                        self.resolveReg(gw_name,uuid,ip,hw_addr,peers,gw_info)
+                    else:
+                        print("It wants to do something else")
                 else:
                     print("Wrong Api Key!")
         except:
