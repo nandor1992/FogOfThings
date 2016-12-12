@@ -144,7 +144,7 @@ class AmqpClient:
                 else:
                     print("Wrong Api Key!")
             else:
-                print("Doesn't fit anything!)
+                print("Doesn't fit anything!")
         except:
             print("Key Error or Incomplete Values!")
 
