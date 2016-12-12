@@ -15,6 +15,7 @@ import errno
 import pycurl
 import os, sys
 import json
+import ast
 from StringIO import StringIO
 
 class Region:
@@ -25,10 +26,10 @@ class Region:
         self.c_user=c_user
         self.c_pass=c_pass
 
-    def addCouchNode(self,ip,user,passw):
+    def addCouchNode(self,ip):
         buffer=StringIO()
         c=pycurl.Curl()
-        host="http://10.0.0.68:5986/_nodes/couchdb@"+ip
+        host="http://localhost:5986/_nodes/couchdb@"+ip
         c.setopt(c.URL,host)
         c.setopt(c.WRITEDATA,buffer)
         c.setopt(c.USERPWD,'%s:%s' %(self.c_user,self.c_pass))
@@ -38,30 +39,37 @@ class Region:
         c.perform()
         resp=c.getinfo(c.RESPONSE_CODE)
         c.close()
-        print(resp)
-        print(buffer.getvalue())
-        if resp==200:
-            return buffer.getvalue()
+        if resp==201:
+            return "ok"
         else:
             return "Error"         
 
-    def removeCouchNode(self,ip,user,passw):
+    def removeCouchNode(self,ip):
+        #Does not Work!
         buffer=StringIO()
         c=pycurl.Curl()
-        host="http://10.0.0.68:5984/_nodes/couchdb@"+ip
+        host="http://localhost:5986/_nodes/couchdb@"+ip
         c.setopt(c.URL,host)
         c.setopt(c.WRITEDATA,buffer)
         c.setopt(c.USERPWD,'%s:%s' %(self.c_user,self.c_pass))
-        data = '{}'
-        c.setopt(c.POSTFIELDS,data)
+        c.setopt(c.CUSTOMREQUEST,"GET")
+        c.perform()
+        resp=c.getinfo(c.RESPONSE_CODE)
+        c.close()
+        val=ast.literal_eval(buffer.getvalue())
+        rev=val["_rev"]
+        buffer=StringIO()
+        c=pycurl.Curl()
+        host="http://localhost:5986/_nodes/couchdb@"+ip+"?rev="+rev
+        c.setopt(c.URL,host)
+        c.setopt(c.WRITEDATA,buffer)
+        c.setopt(c.USERPWD,'%s:%s' %(self.c_user,self.c_pass))
         c.setopt(c.CUSTOMREQUEST,"DELETE")
         c.perform()
         resp=c.getinfo(c.RESPONSE_CODE)
         c.close()
-        print(resp)
-        print(buffer.getvalue())
         if resp==200:
-            return buffer.getvalue()
+            return "ok"
         else:
             return "Error"     
 
@@ -69,7 +77,7 @@ class Region:
     def getCouchNodes(self):
         buffer=StringIO()
         c=pycurl.Curl()
-        host="http://127.0.0.1:5984/_membership"
+        host="http://localhost:5984/_membership"
         c.setopt(c.URL,host)
         c.setopt(c.WRITEDATA,buffer)
         c.setopt(c.USERPWD,'%s:%s' %(self.c_user,self.c_pass))
@@ -200,9 +208,10 @@ class Region:
     
 if __name__ == "__main__":
     reg=Region("admin","hunter","test","admin","hunter")
-    print(reg.getCouchNodes())
-   # print(reg.removeCouchNode("10.0.0.68","admin","hunter"))
-    print(reg.addCouchNode("10.0.0.67","admin","hunter"))
+    print(reg.getDevsOnWan("B8:27:EB"))
+    #print(reg.removeCouchNode("10.0.0.199"))
+    #print(reg.addCouchNode("10.0.0.199"))
+    #print(reg.getCouchNodes())
     #print(reg.setClustQueue('test'))
     #print(reg.createFedPolicy()) # This is Raspi
     #print(reg.addUpstream("admin","hunter","10.0.0.68","test"))
