@@ -7,6 +7,8 @@ import os,sys
 import uuid
 import ConfigParser
 import GatewayResolver
+import random
+from string import ascii_letters
 class AmqpClient:
     def __init__(self,host,user,passw,port,virt,api_key,res):
         
@@ -30,17 +32,17 @@ class AmqpClient:
         if resp['task']=="None":
             print("Nothing to do device")
             del(resp['task'])
-            self.publishMsg(gw_name,resp)
+            self.publishMsg(gw_name,"self nothing",resp)
         elif resp['task']=="Add New":
             del(resp['task'])
             print(resp)
             print("Notify Cluster leader to add GW")
             #Send message to Leader with info, might modify this 
             msg={'task':'add','peer_ip':ip,'peer_name':resp['name']}
-            self.publishMsg(resp['new_clust'],msg)
+            self.publishMsg(resp['new_clust'],"add",msg)
             #Message for Peer
             del(resp['new_clust'])
-            self.publishMsg(gw_name,resp)
+            self.publishMsg(gw_name,"self init",resp)
         elif resp['task']=="Remove Old":
             del(resp['task'])
             print(resp)
@@ -48,70 +50,75 @@ class AmqpClient:
             #Send message to Leader with info, might modify this 
             for clust in resp['old_clust']:
                 msg={'task':'remove','peer_name':resp['name']}
-                self.publishMsg(clust,msg)
+                self.publishMsg(clust,"remove",msg)
             #Message for Peer
             del(resp['old_clust'])
-            self.publishMsg(gw_name,resp)
+            self.publishMsg(gw_name,"self init",resp)
         elif resp['task']=="New Master":
             del(resp['task'])
             print(resp)
             print("Notify all nodes in cluster that master has changed")
             #Send message to old peers that leader has changed ip
             for peer in resp['peers']:
-                msg={'task':'update master','master_ip':ip}
-                self.publishMsg(peer,msg)
+                msg={'master_ip':ip}
+                self.publishMsg(peer,"update",msg)
             #Message for Peer
             del(resp['peers'])
-            self.publishMsg(gw_name,resp)
+            self.publishMsg(gw_name,"self update",resp)
         elif resp['task']=="Remove Old Add New":
             del(resp['task'])
             print(resp)
             print("Remove Node from one cluster add to another notify both Leaders")
             #Send message to Leader with info, might modify this 
-            msg={'task':'add','peer_ip':ip,'peer_name':resp['name']}
-            self.publishMsg(resp['new_clust'],msg)
+            msg={'peer_ip':ip,'peer_name':resp['name']}
+            self.publishMsg(resp['new_clust'],"add",msg)
             #Send message to Leader with info, might modify this 
             for clust in resp['old_clust']:
-                msg={'task':'remove','peer_name':resp['name']}
-                self.publishMsg(clust,msg)
+                msg={'peer_name':resp['name']}
+                self.publishMsg(clust,"remove",msg)
             #Message for Peer
             del(resp['new_clust'])
             del(resp['old_clust'])
-            self.publishMsg(gw_name,resp)
+            self.publishMsg(gw_name,"self init",resp)
         elif resp['task']=="Notify Workers Add New":
             del(resp['task'])
             print(resp)
             print("Notify Workers of cluster master deletion re-register Add Gw to new cluster ")
             #Notify Workers about master Going Down
             for node in resp['old_peers']:
-                msg={'task':'lost master','master':resp['name']}
-                self.publishMsg(node,msg)
+                msg={'master':resp['name']}
+                self.publishMsg(node,"deregister",msg)
             #Send message to Leader with info, might modify this 
-            msg={'task':'add','peer_ip':ip,'peer_name':resp['name']}
-            self.publishMsg(resp['new_clust'],msg)
+            msg={'peer_ip':ip,'peer_name':resp['name']}
+            self.publishMsg(resp['new_clust'],"add",msg)
             #Message for Peer
             del(resp['new_clust'])
             del(resp['old_peers'])
-            self.publishMsg(gw_name,resp)
+            self.publishMsg(gw_name,"self init",resp)
 
-    def publishMsg(self,name,msg):
-        print("Sending to: "+name+" Message: "+str(msg))
+    def publishMsg(self,name,what,msg):
+        uuid=reg_api=''.join(random.choice(ascii_letters) for i in range(16))
+        send={'type':'admin','source':'Cloud_Controller','uuid':uuid,'api_key':self.api_key}
         ret=json.dumps(msg)
+        send['payload']="register "+what+" "+ret.replace('"',"'")
+        print("Sending to: "+name+" Message: "+str(send))
+        snd=json.dumps(send)
         rt_key="receive."+name
-        self.channel.basic_publish(exchange='amq.topic', routing_key=rt_key, body=ret)
+        self.channel.basic_publish(exchange='amq.topic', routing_key=rt_key, body=snd)
 
 
     def callback(self,ch,method,properties,body):
         try:
             body=body.replace('\n', '').replace('\r', '')
             body=body.replace("'",'"')
-            print("--------------------New Message Received")
+            print("--------------------New Message Received--------------------")
             print(body)
             my_json=json.loads(body);
         except ValueError:
             print "Non json payload"
         try:
-            gw_name=method.routing_key.split(".")[1]
+            #gw_name=method.routing_key.split(".")[2]
+            gw_name=my_json["name"]
             uuid=my_json["uuid"]
             ip=my_json["local_ip"]
             hw_addr=my_json["hw_addr"]
