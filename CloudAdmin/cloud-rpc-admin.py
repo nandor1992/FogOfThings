@@ -33,6 +33,10 @@ class AmqpClient:
             print("Nothing to do device")
             del(resp['task'])
             self.publishMsg(gw_name,"self nothing",resp)
+        elif resp['task']=="Init":
+            print("New Cluster Initialize")
+            del(resp['task'])
+            self.publishMsg(gw_name,"self initClust",resp)
         elif resp['task']=="Add New":
             del(resp['task'])
             print(resp)
@@ -53,7 +57,7 @@ class AmqpClient:
                 self.publishMsg(clust,"remove",msg)
             #Message for Peer
             del(resp['old_clust'])
-            self.publishMsg(gw_name,"self init",resp)
+            self.publishMsg(gw_name,"self initClust",resp)
         elif resp['task']=="New Master":
             del(resp['task'])
             print(resp)

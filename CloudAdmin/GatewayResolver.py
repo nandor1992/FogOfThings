@@ -25,7 +25,7 @@ class GatewayResolver:
 				print("New Clust as Well Create Both")
 				new_cls=self.registerNewClust(new_gw,ip,hw)
 				new_cls['name']=new_gw
-				new_cls['task']="None"
+				new_cls['task']="Init"
 				return new_cls
 			elif clust['reg_role']=="new_slave":
 				print("New Node Inside existing cluster")
@@ -47,7 +47,7 @@ class GatewayResolver:
 					print("No Cluster Found for GW")
 					new_cls=self.registerNewClust(gw[1],ip,hw)
 					new_cls['name']=gw[1]
-					new_cls['task']="None"
+					new_cls['task']="Init"
 					return  new_cls
 				elif my_clust['reg_role']=='master':
 					print("Existing Cluster for GW")
