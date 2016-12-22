@@ -10,10 +10,10 @@ import time
 import os,sys
 import ConfigParser
 import Region
+import ast
 #Config Settings
 Config=ConfigParser.ConfigParser()
 Config.read(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))+"/config.ini")
-
 
 credentials = pika.PlainCredentials(Config.get("Amqp","user"),Config.get("Amqp","pass"))
 parameters = pika.ConnectionParameters('localhost',int(Config.get("Amqp","port")),Config.get("Amqp","virt"), credentials)
@@ -68,6 +68,10 @@ def resolve(payload):
         if components[1]=='add':
             print("Add Node")
             ##Do This for basic Add new GW
+            ret=ast.literal_eval("  ".join(components[2:]))
+            reg.addGwToDatabase(ret['peer_name'],ret['peer_ip'],ret['peer_mac'])
+            reg.addCouchNode(ret['peer_ip'])
+            reg.addUpstream("admin","hunter",ret['peer_ip'],"test")
             ##Add node to Couchdb and Rabbitmq cluster, update Database with it's value
         elif components[1]=='remove':
             print("Remove Node")
@@ -82,10 +86,32 @@ def resolve(payload):
             print("Self")
             if components[2]=='nothing':
                 print("Update Variables received but nothing else to do")
-                #Do This for Existing gateway return stuff
-                ##Just update values for cluster inside config.ini
+                ret=ast.literal_eval("  ".join(components[3:]))
+                if 'master' in ret:
+                    modifyConfig(ret['reg_api'],ret['name'],ret['reg_name'],ret['master'])
+                else:
+                    modifyConfig(ret['reg_api'],ret['name'],ret['reg_name'],None)   
             elif components[2]=='init':
                 print("Initialize node to 0 and add itself to cluster received")
+                ret=ast.literal_eval("  ".join(components[3:]))
+                if 'master' in ret:
+                    modifyConfig(ret['reg_api'],ret['name'],ret['reg_name'],ret['master'])
+                    #Creating 
+                    #To-Do: Purge Everything and then do below one:
+                    reg.setClustQueue(ret['name'])
+                    reg.addUpstream("admin","hunter",ret['master'],"test")
+                else:
+                    modifyConfig(ret['reg_api'],ret['name'],ret['reg_name'],None)
+                    reg.setClustQueue(reg['name'])
+                    reg.initClustDatabase(ret['reg_name'],ret['reg_api'],ret['reg_name'],reg.myIp(),reg.myMac())
+                    #No peers or cluster to connect to, jut purge 
+            elif components[2]=='initClust':
+                print("Initialize node and cluster to 0 you are the master")
+                ret=ast.literal_eval("  ".join(components[3:]))
+                if 'master' in ret:
+                    modifyConfig(ret['reg_api'],ret['name'],ret['reg_name'],ret['master'])
+                else:
+                    modifyConfig(ret['reg_api'],ret['name'],ret['reg_name'],None) 
                 #Add cluster in couchdb and rabbitmq to cluster and modify existing init stuff
             elif components[2]=='update':
                 print("New Ip for me the Master")
@@ -93,6 +119,29 @@ def resolve(payload):
     else:
         print("No task found")
     return response
+
+
+def modifyConfig(reg_api,name,clust_name,admin):
+    Config.set('General','Gateway_Name',name)
+    Config.set('Cluster','cluster_name',clust_name)
+    Config.set('Cluster','peer_key',reg_api)
+    if admin!=None:
+        Config.set('Cluster','cluster_admin',admin)
+    else:
+        Config.set('Cluster','cluster_admin',"This")
+    with open(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))+"/config.ini",'wb') as configfile:
+        Config.write(configfile)
+
+'''[General]
+Gateway_Name: Gateway_Work_2
+location: /home/pi/FogOfThings/Device
+
+[Cluster]
+cluster_admin: This 
+cluster_name: Cluster-First
+peer_hardware: B8:27:EB
+peer_key: randKey1234'''
+
 
 def discoverRegion():
     return reg.reg.getDevsOnWan(Config.get("Cluster","peer_hawrdware"))

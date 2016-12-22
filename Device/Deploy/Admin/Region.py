@@ -16,6 +16,7 @@ import pycurl
 import os, sys
 import json
 import ast
+import couchdb
 from StringIO import StringIO
 
 class Region:
@@ -25,6 +26,30 @@ class Region:
         self.rab_vhost=vhost
         self.c_user=c_user
         self.c_pass=c_pass
+        self.couch=couchdb.Server('http://'+c_user+':'+c_pass+'@127.0.0.1:5984/')
+        self.db=self.couch['admin']
+
+    def reg.myIp():
+        return "10.0.0.67"
+    
+    def reg.myMac():
+        return "dummy-mac"    
+        
+    def addGwToDatabase(self,name,ip,mac):
+        look=self.db.view('views/docs_by_type')
+        for p in look['cluster']:
+            doc=self.db[p.value]
+            doc['nodes_mac'].append(mac)
+            doc['nodes_name'].append(name)
+            doc['nodes_ip'].append(ip)
+        self.db[doc.id]=doc
+
+    def initClustDatabase(self,name,api,c_name,ip,mac):
+        look=self.db.view('views/docs_by_type')
+        for p in look['cluster']:
+            doc=self.db[p.value]
+            self.db.delete(doc)
+        self.db.save({'type':'cluster','reg_api':api,'reg_name':name,'nodes_name':[c_name],'nodes_ip':[ip],'nodes_mac':[mac],'master':[ip,c_name]})
 
     def addCouchNode(self,ip):
         buffer=StringIO()
@@ -208,7 +233,9 @@ class Region:
     
 if __name__ == "__main__":
     reg=Region("admin","hunter","test","admin","hunter")
-    print(reg.getDevsOnWan("B8:27:EB"))
+   # print(reg.getDevsOnWan("B8:27:EB"))
+    #reg.addGwToDatabase("the_Great_test","192.168.0.2","Random MAc")
+    #reg.initClustDatabase("Reg_name","Reg_api","My_name","My-ip","My_MAc")
     #print(reg.removeCouchNode("10.0.0.199"))
     #print(reg.addCouchNode("10.0.0.199"))
     #print(reg.getCouchNodes())

@@ -42,7 +42,7 @@ class AmqpClient:
             print(resp)
             print("Notify Cluster leader to add GW")
             #Send message to Leader with info, might modify this 
-            msg={'task':'add','peer_ip':ip,'peer_name':resp['name']}
+            msg={'peer_ip':ip,'peer_name':resp['name'],'peer_mac':hw_addr}
             self.publishMsg(resp['new_clust'],"add",msg)
             #Message for Peer
             del(resp['new_clust'])
@@ -53,7 +53,7 @@ class AmqpClient:
             print("Notify Leader Remove gateway from cluster")
             #Send message to Leader with info, might modify this 
             for clust in resp['old_clust']:
-                msg={'task':'remove','peer_name':resp['name']}
+                msg={'peer_name':resp['name']}
                 self.publishMsg(clust,"remove",msg)
             #Message for Peer
             del(resp['old_clust'])
@@ -74,7 +74,7 @@ class AmqpClient:
             print(resp)
             print("Remove Node from one cluster add to another notify both Leaders")
             #Send message to Leader with info, might modify this 
-            msg={'peer_ip':ip,'peer_name':resp['name']}
+            msg={'peer_ip':ip,'peer_name':resp['name'],'peer_mac':hw_addr}
             self.publishMsg(resp['new_clust'],"add",msg)
             #Send message to Leader with info, might modify this 
             for clust in resp['old_clust']:

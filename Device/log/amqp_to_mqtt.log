@@ -88,3 +88,67 @@ Message Sent with result: 0 Message Id: 5
 Non json payload
 {"source": "Cloud_Controller", "uuid": "MZTHrMkvaSUHNYGB", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:00:54"}
 Message Sent with result: 0 Message Id: 6
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "qhNHEMROWKyBGbKu", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:25:27"}
+Message Sent with result: 0 Message Id: 7
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "TQcchbkOqhahJELz", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:25:53"}
+Message Sent with result: 0 Message Id: 8
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "zTmsZDwkIMZnBIIg", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:26:11"}
+Message Sent with result: 0 Message Id: 9
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "qlBTeNCmaFVrGNMq", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:26:36"}
+Message Sent with result: 0 Message Id: 10
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "qYdrvxeBIUFOJyPE", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:28:20"}
+Message Sent with result: 0 Message Id: 11
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "QYKJgKJLwmVPxpih", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:29:25"}
+Message Sent with result: 0 Message Id: 12
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "TBeWsIbAiZSciaaK", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:29:45"}
+Message Sent with result: 0 Message Id: 13
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "IItfLndzylftmONA", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:30:24"}
+Message Sent with result: 0 Message Id: 14
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "juAPqwGLyJeYmQuf", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:31:00"}
+Message Sent with result: 0 Message Id: 15
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "kWNZLMoGQMGnJfhx", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:31:21"}
+Message Sent with result: 0 Message Id: 16
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "CTYBAOvMLIjCCjwj", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:48:20"}
+Message Sent with result: 0 Message Id: 17
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "URJiUVYGuRbqDxBL", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:50:07"}
+Message Sent with result: 0 Message Id: 18
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "fJpdnzJvedGntZKH", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:50:55"}
+Message Sent with result: 0 Message Id: 19
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "bwfCflanFSyYqXLt", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:51:44"}
+Message Sent with result: 0 Message Id: 20
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "nJdntvcfwTWfudvM", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:56:05"}
+Message Sent with result: 0 Message Id: 21
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "WeLYeVlzmgthHWlI", "name": "Rosa_7492", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:57:18"}
+Message Sent with result: 0 Message Id: 22
