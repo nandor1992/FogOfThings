@@ -1664,3 +1664,211 @@ Message: receive/Gateway_Work_2 "source": "Cloud_Controller", "api_key": "ThisIs
 {u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'MZTHrMkvaSUHNYGB', 'cloud': 'mqtt_conn1'}
 "register self init {'reg_api': 'TheRegionApi1', 'reg_role': 'slave', 'name': 'Pete_7468', 'reg_name': 'FirstRegion_5622', 'master': '10.0.0.67'}"
 Other message
+------Received Message-------
+Message: receive/Gateway_Work_2 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "qhNHEMROWKyBGbKu", "payload": "register self nothing {'reg_api': 'TheRegionApi1', 'reg_role': 'master', 'reg_name': 'FirstRegion_5622', 'name': 'Mike_5287'}"
+{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "qhNHEMROWKyBGbKu", "payload": "register self nothing {'reg_api': 'TheRegionApi1', 'reg_role': 'master', 'reg_name': 'FirstRegion_5622', 'name': 'Mike_5287'}"}
+{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "register self nothing {'reg_api': 'TheRegionApi1', 'reg_role': 'master', 'reg_name': 'FirstRegion_5622', 'name': 'Mike_5287'}", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "qhNHEMROWKyBGbKu"
+}
+{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'qhNHEMROWKyBGbKu', 'cloud': 'mqtt_conn1'}
+"register self nothing {'reg_api': 'TheRegionApi1', 'reg_role': 'master', 'reg_name': 'FirstRegion_5622', 'name': 'Mike_5287'}"
+Other message
+------Received Message-------
+Message: receive/Gateway_Work_2 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "TQcchbkOqhahJELz", "payload": "register self nothing {'reg_api': 'TheRegionApi1', 'reg_role': 'slave', 'name': 'Rosa_7492', 'reg_name': 'FirstRegion_5622', 'master': '10.0.0.67'}"
+{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "TQcchbkOqhahJELz", "payload": "register self nothing {'reg_api': 'TheRegionApi1', 'reg_role': 'slave', 'name': 'Rosa_7492', 'reg_name': 'FirstRegion_5622', 'master': '10.0.0.67'}"}
+{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "register self nothing {'reg_api': 'TheRegionApi1', 'reg_role': 'slave', 'name': 'Rosa_7492', 'reg_name': 'FirstRegion_5622', 'master': '10.0.0.67'}", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "TQcchbkOqhahJELz"
+}
+{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'TQcchbkOqhahJELz', 'cloud': 'mqtt_conn1'}
+"register self nothing {'reg_api': 'TheRegionApi1', 'reg_role': 'slave', 'name': 'Rosa_7492', 'reg_name': 'FirstRegion_5622', 'master': '10.0.0.67'}"
+Other message
+------Received Message-------
+Message: receive/Gateway_Work_2 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "zTmsZDwkIMZnBIIg", "payload": "register self init {'reg_api': 'TheRegionApi1', 'reg_role': 'slave', 'name': 'Pete_7468', 'reg_name': 'FirstRegion_5622', 'master': '10.0.0.67'}"
+{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "zTmsZDwkIMZnBIIg", "payload": "register self init {'reg_api': 'TheRegionApi1', 'reg_role': 'slave', 'name': 'Pete_7468', 'reg_name': 'FirstRegion_5622', 'master': '10.0.0.67'}"}
+{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "register self init {'reg_api': 'TheRegionApi1', 'reg_role': 'slave', 'name': 'Pete_7468', 'reg_name': 'FirstRegion_5622', 'master': '10.0.0.67'}", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "zTmsZDwkIMZnBIIg"
+}
+{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'zTmsZDwkIMZnBIIg', 'cloud': 'mqtt_conn1'}
+"register self init {'reg_api': 'TheRegionApi1', 'reg_role': 'slave', 'name': 'Pete_7468', 'reg_name': 'FirstRegion_5622', 'master': '10.0.0.67'}"
+Other message
+------Received Message-------
+Message: receive/Gateway_Work_2 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "qlBTeNCmaFVrGNMq", "payload": "register self nothing {'reg_api': 'TheRegionApi2', 'reg_role': 'master', 'reg_name': 'SecondRegion_5622', 'name': 'Pete_7468'}"
+{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "qlBTeNCmaFVrGNMq", "payload": "register self nothing {'reg_api': 'TheRegionApi2', 'reg_role': 'master', 'reg_name': 'SecondRegion_5622', 'name': 'Pete_7468'}"}
+{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "register self nothing {'reg_api': 'TheRegionApi2', 'reg_role': 'master', 'reg_name': 'SecondRegion_5622', 'name': 'Pete_7468'}", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "qlBTeNCmaFVrGNMq"
+}
+{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'qlBTeNCmaFVrGNMq', 'cloud': 'mqtt_conn1'}
+"register self nothing {'reg_api': 'TheRegionApi2', 'reg_role': 'master', 'reg_name': 'SecondRegion_5622', 'name': 'Pete_7468'}"
+Other message
+------Received Message-------
+Message: receive/Gateway_Work_2 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "qYdrvxeBIUFOJyPE", "payload": "register self nothing {'reg_api': 'TheRegionApi2', 'reg_role': 'master', 'reg_name': 'SecondRegion_5622', 'name': 'Pete_7468'}"
+{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "qYdrvxeBIUFOJyPE", "payload": "register self nothing {'reg_api': 'TheRegionApi2', 'reg_role': 'master', 'reg_name': 'SecondRegion_5622', 'name': 'Pete_7468'}"}
+{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "register self nothing {'reg_api': 'TheRegionApi2', 'reg_role': 'master', 'reg_name': 'SecondRegion_5622', 'name': 'Pete_7468'}", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "qYdrvxeBIUFOJyPE"
+}
+{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'qYdrvxeBIUFOJyPE', 'cloud': 'mqtt_conn1'}
+"register self nothing {'reg_api': 'TheRegionApi2', 'reg_role': 'master', 'reg_name': 'SecondRegion_5622', 'name': 'Pete_7468'}"
+Other message
+------Received Message-------
+Message: receive/Gateway_Work_2 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "QYKJgKJLwmVPxpih", "payload": "register self initClust {'reg_api': 'sidXvYWsTTrhgLDR', 'reg_role': 'master', 'reg_name': 'Cluster_Jason_3698', 'name': 'Mccormick_2459'}"
+{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "QYKJgKJLwmVPxpih", "payload": "register self initClust {'reg_api': 'sidXvYWsTTrhgLDR', 'reg_role': 'master', 'reg_name': 'Cluster_Jason_3698', 'name': 'Mccormick_2459'}"}
+{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "register self initClust {'reg_api': 'sidXvYWsTTrhgLDR', 'reg_role': 'master', 'reg_name': 'Cluster_Jason_3698', 'name': 'Mccormick_2459'}", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "QYKJgKJLwmVPxpih"
+}
+{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'QYKJgKJLwmVPxpih', 'cloud': 'mqtt_conn1'}
+"register self initClust {'reg_api': 'sidXvYWsTTrhgLDR', 'reg_role': 'master', 'reg_name': 'Cluster_Jason_3698', 'name': 'Mccormick_2459'}"
+Other message
+------Received Message-------
+Message: receive/Gateway_Work_2 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "TBeWsIbAiZSciaaK", "payload": "register self initClust {'reg_api': 'cUxTDwikUGWXJYgy', 'reg_role': 'master', 'reg_name': 'Cluster_April_1615', 'name': 'Scott_2416'}"
+{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "TBeWsIbAiZSciaaK", "payload": "register self initClust {'reg_api': 'cUxTDwikUGWXJYgy', 'reg_role': 'master', 'reg_name': 'Cluster_April_1615', 'name': 'Scott_2416'}"}
+{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "register self initClust {'reg_api': 'cUxTDwikUGWXJYgy', 'reg_role': 'master', 'reg_name': 'Cluster_April_1615', 'name': 'Scott_2416'}", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "TBeWsIbAiZSciaaK"
+}
+{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'TBeWsIbAiZSciaaK', 'cloud': 'mqtt_conn1'}
+"register self initClust {'reg_api': 'cUxTDwikUGWXJYgy', 'reg_role': 'master', 'reg_name': 'Cluster_April_1615', 'name': 'Scott_2416'}"
+Other message
+------Received Message-------
+Message: receive/Gateway_Work_2 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "IItfLndzylftmONA", "payload": "register self init {'reg_api': 'TheRegionApi1', 'reg_role': 'slave', 'name': 'Pete_7468', 'reg_name': 'FirstRegion_5622', 'master': '10.0.0.67'}"
+{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "IItfLndzylftmONA", "payload": "register self init {'reg_api': 'TheRegionApi1', 'reg_role': 'slave', 'name': 'Pete_7468', 'reg_name': 'FirstRegion_5622', 'master': '10.0.0.67'}"}
+{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "register self init {'reg_api': 'TheRegionApi1', 'reg_role': 'slave', 'name': 'Pete_7468', 'reg_name': 'FirstRegion_5622', 'master': '10.0.0.67'}", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "IItfLndzylftmONA"
+}
+{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'IItfLndzylftmONA', 'cloud': 'mqtt_conn1'}
+"register self init {'reg_api': 'TheRegionApi1', 'reg_role': 'slave', 'name': 'Pete_7468', 'reg_name': 'FirstRegion_5622', 'master': '10.0.0.67'}"
+Other message
+------Received Message-------
+Message: receive/Gateway_Work_2 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "juAPqwGLyJeYmQuf", "payload": "register self nothing {'reg_api': 'TheRegionApi2', 'reg_role': 'master', 'reg_name': 'SecondRegion_5622', 'name': 'Pete_7468'}"
+{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "juAPqwGLyJeYmQuf", "payload": "register self nothing {'reg_api': 'TheRegionApi2', 'reg_role': 'master', 'reg_name': 'SecondRegion_5622', 'name': 'Pete_7468'}"}
+{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "register self nothing {'reg_api': 'TheRegionApi2', 'reg_role': 'master', 'reg_name': 'SecondRegion_5622', 'name': 'Pete_7468'}", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "juAPqwGLyJeYmQuf"
+}
+{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'juAPqwGLyJeYmQuf', 'cloud': 'mqtt_conn1'}
+"register self nothing {'reg_api': 'TheRegionApi2', 'reg_role': 'master', 'reg_name': 'SecondRegion_5622', 'name': 'Pete_7468'}"
+Other message
+------Received Message-------
+Message: receive/Gateway_Work_2 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "kWNZLMoGQMGnJfhx", "payload": "register self init {'reg_api': 'TheRegionApi1', 'reg_role': 'slave', 'name': 'Pete_7468', 'reg_name': 'FirstRegion_5622', 'master': '10.0.0.67'}"
+{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "kWNZLMoGQMGnJfhx", "payload": "register self init {'reg_api': 'TheRegionApi1', 'reg_role': 'slave', 'name': 'Pete_7468', 'reg_name': 'FirstRegion_5622', 'master': '10.0.0.67'}"}
+{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "register self init {'reg_api': 'TheRegionApi1', 'reg_role': 'slave', 'name': 'Pete_7468', 'reg_name': 'FirstRegion_5622', 'master': '10.0.0.67'}", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "kWNZLMoGQMGnJfhx"
+}
+{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'kWNZLMoGQMGnJfhx', 'cloud': 'mqtt_conn1'}
+"register self init {'reg_api': 'TheRegionApi1', 'reg_role': 'slave', 'name': 'Pete_7468', 'reg_name': 'FirstRegion_5622', 'master': '10.0.0.67'}"
+Other message
+------Received Message-------
+Message: receive/Gateway_Work_2 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "CTYBAOvMLIjCCjwj", "payload": "register self nothing {'reg_api': 'TheRegionApi1', 'reg_role': 'master', 'reg_name': 'FirstRegion_5622', 'name': 'Mike_5287'}"
+{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "CTYBAOvMLIjCCjwj", "payload": "register self nothing {'reg_api': 'TheRegionApi1', 'reg_role': 'master', 'reg_name': 'FirstRegion_5622', 'name': 'Mike_5287'}"}
+{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "register self nothing {'reg_api': 'TheRegionApi1', 'reg_role': 'master', 'reg_name': 'FirstRegion_5622', 'name': 'Mike_5287'}", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "CTYBAOvMLIjCCjwj"
+}
+{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'CTYBAOvMLIjCCjwj', 'cloud': 'mqtt_conn1'}
+"register self nothing {'reg_api': 'TheRegionApi1', 'reg_role': 'master', 'reg_name': 'FirstRegion_5622', 'name': 'Mike_5287'}"
+Other message
+------Received Message-------
+Message: receive/Gateway_Work_2 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "URJiUVYGuRbqDxBL", "payload": "register self nothing {'reg_api': 'TheRegionApi1', 'reg_role': 'slave', 'name': 'Rosa_7492', 'reg_name': 'FirstRegion_5622', 'master': '10.0.0.67'}"
+{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "URJiUVYGuRbqDxBL", "payload": "register self nothing {'reg_api': 'TheRegionApi1', 'reg_role': 'slave', 'name': 'Rosa_7492', 'reg_name': 'FirstRegion_5622', 'master': '10.0.0.67'}"}
+{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "register self nothing {'reg_api': 'TheRegionApi1', 'reg_role': 'slave', 'name': 'Rosa_7492', 'reg_name': 'FirstRegion_5622', 'master': '10.0.0.67'}", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "URJiUVYGuRbqDxBL"
+}
+{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'URJiUVYGuRbqDxBL', 'cloud': 'mqtt_conn1'}
+"register self nothing {'reg_api': 'TheRegionApi1', 'reg_role': 'slave', 'name': 'Rosa_7492', 'reg_name': 'FirstRegion_5622', 'master': '10.0.0.67'}"
+Other message
+------Received Message-------
+Message: receive/Gateway_Work_2 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "fJpdnzJvedGntZKH", "payload": "register self nothing {'reg_api': 'TheRegionApi1', 'reg_role': 'slave', 'name': 'Rosa_7492', 'reg_name': 'FirstRegion_5622', 'master': '10.0.0.67'}"
+{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "fJpdnzJvedGntZKH", "payload": "register self nothing {'reg_api': 'TheRegionApi1', 'reg_role': 'slave', 'name': 'Rosa_7492', 'reg_name': 'FirstRegion_5622', 'master': '10.0.0.67'}"}
+{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "register self nothing {'reg_api': 'TheRegionApi1', 'reg_role': 'slave', 'name': 'Rosa_7492', 'reg_name': 'FirstRegion_5622', 'master': '10.0.0.67'}", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "fJpdnzJvedGntZKH"
+}
+{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'fJpdnzJvedGntZKH', 'cloud': 'mqtt_conn1'}
+"register self nothing {'reg_api': 'TheRegionApi1', 'reg_role': 'slave', 'name': 'Rosa_7492', 'reg_name': 'FirstRegion_5622', 'master': '10.0.0.67'}"
+Other message
+------Received Message-------
+Message: receive/Gateway_Work_2 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "bwfCflanFSyYqXLt", "payload": "register self nothing {'reg_api': 'TheRegionApi1', 'reg_role': 'slave', 'name': 'Rosa_7492', 'reg_name': 'FirstRegion_5622', 'master': '10.0.0.67'}"
+{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "bwfCflanFSyYqXLt", "payload": "register self nothing {'reg_api': 'TheRegionApi1', 'reg_role': 'slave', 'name': 'Rosa_7492', 'reg_name': 'FirstRegion_5622', 'master': '10.0.0.67'}"}
+{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "register self nothing {'reg_api': 'TheRegionApi1', 'reg_role': 'slave', 'name': 'Rosa_7492', 'reg_name': 'FirstRegion_5622', 'master': '10.0.0.67'}", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "bwfCflanFSyYqXLt"
+}
+{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'bwfCflanFSyYqXLt', 'cloud': 'mqtt_conn1'}
+"register self nothing {'reg_api': 'TheRegionApi1', 'reg_role': 'slave', 'name': 'Rosa_7492', 'reg_name': 'FirstRegion_5622', 'master': '10.0.0.67'}"
+Other message
+------Received Message-------
+Message: receive/Gateway_Work_2 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "nJdntvcfwTWfudvM", "payload": "register self nothing {'reg_api': 'TheRegionApi1', 'reg_role': 'slave', 'name': 'Rosa_7492', 'reg_name': 'FirstRegion_5622', 'master': '10.0.0.67'}"
+{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "nJdntvcfwTWfudvM", "payload": "register self nothing {'reg_api': 'TheRegionApi1', 'reg_role': 'slave', 'name': 'Rosa_7492', 'reg_name': 'FirstRegion_5622', 'master': '10.0.0.67'}"}
+{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "register self nothing {'reg_api': 'TheRegionApi1', 'reg_role': 'slave', 'name': 'Rosa_7492', 'reg_name': 'FirstRegion_5622', 'master': '10.0.0.67'}", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "nJdntvcfwTWfudvM"
+}
+{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'nJdntvcfwTWfudvM', 'cloud': 'mqtt_conn1'}
+"register self nothing {'reg_api': 'TheRegionApi1', 'reg_role': 'slave', 'name': 'Rosa_7492', 'reg_name': 'FirstRegion_5622', 'master': '10.0.0.67'}"
+Other message
+------Received Message-------
+Message: receive/Gateway_Work_2 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "WeLYeVlzmgthHWlI", "payload": "register self nothing {'reg_api': 'TheRegionApi1', 'reg_role': 'master', 'reg_name': 'FirstRegion_5622', 'name': 'Mike_5287'}"
+{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "WeLYeVlzmgthHWlI", "payload": "register self nothing {'reg_api': 'TheRegionApi1', 'reg_role': 'master', 'reg_name': 'FirstRegion_5622', 'name': 'Mike_5287'}"}
+{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "register self nothing {'reg_api': 'TheRegionApi1', 'reg_role': 'master', 'reg_name': 'FirstRegion_5622', 'name': 'Mike_5287'}", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "WeLYeVlzmgthHWlI"
+}
+{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'WeLYeVlzmgthHWlI', 'cloud': 'mqtt_conn1'}
+"register self nothing {'reg_api': 'TheRegionApi1', 'reg_role': 'master', 'reg_name': 'FirstRegion_5622', 'name': 'Mike_5287'}"
+Other message
