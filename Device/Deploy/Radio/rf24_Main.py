@@ -122,7 +122,17 @@ def messageResolv(my_json):
         channel.basic_publish(exchange='device', routing_key='', body=message_amqp, properties=properties_m)
         updateDevTime(dev_id,"Available")
     else:
-        print("No details found - not forwarding")
+        ##Check if Device listed as belonging to this GW and if yes, add to devList and send msg
+        if datab.checkDevGw(dev_id):
+            message_amqp=json.dumps(my_json["e"])
+            message_amqp=message_amqp.replace('"',"'")
+            message_amqp=message_amqp.replace(' ','')
+            properties_m=pika.BasicProperties(headers={'device':""+dev_id,'comm': ""+gw_name,'datetime':""+datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
+            channel.basic_publish(exchange='device', routing_key='', body=message_amqp, properties=properties_m)
+            updateDevTime(dev_id,"Available")
+            dev_list.append(dev_id)
+        else:
+            print("No details found - not forwarding")
     sys.stdout.flush()
     
 def registerResolv(my_json):
@@ -175,7 +185,21 @@ def sendMssgResolv(data,header):
                 t.start()
         sendRf(send_json)
     else:
-        print("Data received for non existent Dev")
+        ##Check if Device listed as belonging to this GW and if yes, add to devList and send msg
+        if datab.checkDevGw(dev_id):
+            print("Pre-Existing Device")
+            send_json="{'e':"+data+",'bn':'urn:dev:id:"+dev_id+"'}"
+            send_json=send_json.replace(" ","_")
+            print(send_json)
+            #Start timer here
+            if (qos!=None):
+                if (qos=='1'):
+                    t=Timer(5,timeout,[dev_id,send_json,0])
+                    timer_list[dev_id]=t
+                    t.start()
+            sendRf(send_json)
+        else:
+            print("Data received for non existent Dev")
     sys.stdout.flush()
     
 def callback(ch,method,properties,body):
