@@ -10,10 +10,10 @@ import time
 import os,sys
 import ConfigParser
 import Region
+import ast
 #Config Settings
 Config=ConfigParser.ConfigParser()
 Config.read(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))+"/config.ini")
-
 
 credentials = pika.PlainCredentials(Config.get("Amqp","user"),Config.get("Amqp","pass"))
 parameters = pika.ConnectionParameters('localhost',int(Config.get("Amqp","port")),Config.get("Amqp","virt"), credentials)
@@ -23,6 +23,7 @@ channel = connection.channel()
 channel.basic_qos(prefetch_count=1)
 
 def resolve(payload):
+    print(payload)
     response="Error"
     components=payload.split(' ')
     if components[0]=='route':
@@ -61,9 +62,86 @@ def resolve(payload):
             #Do discovery and everything to find peers
         else:
             print("No subtask found")
+    elif components[0]=='register':
+        print("Register")
+        response="ok"
+        if components[1]=='add':
+            print("Add Node")
+            ##Do This for basic Add new GW
+            ret=ast.literal_eval("  ".join(components[2:]))
+            reg.addGwToDatabase(ret['peer_name'],ret['peer_ip'],ret['peer_mac'])
+            reg.addCouchNode(ret['peer_ip'])
+            reg.addUpstream("admin","hunter",ret['peer_ip'],"test")
+            ##Add node to Couchdb and Rabbitmq cluster, update Database with it's value
+        elif components[1]=='remove':
+            print("Remove Node")
+            ##Remove node from Rabbitmq and Couchdb, update Database with it's value 
+        elif components[1]=='update':
+            print("Update Node, for new master ip")
+            ##De-register rabbitmq and CLuster and register with new Admin 
+        elif components[1]=='deregister':
+            print("Deregister node and start over ")
+            ##Delete all nodes from CouchDB and Rabbitmq and start registration process again
+        elif components[1]=='self':
+            print("Self")
+            if components[2]=='nothing':
+                print("Update Variables received but nothing else to do")
+                ret=ast.literal_eval("  ".join(components[3:]))
+                if 'master' in ret:
+                    modifyConfig(ret['reg_api'],ret['name'],ret['reg_name'],ret['master'])
+                else:
+                    modifyConfig(ret['reg_api'],ret['name'],ret['reg_name'],None)   
+            elif components[2]=='init':
+                print("Initialize node to 0 and add itself to cluster received")
+                ret=ast.literal_eval("  ".join(components[3:]))
+                if 'master' in ret:
+                    modifyConfig(ret['reg_api'],ret['name'],ret['reg_name'],ret['master'])
+                    #Creating 
+                    #To-Do: Purge Everything and then do below one:
+                    reg.setClustQueue(ret['name'])
+                    reg.addUpstream("admin","hunter",ret['master'],"test")
+                else:
+                    modifyConfig(ret['reg_api'],ret['name'],ret['reg_name'],None)
+                    reg.setClustQueue(reg['name'])
+                    reg.initClustDatabase(ret['reg_name'],ret['reg_api'],ret['reg_name'],reg.myIp(),reg.myMac())
+                    #No peers or cluster to connect to, jut purge 
+            elif components[2]=='initClust':
+                print("Initialize node and cluster to 0 you are the master")
+                ret=ast.literal_eval("  ".join(components[3:]))
+                if 'master' in ret:
+                    modifyConfig(ret['reg_api'],ret['name'],ret['reg_name'],ret['master'])
+                else:
+                    modifyConfig(ret['reg_api'],ret['name'],ret['reg_name'],None) 
+                #Add cluster in couchdb and rabbitmq to cluster and modify existing init stuff
+            elif components[2]=='update':
+                print("New Ip for me the Master")
+                ##Find out how to modify couchdb ip, rest should be fine, update values in Database
     else:
         print("No task found")
     return response
+
+
+def modifyConfig(reg_api,name,clust_name,admin):
+    Config.set('General','Gateway_Name',name)
+    Config.set('Cluster','cluster_name',clust_name)
+    Config.set('Cluster','peer_key',reg_api)
+    if admin!=None:
+        Config.set('Cluster','cluster_admin',admin)
+    else:
+        Config.set('Cluster','cluster_admin',"This")
+    with open(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))+"/config.ini",'wb') as configfile:
+        Config.write(configfile)
+
+'''[General]
+Gateway_Name: Gateway_Work_2
+location: /home/pi/FogOfThings/Device
+
+[Cluster]
+cluster_admin: This 
+cluster_name: Cluster-First
+peer_hardware: B8:27:EB
+peer_key: randKey1234'''
+
 
 def discoverRegion():
     return reg.reg.getDevsOnWan(Config.get("Cluster","peer_hawrdware"))
@@ -305,8 +383,9 @@ def jsonize(payload):
         print "Value Erro, probs something stupid happened"
         return None
 
-def checkAuth(key):
-    if apiKey==key:
+def checkAuth(key,source):
+    #Maybe need to consider other mqtt-keys or maybe not 
+    if key==Config.get("Mqtt1","admin_api"):
         return True
     else:
         return False
@@ -316,10 +395,10 @@ def on_request(ch, method, properties, body):
     source=properties.headers.get("source")
     uuid=properties.headers.get("uuid")
     api_key=properties.headers.get("api_key")
-    if (cloud_conn!=None and source!=None and uuid != None and checkAuth(api_key)):
+    if (cloud_conn!=None and source!=None and uuid != None and checkAuth(api_key,cloud_conn)):
         print("-----Received Request from Cloud-----")
         response = resolve(body)
-        properties_m=pika.BasicProperties(headers={'cloud': ""+cloud_conn, 'source':""+source ,'controller':'raspi01', 'uuid':uuid, 'datetime':""+datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
+        properties_m=pika.BasicProperties(headers={'name':controller_name,'api_key':api_key,'cloud':""+cloud_conn, 'source':""+source , 'uuid':uuid, 'datetime':""+datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
         ch.basic_publish(exchange='cloud_resolve', routing_key='', properties=properties_m ,body=str(response))
         print("---Request processed and Reponse Sent----")
     else:
@@ -337,6 +416,7 @@ res=Resource.Resource(Config.get("couchDB","user"),Config.get("couchDB","pass"),
 reg=Region.Region(Config.get("Amqp","user"),Config.get("Amqp","pass"),Config.get("Amqp","virt"),Config.get("couchDB","user"),Config.get("couchDB","pass"))
 
 print(" [x] Awaiting RPC requests")
+#To-Do: Send initail request to Cloud and then notify the main process maybe....or am I the main process
 try:
     channel.start_consuming()     
 except KeyboardInterrupt:
