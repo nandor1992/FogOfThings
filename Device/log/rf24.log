@@ -246,4 +246,79 @@ RF24 Radio started: 14:46:24 12/09/16 UTC
 Register data received
 Json Parts!
 Found details QDZc2QeJ
-                                  
+                                  RF24 Radio started: 13:56:42 01/19/17 UTC
+---------Send Data---------
+[{'n':'Gcode','v':'G01 X1 Y2 Z3'}]
+QDZc2QeJ
+Data received for non existent Dev
+---------Send Data---------
+[{'n':'Gcode','v':'G01 X1 Y2 Z3'}]
+QDZc2QeJ
+Data received for non existent Dev
+RF24 Radio started: 14:01:23 01/19/17 UTC
+Keyboard baby
+Exiting Main Thread
+RF24 Radio started: 14:02:04 01/19/17 UTC
+---------Send Data---------
+[{'n':'Gcode','v':'G01 X1 Y2 Z3'}]
+QDZc2QeJ
+Data received for non existent Dev
+RF24 Radio started: 14:04:32 01/19/17 UTC
+--------Message Received on CH=1-------
+{"e":[{"n":"Gcode","u":"G"},{"n":"Resp","u":"String"}],"bn":["urn:dev:type:ardRF24CNC","urn:d44"],"ver":"1"}
+Register data received
+Index Error, probs something stupid happened
+--------Message Received on CH=1-------
+{"e":[{"n":"Gcode","u":"G"},{"nurn:dev:type:ardRF24CNC","urn:dev:mac:123mac3me56","trans:id:952"],"ver":"1"}
+Value Erro, probs something stupid happened
+Keyboard baby
+Exiting Main Thread
+RF24 Radio started: 14:05:40 01/19/17 UTC
+RF24 Radio started: 14:08:06 01/19/17 UTC
+--------Message Received on CH=1-------
+{"e":[{"n":"Gcode","u":"G"},{"n":"Resp","u":"String"}],"bn":["urn:dev:type:ardRF24CNC","urn:dev:mac:123mac3me56","trans:id:478"],"ver":"1"}
+Register data received
+Json Parts!
+Found details QDZc2QeJ
+---------Send Data---------
+[{'n':'Gcode','v':'G01 X1 Y2 Z3'}]
+QDZc2QeJ
+Found details
+{'e':[{'n':'Gcode','v':'G01_X1_Y2_Z3'}],'bn':'urn:dev:id:QDZc2QeJ'}
+--------Message Received on CH=1-------
+{"e":[{"n":"Resp","v":"ok"}],"bn":"urn:dev:id:QDZc2QeJ"}
+Normal data received
+QDZc2QeJ
+[{'v':'ok','n':'Resp'}]
+Keyboard baby
+Exiting Main Thread
+RF24 Radio started: 14:09:28 01/19/17 UTC
+---------Send Data---------
+[{'n':'Gcode','v':'G01 X1 Y2 Z3'}]
+QDZc2QeJ
+Data received for non existent Dev
+Keyboard baby
+Exiting Main Thread
+RF24 Radio started: 14:20:21 01/19/17 UTC
+---------Send Data---------
+[{'n':'Gcode','v':'G01 X1 Y2 Z3'}]
+QDZc2QeJ
+Pre-Existing Device
+{'e':[{'n':'Gcode','v':'G01_X1_Y2_Z3'}],'bn':'urn:dev:id:QDZc2QeJ'}
+--------Message Received on CH=1-------
+{"e":[{"n":"Resp","v":"ok"}],"bn":"urn:dev:id:QDZc2QeJ"}
+Normal data received
+QDZc2QeJ
+Keyboard baby
+Exiting Main Thread
+RF24 Radio started: 14:25:13 01/19/17 UTC
+RF24 Radio started: 14:25:17 01/19/17 UTC
+RF24 Radio started: 14:25:33 01/19/17 UTC
+RF24 Radio started: 14:25:36 01/19/17 UTC
+--------Message Received on CH=1-------
+{"e":[{"n":"Gcode","u":"G"},{"n":"Resp","u":"String"}],"bn":["urn:dev:type:ardRF24CNC","urn:dev:mac:123mac3me56","trans:id:478"],"ver":"1"}
+Register data received
+Json Parts!
+Found details QDZc2QeJ
+Keyboard baby
+Exiting Main Thread
