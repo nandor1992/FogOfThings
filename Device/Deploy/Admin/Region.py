@@ -29,10 +29,10 @@ class Region:
         self.couch=couchdb.Server('http://'+c_user+':'+c_pass+'@127.0.0.1:5984/')
         self.db=self.couch['admin']
 
-    def reg.myIp():
+    def myIp():
         return "10.0.0.67"
     
-    def reg.myMac():
+    def myMac():
         return "dummy-mac"    
         
     def addGwToDatabase(self,name,ip,mac):
@@ -240,5 +240,5 @@ if __name__ == "__main__":
     #print(reg.addCouchNode("10.0.0.199"))
     #print(reg.getCouchNodes())
     #print(reg.setClustQueue('test'))
-    #print(reg.createFedPolicy()) # This is Raspi
+    print(reg.createFedPolicy()) # This is Raspi
     #print(reg.addUpstream("admin","hunter","10.0.0.68","test"))
