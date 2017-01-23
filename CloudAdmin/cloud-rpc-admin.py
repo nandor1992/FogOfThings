@@ -150,7 +150,7 @@ class AmqpClient:
             else:
                 print("Doesn't fit anything!")
         except:
-            print("Key Error or Incomplete Values!")
+            print("Key Error or Incomplete Values or Else!")
 
 
 
