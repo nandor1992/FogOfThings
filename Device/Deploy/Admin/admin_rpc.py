@@ -423,7 +423,7 @@ def generateRequest():
     data['local_ip']=reg.myIp()
     data['hw_addr']=reg.myMac()
     data['api_key']=Config.get("Mqtt1","admin_api")
-    data['peers']=discoverRegion()
+    data['peers']=[discoverRegion()]
     data['info']=getGwInfo()
     return data
 
