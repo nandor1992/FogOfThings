@@ -29,6 +29,7 @@ class AmqpClient:
 
     def resolveReg(self,gw_name,uuid,ip,hw_addr,peers,gw_info):
         resp=self.resolver.resolveGateway(uuid,ip,hw_addr,peers,gw_info)
+        print(resp)
         if resp['task']=="None":
             print("Nothing to do device")
             del(resp['task'])
@@ -37,7 +38,7 @@ class AmqpClient:
             del(resp['task'])
             print(resp)
             print("Notify Cluster leader to add GW")
-            #Send message to Leader with info, might modify this 
+            #Send message to Leader with info, might modify this to send to peers !!!!!!!!!!
             msg={'peer_ip':ip,'peer_name':resp['name'],'peer_mac':hw_addr}
             self.publishMsg(resp['new_clust'],"add",msg)
             #Message for Peer
