@@ -157,7 +157,7 @@ class GatewayResolver:
 			for p in look[ret]:
 				unique=0
 		##Comment out for actual work
-		#db.save({'name': ret,'uuid': uuid,'ip': ip,'peers': peers,'hw_addr': hw,'info': info})
+		db.save({'name': ret,'uuid': uuid,'ip': ip,'peers': peers,'hw_addr': hw,'info': info})
 		return ret
 
 	def registerNewClust(self,gw_name,ip,hw):
@@ -175,7 +175,7 @@ class GatewayResolver:
 			for p in look[[ret,reg_api]]:
 				unique=0
 		#Comment out for actual work
-		#db.save({'reg_api': reg_api,'reg_name': ret,'nodes_ip': [ip],'nodes_name': [gw_name],'nodes_mac': [hw],'master': [ip,gw_name]})
+		db.save({'reg_api': reg_api,'reg_name': ret,'nodes_ip': [ip],'nodes_name': [gw_name],'nodes_mac': [hw],'master': [ip,gw_name]})
 		return {'reg_role':'master','reg_api':reg_api,'reg_name':ret}
 
 	def addGwToCluster(self,id,ip,name,mac):
@@ -186,7 +186,7 @@ class GatewayResolver:
 		doc['nodes_name'].append(name)
 		doc['nodes_ip'].append(ip)
 		##Comment out for actual work
-		#db[doc.id]=doc
+		db[doc.id]=doc
 		return doc['master'][1]
 
 	def deleteGatewayFromOthers(self,mac,ip):
@@ -198,7 +198,7 @@ class GatewayResolver:
 			doc=db[p.value[0]]
 			##Comment out for actual work
 			if doc['master'][0]==ip:
-				#db.delete(doc) 
+				db.delete(doc) 
 				pass
 			else:
 				node_index=doc['nodes_mac'].index(mac)
@@ -206,7 +206,7 @@ class GatewayResolver:
 				doc['nodes_name'].pop(node_index)
 				doc['nodes_ip'].pop(node_index)
 				clusts.append(doc['master'][1])
-				#db[doc.id]=doc
+				db[doc.id]=doc
 		return clusts
 
 	def updateGatewayInfo(self,id,uuid,ip,hw,peers,info):
@@ -219,7 +219,7 @@ class GatewayResolver:
 		doc['info']=info
 		doc['peers']=peers
 		##Comment out for actual work
-		#db[doc.id]=doc
+		db[doc.id]=doc
 
 	def updateClusterInfo(self,id,ip):
 		print("Updating Cluster Info")
@@ -227,7 +227,7 @@ class GatewayResolver:
 		doc=db[id]
 		doc['master'][0]=ip
 		##Comment out for actual work
-		#db[doc.id]=doc
+		db[doc.id]=doc
 		peers = []
 		leader=doc['master'][1]
 		for names in doc['nodes_name']:
