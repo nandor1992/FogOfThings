@@ -10,6 +10,7 @@ import scapy.config
 import scapy.layers.l2
 import scapy.route
 import socket
+import netifaces
 import math
 import errno
 import pycurl
@@ -29,11 +30,27 @@ class Region:
         self.couch=couchdb.Server('http://'+c_user+':'+c_pass+'@127.0.0.1:5984/')
         self.db=self.couch['admin']
 
-    def reg.myIp():
-        return "10.0.0.67"
+    def myIp(self):
+        inter=netifaces.interfaces()
+        for i in inter:
+            try:
+                res=netifaces.ifaddresses(i)[2][0]['addr']
+                if res.split(".")[0]!="127":
+                    return res
+            except KeyError:
+                pass
+        return None
     
-    def reg.myMac():
-        return "dummy-mac"    
+    def myMac(self):
+        inter=netifaces.interfaces()
+        for i in inter:
+            try:
+                res=netifaces.ifaddresses(i)
+                if res[2][0]['addr'].split(".")[0]!="127":
+                    return res[17][0]['addr']
+            except KeyError:
+                pass
+        return None   
         
     def addGwToDatabase(self,name,ip,mac):
         look=self.db.view('views/docs_by_type')
@@ -228,12 +245,14 @@ class Region:
         networks = self.getNetw()
         res=[]
         for [net,interface] in networks:
-            res=res+reg.scan_and_print_neighbors(net, interface,ref)
+            for item in self.scan_and_print_neighbors(net, interface,ref):
+                print(item)
+                res=res+item[0:2]
         return res
     
 if __name__ == "__main__":
     reg=Region("admin","hunter","test","admin","hunter")
-   # print(reg.getDevsOnWan("B8:27:EB"))
+    print(reg.getDevsOnWan("B8:27:EB"))
     #reg.addGwToDatabase("the_Great_test","192.168.0.2","Random MAc")
     #reg.initClustDatabase("Reg_name","Reg_api","My_name","My-ip","My_MAc")
     #print(reg.removeCouchNode("10.0.0.199"))
@@ -242,3 +261,5 @@ if __name__ == "__main__":
     #print(reg.setClustQueue('test'))
     #print(reg.createFedPolicy()) # This is Raspi
     #print(reg.addUpstream("admin","hunter","10.0.0.68","test"))
+    print(reg.myIp())
+    print(reg.myMac())

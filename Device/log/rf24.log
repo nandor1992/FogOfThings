@@ -240,6 +240,10 @@ QDZc2QeJ
 [{'v':'ok','n':'Resp'}]
 Keyboard baby
 Exiting Main Thread
+<<<<<<< HEAD
+RF24 Radio started: 15:41:49 12/07/16 UTC
+RF24 Radio started: 15:43:48 12/07/16 UTC
+=======
 RF24 Radio started: 14:46:24 12/09/16 UTC
 --------Message Received on CH=1-------
 {"e":[{"n":"Gcode","u":"G"},{"n":"Resp","u":"String"}],"bn":["urn:dev:type:ardRF24CNC","urn:dev:mac:123mac3me56","trans:id:478"],"ver":"1"}
@@ -322,3 +326,4 @@ Json Parts!
 Found details QDZc2QeJ
 Keyboard baby
 Exiting Main Thread
+>>>>>>> 436ff5d4e2bcb62cf68c2611cd9dcb28ab2a572a
