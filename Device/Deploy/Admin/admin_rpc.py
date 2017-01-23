@@ -73,9 +73,9 @@ def resolve(payload):
             ##Only works fro Admin, modify to allow peers to add Node as well
             ##To-Do
             ret=ast.literal_eval("  ".join(components[2:]))
-            #reg.addGwToDatabase(ret['peer_name'],ret['peer_ip'],ret['peer_mac'])
-            #reg.addCouchNode(ret['peer_ip'])
-            #reg.addUpstream("admin","hunter",ret['peer_ip'],"test")
+            reg.addGwToDatabase(ret['peer_name'],ret['peer_ip'],ret['peer_mac'])
+            reg.addCouchNode(ret['peer_ip'])
+            reg.addUpstream("admin","hunter",ret['peer_ip'],"test")
             ##Add node to Couchdb and Rabbitmq cluster, update Database with it's value
         elif components[1]=='remove':
             print("Remove Node")
@@ -101,11 +101,11 @@ def resolve(payload):
                 print("Initialize node to be added to Cluster") ## Working Case
                 ##To-Do
                 ret=ast.literal_eval("  ".join(components[3:]))
-               # modifyConfig(ret['reg_api'],ret['name'],ret['reg_name'],ret['master'])
-                #reg.setClustQueue(ret['name'])
-               # reg.addUpstream("admin","hunter",ret['master'],"test")
+                modifyConfig(ret['reg_api'],ret['name'],ret['reg_name'],ret['master'])
+                reg.setClustQueue(ret['name'])
+                reg.addUpstream("admin","hunter",ret['master'],"test")
             elif components[2]=='initClust':
-                print("Initialize new Cluster you are Master") ## Working Case
+                print("Initialize new Cluster you are Master") ## Working Case - Done
                 ##To-Do
                 ret=ast.literal_eval("  ".join(components[3:]))
                 modifyConfig(ret['reg_api'],ret['name'],ret['reg_name'],None)
@@ -412,13 +412,14 @@ def generateRequest():
     data={}
     data['request']='register'
     data['name']='Temp_GW_'+str(int(random.random()*8999+1000))
-    data['uuid']=Config.get("General","gateway_uuid")
-    if (data['uuid']=="None"):
+    if (Config.get("General","gateway_uuid").strip()=="None"):
         uuid=''.join(random.choice(ascii_letters) for i in range(16))
-        data['uuid']==uuid
+        data['uuid']=uuid
         Config.set("General","gateway_uuid",uuid)
         with open(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))+"/config.ini",'wb') as configfile:
             Config.write(configfile)
+    else:
+        data['uuid']=Config.get("General","gateway_uuid").strip()
     data['local_ip']=reg.myIp()
     data['hw_addr']=reg.myMac()
     data['api_key']=Config.get("Mqtt1","admin_api")
@@ -438,8 +439,6 @@ def initialRequest(Config,reg):
         reg=resolve(my_json['payload'])
     except ValueError:
         print "Value Erro on returning Json"
-    if resp!="ok":
-        sys.exit()
 
 channel.basic_consume(on_request, queue=Config.get("Admin","queue"))
 dev_status=Config.get("Admin","dev_status")
