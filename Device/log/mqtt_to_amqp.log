@@ -1872,3 +1872,22 @@ Message: receive/Gateway_Work_2 "source": "Cloud_Controller", "api_key": "ThisIs
 {u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'WeLYeVlzmgthHWlI', 'cloud': 'mqtt_conn1'}
 "register self nothing {'reg_api': 'TheRegionApi1', 'reg_role': 'master', 'reg_name': 'FirstRegion_5622', 'name': 'Mike_5287'}"
 Other message
+Starting New Session at 15:40:51 01/23/17 UTC
+Connected with result code 0
+Expected Disconnect
+Exiting Main Thread
+Starting New Session at 15:51:24 01/23/17 UTC
+Connected with result code 0
+------Received Message-------
+Message: receive/Bradford_2671 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "ynXwMQgWQZPeInAD", "payload": "register add {'peer_name': 'Reeves_6394', 'peer_mac': 'b8:27:eb:c5:ed:e4', 'peer_ip': '10.0.0.67'}"
+{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "ynXwMQgWQZPeInAD", "payload": "register add {'peer_name': 'Reeves_6394', 'peer_mac': 'b8:27:eb:c5:ed:e4', 'peer_ip': '10.0.0.67'}"}
+{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "register add {'peer_name': 'Reeves_6394', 'peer_mac': 'b8:27:eb:c5:ed:e4', 'peer_ip': '10.0.0.67'}", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "ynXwMQgWQZPeInAD"
+}
+{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'ynXwMQgWQZPeInAD', 'cloud': 'mqtt_conn1'}
+"register add {'peer_name': 'Reeves_6394', 'peer_mac': 'b8:27:eb:c5:ed:e4', 'peer_ip': '10.0.0.67'}"
+Other message
