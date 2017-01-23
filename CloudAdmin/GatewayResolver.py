@@ -15,9 +15,9 @@ class GatewayResolver:
 			my_clust=self.checkIfCluster(gw[0],gw[3],[[gw[3],gw[0]]])
 		else:
 			my_clust=self.checkIfCluster(ip,hw,[[hw,ip]])			
-		#print(gw)
-		#print(my_clust)
-		#print(clust)
+		print(gw)
+		print(my_clust)
+		print(clust)
 		if gw==None:
 			print("New GW Create it")
 			new_gw=self.registerGw(uuid,ip,hw,peers,info)
@@ -124,13 +124,16 @@ class GatewayResolver:
 		return None
 
 	def checkIfCluster(self,ip,hw,peers):
+		print(ip)
+		print(hw)
+		print(peers)
 		db=self.couch['clusters']
 		look=db.view('cluster/find')
 		clust=None
 		for peer in peers:
 			for p in look[peer]:
 				clust=p.value
-		#print(clust)
+		print(clust)
 		if clust==None:
 			return None
 		else:
