@@ -28,7 +28,6 @@ class Region:
         self.c_user=c_user
         self.c_pass=c_pass
         self.couch=couchdb.Server('http://'+c_user+':'+c_pass+'@127.0.0.1:5984/')
-        self.db=self.couch['admin']
 
     def myIp(self):
         inter=netifaces.interfaces()
@@ -53,20 +52,22 @@ class Region:
         return None   
         
     def addGwToDatabase(self,name,ip,mac):
-        look=self.db.view('views/docs_by_type')
+        db=self.couch['admin']
+        look=db.view('views/docs_by_type')
         for p in look['cluster']:
-            doc=self.db[p.value]
+            doc=db[p.value]
             doc['nodes_mac'].append(mac)
             doc['nodes_name'].append(name)
             doc['nodes_ip'].append(ip)
-        self.db[doc.id]=doc
+        db[doc.id]=doc
 
     def initClustDatabase(self,name,api,c_name,ip,mac):
-        look=self.db.view('views/docs_by_type')
+        db=self.couch['admin']
+        look=db.view('views/docs_by_type')
         for p in look['cluster']:
-            doc=self.db[p.value]
-            self.db.delete(doc)
-        self.db.save({'type':'cluster','reg_api':api,'reg_name':name,'nodes_name':[c_name],'nodes_ip':[ip],'nodes_mac':[mac],'master':[ip,c_name]})
+            doc=db[p.value]
+            db.delete(doc)
+        db.save({'type':'cluster','reg_api':api,'reg_name':name,'nodes_name':[c_name],'nodes_ip':[ip],'nodes_mac':[mac],'master':[ip,c_name]})
 
     def addCouchNode(self,ip):
         buffer=StringIO()

@@ -103,6 +103,7 @@ def resolve(payload):
                 ret=ast.literal_eval("  ".join(components[3:]))
                 modifyConfig(ret['reg_api'],ret['name'],ret['reg_name'],ret['master'])
                 ##Add Uploding Rabbitmq file with configs
+                ini.initRabbitmq(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))+"/RabbitVersions/rabbit_bare.json")
                 reg.setClustQueue(ret['name'])
                 reg.addUpstream("admin","hunter",ret['master'],"test")
             elif components[2]=='initClust':
@@ -110,6 +111,8 @@ def resolve(payload):
                 ##To-Do
                 ret=ast.literal_eval("  ".join(components[3:]))
                 modifyConfig(ret['reg_api'],ret['name'],ret['reg_name'],None)
+                ini.initRabbitmq(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))+"/RabbitVersions/rabbit_bare.json")
+                ini.initCouchDB(Config.items("DeviceQ"))
                 reg.setClustQueue(ret['name'])
                 reg.initClustDatabase(ret['reg_name'],ret['reg_api'],ret['name'],reg.myIp(),reg.myMac())
             elif components[2]=='update':

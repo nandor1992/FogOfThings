@@ -66,6 +66,10 @@ class Init:
 
     def initCouchDB(self,queues):
         try:
+            self.couch.create("_global_changes")
+            self.couch.create("_metadata")
+            self.couch.create("_replicator")
+            self.couch.create("_users")
             db=self.couch.create("admin")
             db.save({'_id':'_design/views',  'views': { "docs_by_type": {"map": "function (doc) {\n  emit(doc.type,doc._id);\n}" }},'language':'javascript'})                   
             for q in queues:
