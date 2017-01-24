@@ -13,7 +13,7 @@ import Region
 import ast
 import random
 from string import ascii_letters,digits
-from Init import Init
+from Init import Init,InitReq
 #Config Settings
 Config=ConfigParser.ConfigParser()
 Config.read(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))+"/config.ini")
@@ -102,6 +102,8 @@ def resolve(payload):
                 ##To-Do
                 ret=ast.literal_eval("  ".join(components[3:]))
                 modifyConfig(ret['reg_api'],ret['name'],ret['reg_name'],ret['master'])
+                ##Add Uploding Rabbitmq file with configs
+                ini.initRabbitmq(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))+"/RabbitVersions/rabbit_bare.json")
                 reg.setClustQueue(ret['name'])
                 reg.addUpstream("admin","hunter",ret['master'],"test")
             elif components[2]=='initClust':
@@ -109,6 +111,10 @@ def resolve(payload):
                 ##To-Do
                 ret=ast.literal_eval("  ".join(components[3:]))
                 modifyConfig(ret['reg_api'],ret['name'],ret['reg_name'],None)
+                #Add Uploading Rabbitmq Config as Well as Initializing Queues based on Config
+                ini.initRabbitmq(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))+"/RabbitVersions/rabbit_bare.json")
+                ini.initCouchDB(Config.items("DeviceQ"))
+                ##Continue Custom Stuff
                 reg.setClustQueue(ret['name'])
                 reg.initClustDatabase(ret['reg_name'],ret['reg_api'],ret['name'],reg.myIp(),reg.myMac())
             elif components[2]=='update':
@@ -204,11 +210,11 @@ def deployTask(payload):
             if devices!=None:
                 print("Devices Config Started")
                 for dev in devices:
-                    dev_l=device.getSpecDevList(dev["type"],dev_status) #Change Idle to Available
+                    dev_l=device.getSpecDevList(dev["type"],dev_status,controller_name) #Change Idle to Available
                     if len(dev_l)<int(dev["required"]):
                         return "Error: Not Enough Required Devices"
                 for dev in devices:
-                    dev_l=device.getSpecDevList(dev["type"],dev_status) #Change Idle to Available
+                    dev_l=device.getSpecDevList(dev["type"],dev_status,controller_name) #Change Idle to Available
                     dev_conf=""
                     if dev["cnt"]=="":
                         for dev_s in dev_l:
@@ -432,20 +438,21 @@ def initialRequest(Config,reg):
     payload=generateRequest()
     req=str(payload).replace("'",'"')
     print(req)
-    ini=Init(Config.get("Mqtt1","user"),Config.get("Mqtt1","pass"),Config.get("Mqtt1","address"),int(Config.get("Mqtt1","port")),payload['name'])
-    resp=ini.register(req)
+    inir=InitReq(Config.get("Mqtt1","user"),Config.get("Mqtt1","pass"),Config.get("Mqtt1","address"),int(Config.get("Mqtt1","port")),payload['name'])
+    resp=inir.register(req)
     try:
         my_json=json.loads(resp);
         reg=resolve(my_json['payload'])
     except ValueError:
         print "Value Erro on returning Json"
 
+ini=Init(Config.get("Amqp","user"),Config.get("Amqp","pass"),Config.get("couchDB","user"),Config.get("couchDB","pass"));
 channel.basic_consume(on_request, queue=Config.get("Admin","queue"))
 dev_status=Config.get("Admin","dev_status")
 route = Route.Route(channel)
 karaf=Karaf.Karaf(Config.get("Karaf","user"),Config.get("Karaf","pass"),Config.get("Admin","app_storage"),Config.get("General","location")+"/apps/",Config.get("General","location")+"/configs/",Config.get("Karaf","location")+"/")
-device=Device.Device(Config.get("couchDB","user"),Config.get("couchDB","pass"))
-res=Resource.Resource(Config.get("couchDB","user"),Config.get("couchDB","pass"),Config.get("General","Gateway_Name")) ##Redo Resource so that they are store in config not admin 
+device=Device.Device(Config.get("couchDB","user"),Config.get("couchDB","pass"),Config.items("DeviceQ"))
+res=Resource.Resource(Config.get("couchDB","user"),Config.get("couchDB","pass"),Config.get("General","Gateway_Name"),Config.items("ResourceQ")) ##Redo Resource so that they are store in config not admin 
 reg=Region.Region(Config.get("Amqp","user"),Config.get("Amqp","pass"),Config.get("Amqp","virt"),Config.get("couchDB","user"),Config.get("couchDB","pass"))
 
 #Do Initial Request and Modify what needs to be modified
