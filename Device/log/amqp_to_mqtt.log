@@ -160,3 +160,9 @@ Broker started: 13:32:08 01/24/17 UTC
 Non json payload
 {"source": "Cloud_Controller", "uuid": "WFwtLoAYLcuhrDnh", "name": "Kayla_3632", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-01-24 13:32:42"}
 Message Sent with result: 0 Message Id: 1
+Broker started: 14:01:05 01/24/17 UTC
+ [*] Waiting for messages. To exit press CTRL+C
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "rMorCPKMlPuTBhyX", "name": "Hammond_6056", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-01-24 14:02:27"}
+Message Sent with result: 0 Message Id: 2
