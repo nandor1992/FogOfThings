@@ -4,22 +4,20 @@ import couchdb
 
 class Resource:
 
-    def __init__(self,user,passwd,gw):
+    def __init__(self,user,passwd,gw,queue):
         self.name="resource"
         self.user=user
         self.passwd=passwd
         self.couch=couchdb.Server('http://'+user+':'+passwd+'@127.0.0.1:5984/')
-        self.db=self.couch['admin']
+        self.queue=queue
         self.gw=gw
+
     def getResourceQue(self,name):
-        device=[]
-        look=self.db.view('views/resource')
-        val2=None
-        for p in look[['resource',self.gw]]:
-            val=p.value;
-            if name in val[0]:
-                val2=val[1][val[0].index(name)]
-        return val2
+        for d in self.queue:
+            print(d)
+            if name in d[0]:
+                return d[1]
+        return None
 
     def initializeRes(self,res,app):
         if (res=="storage"):
@@ -39,7 +37,8 @@ class Resource:
         return "ok"
 
 if __name__ == "__main__":
-    res=Resource('admin','hunter','Gateway_Work_2')
-    print(res.getResourceQue('storage'))
-    print(res.initializeRes('storage','Thermostat_App'))
+    data = [('metadata', 'res_metadata'), ('position', 'res_position'), ('storage', 'res_storage')]
+    res=Resource('admin','hunter','Gateway_Work_2',data)
+    print(res.getResourceQue('metadata'))
+    #print(res.initializeRes('storage','Thermostat_App'))
     #print(res.deleteRes('storage','thermostat_app'))
