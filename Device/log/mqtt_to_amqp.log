@@ -1872,3 +1872,5 @@ Message: receive/Gateway_Work_2 "source": "Cloud_Controller", "api_key": "ThisIs
 {u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'WeLYeVlzmgthHWlI', 'cloud': 'mqtt_conn1'}
 "register self nothing {'reg_api': 'TheRegionApi1', 'reg_role': 'master', 'reg_name': 'FirstRegion_5622', 'name': 'Mike_5287'}"
 Other message
+Starting New Session at 13:12:43 01/24/17 UTC
+Connected with result code 0

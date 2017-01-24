@@ -152,3 +152,5 @@ Message Sent with result: 0 Message Id: 21
 Non json payload
 {"source": "Cloud_Controller", "uuid": "WeLYeVlzmgthHWlI", "name": "Rosa_7492", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:57:18"}
 Message Sent with result: 0 Message Id: 22
+Broker started: 13:12:54 01/24/17 UTC
+ [*] Waiting for messages. To exit press CTRL+C

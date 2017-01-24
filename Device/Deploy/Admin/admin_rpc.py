@@ -103,7 +103,6 @@ def resolve(payload):
                 ret=ast.literal_eval("  ".join(components[3:]))
                 modifyConfig(ret['reg_api'],ret['name'],ret['reg_name'],ret['master'])
                 ##Add Uploding Rabbitmq file with configs
-                ini.initRabbitmq(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))+"/RabbitVersions/rabbit_bare.json")
                 reg.setClustQueue(ret['name'])
                 reg.addUpstream("admin","hunter",ret['master'],"test")
             elif components[2]=='initClust':
@@ -111,10 +110,6 @@ def resolve(payload):
                 ##To-Do
                 ret=ast.literal_eval("  ".join(components[3:]))
                 modifyConfig(ret['reg_api'],ret['name'],ret['reg_name'],None)
-                #Add Uploading Rabbitmq Config as Well as Initializing Queues based on Config
-                ini.initRabbitmq(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))+"/RabbitVersions/rabbit_bare.json")
-                ini.initCouchDB(Config.items("DeviceQ"))
-                ##Continue Custom Stuff
                 reg.setClustQueue(ret['name'])
                 reg.initClustDatabase(ret['reg_name'],ret['reg_api'],ret['name'],reg.myIp(),reg.myMac())
             elif components[2]=='update':
@@ -446,7 +441,12 @@ def initialRequest(Config,reg):
     except ValueError:
         print "Value Erro on returning Json"
 
+def initializeGateway():
+    ini.initRabbitmq(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))+"/RabbitVersions/rabbit_bare.json")
+    ini.initCouchDB(Config.items("DeviceQ"))
+
 ini=Init(Config.get("Amqp","user"),Config.get("Amqp","pass"),Config.get("couchDB","user"),Config.get("couchDB","pass"));
+initializeGateway()
 channel.basic_consume(on_request, queue=Config.get("Admin","queue"))
 dev_status=Config.get("Admin","dev_status")
 route = Route.Route(channel)

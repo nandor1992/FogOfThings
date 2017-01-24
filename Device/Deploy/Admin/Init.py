@@ -66,11 +66,14 @@ class Init:
 
     def initCouchDB(self,queues):
         try:
-            self.couch.create("admin")
+            db=self.couch.create("admin")
+            db.save({'_id':'_design/views',  'views': { "docs_by_type": {"map": "function (doc) {\n  emit(doc.type,doc._id);\n}" }},'language':'javascript'})                   
             for q in queues:
                 db=self.couch.create(q[0])
                 db.save({'_id':'_design/views',  'views': { "device": {"map": "function (doc) {\n  emit([doc.mac,doc.dev_type,doc.version],[doc.dev_id,doc.gateway]);\n}" },
                         "doc": {"map": "function (doc) {\n  emit(doc.dev_id,doc._id);\n}"}},'language':'javascript'})            
+        except couchdb.PreconditionFailed:
+            return "ok"
         except:
             return "error in DB"
         return "ok"
@@ -79,8 +82,8 @@ if __name__ == "__main__":
     inir=InitReq("admin","hunter","10.0.0.137","1883","Test_Me")
     ini=Init("admin","hunter","admin","hunter")
     data=[('blue', 'ardu_blue'), ('rf24', 'ardu_rf24'), ('rf434', 'atmega_rfa1')]
-    #print(ini.initRabbitmq("admin","hunter","/home/pi/FogOfThings/Device/RabbitVersions/rabbit_bare_2017_01_20.json"))
-    print(ini.initCouchDB(data))
+    print(ini.initRabbitmq("/home/pi/FogOfThings/Device/RabbitVersions/rabbit_bare.json"))
+    #print(ini.initCouchDB(data))
     #print(ini.register("{'name':'Test_Gw1','request':'register','uuid':'TestUUIDGW1', \
     #'local_ip':'10.0.0.67','hw_addr':'b8:27:eb:c5:ed:e4','api_key':'ThisIsRandomAPIKey1234', \
     #'peers':[['b9:27:eb:c5:ed:e4','10.0.0.68']],'info':'Prity Random Gw info this will just be saved as is, might be usefull later'}"))
