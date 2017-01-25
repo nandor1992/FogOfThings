@@ -66,8 +66,8 @@ class Database:
         
 if __name__ == "__main__":
     db1=Database('admin','hunter','rf24',"Gateway_Work_2")
-    print(db1.lookupDev('123mac2me56','ardUnoTemp','1'))
-    print(db1.getAllDevs())
+    #print(db1.lookupDev('123mac2me56','ardUnoTemp','1'))
+    #print(db1.getAllDevs())
     print(db1.checkDevGw("OWaDMY9V","Gateway_Work_3"))
     #db1.updateStat('OWaDMY9V','Idle')
     #db1.addDevice('OWADMAA','ard_test','newMAc2',2,'2016-11-12 18:06:51','Available',[{'test':'one'},{'test2':'two'}])

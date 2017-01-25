@@ -1926,3 +1926,18 @@ Message: receive/Hammond_6056 "source": "Cloud_Controller", "api_key": "ThisIsRa
 {u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'rMorCPKMlPuTBhyX', 'cloud': 'mqtt_conn1'}
 "register add {'peer_name': 'Paul_5304', 'peer_mac': 'b8:27:eb:c5:ed:e4', 'peer_ip': '10.0.0.67'}"
 Other message
+Starting New Session at 14:19:13 01/24/17 UTC
+Connected with result code 0
+------Received Message-------
+Message: receive/Moore_1850 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "pQYtwezPQycPBmTQ", "payload": "register add {'peer_name': 'Richmond_5345', 'peer_mac': 'b8:27:eb:c5:ed:e4', 'peer_ip': '10.0.0.67'}"
+{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "pQYtwezPQycPBmTQ", "payload": "register add {'peer_name': 'Richmond_5345', 'peer_mac': 'b8:27:eb:c5:ed:e4', 'peer_ip': '10.0.0.67'}"}
+{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "register add {'peer_name': 'Richmond_5345', 'peer_mac': 'b8:27:eb:c5:ed:e4', 'peer_ip': '10.0.0.67'}", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "pQYtwezPQycPBmTQ"
+}
+{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'pQYtwezPQycPBmTQ', 'cloud': 'mqtt_conn1'}
+"register add {'peer_name': 'Richmond_5345', 'peer_mac': 'b8:27:eb:c5:ed:e4', 'peer_ip': '10.0.0.67'}"
+Other message
