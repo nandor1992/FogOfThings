@@ -172,3 +172,10 @@ Broker started: 14:19:22 01/24/17 UTC
 Non json payload
 {"source": "Cloud_Controller", "uuid": "pQYtwezPQycPBmTQ", "name": "Moore_1850", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-01-24 14:23:17"}
 Message Sent with result: 0 Message Id: 1
+DEBUG:root:Broker started: 14:42:42 01/26/17 UTC
+DEBUG:root: [*] Waiting for messages. To exit press CTRL+C
+DEBUG:root:[x] Received "{'test':'me'}"
+DEBUG:root:Non json payload
+DEBUG:root:{"payload": "{'test':'me'}", "dev": "mqq"}
+DEBUG:root:Message Sent with result: 0 Message Id: 1
+DEBUG:root:Driver Stopped

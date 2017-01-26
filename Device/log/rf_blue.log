@@ -163,3 +163,230 @@ Exiting Blue Stuff for 14:DD:A9:32:E9:A4
 Keyboard baby
 Exiting Main Thread
 Exiting Server
+DEBUG:root:Bluetooth Radio started: 11:23:57 01/26/17 UTC
+DEBUG:pika.adapters.select_connection:Using EPollPoller
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x76102800>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x76102828>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x761027d8>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_start of <pika.adapters.select_connection.SelectConnection object at 0x7617eff0>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+INFO:pika.adapters.base_connection:Connecting to ::1:5672
+DEBUG:pika.callback:Processing 0:Connection.Start
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method SelectConnection._on_connection_start of <pika.adapters.select_connection.SelectConnection object at 0x7617eff0>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method SelectConnection._on_connection_start of <pika.adapters.select_connection.SelectConnection object at 0x7617eff0>> for "0:Connection.Start"
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_tune of <pika.adapters.select_connection.SelectConnection object at 0x7617eff0>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 0:Connection.Tune
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method SelectConnection._on_connection_tune of <pika.adapters.select_connection.SelectConnection object at 0x7617eff0>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method SelectConnection._on_connection_tune of <pika.adapters.select_connection.SelectConnection object at 0x7617eff0>> for "0:Connection.Tune"
+DEBUG:pika.connection:Creating a HeartbeatChecker: 580
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_open of <pika.adapters.select_connection.SelectConnection object at 0x7617eff0>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 0:Connection.OpenOk
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method SelectConnection._on_connection_open of <pika.adapters.select_connection.SelectConnection object at 0x7617eff0>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method SelectConnection._on_connection_open of <pika.adapters.select_connection.SelectConnection object at 0x7617eff0>> for "0:Connection.OpenOk"
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_closed of <pika.adapters.select_connection.SelectConnection object at 0x7617eff0>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 0:_on_connection_open
+DEBUG:pika.callback:Calling <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x76102828>> for "0:_on_connection_open"
+ERROR:root:global name 'connection' is not defined
+DEBUG:root:Bluetooth Radio started: 11:25:32 01/26/17 UTC
+DEBUG:pika.adapters.select_connection:Using EPollPoller
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x760f2800>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x760f2828>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x760f27d8>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_start of <pika.adapters.select_connection.SelectConnection object at 0x7616eff0>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+INFO:pika.adapters.base_connection:Connecting to ::1:5672
+DEBUG:pika.callback:Processing 0:Connection.Start
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method SelectConnection._on_connection_start of <pika.adapters.select_connection.SelectConnection object at 0x7616eff0>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method SelectConnection._on_connection_start of <pika.adapters.select_connection.SelectConnection object at 0x7616eff0>> for "0:Connection.Start"
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_tune of <pika.adapters.select_connection.SelectConnection object at 0x7616eff0>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 0:Connection.Tune
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method SelectConnection._on_connection_tune of <pika.adapters.select_connection.SelectConnection object at 0x7616eff0>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method SelectConnection._on_connection_tune of <pika.adapters.select_connection.SelectConnection object at 0x7616eff0>> for "0:Connection.Tune"
+DEBUG:pika.connection:Creating a HeartbeatChecker: 580
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_open of <pika.adapters.select_connection.SelectConnection object at 0x7616eff0>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 0:Connection.OpenOk
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method SelectConnection._on_connection_open of <pika.adapters.select_connection.SelectConnection object at 0x7616eff0>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method SelectConnection._on_connection_open of <pika.adapters.select_connection.SelectConnection object at 0x7616eff0>> for "0:Connection.OpenOk"
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_closed of <pika.adapters.select_connection.SelectConnection object at 0x7616eff0>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 0:_on_connection_open
+DEBUG:pika.callback:Calling <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x760f2828>> for "0:_on_connection_open"
+ERROR:root:global name 'connection' is not defined
+DEBUG:root:Bluetooth Radio started: 11:30:19 01/26/17 UTC
+DEBUG:pika.adapters.select_connection:Using EPollPoller
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x761697b0>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x761697d8>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x76169788>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_start of <pika.adapters.select_connection.SelectConnection object at 0x761e5ff0>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+INFO:pika.adapters.base_connection:Connecting to ::1:5672
+DEBUG:pika.callback:Processing 0:Connection.Start
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method SelectConnection._on_connection_start of <pika.adapters.select_connection.SelectConnection object at 0x761e5ff0>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method SelectConnection._on_connection_start of <pika.adapters.select_connection.SelectConnection object at 0x761e5ff0>> for "0:Connection.Start"
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_tune of <pika.adapters.select_connection.SelectConnection object at 0x761e5ff0>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 0:Connection.Tune
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method SelectConnection._on_connection_tune of <pika.adapters.select_connection.SelectConnection object at 0x761e5ff0>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method SelectConnection._on_connection_tune of <pika.adapters.select_connection.SelectConnection object at 0x761e5ff0>> for "0:Connection.Tune"
+DEBUG:pika.connection:Creating a HeartbeatChecker: 580
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_open of <pika.adapters.select_connection.SelectConnection object at 0x761e5ff0>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 0:Connection.OpenOk
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method SelectConnection._on_connection_open of <pika.adapters.select_connection.SelectConnection object at 0x761e5ff0>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method SelectConnection._on_connection_open of <pika.adapters.select_connection.SelectConnection object at 0x761e5ff0>> for "0:Connection.OpenOk"
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_closed of <pika.adapters.select_connection.SelectConnection object at 0x761e5ff0>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 0:_on_connection_open
+DEBUG:pika.callback:Calling <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x761697d8>> for "0:_on_connection_open"
+ERROR:root:global name 'connection' is not defined
+DEBUG:root:Bluetooth Radio started: 11:31:21 01/26/17 UTC
+DEBUG:pika.adapters.select_connection:Using EPollPoller
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7618e7b0>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7618e7d8>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7618e788>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_start of <pika.adapters.select_connection.SelectConnection object at 0x7620aff0>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+INFO:pika.adapters.base_connection:Connecting to ::1:5672
+DEBUG:pika.callback:Processing 0:Connection.Start
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method SelectConnection._on_connection_start of <pika.adapters.select_connection.SelectConnection object at 0x7620aff0>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method SelectConnection._on_connection_start of <pika.adapters.select_connection.SelectConnection object at 0x7620aff0>> for "0:Connection.Start"
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_tune of <pika.adapters.select_connection.SelectConnection object at 0x7620aff0>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 0:Connection.Tune
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method SelectConnection._on_connection_tune of <pika.adapters.select_connection.SelectConnection object at 0x7620aff0>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method SelectConnection._on_connection_tune of <pika.adapters.select_connection.SelectConnection object at 0x7620aff0>> for "0:Connection.Tune"
+DEBUG:pika.connection:Creating a HeartbeatChecker: 580
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_open of <pika.adapters.select_connection.SelectConnection object at 0x7620aff0>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 0:Connection.OpenOk
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method SelectConnection._on_connection_open of <pika.adapters.select_connection.SelectConnection object at 0x7620aff0>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method SelectConnection._on_connection_open of <pika.adapters.select_connection.SelectConnection object at 0x7620aff0>> for "0:Connection.OpenOk"
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_closed of <pika.adapters.select_connection.SelectConnection object at 0x7620aff0>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 0:_on_connection_open
+DEBUG:pika.callback:Calling <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7618e7d8>> for "0:_on_connection_open"
+ERROR:root:global name 'connection' is not defined
+DEBUG:root:Bluetooth Radio started: 11:33:05 01/26/17 UTC
+ERROR:root:global name 'ServerThread' is not defined
+DEBUG:root:Bluetooth Radio started: 11:33:54 01/26/17 UTC
+ERROR:root:global name 'server_sock' is not defined
+DEBUG:root:Bluetooth Radio started: 11:34:45 01/26/17 UTC
+DEBUG:root:Bluetooth Radio started: 11:35:08 01/26/17 UTC
+DEBUG:root:Started Server Thread
+DEBUG:root:Bluetooth Radio started: 11:35:54 01/26/17 UTC
+DEBUG:root:Started Server Thread
+DEBUG:root:Waiting for connection on RFCOMM channel 1
+DEBUG:root:Bluetooth Radio started: 11:36:13 01/26/17 UTC
+DEBUG:root:Started Server Thread
+DEBUG:root:Waiting for connection on RFCOMM channel 1
+DEBUG:root:Bluetooth Radio started: 11:37:10 01/26/17 UTC
+DEBUG:root:Started Server Thread
+DEBUG:root:Waiting for connection on RFCOMM channel 1
+DEBUG:root:Bluetooth Radio started: 11:38:06 01/26/17 UTC
+DEBUG:root:Bluetooth Radio started: 11:38:10 01/26/17 UTC
+DEBUG:root:Bluetooth Radio started: 11:38:47 01/26/17 UTC
+DEBUG:root:Bluetooth Radio started: 11:42:35 01/26/17 UTC
+DEBUG:root:Started Server Thread
+DEBUG:root:Waiting for connection on RFCOMM channel 1
+DEBUG:root:Bluetooth Radio started: 11:47:16 01/26/17 UTC
+DEBUG:root:Started Server Thread
+DEBUG:root:Waiting for connection on RFCOMM channel 1
+DEBUG:root:Bluetooth Radio started: 11:49:04 01/26/17 UTC
+DEBUG:root:Started Server Thread
+DEBUG:root:Waiting for connection on RFCOMM channel 1
+DEBUG:root:Bluetooth Radio started: 11:52:49 01/26/17 UTC
+DEBUG:root:Started Server Thread
+DEBUG:root:Waiting for connection on RFCOMM channel 1
+DEBUG:root:Bluetooth Radio started: 11:53:27 01/26/17 UTC
+DEBUG:root:Started Server Thread
+DEBUG:root:Waiting for connection on RFCOMM channel 1
+DEBUG:root:Starting Blue Stuff for 14:DD:A9:32:E9:A4
+DEBUG:root:Bluetooth Radio started: 11:53:58 01/26/17 UTC
+DEBUG:root:Started Server Thread
+DEBUG:root:Waiting for connection on RFCOMM channel 1
+DEBUG:root:Starting Blue Stuff for 14:DD:A9:32:E9:A4
+DEBUG:root:--------Message Received from: 14:DD:A9:32:E9:A4-------
+DEBUG:root:Register data received
+DEBUG:root:Json Parts!
+DEBUG:root:No details found
+DEBUG:root:zEHjyyth-14:DD:A9:32:E9:A4
+DEBUG:root:Sending: {'bn':['trans:id:401','urn:dev:id:zEHjyyth']}
+DEBUG:root:Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+DEBUG:root:Bluetooth Radio started: 11:56:16 01/26/17 UTC
+DEBUG:root:Started Server Thread
+DEBUG:root:Waiting for connection on RFCOMM channel 1
+DEBUG:root:Starting Blue Stuff for 14:DD:A9:32:E9:A4
+DEBUG:root:--------Message Received from: 14:DD:A9:32:E9:A4-------
+DEBUG:root:Register data received
+DEBUG:root:Json Parts!
+DEBUG:root:Found details zEHjyyth
+DEBUG:root:zEHjyyth-14:DD:A9:32:E9:A4
+DEBUG:root:Sending: {'bn':['trans:id:420','urn:dev:id:zEHjyyth']}
+DEBUG:root:--------Message Received from: 14:DD:A9:32:E9:A4-------
+DEBUG:root:Normal data received
+DEBUG:root:[{'v': 'test:me', 'n': 'cmd'}]
+DEBUG:root:---------Send Data---------
+DEBUG:root:{'n':'resp','v':'This is the response'}
+DEBUG:root:Found details
+DEBUG:root:{'e':{'n':'resp','v':'This_is_the_response'},'bn':'urn:dev:id:zEHjyyth'}
+DEBUG:root:zEHjyyth-14:DD:A9:32:E9:A4
+DEBUG:root:Sending: {'e':{'n':'resp','v':'This_is_the_response'},'bn':'urn:dev:id:zEHjyyth'}
+DEBUG:root:---------Send Data---------
+DEBUG:root:{'n':'Resp','v':'This is the response'}
+DEBUG:root:Found details
+DEBUG:root:{'e':{'n':'Resp','v':'This_is_the_response'},'bn':'urn:dev:id:zEHjyyth'}
+DEBUG:root:zEHjyyth-14:DD:A9:32:E9:A4
+DEBUG:root:Sending: {'e':{'n':'Resp','v':'This_is_the_response'},'bn':'urn:dev:id:zEHjyyth'}
+DEBUG:root:---------Send Data---------
+DEBUG:root:[{'n':'Resp','v':'This is the response'}]
+DEBUG:root:Found details
+DEBUG:root:{'e':[{'n':'Resp','v':'This_is_the_response'}],'bn':'urn:dev:id:zEHjyyth'}
+DEBUG:root:zEHjyyth-14:DD:A9:32:E9:A4
+DEBUG:root:Sending: {'e':[{'n':'Resp','v':'This_is_the_response'}],'bn':'urn:dev:id:zEHjyyth'}
+ERROR:pika.callback:Calling <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x76179440>> for "1:Basic.GetEmpty" failed
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/pika/callback.py", line 236, in process
+    callback(*args, **keywords)
+  File "/usr/local/lib/python2.7/dist-packages/pika/adapters/blocking_connection.py", line 96, in set_value_once
+    def set_value_once(self, *args, **kwargs):
+KeyboardInterrupt
+DEBUG:root:Bluetooth Radio started: 12:01:12 01/26/17 UTC
+DEBUG:root:Bluetooth Radio started: 12:01:27 01/26/17 UTC
+DEBUG:root:Bluetooth Radio started: 12:02:23 01/26/17 UTC
+DEBUG:root:Bluetooth Radio started: 12:04:09 01/26/17 UTC
+DEBUG:root:Started Server Thread
+DEBUG:root:Waiting for connection on RFCOMM channel 1
+DEBUG:root:Bluetooth Radio started: 12:24:06 01/26/17 UTC
+DEBUG:root:Bluetooth Radio started: 12:29:25 01/26/17 UTC
+DEBUG:root:Started Server Thread
+DEBUG:root:Waiting for connection on RFCOMM channel 1
+DEBUG:root:Scanning timeout
+DEBUG:root:found 1 devices
+DEBUG:root: AC:72:89:FC:4A:BC - NANDOR-PC 
+DEBUG:root:Driver Restarted
+DEBUG:root:Bluetooth Radio started: 12:38:50 01/26/17 UTC
+DEBUG:root:Started Server Thread
+DEBUG:root:Waiting for connection on RFCOMM channel 1
+DEBUG:root:Scanning timeout
+DEBUG:root:found 1 devices
+DEBUG:root: AC:72:89:FC:4A:BC - NANDOR-PC 
+DEBUG:root:Scanning timeout
+DEBUG:root:found 1 devices
+DEBUG:root: AC:72:89:FC:4A:BC - NANDOR-PC 
+DEBUG:root:Scanning timeout
+DEBUG:root:found 1 devices
+DEBUG:root: AC:72:89:FC:4A:BC - NANDOR-PC 
+DEBUG:root:Driver Stopped

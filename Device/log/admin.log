@@ -1,0 +1,4 @@
+DEBUG:root:global name 'connection' is not defined
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [[]], "name": "Temp_GW_9221", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "lvZFgvKORLKzqllz"}
+DEBUG:root:Exiting Main Thread - Keyboard

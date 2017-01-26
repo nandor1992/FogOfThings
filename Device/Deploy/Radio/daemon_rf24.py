@@ -26,7 +26,6 @@ import logging
 #Config Settings
 
 PIDFILE="/home/pi/FogOfThings/Device/pid/rf24.pid"
-LOGFILE = '/var/log/yourdaemon.log'
 
 Config=ConfigParser.ConfigParser()
 Config.read("/home/pi/FogOfThings/Device/config.ini")
@@ -34,8 +33,8 @@ LOGFILE = Config.get("Log","location")+'/rf24.log'
 # Configure logging
 logging.basicConfig(filename=LOGFILE,level=logging.DEBUG)
 
-class rf24():
-#class rf24(Daemon):
+#class rf24():
+class rf24(Daemon):
 
     def try_read_data(self,channel=0):
         if self.radio.available():
@@ -198,10 +197,10 @@ class rf24():
             self.updateDevTime(dev,"Max Retransmit")
 
     def resetTimeout(self):
+        logging.debug("Reset Timeout")
         self.sendRf("{'e':'This_is_a_test'}")
         self.t_reset=Timer(90,self.resetTimeout)
         self.t_reset.start()
-        sys.stdout.flush()
         
     def updateDev(self,dev_id,status):
         #ToDo update Date of Device
@@ -262,7 +261,7 @@ class rf24():
 
         #Timer Stuff
         self.t_reset=Timer(90,self.resetTimeout)
-        self.t_reset.start()
+        self.t_reset.start()        
         
     def run(self):
         #Main Loop of system
@@ -276,10 +275,19 @@ class rf24():
                 self.channel.close()
                 self.connection.close()
                 self.t_reset.cancel()
-                logging.debug("Exiting Main Thread")
+                GPIO.cleanup()
+                logging.debug("Exiting Main Thread - Error")
+                sys.exit(2)
+            except KeyboardInterrupt:
+                self.radio.stopListening()
+                self.channel.close()
+                self.connection.close()
+                self.t_reset.cancel()
+                GPIO.cleanup()
+                logging.debug("Exiting Main Thread - Keyboard")
                 sys.exit(2)
 
-if __name__ == "__main2__":
+if __name__ == "__main__":
 	daemon = rf24(PIDFILE)
 	if len(sys.argv) == 2:
 
@@ -322,7 +330,7 @@ if __name__ == "__main2__":
 		print( "usage: %s start|stop|restart|status" % sys.argv[0])
 		sys.exit(2)
 
-if __name__ == "__main__":
+if __name__ == "__main2__":
     rf=rf24()
     try:
         rf.run()    
@@ -332,6 +340,14 @@ if __name__ == "__main__":
         self.channel.close()
         self.connection.close()
         self.t_reset.cancel()
-        logging.debug("Exiting Main Thread")
+        GPIO.cleanup()
+        logging.debug("Exiting Main Thread Error")
         sys.exit(2)   
-            
+    except KeyboardInterrupt:
+        self.radio.stopListening()
+        self.channel.close()
+        self.connection.close()
+        self.t_reset.cancel()
+        GPIO.cleanup()
+        logging.debug("Exiting Main Thread - Keyboard")
+        sys.exit(2)       

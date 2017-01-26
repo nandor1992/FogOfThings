@@ -1941,3 +1941,19 @@ Message: receive/Moore_1850 "source": "Cloud_Controller", "api_key": "ThisIsRand
 {u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'pQYtwezPQycPBmTQ', 'cloud': 'mqtt_conn1'}
 "register add {'peer_name': 'Richmond_5345', 'peer_mac': 'b8:27:eb:c5:ed:e4', 'peer_ip': '10.0.0.67'}"
 Other message
+DEBUG:root:Starting New Session at 14:42:51 01/26/17 UTC
+DEBUG:root:Connected with result code 0
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Moore_1850 "controller":"raspi01","source":"test1","uuid":"test1abc","api_key":"abc123ef","payload":"bundle deploy "
+DEBUG:root:{"controller":"raspi01","source":"test1","uuid":"test1abc","api_key":"abc123ef","payload":"bundle deploy "}
+DEBUG:root:{
+ "api_key": "abc123ef", 
+ "controller": "raspi01", 
+ "payload": "bundle deploy ", 
+ "source": "test1", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'test1', u'controller': u'raspi01', u'api_key': u'abc123ef', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"bundle deploy "
+DEBUG:root:Other message
+DEBUG:root:Driver Stopped

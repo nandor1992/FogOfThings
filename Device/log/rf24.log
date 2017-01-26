@@ -947,3 +947,101 @@ DEBUG:root:Driver Stopped
 DEBUG:root:RF24 Radio started: 16:24:51 01/25/17 UTC
 DEBUG:root:RF24 Radio started: 16:25:42 01/25/17 UTC
 DEBUG:root:RF24 Radio started: 16:28:56 01/25/17 UTC
+DEBUG:root:RF24 Radio started: 16:31:52 01/25/17 UTC
+DEBUG:root:RF24 Radio started: 16:33:11 01/25/17 UTC
+DEBUG:root:RF24 Radio started: 16:35:54 01/25/17 UTC
+DEBUG:root:RF24 Radio started: 16:36:56 01/25/17 UTC
+DEBUG:root:RF24 Radio started: 16:37:53 01/25/17 UTC
+DEBUG:root:Driver Restarted
+DEBUG:root:Driver Restarted
+DEBUG:root:Driver Stopped
+DEBUG:root:RF24 Radio started: 16:41:26 01/25/17 UTC
+DEBUG:root:--------Message Received on CH=1-------
+DEBUG:root:{"e":[{"n":"Gcode","u":"G"},{"n":"Resp","u":"String"}],"bn":["urn:dev:type:ardRF24CNC","urn:dev:mac:123mac3me56","trans:id:478"],"ver":"1"}
+DEBUG:root:Register data received
+DEBUG:root:Json Parts!
+DEBUG:root:Found details 3zaDoTEr
+DEBUG:root:Driver Restarted
+DEBUG:root:Driver Restarted
+DEBUG:root:RF24 Radio started: 16:42:03 01/25/17 UTC
+DEBUG:root:Driver Restarted
+DEBUG:root:RF24 Radio started: 16:42:40 01/25/17 UTC
+DEBUG:root:Driver Restarted
+DEBUG:root:RF24 Radio started: 16:43:15 01/25/17 UTC
+DEBUG:root:Driver Restarted
+DEBUG:root:RF24 Radio started: 16:44:05 01/25/17 UTC
+DEBUG:root:Driver Restarted
+DEBUG:root:RF24 Radio started: 16:44:20 01/25/17 UTC
+DEBUG:root:Driver Restarted
+DEBUG:root:RF24 Radio started: 16:44:31 01/25/17 UTC
+DEBUG:root:Driver Restarted
+DEBUG:root:RF24 Radio started: 16:44:37 01/25/17 UTC
+DEBUG:root:Driver Restarted
+DEBUG:root:RF24 Radio started: 10:01:22 01/26/17 UTC
+DEBUG:root:Driver Stopped
+DEBUG:root:RF24 Radio started: 10:02:39 01/26/17 UTC
+DEBUG:root:Driver Stopped
+DEBUG:root:RF24 Radio started: 10:08:20 01/26/17 UTC
+DEBUG:root:Driver Stopped
+DEBUG:root:RF24 Radio started: 10:09:12 01/26/17 UTC
+DEBUG:root:RF24 Radio started: 10:10:46 01/26/17 UTC
+DEBUG:root:RF24 Radio started: 10:12:50 01/26/17 UTC
+DEBUG:root:Exiting Main Thread
+DEBUG:root:RF24 Radio started: 10:13:25 01/26/17 UTC
+DEBUG:root:RF24 Radio started: 10:15:12 01/26/17 UTC
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:RF24 Radio started: 10:16:55 01/26/17 UTC
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:RF24 Radio started: 10:17:26 01/26/17 UTC
+DEBUG:root:--------Message Received on CH=1-------
+DEBUG:root:{"e":[{"n":"temp","u":"C"},{"n":"hum","u":"perc"},{"n":"dew","u":"C"}],"bn":["urn:dev:type:ardUnoTemp","urn:dev:mac:123mac2me56","trans:id:875"],"ver":"1"}
+DEBUG:root:Register data received
+DEBUG:root:Json Parts!
+DEBUG:root:No details found
+DEBUG:root:New UUID=0UDdND7z
+DEBUG:root:--------Message Received on CH=1-------
+DEBUG:root:{"e":[{"n":"temp","u":"C"},{"n":"hum","u":"perc"},{"n":"dew","u":"C"}],"bn":["urn:dev:type:ardUnoTemp","urn:dev:mac:123mac2me56","trans:id:925"],"ver":"1"}
+DEBUG:root:Register data received
+DEBUG:root:Json Parts!
+DEBUG:root:Found details 0UDdND7z
+DEBUG:root:--------Message Received on CH=1-------
+DEBUG:root:{"e":[{"n":"temp","u":"C"},{"n":"hum","u":"perc"},{"n":"dew","u":"C"}],"bn":["urn:dev:type:ardUnoTemp","urn:dev:mac:123mac2me56","trans:id:634"],"ver":"1"}
+DEBUG:root:Register data received
+DEBUG:root:Json Parts!
+DEBUG:root:Found details 0UDdND7z
+DEBUG:root:--------Message Received on CH=1-------
+DEBUG:root:{"e":[{"n":"Gcode","u":"G"},{"n":"Resp","u":"String"}],"bn":["urn:dev:type:ardRF24CNC","urn:dev:mac:123mac3me56","trans:id:478"],"ver":"1"}
+DEBUG:root:Register data received
+DEBUG:root:Json Parts!
+DEBUG:root:Found details 3zaDoTEr
+DEBUG:root:--------Message Received on CH=1-------
+DEBUG:root:{"e":[{"n":"temp","u":"C"},{"n":"hum","u":"perc"},{"n":"dew","u":"C"}],"bn":["urn:dev:type:ardUnoTemp","urn:dev:mac:123mac2me56","trans:id:478"],"ver":"1"}
+DEBUG:root:Register data received
+DEBUG:root:Json Parts!
+DEBUG:root:Found details 0UDdND7z
+DEBUG:root:--------Message Received on CH=1-------
+DEBUG:root:{"e":[{"n":"temp","u":"C"},{"n":"hum","u":"perc"},{"n":"dew","u":"C"}],"bn":["urn:dev:type:ardUnoTemp","urn:dev:mac:123mac2me56","trans:id:895"],"ver":"1"}
+DEBUG:root:Register data received
+DEBUG:root:Json Parts!
+DEBUG:root:Found details 0UDdND7z
+DEBUG:root:RF24 Radio started: 10:21:19 01/26/17 UTC
+DEBUG:root:--------Message Received on CH=1-------
+DEBUG:root:{"e":[{"n":"temp","u":"C"},{"n":"hum","u":"perc"},{"n":"dew","u":"C"}],"bn":["urn:dev:type:ardUnoTemp","urn:dev:mac:123mac3me56","trans:id:569"],"ver":"1"}
+DEBUG:root:Register data received
+DEBUG:root:Json Parts!
+DEBUG:root:No details found
+DEBUG:root:New UUID=rZ2IpqAU
+DEBUG:root:--------Message Received on CH=1-------
+DEBUG:root:{"e":[{"n":"temp","u":"C"},{"n":"hum","u":"perc"},{"n":"dew","u":"C"}],"bn":["urn:dev:type:ardUnoTemp","urn:dev:mac:123mac3me56","trans:id:885"],"ver":"1"}
+DEBUG:root:Register data received
+DEBUG:root:Json Parts!
+DEBUG:root:Found details rZ2IpqAU
+DEBUG:root:--------Message Received on CH=1-------
+DEBUG:root:{"e":[{"n":"temp","u":"C"},{"n":"hum","u":"perc"},{"n":"dew","u":"C"}],"bn":["urn:dev:type:ardUnoTemp","urn:dev:mac:123mac3me56","trans:id:485"],"ver":"1"}
+DEBUG:root:Register data received
+DEBUG:root:Json Parts!
+DEBUG:root:Found details rZ2IpqAU
+DEBUG:root:RF24 Radio started: 10:24:54 01/26/17 UTC
+DEBUG:root:Reset Timeout
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Driver Stopped
