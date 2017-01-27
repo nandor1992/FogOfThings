@@ -179,3 +179,36 @@ DEBUG:root:Non json payload
 DEBUG:root:{"payload": "{'test':'me'}", "dev": "mqq"}
 DEBUG:root:Message Sent with result: 0 Message Id: 1
 DEBUG:root:Driver Stopped
+DEBUG:root:Broker started: 12:39:25 01/27/17 UTC
+DEBUG:root: [*] Waiting for messages. To exit press CTRL+C
+DEBUG:root:Driver Stopped
+DEBUG:root:Broker started: 12:39:46 01/27/17 UTC
+DEBUG:root: [*] Waiting for messages. To exit press CTRL+C
+DEBUG:root:[x] Received 'Error: Not Enough Required Devices'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Moore_1850", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Not Enough Required Devices", "cloud": "mqtt_conn1", "datetime": "2017-01-27 12:51:44"}
+DEBUG:root:Message Sent with result: 0 Message Id: 1
+DEBUG:root:[x] Received 'Error: Not Enough Required Devices'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Moore_1850", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Not Enough Required Devices", "cloud": "mqtt_conn1", "datetime": "2017-01-27 12:53:10"}
+DEBUG:root:Message Sent with result: 0 Message Id: 2
+DEBUG:root:[x] Received "success {'state':'Resolved','id':'103'}"
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Moore_1850", "api_key": "ThisIsRandomAPIKey1234", "payload": "success {'state':'Resolved','id':'103'}", "cloud": "mqtt_conn1", "datetime": "2017-01-27 12:58:24"}
+DEBUG:root:Message Sent with result: 0 Message Id: 3
+DEBUG:root:[x] Received "success {'state':'Resolved','id':'104'}"
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Moore_1850", "api_key": "ThisIsRandomAPIKey1234", "payload": "success {'state':'Resolved','id':'104'}", "cloud": "mqtt_conn1", "datetime": "2017-01-27 13:01:47"}
+DEBUG:root:Message Sent with result: 0 Message Id: 4
+DEBUG:root:[x] Received "success {'state':'Resolved','id':'104'}"
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Moore_1850", "api_key": "ThisIsRandomAPIKey1234", "payload": "success {'state':'Resolved','id':'104'}", "cloud": "mqtt_conn1", "datetime": "2017-01-27 13:10:46"}
+DEBUG:root:Message Sent with result: 0 Message Id: 5
+DEBUG:root:[x] Received 'Error: Not Enough Required Devices'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Moore_1850", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Not Enough Required Devices", "cloud": "mqtt_conn1", "datetime": "2017-01-27 13:13:33"}
+DEBUG:root:Message Sent with result: 0 Message Id: 6
+DEBUG:root:[x] Received "success {'state':'Resolved','id':'105'}"
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Moore_1850", "api_key": "ThisIsRandomAPIKey1234", "payload": "success {'state':'Resolved','id':'105'}", "cloud": "mqtt_conn1", "datetime": "2017-01-27 13:15:39"}
+DEBUG:root:Message Sent with result: 0 Message Id: 7

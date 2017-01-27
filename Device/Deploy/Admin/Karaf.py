@@ -10,7 +10,7 @@ class Karaf:
         self.repo=repo
         self.conf=conf_loc
         self.loc=location
-        self.apach=apache_loc
+        self.apach=apache_loc+"/etc/"
     def getBundleInfo(self,id):
         buffer=StringIO()
         status={}
@@ -183,7 +183,7 @@ if __name__ == "__main__":
 #result=k.delBundle(117)
 #result=k.getBundleId("devtransApp-0.0.1-SNAPSHOT.jar")
 #result=k.readConfig("org.karaf.test")
-#k.createConfig("org.karaf.test2",{'arg1':'val1','arg2':'val2'})
+    print(k.createConfig("org.karaf.test2",{'arg1':'val1','arg2':'val2'}))
 #result = k.delConfig("org.karaf.test2")
 #result=k.readConfig("org.karaf.test2")
 #result=k.saveDeployFile("sample_file","{'test1'}")

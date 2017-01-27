@@ -28,7 +28,7 @@ logging.getLogger("pika").setLevel(logging.ERROR)
 class admin():
 #class admin(Daemon):
 
-    def resolve(payload):
+    def resolve(self,payload):
         logging.debug(payload)
         response="Error"
         components=payload.split(' ')
@@ -43,7 +43,7 @@ class admin():
             else:
                 logging.debug("No subtask found")
         elif components[0]=='bundle':
-            print ("Bundle Task")
+            logging.debug("Bundle Task")
             if components[1]=='deploy':
                 logging.debug("Deploy Bundle")
                 response=self.deployTask(" ".join(components[2:]))
@@ -148,7 +148,7 @@ class admin():
         else:
             source=my_j.get("source")
             dest_name=my_j.get("dest_name")
-            print "Source:"+source+" Dest_name:"+dest_name
+            logging.debug("Source:"+source+" Dest_name:"+dest_name)
             args={}
             result=""
             for item in my_j["header"]:
@@ -159,7 +159,7 @@ class admin():
                 result=route.remove(source,dest_name,args)
             return result
 
-    def deployTask(payload):
+    def deployTask(self,payload):
         d_son=self.jsonize(payload)
         logging.debug(json.dumps(d_son,indent=2,sort_keys=False))
         if d_son==None:
@@ -196,37 +196,37 @@ class admin():
                     if result1!="ok" or result1b!="ok":
                         return "Error: Cloud Connection Setup"
                     else:
-                        print ("Cloud connection configuration successfull")
+                        logging.debug("Cloud connection configuration successfull")
                 #Device Stuff
                 if devices!=None:
                     logging.debug("Devices Config Started")
                     for dev in devices:
-                        dev_l=self.device.getSpecDevList(dev["type"],dev_status,controller_name) #Change Idle to Available
+                        dev_l=self.device.getSpecDevList(dev["type"],self.dev_status,self.controller_name) #Change Idle to Available
                         if len(dev_l)<int(dev["required"]):
                             return "Error: Not Enough Required Devices"
                     for dev in devices:
-                        dev_l=self.device.getSpecDevList(dev["type"],dev_status,controller_name) #Change Idle to Available
+                        dev_l=self.device.getSpecDevList(dev["type"],self.dev_status,self.controller_name) #Change Idle to Available
                         dev_conf=""
                         if dev["cnt"]=="":
                             for dev_s in dev_l:
                                 dev_conf=dev_conf+":"+str(dev_s["id"])
                                 result1=self.route.add("apps_resolve","karaf_app",{"device":dev_s["id"]})
                                 if dev["reserve"]=="No":
-                                    result2=self.route.add("device_resolve",dev_s["driver"],{"device":dev_s["id"]})
+                                    result2=self.route.add("device_resolve",Config.get("DeviceQ",dev_s["driver"]),{"device":dev_s["id"]})
                                 else:
-                                    result2=self.route.add("device_resolve",dev_s["driver"],{"device":dev_s["id"],"app":name})
+                                    result2=self.route.add("device_resolve",Config.get("DeviceQ",dev_s["driver"]),{"device":dev_s["id"],"app":name})
                         else:
                             for i in range(0,int(dev["cnt"])):
                                 dev_conf=dev_conf+":"+str(dev_l[i]["id"])
                                 result1=self.route.add("apps_resolve","karaf_app",{"device":dev_l[i]["id"]})
                                 if dev["reserve"]=="No":
-                                    result2=self.route.add("device_resolve",dev_l[i]["driver"],{"device":dev_l[i]["id"]})
+                                    result2=self.route.add("device_resolve",Config.get("DeviceQ",dev_l[i]["driver"]),{"device":dev_l[i]["id"]})
                                 else:
-                                    result2=self.route.add("device_resolve",dev_l[i]["driver"],{"device":dev_l[i]["id"],"app":name})
+                                    result2=self.route.add("device_resolve",Config.get("DeviceQ",dev_l[i]["driver"]),{"device":dev_l[i]["id"],"app":name})
                         list_conf.append("dev_"+dev["type"]+" = "+dev_conf[1:])
                     if result1!="ok" or result2!="ok":
                         return "Error: Devices Connection Setup"
-                    print ("Device connection configuration successfull")               
+                    logging.debug("Device connection configuration successfull")               
 
                 #Region Stuff
                 #ToDO: Add Part to Notify Region of this maybe
@@ -237,7 +237,7 @@ class admin():
                         result2=self.route.addQueue("reg_"+str(reg["name"]))
                         region_conf=region_conf+reg["name"]+":"
                         if str(reg["key"])=="":
-                            result2b=rself.oute.add("region_resolve","reg_"+str(reg["name"]),{"app":name,"region":str(reg["name"])})
+                            result2b=self.route.add("region_resolve","reg_"+str(reg["name"]),{"app":name,"region":str(reg["name"])})
                             result2d=self.route.addExBind("region","apps_resolve",{"app":name,"region":str(reg["name"])})
                             result3=self.route.add("apps_resolve","karaf_app",{"app":name})
                         else:
@@ -249,7 +249,7 @@ class admin():
                     if result2!="ok" or result2b!="ok" or result2c!="ok" or result2b!="ok" or result3!="ok":
                         return "Error: Region Connection Setup"
                     else:
-                        print ("Region connection configuration successfull")
+                        logging.debug("Region connection configuration successfull")
 
                 #Apps Stuff
                 if apps!=None:
@@ -261,7 +261,7 @@ class admin():
                     apps_list=":".join(must_l)
                     apps_list=apps_list+":"+":".join(int_l)
                     list_conf.append("apps = "+apps_list)
-                    print ("Apps connection configuration successfull")
+                    logging.debug("Apps connection configuration successfull")
 
                 #Resource Stuff
                 #ToDo: Add part to notify/resolve Resource
@@ -278,7 +278,7 @@ class admin():
                         return "Error: Resource does not exist"
                     self.route.add("apps_resolve","karaf_app",{"app":name})
                     list_conf.append("resources = "+res_list[:-1])
-                    print ("Resource connection configuration successfull")
+                    logging.debug("Resource connection configuration successfull")
 
                 #Create file with added params and existing ones from previous components
                 if conf!=None and conf_f!=None:
@@ -288,8 +288,8 @@ class admin():
                     if self.karaf.createConfig(conf_f,list_conf)!="ok":
                         return "Error: Config Not Written to File"
                     else:
-                        print "Config file Written"
-                    print ("Conf-File configuration successfull")                
+                       logging.debug("Config file Written")
+                    logging.debug("Conf-File configuration successfull")                
 
                 #Check if file available if not Download
                 if self.karaf.verifyBundleExists(app_f)!="ok":
@@ -323,13 +323,13 @@ class admin():
 
                 #delay 100ms or something
                 bundle_info=self.karaf.getBundleInfo(depl_resp)
-                print bundle_info
+                logging.debug(bundle_info)
                 
                 #Save config file to configs with name
                 if self.karaf.saveDeployFile(name,payload)!="ok":
-                    print "Deployment file could not be saved"
+                    logging.debug("Deployment file could not be saved")
                 else:
-                    print "Deployment file saved"
+                    logging.debug("Deployment file saved")
                 #Verify if application started and return stuff
                 
                 return "success "+str(bundle_info).replace(' ','')
@@ -376,7 +376,7 @@ class admin():
             my_json=json.loads(payload);
             return my_json
         except ValueError:
-            print "Value Erro, probs something stupid happened"
+            logging.debug("Value Erro, probs something stupid happened")
             return None
 
     def checkAuth(self,key):
@@ -394,7 +394,7 @@ class admin():
         if (cloud_conn!=None and source!=None and uuid != None and self.checkAuth(api_key)):
             logging.debug("-----Received Request from Cloud-----")
             response = self.resolve(body)
-            properties_m=pika.BasicProperties(headers={'name':self.controller_name,'api_key':api_key,'cloud':""+self.cloud_conn, 'source':""+source , 'uuid':uuid, 'datetime':""+datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
+            properties_m=pika.BasicProperties(headers={'name':self.controller_name,'api_key':api_key,'cloud':""+cloud_conn, 'source':""+source , 'uuid':uuid, 'datetime':""+datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
             ch.basic_publish(exchange='cloud_resolve', routing_key='', properties=properties_m ,body=str(response))
             logging.debug("---Request processed and Reponse Sent----")
         else:
@@ -433,7 +433,7 @@ class admin():
         resp=inir.register(req)
         try:
             my_json=json.loads(resp);
-            reg=resolve(my_json['payload'])
+            reg=self.resolve(my_json['payload'])
             return reg
         except ValueError:
             return "Value Erro on returning Json"
@@ -480,7 +480,7 @@ class admin():
             logging.debug("Exiting Main Thread - Keyboard")
 
 if __name__ == "__main2__":
-    daemon = admin(PIDFILE)
+    daemon = admin(PIDFILE1)
     if len(sys.argv) == 2:
         if 'start' == sys.argv[1]:
             try:
