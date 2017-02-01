@@ -20,7 +20,7 @@ import logging
 Config=ConfigParser.ConfigParser()
 conf_loc="/home/pi/FogOfThings/Device/config.ini"
 Config.read(conf_loc)
-PIDFILE1="/home/pi/FogOfThings/Device/pid/admin.pid"
+PIDFILE="/home/pi/FogOfThings/Device/pid/admin.pid"
 LOGFILE = Config.get("Log","location")+'/admin.log'
 logging.basicConfig(filename=LOGFILE,level=logging.DEBUG)
 logging.getLogger("pika").setLevel(logging.ERROR)
@@ -49,9 +49,17 @@ class admin():
                 response=self.deployTask(" ".join(components[2:]))
             elif components[1]=='remove':
                 logging.debug("Remove Bundle")
-                response=self.removeTask(" ".join(components[1:]))
+                response=self.removeTask(" ".join(components[2:]))
             else:
                 logging.debug("No subtask found")
+        elif components[0]=='migrate':
+            logging.debug("Migrate Task")
+            if components[1]=='set-up':
+                logging.debug("Set up migration")
+                ##Do method for this
+            elif components[1]=='remove':
+                logging.debug("Remove migration setup ")
+                ##Do method for this as well..
         elif components[0]=='cluster':
             logging.debug("Cluster")
             if components[1]=='dicover':
@@ -117,7 +125,7 @@ class admin():
                     self.ini.initRabbitmq(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))+"/RabbitVersions/rabbit_bare.json")
                     self.ini.initCouchDB(Config.items("DeviceQ"))
                     self.reg.setClustQueue(ret['name'])
-                    self.reg.initClustDatabase(ret['reg_name'],ret['reg_api'],ret['name'],reg.myIp(),reg.myMac())
+                    self.reg.initClustDatabase(ret['reg_name'],ret['reg_api'],ret['name'],self.reg.myIp(),self.reg.myMac())
                 elif components[2]=='update':
                     logging.debug("New Ip for me the Master")
                 ##To-Do
@@ -162,7 +170,10 @@ class admin():
     def deployTask(self,payload):
         d_son=self.jsonize(payload)
         logging.debug(json.dumps(d_son,indent=2,sort_keys=False))
+        d_son=None
         if d_son==None:
+            name="Test_App"
+            self.res.saveDeployFile(name,payload)
             return "Error:jsonize"
         else:
             #ToDo:verify cloud,device,region,name,deployment_config
@@ -177,6 +188,7 @@ class admin():
                 devices=d_son.get("comm").get("devices")
                 resource=d_son.get("comm").get("resources")
                 name=str(d_son.get("name"))
+                migrate=d_son.get("migration")
                 desc=str(d_son.get("description"))
                 app_f=str(d_son.get("file"))
                 conf=d_son.get("deployment").get("config").get("custom_params")
@@ -254,8 +266,8 @@ class admin():
                 #Apps Stuff
                 if apps!=None:
                     logging.debug("Apps Config Started")
-                    must_l=self.karaf.getDeployedApps(apps["required_apps"])
-                    int_l=self.karaf.getDeployedApps(apps["interrested_apps"])
+                    must_l=self.res.getDeployedApps(apps["required_apps"])
+                    int_l=self.res.getDeployedApps(apps["interrested_apps"])
                     if len(apps["required_apps"])!=len(must_l):
                         return "Error: Required Apps Not met"
                     apps_list=":".join(must_l)
@@ -280,6 +292,13 @@ class admin():
                     list_conf.append("resources = "+res_list[:-1])
                     logging.debug("Resource connection configuration successfull")
 
+                ##Migration Resolving!!!!!!!!!!!!!!!!!!
+                if migrate!=None:
+                    logging.debug("Migration Config Started")
+                    ##Do magic Here
+                    ##Basically forward anything and everything that has the correct name to karaf app and app_resolver ? 
+                    logging.debug("Migration configuration successfull")
+                
                 #Create file with added params and existing ones from previous components
                 if conf!=None and conf_f!=None:
                     logging.debug("Conf-File Config Started")
@@ -326,7 +345,7 @@ class admin():
                 logging.debug(bundle_info)
                 
                 #Save config file to configs with name
-                if self.karaf.saveDeployFile(name,payload)!="ok":
+                if self.res.saveDeployFile(name,payload)!="ok":
                     logging.debug("Deployment file could not be saved")
                 else:
                     logging.debug("Deployment file saved")
@@ -335,17 +354,39 @@ class admin():
                 return "success "+str(bundle_info).replace(' ','')
 
     def removeTask(self,payload):
-        d_son=jsonize(payload)
-        logging.debug(json.dumps(d_son,indent=2,sort_keys=False))
-        if d_son==None:
-            return "Error:jsonize"
+        name=payload
+        print name
+        doc=self.res.getDeployFile(name)
+        if doc==None:
+            return "Error: "+name+" not found"
         else:
             #ToDo:verify cloud,device,region,name,deployment_config
-            if self.removeVerify(d_son)!=None:
+            if self.removeVerify(doc)!=None:
                 return "Error:Verify"
             else:
             #Do Removal Stuff
-                return "ok"
+                #Get Variables for werk"
+                cloud=doc["comm"]["cloud")
+                region=doc["comm"]["region"]
+                devices=doc["comm"]["devices"]
+                resource=doc["comm"]["resources"]
+                migrate=doc["migration"]
+                conf_f=str(doc["deployment"]["config"]["file"))                
+
+                #Connection Stuff
+                ##ToDo: See if app had connection if yes delete that one
+                ##Do Cloud
+                ##Do Device - Check if other apps have connections
+                ##Do Region - Delete Regions connection for this app
+                ##Do Resource - Maybe not delete db
+                ##Check if anything migrated to app, delete those connections
+
+                #Housekeeping
+                ## Maybe delete personal Resouce
+                ## Delete bundle from Karaf
+                ## Delete Conf-file
+                ##Delete Deploy file
+                return "success: Removed "+name+" from Gateway"
 
     def migrateTask(self,payload):
         d_son=self.jsonize(payload)
@@ -452,7 +493,6 @@ class admin():
         self.route = Route.Route(self.channel)
         self.karaf=Karaf.Karaf(Config.get("Karaf","user"),Config.get("Karaf","pass"),Config.get("Admin","app_storage"),Config.get("General","location")+"/apps/",Config.get("General","location")+"/configs/",Config.get("Karaf","location")+"/")
         self.device=Device.Device(Config.get("couchDB","user"),Config.get("couchDB","pass"),Config.items("DeviceQ"))
-        self.res=Resource.Resource(Config.get("couchDB","user"),Config.get("couchDB","pass"),Config.get("General","Gateway_Name"),Config.items("ResourceQ")) ##Redo Resource so that they are store in config not admin 
         self.reg=Region.Region(Config.get("Amqp","user"),Config.get("Amqp","pass"),Config.get("Amqp","virt"),Config.get("couchDB","user"),Config.get("couchDB","pass"))
 
         #Do Initial Request and Modify what needs to be modified
@@ -460,7 +500,7 @@ class admin():
         self.initialRequest()
         #Set variables for later use and start RPC request queueu    
         self.controller_name= Config.get("General","Gateway_Name")
-
+        self.res=Resource.Resource(Config.get("couchDB","user"),Config.get("couchDB","pass"),self.controller_name,Config.items("ResourceQ"))
 
     def shutdown(self):
         self.channel.stop_consuming()
@@ -470,17 +510,18 @@ class admin():
     def run(self):
         self.init()
         try:
+            logging.debug("Awaiting Requests!")
             self.channel.start_consuming()
-        except Exception,e:
-            logging.error(e)
-            self.shutdown()
-            logging.debug("Exiting Main Thread - Error")
+       # except Exception,e:
+         #   logging.error(e)
+          #  self.shutdown()
+         #   logging.debug("Exiting Main Thread - Error")
         except KeyboardInterrupt:
             self.shutdown()
             logging.debug("Exiting Main Thread - Keyboard")
 
-if __name__ == "__main2__":
-    daemon = admin(PIDFILE1)
+if __name__ == "__main_2_":
+    daemon = admin(PIDFILE)
     if len(sys.argv) == 2:
         if 'start' == sys.argv[1]:
             try:
@@ -521,10 +562,10 @@ if __name__ == "__main__":
     admin=admin()
     try:
         admin.run()
-    except Exception , e:
-        logging.debug(e)
-        admin.shutdown()
-        logging.debug("Exiting Main Thread - Keyboard")
+  #  except Exception , e:
+       # logging.debug(e)
+       # admin.shutdown()
+       # logging.debug("Exiting Main Thread - Keyboard")
     except KeyboardInterrupt:
         admin.shutdown()
         logging.debug("Exiting Main Thread - Keyboard")

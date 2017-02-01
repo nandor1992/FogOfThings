@@ -212,3 +212,34 @@ DEBUG:root:[x] Received "success {'state':'Resolved','id':'105'}"
 DEBUG:root:Non json payload
 DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Moore_1850", "api_key": "ThisIsRandomAPIKey1234", "payload": "success {'state':'Resolved','id':'105'}", "cloud": "mqtt_conn1", "datetime": "2017-01-27 13:15:39"}
 DEBUG:root:Message Sent with result: 0 Message Id: 7
+DEBUG:root:Driver Stopped
+DEBUG:root:Broker started: 11:37:57 02/01/17 UTC
+DEBUG:root: [*] Waiting for messages. To exit press CTRL+C
+DEBUG:root:[x] Received 'Error:jsonize'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error:jsonize", "cloud": "mqtt_conn1", "datetime": "2017-02-01 11:39:48"}
+DEBUG:root:Message Sent with result: 0 Message Id: 1
+DEBUG:root:[x] Received 'Error:jsonize'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error:jsonize", "cloud": "mqtt_conn1", "datetime": "2017-02-01 11:44:25"}
+DEBUG:root:Message Sent with result: 0 Message Id: 2
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-02-01 12:06:03"}
+DEBUG:root:Message Sent with result: 0 Message Id: 3
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-02-01 12:06:07"}
+DEBUG:root:Message Sent with result: 0 Message Id: 4
+DEBUG:root:[x] Received 'Error: App not found'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: App not found", "cloud": "mqtt_conn1", "datetime": "2017-02-01 12:38:38"}
+DEBUG:root:Message Sent with result: 0 Message Id: 5
+DEBUG:root:[x] Received 'Error: App not found'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: App not found", "cloud": "mqtt_conn1", "datetime": "2017-02-01 12:39:39"}
+DEBUG:root:Message Sent with result: 0 Message Id: 6
+DEBUG:root:[x] Received 'success: Removed Thermostat_App from Gateway'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "success: Removed Thermostat_App from Gateway", "cloud": "mqtt_conn1", "datetime": "2017-02-01 12:40:17"}
+DEBUG:root:Message Sent with result: 0 Message Id: 7

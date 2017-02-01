@@ -47,14 +47,6 @@ class Karaf:
             return "error:Not Found"
         else:
             return id
-
-    def getDeployedApps(self,needs):
-        havs=[]
-        files=[f for f in os.listdir(self.conf) if os.path.isfile(os.path.join(self.conf,f))]
-        for file_h in files:
-            if file_h[:-4] in needs:
-                havs.append(file_h[:-4])
-        return havs
        
     def verifyBundleExists(self,fname):
         if os.path.isfile(""+self.loc+fname):
@@ -146,12 +138,6 @@ class Karaf:
         fp=open(self.apach+fname+".cfg","w")
         for key in values:
             fp.write(key+'\n')           
-        fp.close()
-        return "ok"
-
-    def saveDeployFile(self,fname,payload):
-        fp=open(self.conf+fname+".cfg","w")
-        fp.write(payload)           
         fp.close()
         return "ok"
 

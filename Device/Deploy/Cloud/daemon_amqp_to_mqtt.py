@@ -12,7 +12,7 @@ import time
 import urllib
 import datetime
 #Config Settings
-PIDFILE1="/home/pi/FogOfThings/Device/pid/a2m.pid"
+PIDFILE="/home/pi/FogOfThings/Device/pid/a2m.pid"
 Config=ConfigParser.ConfigParser()
 Config.read("/home/pi/FogOfThings/Device/config.ini")
 LOGFILE = Config.get("Log","location")+'/amqp_to_mqtt.log'
@@ -201,7 +201,7 @@ class down(Daemon):
         self.connection.close()
 
 if __name__ == "__main__":
-    daemon = up(PIDFILE1)
+    daemon = up(PIDFILE)
     if len(sys.argv) == 2:
         if 'start' == sys.argv[1]:
             try:

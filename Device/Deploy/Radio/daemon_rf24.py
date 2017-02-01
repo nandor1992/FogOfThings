@@ -23,6 +23,7 @@ import os,sys
 import ConfigParser
 from daemon import Daemon
 import logging
+import re
 #Config Settings
 
 PIDFILE="/home/pi/FogOfThings/Device/pid/rf24.pid"
@@ -36,6 +37,7 @@ logging.basicConfig(filename=LOGFILE,level=logging.DEBUG)
 #class rf24():
 class rf24(Daemon):
 
+    ##########################################
     def try_read_data(self,channel=0):
         if self.radio.available():
             while self.radio.available():
@@ -43,7 +45,7 @@ class rf24(Daemon):
                 payload = self.radio.read(length).decode()
                 payload = payload[:31]
                 self.message=self.message+payload.strip()
-                #logging.debug(message)
+                #print(message)
                 if (self.message[-1]=='}' and self.message[0:1]=='{'):
                     logging.debug("--------Message Received on CH=1-------")
                     self.handle_data(self.message)
@@ -56,7 +58,6 @@ class rf24(Daemon):
                     self.message=""
             #print(message)
             #print('Got payload size={} value="{}"'.format(len, receive_payload.decode('utf-8')))
-
     
     def sendRf(self,message):
         self.radio.stopListening()
@@ -80,11 +81,38 @@ class rf24(Daemon):
             else:
                 logging.debug("Normal data received")
                 self.messageResolv(my_json)
+        except KeyError:
+            r=re.compile('{"v":.*","id":".*"}')
+            if r.match(data):
+                logging.debug("TinyDataReceived")
+                self.tinyResolv(my_json)
         except ValueError:
-            logging.debug("Value Erro, probs something stupid happened")
+            logging.debug("Vallue Error, badly formed String")
         except IndexError:
             logging.debug("Index Error, probs something stupid happened")
     
+    def tinyResolv(self, data):
+        dev_id=data.get("id")
+        value=data.get("v")
+        logging.debug(dev_id)
+        if (self.dev_list.count(dev_id)!=0):
+            message_amqp='{"value":"'+value+'"}'
+            properties_m=pika.BasicProperties(headers={'device':""+dev_id,'comm': ""+self.gw_name+"_tiny",'datetime':""+datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
+            self.channel.basic_publish(exchange='device', routing_key='', body=message_amqp, properties=properties_m)
+            self.updateDevTime(dev_id,"Available")
+        else:
+            ##Check if Device listed as belonging to this GW and if yes, add to devList and send msg
+            if self.datab.checkDevGw(dev_id):
+                message_amqp='{"value":"'+value+'"}'
+                properties_m=pika.BasicProperties(headers={'device':""+dev_id,'comm': ""+self.gw_name+"_tiny",'datetime':""+datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
+                self.channel.basic_publish(exchange='device', routing_key='', body=message_amqp, properties=properties_m)
+                self.updateDevTime(dev_id,"Available")
+                self.dev_list.append(dev_id)
+            else:
+                logging.debug("New Device Add to this GW")
+                self.datab.addDevice(dev_id,"tiny_dev","no_mac","1",datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),'Available',{'value':'anything'})
+                self.dev_list.append(dev_id)
+        
     def messageResolv(self,my_json):
         dev_id=my_json.get("bn")[11:]
         dev_id=dev_id[:8]
@@ -227,10 +255,9 @@ class rf24(Daemon):
         logging.debug("RF24 Radio started: "+time.strftime('%X %x %Z'))
 
         self.radio.begin()
+        self.radio.setPALevel(RF24_PA_HIGH);
         self.radio.enableDynamicPayloads()
-        self.radio.setPALevel(RF24_PA_MAX);
         self.radio.setRetries(5,15);
-
         if irq_gpio_pin is not None:
         # set up callback for irq pin
             #GPIO.setwarnings(False)
@@ -330,7 +357,7 @@ if __name__ == "__main__":
 		print( "usage: %s start|stop|restart|status" % sys.argv[0])
 		sys.exit(2)
 
-if __name__ == "__main2__":
+if __name__ == "__main9__":
     rf=rf24()
     try:
         rf.run()    

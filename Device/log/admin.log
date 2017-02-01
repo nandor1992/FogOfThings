@@ -668,3 +668,812 @@ DEBUG:root:{'state': 'Resolved', 'id': '105'}
 DEBUG:root:Deployment file saved
 DEBUG:root:---Request processed and Reponse Sent----
 DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [[]], "name": "Temp_GW_3589", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "lvZFgvKORLKzqllz"}
+DEBUG:root:register self nothing {'reg_api': 'cBoFRDWwaWNQUKZQ', 'reg_role': 'master', 'reg_name': 'Cluster_Jose_9653', 'name': 'Moore_1850'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Missing components or failed Auth
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':{      'name':'FirstRegion',      'key' :'BasicApiKey1'    },    'apps':{      'required_apps':['BrokerApp'],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [      {        'type': 'ardUnoTemp',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      },        {        'type': 'ardRelayBoiler',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{  "name": "Thermostat_App",  "file": "thermostatApp-0.0.1-SNAPSHOT.jar",  "description": "Thermostat App Stuff",  "comm": {    "cloud": ["mqtt_conn1"],    "region":{      "name":"FirstRegion",      "key" :"BasicApiKey1"    },    "apps":{      "required_apps":["BrokerApp"],      "interrested_apps":["TestApp1"]    },    "resources":["position","storage"],    "devices": [      {        "type": "ardUnoTemp",        "cnt": "1",        "required": "1",        "reserve": "No"      },      {        "type": "AndroidPhone",        "cnt": "1",        "required": "1",        "reserve": "No"      },        {        "type": "ardRelayBoiler",        "cnt": "1",        "required": "1",        "reserve": "No"      }    ]  },  "deployment": {    "config": {      "file": "org.karaf.thermostat",      "custom_params": {        "my_param": "just_a_second_test"      }    },    "qos": {      "main": "dev_latency",      "secondary": [        "cloud_latency,response_time"      ]    }  }}
+DEBUG:root:{
+  "deployment": {
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }, 
+    "config": {
+      "custom_params": {
+        "my_param": "just_a_second_test"
+      }, 
+      "file": "org.karaf.thermostat"
+    }
+  }, 
+  "comm": {
+    "region": {
+      "name": "FirstRegion", 
+      "key": "BasicApiKey1"
+    }, 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "ardUnoTemp", 
+        "reserve": "No"
+      }, 
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhone", 
+        "reserve": "No"
+      }, 
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "ardRelayBoiler", 
+        "reserve": "No"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [
+        "TestApp1"
+      ], 
+      "required_apps": [
+        "BrokerApp"
+      ]
+    }, 
+    "resources": [
+      "position", 
+      "storage"
+    ], 
+    "cloud": [
+      "mqtt_conn1"
+    ]
+  }, 
+  "name": "Thermostat_App", 
+  "file": "thermostatApp-0.0.1-SNAPSHOT.jar", 
+  "description": "Thermostat App Stuff"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+ERROR:root:string indices must be integers
+DEBUG:root:Exiting Main Thread - Error
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [[]], "name": "Temp_GW_1547", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "lvZFgvKORLKzqllz"}
+DEBUG:root:register self nothing {'reg_api': 'cBoFRDWwaWNQUKZQ', 'reg_role': 'master', 'reg_name': 'Cluster_Jose_9653', 'name': 'Moore_1850'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':{      'name':'FirstRegion',      'key' :'BasicApiKey1'    },    'apps':{      'required_apps':['BrokerApp'],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [      {        'type': 'ardUnoTemp',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      },        {        'type': 'ardRelayBoiler',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{  "name": "Thermostat_App",  "file": "thermostatApp-0.0.1-SNAPSHOT.jar",  "description": "Thermostat App Stuff",  "comm": {    "cloud": ["mqtt_conn1"],    "region":{      "name":"FirstRegion",      "key" :"BasicApiKey1"    },    "apps":{      "required_apps":["BrokerApp"],      "interrested_apps":["TestApp1"]    },    "resources":["position","storage"],    "devices": [      {        "type": "ardUnoTemp",        "cnt": "1",        "required": "1",        "reserve": "No"      },      {        "type": "AndroidPhone",        "cnt": "1",        "required": "1",        "reserve": "No"      },        {        "type": "ardRelayBoiler",        "cnt": "1",        "required": "1",        "reserve": "No"      }    ]  },  "deployment": {    "config": {      "file": "org.karaf.thermostat",      "custom_params": {        "my_param": "just_a_second_test"      }    },    "qos": {      "main": "dev_latency",      "secondary": [        "cloud_latency,response_time"      ]    }  }}
+DEBUG:root:{
+  "deployment": {
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }, 
+    "config": {
+      "custom_params": {
+        "my_param": "just_a_second_test"
+      }, 
+      "file": "org.karaf.thermostat"
+    }
+  }, 
+  "comm": {
+    "region": {
+      "name": "FirstRegion", 
+      "key": "BasicApiKey1"
+    }, 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "ardUnoTemp", 
+        "reserve": "No"
+      }, 
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhone", 
+        "reserve": "No"
+      }, 
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "ardRelayBoiler", 
+        "reserve": "No"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [
+        "TestApp1"
+      ], 
+      "required_apps": [
+        "BrokerApp"
+      ]
+    }, 
+    "resources": [
+      "position", 
+      "storage"
+    ], 
+    "cloud": [
+      "mqtt_conn1"
+    ]
+  }, 
+  "name": "Thermostat_App", 
+  "file": "thermostatApp-0.0.1-SNAPSHOT.jar", 
+  "description": "Thermostat App Stuff"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [[]], "name": "Temp_GW_1956", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "lvZFgvKORLKzqllz"}
+DEBUG:root:register self nothing {'reg_api': 'cBoFRDWwaWNQUKZQ', 'reg_role': 'master', 'reg_name': 'Cluster_Jose_9653', 'name': 'Moore_1850'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':['BrokerApp'],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [      {        'type': 'ardUnoTemp',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      },        {        'type': 'ardRelayBoiler',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{  "name": "Thermostat_App",  "file": "thermostatApp-0.0.1-SNAPSHOT.jar",  "description": "Thermostat App Stuff",  "comm": {    "cloud": ["mqtt_conn1"],    "region":      [{"name":"FirstRegion",      "key" :"BasicApiKey1"}],    "apps":{      "required_apps":["BrokerApp"],      "interrested_apps":["TestApp1"]    },    "resources":["position","storage"],    "devices": [      {        "type": "ardUnoTemp",        "cnt": "1",        "required": "1",        "reserve": "No"      },      {        "type": "AndroidPhone",        "cnt": "1",        "required": "1",        "reserve": "No"      },        {        "type": "ardRelayBoiler",        "cnt": "1",        "required": "1",        "reserve": "No"      }    ]  },  "deployment": {    "config": {      "file": "org.karaf.thermostat",      "custom_params": {        "my_param": "just_a_second_test"      }    },    "qos": {      "main": "dev_latency",      "secondary": [        "cloud_latency,response_time"      ]    }  }}
+DEBUG:root:{
+  "deployment": {
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }, 
+    "config": {
+      "custom_params": {
+        "my_param": "just_a_second_test"
+      }, 
+      "file": "org.karaf.thermostat"
+    }
+  }, 
+  "comm": {
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "ardUnoTemp", 
+        "reserve": "No"
+      }, 
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhone", 
+        "reserve": "No"
+      }, 
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "ardRelayBoiler", 
+        "reserve": "No"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [
+        "TestApp1"
+      ], 
+      "required_apps": [
+        "BrokerApp"
+      ]
+    }, 
+    "resources": [
+      "position", 
+      "storage"
+    ], 
+    "cloud": [
+      "mqtt_conn1"
+    ]
+  }, 
+  "name": "Thermostat_App", 
+  "file": "thermostatApp-0.0.1-SNAPSHOT.jar", 
+  "description": "Thermostat App Stuff"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':['BrokerApp'],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [      {        'type': 'ardUnoTemp',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      },        {        'type': 'ardRelayBoiler',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{  "name": "Thermostat_App",  "file": "thermostatApp-0.0.1-SNAPSHOT.jar",  "description": "Thermostat App Stuff",  "comm": {    "cloud": ["mqtt_conn1"],    "region":      [{"name":"FirstRegion",      "key" :"BasicApiKey1"}],    "apps":{      "required_apps":["BrokerApp"],      "interrested_apps":["TestApp1"]    },    "resources":["position","storage"],    "devices": [      {        "type": "ardUnoTemp",        "cnt": "1",        "required": "1",        "reserve": "No"      },      {        "type": "AndroidPhone",        "cnt": "1",        "required": "1",        "reserve": "No"      },        {        "type": "ardRelayBoiler",        "cnt": "1",        "required": "1",        "reserve": "No"      }    ]  },  "deployment": {    "config": {      "file": "org.karaf.thermostat",      "custom_params": {        "my_param": "just_a_second_test"      }    },    "qos": {      "main": "dev_latency",      "secondary": [        "cloud_latency,response_time"      ]    }  }}
+DEBUG:root:{
+  "deployment": {
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }, 
+    "config": {
+      "custom_params": {
+        "my_param": "just_a_second_test"
+      }, 
+      "file": "org.karaf.thermostat"
+    }
+  }, 
+  "comm": {
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "ardUnoTemp", 
+        "reserve": "No"
+      }, 
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhone", 
+        "reserve": "No"
+      }, 
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "ardRelayBoiler", 
+        "reserve": "No"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [
+        "TestApp1"
+      ], 
+      "required_apps": [
+        "BrokerApp"
+      ]
+    }, 
+    "resources": [
+      "position", 
+      "storage"
+    ], 
+    "cloud": [
+      "mqtt_conn1"
+    ]
+  }, 
+  "name": "Thermostat_App", 
+  "file": "thermostatApp-0.0.1-SNAPSHOT.jar", 
+  "description": "Thermostat App Stuff"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':['Broker_App'],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [      {        'type': 'ardUnoTemp',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      },        {        'type': 'ardRelayBoiler',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{  "name": "Thermostat_App",  "file": "thermostatApp-0.0.1-SNAPSHOT.jar",  "description": "Thermostat App Stuff",  "comm": {    "cloud": ["mqtt_conn1"],    "region":      [{"name":"FirstRegion",      "key" :"BasicApiKey1"}],    "apps":{      "required_apps":["Broker_App"],      "interrested_apps":["TestApp1"]    },    "resources":["position","storage"],    "devices": [      {        "type": "ardUnoTemp",        "cnt": "1",        "required": "1",        "reserve": "No"      },      {        "type": "AndroidPhone",        "cnt": "1",        "required": "1",        "reserve": "No"      },        {        "type": "ardRelayBoiler",        "cnt": "1",        "required": "1",        "reserve": "No"      }    ]  },  "deployment": {    "config": {      "file": "org.karaf.thermostat",      "custom_params": {        "my_param": "just_a_second_test"      }    },    "qos": {      "main": "dev_latency",      "secondary": [        "cloud_latency,response_time"      ]    }  }}
+DEBUG:root:{
+  "deployment": {
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }, 
+    "config": {
+      "custom_params": {
+        "my_param": "just_a_second_test"
+      }, 
+      "file": "org.karaf.thermostat"
+    }
+  }, 
+  "comm": {
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "ardUnoTemp", 
+        "reserve": "No"
+      }, 
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhone", 
+        "reserve": "No"
+      }, 
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "ardRelayBoiler", 
+        "reserve": "No"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [
+        "TestApp1"
+      ], 
+      "required_apps": [
+        "Broker_App"
+      ]
+    }, 
+    "resources": [
+      "position", 
+      "storage"
+    ], 
+    "cloud": [
+      "mqtt_conn1"
+    ]
+  }, 
+  "name": "Thermostat_App", 
+  "file": "thermostatApp-0.0.1-SNAPSHOT.jar", 
+  "description": "Thermostat App Stuff"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 106
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Resolved', 'id': '106'}
+DEBUG:root:Deployment file saved
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [[]], "name": "Temp_GW_1397", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "lvZFgvKORLKzqllz"}
+DEBUG:root:register self initClust {'reg_api': 'RcsTHaPgoodhekdh', 'reg_role': 'master', 'reg_name': 'Cluster_Ernest_7845', 'name': 'Chavez_7107'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Initialize new Cluster you are Master
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [[]], "name": "Temp_GW_4979", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "lvZFgvKORLKzqllz"}
+DEBUG:root:register self nothing {'reg_api': 'RcsTHaPgoodhekdh', 'reg_role': 'master', 'reg_name': 'Cluster_Ernest_7845', 'name': 'Chavez_7107'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [[]], "name": "Temp_GW_4022", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "lvZFgvKORLKzqllz"}
+DEBUG:root:register self initClust {'reg_api': 'UrzwkLtQHtEZfyuk', 'reg_role': 'master', 'reg_name': 'Cluster_Joshua_3072', 'name': 'Morrison_3383'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Initialize new Cluster you are Master
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [[]], "name": "Temp_GW_1880", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "lvZFgvKORLKzqllz"}
+DEBUG:root:register self nothing {'reg_api': 'yFuzJaJGfZUKQgLz', 'reg_role': 'master', 'reg_name': 'Cluster_Cindy_1636', 'name': 'Vazquez_7663'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [[]], "name": "Temp_GW_4209", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "lvZFgvKORLKzqllz"}
+DEBUG:root:register self nothing {'reg_api': 'yFuzJaJGfZUKQgLz', 'reg_role': 'master', 'reg_name': 'Cluster_Cindy_1636', 'name': 'Vazquez_7663'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':['Broker_App'],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [      {        'type': 'ardUnoTemp',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      },        {        'type': 'ardRelayBoiler',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{  "name": "Thermostat_App",  "file": "thermostatApp-0.0.1-SNAPSHOT.jar",  "description": "Thermostat App Stuff",  "comm": {    "cloud": ["mqtt_conn1"],    "region":      [{"name":"FirstRegion",      "key" :"BasicApiKey1"}],    "apps":{      "required_apps":["Broker_App"],      "interrested_apps":["TestApp1"]    },    "resources":["position","storage"],    "devices": [      {        "type": "ardUnoTemp",        "cnt": "1",        "required": "1",        "reserve": "No"      },      {        "type": "AndroidPhone",        "cnt": "1",        "required": "1",        "reserve": "No"      },        {        "type": "ardRelayBoiler",        "cnt": "1",        "required": "1",        "reserve": "No"      }    ]  },  "deployment": {    "config": {      "file": "org.karaf.thermostat",      "custom_params": {        "my_param": "just_a_second_test"      }    },    "qos": {      "main": "dev_latency",      "secondary": [        "cloud_latency,response_time"      ]    }  }}
+DEBUG:root:{
+  "deployment": {
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }, 
+    "config": {
+      "custom_params": {
+        "my_param": "just_a_second_test"
+      }, 
+      "file": "org.karaf.thermostat"
+    }
+  }, 
+  "comm": {
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "ardUnoTemp", 
+        "reserve": "No"
+      }, 
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhone", 
+        "reserve": "No"
+      }, 
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "ardRelayBoiler", 
+        "reserve": "No"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [
+        "TestApp1"
+      ], 
+      "required_apps": [
+        "Broker_App"
+      ]
+    }, 
+    "resources": [
+      "position", 
+      "storage"
+    ], 
+    "cloud": [
+      "mqtt_conn1"
+    ]
+  }, 
+  "name": "Thermostat_App", 
+  "file": "thermostatApp-0.0.1-SNAPSHOT.jar", 
+  "description": "Thermostat App Stuff"
+}
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [[]], "name": "Temp_GW_6974", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "lvZFgvKORLKzqllz"}
+DEBUG:root:register self nothing {'reg_api': 'yFuzJaJGfZUKQgLz', 'reg_role': 'master', 'reg_name': 'Cluster_Cindy_1636', 'name': 'Vazquez_7663'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':['Broker_App'],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [      {        'type': 'ardUnoTemp',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      },        {        'type': 'ardRelayBoiler',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{  "name": "Thermostat_App",  "file": "thermostatApp-0.0.1-SNAPSHOT.jar",  "description": "Thermostat App Stuff",  "comm": {    "cloud": ["mqtt_conn1"],    "region":      [{"name":"FirstRegion",      "key" :"BasicApiKey1"}],    "apps":{      "required_apps":["Broker_App"],      "interrested_apps":["TestApp1"]    },    "resources":["position","storage"],    "devices": [      {        "type": "ardUnoTemp",        "cnt": "1",        "required": "1",        "reserve": "No"      },      {        "type": "AndroidPhone",        "cnt": "1",        "required": "1",        "reserve": "No"      },        {        "type": "ardRelayBoiler",        "cnt": "1",        "required": "1",        "reserve": "No"      }    ]  },  "deployment": {    "config": {      "file": "org.karaf.thermostat",      "custom_params": {        "my_param": "just_a_second_test"      }    },    "qos": {      "main": "dev_latency",      "secondary": [        "cloud_latency,response_time"      ]    }  }}
+DEBUG:root:{
+  "deployment": {
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }, 
+    "config": {
+      "custom_params": {
+        "my_param": "just_a_second_test"
+      }, 
+      "file": "org.karaf.thermostat"
+    }
+  }, 
+  "comm": {
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "ardUnoTemp", 
+        "reserve": "No"
+      }, 
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhone", 
+        "reserve": "No"
+      }, 
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "ardRelayBoiler", 
+        "reserve": "No"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [
+        "TestApp1"
+      ], 
+      "required_apps": [
+        "Broker_App"
+      ]
+    }, 
+    "resources": [
+      "position", 
+      "storage"
+    ], 
+    "cloud": [
+      "mqtt_conn1"
+    ]
+  }, 
+  "name": "Thermostat_App", 
+  "file": "thermostatApp-0.0.1-SNAPSHOT.jar", 
+  "description": "Thermostat App Stuff"
+}
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [[]], "name": "Temp_GW_4213", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "lvZFgvKORLKzqllz"}
+DEBUG:root:register self nothing {'reg_api': 'yFuzJaJGfZUKQgLz', 'reg_role': 'master', 'reg_name': 'Cluster_Cindy_1636', 'name': 'Vazquez_7663'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':['Broker_App'],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [      {        'type': 'ardUnoTemp',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      },        {        'type': 'ardRelayBoiler',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{  "name": "Thermostat_App",  "file": "thermostatApp-0.0.1-SNAPSHOT.jar",  "description": "Thermostat App Stuff",  "comm": {    "cloud": ["mqtt_conn1"],    "region":      [{"name":"FirstRegion",      "key" :"BasicApiKey1"}],    "apps":{      "required_apps":["Broker_App"],      "interrested_apps":["TestApp1"]    },    "resources":["position","storage"],    "devices": [      {        "type": "ardUnoTemp",        "cnt": "1",        "required": "1",        "reserve": "No"      },      {        "type": "AndroidPhone",        "cnt": "1",        "required": "1",        "reserve": "No"      },        {        "type": "ardRelayBoiler",        "cnt": "1",        "required": "1",        "reserve": "No"      }    ]  },  "deployment": {    "config": {      "file": "org.karaf.thermostat",      "custom_params": {        "my_param": "just_a_second_test"      }    },    "qos": {      "main": "dev_latency",      "secondary": [        "cloud_latency,response_time"      ]    }  }}
+DEBUG:root:{
+  "deployment": {
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }, 
+    "config": {
+      "custom_params": {
+        "my_param": "just_a_second_test"
+      }, 
+      "file": "org.karaf.thermostat"
+    }
+  }, 
+  "comm": {
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "ardUnoTemp", 
+        "reserve": "No"
+      }, 
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhone", 
+        "reserve": "No"
+      }, 
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "ardRelayBoiler", 
+        "reserve": "No"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [
+        "TestApp1"
+      ], 
+      "required_apps": [
+        "Broker_App"
+      ]
+    }, 
+    "resources": [
+      "position", 
+      "storage"
+    ], 
+    "cloud": [
+      "mqtt_conn1"
+    ]
+  }, 
+  "name": "Thermostat_App", 
+  "file": "thermostatApp-0.0.1-SNAPSHOT.jar", 
+  "description": "Thermostat App Stuff"
+}
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [[]], "name": "Temp_GW_9366", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "lvZFgvKORLKzqllz"}
+DEBUG:root:register self nothing {'reg_api': 'yFuzJaJGfZUKQgLz', 'reg_role': 'master', 'reg_name': 'Cluster_Cindy_1636', 'name': 'Vazquez_7663'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':['Broker_App'],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [      {        'type': 'ardUnoTemp',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      },        {        'type': 'ardRelayBoiler',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{  "name": "Thermostat_App",  "file": "thermostatApp-0.0.1-SNAPSHOT.jar",  "description": "Thermostat App Stuff",  "comm": {    "cloud": ["mqtt_conn1"],    "region":      [{"name":"FirstRegion",      "key" :"BasicApiKey1"}],    "apps":{      "required_apps":["Broker_App"],      "interrested_apps":["TestApp1"]    },    "resources":["position","storage"],    "devices": [      {        "type": "ardUnoTemp",        "cnt": "1",        "required": "1",        "reserve": "No"      },      {        "type": "AndroidPhone",        "cnt": "1",        "required": "1",        "reserve": "No"      },        {        "type": "ardRelayBoiler",        "cnt": "1",        "required": "1",        "reserve": "No"      }    ]  },  "deployment": {    "config": {      "file": "org.karaf.thermostat",      "custom_params": {        "my_param": "just_a_second_test"      }    },    "qos": {      "main": "dev_latency",      "secondary": [        "cloud_latency,response_time"      ]    }  }}
+DEBUG:root:{
+  "deployment": {
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }, 
+    "config": {
+      "custom_params": {
+        "my_param": "just_a_second_test"
+      }, 
+      "file": "org.karaf.thermostat"
+    }
+  }, 
+  "comm": {
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "ardUnoTemp", 
+        "reserve": "No"
+      }, 
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhone", 
+        "reserve": "No"
+      }, 
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "ardRelayBoiler", 
+        "reserve": "No"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [
+        "TestApp1"
+      ], 
+      "required_apps": [
+        "Broker_App"
+      ]
+    }, 
+    "resources": [
+      "position", 
+      "storage"
+    ], 
+    "cloud": [
+      "mqtt_conn1"
+    ]
+  }, 
+  "name": "Thermostat_App", 
+  "file": "thermostatApp-0.0.1-SNAPSHOT.jar", 
+  "description": "Thermostat App Stuff"
+}
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle remove Thermostat_App
+DEBUG:root:Bundle Task
+DEBUG:root:Remove Bundle
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [[]], "name": "Temp_GW_1330", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "lvZFgvKORLKzqllz"}
+DEBUG:root:register self nothing {'reg_api': 'yFuzJaJGfZUKQgLz', 'reg_role': 'master', 'reg_name': 'Cluster_Cindy_1636', 'name': 'Vazquez_7663'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle remove Thermostat_App
+DEBUG:root:Bundle Task
+DEBUG:root:Remove Bundle
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle remove Thermostat_App
+DEBUG:root:Bundle Task
+DEBUG:root:Remove Bundle
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [[]], "name": "Temp_GW_9778", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "lvZFgvKORLKzqllz"}
+DEBUG:root:register self nothing {'reg_api': 'yFuzJaJGfZUKQgLz', 'reg_role': 'master', 'reg_name': 'Cluster_Cindy_1636', 'name': 'Vazquez_7663'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle remove Thermostat_App
+DEBUG:root:Bundle Task
+DEBUG:root:Remove Bundle
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [[]], "name": "Temp_GW_6469", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "lvZFgvKORLKzqllz"}
+DEBUG:root:register self nothing {'reg_api': 'yFuzJaJGfZUKQgLz', 'reg_role': 'master', 'reg_name': 'Cluster_Cindy_1636', 'name': 'Vazquez_7663'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle remove Thermostat_App
+DEBUG:root:Bundle Task
+DEBUG:root:Remove Bundle
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [[]], "name": "Temp_GW_7773", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "lvZFgvKORLKzqllz"}
+DEBUG:root:register self nothing {'reg_api': 'yFuzJaJGfZUKQgLz', 'reg_role': 'master', 'reg_name': 'Cluster_Cindy_1636', 'name': 'Vazquez_7663'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle remove Thermostat_App
+DEBUG:root:Bundle Task
+DEBUG:root:Remove Bundle
+DEBUG:root:<Document None@None {u'description': u'Thermostat App Stuff', u'comm': {u'cloud': [u'mqtt_conn1'], u'region': [{u'name': u'FirstRegion', u'key': u'BasicApiKey1'}], u'apps': {u'interrested_apps': [u'TestApp1'], u'required_apps': [u'Broker_App']}, u'resources': [u'position', u'storage'], u'devices': [{u'cnt': u'1', u'required': u'1', u'type': u'ardUnoTemp', u'reserve': u'No'}, {u'cnt': u'1', u'required': u'1', u'type': u'AndroidPhone', u'reserve': u'No'}, {u'cnt': u'1', u'required': u'1', u'type': u'ardRelayBoiler', u'reserve': u'No'}]}, u'name': u'Thermostat_App', u'file': u'thermostatApp-0.0.1-SNAPSHOT.jar', u'deployment': {u'config': {u'custom_params': {u'my_param': u'just_a_second_test'}, u'file': u'org.karaf.thermostat'}, u'qos': {u'main': u'dev_latency', u'secondary': [u'cloud_latency,response_time']}}}>
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [[]], "name": "Temp_GW_1084", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "lvZFgvKORLKzqllz"}
+DEBUG:root:register self nothing {'reg_api': 'yFuzJaJGfZUKQgLz', 'reg_role': 'master', 'reg_name': 'Cluster_Cindy_1636', 'name': 'Vazquez_7663'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle remove Thermostat_App
+DEBUG:root:Bundle Task
+DEBUG:root:Remove Bundle
