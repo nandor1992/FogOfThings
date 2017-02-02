@@ -29,12 +29,15 @@ class Route:
         self.channel.queue_delete(queue=name)
         return "ok"
 
-#credentials = pika.PlainCredentials('admin', 'hunter')
-#parameters = pika.ConnectionParameters('localhost',5672,'test', credentials)
-#connection = pika.BlockingConnection(parameters);
-#channel = connection.channel()
+if __name__ == "__main__":
+    credentials = pika.PlainCredentials('admin', 'hunter')
+    parameters = pika.ConnectionParameters('localhost',5672,'test', credentials)
+    connection = pika.BlockingConnection(parameters);
+    channel = connection.channel()
 
-#r=Route(channel)
-#r.removeQueue("test2")
-#channel.close()
-#connection.close()
+    r=Route(channel)
+    #r.add("federation.Vazquez_7663","karaf_app",{"device":"test_dev"})
+    r.addExBind("apps","federation.Erickson_2204",{"device":"test_dev"})
+    #r.removeQueue("test2")
+    channel.close()
+    connection.close()

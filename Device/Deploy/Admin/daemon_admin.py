@@ -54,12 +54,12 @@ class admin():
                 logging.debug("No subtask found")
         elif components[0]=='migrate':
             logging.debug("Migrate Task")
-            if components[1]=='set-up':
+            if components[1]=='add':
                 logging.debug("Set up migration")
-                ##Do method for this
+                self.migrateTask(" ".join(components[2:]))
             elif components[1]=='remove':
                 logging.debug("Remove migration setup ")
-                ##Do method for this as well..
+                self.demigrateTask(" ".join(components[2:]))
         elif components[0]=='cluster':
             logging.debug("Cluster")
             if components[1]=='dicover':
@@ -149,6 +149,72 @@ class admin():
     def discoverRegion(self):
         return self.reg.getDevsOnWan(Config.get("Cluster","peer_hardware"))
 
+    def migrateTask(self,payload):
+        ##Migration Resolving
+        migrate=self.jsonize(payload)
+        gate_n=migrate['gateway']
+        name=migrate['name']
+        if migrate==None:
+            return "Error:jsonize"
+        else:
+            gate_v=migrate
+            logging.debug("Migrating Started!")
+            ##Devices -- add queue and add device to type
+            for dev_t in gate_v['devices'].keys():
+                #Route
+                logging.debug("Add route for dev_type: "+dev_t+" devs:"+str(gate_v['devices'][dev_t]))
+                dev_l=self.device.getSpecDevList(dev_t,self.dev_status,self.controller_name) #Change Idle to Available
+                driver=""
+                for dev_s in dev_l:
+                    driver=Config.get("DeviceQ",dev_s["driver"])
+                for d in gate_v['devices'][dev_t]:
+                    self.route.add("federation."+self.controller_name,driver,{"app":name,"device":d})
+                    self.route.addExBind("device","federation."+gate_n,{"device":d})
+            ##Cloud
+            if gate_v['cloud']!=None:
+                #Route
+                for c in gate_v['cloud']:
+                    logging.debug("Add route for cloud conn: "+str(c))
+                    ##Maybe need to check queue for cloud and refractor everything to always check for this 
+                    self.route.addExBind("cloud","federation."+gate_n,{"app":name,"cloud":c})
+                    self.route.addExBind("federation."+self.controller_name,"cloud_resolve",{"app":name,"cloud":c})
+
+            ##Region
+            for r in gate_v['region']:
+                #Route
+                logging.debug("Add route for region conn: "+str(r['name']))
+                self.route.addQueue("reg_"+str(r["name"]))
+                if 'key' in r:
+                    self.route.add("federation."+self.controller_name,"reg_"+str(r['name']),{"app":name,"region":str(r['name']),"key":str(r['key'])})
+                    self.route.addExBind("region","federation."+gate_n,{"app":name,"region":str(r['name']),"key":str(r['key'])})
+                else:
+                    self.route.add("federation."+self.controller_name,"reg_"+str(r['name']),{"app":name,"region":str(r['name'])})
+                    self.route.addExBind("region","federation."+gate_n,{"app":name,"region":str(r['name'])})
+
+            ##Apps 
+            if gate_v['apps']!=None:
+                #Route
+                for a in gate_v['apps']:
+                    logging.debug("Add Route for App:" +str(a))
+                    self.route.add("federation."+self.controller_name,"karaf_app",{"app":a})
+                    self.route.addExBind("apps","federation."+gate_n,{"app":a})                            
+
+            ##Resources
+            if gate_v['resources']!=None:
+                #Route
+                for re in gate_v['resources']:
+                    logging.debug("Add Route for Resource:" +str(re))
+                    res_queue=self.res.getResourceQue(str(re))
+                    if res_queue!=None:
+                       self.res.initializeRes(re,name)
+                       self.route.add("federation."+self.controller_name,res_queue,{"app":name,"res":str(re)})
+                       self.route.addExBind("resource","federation."+gate_n,{"app":name})
+                       
+        logging.debug("Migration configuration successfull")
+
+    def demigrateTask(self,payload):
+        pass
+
     def routeTask(self,kind,payload):
         my_j=jsonize(payload)
         if my_j==None:
@@ -170,10 +236,7 @@ class admin():
     def deployTask(self,payload):
         d_son=self.jsonize(payload)
         logging.debug(json.dumps(d_son,indent=2,sort_keys=False))
-        d_son=None
         if d_son==None:
-            name="Test_App"
-            self.res.saveDeployFile(name,payload)
             return "Error:jsonize"
         else:
             #ToDo:verify cloud,device,region,name,deployment_config
@@ -181,7 +244,7 @@ class admin():
                 return "Error:Verify"
             else:
                 #Get Variables for werk"
-                list_conf=[]
+                list_conf={}
                 cloud=d_son.get("comm").get("cloud")
                 region=d_son.get("comm").get("region")
                 apps=d_son.get("comm").get("apps")
@@ -194,7 +257,7 @@ class admin():
                 conf=d_son.get("deployment").get("config").get("custom_params")
                 conf_f=str(d_son.get("deployment").get("config").get("file"))
                 #Add Device Name
-                list_conf.append("name = "+name)
+                list_conf['name']=name
                 
                 #Cloud Stuff
                 if cloud!=None:
@@ -204,7 +267,7 @@ class admin():
                         result1=self.route.add("cloud_resolve",str(con),{"app":name,"cloud":str(con)})
                         conf_cloud=conf_cloud+con+":"
                     result1b=self.route.add("apps_resolve","karaf_app",{"app":name})
-                    list_conf.append("cloud = "+conf_cloud[:-1])
+                    list_conf["cloud"]=str(conf_cloud[:-1])
                     if result1!="ok" or result1b!="ok":
                         return "Error: Cloud Connection Setup"
                     else:
@@ -235,9 +298,9 @@ class admin():
                                     result2=self.route.add("device_resolve",Config.get("DeviceQ",dev_l[i]["driver"]),{"device":dev_l[i]["id"]})
                                 else:
                                     result2=self.route.add("device_resolve",Config.get("DeviceQ",dev_l[i]["driver"]),{"device":dev_l[i]["id"],"app":name})
-                        list_conf.append("dev_"+dev["type"]+" = "+dev_conf[1:])
-                    if result1!="ok" or result2!="ok":
-                        return "Error: Devices Connection Setup"
+                        list_conf["dev_"+dev["type"]]=str(dev_conf[1:])
+                        if result1!="ok" or result2!="ok":
+                            return "Error: Devices Connection Setup"
                     logging.debug("Device connection configuration successfull")               
 
                 #Region Stuff
@@ -257,7 +320,7 @@ class admin():
                             result2d=self.route.addExBind("region","apps_resolve",{"app":name,"region":str(reg["name"]),"key":str(reg["key"])})
                             result3=self.route.add("apps_resolve","karaf_app",{"app":name})
                     result2c=self.route.add("apps_resolve","karaf_app",{"app":name})
-                    list_conf.append("region = "+region_conf[:-1])
+                    list_conf["region"]=str(region_conf[:-1])
                     if result2!="ok" or result2b!="ok" or result2c!="ok" or result2b!="ok" or result3!="ok":
                         return "Error: Region Connection Setup"
                     else:
@@ -270,9 +333,9 @@ class admin():
                     int_l=self.res.getDeployedApps(apps["interrested_apps"])
                     if len(apps["required_apps"])!=len(must_l):
                         return "Error: Required Apps Not met"
-                    apps_list=":".join(must_l)
-                    apps_list=apps_list+":"+":".join(int_l)
-                    list_conf.append("apps = "+apps_list)
+                    apps_list=":".join(must_l)+":".join(int_l)
+                    if len(must_l)+len(int_l)!=0:
+                        list_conf["apps"]=str(apps_list)
                     logging.debug("Apps connection configuration successfull")
 
                 #Resource Stuff
@@ -289,7 +352,7 @@ class admin():
                     if result0!="ok" or result1!="ok":
                         return "Error: Resource does not exist"
                     self.route.add("apps_resolve","karaf_app",{"app":name})
-                    list_conf.append("resources = "+res_list[:-1])
+                    list_conf["resources"]=str(res_list[:-1])
                     logging.debug("Resource connection configuration successfull")
 
                 ##Migration Resolving!!!!!!!!!!!!!!!!!!
@@ -297,14 +360,87 @@ class admin():
                     logging.debug("Migration Config Started")
                     ##Do magic Here
                     ##Basically forward anything and everything that has the correct name to karaf app and app_resolver ? 
+                    for gate_n in migrate.keys():
+                        gate_v=migrate[gate_n]
+                        logging.debug("Working on: "+gate_n)
+                        ##Devices -- add queue and add device to type
+                        for dev_t in gate_v['devices'].keys():
+                            #Config
+                            dev_n=gate_v['devices'][dev_t]
+                            if 'dev_'+dev_t in list_conf:
+                                list_conf['dev_'+dev_t]=list_conf['dev_'+dev_t]+":"+":".join(dev_n)
+                            else:
+                                list_conf['dev_'+dev_t]=":".join(dev_n)
+                            #Route
+                            logging.debug("Add route for dev_type: "+dev_t+" devs:"+str(dev_n))
+                            for d in dev_n:
+                                self.route.add("federation."+self.controller_name,"karaf_app",{"device":d})
+                                self.route.addExBind("apps","federation."+gate_n,{"app":name,"device":d})
+                        ##Cloud
+                        if gate_v['cloud']!=None:
+                            #Config
+                            if 'cloud' in list_conf:
+                                list_conf['cloud']=list_conf['cloud']+":"+":".join(gate_v['cloud'])
+                            else:
+                                list_conf['cloud']=":".join(gate_v['cloud'])
+                            #Route
+                            for c in gate_v['cloud']:
+                                logging.debug("Add route for cloud conn: "+str(c))
+                                self.route.add("federation."+self.controller_name,"karaf_app",{"app":name,"cloud":c})
+                                self.route.addExBind("apps","federation."+gate_n,{"app":name,"cloud":c})
+                        ##Region
+                        for r in gate_v['region']:
+                            #Config
+                            if 'region' in list_conf:
+                                list_conf['region']=list_conf['region']+":"+str(r['name'])
+                            else:
+                                list_conf['region']=str(r['name'])
+                            #Route
+                            logging.debug("Add route for region conn: "+str(r['name']))
+                            if 'key' in r:
+                                self.route.add("federation."+self.controller_name,"karaf_app",{"app":name,"region":r['name'],"key":r['key']})
+                                self.route.addExBind("apps","federation."+gate_n,{"app":name,"region":r['name'],"key":r['key']})
+                            else:
+                                self.route.add("federation."+self.controller_name,"karaf_app",{"app":name,"region":r['name']})
+                                self.route.addExBind("apps","federation."+gate_n,{"app":name,"region":r['name']})                                
+
+                        ##Apps ###Modify amqp to event
+                        if gate_v['apps']!=None:
+                            #Config
+                            if 'apps' in list_conf:
+                                list_conf['apps']=list_conf['apps']+":"+":".join(gate_v['apps'])
+                            else:
+                                list_conf['apps']=":".join(gate_v['apps'])
+                            #Route
+                            for a in gate_v['apps']:
+                                logging.debug("Add Route for App:" +str(a))
+                                self.route.add("federation."+self.controller_name,"karaf_app",{"app":a})
+                                self.route.addExBind("apps","federation."+gate_n,{"app":a})                            
+
+                        ##Resources
+                        if gate_v['resources']!=None:
+                            #Config
+                            if 'resources' in list_conf:
+                                list_conf['resources']=list_conf['resources']+":"+":".join(gate_v['resources'])
+                            else:
+                                list_conf['resources']=":".join(gate_v['resources'])
+                            #Route
+                            for re in gate_v['resources']:
+                                logging.debug("Add Route for Resource:" +str(re))
+                                self.route.add("federation."+self.controller_name,"karaf_app",{"app":name,"res":re})
+                                self.route.addExBind("apps","federation."+gate_n,{"app":name,"res":re}) 
                     logging.debug("Migration configuration successfull")
                 
                 #Create file with added params and existing ones from previous components
-                if conf!=None and conf_f!=None:
+                if conf_f!=None:
                     logging.debug("Conf-File Config Started")
-                    for param in conf:
-                        list_conf.append(""+param+" = "+conf[param])
-                    if self.karaf.createConfig(conf_f,list_conf)!="ok":
+                    lst=[]
+                    for param in list_conf.keys():
+                        lst.append(""+param+" = "+list_conf[param])   
+                    if conf!=None:
+                        for param in conf:
+                            lst.append(""+param+" = "+conf[param])
+                    if self.karaf.createConfig(conf_f,lst)!="ok":
                         return "Error: Config Not Written to File"
                     else:
                        logging.debug("Config file Written")
@@ -345,10 +481,11 @@ class admin():
                 logging.debug(bundle_info)
                 
                 #Save config file to configs with name
-                if self.res.saveDeployFile(name,payload)!="ok":
-                    logging.debug("Deployment file could not be saved")
-                else:
-                    logging.debug("Deployment file saved")
+                if self.res.deleteDeployedFile(name)=="ok":
+                    if self.res.saveDeployFile(name,payload)!="ok":
+                        logging.debug("Deployment file could not be saved")
+                    else:
+                        logging.debug("Deployment file saved")
                 #Verify if application started and return stuff
                 
                 return "success "+str(bundle_info).replace(' ','')
@@ -387,19 +524,6 @@ class admin():
                 ## Delete Conf-file
                 ##Delete Deploy file
                 return "success: Removed "+name+" from Gateway"
-
-    def migrateTask(self,payload):
-        d_son=self.jsonize(payload)
-        logging.debug(json.dumps(d_son,indent=2,sort_keys=False))
-        if d_son==None:
-            return "Error:jsonize"
-        else:
-            #ToDo:verify cloud,device,region,name,deployment_config
-            if migrateVerify(d_son)!=None:
-                return "Error:Verify"
-            else:
-                #Do Removal Stuff
-                return "ok"
 
     def deployVerify(self,d_son):
         return None

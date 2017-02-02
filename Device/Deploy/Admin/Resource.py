@@ -22,12 +22,12 @@ class Resource:
 
     def initializeRes(self,res,app):
         if (res=="storage"):
-            if "app_"+app.lower() in self.couch:
-                db=self.couch["app_"+app.lower()]
-            else:
-                db=self.couch.create("app_"+app.lower())
             try:
-                db.save({'_id':'_design/views','views':{'payload':{'map':'function (doc) {\n emit(doc.datetime,doc.payload);\n}'}},'language':'javascript'})          
+                if "app_"+app.lower() in self.couch:
+                    db=self.couch["app_"+app.lower()]
+                else:
+                    db=self.couch.create("app_"+app.lower())
+                    db.save({'_id':'_design/views','views':{'payload':{'map':'function (doc) {\n emit(doc.datetime,doc.payload);\n}'}},'language':'javascript'})          
             except Exception, e:
                 return "not ok"+str(e)
         return "ok"
@@ -47,6 +47,7 @@ class Resource:
             ret=ast.literal_eval(payload)
             ret['gateway']=self.gw
             db.save(ret)
+            return "ok"
         except Exeption,e:
             return "Error"
 
