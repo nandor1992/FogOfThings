@@ -2881,3 +2881,6 @@ DEBUG:root:"bundle remove Thermostat_App"
 DEBUG:root:Other message
 ERROR:pika.adapters.base_connection:Socket Error: 104
 DEBUG:root:Pika Disconnected 13:51:18 02/01/17 UTC, Reconnecting
+DEBUG:root:Driver Restarted
+DEBUG:root:Starting New Session at 10:13:50 02/02/17 UTC
+DEBUG:root:Connected with result code 0

@@ -179,7 +179,6 @@ class Region:
         c.setopt(c.USERPWD,'%s:%s' %(self.rab_user,self.rab_pass))
         c.setopt(pycurl.HTTPHEADER,['Content-type: application/json'])
         data2 = json.dumps({"value":{"uri":"amqp://"+user+":"+passw+"@"+addr+"/"+virt,"ack-mode":"on-confirm","trust-user-id":True}})
-        print(data2)
         c.setopt(pycurl.POSTFIELDS,data2)
         c.setopt(c.CUSTOMREQUEST,"PUT")
         c.perform()
@@ -247,7 +246,6 @@ class Region:
         res=[]
         for [net,interface] in networks:
             for item in self.scan_and_print_neighbors(net, interface,ref):
-                print(item)
                 res=res+item[0:2]
         return res
     

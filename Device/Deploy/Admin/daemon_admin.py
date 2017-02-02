@@ -366,12 +366,12 @@ class admin():
             else:
             #Do Removal Stuff
                 #Get Variables for werk"
-                cloud=doc["comm"]["cloud")
+                cloud=doc["comm"]["cloud"]
                 region=doc["comm"]["region"]
                 devices=doc["comm"]["devices"]
                 resource=doc["comm"]["resources"]
                 migrate=doc["migration"]
-                conf_f=str(doc["deployment"]["config"]["file"))                
+                conf_f=str(doc["deployment"]["config"]["file"])                
 
                 #Connection Stuff
                 ##ToDo: See if app had connection if yes delete that one
