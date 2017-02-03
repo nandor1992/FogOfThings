@@ -37,7 +37,8 @@ if __name__ == "__main__":
 
     r=Route(channel)
     #r.add("federation.Vazquez_7663","karaf_app",{"device":"test_dev"})
-    r.addExBind("apps","federation.Erickson_2204",{"device":"test_dev"})
+    #r.addExBind("apps","federation.Erickson_2204",{"device":"test_dev"})
     #r.removeQueue("test2")
+    print(r.addExUnBind("tokio","hosterl",{"test":"me"}))
     channel.close()
     connection.close()

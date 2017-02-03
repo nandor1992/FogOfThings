@@ -27,9 +27,18 @@ class Resource:
                     db=self.couch["app_"+app.lower()]
                 else:
                     db=self.couch.create("app_"+app.lower())
+                    while "app_"+app.lower() not in self.couch:
+                        time.sleep(0.1)
+                    db=self.couch["app_"+app.lower()]   
                     db.save({'_id':'_design/views','views':{'payload':{'map':'function (doc) {\n emit(doc.datetime,doc.payload);\n}'}},'language':'javascript'})          
             except Exception, e:
-                return "not ok"+str(e)
+                try:
+                    while "app_"+app.lower() not in self.couch:
+                            time.sleep(0.1)
+                    db=self.couch["app_"+app.lower()]
+                    db.save({'_id':'_design/views','views':{'payload':{'map':'function (doc) {\n emit(doc.datetime,doc.payload);\n}'}},'language':'javascript'})          
+                except Exception, e:
+                    return "not ok"+str(e)
         return "ok"
 
     def deleteRes(self,res,app):

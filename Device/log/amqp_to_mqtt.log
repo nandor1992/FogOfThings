@@ -290,3 +290,70 @@ DEBUG:root:[x] Received 'Error'
 DEBUG:root:Non json payload
 DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error", "cloud": "mqtt_conn1", "datetime": "2017-02-02 14:47:01"}
 DEBUG:root:Message Sent with result: 0 Message Id: 11
+DEBUG:root:Driver Restarted
+DEBUG:root:Broker started: 10:44:25 02/03/17 UTC
+DEBUG:root: [*] Waiting for messages. To exit press CTRL+C
+DEBUG:root:[x] Received 'Error: Thermostat_App  not found'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Thermostat_App  not found", "cloud": "mqtt_conn1", "datetime": "2017-02-03 10:44:41"}
+DEBUG:root:Message Sent with result: 0 Message Id: 1
+DEBUG:root:[x] Received 'Error: Thermostat_App  not found'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Thermostat_App  not found", "cloud": "mqtt_conn1", "datetime": "2017-02-03 10:46:47"}
+DEBUG:root:Message Sent with result: 0 Message Id: 2
+DEBUG:root:[x] Received 'Error: Thermostat_App  not found'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Thermostat_App  not found", "cloud": "mqtt_conn1", "datetime": "2017-02-03 10:47:16"}
+DEBUG:root:Message Sent with result: 0 Message Id: 3
+DEBUG:root:[x] Received 'Error: Thermostat_App  not found'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Thermostat_App  not found", "cloud": "mqtt_conn1", "datetime": "2017-02-03 10:50:50"}
+DEBUG:root:Message Sent with result: 0 Message Id: 4
+DEBUG:root:[x] Received 'Error: Thermostat_App  not found'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Thermostat_App  not found", "cloud": "mqtt_conn1", "datetime": "2017-02-03 10:51:25"}
+DEBUG:root:Message Sent with result: 0 Message Id: 5
+DEBUG:root:[x] Received 'success: Removed Thermostat_App from Gateway'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "success: Removed Thermostat_App from Gateway", "cloud": "mqtt_conn1", "datetime": "2017-02-03 10:56:59"}
+DEBUG:root:Message Sent with result: 0 Message Id: 6
+DEBUG:root:[x] Received 'Error: Not Enough Required Devices'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Not Enough Required Devices", "cloud": "mqtt_conn1", "datetime": "2017-02-03 11:04:10"}
+DEBUG:root:Message Sent with result: 0 Message Id: 7
+DEBUG:root:[x] Received 'Error: Required Apps Not met'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Required Apps Not met", "cloud": "mqtt_conn1", "datetime": "2017-02-03 11:04:36"}
+DEBUG:root:Message Sent with result: 0 Message Id: 8
+DEBUG:root:[x] Received 'Error: Resource does not exist'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Resource does not exist", "cloud": "mqtt_conn1", "datetime": "2017-02-03 11:04:57"}
+DEBUG:root:Message Sent with result: 0 Message Id: 9
+DEBUG:root:[x] Received 'Error: Resource does not exist'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Resource does not exist", "cloud": "mqtt_conn1", "datetime": "2017-02-03 11:07:04"}
+DEBUG:root:Message Sent with result: 0 Message Id: 10
+DEBUG:root:[x] Received 'Error: Resource does not exist'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Resource does not exist", "cloud": "mqtt_conn1", "datetime": "2017-02-03 11:08:08"}
+DEBUG:root:Message Sent with result: 0 Message Id: 11
+DEBUG:root:[x] Received "success {'state':'Resolved','id':'109'}"
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "success {'state':'Resolved','id':'109'}", "cloud": "mqtt_conn1", "datetime": "2017-02-03 11:08:14"}
+DEBUG:root:Message Sent with result: 0 Message Id: 12
+DEBUG:root:[x] Received 'success: Removed Thermostat_App from Gateway'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "success: Removed Thermostat_App from Gateway", "cloud": "mqtt_conn1", "datetime": "2017-02-03 11:10:52"}
+DEBUG:root:Message Sent with result: 0 Message Id: 13
+DEBUG:root:[x] Received 'Error: Resource does not exist'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Resource does not exist", "cloud": "mqtt_conn1", "datetime": "2017-02-03 11:12:03"}
+DEBUG:root:Message Sent with result: 0 Message Id: 14
+DEBUG:root:[x] Received "success {'state':'Resolved','id':'110'}"
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "success {'state':'Resolved','id':'110'}", "cloud": "mqtt_conn1", "datetime": "2017-02-03 11:14:14"}
+DEBUG:root:Message Sent with result: 0 Message Id: 15
+DEBUG:root:[x] Received 'success: Removed Thermostat_App from Gateway'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "success: Removed Thermostat_App from Gateway", "cloud": "mqtt_conn1", "datetime": "2017-02-03 11:15:37"}
+DEBUG:root:Message Sent with result: 0 Message Id: 16

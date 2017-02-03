@@ -3495,3 +3495,994 @@ DEBUG:root:Add Route for Resource:storage
 DEBUG:root:Migration configuration successfull
 DEBUG:root:---Request processed and Reponse Sent----
 DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [[]], "name": "Temp_GW_1684", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "lvZFgvKORLKzqllz"}
+DEBUG:root:register self nothing {'reg_api': 'yFuzJaJGfZUKQgLz', 'reg_role': 'master', 'reg_name': 'Cluster_Cindy_1636', 'name': 'Vazquez_7663'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle remove Thermostat_App 
+DEBUG:root:Bundle Task
+DEBUG:root:Remove Bundle
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle remove Thermostat_App 
+DEBUG:root:Bundle Task
+DEBUG:root:Remove Bundle
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [[]], "name": "Temp_GW_1394", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "lvZFgvKORLKzqllz"}
+DEBUG:root:register self nothing {'reg_api': 'yFuzJaJGfZUKQgLz', 'reg_role': 'master', 'reg_name': 'Cluster_Cindy_1636', 'name': 'Vazquez_7663'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle remove Thermostat_App 
+DEBUG:root:Bundle Task
+DEBUG:root:Remove Bundle
+DEBUG:root:Thermostat_App 
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [[]], "name": "Temp_GW_9906", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "lvZFgvKORLKzqllz"}
+DEBUG:root:register self nothing {'reg_api': 'yFuzJaJGfZUKQgLz', 'reg_role': 'master', 'reg_name': 'Cluster_Cindy_1636', 'name': 'Vazquez_7663'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle remove Thermostat_App 
+DEBUG:root:Bundle Task
+DEBUG:root:Remove Bundle
+DEBUG:root:Thermostat_App 
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [[]], "name": "Temp_GW_6507", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "lvZFgvKORLKzqllz"}
+DEBUG:root:register self nothing {'reg_api': 'yFuzJaJGfZUKQgLz', 'reg_role': 'master', 'reg_name': 'Cluster_Cindy_1636', 'name': 'Vazquez_7663'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle remove Thermostat_App 
+DEBUG:root:Bundle Task
+DEBUG:root:Remove Bundle
+DEBUG:root:Thermostat_App 
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [[]], "name": "Temp_GW_1261", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "lvZFgvKORLKzqllz"}
+DEBUG:root:register self nothing {'reg_api': 'yFuzJaJGfZUKQgLz', 'reg_role': 'master', 'reg_name': 'Cluster_Cindy_1636', 'name': 'Vazquez_7663'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle remove Thermostat_App 
+DEBUG:root:Bundle Task
+DEBUG:root:Remove Bundle
+DEBUG:root:Thermostat_App
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [[]], "name": "Temp_GW_6328", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "lvZFgvKORLKzqllz"}
+DEBUG:root:register self nothing {'reg_api': 'yFuzJaJGfZUKQgLz', 'reg_role': 'master', 'reg_name': 'Cluster_Cindy_1636', 'name': 'Vazquez_7663'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle remove Thermostat_App 
+DEBUG:root:Bundle Task
+DEBUG:root:Remove Bundle
+DEBUG:root:Thermostat_App
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [[]], "name": "Temp_GW_6084", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "lvZFgvKORLKzqllz"}
+DEBUG:root:register self nothing {'reg_api': 'yFuzJaJGfZUKQgLz', 'reg_role': 'master', 'reg_name': 'Cluster_Cindy_1636', 'name': 'Vazquez_7663'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle remove Thermostat_App 
+DEBUG:root:Bundle Task
+DEBUG:root:Remove Bundle
+DEBUG:root:Thermostat_App
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Migration Un-Config Started
+DEBUG:root:Working on: Erickson_2204
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [[]], "name": "Temp_GW_6061", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "lvZFgvKORLKzqllz"}
+DEBUG:root:register self nothing {'reg_api': 'yFuzJaJGfZUKQgLz', 'reg_role': 'master', 'reg_name': 'Cluster_Cindy_1636', 'name': 'Vazquez_7663'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle remove Thermostat_App 
+DEBUG:root:Bundle Task
+DEBUG:root:Remove Bundle
+DEBUG:root:Thermostat_App
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Migration Un-Config Started
+DEBUG:root:Working on: Erickson_2204
+DEBUG:root:Rmoving route for dev_type: ardUnoTemp devs:[u'UUID1', u'UUID2']
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [[]], "name": "Temp_GW_9356", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "lvZFgvKORLKzqllz"}
+DEBUG:root:register self nothing {'reg_api': 'yFuzJaJGfZUKQgLz', 'reg_role': 'master', 'reg_name': 'Cluster_Cindy_1636', 'name': 'Vazquez_7663'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle remove Thermostat_App 
+DEBUG:root:Bundle Task
+DEBUG:root:Remove Bundle
+DEBUG:root:Thermostat_App
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Migration Un-Config Started
+DEBUG:root:Working on: Erickson_2204
+DEBUG:root:Rmoving route for dev_type: ardUnoTemp devs:[u'UUID1', u'UUID2']
+DEBUG:root:Remove route for cloud conn: mqtt_conn2
+DEBUG:root:Remove route for region conn: FirstRegion
+DEBUG:root:Remove Route for App:Broker_App
+DEBUG:root:Remove Route for App:TestApp1
+DEBUG:root:Remove Route for Resource:position
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Deleting Bundle from Karaf
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [[]], "name": "Temp_GW_7522", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "lvZFgvKORLKzqllz"}
+DEBUG:root:register self nothing {'reg_api': 'yFuzJaJGfZUKQgLz', 'reg_role': 'master', 'reg_name': 'Cluster_Cindy_1636', 'name': 'Vazquez_7663'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle remove Thermostat_App 
+DEBUG:root:Bundle Task
+DEBUG:root:Remove Bundle
+DEBUG:root:Thermostat_App
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Migration Un-Config Started
+DEBUG:root:Working on: Erickson_2204
+DEBUG:root:Rmoving route for dev_type: ardUnoTemp devs:[u'UUID1', u'UUID2']
+DEBUG:root:Remove route for cloud conn: mqtt_conn2
+DEBUG:root:Remove route for region conn: FirstRegion
+DEBUG:root:Remove Route for App:Broker_App
+DEBUG:root:Remove Route for App:TestApp1
+DEBUG:root:Remove Route for Resource:position
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Deleting Bundle from Karaf
+DEBUG:root:Deleted Bundle: 108
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File removal successfull
+DEBUG:root:Deployment file deleted
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':['Broker_App'],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [      {        'type': 'ardUnoTemp',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      },        {        'type': 'ardRelayBoiler',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},    'cloud':['mqtt_conn2'],    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],    'apps':['Broker_App','TestApp1'],    'resources':['position','storage']}  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{  "name": "Thermostat_App",  "file": "thermostatApp-0.0.1-SNAPSHOT.jar",  "description": "Thermostat App Stuff",  "comm": {    "cloud": ["mqtt_conn1"],    "region":      [{"name":"FirstRegion",      "key" :"BasicApiKey1"}],    "apps":{      "required_apps":["Broker_App"],      "interrested_apps":["TestApp1"]    },    "resources":["position","storage"],    "devices": [      {        "type": "ardUnoTemp",        "cnt": "1",        "required": "1",        "reserve": "No"      },      {        "type": "AndroidPhone",        "cnt": "1",        "required": "1",        "reserve": "No"      },        {        "type": "ardRelayBoiler",        "cnt": "1",        "required": "1",        "reserve": "No"      }    ]  },  "migration":{    "Erickson_2204":{"devices":{"ardUnoTemp":["UUID1","UUID2"]},    "cloud":["mqtt_conn2"],    "region":[{"name":"FirstRegion","key" :"BasicApiKey1"}],    "apps":["Broker_App","TestApp1"],    "resources":["position","storage"]}  },  "deployment": {    "config": {      "file": "org.karaf.thermostat",      "custom_params": {        "my_param": "just_a_second_test"      }    },    "qos": {      "main": "dev_latency",      "secondary": [        "cloud_latency,response_time"      ]    }  }}
+DEBUG:root:{
+  "name": "Thermostat_App", 
+  "comm": {
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "ardUnoTemp", 
+        "reserve": "No"
+      }, 
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhone", 
+        "reserve": "No"
+      }, 
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "ardRelayBoiler", 
+        "reserve": "No"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [
+        "TestApp1"
+      ], 
+      "required_apps": [
+        "Broker_App"
+      ]
+    }, 
+    "resources": [
+      "position", 
+      "storage"
+    ], 
+    "cloud": [
+      "mqtt_conn1"
+    ]
+  }, 
+  "migration": {
+    "Erickson_2204": {
+      "region": [
+        {
+          "name": "FirstRegion", 
+          "key": "BasicApiKey1"
+        }
+      ], 
+      "resources": [
+        "position", 
+        "storage"
+      ], 
+      "apps": [
+        "Broker_App", 
+        "TestApp1"
+      ], 
+      "cloud": [
+        "mqtt_conn2"
+      ], 
+      "devices": {
+        "ardUnoTemp": [
+          "UUID1", 
+          "UUID2"
+        ]
+      }
+    }
+  }, 
+  "file": "thermostatApp-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }, 
+    "config": {
+      "custom_params": {
+        "my_param": "just_a_second_test"
+      }, 
+      "file": "org.karaf.thermostat"
+    }
+  }, 
+  "description": "Thermostat App Stuff"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':['Broker_App'],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [ ]  },  'migration':{    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},    'cloud':['mqtt_conn2'],    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],    'apps':['Broker_App','TestApp1'],    'resources':['position','storage']}  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{  "name": "Thermostat_App",  "file": "thermostatApp-0.0.1-SNAPSHOT.jar",  "description": "Thermostat App Stuff",  "comm": {    "cloud": ["mqtt_conn1"],    "region":      [{"name":"FirstRegion",      "key" :"BasicApiKey1"}],    "apps":{      "required_apps":["Broker_App"],      "interrested_apps":["TestApp1"]    },    "resources":["position","storage"],    "devices": [ ]  },  "migration":{    "Erickson_2204":{"devices":{"ardUnoTemp":["UUID1","UUID2"]},    "cloud":["mqtt_conn2"],    "region":[{"name":"FirstRegion","key" :"BasicApiKey1"}],    "apps":["Broker_App","TestApp1"],    "resources":["position","storage"]}  },  "deployment": {    "config": {      "file": "org.karaf.thermostat",      "custom_params": {        "my_param": "just_a_second_test"      }    },    "qos": {      "main": "dev_latency",      "secondary": [        "cloud_latency,response_time"      ]    }  }}
+DEBUG:root:{
+  "name": "Thermostat_App", 
+  "comm": {
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "devices": [], 
+    "apps": {
+      "interrested_apps": [
+        "TestApp1"
+      ], 
+      "required_apps": [
+        "Broker_App"
+      ]
+    }, 
+    "resources": [
+      "position", 
+      "storage"
+    ], 
+    "cloud": [
+      "mqtt_conn1"
+    ]
+  }, 
+  "migration": {
+    "Erickson_2204": {
+      "region": [
+        {
+          "name": "FirstRegion", 
+          "key": "BasicApiKey1"
+        }
+      ], 
+      "resources": [
+        "position", 
+        "storage"
+      ], 
+      "apps": [
+        "Broker_App", 
+        "TestApp1"
+      ], 
+      "cloud": [
+        "mqtt_conn2"
+      ], 
+      "devices": {
+        "ardUnoTemp": [
+          "UUID1", 
+          "UUID2"
+        ]
+      }
+    }
+  }, 
+  "file": "thermostatApp-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }, 
+    "config": {
+      "custom_params": {
+        "my_param": "just_a_second_test"
+      }, 
+      "file": "org.karaf.thermostat"
+    }
+  }, 
+  "description": "Thermostat App Stuff"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [ ]  },  'migration':{    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},    'cloud':['mqtt_conn2'],    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],    'apps':['Broker_App','TestApp1'],    'resources':['position','storage']}  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{  "name": "Thermostat_App",  "file": "thermostatApp-0.0.1-SNAPSHOT.jar",  "description": "Thermostat App Stuff",  "comm": {    "cloud": ["mqtt_conn1"],    "region":      [{"name":"FirstRegion",      "key" :"BasicApiKey1"}],    "apps":{      "required_apps":[],      "interrested_apps":["TestApp1"]    },    "resources":["position","storage"],    "devices": [ ]  },  "migration":{    "Erickson_2204":{"devices":{"ardUnoTemp":["UUID1","UUID2"]},    "cloud":["mqtt_conn2"],    "region":[{"name":"FirstRegion","key" :"BasicApiKey1"}],    "apps":["Broker_App","TestApp1"],    "resources":["position","storage"]}  },  "deployment": {    "config": {      "file": "org.karaf.thermostat",      "custom_params": {        "my_param": "just_a_second_test"      }    },    "qos": {      "main": "dev_latency",      "secondary": [        "cloud_latency,response_time"      ]    }  }}
+DEBUG:root:{
+  "name": "Thermostat_App", 
+  "comm": {
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "devices": [], 
+    "apps": {
+      "interrested_apps": [
+        "TestApp1"
+      ], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "position", 
+      "storage"
+    ], 
+    "cloud": [
+      "mqtt_conn1"
+    ]
+  }, 
+  "migration": {
+    "Erickson_2204": {
+      "region": [
+        {
+          "name": "FirstRegion", 
+          "key": "BasicApiKey1"
+        }
+      ], 
+      "resources": [
+        "position", 
+        "storage"
+      ], 
+      "apps": [
+        "Broker_App", 
+        "TestApp1"
+      ], 
+      "cloud": [
+        "mqtt_conn2"
+      ], 
+      "devices": {
+        "ardUnoTemp": [
+          "UUID1", 
+          "UUID2"
+        ]
+      }
+    }
+  }, 
+  "file": "thermostatApp-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }, 
+    "config": {
+      "custom_params": {
+        "my_param": "just_a_second_test"
+      }, 
+      "file": "org.karaf.thermostat"
+    }
+  }, 
+  "description": "Thermostat App Stuff"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [[]], "name": "Temp_GW_8373", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "lvZFgvKORLKzqllz"}
+DEBUG:root:register self nothing {'reg_api': 'yFuzJaJGfZUKQgLz', 'reg_role': 'master', 'reg_name': 'Cluster_Cindy_1636', 'name': 'Vazquez_7663'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [ ]  },  'migration':{    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},    'cloud':['mqtt_conn2'],    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],    'apps':['Broker_App','TestApp1'],    'resources':['position','storage']}  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{  "name": "Thermostat_App",  "file": "thermostatApp-0.0.1-SNAPSHOT.jar",  "description": "Thermostat App Stuff",  "comm": {    "cloud": ["mqtt_conn1"],    "region":      [{"name":"FirstRegion",      "key" :"BasicApiKey1"}],    "apps":{      "required_apps":[],      "interrested_apps":["TestApp1"]    },    "resources":["position","storage"],    "devices": [ ]  },  "migration":{    "Erickson_2204":{"devices":{"ardUnoTemp":["UUID1","UUID2"]},    "cloud":["mqtt_conn2"],    "region":[{"name":"FirstRegion","key" :"BasicApiKey1"}],    "apps":["Broker_App","TestApp1"],    "resources":["position","storage"]}  },  "deployment": {    "config": {      "file": "org.karaf.thermostat",      "custom_params": {        "my_param": "just_a_second_test"      }    },    "qos": {      "main": "dev_latency",      "secondary": [        "cloud_latency,response_time"      ]    }  }}
+DEBUG:root:{
+  "name": "Thermostat_App", 
+  "comm": {
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "devices": [], 
+    "apps": {
+      "interrested_apps": [
+        "TestApp1"
+      ], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "position", 
+      "storage"
+    ], 
+    "cloud": [
+      "mqtt_conn1"
+    ]
+  }, 
+  "migration": {
+    "Erickson_2204": {
+      "region": [
+        {
+          "name": "FirstRegion", 
+          "key": "BasicApiKey1"
+        }
+      ], 
+      "resources": [
+        "position", 
+        "storage"
+      ], 
+      "apps": [
+        "Broker_App", 
+        "TestApp1"
+      ], 
+      "cloud": [
+        "mqtt_conn2"
+      ], 
+      "devices": {
+        "ardUnoTemp": [
+          "UUID1", 
+          "UUID2"
+        ]
+      }
+    }
+  }, 
+  "file": "thermostatApp-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }, 
+    "config": {
+      "custom_params": {
+        "my_param": "just_a_second_test"
+      }, 
+      "file": "org.karaf.thermostat"
+    }
+  }, 
+  "description": "Thermostat App Stuff"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [ ]  },  'migration':{    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},    'cloud':['mqtt_conn2'],    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],    'apps':['Broker_App','TestApp1'],    'resources':['position','storage']}  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{  "name": "Thermostat_App",  "file": "thermostatApp-0.0.1-SNAPSHOT.jar",  "description": "Thermostat App Stuff",  "comm": {    "cloud": ["mqtt_conn1"],    "region":      [{"name":"FirstRegion",      "key" :"BasicApiKey1"}],    "apps":{      "required_apps":[],      "interrested_apps":["TestApp1"]    },    "resources":["position","storage"],    "devices": [ ]  },  "migration":{    "Erickson_2204":{"devices":{"ardUnoTemp":["UUID1","UUID2"]},    "cloud":["mqtt_conn2"],    "region":[{"name":"FirstRegion","key" :"BasicApiKey1"}],    "apps":["Broker_App","TestApp1"],    "resources":["position","storage"]}  },  "deployment": {    "config": {      "file": "org.karaf.thermostat",      "custom_params": {        "my_param": "just_a_second_test"      }    },    "qos": {      "main": "dev_latency",      "secondary": [        "cloud_latency,response_time"      ]    }  }}
+DEBUG:root:{
+  "name": "Thermostat_App", 
+  "comm": {
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "devices": [], 
+    "apps": {
+      "interrested_apps": [
+        "TestApp1"
+      ], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "position", 
+      "storage"
+    ], 
+    "cloud": [
+      "mqtt_conn1"
+    ]
+  }, 
+  "migration": {
+    "Erickson_2204": {
+      "region": [
+        {
+          "name": "FirstRegion", 
+          "key": "BasicApiKey1"
+        }
+      ], 
+      "resources": [
+        "position", 
+        "storage"
+      ], 
+      "apps": [
+        "Broker_App", 
+        "TestApp1"
+      ], 
+      "cloud": [
+        "mqtt_conn2"
+      ], 
+      "devices": {
+        "ardUnoTemp": [
+          "UUID1", 
+          "UUID2"
+        ]
+      }
+    }
+  }, 
+  "file": "thermostatApp-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }, 
+    "config": {
+      "custom_params": {
+        "my_param": "just_a_second_test"
+      }, 
+      "file": "org.karaf.thermostat"
+    }
+  }, 
+  "description": "Thermostat App Stuff"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [ ]  },  'migration':{    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},    'cloud':['mqtt_conn2'],    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],    'apps':['Broker_App','TestApp1'],    'resources':['position','storage']}  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{  "name": "Thermostat_App",  "file": "thermostatApp-0.0.1-SNAPSHOT.jar",  "description": "Thermostat App Stuff",  "comm": {    "cloud": ["mqtt_conn1"],    "region":      [{"name":"FirstRegion",      "key" :"BasicApiKey1"}],    "apps":{      "required_apps":[],      "interrested_apps":["TestApp1"]    },    "resources":["position","storage"],    "devices": [ ]  },  "migration":{    "Erickson_2204":{"devices":{"ardUnoTemp":["UUID1","UUID2"]},    "cloud":["mqtt_conn2"],    "region":[{"name":"FirstRegion","key" :"BasicApiKey1"}],    "apps":["Broker_App","TestApp1"],    "resources":["position","storage"]}  },  "deployment": {    "config": {      "file": "org.karaf.thermostat",      "custom_params": {        "my_param": "just_a_second_test"      }    },    "qos": {      "main": "dev_latency",      "secondary": [        "cloud_latency,response_time"      ]    }  }}
+DEBUG:root:{
+  "name": "Thermostat_App", 
+  "comm": {
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "devices": [], 
+    "apps": {
+      "interrested_apps": [
+        "TestApp1"
+      ], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "position", 
+      "storage"
+    ], 
+    "cloud": [
+      "mqtt_conn1"
+    ]
+  }, 
+  "migration": {
+    "Erickson_2204": {
+      "region": [
+        {
+          "name": "FirstRegion", 
+          "key": "BasicApiKey1"
+        }
+      ], 
+      "resources": [
+        "position", 
+        "storage"
+      ], 
+      "apps": [
+        "Broker_App", 
+        "TestApp1"
+      ], 
+      "cloud": [
+        "mqtt_conn2"
+      ], 
+      "devices": {
+        "ardUnoTemp": [
+          "UUID1", 
+          "UUID2"
+        ]
+      }
+    }
+  }, 
+  "file": "thermostatApp-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }, 
+    "config": {
+      "custom_params": {
+        "my_param": "just_a_second_test"
+      }, 
+      "file": "org.karaf.thermostat"
+    }
+  }, 
+  "description": "Thermostat App Stuff"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Migration Config Started
+DEBUG:root:Working on: Erickson_2204
+DEBUG:root:Add route for dev_type: ardUnoTemp devs:[u'UUID1', u'UUID2']
+DEBUG:root:Add route for cloud conn: mqtt_conn2
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for App:Broker_App
+DEBUG:root:Add Route for App:TestApp1
+DEBUG:root:Add Route for Resource:position
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:Migration configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 109
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Resolved', 'id': '109'}
+DEBUG:root:Deployment file saved
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [[]], "name": "Temp_GW_3364", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "lvZFgvKORLKzqllz"}
+DEBUG:root:register self nothing {'reg_api': 'yFuzJaJGfZUKQgLz', 'reg_role': 'master', 'reg_name': 'Cluster_Cindy_1636', 'name': 'Vazquez_7663'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle remove Thermostat_App 
+DEBUG:root:Bundle Task
+DEBUG:root:Remove Bundle
+DEBUG:root:Thermostat_App
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Migration Un-Config Started
+DEBUG:root:Working on: Erickson_2204
+DEBUG:root:Rmoving route for dev_type: ardUnoTemp devs:[u'UUID1', u'UUID2']
+DEBUG:root:Remove route for cloud conn: mqtt_conn2
+DEBUG:root:Remove route for region conn: FirstRegion
+DEBUG:root:Remove Route for App:Broker_App
+DEBUG:root:Remove Route for App:TestApp1
+DEBUG:root:Remove Route for Resource:position
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Deleting Bundle from Karaf
+DEBUG:root:Deleted Bundle: 109
+DEBUG:root:Conf-File Removal Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File removal successfull
+DEBUG:root:Deployment file deleted
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [ ]  },  'migration':{    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},    'cloud':['mqtt_conn2'],    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],    'apps':['Broker_App','TestApp1'],    'resources':['position','storage']}  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{  "name": "Thermostat_App",  "file": "thermostatApp-0.0.1-SNAPSHOT.jar",  "description": "Thermostat App Stuff",  "comm": {    "cloud": ["mqtt_conn1"],    "region":      [{"name":"FirstRegion",      "key" :"BasicApiKey1"}],    "apps":{      "required_apps":[],      "interrested_apps":["TestApp1"]    },    "resources":["position","storage"],    "devices": [ ]  },  "migration":{    "Erickson_2204":{"devices":{"ardUnoTemp":["UUID1","UUID2"]},    "cloud":["mqtt_conn2"],    "region":[{"name":"FirstRegion","key" :"BasicApiKey1"}],    "apps":["Broker_App","TestApp1"],    "resources":["position","storage"]}  },  "deployment": {    "config": {      "file": "org.karaf.thermostat",      "custom_params": {        "my_param": "just_a_second_test"      }    },    "qos": {      "main": "dev_latency",      "secondary": [        "cloud_latency,response_time"      ]    }  }}
+DEBUG:root:{
+  "name": "Thermostat_App", 
+  "comm": {
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "devices": [], 
+    "apps": {
+      "interrested_apps": [
+        "TestApp1"
+      ], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "position", 
+      "storage"
+    ], 
+    "cloud": [
+      "mqtt_conn1"
+    ]
+  }, 
+  "migration": {
+    "Erickson_2204": {
+      "region": [
+        {
+          "name": "FirstRegion", 
+          "key": "BasicApiKey1"
+        }
+      ], 
+      "resources": [
+        "position", 
+        "storage"
+      ], 
+      "apps": [
+        "Broker_App", 
+        "TestApp1"
+      ], 
+      "cloud": [
+        "mqtt_conn2"
+      ], 
+      "devices": {
+        "ardUnoTemp": [
+          "UUID1", 
+          "UUID2"
+        ]
+      }
+    }
+  }, 
+  "file": "thermostatApp-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }, 
+    "config": {
+      "custom_params": {
+        "my_param": "just_a_second_test"
+      }, 
+      "file": "org.karaf.thermostat"
+    }
+  }, 
+  "description": "Thermostat App Stuff"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [[]], "name": "Temp_GW_5587", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "lvZFgvKORLKzqllz"}
+DEBUG:root:register self nothing {'reg_api': 'yFuzJaJGfZUKQgLz', 'reg_role': 'master', 'reg_name': 'Cluster_Cindy_1636', 'name': 'Vazquez_7663'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [ ]  },  'migration':{    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},    'cloud':['mqtt_conn2'],    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],    'apps':['Broker_App','TestApp1'],    'resources':['position','storage']}  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{  "name": "Thermostat_App",  "file": "thermostatApp-0.0.1-SNAPSHOT.jar",  "description": "Thermostat App Stuff",  "comm": {    "cloud": ["mqtt_conn1"],    "region":      [{"name":"FirstRegion",      "key" :"BasicApiKey1"}],    "apps":{      "required_apps":[],      "interrested_apps":["TestApp1"]    },    "resources":["position","storage"],    "devices": [ ]  },  "migration":{    "Erickson_2204":{"devices":{"ardUnoTemp":["UUID1","UUID2"]},    "cloud":["mqtt_conn2"],    "region":[{"name":"FirstRegion","key" :"BasicApiKey1"}],    "apps":["Broker_App","TestApp1"],    "resources":["position","storage"]}  },  "deployment": {    "config": {      "file": "org.karaf.thermostat",      "custom_params": {        "my_param": "just_a_second_test"      }    },    "qos": {      "main": "dev_latency",      "secondary": [        "cloud_latency,response_time"      ]    }  }}
+DEBUG:root:{
+  "name": "Thermostat_App", 
+  "comm": {
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "devices": [], 
+    "apps": {
+      "interrested_apps": [
+        "TestApp1"
+      ], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "position", 
+      "storage"
+    ], 
+    "cloud": [
+      "mqtt_conn1"
+    ]
+  }, 
+  "migration": {
+    "Erickson_2204": {
+      "region": [
+        {
+          "name": "FirstRegion", 
+          "key": "BasicApiKey1"
+        }
+      ], 
+      "resources": [
+        "position", 
+        "storage"
+      ], 
+      "apps": [
+        "Broker_App", 
+        "TestApp1"
+      ], 
+      "cloud": [
+        "mqtt_conn2"
+      ], 
+      "devices": {
+        "ardUnoTemp": [
+          "UUID1", 
+          "UUID2"
+        ]
+      }
+    }
+  }, 
+  "file": "thermostatApp-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }, 
+    "config": {
+      "custom_params": {
+        "my_param": "just_a_second_test"
+      }, 
+      "file": "org.karaf.thermostat"
+    }
+  }, 
+  "description": "Thermostat App Stuff"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Migration Config Started
+DEBUG:root:Working on: Erickson_2204
+DEBUG:root:Add route for dev_type: ardUnoTemp devs:[u'UUID1', u'UUID2']
+DEBUG:root:Add route for cloud conn: mqtt_conn2
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for App:Broker_App
+DEBUG:root:Add Route for App:TestApp1
+DEBUG:root:Add Route for Resource:position
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:Migration configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 110
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Resolved', 'id': '110'}
+DEBUG:root:Deployment file saved
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle remove Thermostat_App 
+DEBUG:root:Bundle Task
+DEBUG:root:Remove Bundle
+DEBUG:root:Thermostat_App
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Migration Un-Config Started
+DEBUG:root:Working on: Erickson_2204
+DEBUG:root:Rmoving route for dev_type: ardUnoTemp devs:[u'UUID1', u'UUID2']
+DEBUG:root:Remove route for cloud conn: mqtt_conn2
+DEBUG:root:Remove route for region conn: FirstRegion
+DEBUG:root:Remove Route for App:Broker_App
+DEBUG:root:Remove Route for App:TestApp1
+DEBUG:root:Remove Route for Resource:position
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Deleting Bundle from Karaf
+DEBUG:root:Deleted Bundle: 110
+DEBUG:root:Conf-File Removal Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File removal successfull
+DEBUG:root:Deployment file deleted
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard

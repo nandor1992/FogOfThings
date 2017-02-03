@@ -197,8 +197,11 @@ class admin():
                 for a in gate_v['apps']:
                     logging.debug("Add Route for App:" +str(a))
                     self.route.add("federation."+self.controller_name,"karaf_app",{"app":a})
-                    self.route.addExBind("apps","federation."+gate_n,{"app":a})                            
-
+                    self.route.addExBind("apps","federation."+gate_n,{"app":a})
+                    self.karaf.addMigratedApp(a,"forward")
+                self.route.add("federation."+self.controller_name,"karaf_app",{"app":name})
+                self.route.addExBind("apps","federation."+gate_n,{"app":name})
+                self.karaf.addMigratedApp(name,"backward");
             ##Resources
             if gate_v['resources']!=None:
                 #Route
@@ -213,7 +216,72 @@ class admin():
         logging.debug("Migration configuration successfull")
 
     def demigrateTask(self,payload):
-        pass
+        ##DeMigration Resolving
+        migrate=self.jsonize(payload)
+        gate_n=migrate['gateway']
+        name=migrate['name']
+        if migrate==None:
+            return "Error:jsonize"
+        else:
+            gate_v=migrate
+            logging.debug("UnMigrating Started!")
+            ##Devices -- add queue and add device to type
+            for dev_t in gate_v['devices'].keys():
+                #Route
+                logging.debug("Remove route for dev_type: "+dev_t+" devs:"+str(gate_v['devices'][dev_t]))
+                dev_l=self.device.getSpecDevList(dev_t,self.dev_status,self.controller_name) #Change Idle to Available
+                driver=""
+                for dev_s in dev_l:
+                    driver=Config.get("DeviceQ",dev_s["driver"])
+                for d in gate_v['devices'][dev_t]:
+                    self.route.remove("federation."+self.controller_name,driver,{"app":name,"device":d})
+                    ##self.route.addExUnBind("device","federation."+gate_n,{"device":d})
+            ##Cloud
+            if gate_v['cloud']!=None:
+                #Route
+                for c in gate_v['cloud']:
+                    logging.debug("Remove route for cloud conn: "+str(c))
+                    ##Maybe need to check queue for cloud and refractor everything to always check for this 
+                    self.route.addExUnBind("cloud","federation."+gate_n,{"app":name,"cloud":c})
+                    self.route.addExUnBind("federation."+self.controller_name,"cloud_resolve",{"app":name,"cloud":c})
+
+            ##Region
+            for r in gate_v['region']:
+                #Route
+                logging.debug("Remove route for region conn: "+str(r['name']))
+                self.route.removeQueue("reg_"+str(r["name"]))
+                if 'key' in r:
+                    self.route.remove("federation."+self.controller_name,"reg_"+str(r['name']),{"app":name,"region":str(r['name']),"key":str(r['key'])})
+                    self.route.addExUnBind("region","federation."+gate_n,{"app":name,"region":str(r['name']),"key":str(r['key'])})
+                else:
+                    self.route.remove("federation."+self.controller_name,"reg_"+str(r['name']),{"app":name,"region":str(r['name'])})
+                    self.route.addExUnBind("region","federation."+gate_n,{"app":name,"region":str(r['name'])})
+
+            ##Apps 
+            if gate_v['apps']!=None:
+                #Route
+                for a in gate_v['apps']:
+                    logging.debug("Remove Route for App:" +str(a))
+                    ###Mayvbe others using same apps
+                    ##ToDo: Need to delete the configurations for forwarding inside as well
+                    self.route.remove("federation."+self.controller_name,"karaf_app",{"app":a})
+                    self.route.addExUnBind("apps","federation."+gate_n,{"app":a})                            
+                    self.karaf.removeMigratedApp(a)
+                self.route.remove("federation."+self.controller_name,"karaf_app",{"app":name})
+                self.route.addExUnBind("apps","federation."+gate_n,{"app":name})
+                self.karaf.removeMigratedApp(name);    
+            ##Resources
+            if gate_v['resources']!=None:
+                #Route
+                for re in gate_v['resources']:
+                    logging.debug("Remove Route for Resource:" +str(re))
+                    res_queue=self.res.getResourceQue(str(re))
+                    if res_queue!=None:
+                       self.res.deleteRes(re,name)
+                       self.route.remove("federation."+self.controller_name,res_queue,{"app":name,"res":str(re)})
+                       self.route.addExUnBind("resource","federation."+gate_n,{"app":name})
+                       
+        logging.debug("Migration configuration successfull")pass
 
     def routeTask(self,kind,payload):
         my_j=jsonize(payload)
@@ -273,6 +341,7 @@ class admin():
                     else:
                         logging.debug("Cloud connection configuration successfull")
                 #Device Stuff
+                ##To-DO: Add Configured Devices to Deployment part of config maybe
                 if devices!=None:
                     logging.debug("Devices Config Started")
                     for dev in devices:
@@ -310,7 +379,8 @@ class admin():
                     region_conf=""
                     for reg in region:
                         result2=self.route.addQueue("reg_"+str(reg["name"]))
-                        region_conf=region_conf+reg["name"]+":"
+                        region_conf=region_                            self.route.add("federation."+self.controller_name,"karaf_app",{"app":name})
+                            self.route.addExBind("apps","federation."+gate_n,{"app":name})conf+reg["name"]+":"
                         if str(reg["key"])=="":
                             result2b=self.route.add("region_resolve","reg_"+str(reg["name"]),{"app":name,"region":str(reg["name"])})
                             result2d=self.route.addExBind("region","apps_resolve",{"app":name,"region":str(reg["name"])})
@@ -415,8 +485,11 @@ class admin():
                             for a in gate_v['apps']:
                                 logging.debug("Add Route for App:" +str(a))
                                 self.route.add("federation."+self.controller_name,"karaf_app",{"app":a})
-                                self.route.addExBind("apps","federation."+gate_n,{"app":a})                            
-
+                                self.route.addExBind("apps","federation."+gate_n,{"app":a})
+                                self.karaf.addMigratedApp(a,"backward")
+                            self.route.add("federation."+self.controller_name,"karaf_app",{"app":name})
+                            self.route.addExBind("apps","federation."+gate_n,{"app":name})
+                            self.karaf.addMigratedApp(name,"forward")
                         ##Resources
                         if gate_v['resources']!=None:
                             #Config
@@ -491,8 +564,8 @@ class admin():
                 return "success "+str(bundle_info).replace(' ','')
 
     def removeTask(self,payload):
-        name=payload
-        print name
+        name=str(payload).strip()
+        logging.debug(name)
         doc=self.res.getDeployFile(name)
         if doc==None:
             return "Error: "+name+" not found"
@@ -509,20 +582,125 @@ class admin():
                 resource=doc["comm"]["resources"]
                 migrate=doc["migration"]
                 conf_f=str(doc["deployment"]["config"]["file"])                
-
+                app_f=str(doc["file"])
                 #Connection Stuff
                 ##ToDo: See if app had connection if yes delete that one
                 ##Do Cloud
+                if len(cloud)!=0:
+                    logging.debug("Cloud Unconfig Started")
+                    for con in cloud:
+                        self.route.remove("cloud_resolve",str(con),{"app":name,"cloud":str(con)})
+                    self.route.remove("apps_resolve","karaf_app",{"app":name})
                 ##Do Device - Check if other apps have connections
+                ##Nothing to do with devices locked to app
+                
                 ##Do Region - Delete Regions connection for this app
-                ##Do Resource - Maybe not delete db
+                if len(region)!=0:
+                    logging.debug("Region Deconfig Started")
+                    for reg in region:
+                        self.route.removeQueue("reg_"+str(reg["name"]))
+                        if str(reg["key"])=="":
+                            self.route.remove("region_resolve","reg_"+str(reg["name"]),{"app":name,"region":str(reg["name"])})
+                            self.route.addExUnBind("region","apps_resolve",{"app":name,"region":str(reg["name"])})
+                            self.route.remove("apps_resolve","karaf_app",{"app":name})
+                        else:
+                            self.route.remove("region_resolve","reg_"+str(reg["name"]),{"app":name,"region":str(reg["name"])})
+                            self.route.addExUnBind("region","apps_resolve",{"app":name,"region":str(reg["name"]),"key":str(reg["key"])})
+                            self.route.remove("apps_resolve","karaf_app",{"app":name})
+                        self.route.remove("apps_resolve","karaf_app",{"app":name})
+                    logging.debug("Region connection un-configuration successfull") 
+
+                ##Do Resource
+                if len(resource)!=0:
+                    logging.debug("Resource Un-Config Started")
+                    for res_1 in resource:
+                        res_queue=self.res.getResourceQue(str(res_1))
+                        if res_queue!=None:
+                            self.res.deleteRes(res_1,name)
+                            self.route.remove("resource_resolve",res_queue,{"app":name,"res":str(res_1)})
+                    self.route.remove("apps_resolve","karaf_app",{"app":name})
+                    logging.debug("Resource connection un-configuration successfull")
+                
                 ##Check if anything migrated to app, delete those connections
+                if migrate!=None:
+                    logging.debug("Migration Un-Config Started")
+                    ##Do magic Here
+                    ##Basically forward anything and everything that has the correct name to karaf app and app_resolver ? 
+                    for gate_n in migrate.keys():
+                        gate_v=migrate[gate_n]
+                        logging.debug("Working on: "+gate_n)
+                        ##Devices -- add queue and add device to type
+                        for dev_t in gate_v['devices'].keys():
+                            #Route
+                            logging.debug("Rmoving route for dev_type: "+dev_t+" devs:"+str(gate_v['devices'][dev_t]))
+                            for d in gate_v['devices'][dev_t]:
+                                ##Need to check if anyone else needs it for these 
+                                ##self.route.remove("federation."+self.controller_name,"karaf_app",{"device":d})
+                                self.route.addExUnBind("apps","federation."+gate_n,{"app":name,"device":d})
+                        ##Cloud
+                        if gate_v['cloud']!=None:
+                            #Route
+                            for c in gate_v['cloud']:
+                                logging.debug("Remove route for cloud conn: "+str(c))
+                                self.route.remove("federation."+self.controller_name,"karaf_app",{"app":name,"cloud":c})
+                                self.route.addExUnBind("apps","federation."+gate_n,{"app":name,"cloud":c})
+                        ##Region
+                        for r in gate_v['region']:
+                            #Route
+                            logging.debug("Remove route for region conn: "+str(r['name']))
+                            if 'key' in r:
+                                self.route.remove("federation."+self.controller_name,"karaf_app",{"app":name,"region":r['name'],"key":r['key']})
+                                self.route.addExUnBind("apps","federation."+gate_n,{"app":name,"region":r['name'],"key":r['key']})
+                            else:
+                                self.route.remove("federation."+self.controller_name,"karaf_app",{"app":name,"region":r['name']})
+                                self.route.addExUnBind("apps","federation."+gate_n,{"app":name,"region":r['name']})                                
+
+                        ##Apps ###Modify amqp to event
+                        if gate_v['apps']!=None:
+                            #Route
+                            ##To-Do: Add app forwarding removal as well
+                            for a in gate_v['apps']:
+                                logging.debug("Remove Route for App:" +str(a))
+                                self.route.remove("federation."+self.controller_name,"karaf_app",{"app":a})
+                                self.route.addExUnBind("apps","federation."+gate_n,{"app":a})                            
+                                self.karaf.removeMigratedApp(a)
+                            self.route.remove("federation."+self.controller_name,"karaf_app",{"app":name})
+                            self.route.addExUnBind("apps","federation."+gate_n,{"app":name})
+                            self.karaf.removeMigratedApp(name)
+                        ##Resources
+                        if gate_v['resources']!=None:
+                            #Route
+                            for re in gate_v['resources']:
+                                logging.debug("Remove Route for Resource:" +str(re))
+                                self.route.remove("federation."+self.controller_name,"karaf_app",{"app":name,"res":re})
+                                self.route.addExUnBind("apps","federation."+gate_n,{"app":name,"res":re}) 
+                    logging.debug("Migration un-configuration successfull")
 
                 #Housekeeping
-                ## Maybe delete personal Resouce
+                ## Resource done at comm    
                 ## Delete bundle from Karaf
-                ## Delete Conf-file
+                logging.debug("Deleting Bundle from Karaf")
+                del_id=str(self.karaf.getBundleId(app_f))
+                if self.karaf.delBundle(del_id)=="ok":
+                    logging.debug("Deleted Bundle: "+del_id)
+                else:
+                    return "Error: Deletin App"
+                    
+                ##Delte Conf-file
+                if conf_f!=None:
+                    logging.debug("Conf-File Removal Started")
+                    if self.karaf.delConfig(conf_f)!="ok":
+                        return "Error: Config File not deleted"
+                    else:
+                        logging.debug("Config file Written")
+                logging.debug("Conf-File removal successfull")                       
+
                 ##Delete Deploy file
+                if self.res.deleteDeployedFile(name)!="ok":
+                    logging.debug("Deployment file could not be deleted")
+                else:
+                    logging.debug("Deployment file deleted")
+                
                 return "success: Removed "+name+" from Gateway"
 
     def deployVerify(self,d_son):

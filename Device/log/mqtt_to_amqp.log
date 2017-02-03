@@ -3500,3 +3500,529 @@ DEBUG:root:{
 DEBUG:root:{u'source': u'test1', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
 DEBUG:root:"migrate add {'gateway':'Erickson_2204','name': 'Thermostat_App','devices':{},'cloud':['mqtt_conn2'],'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],'apps':['Broker_App','TestApp1'],'resources':['position','storage']} "
 DEBUG:root:Other message
+DEBUG:root:Driver Restarted
+DEBUG:root:Starting New Session at 10:44:31 02/03/17 UTC
+DEBUG:root:Connected with result code 0
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle remove Thermostat_App "
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle remove Thermostat_App "}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "bundle remove Thermostat_App ", 
+ "source": "test1", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'test1', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"bundle remove Thermostat_App "
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle remove Thermostat_App "
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle remove Thermostat_App "}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "bundle remove Thermostat_App ", 
+ "source": "test1", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'test1', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"bundle remove Thermostat_App "
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle remove Thermostat_App "
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle remove Thermostat_App "}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "bundle remove Thermostat_App ", 
+ "source": "test1", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'test1', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"bundle remove Thermostat_App "
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle remove Thermostat_App "
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle remove Thermostat_App "}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "bundle remove Thermostat_App ", 
+ "source": "test1", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'test1', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"bundle remove Thermostat_App "
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle remove Thermostat_App "
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle remove Thermostat_App "}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "bundle remove Thermostat_App ", 
+ "source": "test1", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'test1', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"bundle remove Thermostat_App "
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle remove Thermostat_App "
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle remove Thermostat_App "}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "bundle remove Thermostat_App ", 
+ "source": "test1", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'test1', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"bundle remove Thermostat_App "
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {
+  'name': 'Thermostat_App',
+  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',
+  'description': 'Thermostat App Stuff',
+  'comm': {
+    'cloud': ['mqtt_conn1'],
+    'region':
+      [{'name':'FirstRegion',
+      'key' :'BasicApiKey1'}],
+    'apps':{
+      'required_apps':['Broker_App'],
+      'interrested_apps':['TestApp1']
+    },
+    'resources':['position','storage'],
+    'devices': [
+      {
+        'type': 'ardUnoTemp',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      },
+      {
+        'type': 'AndroidPhone',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      },
+        {
+        'type': 'ardRelayBoiler',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      }
+    ]
+  },
+  'migration':{
+    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},
+    'cloud':['mqtt_conn2'],
+    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],
+    'apps':['Broker_App','TestApp1'],
+    'resources':['position','storage']}
+  },
+  'deployment': {
+    'config': {
+      'file': 'org.karaf.thermostat',
+      'custom_params': {
+        'my_param': 'just_a_second_test'
+      }
+    },
+    'qos': {
+      'main': 'dev_latency',
+      'secondary': [
+        'cloud_latency,response_time'
+      ]
+    }
+  }
+}"
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':['Broker_App'],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [      {        'type': 'ardUnoTemp',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      },        {        'type': 'ardRelayBoiler',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},    'cloud':['mqtt_conn2'],    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],    'apps':['Broker_App','TestApp1'],    'resources':['position','storage']}  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':['Broker_App'],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [      {        'type': 'ardUnoTemp',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      },        {        'type': 'ardRelayBoiler',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},    'cloud':['mqtt_conn2'],    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],    'apps':['Broker_App','TestApp1'],    'resources':['position','storage']}  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}", 
+ "source": "test1", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'test1', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':['Broker_App'],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [      {        'type': 'ardUnoTemp',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      },        {        'type': 'ardRelayBoiler',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},    'cloud':['mqtt_conn2'],    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],    'apps':['Broker_App','TestApp1'],    'resources':['position','storage']}  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {
+  'name': 'Thermostat_App',
+  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',
+  'description': 'Thermostat App Stuff',
+  'comm': {
+    'cloud': ['mqtt_conn1'],
+    'region':
+      [{'name':'FirstRegion',
+      'key' :'BasicApiKey1'}],
+    'apps':{
+      'required_apps':['Broker_App'],
+      'interrested_apps':['TestApp1']
+    },
+    'resources':['position','storage'],
+    'devices': [ ]
+  },
+  'migration':{
+    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},
+    'cloud':['mqtt_conn2'],
+    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],
+    'apps':['Broker_App','TestApp1'],
+    'resources':['position','storage']}
+  },
+  'deployment': {
+    'config': {
+      'file': 'org.karaf.thermostat',
+      'custom_params': {
+        'my_param': 'just_a_second_test'
+      }
+    },
+    'qos': {
+      'main': 'dev_latency',
+      'secondary': [
+        'cloud_latency,response_time'
+      ]
+    }
+  }
+}"
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':['Broker_App'],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [ ]  },  'migration':{    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},    'cloud':['mqtt_conn2'],    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],    'apps':['Broker_App','TestApp1'],    'resources':['position','storage']}  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':['Broker_App'],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [ ]  },  'migration':{    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},    'cloud':['mqtt_conn2'],    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],    'apps':['Broker_App','TestApp1'],    'resources':['position','storage']}  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}", 
+ "source": "test1", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'test1', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':['Broker_App'],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [ ]  },  'migration':{    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},    'cloud':['mqtt_conn2'],    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],    'apps':['Broker_App','TestApp1'],    'resources':['position','storage']}  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {
+  'name': 'Thermostat_App',
+  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',
+  'description': 'Thermostat App Stuff',
+  'comm': {
+    'cloud': ['mqtt_conn1'],
+    'region':
+      [{'name':'FirstRegion',
+      'key' :'BasicApiKey1'}],
+    'apps':{
+      'required_apps':[],
+      'interrested_apps':['TestApp1']
+    },
+    'resources':['position','storage'],
+    'devices': [ ]
+  },
+  'migration':{
+    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},
+    'cloud':['mqtt_conn2'],
+    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],
+    'apps':['Broker_App','TestApp1'],
+    'resources':['position','storage']}
+  },
+  'deployment': {
+    'config': {
+      'file': 'org.karaf.thermostat',
+      'custom_params': {
+        'my_param': 'just_a_second_test'
+      }
+    },
+    'qos': {
+      'main': 'dev_latency',
+      'secondary': [
+        'cloud_latency,response_time'
+      ]
+    }
+  }
+}"
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [ ]  },  'migration':{    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},    'cloud':['mqtt_conn2'],    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],    'apps':['Broker_App','TestApp1'],    'resources':['position','storage']}  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [ ]  },  'migration':{    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},    'cloud':['mqtt_conn2'],    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],    'apps':['Broker_App','TestApp1'],    'resources':['position','storage']}  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}", 
+ "source": "test1", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'test1', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [ ]  },  'migration':{    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},    'cloud':['mqtt_conn2'],    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],    'apps':['Broker_App','TestApp1'],    'resources':['position','storage']}  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {
+  'name': 'Thermostat_App',
+  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',
+  'description': 'Thermostat App Stuff',
+  'comm': {
+    'cloud': ['mqtt_conn1'],
+    'region':
+      [{'name':'FirstRegion',
+      'key' :'BasicApiKey1'}],
+    'apps':{
+      'required_apps':[],
+      'interrested_apps':['TestApp1']
+    },
+    'resources':['position','storage'],
+    'devices': [ ]
+  },
+  'migration':{
+    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},
+    'cloud':['mqtt_conn2'],
+    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],
+    'apps':['Broker_App','TestApp1'],
+    'resources':['position','storage']}
+  },
+  'deployment': {
+    'config': {
+      'file': 'org.karaf.thermostat',
+      'custom_params': {
+        'my_param': 'just_a_second_test'
+      }
+    },
+    'qos': {
+      'main': 'dev_latency',
+      'secondary': [
+        'cloud_latency,response_time'
+      ]
+    }
+  }
+}"
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [ ]  },  'migration':{    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},    'cloud':['mqtt_conn2'],    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],    'apps':['Broker_App','TestApp1'],    'resources':['position','storage']}  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [ ]  },  'migration':{    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},    'cloud':['mqtt_conn2'],    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],    'apps':['Broker_App','TestApp1'],    'resources':['position','storage']}  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}", 
+ "source": "test1", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'test1', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [ ]  },  'migration':{    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},    'cloud':['mqtt_conn2'],    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],    'apps':['Broker_App','TestApp1'],    'resources':['position','storage']}  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {
+  'name': 'Thermostat_App',
+  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',
+  'description': 'Thermostat App Stuff',
+  'comm': {
+    'cloud': ['mqtt_conn1'],
+    'region':
+      [{'name':'FirstRegion',
+      'key' :'BasicApiKey1'}],
+    'apps':{
+      'required_apps':[],
+      'interrested_apps':['TestApp1']
+    },
+    'resources':['position','storage'],
+    'devices': [ ]
+  },
+  'migration':{
+    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},
+    'cloud':['mqtt_conn2'],
+    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],
+    'apps':['Broker_App','TestApp1'],
+    'resources':['position','storage']}
+  },
+  'deployment': {
+    'config': {
+      'file': 'org.karaf.thermostat',
+      'custom_params': {
+        'my_param': 'just_a_second_test'
+      }
+    },
+    'qos': {
+      'main': 'dev_latency',
+      'secondary': [
+        'cloud_latency,response_time'
+      ]
+    }
+  }
+}"
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [ ]  },  'migration':{    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},    'cloud':['mqtt_conn2'],    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],    'apps':['Broker_App','TestApp1'],    'resources':['position','storage']}  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [ ]  },  'migration':{    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},    'cloud':['mqtt_conn2'],    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],    'apps':['Broker_App','TestApp1'],    'resources':['position','storage']}  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}", 
+ "source": "test1", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'test1', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [ ]  },  'migration':{    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},    'cloud':['mqtt_conn2'],    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],    'apps':['Broker_App','TestApp1'],    'resources':['position','storage']}  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {
+  'name': 'Thermostat_App',
+  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',
+  'description': 'Thermostat App Stuff',
+  'comm': {
+    'cloud': ['mqtt_conn1'],
+    'region':
+      [{'name':'FirstRegion',
+      'key' :'BasicApiKey1'}],
+    'apps':{
+      'required_apps':[],
+      'interrested_apps':['TestApp1']
+    },
+    'resources':['position','storage'],
+    'devices': [ ]
+  },
+  'migration':{
+    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},
+    'cloud':['mqtt_conn2'],
+    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],
+    'apps':['Broker_App','TestApp1'],
+    'resources':['position','storage']}
+  },
+  'deployment': {
+    'config': {
+      'file': 'org.karaf.thermostat',
+      'custom_params': {
+        'my_param': 'just_a_second_test'
+      }
+    },
+    'qos': {
+      'main': 'dev_latency',
+      'secondary': [
+        'cloud_latency,response_time'
+      ]
+    }
+  }
+}"
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [ ]  },  'migration':{    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},    'cloud':['mqtt_conn2'],    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],    'apps':['Broker_App','TestApp1'],    'resources':['position','storage']}  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [ ]  },  'migration':{    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},    'cloud':['mqtt_conn2'],    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],    'apps':['Broker_App','TestApp1'],    'resources':['position','storage']}  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}", 
+ "source": "test1", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'test1', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [ ]  },  'migration':{    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},    'cloud':['mqtt_conn2'],    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],    'apps':['Broker_App','TestApp1'],    'resources':['position','storage']}  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 {"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle remove Thermostat_App "
+DEBUG:root: {"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle remove Thermostat_App "}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "bundle remove Thermostat_App ", 
+ "source": "test1", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'test1', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"bundle remove Thermostat_App "
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {
+  'name': 'Thermostat_App',
+  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',
+  'description': 'Thermostat App Stuff',
+  'comm': {
+    'cloud': ['mqtt_conn1'],
+    'region':
+      [{'name':'FirstRegion',
+      'key' :'BasicApiKey1'}],
+    'apps':{
+      'required_apps':[],
+      'interrested_apps':['TestApp1']
+    },
+    'resources':['position','storage'],
+    'devices': [ ]
+  },
+  'migration':{
+    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},
+    'cloud':['mqtt_conn2'],
+    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],
+    'apps':['Broker_App','TestApp1'],
+    'resources':['position','storage']}
+  },
+  'deployment': {
+    'config': {
+      'file': 'org.karaf.thermostat',
+      'custom_params': {
+        'my_param': 'just_a_second_test'
+      }
+    },
+    'qos': {
+      'main': 'dev_latency',
+      'secondary': [
+        'cloud_latency,response_time'
+      ]
+    }
+  }
+}"
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [ ]  },  'migration':{    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},    'cloud':['mqtt_conn2'],    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],    'apps':['Broker_App','TestApp1'],    'resources':['position','storage']}  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [ ]  },  'migration':{    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},    'cloud':['mqtt_conn2'],    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],    'apps':['Broker_App','TestApp1'],    'resources':['position','storage']}  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}", 
+ "source": "test1", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'test1', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [ ]  },  'migration':{    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},    'cloud':['mqtt_conn2'],    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],    'apps':['Broker_App','TestApp1'],    'resources':['position','storage']}  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {
+  'name': 'Thermostat_App',
+  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',
+  'description': 'Thermostat App Stuff',
+  'comm': {
+    'cloud': ['mqtt_conn1'],
+    'region':
+      [{'name':'FirstRegion',
+      'key' :'BasicApiKey1'}],
+    'apps':{
+      'required_apps':[],
+      'interrested_apps':['TestApp1']
+    },
+    'resources':['position','storage'],
+    'devices': [ ]
+  },
+  'migration':{
+    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},
+    'cloud':['mqtt_conn2'],
+    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],
+    'apps':['Broker_App','TestApp1'],
+    'resources':['position','storage']}
+  },
+  'deployment': {
+    'config': {
+      'file': 'org.karaf.thermostat',
+      'custom_params': {
+        'my_param': 'just_a_second_test'
+      }
+    },
+    'qos': {
+      'main': 'dev_latency',
+      'secondary': [
+        'cloud_latency,response_time'
+      ]
+    }
+  }
+}"
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [ ]  },  'migration':{    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},    'cloud':['mqtt_conn2'],    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],    'apps':['Broker_App','TestApp1'],    'resources':['position','storage']}  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [ ]  },  'migration':{    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},    'cloud':['mqtt_conn2'],    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],    'apps':['Broker_App','TestApp1'],    'resources':['position','storage']}  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}", 
+ "source": "test1", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'test1', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"bundle deploy {  'name': 'Thermostat_App',  'file': 'thermostatApp-0.0.1-SNAPSHOT.jar',  'description': 'Thermostat App Stuff',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':['TestApp1']    },    'resources':['position','storage'],    'devices': [ ]  },  'migration':{    'Erickson_2204':{'devices':{'ardUnoTemp':['UUID1','UUID2']},    'cloud':['mqtt_conn2'],    'region':[{'name':'FirstRegion','key' :'BasicApiKey1'}],    'apps':['Broker_App','TestApp1'],    'resources':['position','storage']}  },  'deployment': {    'config': {      'file': 'org.karaf.thermostat',      'custom_params': {        'my_param': 'just_a_second_test'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 {"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle remove Thermostat_App "
+DEBUG:root: {"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle remove Thermostat_App "}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "bundle remove Thermostat_App ", 
+ "source": "test1", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'test1', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"bundle remove Thermostat_App "
+DEBUG:root:Other message

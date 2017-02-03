@@ -161,15 +161,62 @@ class Karaf:
         os.remove(self.apach+fname+".cfg")
         return "ok"
 
+    def addMigratedApp(self,apps,a_type):
+        contents=open(self.apach+"org.karaf.messaging.cfg","r").read()
+        lines=contents.split('\n')
+        params={}
+        for line in lines:
+            if (line.strip()!=""):
+                comp=line.split('=')
+                if comp[1].strip()!="":
+                    params[comp[0].strip()]=comp[1].strip().split(":")
+                else:
+                    params[comp[0].strip()]=[]
+        if a_type=="forward":
+            temp=[app for app in apps if app not in params['forward']]
+            params['forward']=params['forward']+temp
+        if a_type=="backward":
+            temp=[app for app in apps if app not in params['proxy_back']]
+            params['proxy_back']=params['proxy_back']+temp
+        print(params)
+        fp=open(self.apach+"org.karaf.messaging.cfg","w")
+        for key in params:
+            fp.write(key+" = "+":".join(params[key])+'\n')           
+        fp.close()
+        
+    def removeMigratedApp(self,apps):
+        contents=open(self.apach+"org.karaf.messaging.cfg","r").read()
+        lines=contents.split('\n')
+        params={}
+        for line in lines:
+            if (line.strip()!=""):
+                comp=line.split('=')
+                if comp[1].strip()!="":
+                    params[comp[0].strip()]=comp[1].strip().split(":")
+                else:
+                    params[comp[0].strip()]=[]
+        for app in apps:
+            if app in params['forward']:
+                params['forward'].remove(app)
+            if app in params['proxy_back']:
+                params['proxy_back'].remove(app)
+        print(params)
+        fp=open(self.apach+"org.karaf.messaging.cfg","w")
+        for key in params:
+            fp.write(key+" = "+":".join(params[key])+'\n')           
+        fp.close()
+
 if __name__ == "__main__":
-    k=Karaf('karaf','karaf',"http://10.0.0.63/swift/v1/test/","/home/pi/apps/","/home/pi/configs/","/home/pi/apache-karaf-4.0.5/etc/")
+    k=Karaf('karaf','karaf',"http://10.0.0.63/swift/v1/test/","/home/pi/apps/","/home/pi/configs/","/home/pi/apache-karaf-4.0.5/")
 #result=k.getBundleInfo(123)
 #result=k.deployBundle("dummy_app-0.0.1-SNAPSHOT.jar")
 #result=k.modifyConfig("org.karaf.test","test","test1")
 #result=k.delBundle(117)
 #result=k.getBundleId("devtransApp-0.0.1-SNAPSHOT.jar")
 #result=k.readConfig("org.karaf.test")
-    print(k.createConfig("org.karaf.test2",{'arg1':'val1','arg2':'val2'}))
+    #print(k.createConfig("org.karaf.test2",{'arg1':'val1','arg2':'val2'}))
+    #k.addMigratedApp(['Thermostat_App'],"forward")
+    k.removeMigratedApp(['Thermostat_App2','Bullcrap_app2'])
 #result = k.delConfig("org.karaf.test2")
 #result=k.readConfig("org.karaf.test2")
 #result=k.saveDeployFile("sample_file","{'test1'}")
