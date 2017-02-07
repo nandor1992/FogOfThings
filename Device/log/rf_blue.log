@@ -390,3 +390,131 @@ DEBUG:root:Scanning timeout
 DEBUG:root:found 1 devices
 DEBUG:root: AC:72:89:FC:4A:BC - NANDOR-PC 
 DEBUG:root:Driver Stopped
+DEBUG:root:Bluetooth Radio started: 12:12:43 02/07/17 UTC
+DEBUG:root:Started Server Thread
+DEBUG:root:Waiting for connection on RFCOMM channel 1
+DEBUG:root:Starting Blue Stuff for 14:DD:A9:32:E9:A4
+DEBUG:root:--------Message Received from: 14:DD:A9:32:E9:A4-------
+DEBUG:root:Register data received
+DEBUG:root:Json Parts!
+DEBUG:root:No details found
+DEBUG:root:imGELHay-14:DD:A9:32:E9:A4
+DEBUG:root:Sending: {'bn':['trans:id:993','urn:dev:id:imGELHay']}
+DEBUG:root:--------Message Received from: 14:DD:A9:32:E9:A4-------
+DEBUG:root:Normal data received
+DEBUG:root:imGELHay
+DEBUG:root:[{'v': 'msg:test', 'n': 'cmd'}]
+DEBUG:root:Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+DEBUG:root:Scanning timeout
+DEBUG:root:found 1 devices
+DEBUG:root: AC:72:89:FC:4A:BC - NANDOR-PC 
+DEBUG:root:Driver Stopped
+DEBUG:root:Bluetooth Radio started: 12:18:35 02/07/17 UTC
+DEBUG:root:Started Server Thread
+DEBUG:root:Waiting for connection on RFCOMM channel 1
+DEBUG:root:Driver Stopped
+DEBUG:root:Bluetooth Radio started: 15:06:36 02/07/17 UTC
+DEBUG:root:Started Server Thread
+DEBUG:root:Waiting for connection on RFCOMM channel 1
+DEBUG:root:Scanning timeout
+DEBUG:root:found 1 devices
+DEBUG:root: AC:72:89:FC:4A:BC - NANDOR-PC 
+DEBUG:root:Scanning timeout
+DEBUG:root:found 1 devices
+DEBUG:root: AC:72:89:FC:4A:BC - NANDOR-PC 
+DEBUG:root:Scanning timeout
+DEBUG:root:found 1 devices
+DEBUG:root: AC:72:89:FC:4A:BC - NANDOR-PC 
+DEBUG:root:Scanning timeout
+DEBUG:root:found 1 devices
+DEBUG:root: AC:72:89:FC:4A:BC - NANDOR-PC 
+DEBUG:root:Starting Blue Stuff for 14:DD:A9:32:E9:A4
+DEBUG:root:--------Message Received from: 14:DD:A9:32:E9:A4-------
+DEBUG:root:Register data received
+DEBUG:root:Json Parts!
+DEBUG:root:Found details imGELHay
+DEBUG:root:imGELHay-14:DD:A9:32:E9:A4
+DEBUG:root:Sending: {'bn':['trans:id:889','urn:dev:id:imGELHay']}
+DEBUG:root:Scanning timeout
+DEBUG:root:--------Message Received from: 14:DD:A9:32:E9:A4-------
+DEBUG:root:Normal data received
+DEBUG:root:imGELHay
+DEBUG:root:[{'v': 'msg:hello', 'n': 'cmd'}]
+DEBUG:root:found 1 devices
+DEBUG:root: AC:72:89:FC:4A:BC - NANDOR-PC 
+DEBUG:root:Exiting Blue Stuff for 14:DD:A9:32:E9:A4
+DEBUG:root:Scanning timeout
+DEBUG:root:found 1 devices
+DEBUG:root: AC:72:89:FC:4A:BC - NANDOR-PC 
+DEBUG:root:Scanning timeout
+DEBUG:root:found 1 devices
+DEBUG:root: AC:72:89:FC:4A:BC - NANDOR-PC 
+DEBUG:root:Scanning timeout
+DEBUG:root:found 1 devices
+DEBUG:root: AC:72:89:FC:4A:BC - NANDOR-PC 
+DEBUG:root:Scanning timeout
+DEBUG:root:found 1 devices
+DEBUG:root: AC:72:89:FC:4A:BC - NANDOR-PC 
+DEBUG:root:Scanning timeout
+DEBUG:root:found 1 devices
+DEBUG:root: AC:72:89:FC:4A:BC - NANDOR-PC 
+DEBUG:root:Scanning timeout
+DEBUG:root:found 1 devices
+DEBUG:root: AC:72:89:FC:4A:BC - NANDOR-PC 
+DEBUG:root:Scanning timeout
+DEBUG:root:found 1 devices
+DEBUG:root: AC:72:89:FC:4A:BC - NANDOR-PC 
+DEBUG:root:Scanning timeout
+DEBUG:root:found 1 devices
+DEBUG:root: AC:72:89:FC:4A:BC - NANDOR-PC 
+DEBUG:root:Scanning timeout
+DEBUG:root:found 0 devices
+DEBUG:root:Scanning timeout
+DEBUG:root:found 1 devices
+DEBUG:root: AC:72:89:FC:4A:BC - NANDOR-PC 
+DEBUG:root:Scanning timeout
+DEBUG:root:found 1 devices
+DEBUG:root: AC:72:89:FC:4A:BC - NANDOR-PC 
+DEBUG:root:Scanning timeout
+DEBUG:root:found 1 devices
+DEBUG:root: AC:72:89:FC:4A:BC - NANDOR-PC 
+DEBUG:root:Scanning timeout
+DEBUG:root:found 1 devices
+DEBUG:root: AC:72:89:FC:4A:BC - NANDOR-PC 
+DEBUG:root:Scanning timeout
+DEBUG:root:found 1 devices
+DEBUG:root: AC:72:89:FC:4A:BC - NANDOR-PC 
+DEBUG:root:Scanning timeout
+DEBUG:root:found 1 devices
+DEBUG:root: AC:72:89:FC:4A:BC - NANDOR-PC 
+DEBUG:root:Scanning timeout
+DEBUG:root:found 1 devices
+DEBUG:root: AC:72:89:FC:4A:BC - NANDOR-PC 
+DEBUG:root:Scanning timeout
+DEBUG:root:found 1 devices
+DEBUG:root: AC:72:89:FC:4A:BC - NANDOR-PC 
+DEBUG:root:Scanning timeout
+DEBUG:root:found 1 devices
+DEBUG:root: AC:72:89:FC:4A:BC - NANDOR-PC 
+DEBUG:root:Scanning timeout
+DEBUG:root:found 1 devices
+DEBUG:root: AC:72:89:FC:4A:BC - NANDOR-PC 
+DEBUG:root:Scanning timeout
+DEBUG:root:found 1 devices
+DEBUG:root: AC:72:89:FC:4A:BC - NANDOR-PC 
+DEBUG:root:Scanning timeout
+DEBUG:root:found 1 devices
+DEBUG:root: AC:72:89:FC:4A:BC - NANDOR-PC 
+DEBUG:root:Scanning timeout
+DEBUG:root:found 1 devices
+DEBUG:root: AC:72:89:FC:4A:BC - NANDOR-PC 
+DEBUG:root:Scanning timeout
+DEBUG:root:found 1 devices
+DEBUG:root: AC:72:89:FC:4A:BC - NANDOR-PC 
+DEBUG:root:Scanning timeout
+DEBUG:root:found 1 devices
+DEBUG:root: AC:72:89:FC:4A:BC - NANDOR-PC 
+DEBUG:root:Scanning timeout
+DEBUG:root:found 1 devices
+DEBUG:root: AC:72:89:FC:4A:BC - NANDOR-PC 
+DEBUG:root:Driver Stopped

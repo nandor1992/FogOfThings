@@ -25381,3 +25381,13 @@ DEBUG:root:RF24 Radio started: 15:10:51 02/01/17 UTC
 DEBUG:root:RF24 Radio started: 15:11:11 02/01/17 UTC
 DEBUG:root:Exiting Main Thread - Keyboard
 DEBUG:root:Driver Stopped
+DEBUG:root:RF24 Radio started: 12:11:16 02/07/17 UTC
+DEBUG:root:--------Message Received on CH=1-------
+DEBUG:root:{"e":[{"n":"Gcode","u":"G"},{"n":"Resp","u":"String"}],"bn":["urn:dev:type:ardRF24CNC","urn:dev:mac:123mac3me56","trans:id:895"],"ver":"1"}
+DEBUG:root:Register data received
+DEBUG:root:Json Parts!
+DEBUG:root:No details found
+DEBUG:root:New UUID=ynd0fdk9
+DEBUG:root:Driver Stopped
+DEBUG:root:RF24 Radio started: 12:12:27 02/07/17 UTC
+DEBUG:root:Driver Stopped

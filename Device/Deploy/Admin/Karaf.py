@@ -95,7 +95,6 @@ class Karaf:
         c.setopt(c.HTTPPOST,data)
         c.perform()
         status=c.getinfo(c.HTTP_CODE)
-        print("Server response:"+str(status))
         c.close()
         if (status == 200 or status == 302):
             return "ok"
@@ -110,7 +109,7 @@ class Karaf:
         c.setopt(c.HTTPPOST,data)
         c.perform()
         status=c.getinfo(c.HTTP_CODE)
-        print("Server response:"+str(status))
+
         c.close()
         if (status == 200 or status == 302):
             return "ok"

@@ -357,3 +357,15 @@ DEBUG:root:[x] Received 'success: Removed Thermostat_App from Gateway'
 DEBUG:root:Non json payload
 DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "success: Removed Thermostat_App from Gateway", "cloud": "mqtt_conn1", "datetime": "2017-02-03 11:15:37"}
 DEBUG:root:Message Sent with result: 0 Message Id: 16
+DEBUG:root:Driver Stopped
+DEBUG:root:Driver Restarted
+DEBUG:root:Broker started: 13:37:53 02/07/17 UTC
+DEBUG:root: [*] Waiting for messages. To exit press CTRL+C
+DEBUG:root:Driver Stopped
+DEBUG:root:Broker started: 13:40:43 02/07/17 UTC
+DEBUG:root: [*] Waiting for messages. To exit press CTRL+C
+DEBUG:root:Driver Stopped
+DEBUG:root:Broker started: 13:44:46 02/07/17 UTC
+DEBUG:root: [*] Waiting for messages. To exit press CTRL+C
+DEBUG:root:Driver Stopped
+DEBUG:root:Driver Stopped

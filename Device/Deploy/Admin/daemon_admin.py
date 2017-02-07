@@ -198,10 +198,10 @@ class admin():
                     logging.debug("Add Route for App:" +str(a))
                     self.route.add("federation."+self.controller_name,"karaf_app",{"app":a})
                     self.route.addExBind("apps","federation."+gate_n,{"app":a})
-                    self.karaf.addMigratedApp(a,"forward")
+                    self.karaf.addMigratedApp([a],"forward")
                 self.route.add("federation."+self.controller_name,"karaf_app",{"app":name})
                 self.route.addExBind("apps","federation."+gate_n,{"app":name})
-                self.karaf.addMigratedApp(name,"backward");
+                self.karaf.addMigratedApp([name],"backward");
             ##Resources
             if gate_v['resources']!=None:
                 #Route
@@ -266,10 +266,10 @@ class admin():
                     ##ToDo: Need to delete the configurations for forwarding inside as well
                     self.route.remove("federation."+self.controller_name,"karaf_app",{"app":a})
                     self.route.addExUnBind("apps","federation."+gate_n,{"app":a})                            
-                    self.karaf.removeMigratedApp(a)
+                    self.karaf.removeMigratedApp([a])
                 self.route.remove("federation."+self.controller_name,"karaf_app",{"app":name})
                 self.route.addExUnBind("apps","federation."+gate_n,{"app":name})
-                self.karaf.removeMigratedApp(name);    
+                self.karaf.removeMigratedApp([name]);    
             ##Resources
             if gate_v['resources']!=None:
                 #Route
@@ -281,7 +281,7 @@ class admin():
                        self.route.remove("federation."+self.controller_name,res_queue,{"app":name,"res":str(re)})
                        self.route.addExUnBind("resource","federation."+gate_n,{"app":name})
                        
-        logging.debug("Migration configuration successfull")pass
+        logging.debug("Migration configuration successfull")
 
     def routeTask(self,kind,payload):
         my_j=jsonize(payload)
@@ -379,13 +379,13 @@ class admin():
                     region_conf=""
                     for reg in region:
                         result2=self.route.addQueue("reg_"+str(reg["name"]))
-                        region_conf=region_                            self.route.add("federation."+self.controller_name,"karaf_app",{"app":name})
-                            self.route.addExBind("apps","federation."+gate_n,{"app":name})conf+reg["name"]+":"
                         if str(reg["key"])=="":
+                            region_conf=region_conf+str(reg["name"])+";None:";
                             result2b=self.route.add("region_resolve","reg_"+str(reg["name"]),{"app":name,"region":str(reg["name"])})
                             result2d=self.route.addExBind("region","apps_resolve",{"app":name,"region":str(reg["name"])})
                             result3=self.route.add("apps_resolve","karaf_app",{"app":name})
                         else:
+                            region_conf=region_conf+str(reg["name"])+";"+str(reg['key'])+":";
                             result2b=self.route.add("region_resolve","reg_"+str(reg["name"]),{"app":name,"region":str(reg["name"])})
                             result2d=self.route.addExBind("region","apps_resolve",{"app":name,"region":str(reg["name"]),"key":str(reg["key"])})
                             result3=self.route.add("apps_resolve","karaf_app",{"app":name})
@@ -447,7 +447,7 @@ class admin():
                                 self.route.add("federation."+self.controller_name,"karaf_app",{"device":d})
                                 self.route.addExBind("apps","federation."+gate_n,{"app":name,"device":d})
                         ##Cloud
-                        if gate_v['cloud']!=None:
+                        if 'cloud' in gate_v:
                             #Config
                             if 'cloud' in list_conf:
                                 list_conf['cloud']=list_conf['cloud']+":"+":".join(gate_v['cloud'])
@@ -459,23 +459,30 @@ class admin():
                                 self.route.add("federation."+self.controller_name,"karaf_app",{"app":name,"cloud":c})
                                 self.route.addExBind("apps","federation."+gate_n,{"app":name,"cloud":c})
                         ##Region
-                        for r in gate_v['region']:
-                            #Config
-                            if 'region' in list_conf:
-                                list_conf['region']=list_conf['region']+":"+str(r['name'])
-                            else:
-                                list_conf['region']=str(r['name'])
-                            #Route
-                            logging.debug("Add route for region conn: "+str(r['name']))
-                            if 'key' in r:
-                                self.route.add("federation."+self.controller_name,"karaf_app",{"app":name,"region":r['name'],"key":r['key']})
-                                self.route.addExBind("apps","federation."+gate_n,{"app":name,"region":r['name'],"key":r['key']})
-                            else:
-                                self.route.add("federation."+self.controller_name,"karaf_app",{"app":name,"region":r['name']})
-                                self.route.addExBind("apps","federation."+gate_n,{"app":name,"region":r['name']})                                
+                        if 'region' in gate_v:
+                            for r in gate_v['region']:
+                                #Config
+                                if 'region' in list_conf:
+                                    if 'key' in r:
+                                        list_conf['region']=list_conf['region']+":"+str(r['name']+";"+str(r['key']))
+                                    else:
+                                        list_conf['region']=list_conf['region']+":"+str(r['name'])+";None"
+                                else:
+                                    if 'key' in r:
+                                        list_conf['region']=str(r['name'])+";"+str(r['key'])
+                                    else:
+                                        list_conf['region']=str(r['name'])+";None"
+                                #Route
+                                logging.debug("Add route for region conn: "+str(r['name']))
+                                if 'key' in r:
+                                    self.route.add("federation."+self.controller_name,"karaf_app",{"app":name,"region":r['name'],"key":r['key']})
+                                    self.route.addExBind("apps","federation."+gate_n,{"app":name,"region":r['name'],"key":r['key']})
+                                else:
+                                    self.route.add("federation."+self.controller_name,"karaf_app",{"app":name,"region":r['name']})
+                                    self.route.addExBind("apps","federation."+gate_n,{"app":name,"region":r['name']})                                
 
                         ##Apps ###Modify amqp to event
-                        if gate_v['apps']!=None:
+                        if 'apps' in gate_v:
                             #Config
                             if 'apps' in list_conf:
                                 list_conf['apps']=list_conf['apps']+":"+":".join(gate_v['apps'])
@@ -486,12 +493,12 @@ class admin():
                                 logging.debug("Add Route for App:" +str(a))
                                 self.route.add("federation."+self.controller_name,"karaf_app",{"app":a})
                                 self.route.addExBind("apps","federation."+gate_n,{"app":a})
-                                self.karaf.addMigratedApp(a,"backward")
+                                self.karaf.addMigratedApp([a],"backward")
                             self.route.add("federation."+self.controller_name,"karaf_app",{"app":name})
                             self.route.addExBind("apps","federation."+gate_n,{"app":name})
-                            self.karaf.addMigratedApp(name,"forward")
+                            self.karaf.addMigratedApp([name],"forward")
                         ##Resources
-                        if gate_v['resources']!=None:
+                        if 'resources' in gate_v:
                             #Config
                             if 'resources' in list_conf:
                                 list_conf['resources']=list_conf['resources']+":"+":".join(gate_v['resources'])
@@ -663,10 +670,10 @@ class admin():
                                 logging.debug("Remove Route for App:" +str(a))
                                 self.route.remove("federation."+self.controller_name,"karaf_app",{"app":a})
                                 self.route.addExUnBind("apps","federation."+gate_n,{"app":a})                            
-                                self.karaf.removeMigratedApp(a)
+                                self.karaf.removeMigratedApp([a])
                             self.route.remove("federation."+self.controller_name,"karaf_app",{"app":name})
                             self.route.addExUnBind("apps","federation."+gate_n,{"app":name})
-                            self.karaf.removeMigratedApp(name)
+                            self.karaf.removeMigratedApp([name])
                         ##Resources
                         if gate_v['resources']!=None:
                             #Route
