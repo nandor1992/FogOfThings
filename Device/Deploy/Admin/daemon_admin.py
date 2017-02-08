@@ -171,7 +171,7 @@ class admin():
                     self.route.add("federation."+self.controller_name,driver,{"app":name,"device":d})
                     self.route.addExBind("device","federation."+gate_n,{"device":d})
             ##Cloud
-            if gate_v['cloud']!=None:
+            if 'cloud' in gate_v:
                 #Route
                 for c in gate_v['cloud']:
                     logging.debug("Add route for cloud conn: "+str(c))
@@ -192,18 +192,18 @@ class admin():
                     self.route.addExBind("region","federation."+gate_n,{"app":name,"region":str(r['name'])})
 
             ##Apps 
-            if gate_v['apps']!=None:
+            if 'apps' in gate_v:
                 #Route
                 for a in gate_v['apps']:
                     logging.debug("Add Route for App:" +str(a))
-                    self.route.add("federation."+self.controller_name,"karaf_app",{"app":a})
+                    self.route.add("federation."+self.controller_name,"karaf_app",{"app_rec":a})
                     self.route.addExBind("apps","federation."+gate_n,{"app":a})
                     self.karaf.addMigratedApp([a],"forward")
-                self.route.add("federation."+self.controller_name,"karaf_app",{"app":name})
-                self.route.addExBind("apps","federation."+gate_n,{"app":name})
+                self.route.add("federation."+self.controller_name,"karaf_app",{"app_rec":name})
+                self.route.addExBind("apps","federation."+gate_n,{"app_rec":name})
                 self.karaf.addMigratedApp([name],"backward");
             ##Resources
-            if gate_v['resources']!=None:
+            if 'resources' in gate_v:
                 #Route
                 for re in gate_v['resources']:
                     logging.debug("Add Route for Resource:" +str(re))
@@ -237,7 +237,7 @@ class admin():
                     self.route.remove("federation."+self.controller_name,driver,{"app":name,"device":d})
                     ##self.route.addExUnBind("device","federation."+gate_n,{"device":d})
             ##Cloud
-            if gate_v['cloud']!=None:
+            if 'cloud' in gate_v:
                 #Route
                 for c in gate_v['cloud']:
                     logging.debug("Remove route for cloud conn: "+str(c))
@@ -246,7 +246,7 @@ class admin():
                     self.route.addExUnBind("federation."+self.controller_name,"cloud_resolve",{"app":name,"cloud":c})
 
             ##Region
-            for r in gate_v['region']:
+            if 'region' in gate_v:
                 #Route
                 logging.debug("Remove route for region conn: "+str(r['name']))
                 self.route.removeQueue("reg_"+str(r["name"]))
@@ -258,20 +258,20 @@ class admin():
                     self.route.addExUnBind("region","federation."+gate_n,{"app":name,"region":str(r['name'])})
 
             ##Apps 
-            if gate_v['apps']!=None:
+            if 'apps' in gate_v:
                 #Route
                 for a in gate_v['apps']:
                     logging.debug("Remove Route for App:" +str(a))
                     ###Mayvbe others using same apps
                     ##ToDo: Need to delete the configurations for forwarding inside as well
-                    self.route.remove("federation."+self.controller_name,"karaf_app",{"app":a})
+                    self.route.remove("federation."+self.controller_name,"karaf_app",{"app_rec":a})
                     self.route.addExUnBind("apps","federation."+gate_n,{"app":a})                            
                     self.karaf.removeMigratedApp([a])
-                self.route.remove("federation."+self.controller_name,"karaf_app",{"app":name})
-                self.route.addExUnBind("apps","federation."+gate_n,{"app":name})
+                self.route.remove("federation."+self.controller_name,"karaf_app",{"app_rec":name})
+                self.route.addExUnBind("apps","federation."+gate_n,{"app_rec":name})
                 self.karaf.removeMigratedApp([name]);    
             ##Resources
-            if gate_v['resources']!=None:
+            if 'resources' in gate_v:
                 #Route
                 for re in gate_v['resources']:
                     logging.debug("Remove Route for Resource:" +str(re))
@@ -491,10 +491,10 @@ class admin():
                             #Route
                             for a in gate_v['apps']:
                                 logging.debug("Add Route for App:" +str(a))
-                                self.route.add("federation."+self.controller_name,"karaf_app",{"app":a})
-                                self.route.addExBind("apps","federation."+gate_n,{"app":a})
+                                self.route.add("federation."+self.controller_name,"karaf_app",{"app_rec":a})
+                                self.route.addExBind("apps","federation."+gate_n,{"app_rec":a})
                                 self.karaf.addMigratedApp([a],"backward")
-                            self.route.add("federation."+self.controller_name,"karaf_app",{"app":name})
+                            self.route.add("federation."+self.controller_name,"karaf_app",{"app_rec":name})
                             self.route.addExBind("apps","federation."+gate_n,{"app":name})
                             self.karaf.addMigratedApp([name],"forward")
                         ##Resources
@@ -645,14 +645,14 @@ class admin():
                                 ##self.route.remove("federation."+self.controller_name,"karaf_app",{"device":d})
                                 self.route.addExUnBind("apps","federation."+gate_n,{"app":name,"device":d})
                         ##Cloud
-                        if gate_v['cloud']!=None:
+                        if 'cloud' in gate_v:
                             #Route
                             for c in gate_v['cloud']:
                                 logging.debug("Remove route for cloud conn: "+str(c))
                                 self.route.remove("federation."+self.controller_name,"karaf_app",{"app":name,"cloud":c})
                                 self.route.addExUnBind("apps","federation."+gate_n,{"app":name,"cloud":c})
                         ##Region
-                        for r in gate_v['region']:
+                        if 'region' in gate_v:
                             #Route
                             logging.debug("Remove route for region conn: "+str(r['name']))
                             if 'key' in r:
@@ -663,19 +663,19 @@ class admin():
                                 self.route.addExUnBind("apps","federation."+gate_n,{"app":name,"region":r['name']})                                
 
                         ##Apps ###Modify amqp to event
-                        if gate_v['apps']!=None:
+                        if 'apps' in gate_v:
                             #Route
                             ##To-Do: Add app forwarding removal as well
                             for a in gate_v['apps']:
                                 logging.debug("Remove Route for App:" +str(a))
-                                self.route.remove("federation."+self.controller_name,"karaf_app",{"app":a})
-                                self.route.addExUnBind("apps","federation."+gate_n,{"app":a})                            
+                                self.route.remove("federation."+self.controller_name,"karaf_app",{"app_rec":a})
+                                self.route.addExUnBind("apps","federation."+gate_n,{"app_rec":a})                            
                                 self.karaf.removeMigratedApp([a])
-                            self.route.remove("federation."+self.controller_name,"karaf_app",{"app":name})
+                            self.route.remove("federation."+self.controller_name,"karaf_app",{"app_rec":name})
                             self.route.addExUnBind("apps","federation."+gate_n,{"app":name})
                             self.karaf.removeMigratedApp([name])
                         ##Resources
-                        if gate_v['resources']!=None:
+                        if 'resources' in gate_v:
                             #Route
                             for re in gate_v['resources']:
                                 logging.debug("Remove Route for Resource:" +str(re))

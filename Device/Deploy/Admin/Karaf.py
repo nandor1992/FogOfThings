@@ -177,7 +177,6 @@ class Karaf:
         if a_type=="backward":
             temp=[app for app in apps if app not in params['proxy_back']]
             params['proxy_back']=params['proxy_back']+temp
-        print(params)
         fp=open(self.apach+"org.karaf.messaging.cfg","w")
         for key in params:
             fp.write(key+" = "+":".join(params[key])+'\n')           
@@ -199,7 +198,6 @@ class Karaf:
                 params['forward'].remove(app)
             if app in params['proxy_back']:
                 params['proxy_back'].remove(app)
-        print(params)
         fp=open(self.apach+"org.karaf.messaging.cfg","w")
         for key in params:
             fp.write(key+" = "+":".join(params[key])+'\n')           
