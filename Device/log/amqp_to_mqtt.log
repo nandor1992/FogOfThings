@@ -375,3 +375,15 @@ DEBUG:root:[x] Received 'Error: Deletin App'
 DEBUG:root:Non json payload
 DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Deletin App", "cloud": "mqtt_conn1", "datetime": "2017-02-08 13:20:42"}
 DEBUG:root:Message Sent with result: 0 Message Id: 1
+DEBUG:root:[x] Received 'Error: Not Enough Required Devices'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Not Enough Required Devices", "cloud": "mqtt_conn1", "datetime": "2017-02-08 14:26:41"}
+DEBUG:root:Message Sent with result: 0 Message Id: 2
+DEBUG:root:[x] Received 'Error: Not Enough Required Devices'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Not Enough Required Devices", "cloud": "mqtt_conn1", "datetime": "2017-02-08 14:28:40"}
+DEBUG:root:Message Sent with result: 0 Message Id: 3
+DEBUG:root:[x] Received "success {'state':'Active','id':'124'}"
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "success {'state':'Active','id':'124'}", "cloud": "mqtt_conn1", "datetime": "2017-02-08 14:29:39"}
+DEBUG:root:Message Sent with result: 0 Message Id: 4

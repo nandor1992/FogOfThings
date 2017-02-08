@@ -160,16 +160,17 @@ class admin():
             gate_v=migrate
             logging.debug("Migrating Started!")
             ##Devices -- add queue and add device to type
-            for dev_t in gate_v['devices'].keys():
-                #Route
-                logging.debug("Add route for dev_type: "+dev_t+" devs:"+str(gate_v['devices'][dev_t]))
-                dev_l=self.device.getSpecDevList(dev_t,self.dev_status,self.controller_name) #Change Idle to Available
-                driver=""
-                for dev_s in dev_l:
-                    driver=Config.get("DeviceQ",dev_s["driver"])
-                for d in gate_v['devices'][dev_t]:
-                    self.route.add("federation."+self.controller_name,driver,{"app":name,"device":d})
-                    self.route.addExBind("device","federation."+gate_n,{"device":d})
+            if 'devices' in gate_v:
+                for dev_t in gate_v['devices'].keys():
+                    #Route
+                    logging.debug("Add route for dev_type: "+dev_t+" devs:"+str(gate_v['devices'][dev_t]))
+                    dev_l=self.device.getSpecDevList(dev_t,self.dev_status,self.controller_name) #Change Idle to Available
+                    driver=""
+                    for dev_s in dev_l:
+                        driver=Config.get("DeviceQ",dev_s["driver"])
+                    for d in gate_v['devices'][dev_t]:
+                        self.route.add("federation."+self.controller_name,driver,{"app":name,"device":d})
+                        self.route.addExBind("device","federation."+gate_n,{"device":d})
             ##Cloud
             if 'cloud' in gate_v:
                 #Route
@@ -180,16 +181,17 @@ class admin():
                     self.route.addExBind("federation."+self.controller_name,"cloud_resolve",{"app":name,"cloud":c})
 
             ##Region
-            for r in gate_v['region']:
-                #Route
-                logging.debug("Add route for region conn: "+str(r['name']))
-                self.route.addQueue("reg_"+str(r["name"]))
-                if 'key' in r:
-                    self.route.add("federation."+self.controller_name,"reg_"+str(r['name']),{"app":name,"region":str(r['name']),"key":str(r['key'])})
-                    self.route.addExBind("region","federation."+gate_n,{"app":name,"region":str(r['name']),"key":str(r['key'])})
-                else:
-                    self.route.add("federation."+self.controller_name,"reg_"+str(r['name']),{"app":name,"region":str(r['name'])})
-                    self.route.addExBind("region","federation."+gate_n,{"app":name,"region":str(r['name'])})
+            if 'region' in gate_v:
+                for r in gate_v['region']:
+                    #Route
+                    logging.debug("Add route for region conn: "+str(r['name']))
+                    self.route.addQueue("reg_"+str(r["name"]))
+                    if 'key' in r:
+                        self.route.add("federation."+self.controller_name,"reg_"+str(r['name']),{"app":name,"region":str(r['name']),"key":str(r['key'])})
+                        self.route.addExBind("region","federation."+gate_n,{"app":name,"region":str(r['name']),"key":str(r['key'])})
+                    else:
+                        self.route.add("federation."+self.controller_name,"reg_"+str(r['name']),{"app":name,"region":str(r['name'])})
+                        self.route.addExBind("region","federation."+gate_n,{"app":name,"region":str(r['name'])})
 
             ##Apps 
             if 'apps' in gate_v:
@@ -226,16 +228,17 @@ class admin():
             gate_v=migrate
             logging.debug("UnMigrating Started!")
             ##Devices -- add queue and add device to type
-            for dev_t in gate_v['devices'].keys():
-                #Route
-                logging.debug("Remove route for dev_type: "+dev_t+" devs:"+str(gate_v['devices'][dev_t]))
-                dev_l=self.device.getSpecDevList(dev_t,self.dev_status,self.controller_name) #Change Idle to Available
-                driver=""
-                for dev_s in dev_l:
-                    driver=Config.get("DeviceQ",dev_s["driver"])
-                for d in gate_v['devices'][dev_t]:
-                    self.route.remove("federation."+self.controller_name,driver,{"app":name,"device":d})
-                    ##self.route.addExUnBind("device","federation."+gate_n,{"device":d})
+            if 'devices' in gate_v:
+                for dev_t in gate_v['devices'].keys():
+                    #Route
+                    logging.debug("Remove route for dev_type: "+dev_t+" devs:"+str(gate_v['devices'][dev_t]))
+                    dev_l=self.device.getSpecDevList(dev_t,self.dev_status,self.controller_name) #Change Idle to Available
+                    driver=""
+                    for dev_s in dev_l:
+                        driver=Config.get("DeviceQ",dev_s["driver"])
+                    for d in gate_v['devices'][dev_t]:
+                        self.route.remove("federation."+self.controller_name,driver,{"app":name,"device":d})
+                        ##self.route.addExUnBind("device","federation."+gate_n,{"device":d})
             ##Cloud
             if 'cloud' in gate_v:
                 #Route
@@ -434,18 +437,19 @@ class admin():
                         gate_v=migrate[gate_n]
                         logging.debug("Working on: "+gate_n)
                         ##Devices -- add queue and add device to type
-                        for dev_t in gate_v['devices'].keys():
-                            #Config
-                            dev_n=gate_v['devices'][dev_t]
-                            if 'dev_'+dev_t in list_conf:
-                                list_conf['dev_'+dev_t]=list_conf['dev_'+dev_t]+":"+":".join(dev_n)
-                            else:
-                                list_conf['dev_'+dev_t]=":".join(dev_n)
-                            #Route
-                            logging.debug("Add route for dev_type: "+dev_t+" devs:"+str(dev_n))
-                            for d in dev_n:
-                                self.route.add("federation."+self.controller_name,"karaf_app",{"device":d})
-                                self.route.addExBind("apps","federation."+gate_n,{"app":name,"device":d})
+                        if 'devices' in gate_v:
+                            for dev_t in gate_v['devices'].keys():
+                                #Config
+                                dev_n=gate_v['devices'][dev_t]
+                                if 'dev_'+dev_t in list_conf:
+                                    list_conf['dev_'+dev_t]=list_conf['dev_'+dev_t]+":"+":".join(dev_n)
+                                else:
+                                    list_conf['dev_'+dev_t]=":".join(dev_n)
+                                #Route
+                                logging.debug("Add route for dev_type: "+dev_t+" devs:"+str(dev_n))
+                                for d in dev_n:
+                                    self.route.add("federation."+self.controller_name,"karaf_app",{"device":d})
+                                    self.route.addExBind("apps","federation."+gate_n,{"app":name,"device":d})
                         ##Cloud
                         if 'cloud' in gate_v:
                             #Config
@@ -637,13 +641,14 @@ class admin():
                         gate_v=migrate[gate_n]
                         logging.debug("Working on: "+gate_n)
                         ##Devices -- add queue and add device to type
-                        for dev_t in gate_v['devices'].keys():
-                            #Route
-                            logging.debug("Rmoving route for dev_type: "+dev_t+" devs:"+str(gate_v['devices'][dev_t]))
-                            for d in gate_v['devices'][dev_t]:
-                                ##Need to check if anyone else needs it for these 
-                                ##self.route.remove("federation."+self.controller_name,"karaf_app",{"device":d})
-                                self.route.addExUnBind("apps","federation."+gate_n,{"app":name,"device":d})
+                        if 'devices' in gate_v:
+                            for dev_t in gate_v['devices'].keys():
+                                #Route
+                                logging.debug("Rmoving route for dev_type: "+dev_t+" devs:"+str(gate_v['devices'][dev_t]))
+                                for d in gate_v['devices'][dev_t]:
+                                    ##Need to check if anyone else needs it for these 
+                                    ##self.route.remove("federation."+self.controller_name,"karaf_app",{"device":d})
+                                    self.route.addExUnBind("apps","federation."+gate_n,{"app":name,"device":d})
                         ##Cloud
                         if 'cloud' in gate_v:
                             #Route
