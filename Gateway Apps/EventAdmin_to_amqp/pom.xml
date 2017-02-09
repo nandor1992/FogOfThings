@@ -54,6 +54,11 @@
         	<artifactId>org.apache.karaf.services.eventadmin</artifactId>
         	<version>4.0.4</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.configadmin</artifactId>
+            <version>1.8.4</version>
+        </dependency>
 	</dependencies>
 
     <build>

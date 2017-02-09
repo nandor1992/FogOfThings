@@ -136,23 +136,19 @@ public class Activator extends Thread implements BundleActivator, ManagedService
 				}
 				logger.warn("For time and temp:"+String.valueOf(hours)+":"+mySched.getTemp(hours)+"curr tmp:"+recAvg);
 				logger.warn("Params: "+confirm_rel+" : "+String.valueOf(relayValue)+" : "+String.valueOf(proprelayValue));
-				if ( (recAvg > 0.0) && (recAvg+1.0)<=mySched.getTemp(hours)){
-					if((confirm_rel==1) && (relayValue==0)){
-					deviceSendEvent("[{'n':'relay','v':'1'}]", dev_names.get(2));
+				if ((confirm_rel!=1) || (relayValue != proprelayValue)){
+					deviceSendEvent("[{'n':'relay','v':'"+proprelayValue+"'}]", dev_names.get(2));
+				}else{
+				if ( (recAvg > 0.0) && (recAvg+1.0)<=mySched.getTemp(hours) && (relayValue==0)){
 					proprelayValue=1;
-					}else if (confirm_rel==0){
-						deviceSendEvent("[{'n':'relay','v':'1'}]", dev_names.get(2));
-						proprelayValue=1;
-					}
+					confirm_rel=0;
+					deviceSendEvent("[{'n':'relay','v':'1'}]", dev_names.get(2));
 				} 
-				if ((recAvg > 0.0) && (recAvg>=mySched.getTemp(hours))){
-					if((confirm_rel==1) && (relayValue==1)){
-					deviceSendEvent("[{'n':'relay','v':'0'}]", dev_names.get(2));
+				if ((recAvg > 0.0) && (recAvg>=mySched.getTemp(hours)) && (relayValue==1)){
 					proprelayValue=0;
-					}else if (confirm_rel==0){
-						deviceSendEvent("[{'n':'relay','v':'0'}]", dev_names.get(2));
-						proprelayValue=0;
-					}
+					confirm_rel=0;
+					deviceSendEvent("[{'n':'relay','v':'0'}]", dev_names.get(2));					
+				}
 				}
 		    }
 	}

@@ -5,6 +5,8 @@
 # 
 #  This is an example of how to use payloads of a varying (dynamic) size.
 # 
+# Modified to work from FogOf Thinggs and with Ini Fie
+# Modified Driver to Work with CouchDB
 
 from __future__ import print_function
 from threading import Timer
@@ -12,14 +14,18 @@ import time
 from RF24 import *
 import RPi.GPIO as GPIO
 import pika
-import sqlite3
 import json
 import datetime
 import string
 import random
+import database
 import os,sys
+import ConfigParser
+#Config Settings
+Config=ConfigParser.ConfigParser()
+Config.read(os.path.dirname(os.path.dirname(os.path.realpath(__file__)))+"/config.ini")
 
-irq_gpio_pin = None
+irq_gpio_pin = 25
 
 ########### USER CONFIGURATION ###########
 # See https://github.com/TMRh20/RF24/blob/master/RPi/pyRF24/readme.md
@@ -46,7 +52,7 @@ radio = RF24(RPI_V2_GPIO_P1_15, BCM2835_SPI_CS0, BCM2835_SPI_SPEED_8MHZ)
 irq_gpio_pin = 25
 message="";
 
-f=open('/home/pi/log/rf24.log','a')
+f=open(Config.get("Log","location")+'/rf24.log','a')
 sys.stdout=f
 
 ##########################################
@@ -63,10 +69,10 @@ def try_read_data(channel=0):
                 print("--------Message Received on CH=1-------")
                 handle_data(message)
                 message=""
-            if message[0:1]!='{':
+            elif message[0:1]!='{':
                 print("Wrong Start to msg delete rest")
                 message=""
-            if (len(message)>300 and message[-1]=='}' ):
+            elif len(message)>300:
                 print("length error")
                 message=""
             #print(message)
@@ -114,10 +120,7 @@ def messageResolv(my_json):
             timer_list[dev_id].cancel()
         properties_m=pika.BasicProperties(headers={'device':""+dev_id,'comm': ""+gw_name,'datetime':""+datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
         channel.basic_publish(exchange='device', routing_key='', body=message_amqp, properties=properties_m)
-        conn = sqlite3.connect(path)
-        c=conn.cursor()
-        updateDevTime(c,conn,dev_id,"Available")
-        conn.close()
+        updateDevTime(dev_id,"Available")
     else:
         print("No details found - not forwarding")
     sys.stdout.flush()
@@ -131,29 +134,25 @@ def registerResolv(my_json):
     sys.stdout=f
 
 def resolv_dev(my_json):
-    conn = sqlite3.connect(path)
-    c=conn.cursor()
     print ("Json Parts!")
     type_d=my_json.get("bn",{})[0][13:]
     mac_d=my_json.get("bn",{})[1][12:]
     ver_d=my_json.get("ver")
-    c.execute("SELECT dev_id FROM devices WHERE mac='"+mac_d+"' AND type='"+type_d+"' AND ver='"+ver_d+"'")
-    value=c.fetchone()
-    if value:
+    value=datab.lookupDev(mac_d,type_d,ver_d)
+    if value!=None:
         print("Found details "+value[0])
         rand_uuid=value[0]
-        updateDevTime(c,conn,value[0],"Available")
+        updateDevTime(value[0],"Available")
         dev_list.append(value[0])
     else:
         print("No details found")
         rand_uuid = ''.join([random.choice(string.ascii_letters+string.digits) for n in xrange(8)])
         print("New UUID="+str(rand_uuid))
-        c.execute("INSERT INTO devices VALUES ('"+rand_uuid+"','"+type_d+"','"+mac_d+"','"+ver_d+"','"+datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")+"','Available')")
+        sense=[]
         for sens in my_json["e"]:
-           c.execute("INSERT INTO sensors VALUES ('"+rand_uuid+"','"+sens["n"]+"','"+sens["u"]+"')")
-        conn.commit()
+            sense.append({sens["n"]:sens["u"]})
+        datab.addDevice(rand_uuid,type_d,mac_d,ver_d,datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),'Available',sense)
         dev_list.append(rand_uuid)
-    conn.close()
     sys.stdout.flush()
     return rand_uuid
     
@@ -198,26 +197,28 @@ def timeout(dev,val,cnt):
         properties_m=pika.BasicProperties(headers={'device':""+dev,'comm': ""+gw_name,'datetime':""+datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
         channel.basic_publish(exchange='device', routing_key='', body=message_amqp, properties=properties_m)
         timer_list[dev].cancel()
-        conn = sqlite3.connect(path)
-        c=conn.cursor()
-        updateDevTime(c,conn,dev,"Max Retransmit")
-        conn.close()
+        updateDevTime(dev,"Max Retransmit")
     sys.stdout.flush()
-    
-def updateDev(c,conn,dev_id,status):
-    #ToDo update Date of Device
-    string="UPDATE devices SET status='"+status+"' WHERE dev_id='"+dev_id+"'"
-    c.execute(string)
-    conn.commit()
 
-def updateDevTime(c,conn,dev_id,status):
+def resetTimeout():
+    global radio
+    global t_reset
+    global message
+    sendRf("{'e':'This_is_a_test'}")
+    t_reset=Timer(90,resetTimeout)
+    t_reset.start()
+    sys.stdout.flush()
+        
+def updateDev(dev_id,status):
     #ToDo update Date of Device
-    string="UPDATE devices SET status='"+status+"', last_update='"+datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")+"' WHERE dev_id='"+dev_id+"'"
-    c.execute(string)
-    conn.commit()    
+    datab.updateStat(dev_id,status)
+
+def updateDevTime(dev_id,status):
+    #ToDo update Date of Device
+    datab.updateDateStat(dev_id,status,datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     
-pipes = ['1Node','2Node','3Node','4Node']
-gw_name="Gateway-RF24"
+pipes = [Config.get("RF24","pipe_write"),Config.get("RF24","pipe_read")]
+gw_name=Config.get("RF24","name")
 dev_list= []
 timer_list = {}
 
@@ -226,7 +227,7 @@ print("RF24 Radio started: "+time.strftime('%X %x %Z'))
 radio.begin()
 radio.enableDynamicPayloads()
 radio.setPALevel(RF24_PA_MAX);
-radio.setRetries(15,15);
+radio.setRetries(5,15);
 
 if irq_gpio_pin is not None:
     # set up callback for irq pin
@@ -239,39 +240,27 @@ if irq_gpio_pin is not None:
     radio.startListening()
 
 #Create sql stuff and initialize
-path ='/home/pi/databases/ardu_rf24.db'
 
 #Get Database deviecs
-conn = sqlite3.connect(path)
-c2=conn.cursor()
-c=conn.cursor()
-c.execute("SELECT dev_id FROM devices")
-value=c.fetchone()
-while value:
-    updateDev(c2,conn,value[0],"Idle")
-    value=c.fetchone()
-print("Working Deviecs")
-print(dev_list)
-conn.close()
-
+datab=database.Database(Config.get("couchDB","user"),Config.get("couchDB","pass"),'rf24')
+value=datab.getAllDevs()
+for r in value:
+    datab.updateStat(r,"Idle")
 sys.stdout.flush()
 #AMQP Stuff
 
-credentials = pika.PlainCredentials('admin', 'hunter')
-parameters = pika.ConnectionParameters('localhost',5672,'test', credentials)
+credentials = pika.PlainCredentials(Config.get("Amqp","user"),Config.get("Amqp","pass"))
+parameters = pika.ConnectionParameters('localhost',int(Config.get("Amqp","port")),Config.get("Amqp","virt"), credentials)
 connection = pika.BlockingConnection(parameters);
 
 channel = connection.channel()
 channel.basic_qos(prefetch_count=1)
-channel.basic_consume(callback,queue='ardu_rf24',no_ack=True)
+channel.basic_consume(callback,queue=Config.get("RF24","queue"),no_ack=True)
 
 
 #Timer Stuff
-#t=Timer(1,timeout,["OWaDMY9V","{'e':[{'n':'led','v':'1'}],'bn':'urn:dev:id:OWaDMY9V'}"])
-#timer_list["OWaDMY9V"]=t
-#t.start()
-#time.sleep(5)
-#timer_list["OWaDMY9V"].cancel()    
+t_reset=Timer(90,resetTimeout)
+t_reset.start()  
         
 # forever loop
 try:
@@ -281,5 +270,6 @@ except KeyboardInterrupt:
     radio.stopListening()
     channel.close()
     connection.close()
+    t_reset.cancel()
     print ("Exiting Main Thread")
     sys.stdout.flush()

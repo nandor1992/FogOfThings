@@ -2,81 +2,18 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\jars\libs\internal_impl-24.2.0.jar"
-        jumboMode="false"
-        revision="24.0.2"
-        sha1="771b3cc0e597b54da25f8086ba73180c59c6bc71">
-        <dex dex="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_fb9589420c82c3a8d1a8dcfa9a1828f3039e55b2.jar" />
-    </item>
-    <item
-        jar="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\jars\classes.jar"
-        jumboMode="false"
-        revision="24.0.2"
-        sha1="d8bd2268fdcbfd52c76ade65d9900cd8def93a44">
-        <dex dex="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-24.2.0_5982a220655b11f22c84be1fce6b1d74051b171d.jar" />
-    </item>
-    <item
-        jar="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\jars\classes.jar"
-        jumboMode="false"
-        revision="24.0.2"
-        sha1="f9b41622897665678d31d78e57a361cb0cebcb0d">
-        <dex dex="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-24.2.0_b3ceddac6452742b46eb64cbadc1a112e1164843.jar" />
-    </item>
-    <item
-        jar="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\jars\libs\internal_impl-24.2.0.jar"
-        jumboMode="false"
-        revision="24.0.2"
-        sha1="032a4b53def5e2ceedfc2e793b126c0163cfa1dd">
-        <dex dex="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_538da43dea8f6bf67c8b45e9eb7d8adda7e4d0c4.jar" />
-    </item>
-    <item
-        jar="C:\Program Files (x86)\Android\android-sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.0\support-annotations-24.2.0.jar"
-        jumboMode="false"
-        revision="24.0.2"
-        sha1="6be858a75633b1f0a2d24cad740db57775cb6871">
-        <dex dex="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\pre-dexed\debug\support-annotations-24.2.0_f4228c1b901908a346c9ee83e23954a04b92a0ad.jar" />
-    </item>
-    <item
-        jar="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\jars\libs\internal_impl-24.2.0.jar"
-        jumboMode="false"
-        revision="24.0.2"
-        sha1="045be695d968dd707691cc55d23746dbf8cf569a">
-        <dex dex="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_182970ab69e1a777a1fedf04facc9295cc8e2688.jar" />
-    </item>
-    <item
-        jar="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.0\jars\classes.jar"
-        jumboMode="false"
-        revision="24.0.2"
-        sha1="c3c638be6e650b165ab9ae144857b64e82787fad">
-        <dex dex="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.2.0_d872a3d39976ae9ad83d6cd32ea8f3741ab88c89.jar" />
-    </item>
-    <item
-        jar="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\jars\classes.jar"
-        jumboMode="false"
-        revision="24.0.2"
-        sha1="fcc945a86ebcbf527429acb8216ec7dae2c06417">
-        <dex dex="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-24.2.0_493e12e0b8b85dca58d136f39b315926be8b021a.jar" />
-    </item>
-    <item
-        jar="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\jars\classes.jar"
-        jumboMode="false"
-        revision="24.0.2"
-        sha1="c84e216d9bf618464d6b9564d71d9a656433e7c4">
-        <dex dex="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-24.2.0_01a78be246028b5adb64cf54b43ffede2ed942b7.jar" />
-    </item>
-    <item
-        jar="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\jars\libs\internal_impl-24.2.0.jar"
-        jumboMode="false"
-        revision="24.0.2"
-        sha1="60d7b23621d31e6f42f4f76f16af467e57a20cda">
-        <dex dex="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_b9468b320f8c0e89b8a3d522711ed1563eb9d621.jar" />
-    </item>
-    <item
         jar="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.0\jars\classes.jar"
         jumboMode="false"
         revision="24.0.2"
         sha1="45f5eda279825ff470e3f51019d374d1ef61e000">
         <dex dex="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.2.0_7c2de439a58e1910d152b5a2d57970d3e6d376a3.jar" />
+    </item>
+    <item
+        jar="C:\Users\Nandor\Documents\FogOfThings\Android\BluteTest\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="fcc945a86ebcbf527429acb8216ec7dae2c06417">
+        <dex dex="C:\Users\Nandor\Documents\FogOfThings\Android\BluteTest\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-24.2.0_9070201cf19c0f7d5ce1ac3754d315198f1a0c46.jar" />
     </item>
     <item
         jar="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.0\jars\classes.jar"
@@ -86,11 +23,144 @@
         <dex dex="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-24.2.0_2e91479a1df2ce434c43f072c83990a008f17f89.jar" />
     </item>
     <item
+        jar="C:\Program Files (x86)\Android\android-sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.0\support-annotations-24.2.0.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="6be858a75633b1f0a2d24cad740db57775cb6871">
+        <dex dex="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\pre-dexed\debug\support-annotations-24.2.0_f4228c1b901908a346c9ee83e23954a04b92a0ad.jar" />
+    </item>
+    <item
         jar="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.0\jars\classes.jar"
         jumboMode="false"
         revision="24.0.2"
         sha1="beac40bcc8a320a896dd15f5109cfcaea5e1e0e3">
         <dex dex="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-24.2.0_10198040e4e29561d7206725e05b89218499e4a8.jar" />
+    </item>
+    <item
+        jar="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="60d7b23621d31e6f42f4f76f16af467e57a20cda">
+        <dex dex="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_b9468b320f8c0e89b8a3d522711ed1563eb9d621.jar" />
+    </item>
+    <item
+        jar="C:\Users\Nandor\Documents\FogOfThings\Android\BluteTest\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="032a4b53def5e2ceedfc2e793b126c0163cfa1dd">
+        <dex dex="C:\Users\Nandor\Documents\FogOfThings\Android\BluteTest\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_8d67d4eeb61d90d9ce6c35fd8e6984759d6c6084.jar" />
+    </item>
+    <item
+        jar="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="fcc945a86ebcbf527429acb8216ec7dae2c06417">
+        <dex dex="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-24.2.0_493e12e0b8b85dca58d136f39b315926be8b021a.jar" />
+    </item>
+    <item
+        jar="C:\Users\Nandor\Documents\FogOfThings\Android\BluteTest\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="c84e216d9bf618464d6b9564d71d9a656433e7c4">
+        <dex dex="C:\Users\Nandor\Documents\FogOfThings\Android\BluteTest\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-24.2.0_6b618a7e5f18859c4ff896077c6e5d879eb372ee.jar" />
+    </item>
+    <item
+        jar="C:\Users\Nandor\Documents\FogOfThings\Android\BluteTest\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="6e02e34594ebe9c0501ffda8dd48497f81b82977">
+        <dex dex="C:\Users\Nandor\Documents\FogOfThings\Android\BluteTest\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_11879ba3f3f14f3c9d89e40f932b813235546109.jar" />
+    </item>
+    <item
+        jar="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="032a4b53def5e2ceedfc2e793b126c0163cfa1dd">
+        <dex dex="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_538da43dea8f6bf67c8b45e9eb7d8adda7e4d0c4.jar" />
+    </item>
+    <item
+        jar="C:\Users\Nandor\Documents\FogOfThings\Android\BluteTest\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="60d7b23621d31e6f42f4f76f16af467e57a20cda">
+        <dex dex="C:\Users\Nandor\Documents\FogOfThings\Android\BluteTest\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_d4dc6dabc8c6c1a06f5bfb950dc9a91d2a521d84.jar" />
+    </item>
+    <item
+        jar="C:\Users\Nandor\Documents\FogOfThings\Android\BluteTest\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="6eb9107eb34d2fe2b020662b7fbbec991dcba846">
+        <dex dex="C:\Users\Nandor\Documents\FogOfThings\Android\BluteTest\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-24.2.0_66be4e58eb464e39ddc0e4276d6741e33a3f3c34.jar" />
+    </item>
+    <item
+        jar="C:\Users\Nandor\Documents\FogOfThings\Android\BluteTest\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="d8bd2268fdcbfd52c76ade65d9900cd8def93a44">
+        <dex dex="C:\Users\Nandor\Documents\FogOfThings\Android\BluteTest\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-24.2.0_5b0ace7cfd8afd250feff29f94adc426f5795097.jar" />
+    </item>
+    <item
+        jar="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="d8bd2268fdcbfd52c76ade65d9900cd8def93a44">
+        <dex dex="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-24.2.0_5982a220655b11f22c84be1fce6b1d74051b171d.jar" />
+    </item>
+    <item
+        jar="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="c84e216d9bf618464d6b9564d71d9a656433e7c4">
+        <dex dex="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-24.2.0_01a78be246028b5adb64cf54b43ffede2ed942b7.jar" />
+    </item>
+    <item
+        jar="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="6eb9107eb34d2fe2b020662b7fbbec991dcba846">
+        <dex dex="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-24.2.0_0c1d5ae57be1a51108f7eb4705665acfa1cc0c5d.jar" />
+    </item>
+    <item
+        jar="C:\Users\Nandor\Documents\FogOfThings\Android\BluteTest\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="45f5eda279825ff470e3f51019d374d1ef61e000">
+        <dex dex="C:\Users\Nandor\Documents\FogOfThings\Android\BluteTest\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.2.0_858beec4f7aba55f9dd7469f4226dde8042704d8.jar" />
+    </item>
+    <item
+        jar="C:\Users\Nandor\Documents\FogOfThings\Android\BluteTest\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="f3ee23ef25c9a8fe3d40246d0b7097267963a612">
+        <dex dex="C:\Users\Nandor\Documents\FogOfThings\Android\BluteTest\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-24.2.0_8d97c5f5d9e3bddce7d49cb44df0ace141b3adea.jar" />
+    </item>
+    <item
+        jar="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="045be695d968dd707691cc55d23746dbf8cf569a">
+        <dex dex="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_182970ab69e1a777a1fedf04facc9295cc8e2688.jar" />
+    </item>
+    <item
+        jar="C:\Users\Nandor\Documents\FogOfThings\Android\BluteTest\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="c3c638be6e650b165ab9ae144857b64e82787fad">
+        <dex dex="C:\Users\Nandor\Documents\FogOfThings\Android\BluteTest\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.2.0_2e79cb18f731f6e9dcc47cc66105d55256c1e3e8.jar" />
+    </item>
+    <item
+        jar="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="f9b41622897665678d31d78e57a361cb0cebcb0d">
+        <dex dex="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-24.2.0_b3ceddac6452742b46eb64cbadc1a112e1164843.jar" />
+    </item>
+    <item
+        jar="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="771b3cc0e597b54da25f8086ba73180c59c6bc71">
+        <dex dex="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_fb9589420c82c3a8d1a8dcfa9a1828f3039e55b2.jar" />
     </item>
     <item
         jar="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.0\jars\libs\internal_impl-24.2.0.jar"
@@ -100,11 +170,39 @@
         <dex dex="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_9b2c1b8d5a391a45d0c09e1be60c68a71b4c5d8a.jar" />
     </item>
     <item
-        jar="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\jars\classes.jar"
+        jar="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.0\jars\classes.jar"
         jumboMode="false"
         revision="24.0.2"
-        sha1="6eb9107eb34d2fe2b020662b7fbbec991dcba846">
-        <dex dex="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-24.2.0_0c1d5ae57be1a51108f7eb4705665acfa1cc0c5d.jar" />
+        sha1="c3c638be6e650b165ab9ae144857b64e82787fad">
+        <dex dex="C:\Users\Nandor\IntelliJIDEAProjects\BluteTest\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.2.0_d872a3d39976ae9ad83d6cd32ea8f3741ab88c89.jar" />
+    </item>
+    <item
+        jar="C:\Users\Nandor\Documents\FogOfThings\Android\BluteTest\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="beac40bcc8a320a896dd15f5109cfcaea5e1e0e3">
+        <dex dex="C:\Users\Nandor\Documents\FogOfThings\Android\BluteTest\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-24.2.0_dc33213d51fe4a1adc95371e3470b08a5404b194.jar" />
+    </item>
+    <item
+        jar="C:\Users\Nandor\Documents\FogOfThings\Android\BluteTest\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="771b3cc0e597b54da25f8086ba73180c59c6bc71">
+        <dex dex="C:\Users\Nandor\Documents\FogOfThings\Android\BluteTest\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_4f2008b6df7cc7976625348af6d5fac7ac58c744.jar" />
+    </item>
+    <item
+        jar="C:\Users\Nandor\Documents\FogOfThings\Android\BluteTest\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="f9b41622897665678d31d78e57a361cb0cebcb0d">
+        <dex dex="C:\Users\Nandor\Documents\FogOfThings\Android\BluteTest\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-24.2.0_19d524170655cfa2d1f639f39350169d0c6ee262.jar" />
+    </item>
+    <item
+        jar="C:\Users\Nandor\Documents\FogOfThings\Android\BluteTest\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.0\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="045be695d968dd707691cc55d23746dbf8cf569a">
+        <dex dex="C:\Users\Nandor\Documents\FogOfThings\Android\BluteTest\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_b5b5a01f63ccbee3852412cb1cca88420841e314.jar" />
     </item>
 
 </items>

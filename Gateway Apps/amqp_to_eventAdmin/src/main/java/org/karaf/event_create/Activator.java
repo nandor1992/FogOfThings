@@ -16,15 +16,25 @@
  */
 package org.karaf.event_create;
 
+import java.util.Dictionary;
+import java.util.Hashtable;
+
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
+import org.osgi.framework.Constants;
+import org.osgi.framework.ServiceRegistration;
+import org.osgi.service.cm.ConfigurationException;
+import org.osgi.service.cm.ManagedService;
 
-public class Activator implements BundleActivator {
-
+public class Activator implements BundleActivator{
+	
+	
 	AmqpConnect ac=new AmqpConnect();
 	
 	public void start(BundleContext bc) throws Exception {
 		System.out.println("Starting Amqp to Event Admin");
+		
+		
 		try {
 			ac.startThis(bc);
 		} catch (Exception e) {
@@ -37,5 +47,6 @@ public class Activator implements BundleActivator {
 		ac.stopThis();
 		System.out.println("Stopping Amqp to Event Admin");
 	}
+
 
 }

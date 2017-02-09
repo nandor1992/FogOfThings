@@ -1,11 +1,13 @@
 package com.example.nandor.blutetest;
 
+import android.Manifest;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -31,6 +33,18 @@ public class MainActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.listView);
 
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        Intent turnOn = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+        MainActivity.this.startActivityForResult(turnOn, 0);
+        // Quick permission check
+        int permissionCheck =0;
+        if (Build.VERSION.SDK_INT>=23){
+            permissionCheck = this.checkSelfPermission("Manifest.permission.ACCESS_FINE_LOCATION");
+            permissionCheck += this.checkSelfPermission("Manifest.permission.ACCESS_COARSE_LOCATION");
+        if (permissionCheck != 0) {
+
+            this.requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, 1001); //Any number
+        }
+    }
         mBluetoothAdapter.startDiscovery();
 
         IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);

@@ -1,5 +1,11 @@
 #!/usr/bin/python
 
+# Modified to work from FogOf Thinggs and with Ini Fie
+# To-Do: Maybe modify to work with CouchDB don't really care about this anymore
+#Not tested, just modified...to much pain
+
+
+
 import Queue
 import threading
 import time
@@ -10,6 +16,11 @@ import random
 import string
 import datetime
 import pika
+import os,sys
+import ConfigParser
+#Config Settings
+Config=ConfigParser.ConfigParser()
+Config.read(os.path.dirname(os.path.dirname(os.path.realpath(__file__)))+"/config.ini")
 
 exitFlag = 0        
     
@@ -175,24 +186,25 @@ send_q = Queue.Queue(10)
 receive_q = Queue.Queue(10)
 threads = []
 try:
-    ser=serial.Serial("/dev/ttyUSB0",9600,timeout=0)
+    ser=serial.Serial(Config.get("434Mhz","serial"),int(Config.get("434Mhz","baud")),timeout=0)
 except serial.SerialException:
     print "Serial Expression probs wrong port"
     gratiousExit()
 
 #Create sql stuff and initialize
-path ='/home/pi/databases/atmega128rfa1.db'
+path =Config.get("Database","path")+'/atmega128rfa1.db'
 conn = sqlite3.connect(path)
 c=conn.cursor()
 
 #amqp connn
-credentials = pika.PlainCredentials('admin', 'hunter')
-parameters = pika.ConnectionParameters('localhost',5672,'test', credentials)
-connection = pika.BlockingConnection(parameters)
-channel =connection.channel()
+credentials = pika.PlainCredentials(Config.get("Amqp","user"),Config.get("Amqp","pass"))
+parameters = pika.ConnectionParameters('localhost',int(Config.get("Amqp","port")),Config.get("Amqp","virt"), credentials)
+connection = pika.BlockingConnection(parameters);
+
+channel = connection.channel()
 channel.basic_qos(prefetch_count=1)
         
-gw_name="Gateway-Atmegarfa1"
+gw_name=Config.get("434Mhz","name")
 # Create new threads
 uart=UARTThread(ser,send_q,receive_q)
 uart.start()
@@ -204,7 +216,7 @@ try:
         if not receive_q.empty():
             message=receive_q.get()
             handle_data(message)
-        frame,header,body=channel.basic_get(queue='atmega_rfa1',no_ack=False)
+        frame,header,body=channel.basic_get(queue=Config.get("434Mhz","queue"),no_ack=False)
         if frame:
             channel.basic_ack(frame.delivery_tag)
             sendMssgResolv(body,header)

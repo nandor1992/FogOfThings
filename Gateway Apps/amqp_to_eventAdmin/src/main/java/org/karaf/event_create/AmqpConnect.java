@@ -11,7 +11,10 @@ import java.util.Hashtable;
 import java.util.Map;
 
 import org.osgi.framework.BundleContext;
+import org.osgi.framework.Constants;
 import org.osgi.framework.ServiceReference;
+import org.osgi.framework.ServiceRegistration;
+import org.osgi.service.cm.ManagedService;
 import org.osgi.service.event.Event;
 import org.osgi.service.event.EventAdmin;
 
@@ -29,12 +32,15 @@ public class AmqpConnect {
 	private static final String CLOUD_QUEUE = "cloud/receive/";
 	private static final String REGION_QUEUE = "region/receive/";
 	private static final String RESOURCE_QUEUE="resource/receive/";
+	private static final String APP_SEND_QUEUE = "app/send/";
+	private static final String APP_REC_QUEUE = "app/receive/";
 	private final static String QUEUE_NAME = "karaf_app";
 	// private static final String SEND_EVENT_QUEUE = "external/send";
-
+	
+	
 	public static void startThis(BundleContext bc) throws Exception {
 		bcontext = bc;
-
+		
 		// Retrieving the Event Admin service from the OSGi framework
 		sr = bc.getServiceReference(EventAdmin.class.getName());
 		if (sr == null) {
@@ -92,18 +98,31 @@ public class AmqpConnect {
 		if (props.get("device")!=null) {
 			Event event = new Event(DEVICE_QUEUE + props.get("device"), props);
 			ea.sendEvent(event);
-		}
-		if (props.get("cloud")!=null) {
+		}else if (props.get("cloud")!=null) {
 			Event event = new Event(CLOUD_QUEUE + props.get("app"), props);
 			ea.sendEvent(event);
-		}
-		if (props.get("region")!=null) {
+		}else if (props.get("region")!=null) {
 			Event event = new Event(REGION_QUEUE + props.get("app"), props);
 			ea.sendEvent(event);
-		}
-		if (props.get("res")!=null) {
+		}else if (props.get("res")!=null) {
 			Event event = new Event(RESOURCE_QUEUE + props.get("app"), props);
 			ea.sendEvent(event);
+		}else if (props.get("app")!=null){
+			if (props.get("app_type")!=null && props.get("app_rec")!=null){
+				if (props.get("app_type").toString().equals("receive")){
+					String app=props.get("app_rec").toString();
+					props.remove("app_type");
+					props.remove("app_rec");
+					Event event = new Event(APP_REC_QUEUE + app, props);
+					ea.sendEvent(event);
+				}else if (props.get("app_type").toString().equals("send")) {
+					String app=props.get("app_rec").toString();
+					props.remove("app_type");
+					props.remove("app_rec");
+					Event event = new Event(APP_SEND_QUEUE + app, props);
+					ea.sendEvent(event);
+				}
+			}
 		}
 	}
 }
