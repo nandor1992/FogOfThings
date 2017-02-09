@@ -387,3 +387,6 @@ DEBUG:root:[x] Received "success {'state':'Active','id':'124'}"
 DEBUG:root:Non json payload
 DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "success {'state':'Active','id':'124'}", "cloud": "mqtt_conn1", "datetime": "2017-02-08 14:29:39"}
 DEBUG:root:Message Sent with result: 0 Message Id: 4
+DEBUG:root:Driver Restarted
+DEBUG:root:Broker started: 10:39:05 02/09/17 UTC
+DEBUG:root: [*] Waiting for messages. To exit press CTRL+C
