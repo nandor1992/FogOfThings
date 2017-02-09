@@ -22,7 +22,7 @@ import ConfigParser
 import os,sys
 #Config Settings
 Config=ConfigParser.ConfigParser()
-Config.read(os.path.dirname(os.path.dirname(os.path.realpath(__file__)))+"/config.ini")
+Config.read(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__)))))+"/config.ini")
 
 
 irq_gpio_pin = 25
@@ -109,8 +109,8 @@ def callback(ch,method,properties,body):
     print("[x] Received %r"%body)
     sendMssgResolv(body,properties) 
     
-pipes = [Config.get("RF24-tiny","pipe_write"),Config.get("RF24-tiny","pipe_read")]
-gw_name=Config.get("RF24-tiny","name")
+pipes = [Config.get("RF24","pipe_write"),Config.get("RF24","pipe_read")]
+gw_name="Rf_tiny"
 
 
 print('Receive Example')
@@ -128,13 +128,13 @@ if irq_gpio_pin is not None:
 
 #AMQP Stuff
 
-credentials = pika.PlainCredentials(Config.get("Amqp","user"),Config.get("Amqp","pass"))
-parameters = pika.ConnectionParameters('localhost',int(Config.get("Amqp","port")),Config.get("Amqp","virt"), credentials)
+credentials = pika.PlainCredentials("admin","hunter")
+parameters = pika.ConnectionParameters('localhost',5672,"test", credentials)
 connection = pika.BlockingConnection(parameters);
 
 channel = connection.channel()
 channel.basic_qos(prefetch_count=1)
-channel.basic_consume(callback,queue=Config.get("RF24-tiny","queue"),no_ack=True)
+channel.basic_consume(callback,"tiny_rf24",no_ack=True)
 
 
 # forever loop

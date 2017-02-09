@@ -9,11 +9,14 @@ import json
 import time
 import os,sys
 import ConfigParser
+import Region
+import ast
+import random
+from string import ascii_letters,digits
+from Init import Init,InitReq
 #Config Settings
 Config=ConfigParser.ConfigParser()
 Config.read(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))+"/config.ini")
-
-Config.read(os.getcwd()+"/config.ini")
 
 credentials = pika.PlainCredentials(Config.get("Amqp","user"),Config.get("Amqp","pass"))
 parameters = pika.ConnectionParameters('localhost',int(Config.get("Amqp","port")),Config.get("Amqp","virt"), credentials)
@@ -23,6 +26,7 @@ channel = connection.channel()
 channel.basic_qos(prefetch_count=1)
 
 def resolve(payload):
+    print(payload)
     response="Error"
     components=payload.split(' ')
     if components[0]=='route':
@@ -45,20 +49,104 @@ def resolve(payload):
             response=removeTask(" ".join(components[1:]))
         else:
             print("No subtask found")
-    elif components[0]=='region':
-        print("Region Add Task")
-        if components[1]=='add':
-            print("Add region")
-            #To-DO Create Queue add route to karaf
-        elif components[1]=='remove':
+    elif components[0]=='cluster':
+        print("Cluster")
+        if components[1]=='dicover':
+            print("Discover Cluster")
+            response=discoverRegion()
+        elif components[1]=='new':
+            print("Create new Cluster")
+            #To-Do Create new Cluster 
+        elif components[1]=='join':
             print("Delete region")
-            #To-Do Delete Queue add route to karaf
+            #Join cluster on ip
+        elif components[1]=='resolve':
+            print("Delete region")
+            #Do discovery and everything to find peers
         else:
             print("No subtask found")
+    elif components[0]=='register':
+        print("Register")
+        response="ok"
+        if components[1]=='add':
+            print("Add Node to Existing Cluster (4 admin)") ##Working Case 
+            ##Only works fro Admin, modify to allow peers to add Node as well
+            ##To-Do
+            ret=ast.literal_eval("  ".join(components[2:]))
+            reg.addGwToDatabase(ret['peer_name'],ret['peer_ip'],ret['peer_mac'])
+            reg.addCouchNode(ret['peer_ip'])
+            reg.addUpstream("admin","hunter",ret['peer_ip'],"test")
+            ##Add node to Couchdb and Rabbitmq cluster, update Database with it's value
+        elif components[1]=='remove':
+            print("Remove Node")
+            ##Remove node from Rabbitmq and Couchdb, update Database with it's value 
+        elif components[1]=='update':
+            print("Update Node, for new master ip")
+            ##De-register rabbitmq and CLuster and register with new Admin 
+        elif components[1]=='deregister':
+            print("Deregister node and start over ")
+            ##Delete all nodes from CouchDB and Rabbitmq and start registration process again
+        elif components[1]=='self':
+            print("Self")
+            if components[2]=='nothing':
+                print("Update Variables received but nothing else to do")
+                ret=ast.literal_eval("  ".join(components[3:]))
+                if 'master' in ret:
+                    print("Node") ## Working Case - Done 
+                    modifyConfig(ret['reg_api'],ret['name'],ret['reg_name'],ret['master'])
+                else:
+                    print("Master")   ## Working Case - Done
+                    modifyConfig(ret['reg_api'],ret['name'],ret['reg_name'],None)   
+            elif components[2]=='init':
+                print("Initialize node to be added to Cluster") ## Working Case
+                ##To-Do
+                ret=ast.literal_eval("  ".join(components[3:]))
+                modifyConfig(ret['reg_api'],ret['name'],ret['reg_name'],ret['master'])
+                ##Add Uploding Rabbitmq file with configs
+                ini.initRabbitmq(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))+"/RabbitVersions/rabbit_bare.json")
+                reg.setClustQueue(ret['name'])
+                reg.addUpstream("admin","hunter",ret['master'],"test")
+            elif components[2]=='initClust':
+                print("Initialize new Cluster you are Master") ## Working Case - Done
+                ##To-Do
+                ret=ast.literal_eval("  ".join(components[3:]))
+                modifyConfig(ret['reg_api'],ret['name'],ret['reg_name'],None)
+                ini.initRabbitmq(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))+"/RabbitVersions/rabbit_bare.json")
+                ini.initCouchDB(Config.items("DeviceQ"))
+                reg.setClustQueue(ret['name'])
+                reg.initClustDatabase(ret['reg_name'],ret['reg_api'],ret['name'],reg.myIp(),reg.myMac())
+            elif components[2]=='update':
+                print("New Ip for me the Master")
+                ##To-Do
     else:
         print("No task found")
     return response
 
+
+def modifyConfig(reg_api,name,clust_name,admin):
+    Config.set('General','gateway_name',name)
+    Config.set('Cluster','cluster_name',clust_name)
+    Config.set('Cluster','cluster_api',reg_api)
+    if admin!=None:
+        Config.set('Cluster','cluster_admin',admin)
+    else:
+        Config.set('Cluster','cluster_admin',"This")
+    with open(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))+"/config.ini",'wb') as configfile:
+        Config.write(configfile)
+
+'''[General]
+Gateway_Name: Gateway_Work_2
+location: /home/pi/FogOfThings/Device
+
+[Cluster]
+cluster_admin: This 
+cluster_name: Cluster-First
+peer_hardware: B8:27:EB
+peer_key: randKey1234'''
+
+
+def discoverRegion():
+    return reg.getDevsOnWan(Config.get("Cluster","peer_hardware"))
 
 def routeTask(kind,payload):
     my_j=jsonize(payload)
@@ -120,11 +208,11 @@ def deployTask(payload):
             if devices!=None:
                 print("Devices Config Started")
                 for dev in devices:
-                    dev_l=device.getSpecDevList(dev["type"],dev_status) #Change Idle to Available
+                    dev_l=device.getSpecDevList(dev["type"],dev_status,controller_name) #Change Idle to Available
                     if len(dev_l)<int(dev["required"]):
                         return "Error: Not Enough Required Devices"
                 for dev in devices:
-                    dev_l=device.getSpecDevList(dev["type"],dev_status) #Change Idle to Available
+                    dev_l=device.getSpecDevList(dev["type"],dev_status,controller_name) #Change Idle to Available
                     dev_conf=""
                     if dev["cnt"]=="":
                         for dev_s in dev_l:
@@ -147,7 +235,8 @@ def deployTask(payload):
                     return "Error: Devices Connection Setup"
                 print ("Device connection configuration successfull")               
 
-            #Region Stuff    
+            #Region Stuff
+            #ToDO: Add Part to Notify Region of this maybe
             if region!=None:
                 print("Region Config Started")
                 region_conf=""
@@ -157,12 +246,14 @@ def deployTask(payload):
                     if str(reg["key"])=="":
                         result2b=route.add("region_resolve","reg_"+str(reg["name"]),{"app":name,"region":str(reg["name"])})
                         result2d=route.addExBind("region","apps_resolve",{"app":name,"region":str(reg["name"])})
+                        result3=route.add("apps_resolve","karaf_app",{"app":name})
                     else:
                         result2b=route.add("region_resolve","reg_"+str(reg["name"]),{"app":name,"region":str(reg["name"])})
                         result2d=route.addExBind("region","apps_resolve",{"app":name,"region":str(reg["name"]),"key":str(reg["key"])})
+                        esult3=route.add("apps_resolve","karaf_app",{"app":name})
                 result2c=route.add("apps_resolve","karaf_app",{"app":name})
                 list_conf.append("region = "+region_conf[:-1])
-                if result2!="ok" or result2b!="ok" or result2c!="ok" or result2b!="ok":
+                if result2!="ok" or result2b!="ok" or result2c!="ok" or result2b!="ok" or result3!="ok":
                     return "Error: Region Connection Setup"
                 else:
                     print ("Region connection configuration successfull")
@@ -179,7 +270,8 @@ def deployTask(payload):
                 list_conf.append("apps = "+apps_list)
                 print ("Apps connection configuration successfull")
 
-            #Resource Stuff     
+            #Resource Stuff
+            #ToDo: Add part to notify/resolve Resource
             if resource!=None:
                 print("Resource Config Started")
                 res_list=""
@@ -287,6 +379,7 @@ def migrateVerify(d_son):
 def jsonize(payload):
     payload=payload.replace("'", '"').replace('\n','').replace('\r','')
     try:
+        print(payload)
         my_json=json.loads(payload);
         return my_json
     except ValueError:
@@ -294,7 +387,8 @@ def jsonize(payload):
         return None
 
 def checkAuth(key):
-    if apiKey==key:
+    #Maybe need to consider other mqtt-keys or maybe not 
+    if key==Config.get("Mqtt1","admin_api"):
         return True
     else:
         return False
@@ -307,20 +401,64 @@ def on_request(ch, method, properties, body):
     if (cloud_conn!=None and source!=None and uuid != None and checkAuth(api_key)):
         print("-----Received Request from Cloud-----")
         response = resolve(body)
-        properties_m=pika.BasicProperties(headers={'cloud': ""+cloud_conn, 'source':""+source ,'controller':'raspi01', 'uuid':uuid, 'datetime':""+datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
+        properties_m=pika.BasicProperties(headers={'name':controller_name,'api_key':api_key,'cloud':""+cloud_conn, 'source':""+source , 'uuid':uuid, 'datetime':""+datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
         ch.basic_publish(exchange='cloud_resolve', routing_key='', properties=properties_m ,body=str(response))
         print("---Request processed and Reponse Sent----")
     else:
         print("Missing components or failed Auth")
     ch.basic_ack(delivery_tag = method.delivery_tag)
-controller_name= Config.get("General","Gateway_Name")
+
+def getGwInfo():
+    ##Do with actuall Data From Gateway
+    return {"peripherals":["rf24","bluetooth","rf434","Xbee"],"resources":["database","location","metadata"],"apps":"None"}
+
+def generateRequest():
+    data={}
+    data['request']='register'
+    data['name']='Temp_GW_'+str(int(random.random()*8999+1000))
+    if (Config.get("General","gateway_uuid").strip()=="None"):
+        uuid=''.join(random.choice(ascii_letters) for i in range(16))
+        data['uuid']=uuid
+        Config.set("General","gateway_uuid",uuid)
+        with open(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))+"/config.ini",'wb') as configfile:
+            Config.write(configfile)
+    else:
+        data['uuid']=Config.get("General","gateway_uuid").strip()
+    data['local_ip']=reg.myIp()
+    data['hw_addr']=reg.myMac()
+    data['api_key']=Config.get("Mqtt1","admin_api")
+    data['peers']=[discoverRegion()]
+    data['info']=getGwInfo()
+    return data
+
+def initialRequest(Config,reg):
+    ##Finish custom payload
+    payload=generateRequest()
+    req=str(payload).replace("'",'"')
+    print(req)
+    inir=InitReq(Config.get("Mqtt1","user"),Config.get("Mqtt1","pass"),Config.get("Mqtt1","address"),int(Config.get("Mqtt1","port")),payload['name'])
+    resp=inir.register(req)
+    try:
+        my_json=json.loads(resp);
+        reg=resolve(my_json['payload'])
+    except ValueError:
+        print "Value Erro on returning Json"
+
+
+ini=Init(Config.get("Amqp","user"),Config.get("Amqp","pass"),Config.get("couchDB","user"),Config.get("couchDB","pass"));
 channel.basic_consume(on_request, queue=Config.get("Admin","queue"))
-apiKey=Config.get("Admin","api_key")
 dev_status=Config.get("Admin","dev_status")
 route = Route.Route(channel)
 karaf=Karaf.Karaf(Config.get("Karaf","user"),Config.get("Karaf","pass"),Config.get("Admin","app_storage"),Config.get("General","location")+"/apps/",Config.get("General","location")+"/configs/",Config.get("Karaf","location")+"/")
-device=Device.Device(Config.get("couchDB","user"),Config.get("couchDB","pass"))
-res=Resource.Resource()
+device=Device.Device(Config.get("couchDB","user"),Config.get("couchDB","pass"),Config.items("DeviceQ"))
+res=Resource.Resource(Config.get("couchDB","user"),Config.get("couchDB","pass"),Config.get("General","Gateway_Name"),Config.items("ResourceQ")) ##Redo Resource so that they are store in config not admin 
+reg=Region.Region(Config.get("Amqp","user"),Config.get("Amqp","pass"),Config.get("Amqp","virt"),Config.get("couchDB","user"),Config.get("couchDB","pass"))
+
+#Do Initial Request and Modify what needs to be modified
+print("Sending Initial Request to Cloud")
+initialRequest(Config,reg)
+#Set variables for later use and start RPC request queueu    
+controller_name= Config.get("General","Gateway_Name")
 
 print(" [x] Awaiting RPC requests")
 try:

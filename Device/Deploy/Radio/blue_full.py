@@ -29,7 +29,7 @@ import database
 import ConfigParser
 #Config Settings
 Config=ConfigParser.ConfigParser()
-Config.read(os.path.dirname(os.path.dirname(os.path.realpath(__file__)))+"/config.ini")
+Config.read(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))+"/config.ini")
 
 message="";
 exitFlag = 0
@@ -179,10 +179,10 @@ def resolv_dev(my_json):
     ver_d=my_json.get("ver")
     value=datab.lookupDev(mac_d,type_d,ver_d)
     if value!=None:
-        print("Found details "+value[0])
-        rand_uuid=value[0]
-        updateDevTime(value[0],"Available")
-        dev_list.append(value[0])
+        print("Found details "+value)
+        rand_uuid=value
+        updateDevTime(value,"Available")
+        dev_list.append(value)
     else:
         print("No details found")
         rand_uuid = ''.join([random.choice(string.ascii_letters+string.digits) for n in xrange(8)])
@@ -296,7 +296,7 @@ print("Bluetooth Radio started: "+time.strftime('%X %x %Z'))
 #Create sql stuff and initialize
 find_devs=Config.get("Bluetooth","peers").split(',')
 #Get Database deviecs
-datab=database.Database(Config.get("couchDB","user"),Config.get("couchDB","pass"),'blue')
+datab=database.Database(Config.get("couchDB","user"),Config.get("couchDB","pass"),'blue',Config.get("General","Gateway_Name"))
 value=datab.getAllDevs()
 for r in value:
     datab.updateStat(r,"Idle")

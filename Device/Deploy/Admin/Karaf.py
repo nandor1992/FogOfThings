@@ -1,6 +1,5 @@
 #!/usr/bin/env/python
 import pycurl
-import sqlite3
 from StringIO import StringIO
 import os, sys
 import json
@@ -11,7 +10,7 @@ class Karaf:
         self.repo=repo
         self.conf=conf_loc
         self.loc=location
-        self.apach=apache_loc
+        self.apach=apache_loc+"/etc/"
     def getBundleInfo(self,id):
         buffer=StringIO()
         status={}
@@ -48,14 +47,6 @@ class Karaf:
             return "error:Not Found"
         else:
             return id
-
-    def getDeployedApps(self,needs):
-        havs=[]
-        files=[f for f in os.listdir(self.conf) if os.path.isfile(os.path.join(self.conf,f))]
-        for file_h in files:
-            if file_h[:-4] in needs:
-                havs.append(file_h[:-4])
-        return havs
        
     def verifyBundleExists(self,fname):
         if os.path.isfile(""+self.loc+fname):
@@ -104,7 +95,6 @@ class Karaf:
         c.setopt(c.HTTPPOST,data)
         c.perform()
         status=c.getinfo(c.HTTP_CODE)
-        print("Server response:"+str(status))
         c.close()
         if (status == 200 or status == 302):
             return "ok"
@@ -119,7 +109,7 @@ class Karaf:
         c.setopt(c.HTTPPOST,data)
         c.perform()
         status=c.getinfo(c.HTTP_CODE)
-        print("Server response:"+str(status))
+
         c.close()
         if (status == 200 or status == 302):
             return "ok"
@@ -150,12 +140,6 @@ class Karaf:
         fp.close()
         return "ok"
 
-    def saveDeployFile(self,fname,payload):
-        fp=open(self.conf+fname+".cfg","w")
-        fp.write(payload)           
-        fp.close()
-        return "ok"
-
     
     def modifyConfig(self,fname,param,value):
         contents=open(self.apach+fname+".cfg","r").read()
@@ -176,14 +160,60 @@ class Karaf:
         os.remove(self.apach+fname+".cfg")
         return "ok"
 
-#k=Karaf('karaf','karaf',"http://10.0.0.63/swift/v1/test/","/home/pi/apps/","/home/pi/configs/","/home/pi/apache-karaf-4.0.5/etc/")
+    def addMigratedApp(self,apps,a_type):
+        contents=open(self.apach+"org.karaf.messaging.cfg","r").read()
+        lines=contents.split('\n')
+        params={}
+        for line in lines:
+            if (line.strip()!=""):
+                comp=line.split('=')
+                if comp[1].strip()!="":
+                    params[comp[0].strip()]=comp[1].strip().split(":")
+                else:
+                    params[comp[0].strip()]=[]
+        if a_type=="forward":
+            temp=[app for app in apps if app not in params['forward']]
+            params['forward']=params['forward']+temp
+        if a_type=="backward":
+            temp=[app for app in apps if app not in params['proxy_back']]
+            params['proxy_back']=params['proxy_back']+temp
+        fp=open(self.apach+"org.karaf.messaging.cfg","w")
+        for key in params:
+            fp.write(key+" = "+":".join(params[key])+'\n')           
+        fp.close()
+        
+    def removeMigratedApp(self,apps):
+        contents=open(self.apach+"org.karaf.messaging.cfg","r").read()
+        lines=contents.split('\n')
+        params={}
+        for line in lines:
+            if (line.strip()!=""):
+                comp=line.split('=')
+                if comp[1].strip()!="":
+                    params[comp[0].strip()]=comp[1].strip().split(":")
+                else:
+                    params[comp[0].strip()]=[]
+        for app in apps:
+            if app in params['forward']:
+                params['forward'].remove(app)
+            if app in params['proxy_back']:
+                params['proxy_back'].remove(app)
+        fp=open(self.apach+"org.karaf.messaging.cfg","w")
+        for key in params:
+            fp.write(key+" = "+":".join(params[key])+'\n')           
+        fp.close()
+
+if __name__ == "__main__":
+    k=Karaf('karaf','karaf',"http://10.0.0.63/swift/v1/test/","/home/pi/apps/","/home/pi/configs/","/home/pi/apache-karaf-4.0.5/")
 #result=k.getBundleInfo(123)
 #result=k.deployBundle("dummy_app-0.0.1-SNAPSHOT.jar")
 #result=k.modifyConfig("org.karaf.test","test","test1")
 #result=k.delBundle(117)
 #result=k.getBundleId("devtransApp-0.0.1-SNAPSHOT.jar")
 #result=k.readConfig("org.karaf.test")
-#k.createConfig("org.karaf.test2",{'arg1':'val1','arg2':'val2'})
+    #print(k.createConfig("org.karaf.test2",{'arg1':'val1','arg2':'val2'}))
+    #k.addMigratedApp(['Thermostat_App'],"forward")
+    k.removeMigratedApp(['Thermostat_App2','Bullcrap_app2'])
 #result = k.delConfig("org.karaf.test2")
 #result=k.readConfig("org.karaf.test2")
 #result=k.saveDeployFile("sample_file","{'test1'}")

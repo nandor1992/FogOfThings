@@ -23,9 +23,9 @@ import os,sys
 import ConfigParser
 #Config Settings
 Config=ConfigParser.ConfigParser()
-Config.read(os.path.dirname(os.path.dirname(os.path.realpath(__file__)))+"/config.ini")
+Config.read(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))+"/config.ini")
 
-irq_gpio_pin = 25
+irq_gpio_pin = None
 
 ########### USER CONFIGURATION ###########
 # See https://github.com/TMRh20/RF24/blob/master/RPi/pyRF24/readme.md
@@ -122,7 +122,17 @@ def messageResolv(my_json):
         channel.basic_publish(exchange='device', routing_key='', body=message_amqp, properties=properties_m)
         updateDevTime(dev_id,"Available")
     else:
-        print("No details found - not forwarding")
+        ##Check if Device listed as belonging to this GW and if yes, add to devList and send msg
+        if datab.checkDevGw(dev_id):
+            message_amqp=json.dumps(my_json["e"])
+            message_amqp=message_amqp.replace('"',"'")
+            message_amqp=message_amqp.replace(' ','')
+            properties_m=pika.BasicProperties(headers={'device':""+dev_id,'comm': ""+gw_name,'datetime':""+datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
+            channel.basic_publish(exchange='device', routing_key='', body=message_amqp, properties=properties_m)
+            updateDevTime(dev_id,"Available")
+            dev_list.append(dev_id)
+        else:
+            print("No details found - not forwarding")
     sys.stdout.flush()
     
 def registerResolv(my_json):
@@ -140,10 +150,10 @@ def resolv_dev(my_json):
     ver_d=my_json.get("ver")
     value=datab.lookupDev(mac_d,type_d,ver_d)
     if value!=None:
-        print("Found details "+value[0])
-        rand_uuid=value[0]
-        updateDevTime(value[0],"Available")
-        dev_list.append(value[0])
+        print("Found details "+value)
+        rand_uuid=value
+        updateDevTime(value,"Available")
+        dev_list.append(value)
     else:
         print("No details found")
         rand_uuid = ''.join([random.choice(string.ascii_letters+string.digits) for n in xrange(8)])
@@ -175,7 +185,21 @@ def sendMssgResolv(data,header):
                 t.start()
         sendRf(send_json)
     else:
-        print("Data received for non existent Dev")
+        ##Check if Device listed as belonging to this GW and if yes, add to devList and send msg
+        if datab.checkDevGw(dev_id):
+            print("Pre-Existing Device")
+            send_json="{'e':"+data+",'bn':'urn:dev:id:"+dev_id+"'}"
+            send_json=send_json.replace(" ","_")
+            print(send_json)
+            #Start timer here
+            if (qos!=None):
+                if (qos=='1'):
+                    t=Timer(5,timeout,[dev_id,send_json,0])
+                    timer_list[dev_id]=t
+                    t.start()
+            sendRf(send_json)
+        else:
+            print("Data received for non existent Dev")
     sys.stdout.flush()
     
 def callback(ch,method,properties,body):
@@ -242,7 +266,7 @@ if irq_gpio_pin is not None:
 #Create sql stuff and initialize
 
 #Get Database deviecs
-datab=database.Database(Config.get("couchDB","user"),Config.get("couchDB","pass"),'rf24')
+datab=database.Database(Config.get("couchDB","user"),Config.get("couchDB","pass"),'rf24',Config.get("General","Gateway_Name"))
 value=datab.getAllDevs()
 for r in value:
     datab.updateStat(r,"Idle")

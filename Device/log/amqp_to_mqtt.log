@@ -6,3 +6,387 @@ Broker started: 14:04:01 11/16/16 UTC
  [*] Waiting for messages. To exit press CTRL+C
 Keyboard baby
 Exiting Main Thread
+Broker started: 18:00:58 12/12/16 UTC
+ [*] Waiting for messages. To exit press CTRL+C
+[x] Received 'Error'
+Non json payload
+{"source": "Cloud_Controller", "datetime": "2016-12-12 18:02:25", "payload": "Error", "cloud": "mqtt_conn1", "uuid": "CwXPFvIxZmVqUvVw"}
+Message Sent with result: 0 Message Id: 1
+[x] Received 'Error'
+Non json payload
+{"source": "Cloud_Controller", "datetime": "2016-12-12 18:03:23", "payload": "Error", "cloud": "mqtt_conn1", "uuid": "eUxFoHgEQfhHTwEe"}
+Message Sent with result: 0 Message Id: 2
+[x] Received 'Error'
+Non json payload
+{"source": "Cloud_Controller", "datetime": "2016-12-12 18:03:36", "payload": "Error", "cloud": "mqtt_conn1", "uuid": "VIlmcSpozEDkkthW"}
+Message Sent with result: 0 Message Id: 3
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "datetime": "2016-12-12 18:13:40", "payload": "ok", "cloud": "mqtt_conn1", "uuid": "HyKHGtpFlsfLtbVQ"}
+Message Sent with result: 0 Message Id: 4
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "datetime": "2016-12-12 18:15:56", "payload": "ok", "cloud": "mqtt_conn1", "uuid": "pMNAMoaJbzftNMBB"}
+Message Sent with result: 0 Message Id: 5
+Broker started: 18:26:14 12/12/16 UTC
+ [*] Waiting for messages. To exit press CTRL+C
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "datetime": "2016-12-12 18:26:20", "payload": "ok", "cloud": "mqtt_conn1", "uuid": "UunJjItoIjDbfhhs"}
+Message Sent with result: 0 Message Id: 1
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "name": "Gateway_Work_2", "datetime": "2016-12-12 18:26:39", "payload": "ok", "cloud": "mqtt_conn1", "uuid": "jmLJBqWsNhSqtBDg"}
+Message Sent with result: 0 Message Id: 2
+Keyboard baby
+Exiting Main Thread
+Broker started: 18:30:01 12/12/16 UTC
+ [*] Waiting for messages. To exit press CTRL+C
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "name": "Gateway_Work_2", "datetime": "2016-12-12 18:30:06", "payload": "ok", "cloud": "mqtt_conn1", "uuid": "cvlfzkTZhroJrLfF"}
+Message Sent with result: 0 Message Id: 1
+Keyboard baby
+Exiting Main Thread
+Broker started: 18:30:27 12/12/16 UTC
+ [*] Waiting for messages. To exit press CTRL+C
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "name": "Gateway_Work_2", "datetime": "2016-12-12 18:30:29", "payload": "ok", "cloud": "mqtt_conn1", "uuid": "bkxbITlMuNCKRrmn"}
+Message Sent with result: 0 Message Id: 1
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "TCqvPiousFrvUtit", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 18:50:39"}
+Message Sent with result: 0 Message Id: 2
+Keyboard baby
+Exiting Main Thread
+Broker started: 18:51:52 12/12/16 UTC
+ [*] Waiting for messages. To exit press CTRL+C
+Broker started: 18:53:07 12/12/16 UTC
+ [*] Waiting for messages. To exit press CTRL+C
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "APHDgvQERlsJfYkX", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 18:53:22"}
+Message Sent with result: 0 Message Id: 1
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "qmVftvqrMBeCTOCE", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 18:53:23"}
+Message Sent with result: 0 Message Id: 2
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "zxrDLFxiExIOskKa", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 19:11:28"}
+Message Sent with result: 0 Message Id: 3
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "IuyZySVjqkSrRYzA", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 19:13:11"}
+Message Sent with result: 0 Message Id: 4
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "BkXsFWqZrvllSNqf", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:00:11"}
+Message Sent with result: 0 Message Id: 5
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "MZTHrMkvaSUHNYGB", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:00:54"}
+Message Sent with result: 0 Message Id: 6
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "qhNHEMROWKyBGbKu", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:25:27"}
+Message Sent with result: 0 Message Id: 7
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "TQcchbkOqhahJELz", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:25:53"}
+Message Sent with result: 0 Message Id: 8
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "zTmsZDwkIMZnBIIg", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:26:11"}
+Message Sent with result: 0 Message Id: 9
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "qlBTeNCmaFVrGNMq", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:26:36"}
+Message Sent with result: 0 Message Id: 10
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "qYdrvxeBIUFOJyPE", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:28:20"}
+Message Sent with result: 0 Message Id: 11
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "QYKJgKJLwmVPxpih", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:29:25"}
+Message Sent with result: 0 Message Id: 12
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "TBeWsIbAiZSciaaK", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:29:45"}
+Message Sent with result: 0 Message Id: 13
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "IItfLndzylftmONA", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:30:24"}
+Message Sent with result: 0 Message Id: 14
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "juAPqwGLyJeYmQuf", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:31:00"}
+Message Sent with result: 0 Message Id: 15
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "kWNZLMoGQMGnJfhx", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:31:21"}
+Message Sent with result: 0 Message Id: 16
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "CTYBAOvMLIjCCjwj", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:48:20"}
+Message Sent with result: 0 Message Id: 17
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "URJiUVYGuRbqDxBL", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:50:07"}
+Message Sent with result: 0 Message Id: 18
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "fJpdnzJvedGntZKH", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:50:55"}
+Message Sent with result: 0 Message Id: 19
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "bwfCflanFSyYqXLt", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:51:44"}
+Message Sent with result: 0 Message Id: 20
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "nJdntvcfwTWfudvM", "name": "Gateway_Work_2", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:56:05"}
+Message Sent with result: 0 Message Id: 21
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "WeLYeVlzmgthHWlI", "name": "Rosa_7492", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2016-12-12 20:57:18"}
+Message Sent with result: 0 Message Id: 22
+Broker started: 13:12:54 01/24/17 UTC
+ [*] Waiting for messages. To exit press CTRL+C
+Broker started: 13:32:08 01/24/17 UTC
+ [*] Waiting for messages. To exit press CTRL+C
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "WFwtLoAYLcuhrDnh", "name": "Kayla_3632", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-01-24 13:32:42"}
+Message Sent with result: 0 Message Id: 1
+Broker started: 14:01:05 01/24/17 UTC
+ [*] Waiting for messages. To exit press CTRL+C
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "rMorCPKMlPuTBhyX", "name": "Hammond_6056", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-01-24 14:02:27"}
+Message Sent with result: 0 Message Id: 2
+Broker started: 14:19:22 01/24/17 UTC
+ [*] Waiting for messages. To exit press CTRL+C
+[x] Received 'ok'
+Non json payload
+{"source": "Cloud_Controller", "uuid": "pQYtwezPQycPBmTQ", "name": "Moore_1850", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-01-24 14:23:17"}
+Message Sent with result: 0 Message Id: 1
+DEBUG:root:Broker started: 14:42:42 01/26/17 UTC
+DEBUG:root: [*] Waiting for messages. To exit press CTRL+C
+DEBUG:root:[x] Received "{'test':'me'}"
+DEBUG:root:Non json payload
+DEBUG:root:{"payload": "{'test':'me'}", "dev": "mqq"}
+DEBUG:root:Message Sent with result: 0 Message Id: 1
+DEBUG:root:Driver Stopped
+DEBUG:root:Broker started: 12:39:25 01/27/17 UTC
+DEBUG:root: [*] Waiting for messages. To exit press CTRL+C
+DEBUG:root:Driver Stopped
+DEBUG:root:Broker started: 12:39:46 01/27/17 UTC
+DEBUG:root: [*] Waiting for messages. To exit press CTRL+C
+DEBUG:root:[x] Received 'Error: Not Enough Required Devices'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Moore_1850", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Not Enough Required Devices", "cloud": "mqtt_conn1", "datetime": "2017-01-27 12:51:44"}
+DEBUG:root:Message Sent with result: 0 Message Id: 1
+DEBUG:root:[x] Received 'Error: Not Enough Required Devices'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Moore_1850", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Not Enough Required Devices", "cloud": "mqtt_conn1", "datetime": "2017-01-27 12:53:10"}
+DEBUG:root:Message Sent with result: 0 Message Id: 2
+DEBUG:root:[x] Received "success {'state':'Resolved','id':'103'}"
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Moore_1850", "api_key": "ThisIsRandomAPIKey1234", "payload": "success {'state':'Resolved','id':'103'}", "cloud": "mqtt_conn1", "datetime": "2017-01-27 12:58:24"}
+DEBUG:root:Message Sent with result: 0 Message Id: 3
+DEBUG:root:[x] Received "success {'state':'Resolved','id':'104'}"
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Moore_1850", "api_key": "ThisIsRandomAPIKey1234", "payload": "success {'state':'Resolved','id':'104'}", "cloud": "mqtt_conn1", "datetime": "2017-01-27 13:01:47"}
+DEBUG:root:Message Sent with result: 0 Message Id: 4
+DEBUG:root:[x] Received "success {'state':'Resolved','id':'104'}"
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Moore_1850", "api_key": "ThisIsRandomAPIKey1234", "payload": "success {'state':'Resolved','id':'104'}", "cloud": "mqtt_conn1", "datetime": "2017-01-27 13:10:46"}
+DEBUG:root:Message Sent with result: 0 Message Id: 5
+DEBUG:root:[x] Received 'Error: Not Enough Required Devices'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Moore_1850", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Not Enough Required Devices", "cloud": "mqtt_conn1", "datetime": "2017-01-27 13:13:33"}
+DEBUG:root:Message Sent with result: 0 Message Id: 6
+DEBUG:root:[x] Received "success {'state':'Resolved','id':'105'}"
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Moore_1850", "api_key": "ThisIsRandomAPIKey1234", "payload": "success {'state':'Resolved','id':'105'}", "cloud": "mqtt_conn1", "datetime": "2017-01-27 13:15:39"}
+DEBUG:root:Message Sent with result: 0 Message Id: 7
+DEBUG:root:Driver Stopped
+DEBUG:root:Broker started: 11:37:57 02/01/17 UTC
+DEBUG:root: [*] Waiting for messages. To exit press CTRL+C
+DEBUG:root:[x] Received 'Error:jsonize'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error:jsonize", "cloud": "mqtt_conn1", "datetime": "2017-02-01 11:39:48"}
+DEBUG:root:Message Sent with result: 0 Message Id: 1
+DEBUG:root:[x] Received 'Error:jsonize'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error:jsonize", "cloud": "mqtt_conn1", "datetime": "2017-02-01 11:44:25"}
+DEBUG:root:Message Sent with result: 0 Message Id: 2
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-02-01 12:06:03"}
+DEBUG:root:Message Sent with result: 0 Message Id: 3
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-02-01 12:06:07"}
+DEBUG:root:Message Sent with result: 0 Message Id: 4
+DEBUG:root:[x] Received 'Error: App not found'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: App not found", "cloud": "mqtt_conn1", "datetime": "2017-02-01 12:38:38"}
+DEBUG:root:Message Sent with result: 0 Message Id: 5
+DEBUG:root:[x] Received 'Error: App not found'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: App not found", "cloud": "mqtt_conn1", "datetime": "2017-02-01 12:39:39"}
+DEBUG:root:Message Sent with result: 0 Message Id: 6
+DEBUG:root:[x] Received 'success: Removed Thermostat_App from Gateway'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "success: Removed Thermostat_App from Gateway", "cloud": "mqtt_conn1", "datetime": "2017-02-01 12:40:17"}
+DEBUG:root:Message Sent with result: 0 Message Id: 7
+DEBUG:root:Driver Restarted
+DEBUG:root:Broker started: 10:14:02 02/02/17 UTC
+DEBUG:root: [*] Waiting for messages. To exit press CTRL+C
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "TpxaXSayoPanHJBm", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-02-02 10:24:51"}
+DEBUG:root:Message Sent with result: 0 Message Id: 1
+DEBUG:root:[x] Received 'Error: Not Enough Required Devices'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Not Enough Required Devices", "cloud": "mqtt_conn1", "datetime": "2017-02-02 11:49:38"}
+DEBUG:root:Message Sent with result: 0 Message Id: 2
+DEBUG:root:[x] Received 'Error:jsonize'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error:jsonize", "cloud": "mqtt_conn1", "datetime": "2017-02-02 11:50:53"}
+DEBUG:root:Message Sent with result: 0 Message Id: 3
+DEBUG:root:[x] Received 'Error: Resource does not exist'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Resource does not exist", "cloud": "mqtt_conn1", "datetime": "2017-02-02 11:57:06"}
+DEBUG:root:Message Sent with result: 0 Message Id: 4
+DEBUG:root:[x] Received "success {'state':'Resolved','id':'107'}"
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "success {'state':'Resolved','id':'107'}", "cloud": "mqtt_conn1", "datetime": "2017-02-02 12:03:45"}
+DEBUG:root:Message Sent with result: 0 Message Id: 5
+DEBUG:root:[x] Received "success {'state':'Resolved','id':'107'}"
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "success {'state':'Resolved','id':'107'}", "cloud": "mqtt_conn1", "datetime": "2017-02-02 12:04:57"}
+DEBUG:root:Message Sent with result: 0 Message Id: 6
+DEBUG:root:[x] Received "success {'state':'Resolved','id':'108'}"
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "success {'state':'Resolved','id':'108'}", "cloud": "mqtt_conn1", "datetime": "2017-02-02 12:43:18"}
+DEBUG:root:Message Sent with result: 0 Message Id: 7
+DEBUG:root:[x] Received "success {'state':'Resolved','id':'108'}"
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "success {'state':'Resolved','id':'108'}", "cloud": "mqtt_conn1", "datetime": "2017-02-02 12:46:45"}
+DEBUG:root:Message Sent with result: 0 Message Id: 8
+DEBUG:root:[x] Received "success {'state':'Resolved','id':'108'}"
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "success {'state':'Resolved','id':'108'}", "cloud": "mqtt_conn1", "datetime": "2017-02-02 12:49:03"}
+DEBUG:root:Message Sent with result: 0 Message Id: 9
+DEBUG:root:[x] Received "success {'state':'Resolved','id':'108'}"
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "success {'state':'Resolved','id':'108'}", "cloud": "mqtt_conn1", "datetime": "2017-02-02 13:00:02"}
+DEBUG:root:Message Sent with result: 0 Message Id: 10
+DEBUG:root:[x] Received 'Error'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error", "cloud": "mqtt_conn1", "datetime": "2017-02-02 14:47:01"}
+DEBUG:root:Message Sent with result: 0 Message Id: 11
+DEBUG:root:Driver Restarted
+DEBUG:root:Broker started: 10:44:25 02/03/17 UTC
+DEBUG:root: [*] Waiting for messages. To exit press CTRL+C
+DEBUG:root:[x] Received 'Error: Thermostat_App  not found'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Thermostat_App  not found", "cloud": "mqtt_conn1", "datetime": "2017-02-03 10:44:41"}
+DEBUG:root:Message Sent with result: 0 Message Id: 1
+DEBUG:root:[x] Received 'Error: Thermostat_App  not found'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Thermostat_App  not found", "cloud": "mqtt_conn1", "datetime": "2017-02-03 10:46:47"}
+DEBUG:root:Message Sent with result: 0 Message Id: 2
+DEBUG:root:[x] Received 'Error: Thermostat_App  not found'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Thermostat_App  not found", "cloud": "mqtt_conn1", "datetime": "2017-02-03 10:47:16"}
+DEBUG:root:Message Sent with result: 0 Message Id: 3
+DEBUG:root:[x] Received 'Error: Thermostat_App  not found'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Thermostat_App  not found", "cloud": "mqtt_conn1", "datetime": "2017-02-03 10:50:50"}
+DEBUG:root:Message Sent with result: 0 Message Id: 4
+DEBUG:root:[x] Received 'Error: Thermostat_App  not found'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Thermostat_App  not found", "cloud": "mqtt_conn1", "datetime": "2017-02-03 10:51:25"}
+DEBUG:root:Message Sent with result: 0 Message Id: 5
+DEBUG:root:[x] Received 'success: Removed Thermostat_App from Gateway'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "success: Removed Thermostat_App from Gateway", "cloud": "mqtt_conn1", "datetime": "2017-02-03 10:56:59"}
+DEBUG:root:Message Sent with result: 0 Message Id: 6
+DEBUG:root:[x] Received 'Error: Not Enough Required Devices'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Not Enough Required Devices", "cloud": "mqtt_conn1", "datetime": "2017-02-03 11:04:10"}
+DEBUG:root:Message Sent with result: 0 Message Id: 7
+DEBUG:root:[x] Received 'Error: Required Apps Not met'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Required Apps Not met", "cloud": "mqtt_conn1", "datetime": "2017-02-03 11:04:36"}
+DEBUG:root:Message Sent with result: 0 Message Id: 8
+DEBUG:root:[x] Received 'Error: Resource does not exist'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Resource does not exist", "cloud": "mqtt_conn1", "datetime": "2017-02-03 11:04:57"}
+DEBUG:root:Message Sent with result: 0 Message Id: 9
+DEBUG:root:[x] Received 'Error: Resource does not exist'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Resource does not exist", "cloud": "mqtt_conn1", "datetime": "2017-02-03 11:07:04"}
+DEBUG:root:Message Sent with result: 0 Message Id: 10
+DEBUG:root:[x] Received 'Error: Resource does not exist'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Resource does not exist", "cloud": "mqtt_conn1", "datetime": "2017-02-03 11:08:08"}
+DEBUG:root:Message Sent with result: 0 Message Id: 11
+DEBUG:root:[x] Received "success {'state':'Resolved','id':'109'}"
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "success {'state':'Resolved','id':'109'}", "cloud": "mqtt_conn1", "datetime": "2017-02-03 11:08:14"}
+DEBUG:root:Message Sent with result: 0 Message Id: 12
+DEBUG:root:[x] Received 'success: Removed Thermostat_App from Gateway'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "success: Removed Thermostat_App from Gateway", "cloud": "mqtt_conn1", "datetime": "2017-02-03 11:10:52"}
+DEBUG:root:Message Sent with result: 0 Message Id: 13
+DEBUG:root:[x] Received 'Error: Resource does not exist'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Resource does not exist", "cloud": "mqtt_conn1", "datetime": "2017-02-03 11:12:03"}
+DEBUG:root:Message Sent with result: 0 Message Id: 14
+DEBUG:root:[x] Received "success {'state':'Resolved','id':'110'}"
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "success {'state':'Resolved','id':'110'}", "cloud": "mqtt_conn1", "datetime": "2017-02-03 11:14:14"}
+DEBUG:root:Message Sent with result: 0 Message Id: 15
+DEBUG:root:[x] Received 'success: Removed Thermostat_App from Gateway'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "success: Removed Thermostat_App from Gateway", "cloud": "mqtt_conn1", "datetime": "2017-02-03 11:15:37"}
+DEBUG:root:Message Sent with result: 0 Message Id: 16
+DEBUG:root:Driver Stopped
+DEBUG:root:Driver Restarted
+DEBUG:root:Broker started: 13:37:53 02/07/17 UTC
+DEBUG:root: [*] Waiting for messages. To exit press CTRL+C
+DEBUG:root:Driver Stopped
+DEBUG:root:Broker started: 13:40:43 02/07/17 UTC
+DEBUG:root: [*] Waiting for messages. To exit press CTRL+C
+DEBUG:root:Driver Stopped
+DEBUG:root:Broker started: 13:44:46 02/07/17 UTC
+DEBUG:root: [*] Waiting for messages. To exit press CTRL+C
+DEBUG:root:Driver Stopped
+DEBUG:root:Driver Stopped
+DEBUG:root:Broker started: 13:14:01 02/08/17 UTC
+DEBUG:root: [*] Waiting for messages. To exit press CTRL+C
+DEBUG:root:[x] Received 'Error: Deletin App'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Deletin App", "cloud": "mqtt_conn1", "datetime": "2017-02-08 13:20:42"}
+DEBUG:root:Message Sent with result: 0 Message Id: 1
+DEBUG:root:[x] Received 'Error: Not Enough Required Devices'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Not Enough Required Devices", "cloud": "mqtt_conn1", "datetime": "2017-02-08 14:26:41"}
+DEBUG:root:Message Sent with result: 0 Message Id: 2
+DEBUG:root:[x] Received 'Error: Not Enough Required Devices'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Not Enough Required Devices", "cloud": "mqtt_conn1", "datetime": "2017-02-08 14:28:40"}
+DEBUG:root:Message Sent with result: 0 Message Id: 3
+DEBUG:root:[x] Received "success {'state':'Active','id':'124'}"
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "success {'state':'Active','id':'124'}", "cloud": "mqtt_conn1", "datetime": "2017-02-08 14:29:39"}
+DEBUG:root:Message Sent with result: 0 Message Id: 4
+DEBUG:root:Driver Restarted
+DEBUG:root:Broker started: 10:39:05 02/09/17 UTC
+DEBUG:root: [*] Waiting for messages. To exit press CTRL+C

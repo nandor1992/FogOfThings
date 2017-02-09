@@ -7,7 +7,7 @@ import os,sys
 import ConfigParser
 #Config Settings
 Config=ConfigParser.ConfigParser()
-Config.read(os.path.dirname(os.path.dirname(os.path.realpath(__file__)))+"/config.ini")
+Config.read(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))+"/config.ini")
 
 
 # Modified to work from FogOf Thinggs and with Ini Fie
@@ -34,6 +34,7 @@ print(' [*] Waiting for messages. To exit press CTRL+C')
 
 def callback(ch,method,properties,body):
     print("[x] Received %r"%body)
+    admin=False
     try:
         try:
             my_json=json.loads('{"payload":'+body+'}')
@@ -42,16 +43,23 @@ def callback(ch,method,properties,body):
             body=body.replace('"',"'")
             my_json=json.loads('{"payload":"'+body+'"}')
         for names in properties.headers:
+            if names=="source":
+                if properties.headers.get(names)=="Cloud_Controller":
+                    admin=True
             temp={names:properties.headers.get(names)}
             my_json.update(temp)
         data=json.dumps(my_json)
         print data
         client.reconnect()
-        (result,mid)=client.publish("send/"+clientId,payload=data,qos=1)
+        if admin:
+            dest="receive/Cloud_Controller"
+        else:
+            dest="send/"+clientId
+        (result,mid)=client.publish(dest,payload=data,qos=1)
         while result!=mqtt.MQTT_ERR_SUCCESS:
             print("MQTT Disconnected "+time.strftime('%X %x %Z')+ ", Reconnecting")
             client.reconnect()
-            (result,mid)=client.publish("send/"+clientId,payload=data,qos=1)
+            (result,mid)=client.publish(dest,payload=data,qos=1)
         print("Message Sent with result: "+str(result)+" Message Id: "+str(mid))
             
     except (ValueError, TypeError) as e:

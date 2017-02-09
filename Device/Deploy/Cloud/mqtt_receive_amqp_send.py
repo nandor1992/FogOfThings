@@ -7,13 +7,14 @@ import json
 import os,sys
 import time
 import ConfigParser
+import urllib
 #Config Settings
 
 # Modified to work from FogOf Thinggs and with Ini Fie
 #No To-Do's Here
 
 Config=ConfigParser.ConfigParser()
-Config.read(os.path.dirname(os.path.dirname(os.path.realpath(__file__)))+"/config.ini")
+Config.read(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))+"/config.ini")
 
 
 clientId=Config.get("General","Gateway_Name")
@@ -82,13 +83,22 @@ def on_disconnect(client,userdata,rc):
         client.loop_stop()
         client.disconnect()
         client.reinitialise()
-        client = mqtt.Client(client_id=""+clientId+"_Receive",clean_session=True);
-        client.username_pw_set(Config.get("Mqtt1","user"),Config.get("Mqtt1","pass"))
-        client.on_connect = on_connect
-        client.on_message = on_message
-        client.on_disconnect = on_disconnect
-        client.connect(Config.get("Mqtt1","address"),int(Config.get("Mqtt1","port")) ,10)
-        client.loop_forever(timeout=1.0, max_packets=1,retry_first_connection=False)
+        loop=0
+        while loop==0:
+            try:
+                client = mqtt.Client(client_id=""+clientId+"_Receive",clean_session=True);
+                client.username_pw_set(Config.get("Mqtt1","user"),Config.get("Mqtt1","pass"))
+                client.on_connect = on_connect
+                client.on_message = on_message
+                client.on_disconnect = on_disconnect
+                client.connect(Config.get("Mqtt1","address"),int(Config.get("Mqtt1","port")) ,10)
+                client.loop_forever(timeout=1.0, max_packets=1,retry_first_connection=False)
+                loop=1
+            except:
+                print "Exception hit at mqtt reconnect"
+                sys.stdout.flush()
+                time.sleep(5)
+            
     else:
         print "Expected Disconnect"
     sys.stdout.flush()
@@ -114,8 +124,7 @@ channel = connection.channel()
 # manual interface.
 try:
     client.loop_forever(timeout=1.0, max_packets=1,retry_first_connection=False)
-except KeyboardInterrupt:
-    print "Keyboard baby"
+except:
     client.loop_stop()
     client.disconnect()
     connection.close()
