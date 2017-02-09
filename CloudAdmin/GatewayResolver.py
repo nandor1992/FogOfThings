@@ -175,7 +175,7 @@ class GatewayResolver:
 			db=self.couch['clusters']
 			look=db.view('cluster/unique')
 			unique=1
-			for p in look[[ret,reg_api]]:
+			for p in look[ret]:
 				unique=0
 		#Comment out for actual work
 		db.save({'reg_api': reg_api,'reg_name': ret,'nodes_ip': [ip],'nodes_name': [gw_name],'nodes_mac': [hw],'master': [ip,gw_name]})
@@ -238,6 +238,15 @@ class GatewayResolver:
 				peers.append(names)
 		return peers
 
+	def checkIfClustGW(self,clust,gw):
+		db=self.couch['clusters']
+		look=db.view('cluster/unique')
+		for p in look[clust]:
+			doc=db[p.value]
+			if set(gw).issubset(doc['nodes_name']):
+				return "ok"
+		return "Not Found"
+
 if __name__ == '__main__':
     #Config Settings#
     print("Gateway Resolver")
@@ -248,9 +257,13 @@ if __name__ == '__main__':
     #ip="10.0.0.71";uuid="TestUUIDGW1";hw="b8:27:eb:c5:ed:e4"; peers=[["b9:27:eb:c5:ed:e4","10.0.0.68"]]                                     # Cluster Master changed ip address 
     #ip="10.0.0.68";uuid="TestUUIDGW2"; hw="b9:27:eb:c5:ed:e4"; peers=[["b8:27:eb:c5:ed:e4","10.0.0.67"]]    								# Cluster Slave
     #ip="10.0.0.23";uuid="TestUUIDGW2"; hw="b9:27:eb:c5:ed:e4"; peers=[["b8:27:eb:c5:ed:e4","10.0.0.67"]]    								# Cluster Slave new ip 
-    ip="10.0.0.68";uuid="TestUUIDGW2"; hw="b9:27:eb:c5:ed:e4"; peers=[]                                   # Cluster Slave Moved to New Clust
+    #ip="10.0.0.68";uuid="TestUUIDGW2"; hw="b9:27:eb:c5:ed:e4"; peers=[]                                   # Cluster Slave Moved to New Clust
     #ip="10.0.0.69";uuid="TestUUIDGW3";hw="b1:27:eb:c5:ed:e4";peers=[["b8:27:eb:c5:ed:e4","10.0.0.67"],["b9:27:eb:c5:ed:e4","10.0.0.68"]]   # Existing Gateway New Cluster
     #ip="10.0.0.70";uuid="TestUUIDGW3";hw="b1:27:eb:c5:ed:e4"; peers=[]   																	 # Existing Gateway No Peers 
     #ip="10.0.0.267";uuid="TestUUIDGW4";hw="b3:27:eb:c5:ed:e4"; peers=[["b8:27:eb:c5:ed:e4","10.0.0.67"],["b9:27:eb:c5:ed:e4","10.0.0.68"]]  # New GW in cluster
     #ip="10.0.0.368";uuid="TestUUIDGW5";hw="b3:27:ef:c5:ed:e4"; peers=[["b3:27:eb:c5:ed:e4","10.0.0.367"]]                                    # New Gw new cluster
-    print(gw.resolveGateway(uuid,ip,hw,peers,"Just some random info to add, probs should be json 2"))
+    #print(gw.resolveGateway(uuid,ip,hw,peers,"Just some random info to add, probs should be json 2"))
+    print(gw.checkIfClustGW("Cluster_Cindy_1636",["Vazquez_7663","Erickson_2204"]))
+    print(gw.checkIfClustGW("Cluster_Cindy_1636",["Erickson_2204"]))
+    print(gw.checkIfClustGW("Cluster_Cindy_1636",["Vazquez_7663","Erickson_2204","Sunny Side Up "]))  
+    print(gw.checkIfClustGW("Cluster_Cindy_16326",["Erickson_2204"])) 
