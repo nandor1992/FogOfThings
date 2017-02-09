@@ -316,17 +316,51 @@ class admin():
             else:
                 #Get Variables for werk"
                 list_conf={}
-                cloud=d_son.get("comm").get("cloud")
-                region=d_son.get("comm").get("region")
-                apps=d_son.get("comm").get("apps")
-                devices=d_son.get("comm").get("devices")
-                resource=d_son.get("comm").get("resources")
+                if 'comm' in d_son:
+                    if 'cloud' in d_son['comm']:
+                        cloud=d_son["comm"]["cloud"]
+                    else:
+                        cloud=None
+                    if 'region' in d_son['comm']:
+                        region=d_son["comm"]["region"]
+                    else:
+                        region=None
+                    if 'devices' in d_son['comm']:
+                        devices=d_son["comm"]["devices"]
+                    else:
+                        devices=None
+                    if 'resources' in d_son['comm']:
+                        resource=d_son["comm"]["resources"]
+                    else:
+                        resource=None
+                    if 'apps' in d_son['comm']:
+                        apps=d_son.get("comm").get("apps")
+                    else:
+                        apps=None
+                else:
+                    cloud=None
+                    region=None
+                    devices=None
+                    resource=None
+                    apps=None
+                if 'migration' in d_son:
+                    migrate=d_son["migration"]
+                else:
+                    migration=None
+                if 'deployment' in d_son:
+                    conf_f=str(d_son["deployment"]["config"]["file"])
+                    conf=d_son.get("deployment").get("config").get("custom_params")
+                else:
+                    conf_f=None
+                    conf=None
+                if 'file' in d_son:
+                    app_f=str(d_son["file"])
+                else:
+                    app_f=None
+
                 name=str(d_son.get("name"))
-                migrate=d_son.get("migration")
                 desc=str(d_son.get("description"))
-                app_f=str(d_son.get("file"))
-                conf=d_son.get("deployment").get("config").get("custom_params")
-                conf_f=str(d_son.get("deployment").get("config").get("file"))
+
                 #Add Device Name
                 list_conf['name']=name
                 
@@ -375,6 +409,28 @@ class admin():
                             return "Error: Devices Connection Setup"
                     logging.debug("Device connection configuration successfull")               
 
+                ##Fix Device Stuff
+                if 'comm' in d_son:
+                    if 'fix_devices' in d_son.get("comm"):
+                        fix=d_son.get("comm").get("fix_devices")
+                        logging.debug("Fix Device Config started")
+                        for dev_t in fix.keys():
+                        #Route
+                            logging.debug("Add route for dev_type: "+dev_t+" devs:"+str(fix[dev_t]))
+                            dev_l=self.device.getSpecDevList(dev_t,self.dev_status,self.controller_name) #Change Idle to Available
+                            driver=""
+                            for dev_s in dev_l:
+                                driver=Config.get("DeviceQ",dev_s["driver"])
+                            for d in fix[dev_t]:
+                                self.route.add("apps_resolve","karaf_app",{"device":d})
+                                self.route.add("device_resolve",driver,{"device":d,"app":name})
+                                #Config
+                                if 'dev_'+dev_t in list_conf:
+                                    list_conf['dev_'+dev_t]=list_conf['dev_'+dev_t]+":"+":".join(d)
+                                else:
+                                    list_conf['dev_'+dev_t]=":".join(d)
+                        logging.debug("Fix device Config successfull")
+                    
                 #Region Stuff
                 #ToDO: Add Part to Notify Region of this maybe
                 if region!=None:
@@ -587,13 +643,33 @@ class admin():
             else:
             #Do Removal Stuff
                 #Get Variables for werk"
-                cloud=doc["comm"]["cloud"]
-                region=doc["comm"]["region"]
-                devices=doc["comm"]["devices"]
-                resource=doc["comm"]["resources"]
-                migrate=doc["migration"]
-                conf_f=str(doc["deployment"]["config"]["file"])                
-                app_f=str(doc["file"])
+                if 'comm' in doc:
+                    if 'cloud' in doc['comm']:
+                        cloud=doc["comm"]["cloud"]
+                    else:
+                        cloud=None
+                    if 'region' in doc['comm']:
+                        region=doc["comm"]["region"]
+                    else:
+                        region=None
+                    if 'devices' in doc['comm']:
+                        devices=doc["comm"]["devices"]
+                    else:
+                        devices=None
+                    if 'resources' in doc['comm']:
+                        resource=doc["comm"]["resources"]
+                    else:
+                        resource=None
+                    if 'apps' in doc['comm']:
+                        apps=doc.get("comm").get("apps")
+                    else:
+                        apps=None
+                else:
+                    cloud=None
+                    region=None
+                    devices=None
+                    resource=None
+                    apps=None
                 #Connection Stuff
                 ##ToDo: See if app had connection if yes delete that one
                 ##Do Cloud
@@ -604,7 +680,22 @@ class admin():
                     self.route.remove("apps_resolve","karaf_app",{"app":name})
                 ##Do Device - Check if other apps have connections
                 ##Nothing to do with devices locked to app
-                
+
+                ##Fix Device Stuff
+                if 'fix_devices' in doc.get("comm"):
+                    fix=d_son.get("comm").get("fix_devices")
+                    logging.debug("Fix Device UnConfig started")
+                    for dev_t in fix.keys():
+                    #Route
+                        logging.debug("Remove route for dev_type: "+dev_t+" devs:"+str(fix[dev_t]))
+                        dev_l=self.device.getSpecDevList(dev_t,self.dev_status,self.controller_name) #Change Idle to Available
+                        driver=""
+                        for dev_s in dev_l:
+                            driver=Config.get("DeviceQ",dev_s["driver"])
+                        for d in fix[dev_t]:
+                            self.route.remove("device_resolve",driver,{"device":d,"app":name})
+                    logging.debug("Fix Device UnConfig successfull")
+                    
                 ##Do Region - Delete Regions connection for this app
                 if len(region)!=0:
                     logging.debug("Region Deconfig Started")

@@ -5477,3 +5477,25 @@ DEBUG:root:{
 DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'TestUUID2', 'cloud': 'mqtt_conn1'}
 DEBUG:root:"bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'ardRF24CNC', 'reserve': 'No'}, {'cnt': '1', 'required': '1', 'type': 'AndroidPhone', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {'Erickson_2204': {'apps': ['Test_App2'], 'devices': {'ardRF24CNC': ['UUID1']}}}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, 'description': 'Full Testing App'}"
 DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {
+  'name': 'Test_App1',
+  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',
+  'description': 'Full Testing App',
+  'comm': {
+    'fix_devices':{'ardRF24CNC':['UUID2']}
+  }
+}"}
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'fix_devices':{'ardRF24CNC':['UUID2']}  }}"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'fix_devices':{'ardRF24CNC':['UUID2']}  }}", 
+ "source": "test1", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'test1', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'fix_devices':{'ardRF24CNC':['UUID2']}  }}"
+DEBUG:root:Other message
+ERROR:pika.adapters.base_connection:Socket Error: 104
+DEBUG:root:Pika Disconnected 14:56:01 02/09/17 UTC, Reconnecting
