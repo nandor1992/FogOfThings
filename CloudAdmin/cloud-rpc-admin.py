@@ -101,6 +101,47 @@ class AmqpClient:
             del(resp['old_peers'])
             self.publishMsg(gw_name,"self init",resp)
 
+    def resolveDeploy(self,cluster,main_gw,gw,payload,task,uuid):
+        print("For Clust: "+cluster+" and GW: "+str(gw))
+        print(payload)
+        print(task)
+        if self.resolver.checkIfClustGW(cluster,gw)=="ok":
+            print("Gateways and Cluster Found!")
+            #GW 0 is always the main Gateway 
+            if task=="bundle deploy":
+                self.publishDeplMsg(main_gw,uuid,task,payload)
+            else:
+                self.publishDeplMsg(main_gw,uuid,task,payload['name'])
+            ##Do other gateways
+            ##<aybe modify so file can be retreived
+            for g in gw:
+                if task=="bundle deploy":
+                    payload2=payload['migration'][g]
+                    payload2['gateway']=main_gw
+                    payload2['name']=payload['name']
+                    self.publishDeplMsg(g,uuid,"migrate add",payload2)
+                else:
+                    payload2=payload['migration'][g]
+                    payload2['gateway']=main_gw
+                    payload2['name']=payload['name']
+                    self.publishDeplMsg(g,uuid,"migrate remove",payload2)
+            return "Bundle Resolved and Published to GW(s)"
+        else:
+            return "Bundle Gateways not found so not deploying"
+
+
+    def publishDeplMsg(self,name,uuid,task,payload):
+        send={'type':'admin','source':'Cloud_Controller','uuid':uuid,'api_key':self.api_key}
+        if task!="bundle remove":
+            ret=json.dumps(payload)
+            send['payload']=""+task+" "+ret.replace('"',"'")
+        else:
+            send['payload']="bundle remove "+payload
+        print("Sending to: "+name+" Message: "+str(send))
+        snd=json.dumps(send)
+        rt_key="receive."+name
+        self.channel.basic_publish(exchange='amq.topic', routing_key=rt_key, body=snd)
+
     def responseResolve(self,uuid,name,payload,datetime):
         print("Response Received with uuid: "+uuid+" name: "+name+" datetime: "+datetime+" payload: "+payload)
     
@@ -126,32 +167,64 @@ class AmqpClient:
             print "Non json payload"
         try:
             #gw_name=method.routing_key.split(".")[2]
-            if set(['source','uuid' , 'name', 'payload' ,'datetime' , 'api_key']).issubset(my_json):
+            req=my_json["request"]
+            if req!="None":
                 if my_json["api_key"]==self.api_key:
-                    print("Response Values okay")
-                    self.responseResolve(my_json['uuid'],my_json['name'],my_json['payload'],my_json['datetime'])
-                else:
-                    print("Wrong Api Key!")
-            elif set(['local_ip' , 'uuid' , 'name' ,"hw_addr" , "peers" , "info" , "request" , "api_key"]).issubset(my_json):
-                gw_name=my_json["name"]
-                uuid=my_json["uuid"]
-                ip=my_json["local_ip"]
-                hw_addr=my_json["hw_addr"]
-                peers=my_json["peers"]
-                gw_info=my_json["info"]
-                req=my_json["request"]
-                if my_json["api_key"]==self.api_key:
-                    print("All values okay")
-                    if (req=="register"):
-                        self.resolveReg(gw_name,uuid,ip,hw_addr,peers,gw_info)
+                    if req=="register":
+                        if set(['source','uuid' , 'name', 'payload' ,'datetime' , 'api_key']).issubset(my_json):
+                            print("Response Values okay")
+                            self.responseResolve(my_json['uuid'],my_json['name'],my_json['payload'],my_json['datetime'])
+                        elif set(['local_ip' , 'uuid' , 'name' ,"hw_addr" , "peers" , "info" , "request" , "api_key"]).issubset(my_json):
+                            gw_name=my_json["name"]
+                            uuid=my_json["uuid"]
+                            ip=my_json["local_ip"]
+                            hw_addr=my_json["hw_addr"]
+                            peers=my_json["peers"]
+                            gw_info=my_json["info"]
+                            req=my_json["request"]
+                            print("All values okay")
+                            self.resolveReg(gw_name,uuid,ip,hw_addr,peers,gw_info)
+                        else:
+                            print("Doesn't fit anything!")
+                    elif req=="deploy bundle":
+                        print("Deploy Bundle")
+                        if set(['name','cluster','gateway','uuid']).issubset(my_json):
+                            name=my_json['name']
+                            clust=my_json['cluster']
+                            gw=my_json['gateway']
+                            all_gw=my_json['payload']['migration'].keys()
+                            uuid=my_json['uuid']
+                            resp=self.resolveDeploy(clust,gw,all_gw,my_json['payload'],"bundle deploy",uuid)
+                            send={'type':'admin','source':'Cloud_Controller','uuid':uuid,'api_key':self.api_key}
+                            send['payload']=resp
+                            print("Sending to: "+name+" Message: "+str(send))
+                            snd=json.dumps(send)
+                            rt_key="receive."+name
+                            self.channel.basic_publish(exchange='amq.topic', routing_key=rt_key, body=snd)
+                    elif req=="remove bundle":
+                        print("remove bundle")
+                        if set(['name','cluster','gateway','uuid']).issubset(my_json):
+                            name=my_json['name']
+                            clust=my_json['cluster']
+                            gw=my_json['gateway']
+                            all_gw=my_json['payload']['migration'].keys()
+                            uuid=my_json['uuid']
+                            resp=self.resolveDeploy(clust,gw,all_gw,my_json['payload'],"bundle remove",uuid)
+                            send={'type':'admin','source':'Cloud_Controller','uuid':uuid,'api_key':self.api_key}
+                            send['payload']=resp
+                            print("Sending to: "+name+" Message: "+str(send))
+                            snd=json.dumps(send)
+                            rt_key="receive."+name
+                            self.channel.basic_publish(exchange='amq.topic', routing_key=rt_key, body=snd)
                     else:
-                        print("It wants to do something else")
+                        print("Request Unknown!")
                 else:
-                    print("Wrong Api Key!")
+                    print("Wrong API Key!")
             else:
-                print("Doesn't fit anything!")
-        except:
-            print("Key Error or Incomplete Values or Else!")
+                print("No request found!")
+        #except Exception,e:
+        except KeyboardInterrupt,e:
+            print("Key Error or Incomplete Values or Else!"+str(e))
 
 
 
