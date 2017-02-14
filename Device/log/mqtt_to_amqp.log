@@ -5499,3 +5499,144 @@ DEBUG:root:"bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-
 DEBUG:root:Other message
 ERROR:pika.adapters.base_connection:Socket Error: 104
 DEBUG:root:Pika Disconnected 14:56:01 02/09/17 UTC, Reconnecting
+DEBUG:root:Driver Restarted
+DEBUG:root:Starting New Session at 10:55:43 02/14/17 UTC
+DEBUG:root:Connected with result code 0
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 'test':'data','payoad':'data'
+DEBUG:root:{'test':'data','payoad':'data'}
+DEBUG:root:Value Erro, probs something stupid happened
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "test":"data","payoad":"data"
+DEBUG:root:{"test":"data","payoad":"data"}
+DEBUG:root:{
+ "payoad": "data", 
+ "test": "data"
+}
+DEBUG:root:{u'test': u'data', u'payoad': u'data', 'cloud': 'mqtt_conn1'}
+ERROR:root:'payload'
+DEBUG:root:Exiting Main Thread - Error
+DEBUG:root:Driver Restarted
+DEBUG:root:Starting New Session at 10:58:39 02/14/17 UTC
+DEBUG:root:Connected with result code 0
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "test":"data","payload":"data"
+DEBUG:root:{"test":"data","payload":"data"}
+DEBUG:root:{
+ "payload": "data", 
+ "test": "data"
+}
+DEBUG:root:{u'test': u'data', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"data"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "test":"data","payload":"data","app":"Test_App1"
+DEBUG:root:{"test":"data","payload":"data","app":"Test_App1"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "data", 
+ "test": "data"
+}
+DEBUG:root:{u'test': u'data', u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"data"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "test":"data","payload":"data","app":"Test_App1"
+DEBUG:root:{"test":"data","payload":"data","app":"Test_App1"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "data", 
+ "test": "data"
+}
+DEBUG:root:{u'test': u'data', u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"data"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "test2":"data","payload":"data","app":"Test_App1"
+DEBUG:root:{"test2":"data","payload":"data","app":"Test_App1"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "data", 
+ "test2": "data"
+}
+DEBUG:root:{u'app': u'Test_App1', u'test2': u'data', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"data"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "test2":"data","payload":"data","app":"Test_App1"
+DEBUG:root:{"test2":"data","payload":"data","app":"Test_App1"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "data", 
+ "test2": "data"
+}
+DEBUG:root:{u'app': u'Test_App1', u'test2': u'data', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"data"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "test2":"data","payload":"data","app":"Test_App1"
+DEBUG:root:{"test2":"data","payload":"data","app":"Test_App1"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "data", 
+ "test2": "data"
+}
+DEBUG:root:{u'app': u'Test_App1', u'test2': u'data', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"data"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "test2":"data","payload":"data","app":"Test_App1"
+DEBUG:root:{"test2":"data","payload":"data","app":"Test_App1"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "data", 
+ "test2": "data"
+}
+DEBUG:root:{u'app': u'Test_App1', u'test2': u'data', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"data"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "test2":"data","payload":"data","app":"Test_App1"
+DEBUG:root:{"test2":"data","payload":"data","app":"Test_App1"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "data", 
+ "test2": "data"
+}
+DEBUG:root:{u'app': u'Test_App1', u'test2': u'data', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"data"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "test2":"data","payload":"data","app":"Test_App1"
+DEBUG:root:{"test2":"data","payload":"data","app":"Test_App1"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "data", 
+ "test2": "data"
+}
+DEBUG:root:{u'app': u'Test_App1', u'test2': u'data', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"data"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "test2":"data","payload":"data","app":"Test_App1"
+DEBUG:root:{"test2":"data","payload":"data","app":"Test_App1"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "data", 
+ "test2": "data"
+}
+DEBUG:root:{u'app': u'Test_App1', u'test2': u'data', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"data"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "test2":"data","payload":"data","app":"Test_App1"
+DEBUG:root:{"test2":"data","payload":"data","app":"Test_App1"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "data", 
+ "test2": "data"
+}
+DEBUG:root:{u'app': u'Test_App1', u'test2': u'data', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"data"
+DEBUG:root:Other message
+DEBUG:root:Driver Stopped

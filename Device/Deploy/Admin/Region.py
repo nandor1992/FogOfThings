@@ -248,10 +248,33 @@ class Region:
             for item in self.scan_and_print_neighbors(net, interface,ref):
                 res=res+item[0:2]
         return res
-    
+
+    def getExchangeInfo(self,name):
+        buffer=StringIO()
+        c=pycurl.Curl()
+        host="http://localhost:15672/api/exchanges/test/"+name+"?lengths_age=3600"
+        c.setopt(c.URL,host)
+        c.setopt(c.WRITEDATA,buffer)
+        c.setopt(c.USERPWD,'%s:%s' %(self.c_user,self.c_pass))
+        c.setopt(c.CUSTOMREQUEST,"GET")
+        c.perform()
+        resp=c.getinfo(c.RESPONSE_CODE)
+        c.close()
+        if resp==200:
+            data=json.loads(buffer.getvalue())
+            msg={}
+            if data['outgoing']!=None:
+                for data in data['outgoing']:
+                    cnt=data['stats']['publish']
+                    que=data['queue']['name']
+                    msg[que]=cnt
+            return(msg)            
+        else:
+            return "Error"
+        
 if __name__ == "__main__":
     reg=Region("admin","hunter","test","admin","hunter")
-    print(reg.getDevsOnWan("B8:27:EB"))
+    #print(reg.getDevsOnWan("B8:27:EB"))
     #reg.addGwToDatabase("the_Great_test","192.168.0.2","Random MAc")
     #reg.initClustDatabase("Reg_name","Reg_api","My_name","My-ip","My_MAc")
     #print(reg.removeCouchNode("10.0.0.199"))
@@ -260,5 +283,7 @@ if __name__ == "__main__":
     #print(reg.setClustQueue('test'))
     #print(reg.createFedPolicy()) # This is Raspi
     #print(reg.addUpstream("admin","hunter","10.0.0.68","test"))
-    print(reg.myIp())
-    print(reg.myMac())
+    print(reg.getExchangeInfo("apps"))
+    print(reg.getExchangeInfo("cloud"))
+    #print(reg.myIp())
+    #print(reg.myMac())
