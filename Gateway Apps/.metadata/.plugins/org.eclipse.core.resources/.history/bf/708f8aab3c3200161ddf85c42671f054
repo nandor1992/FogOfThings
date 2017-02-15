@@ -1,0 +1,79 @@
+package org.karaf.event_create;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import org.osgi.service.event.Event;
+
+public class Resolver {
+
+	private Activator mainA;
+	private HashMap<String, Device> devList = new HashMap<String, Device>();
+
+	public Resolver(Activator mainA) {
+		this.mainA = mainA;
+		init();
+	}
+
+	public void init() {
+		for (String name : mainA.dev_names) {
+			devList.put(name, new Device(name));
+		}
+	}
+
+	public void doCloudMsg(Event event) {
+		String value = event.getProperty("payload").toString();
+		String type = event.getProperty("type").toString();
+		mainA.logger.warn("Type : " + type + " Payload :" + value);
+		if (type.equals("task")) {
+			String[] tokens = value.split(":");
+			devList.get(tokens[0].trim()).addTask(tokens[1].trim());
+			mainA.cloudSendEvent("Task Size:" + devList.get(tokens[0].trim()).getTaskSize());
+		}
+		if (type.equals("start")) {
+			String[] tokens = value.split(":");
+			if (devList.get(tokens[1].trim()).canStart()) {
+				devList.get(tokens[1].trim()).doStart();
+				mainA.cloudSendEvent("Starting:" + tokens[1]);
+				String payload = "{'n':'Gcode','v':'" + devList.get(tokens[1].trim()).getNextStep() + "'}";
+				mainA.deviceSendEvent(payload, tokens[1].trim());
+			} else {
+				mainA.cloudSendEvent("Can't Start :" + tokens[1]);
+			}
+		}
+		if (type.equals("stop")) {
+			String[] tokens = value.split(":");
+			devList.get(tokens[1].trim()).doStop();
+			mainA.cloudSendEvent("Stopping:" + tokens[1]);
+		}
+	}
+
+	public void doDeviceMsg(Event event) {
+		String dev_name = event.getProperty("device").toString();
+		String payload = event.getProperty("payload").toString();
+		Integer index_start = payload.indexOf("'", payload.indexOf("'v'") + 3);
+		Integer index_stop = payload.indexOf("',", index_start);
+		String response = payload.substring(index_start + 1, index_stop);
+		if (response.substring(0, 3).equals("Huh")) {
+			mainA.cloudSendEvent(dev_name +": Didn't Recognize G: " + response);
+		} else if (response.equals("ok")) {
+			mainA.cloudSendEvent(dev_name + ": Everything is A-okay G: " + response);
+			if (devList.get(dev_name).canStart()) {
+				String payload2 = "{'n':'Gcode','v':'" + devList.get(dev_name).getNextStep() + "'}";
+				mainA.deviceSendEvent(payload2, dev_name);
+			} else {
+				mainA.cloudSendEvent(dev_name +": Done : " + response);
+			}
+		} else {
+			mainA.cloudSendEvent("Other stuff probs temp: " + response);
+			if (devList.get(dev_name).canStart()) {
+				String payload2 = "{'n':'Gcode','v':'" + devList.get(dev_name).getNextStep() + "'}";
+				mainA.deviceSendEvent(payload2, dev_name);
+			} else {
+				mainA.cloudSendEvent(dev_name +": Done : " + response);
+			}
+		}
+
+	}
+}

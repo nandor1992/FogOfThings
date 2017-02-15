@@ -1,0 +1,49 @@
+package org.karaf.event_create;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+public class Device {
+
+	private String name;
+	private List<String> task = new ArrayList<String>();
+	private Integer task_progress;
+	
+	public Device(String name)
+	{
+		this.name=name;
+	}
+	
+	
+	public void addTask(String data)
+	{
+		String[] tokens=data.split(";");
+		for (String value:tokens)
+		{
+			task.add(value.trim());
+		}
+	}
+	
+	public String getNextStep()
+	{
+		return task.get(task_progress);
+		task_progress++;
+	}
+	
+	public Integer getTaskSize()
+	{
+		return task.size();
+	}
+		
+	public Integer getProgress()
+	{
+		return task_progress;
+	}
+	
+	public String getName()
+	{
+		return name;
+	}
+	
+}

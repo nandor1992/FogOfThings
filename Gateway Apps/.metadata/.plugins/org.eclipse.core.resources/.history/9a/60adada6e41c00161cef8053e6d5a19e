@@ -1,0 +1,131 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package org.karaf.event_create;
+
+import java.sql.Timestamp;
+import java.util.Date;
+import java.util.Dictionary;
+import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.Map;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceReference;
+import org.osgi.framework.ServiceRegistration;
+import org.osgi.service.event.Event;
+import org.osgi.service.event.EventAdmin;
+import org.osgi.service.event.EventConstants;
+import org.osgi.service.event.EventHandler;
+
+public class Activator extends Thread implements BundleActivator {
+
+	private static final String DEVICE_QUEUE = "device/receive/";
+	private static final String DEVICE_SEND = "device/send";
+	private static final String DEVICE = "ardUnoTemp";
+	private BundleContext bcontext = null;
+	ServiceReference sr = null;
+	EventAdmin ea = null;
+	Event event = null;
+	boolean sending = true;
+	private Map data;
+	private HashMap data2;
+	private String app_name = "test1";
+	private ServiceRegistration register;
+	private static Logger logger;
+	protected static int global;
+
+	public void start(BundleContext bc) throws Exception {
+		this.bcontext = bc;
+		// Retrieving the Event Admin service from the OSGi framework
+		sr = bc.getServiceReference(EventAdmin.class.getName());
+		if (sr == null) {
+			throw new Exception("Failed to obtain EventAdmin service reference!");
+		}
+		ea = (EventAdmin) bc.getService(sr);
+		if (ea == null) {
+			throw new Exception("Failed to obtain EventAdmin service object!");
+		}
+		logger = LoggerFactory.getLogger(Activator.class.getName());
+		Dictionary dp = new Hashtable();
+		dp.put(EventConstants.EVENT_TOPIC, DEVICE_QUEUE + DEVICE);
+		register = bcontext.registerService(EventHandler.class.getName(), new SendEventHandler(), dp);
+		logger.info("[Test Benchmar] Bundle Started");
+
+	}
+
+	public void stop(BundleContext bc) throws Exception {
+		bc.ungetService(sr);
+		register.unregister();
+	}
+
+	public class SendEventHandler implements EventHandler {
+
+		public void handleEvent(Event event) {
+			float a = (float) 14567.2451;
+			float b = (float) 2941.256;
+			float c = 0;
+			String[] names = event.getPropertyNames();
+			for (String name : names) {
+				String value = event.getProperty(name).toString();
+			}
+			JSONArray obj;
+			try {
+				obj = new JSONArray(event.getProperty("payload").toString());
+				Float tot = Float.parseFloat(obj.getJSONObject(0).get("v").toString())
+						+ Float.parseFloat(obj.getJSONObject(1).get("v").toString())
+						+ Float.parseFloat(obj.getJSONObject(2).get("v").toString());
+				JSONObject obj3 = new JSONObject();
+				obj3.put("n", "tot");
+				obj3.put("v", tot.toString());
+				String send = obj3.toString();
+				long median = System.nanoTime();
+				int value = 0;
+				/*
+				for (int i = 0; i < 100 * 1000 * 1000; i++) {
+					value = calculate(value);
+				}*/
+				logger.info("[Test Benchmar] Median time u-sec exec:" + ((System.nanoTime() - median) / 1000));
+				mysendEvent("[" + send + "]");
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+	}
+
+	protected static int calculate(int arg) {
+		global = arg * 6;
+		global += 3;
+		global /= 2;
+		return arg + 2;
+	}
+
+	private void mysendEvent(String payload) {
+		Dictionary props = new Hashtable();
+		props.put("payload", payload);
+		props.put("dev_type", DEVICE);
+		Event event = new Event(DEVICE_SEND, props);
+		ea.sendEvent(event);
+	}
+}

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="true" key="initLaunch"/>
+	<item value="false" key="generateActivator"/>
+	<item value="" key="targetName"/>
+	<item value="false" key="apiAnalysis"/>
+	<item value="false" key="rcpPlugin"/>
+	<item value="true" key="osgiProject"/>
+	<list key="providers">
+		<item value="Nanor"/>
+		<item value="JAVAWORLD"/>
+	</list>
+	<section name="dependenciesView">
+	</section>
+	<section name="PDEFormActionManager">
+	</section>
+	<section name="pde_compiler_errorwarnings_block">
+		<item value="true" key="0"/>
+		<item value="false" key="1"/>
+		<item value="false" key="2"/>
+		<item value="false" key="3"/>
+		<item value="false" key="4"/>
+	</section>
+	<section name="org.eclipse.pde.ui.PLUGIN_STATUS_DIALOG">
+		<item value="418" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="411" key="DIALOG_HEIGHT"/>
+		<item value="100" key="DIALOG_Y_ORIGIN"/>
+		<item value="427" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="PluginImportWizard">
+	</section>
+	<section name="org.eclipse.pde.ui.dialogs.PluginSelectionDialog">
+		<item value="true" key="ShowStatusLine"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History/&gt;" key="History"/>
+		<section name="DialogBoundsSettings">
+			<item value="600" key="DIALOG_WIDTH"/>
+			<item value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+			<item value="500" key="DIALOG_HEIGHT"/>
+			<item value="192" key="DIALOG_Y_ORIGIN"/>
+			<item value="669" key="DIALOG_X_ORIGIN"/>
+		</section>
+	</section>
+	<section name="PluginExportWizard">
+		<item value="C:\Users\Nandor\workspace\Jars" key="destination0"/>
+		<item value="C:\Users\Nandor\workspace\Jars" key="destination1"/>
+		<item value="" key="keypass"/>
+		<item value="Include source in exported plug-ins" key="exportSourceFormat"/>
+		<item value="false" key="signJAR"/>
+		<item value="C:\Users\Nandor\workspace\osgi.rest.reference" key="destination2"/>
+		<item value="C:\Users\Nandor\workspace\osgi.rest.test1" key="destination3"/>
+		<item value="true" key="exportUpdate"/>
+		<item value="false" key="saveAsAnt"/>
+		<item value="false" key="exportSource"/>
+		<item value="true" key="allowBinaryCycles"/>
+		<item value="" key="password"/>
+		<item value="201604061528" key="qualifierName"/>
+		<item value="false" key="useWorkspaceCompiledClasses"/>
+		<item value="1" key="exportType"/>
+		<item value="false" key="qualifier"/>
+		<item value="" key="alias"/>
+		<item value="" key="keystore"/>
+	</section>
+	<section name="quick_assist_proposal_size">
+	</section>
+	<section name="FeatureExportWizard">
+		<item value="" key="keypass"/>
+		<item value="" key="siteURL"/>
+		<item value="linux (gtk/x86_64)" key="cross-platform"/>
+		<item value="Generate source bundles" key="exportSourceFormat"/>
+		<item value="true" key="exportUpdate"/>
+		<item value="true" key="saveAsAnt"/>
+		<item value="true" key="exportSource"/>
+		<item value="" key="password"/>
+		<item value="false" key="useWorkspaceCompiledClasses"/>
+		<item value="" key="alias"/>
+		<item value="" key="keystore"/>
+		<item value="" key="jre"/>
+		<item value="true" key="p2metadata"/>
+		<item value="C:\Users\Nandor\workspace\osgi.rest.feature" key="destination0"/>
+		<item value="C:\Users\Nandor\workspace\osgi.rest.feature" key="destination1"/>
+		<item value="C:\Users\Nandor\workspace\osgi.rest.test1\build_new.xml" key="antFileName0"/>
+		<item value="C:\Users\Nandor\workspace\osgi.rest.test1\build_new.xml" key="antFileName1"/>
+		<item value="true" key="create_categories"/>
+		<item value="false" key="signJAR"/>
+		<item value="C:\Users\Nandor\workspace\osgi.rest.test1" key="destination2"/>
+		<item value="true" key="multiplatform"/>
+		<item value="" key="category_file"/>
+		<item value="true" key="allowBinaryCycles"/>
+		<item value="201604071025" key="qualifierName"/>
+		<item value="1" key="exportType"/>
+		<item value="false" key="qualifier"/>
+		<item value="false" key="jnlp"/>
+	</section>
+	<section name="targetStateView">
+	</section>
+	<section name="editBundleContainerWizard">
+	</section>
+	<section name="pluginsView">
+	</section>
+</section>

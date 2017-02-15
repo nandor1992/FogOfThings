@@ -1,0 +1,47 @@
+package org.karaf.event_create;
+
+import java.util.Dictionary;
+import java.util.Hashtable;
+
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceRegistration;
+import org.osgi.service.event.Event;
+import org.osgi.service.event.EventConstants;
+import org.osgi.service.event.EventHandler;
+
+public class EventToAmqp{
+
+	private BundleContext bc;
+	final static String[] SEND_EVENT_QUEUE = {"external/send"};
+	ServiceRegistration register;
+	
+	public EventToAmqp(BundleContext bc)
+	{
+		this.bc=bc;
+		
+	}
+	
+	public void startThis()
+	{
+		Dictionary ds = new Hashtable();
+		ds.put(EventConstants.EVENT_TOPIC, SEND_EVENT_QUEUE);
+		register = bc.registerService(EventHandler.class.getName(),new SendEventHandler(), ds);
+	}
+	
+	public void stopThis()
+	{
+		register.unregister();
+	}
+	
+	public class SendEventHandler implements EventHandler {
+
+		public void handleEvent(Event event) {
+			String[] names = event.getPropertyNames();
+			for (String name : names) {
+				String value = event.getProperty(name).toString();
+				System.out.println("---------------->Post prop"+name+" Value : " + value);
+			}
+		}
+
+	}
+}

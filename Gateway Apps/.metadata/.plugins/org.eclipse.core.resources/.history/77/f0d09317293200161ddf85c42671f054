@@ -1,0 +1,45 @@
+package org.karaf.event_create;
+
+import java.util.Dictionary;
+import java.util.Hashtable;
+
+import org.osgi.service.event.Event;
+import org.osgi.service.event.EventAdmin;
+
+public class Resolver {
+
+	private EventAdmin ea;
+	public Resolver(EventAdmin ea)
+	{
+		this.ea=ea;
+	}
+	
+public String doCloudMsg(Event event)
+{
+	
+	return "empty";
+}
+
+public String doDeviceMsg(Event event)
+{
+	
+	return "empty";
+}
+
+private void sendClodEvent(String payload) {
+	Dictionary props = new Hashtable();
+	props.put("payload", payload);
+	props.put("app", app_name);
+	Event event = new Event(CLOUD_QUEUE, props);
+	ea.sendEvent(event);
+}
+
+private void sendDeviceEvent(String payload, String device) {
+	Dictionary props = new Hashtable();
+	props.put("payload", payload);
+	props.put("device", device);
+	Event event = new Event(DEVICE_SEND, props);
+	ea.sendEvent(event);
+}
+
+}

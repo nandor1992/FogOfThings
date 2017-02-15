@@ -1,0 +1,108 @@
+package org.karaf.event_create;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
+
+import org.osgi.service.event.Event;
+
+public class Resolver {
+
+	private Activator mainA;
+	private HashMap<String, Device> devList = new HashMap<String, Device>();
+	private HashMap<String, Timer> timerList = new HashMap<String, Timer>();
+
+	public Resolver(Activator mainA) {
+		this.mainA = mainA;
+		init();
+	}
+
+	public void init() {
+		for (String name : mainA.dev_names) {
+			devList.put(name, new Device(name));
+			timerList.put(name, new Timer());
+		}
+	}
+
+	public void doCloudMsg(Event event) {
+		String value = event.getProperty("payload").toString();
+		String type = event.getProperty("type").toString();
+		mainA.logger.warn("Type : " + type + " Payload :" + value);
+		if (type.equals("task")) {
+			String[] tokens = value.split(":");
+			devList.get(tokens[0].trim()).addTask(tokens[1].trim());
+			mainA.cloudSendEvent(tokens[0] + ": Task Size:" + devList.get(tokens[0].trim()).getTaskSize());
+		}
+		if (type.equals("start")) {
+			String[] tokens = value.split(":");
+			if (devList.get(tokens[0].trim()).canStart()) {
+				devList.get(tokens[0].trim()).doStart();
+				mainA.cloudSendEvent(tokens[0] + ": Starting");
+				String payload = "{'n':'Gcode','v':'" + devList.get(tokens[0].trim()).getNextStep() + "'}";
+				timerList.get(tokens[0].trim()).scheduleAtFixedRate(new myTimer(payload, tokens[0].trim()), 10000,
+						10000);
+				mainA.deviceSendEvent(payload, tokens[0].trim());
+			} else {
+				mainA.cloudSendEvent(tokens[0] + ": Can't Start");
+			}
+		}
+		if (type.equals("stop")) {
+			String[] tokens = value.split(":");
+			devList.get(tokens[0].trim()).doStop();
+			devList.get(tokens[0].trim()).retransmit = 0;
+			timerList.get(tokens[0].trim()).cancel();
+			mainA.cloudSendEvent(tokens[0] + ": Stopping");
+		}
+	}
+
+	public class myTimer extends TimerTask {
+		private String payload;
+		private String device;
+
+		public myTimer(String payload, String device) {
+			this.device = device;
+			this.payload = payload;
+		}
+
+		@Override
+		public void run() {
+			if (devList.get(device).retransmit < mainA.MAX_RETRANSMIT) {
+				mainA.deviceSendEvent(payload, device);
+				mainA.logger.warn("Timer Fired for :" + device + "payload:" + payload);
+			}
+		}
+
+	}
+
+	public void doDeviceMsg(Event event) {
+		String dev_name = event.getProperty("device").toString();
+		String payload = event.getProperty("payload").toString();
+		Integer index_start = payload.indexOf("'", payload.indexOf("'v'") + 3);
+		Integer index_stop = payload.indexOf("',", index_start);
+		String response = payload.substring(index_start + 1, index_stop);
+		timerList.get(dev_name).cancel();
+		devList.get(dev_name).retransmit = 0;
+		if (response.substring(0, 2).equals("Hu")) {
+			mainA.cloudSendEvent(dev_name + ": Didn't Recognize G: " + response);
+		} else if (response.equals("ok")) {
+			mainA.cloudSendEvent(dev_name + ": Everything is A-okay G: " + response);
+			if (devList.get(dev_name).canStart()) {
+				String payload2 = "{'n':'Gcode','v':'" + devList.get(dev_name).getNextStep() + "'}";
+				mainA.deviceSendEvent(payload2, dev_name);
+			} else {
+				mainA.cloudSendEvent(dev_name + ": Done : " + response);
+			}
+		} else {
+			mainA.cloudSendEvent(dev_name + ": Other stuff probs temp: " + response);
+			if (devList.get(dev_name).canStart()) {
+				String payload2 = "{'n':'Gcode','v':'" + devList.get(dev_name).getNextStep() + "'}";
+				mainA.deviceSendEvent(payload2, dev_name);
+			} else {
+				mainA.cloudSendEvent(dev_name + ": Done : " + response);
+			}
+		}
+
+	}
+}

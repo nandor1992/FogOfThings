@@ -1,0 +1,30 @@
+package org.karaf.event_create;
+
+import java.util.HashMap;
+
+public class Device {
+
+	private String name;
+	private HashMap<Integer, String> task = new HashMap<Integer, String>();
+	
+	public Device(String name)
+	{
+		this.name=name;
+	}
+	
+	
+	public void resolveTask(String data)
+	{
+		int line=0;
+		String[] tokens=data.split(";");
+		for (String value:tokens)
+		{
+			
+		}
+	}
+	public String getName()
+	{
+		return name;
+	}
+	
+}

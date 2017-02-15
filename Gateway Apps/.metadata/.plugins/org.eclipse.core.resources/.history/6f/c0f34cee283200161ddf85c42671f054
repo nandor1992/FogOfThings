@@ -1,0 +1,25 @@
+package org.karaf.event_create;
+
+import org.osgi.service.event.Event;
+
+public class Resolver {
+
+	private EventAdmin ea;
+	public Resolver(EventAdmin ea)
+	{
+		this.ea=ea;
+	}
+	
+public String doCloudMsg(Event event)
+{
+	
+	return "empty";
+}
+
+public String doDeviceMsg(Event event)
+{
+	
+	return "empty";
+}
+
+}

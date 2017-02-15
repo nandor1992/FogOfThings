@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Convert local variable &apos;org.karaf.event_create.Activator.run().data&apos; in &apos;org.karaf.event_create.Activator.run()&apos; to field&#x0D;&#x0A;- Original project: &apos;event_create&apos;&#x0D;&#x0A;- Original element: &apos;org.karaf.event_create.Activator.run().data&apos;&#x0D;&#x0A;- Field name: &apos;data&apos;&#x0D;&#x0A;- Initialize field in method&#x0D;&#x0A;- Declared visibility: &apos;private&apos;" description="Convert local variable &apos;data&apos; to field" final="false" flags="2" id="org.eclipse.jdt.ui.promote.temp" initialize="1" input="/src\/main\/java&lt;org.karaf.event_create{Activator.java" name="data" selection="2310 19" stamp="1462352145058" static="false" version="1.0" visibility="2"/>
+</session>

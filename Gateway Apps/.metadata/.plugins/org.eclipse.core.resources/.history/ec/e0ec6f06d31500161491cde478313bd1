@@ -1,0 +1,5 @@
+package org.karaf.event_create;
+
+public class EventToAmqp {
+
+}

@@ -1,0 +1,106 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package org.karaf.event_create;
+import java.sql.Timestamp;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.Map;
+
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.BundleException;
+import org.osgi.framework.ServiceEvent;
+import org.osgi.framework.ServiceListener;
+import org.osgi.framework.ServiceReference;
+import org.osgi.service.event.Event;
+import org.osgi.service.event.EventAdmin;
+import org.osgi.service.event.EventConstants;
+	
+public class Activator extends Thread implements BundleActivator,
+  ServiceListener{
+	
+  private BundleContext bcontext= null;
+  ServiceReference sr = null;
+  EventAdmin ea = null;
+  Event event = null;
+  boolean sending = true;
+  private Map data;
+private HashMap data2;
+      
+  public void start(BundleContext bc) throws Exception {
+    this.bcontext = bc;
+	   
+    // Adding the ServiceListener 
+    bc.addServiceListener(this);
+	   
+    // Retrieving the Event Admin service from the OSGi framework
+    sr = bc.getServiceReference(EventAdmin.class.getName());
+      if (sr == null){
+      throw new Exception("Failed to obtain EventAdmin service reference!");
+      }
+    ea = (EventAdmin) bc.getService(sr);
+      if (ea == null) {
+      throw new Exception("Failed to obtain EventAdmin service object!");
+      }
+    start();
+  }
+
+
+  public void run() {
+    while(sending){
+      if(ea != null){
+    	  data = new HashMap(3);
+    	   data.put(EventConstants.BUNDLE_SYMBOLICNAME, "test.first");
+    	   data.put(EventConstants.MESSAGE,"Hello World");
+    	   java.util.Date date=new java.util.Date();
+    	   data.put(EventConstants.TIMESTAMP,new Timestamp(date.getTime()));
+		 
+        // Creating and firing events with topic
+        // "org/osgi/framework/BundleEvent/STARTED" every 2 seconds
+        ea.sendEvent(new Event("org/osgi/framework/BundleEvent/funny",data));
+        System.out.println("Event Posted");
+          try {
+            Thread.sleep(10000);
+          } catch(InterruptedException ie) {}
+   	   data.put(EventConstants.BUNDLE_SYMBOLICNAME, "test.second"); 
+       ea.sendEvent(new Event("org/osgi/framework/BundleEvent/funny",data));
+       System.out.println("Event Posted");
+      }
+    }
+  }
+    
+  public void stop(BundleContext bc) throws Exception {
+    bc.ungetService(sr);
+    sending = false;
+    bc.removeServiceListener(this);
+  }
+	
+  // Method inherited from the ServiceListener interface
+  public void serviceChanged(ServiceEvent se){
+	
+    // Stops the bundle sending events when the Event Admin service 
+    // is no more obtainable.
+    if ((se.getServiceReference() == sr) && 
+      (se.getType() == ServiceEvent.UNREGISTERING)){
+        try{
+        	bcontext.getBundle().stop();
+        } catch(BundleException be){}
+      }
+    }
+  }
+	  

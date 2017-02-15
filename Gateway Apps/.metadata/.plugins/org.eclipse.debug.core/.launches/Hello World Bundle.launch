@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.pde.ui.EquinoxLauncher">
+<setAttribute key="additional_plugins"/>
+<booleanAttribute key="append.args" value="true"/>
+<booleanAttribute key="automaticAdd" value="true"/>
+<booleanAttribute key="automaticValidate" value="false"/>
+<stringAttribute key="bootstrap" value=""/>
+<stringAttribute key="checked" value="[NONE]"/>
+<booleanAttribute key="clearConfig" value="false"/>
+<stringAttribute key="configLocation" value="${workspace_loc}/.metadata/.plugins/org.eclipse.pde.core/Hello World Bundle"/>
+<booleanAttribute key="default" value="true"/>
+<booleanAttribute key="default_auto_start" value="true"/>
+<intAttribute key="default_start_level" value="4"/>
+<stringAttribute key="featureDefaultLocation" value="workspace"/>
+<stringAttribute key="featurePluginResolution" value="workspace"/>
+<booleanAttribute key="includeOptional" value="true"/>
+<stringAttribute key="karaf_boot_features" value=""/>
+<booleanAttribute key="karaf_features_management" value="true"/>
+<stringAttribute key="karaf_remote_console_password" value="karaf"/>
+<stringAttribute key="karaf_remote_console_username" value="karaf"/>
+<booleanAttribute key="karaf_start_local_console" value="false"/>
+<booleanAttribute key="karaf_start_remote_console" value="true"/>
+<booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
+<stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl} -consoleLog -console"/>
+<stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.pde.ui.workbenchClasspathProvider"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dosgi.requiredJavaVersion=1.7 -Xms40m -Xmx1024m -Declipse.ignoreApp=true -Dosgi.noShutdown=true -Dorg.osgi.service.http.port=9090"/>
+<stringAttribute key="pde.version" value="3.3"/>
+<setAttribute key="selected_features">
+<setEntry value="com.eclipsesource.jaxrs.connector.feature:default"/>
+<setEntry value="com.eclipsesource.jaxrs.jersey.runtime.feature:default"/>
+<setEntry value="org.eclipse.core.runtime.feature:default"/>
+<setEntry value="org.eclipse.equinox.compendium.sdk:default"/>
+<setEntry value="org.eclipse.equinox.core.feature:default"/>
+<setEntry value="org.eclipse.equinox.core.sdk:default"/>
+<setEntry value="org.eclipse.equinox.executable:default"/>
+<setEntry value="org.eclipse.equinox.p2.core.feature:default"/>
+<setEntry value="org.eclipse.equinox.p2.discovery.feature:default"/>
+<setEntry value="org.eclipse.equinox.p2.extras.feature:default"/>
+<setEntry value="org.eclipse.equinox.p2.rcp.feature:default"/>
+<setEntry value="org.eclipse.equinox.p2.sdk:default"/>
+<setEntry value="org.eclipse.equinox.sdk:default"/>
+<setEntry value="org.eclipse.equinox.server.core:default"/>
+<setEntry value="org.eclipse.equinox.server.jetty:default"/>
+<setEntry value="org.eclipse.equinox.server.p2:default"/>
+<setEntry value="org.eclipse.equinox.serverside.sdk:default"/>
+<setEntry value="org.eclipse.equinox.weaving.sdk:default"/>
+</setAttribute>
+<booleanAttribute key="show_selected_only" value="false"/>
+<stringAttribute key="target_bundles" value="com.eclipsesource.jaxrs.jersey-min@default:default,com.eclipsesource.jaxrs.publisher@default:default,javax.servlet-api@default:default,org.eclipse.equinox.http.jetty@default:default,org.eclipse.equinox.http.servlet@default:default,org.eclipse.equinox.simpleconfigurator@1:true,org.eclipse.equinox.transforms.hook@default:false,org.eclipse.equinox.weaving.hook@default:false,org.eclipse.jetty.continuation@default:default,org.eclipse.jetty.http@default:default,org.eclipse.jetty.io@default:default,org.eclipse.jetty.security@default:default,org.eclipse.jetty.server@default:default,org.eclipse.jetty.servlet@default:default,org.eclipse.jetty.util@default:default,org.eclipse.osgi.services@default:default,org.eclipse.osgi@-1:true"/>
+<booleanAttribute key="tracing" value="false"/>
+<booleanAttribute key="useCustomFeatures" value="false"/>
+<booleanAttribute key="useDefaultConfigArea" value="true"/>
+<stringAttribute key="workspace_bundles" value="osgi.rest.reference@default:default"/>
+</launchConfiguration>

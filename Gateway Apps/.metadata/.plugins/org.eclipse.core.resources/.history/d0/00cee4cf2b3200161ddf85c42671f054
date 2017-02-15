@@ -1,0 +1,41 @@
+package org.karaf.event_create;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import org.osgi.service.event.Event;
+
+public class Resolver {
+
+	private Activator mainA;
+	private HashMap<String, Device> devList = new HashMap<String, Device>();
+	public Resolver(Activator mainA) {
+		this.mainA = mainA;
+		init();
+	}
+	
+	public void init()
+	{
+		for (String name : mainA.dev_names)
+		{
+			devList.put(name,new Device(name));
+			devList.
+		}
+	}
+	public String doCloudMsg(Event event) {
+		 String value = event.getProperty("payload").toString();
+		 mainA.logger.warn(" Payload :" + value); //
+		 mainA.deviceSendEvent(event.getProperty("payload").toString(),mainA.dev_names.get(0));
+		return "empty";
+	}
+
+	public String doDeviceMsg(Event event) {
+		String[] names = event.getPropertyNames();
+		for (String name : names) {
+			String value = event.getProperty(name).toString();
+		}
+		mainA.cloudSendEvent(event.getProperty("device").toString() + " : " + event.getProperty("payload").toString());
+		return "empty";
+	}
+}

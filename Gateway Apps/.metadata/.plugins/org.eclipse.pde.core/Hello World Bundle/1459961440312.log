@@ -1,0 +1,53 @@
+!SESSION 2016-04-06 17:50:38.568 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.7.0_80
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -dev file:C:/Users/Nandor/workspace/.metadata/.plugins/org.eclipse.pde.core/Hello World Bundle/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog -console
+
+!ENTRY osgi.rest.test1 4 0 2016-04-06 17:50:42.618
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: The bundle "osgi.rest.test1_1.0.0.qualifier [204]" could not be resolved. Reason: Missing Constraint: Require-Bundle: com.eclipsesource.jaxrs.jersey-all; bundle-version="2.22.2"
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolverError(AbstractBundle.java:1332)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolutionFailureException(AbstractBundle.java:1316)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:323)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY osgi.rest.test1 4 0 2016-04-06 17:50:42.627
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: The bundle "osgi.rest.test1_1.0.0.qualifier [204]" could not be resolved. Reason: Missing Constraint: Require-Bundle: com.eclipsesource.jaxrs.jersey-all; bundle-version="2.22.2"
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolverError(AbstractBundle.java:1332)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolutionFailureException(AbstractBundle.java:1316)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:323)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.setBundleSL(StartLevelManager.java:670)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:435)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.osgi 2 0 2016-04-06 17:50:42.684
+!MESSAGE One or more bundles are not resolved because the following root constraints are not resolved:
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-06 17:50:42.685
+!MESSAGE Bundle reference:file:/C:/Users/Nandor/workspace/osgi.rest.test1/ was not resolved.
+!SUBENTRY 2 osgi.rest.test1 2 0 2016-04-06 17:50:42.686
+!MESSAGE Missing required bundle com.eclipsesource.jaxrs.jersey-all_2.22.2.
+
+!ENTRY org.eclipse.osgi 2 0 2016-04-06 17:50:42.693
+!MESSAGE The following is a complete list of bundles which are not resolved, see the prior log entry for the root cause if it exists:
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-06 17:50:42.694
+!MESSAGE Bundle osgi.rest.test1_1.0.0.qualifier [204] was not resolved.
+!SUBENTRY 2 osgi.rest.test1 2 0 2016-04-06 17:50:42.695
+!MESSAGE Missing required bundle com.eclipsesource.jaxrs.jersey-all_2.22.2.

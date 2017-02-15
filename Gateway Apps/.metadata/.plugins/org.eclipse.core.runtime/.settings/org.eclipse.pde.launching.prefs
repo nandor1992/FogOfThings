@@ -1,0 +1,2 @@
+Preference.default.osgi.framework=org.eclipse.pde.ui.EquinoxFramework
+eclipse.preferences.version=1

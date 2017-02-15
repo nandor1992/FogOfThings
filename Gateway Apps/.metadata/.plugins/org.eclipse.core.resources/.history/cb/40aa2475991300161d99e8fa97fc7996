@@ -1,0 +1,76 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package org.karaf.event_create;
+
+import java.sql.Timestamp;
+import java.util.Dictionary;
+import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceRegistration;
+import org.osgi.service.event.Event;
+import org.osgi.service.event.EventConstants;
+import org.osgi.service.event.EventHandler;
+
+public class Activator implements BundleActivator {
+
+	private static final String SEND_EVENT_QUEUE = "internal/send";
+	private static final String POST_EVENT_QUEUE = "internal/post";
+	// String filter = "(bundle.symbolicName=test.*)";
+	ServiceRegistration register;
+	ServiceRegistration register2;
+	private boolean sending = true;
+
+    public void start(BundleContext context) throws Exception {
+        Dictionary ds = new Hashtable();
+        Dictionary dp = new Hashtable();
+        ds.put(EventConstants.EVENT_TOPIC, SEND_EVENT_QUEUE);
+        dp.put(EventConstants.EVENT_TOPIC, POST_EVENT_QUEUE);
+        register=context.registerService(EventHandler.class.getName(), new PostEventHandler(), dp);   
+        register=context.registerService(EventHandler.class.getName(), new SendEventHandler(), ds); 
+    }
+
+	public class PostEventHandler implements EventHandler {
+
+		public void handleEvent(Event event) {
+			String value = event.getProperty("property").toString();
+			System.out.println("---------------->Post value : " + value);
+
+		}
+
+	}
+
+	public class SendEventHandler implements EventHandler {
+
+		public void handleEvent(Event event) {
+			String value = event.getProperty("property").toString();
+			System.out.println("---------------->Send value : " + value);  
+
+		}
+
+	}
+
+	public void stop(BundleContext context) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

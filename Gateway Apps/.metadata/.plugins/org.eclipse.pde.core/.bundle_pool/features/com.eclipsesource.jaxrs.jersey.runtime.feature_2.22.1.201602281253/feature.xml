@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.eclipsesource.jaxrs.jersey.runtime.feature"
+      label="Jersey Runtime"
+      version="2.22.1.201602281253"
+      provider-name="EclipseSource">
+
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <plugin
+         id="javax.servlet-api"
+         download-size="83"
+         install-size="170"
+         version="3.0.1"
+         unpack="false"/>
+
+   <plugin
+         id="com.eclipsesource.jaxrs.jersey-all"
+         download-size="6379"
+         install-size="14394"
+         version="2.22.2"
+         unpack="false"/>
+
+   <plugin
+         id="com.eclipsesource.jaxrs.jersey-min"
+         download-size="4439"
+         install-size="9475"
+         version="2.22.2"
+         unpack="false"/>
+
+</feature>

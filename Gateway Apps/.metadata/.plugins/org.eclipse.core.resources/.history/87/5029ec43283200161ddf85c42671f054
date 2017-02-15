@@ -1,0 +1,14 @@
+package org.karaf.event_create;
+
+import org.osgi.service.event.Event;
+
+public class Resolver {
+
+	
+public String doCloudMsg(Event event)
+{
+	
+	return "empty";
+}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;ThermostatApp/target/devtransApp-0.0.1-SNAPSHOT.jar&apos;" deleteContents="false" description="Delete resource &apos;ThermostatApp/target/devtransApp-0.0.1-SNAPSHOT.jar&apos;" element1="/ThermostatApp/target/devtransApp-0.0.1-SNAPSHOT.jar" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1477999122547"/>
+</session>

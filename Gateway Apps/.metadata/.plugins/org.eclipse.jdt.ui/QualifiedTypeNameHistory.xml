@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="Cloudlets"/>
+<fullyQualifiedTypeName name="org.cloudbus.cloudsim.VmSchedulerSpaceShared"/>
+<fullyQualifiedTypeName name="org.cloudbus.cloudsim.CloudletSchedulerTimeShared"/>
+<fullyQualifiedTypeName name="org.cloudbus.cloudsim.CloudletSchedulerSpaceShared"/>
+<fullyQualifiedTypeName name="org.cloudbus.cloudsim.VmAllocationPolicy"/>
+<fullyQualifiedTypeName name="org.cloudbus.cloudsim.provisioners.PeProvisioner"/>
+<fullyQualifiedTypeName name="org.cloudbus.cloudsim.provisioners.PeProvisionerSimple"/>
+<fullyQualifiedTypeName name="CsvWriter"/>
+<fullyQualifiedTypeName name="org.osgi.framework.BundleActivator"/>
+<fullyQualifiedTypeName name="org.osgi.framework.ServiceListener"/>
+<fullyQualifiedTypeName name="org.osgi.framework.ServiceEvent"/>
+<fullyQualifiedTypeName name="sun.applet.Main"/>
+<fullyQualifiedTypeName name="org.rabbitmq.rabbit_test.AmqpConnect"/>
+<fullyQualifiedTypeName name="org.karaf.dictionary_service.DictionaryService"/>
+<fullyQualifiedTypeName name="org.karaf.dictionary_serivice.DictionaryService"/>
+<fullyQualifiedTypeName name="java.util.Dictionary"/>
+<fullyQualifiedTypeName name="java.util.Hashtable"/>
+<fullyQualifiedTypeName name="org.osgi.framework.ServiceReference"/>
+<fullyQualifiedTypeName name="com.jcraft.jsch.Logger"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="java.lang.Math"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="org.slf4j.Logger"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="scala.Function2"/>
+<fullyQualifiedTypeName name="org.apache.spark.api.java.function.FlatMapFunction"/>
+<fullyQualifiedTypeName name="org.apache.spark.api.java.function.PairFunction"/>
+<fullyQualifiedTypeName name="org.apache.spark.api.java.function.Function2"/>
+<fullyQualifiedTypeName name="scala.Tuple2"/>
+<fullyQualifiedTypeName name="org.apache.spark.api.java.function.Function"/>
+<fullyQualifiedTypeName name="java.lang.Iterable"/>
+<fullyQualifiedTypeName name="scala.reflect.internal.Trees.This"/>
+<fullyQualifiedTypeName name="com.fasterxml.jackson.core.format.DataFormatMatcher"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="java.util.Timer"/>
+<fullyQualifiedTypeName name="org.apache.commons.collections.iterators.ArrayListIterator"/>
+<fullyQualifiedTypeName name="java.util.Enumeration"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="main.TestClass.Monitor"/>
+<fullyQualifiedTypeName name="main.TestClass"/>
+<fullyQualifiedTypeName name="org.apache.log4j.Logger"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="org.osgi.framework.ServiceRegistration"/>
+<fullyQualifiedTypeName name="java.lang.Character"/>
+</qualifiedTypeNameHistroy>

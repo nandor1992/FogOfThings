@@ -1,0 +1,95 @@
+package org.rabbitmq.test;
+
+import com.rabbitmq.client.*;
+
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Dictionary;
+import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.Map;
+
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceReference;
+import org.osgi.service.event.Event;
+import org.osgi.service.event.EventAdmin;
+
+public class AmqpConnect {
+	private static BundleContext bcontext = null;
+	static ServiceReference sr = null;
+	static EventAdmin ea = null;
+	Event event = null;
+	private static Connection connection;
+	private static Channel channel;
+	boolean sending = true;
+	private Map data;
+	private HashMap data2;
+	private static final String SEND_EVENT_QUEUE = "JTUNSIE/send";
+	private final static String QUEUE_NAME = "karaf_app";
+	//private static final String SEND_EVENT_QUEUE = "external/send";
+
+	public static void startThis(BundleContext bc) throws Exception {
+		bcontext = bc;
+
+		// Retrieving the Event Admin service from the OSGi framework
+		sr = bc.getServiceReference(EventAdmin.class.getName());
+		if (sr == null) {
+			throw new Exception("Failed to obtain EventAdmin service reference!");
+		}
+		ea = (EventAdmin) bc.getService(sr);
+		if (ea == null) {
+			throw new Exception("Failed to obtain EventAdmin service object!");
+		}
+
+		// AMQP Stuff
+		ConnectionFactory factory = new ConnectionFactory();
+		factory.setUsername("admin");
+		factory.setPassword("hunter");
+		factory.setVirtualHost("test");
+		factory.setHost("10.0.0.133");
+		factory.setPort(5672);
+		connection = factory.newConnection();
+		channel = connection.createChannel();
+		Consumer consumer = new DefaultConsumer(channel) {
+			@Override
+			public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties,
+					byte[] body) throws IOException {
+				String message = new String(body, "UTF-8");
+				Map<String, Object> headers = properties.getHeaders();
+				SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss.SSS");
+				Date date = new Date();
+				// display time and date using toString()
+				try {
+					sendEvent(message,headers);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		};
+		channel.basicConsume(QUEUE_NAME, true, consumer);
+	}
+
+	public static void stopThis() {
+		bcontext.ungetService(sr);
+		try {
+			channel.close();
+			connection.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	private static void sendEvent(String message,Map<String, Object> headers) throws InterruptedException {
+		Dictionary props = new Hashtable();
+        for (Map.Entry<String, Object> header : headers.entrySet())
+        {
+            props.put(header.getKey(),header.getValue());
+        }
+		props.put("message", message);
+		Event event = new Event(SEND_EVENT_QUEUE, props);
+		ea.sendEvent(event);
+	}
+}

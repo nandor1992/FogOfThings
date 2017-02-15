@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 elements to &apos;Nandor-test&apos;&#x0D;&#x0A;- Original project: &apos;Nandor-Pi&apos;&#x0D;&#x0A;- Destination element: &apos;Nandor-test&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     Makefile&#x0D;&#x0A;     TestAppC.nc&#x0D;&#x0A;     TestP.nc" description="Copy files" element1="Makefile" element2="TestAppC.nc" element3="TestP.nc" files="3" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1454933508192" target="/Nandor-test" units="0" version="1.0"/>
+</session>

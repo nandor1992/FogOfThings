@@ -1,0 +1,664 @@
+!SESSION 2016-04-05 14:09:46.172 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.7.0_80
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -dev file:C:/Users/Nandor/workspace/.metadata/.plugins/org.eclipse.pde.core/Hello World Bundle/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog -console
+
+!ENTRY org.eclipse.equinox.p2.console 4 0 2016-04-05 14:09:53.396
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: The bundle "org.eclipse.equinox.p2.console_1.0.300.v20130327-2119 [48]" could not be resolved. Reason: Missing Constraint: Import-Package: org.eclipse.equinox.internal.provisional.p2.director; version="0.0.0"
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolverError(AbstractBundle.java:1332)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolutionFailureException(AbstractBundle.java:1316)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:323)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.equinox.p2.director 4 0 2016-04-05 14:09:53.419
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: The bundle "org.eclipse.equinox.p2.director_2.3.1.v20140221-1852 [50]" could not be resolved. Reason: Missing Constraint: Import-Package: org.eclipse.equinox.internal.provisional.configurator; version="0.0.0"
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolverError(AbstractBundle.java:1332)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolutionFailureException(AbstractBundle.java:1316)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:323)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.equinox.p2.director.app 4 0 2016-04-05 14:09:53.456
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: The bundle "org.eclipse.equinox.p2.director.app_1.0.300.v20130819-1621 [51]" could not be resolved. Reason: Missing Constraint: Import-Package: org.eclipse.equinox.internal.p2.director; version="0.0.0"
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolverError(AbstractBundle.java:1332)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolutionFailureException(AbstractBundle.java:1316)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:323)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.equinox.p2.directorywatcher 4 0 2016-04-05 14:09:53.488
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: The bundle "org.eclipse.equinox.p2.directorywatcher_1.0.300.v20130327-2119 [52]" could not be resolved. Reason: Missing Constraint: Import-Package: org.eclipse.equinox.internal.p2.update; version="0.0.0"
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolverError(AbstractBundle.java:1332)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolutionFailureException(AbstractBundle.java:1316)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:323)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.equinox.p2.extensionlocation 4 0 2016-04-05 14:09:53.574
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: The bundle "org.eclipse.equinox.p2.extensionlocation_1.2.100.v20130327-2119 [56]" could not be resolved. Reason: Missing Constraint: Import-Package: org.eclipse.equinox.internal.p2.publisher.eclipse; version="0.0.0"
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolverError(AbstractBundle.java:1332)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolutionFailureException(AbstractBundle.java:1316)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:323)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2016-04-05 14:09:53.628
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: The bundle "org.eclipse.equinox.p2.operations_2.3.0.v20130711-1809 [61]" could not be resolved. Reason: Missing Constraint: Import-Package: org.eclipse.equinox.internal.p2.director; version="0.0.0"
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolverError(AbstractBundle.java:1332)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolutionFailureException(AbstractBundle.java:1316)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:323)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2016-04-05 14:09:53.668
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: The bundle "org.eclipse.equinox.p2.publisher.eclipse_1.1.200.v20130516-1953 [63]" could not be resolved. Reason: Missing Constraint: Import-Package: org.eclipse.equinox.simpleconfigurator.manipulator; version="[2.0.0,3.0.0)"
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolverError(AbstractBundle.java:1332)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolutionFailureException(AbstractBundle.java:1316)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:323)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.equinox.p2.reconciler.dropins 4 0 2016-04-05 14:09:53.706
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: The bundle "org.eclipse.equinox.p2.reconciler.dropins_1.1.200.v20130419-1850 [64]" could not be resolved. Reason: Missing Constraint: Require-Bundle: org.eclipse.equinox.p2.touchpoint.eclipse; bundle-version="1.0.0"
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolverError(AbstractBundle.java:1332)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolutionFailureException(AbstractBundle.java:1316)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:323)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.equinox.p2.repository.tools 4 0 2016-04-05 14:09:53.739
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: The bundle "org.eclipse.equinox.p2.repository.tools_2.1.0.v20130327-2119 [66]" could not be resolved. Reason: Missing Constraint: Import-Package: org.eclipse.equinox.internal.p2.director; version="0.0.0"
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolverError(AbstractBundle.java:1332)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolutionFailureException(AbstractBundle.java:1316)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:323)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.equinox.p2.touchpoint.eclipse 4 0 2016-04-05 14:09:53.770
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: The bundle "org.eclipse.equinox.p2.touchpoint.eclipse_2.1.200.v20130327-2119 [67]" could not be resolved. Reason: Missing Constraint: Import-Package: org.eclipse.equinox.internal.simpleconfigurator.manipulator; version="0.0.0"
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolverError(AbstractBundle.java:1332)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolutionFailureException(AbstractBundle.java:1316)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:323)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.equinox.p2.ui 4 0 2016-04-05 14:09:53.799
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: The bundle "org.eclipse.equinox.p2.ui_2.3.0.v20131209-2052 [70]" could not be resolved. Reason: Missing Constraint: Require-Bundle: org.eclipse.ui; bundle-version="3.6.0"
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolverError(AbstractBundle.java:1332)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolutionFailureException(AbstractBundle.java:1316)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:323)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.equinox.p2.ui.discovery 4 0 2016-04-05 14:09:53.830
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: The bundle "org.eclipse.equinox.p2.ui.discovery_1.0.0.v20130502-0334 [71]" could not be resolved. Reason: Missing Constraint: Require-Bundle: org.eclipse.ui; bundle-version="0.0.0"
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolverError(AbstractBundle.java:1332)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolutionFailureException(AbstractBundle.java:1316)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:323)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.equinox.p2.ui.importexport 4 0 2016-04-05 14:09:53.862
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: The bundle "org.eclipse.equinox.p2.ui.importexport_1.1.0.v20131209-2052 [72]" could not be resolved. Reason: Missing Constraint: Require-Bundle: org.eclipse.ui; bundle-version="0.0.0"
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolverError(AbstractBundle.java:1332)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolutionFailureException(AbstractBundle.java:1316)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:323)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.equinox.p2.ui.sdk 4 0 2016-04-05 14:09:53.896
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: The bundle "org.eclipse.equinox.p2.ui.sdk_1.0.300.v20130503-1750 [73]" could not be resolved. Reason: Missing Constraint: Require-Bundle: org.eclipse.ui; bundle-version="3.6.0"
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolverError(AbstractBundle.java:1332)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolutionFailureException(AbstractBundle.java:1316)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:323)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.equinox.p2.ui.sdk.scheduler 4 0 2016-04-05 14:09:53.922
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: The bundle "org.eclipse.equinox.p2.ui.sdk.scheduler_1.2.0.v20140122-1840 [74]" could not be resolved. Reason: Missing Constraint: Require-Bundle: org.eclipse.ui; bundle-version="0.0.0"
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolverError(AbstractBundle.java:1332)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolutionFailureException(AbstractBundle.java:1316)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:323)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.equinox.p2.updatechecker 4 0 2016-04-05 14:09:53.952
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: The bundle "org.eclipse.equinox.p2.updatechecker_1.1.200.v20130327-2119 [75]" could not be resolved. Reason: Missing Constraint: Import-Package: org.eclipse.equinox.p2.planner; version="[2.0.0,3.0.0)"
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolverError(AbstractBundle.java:1332)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolutionFailureException(AbstractBundle.java:1316)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:323)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.equinox.p2.updatesite 4 0 2016-04-05 14:09:53.988
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: The bundle "org.eclipse.equinox.p2.updatesite_1.0.400.v20130515-2028 [76]" could not be resolved. Reason: Missing Constraint: Import-Package: org.eclipse.equinox.internal.p2.publisher.eclipse; version="0.0.0"
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolverError(AbstractBundle.java:1332)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolutionFailureException(AbstractBundle.java:1316)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:323)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.equinox.security.ui 4 0 2016-04-05 14:09:54.026
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: The bundle "org.eclipse.equinox.security.ui_1.1.100.v20130327-1442 [80]" could not be resolved. Reason: Missing Constraint: Require-Bundle: org.eclipse.ui; bundle-version="[3.4.0,4.0.0)"
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolverError(AbstractBundle.java:1332)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolutionFailureException(AbstractBundle.java:1316)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:323)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.equinox.simpleconfigurator.manipulator 4 0 2016-04-05 14:09:54.073
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: The bundle "org.eclipse.equinox.simpleconfigurator.manipulator_2.0.0.v20130327-2119 [82]" could not be resolved. Reason: Missing Constraint: Import-Package: org.eclipse.equinox.internal.simpleconfigurator; version="0.0.0"
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolverError(AbstractBundle.java:1332)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getResolutionFailureException(AbstractBundle.java:1316)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:323)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:390)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1176)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:559)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:544)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:457)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:438)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.osgi 2 0 2016-04-05 14:09:55.027
+!MESSAGE One or more bundles are not resolved because the following root constraints are not resolved:
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-05 14:09:55.027
+!MESSAGE Bundle reference:file:/C:/Users/Nandor/workspace/.metadata/.plugins/org.eclipse.pde.core/.bundle_pool/plugins/org.eclipse.equinox.p2.updatechecker_1.1.200.v20130327-2119.jar was not resolved.
+!SUBENTRY 2 org.eclipse.equinox.p2.updatechecker 2 0 2016-04-05 14:09:55.028
+!MESSAGE Missing required capability Require-Capability: osgi.ee; filter="(|(&(osgi.ee=JavaSE)(version=1.5))(&(osgi.ee=JavaSE)(version=1.4))(&(osgi.ee=CDC/Foundation)(version=1.1)))".
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-05 14:09:55.029
+!MESSAGE Bundle reference:file:/C:/Users/Nandor/workspace/.metadata/.plugins/org.eclipse.pde.core/.bundle_pool/plugins/org.eclipse.equinox.simpleconfigurator.manipulator_2.0.0.v20130327-2119.jar was not resolved.
+!SUBENTRY 2 org.eclipse.equinox.simpleconfigurator.manipulator 2 0 2016-04-05 14:09:55.030
+!MESSAGE Missing required capability Require-Capability: osgi.ee; filter="(|(&(osgi.ee=CDC/Foundation)(version=1.1))(&(osgi.ee=JavaSE)(version=1.4)))".
+!SUBENTRY 2 org.eclipse.equinox.simpleconfigurator.manipulator 2 0 2016-04-05 14:09:55.030
+!MESSAGE Missing imported package org.eclipse.equinox.internal.simpleconfigurator_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.simpleconfigurator.manipulator 2 0 2016-04-05 14:09:55.031
+!MESSAGE Missing imported package org.eclipse.equinox.internal.simpleconfigurator.utils_0.0.0.
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-05 14:09:55.032
+!MESSAGE Bundle reference:file:/C:/Users/Nandor/workspace/.metadata/.plugins/org.eclipse.pde.core/.bundle_pool/plugins/org.eclipse.equinox.p2.ui.importexport_1.1.0.v20131209-2052.jar was not resolved.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.importexport 2 0 2016-04-05 14:09:55.032
+!MESSAGE Missing required capability Require-Capability: osgi.ee; filter="(|(&(osgi.ee=JavaSE)(version=1.5))(&(osgi.ee=JavaSE)(version=1.4))(&(osgi.ee=CDC/Foundation)(version=1.1)))".
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.importexport 2 0 2016-04-05 14:09:55.033
+!MESSAGE Missing required bundle org.eclipse.ui_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.importexport 2 0 2016-04-05 14:09:55.034
+!MESSAGE Missing required bundle org.eclipse.ui.forms_3.5.0.
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-05 14:09:55.035
+!MESSAGE Bundle reference:file:/C:/Users/Nandor/workspace/.metadata/.plugins/org.eclipse.pde.core/.bundle_pool/plugins/org.eclipse.equinox.p2.console_1.0.300.v20130327-2119.jar was not resolved.
+!SUBENTRY 2 org.eclipse.equinox.p2.console 2 0 2016-04-05 14:09:55.035
+!MESSAGE Missing required capability Require-Capability: osgi.ee; filter="(|(&(osgi.ee=JavaSE)(version=1.5))(&(osgi.ee=JavaSE)(version=1.4))(&(osgi.ee=CDC/Foundation)(version=1.1)))".
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-05 14:09:55.036
+!MESSAGE Bundle reference:file:/C:/Users/Nandor/workspace/.metadata/.plugins/org.eclipse.pde.core/.bundle_pool/plugins/org.eclipse.equinox.p2.directorywatcher_1.0.300.v20130327-2119.jar was not resolved.
+!SUBENTRY 2 org.eclipse.equinox.p2.directorywatcher 2 0 2016-04-05 14:09:55.037
+!MESSAGE Missing required capability Require-Capability: osgi.ee; filter="(|(&(osgi.ee=JavaSE)(version=1.5))(&(osgi.ee=JavaSE)(version=1.4))(&(osgi.ee=CDC/Foundation)(version=1.1)))".
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-05 14:09:55.037
+!MESSAGE Bundle reference:file:/C:/Users/Nandor/workspace/.metadata/.plugins/org.eclipse.pde.core/.bundle_pool/plugins/org.eclipse.equinox.p2.operations_2.3.0.v20130711-1809.jar was not resolved.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 2 0 2016-04-05 14:09:55.038
+!MESSAGE Missing imported package org.eclipse.equinox.internal.provisional.configurator_0.0.0.
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-05 14:09:55.039
+!MESSAGE Bundle reference:file:/C:/Users/Nandor/workspace/.metadata/.plugins/org.eclipse.pde.core/.bundle_pool/plugins/org.eclipse.equinox.p2.ui_2.3.0.v20131209-2052.jar was not resolved.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui 2 0 2016-04-05 14:09:55.039
+!MESSAGE Missing required capability Require-Capability: osgi.ee; filter="(|(&(osgi.ee=JavaSE)(version=1.5))(&(osgi.ee=JavaSE)(version=1.4))(&(osgi.ee=CDC/Foundation)(version=1.1)))".
+!SUBENTRY 2 org.eclipse.equinox.p2.ui 2 0 2016-04-05 14:09:55.040
+!MESSAGE Missing required bundle org.eclipse.ui_3.6.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui 2 0 2016-04-05 14:09:55.041
+!MESSAGE Missing imported package org.eclipse.equinox.internal.provisional.configurator_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui 2 0 2016-04-05 14:09:55.042
+!MESSAGE Missing imported package com.ibm.icu.text_0.0.0.
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-05 14:09:55.042
+!MESSAGE Bundle reference:file:/C:/Users/Nandor/workspace/.metadata/.plugins/org.eclipse.pde.core/.bundle_pool/plugins/org.eclipse.equinox.p2.reconciler.dropins_1.1.200.v20130419-1850.jar was not resolved.
+!SUBENTRY 2 org.eclipse.equinox.p2.reconciler.dropins 2 0 2016-04-05 14:09:55.043
+!MESSAGE Missing imported package org.eclipse.equinox.internal.provisional.configurator_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.reconciler.dropins 2 0 2016-04-05 14:09:55.044
+!MESSAGE Missing required capability Require-Capability: osgi.ee; filter="(|(&(osgi.ee=JavaSE)(version=1.5))(&(osgi.ee=JavaSE)(version=1.4))(&(osgi.ee=CDC/Foundation)(version=1.1)))".
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-05 14:09:55.045
+!MESSAGE Bundle reference:file:/C:/Users/Nandor/workspace/.metadata/.plugins/org.eclipse.pde.core/.bundle_pool/plugins/org.eclipse.equinox.p2.ui.sdk_1.0.300.v20130503-1750.jar was not resolved.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.sdk 2 0 2016-04-05 14:09:55.045
+!MESSAGE Missing required capability Require-Capability: osgi.ee; filter="(|(&(osgi.ee=JavaSE)(version=1.5))(&(osgi.ee=JavaSE)(version=1.4))(&(osgi.ee=CDC/Foundation)(version=1.1)))".
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.sdk 2 0 2016-04-05 14:09:55.046
+!MESSAGE Missing required bundle org.eclipse.ui_3.6.0.
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-05 14:09:55.047
+!MESSAGE Bundle reference:file:/C:/Users/Nandor/workspace/.metadata/.plugins/org.eclipse.pde.core/.bundle_pool/plugins/org.eclipse.equinox.p2.ui.sdk.scheduler_1.2.0.v20140122-1840.jar was not resolved.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.sdk.scheduler 2 0 2016-04-05 14:09:55.048
+!MESSAGE Missing required bundle org.eclipse.ui_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.sdk.scheduler 2 0 2016-04-05 14:09:55.048
+!MESSAGE Missing imported package com.ibm.icu.util_4.0.1.
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-05 14:09:55.049
+!MESSAGE Bundle reference:file:/C:/Users/Nandor/workspace/.metadata/.plugins/org.eclipse.pde.core/.bundle_pool/plugins/org.eclipse.equinox.security.ui_1.1.100.v20130327-1442.jar was not resolved.
+!SUBENTRY 2 org.eclipse.equinox.security.ui 2 0 2016-04-05 14:09:55.050
+!MESSAGE Missing required bundle org.eclipse.ui_[3.4.0,4.0.0).
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-05 14:09:55.050
+!MESSAGE Bundle reference:file:/C:/Users/Nandor/workspace/.metadata/.plugins/org.eclipse.pde.core/.bundle_pool/plugins/org.eclipse.equinox.p2.extensionlocation_1.2.100.v20130327-2119.jar was not resolved.
+!SUBENTRY 2 org.eclipse.equinox.p2.extensionlocation 2 0 2016-04-05 14:09:55.051
+!MESSAGE Missing required capability Require-Capability: osgi.ee; filter="(|(&(osgi.ee=JavaSE)(version=1.5))(&(osgi.ee=JavaSE)(version=1.4))(&(osgi.ee=CDC/Foundation)(version=1.1)))".
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-05 14:09:55.052
+!MESSAGE Bundle reference:file:/C:/Users/Nandor/workspace/.metadata/.plugins/org.eclipse.pde.core/.bundle_pool/plugins/org.eclipse.equinox.p2.updatesite_1.0.400.v20130515-2028.jar was not resolved.
+!SUBENTRY 2 org.eclipse.equinox.p2.updatesite 2 0 2016-04-05 14:09:55.053
+!MESSAGE Missing required capability Require-Capability: osgi.ee; filter="(|(&(osgi.ee=JavaSE)(version=1.5))(&(osgi.ee=JavaSE)(version=1.4))(&(osgi.ee=CDC/Foundation)(version=1.1)))".
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-05 14:09:55.053
+!MESSAGE Bundle reference:file:/C:/Users/Nandor/workspace/.metadata/.plugins/org.eclipse.pde.core/.bundle_pool/plugins/org.eclipse.equinox.p2.ui.discovery_1.0.0.v20130502-0334.jar was not resolved.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.discovery 2 0 2016-04-05 14:09:55.054
+!MESSAGE Missing required bundle org.eclipse.ui_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.discovery 2 0 2016-04-05 14:09:55.055
+!MESSAGE Missing required bundle org.eclipse.ui.browser_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.discovery 2 0 2016-04-05 14:09:55.056
+!MESSAGE Missing imported package com.ibm.icu.text_0.0.0.
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-05 14:09:55.057
+!MESSAGE Bundle reference:file:/C:/Users/Nandor/workspace/.metadata/.plugins/org.eclipse.pde.core/.bundle_pool/plugins/org.eclipse.equinox.p2.director_2.3.1.v20140221-1852.jar was not resolved.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 2 0 2016-04-05 14:09:55.058
+!MESSAGE Missing imported package org.eclipse.equinox.internal.provisional.configurator_0.0.0.
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-05 14:09:55.059
+!MESSAGE Bundle reference:file:/C:/Users/Nandor/workspace/.metadata/.plugins/org.eclipse.pde.core/.bundle_pool/plugins/org.eclipse.equinox.p2.director.app_1.0.300.v20130819-1621.jar was not resolved.
+!SUBENTRY 2 org.eclipse.equinox.p2.director.app 2 0 2016-04-05 14:09:55.059
+!MESSAGE Missing required capability Require-Capability: osgi.ee; filter="(|(&(osgi.ee=JavaSE)(version=1.5))(&(osgi.ee=JavaSE)(version=1.4))(&(osgi.ee=CDC/Foundation)(version=1.1)))".
+
+!ENTRY org.eclipse.osgi 2 0 2016-04-05 14:09:55.270
+!MESSAGE The following is a complete list of bundles which are not resolved, see the prior log entry for the root cause if it exists:
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-05 14:09:55.272
+!MESSAGE Bundle org.eclipse.equinox.p2.console_1.0.300.v20130327-2119 [48] was not resolved.
+!SUBENTRY 2 org.eclipse.equinox.p2.console 2 0 2016-04-05 14:09:55.273
+!MESSAGE Missing imported package org.eclipse.equinox.internal.provisional.p2.director_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.console 2 0 2016-04-05 14:09:55.274
+!MESSAGE Missing imported package org.eclipse.equinox.p2.planner_[2.0.0,3.0.0).
+!SUBENTRY 2 org.eclipse.equinox.p2.console 2 0 2016-04-05 14:09:55.275
+!MESSAGE Missing required capability Require-Capability: osgi.ee; filter="(|(&(osgi.ee=JavaSE)(version=1.5))(&(osgi.ee=JavaSE)(version=1.4))(&(osgi.ee=CDC/Foundation)(version=1.1)))".
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-05 14:09:55.276
+!MESSAGE Bundle org.eclipse.equinox.p2.director_2.3.1.v20140221-1852 [50] was not resolved.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 2 0 2016-04-05 14:09:55.276
+!MESSAGE Missing imported package org.eclipse.equinox.internal.provisional.configurator_0.0.0.
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-05 14:09:55.277
+!MESSAGE Bundle org.eclipse.equinox.p2.director.app_1.0.300.v20130819-1621 [51] was not resolved.
+!SUBENTRY 2 org.eclipse.equinox.p2.director.app 2 0 2016-04-05 14:09:55.278
+!MESSAGE Missing imported package org.eclipse.equinox.internal.p2.director_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.director.app 2 0 2016-04-05 14:09:55.278
+!MESSAGE Missing imported package org.eclipse.equinox.internal.provisional.p2.director_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.director.app 2 0 2016-04-05 14:09:55.279
+!MESSAGE Missing imported package org.eclipse.equinox.p2.planner_[2.0.0,3.0.0).
+!SUBENTRY 2 org.eclipse.equinox.p2.director.app 2 0 2016-04-05 14:09:55.280
+!MESSAGE Missing required capability Require-Capability: osgi.ee; filter="(|(&(osgi.ee=JavaSE)(version=1.5))(&(osgi.ee=JavaSE)(version=1.4))(&(osgi.ee=CDC/Foundation)(version=1.1)))".
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-05 14:09:55.280
+!MESSAGE Bundle org.eclipse.equinox.p2.directorywatcher_1.0.300.v20130327-2119 [52] was not resolved.
+!SUBENTRY 2 org.eclipse.equinox.p2.directorywatcher 2 0 2016-04-05 14:09:55.281
+!MESSAGE Missing imported package org.eclipse.equinox.internal.p2.update_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.directorywatcher 2 0 2016-04-05 14:09:55.282
+!MESSAGE Missing imported package org.eclipse.equinox.p2.publisher.eclipse_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.directorywatcher 2 0 2016-04-05 14:09:55.283
+!MESSAGE Missing required capability Require-Capability: osgi.ee; filter="(|(&(osgi.ee=JavaSE)(version=1.5))(&(osgi.ee=JavaSE)(version=1.4))(&(osgi.ee=CDC/Foundation)(version=1.1)))".
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-05 14:09:55.283
+!MESSAGE Bundle org.eclipse.equinox.p2.extensionlocation_1.2.100.v20130327-2119 [56] was not resolved.
+!SUBENTRY 2 org.eclipse.equinox.p2.extensionlocation 2 0 2016-04-05 14:09:55.284
+!MESSAGE Missing imported package org.eclipse.equinox.internal.p2.publisher.eclipse_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.extensionlocation 2 0 2016-04-05 14:09:55.285
+!MESSAGE Missing imported package org.eclipse.equinox.internal.p2.touchpoint.eclipse_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.extensionlocation 2 0 2016-04-05 14:09:55.285
+!MESSAGE Missing imported package org.eclipse.equinox.internal.p2.update_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.extensionlocation 2 0 2016-04-05 14:09:55.286
+!MESSAGE Missing imported package org.eclipse.equinox.internal.provisional.p2.directorywatcher_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.extensionlocation 2 0 2016-04-05 14:09:55.287
+!MESSAGE Missing imported package org.eclipse.equinox.p2.publisher.eclipse_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.extensionlocation 2 0 2016-04-05 14:09:55.288
+!MESSAGE Missing required capability Require-Capability: osgi.ee; filter="(|(&(osgi.ee=JavaSE)(version=1.5))(&(osgi.ee=JavaSE)(version=1.4))(&(osgi.ee=CDC/Foundation)(version=1.1)))".
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-05 14:09:55.288
+!MESSAGE Bundle org.eclipse.equinox.p2.operations_2.3.0.v20130711-1809 [61] was not resolved.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 2 0 2016-04-05 14:09:55.289
+!MESSAGE Missing imported package org.eclipse.equinox.internal.p2.director_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 2 0 2016-04-05 14:09:55.290
+!MESSAGE Missing imported package org.eclipse.equinox.internal.provisional.configurator_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 2 0 2016-04-05 14:09:55.290
+!MESSAGE Missing imported package org.eclipse.equinox.internal.provisional.p2.director_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 2 0 2016-04-05 14:09:55.291
+!MESSAGE Missing imported package org.eclipse.equinox.p2.planner_[2.0.0,3.0.0).
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-05 14:09:55.292
+!MESSAGE Bundle org.eclipse.equinox.p2.publisher.eclipse_1.1.200.v20130516-1953 [63] was not resolved.
+!SUBENTRY 2 org.eclipse.equinox.p2.publisher.eclipse 2 0 2016-04-05 14:09:55.293
+!MESSAGE Missing imported package org.eclipse.equinox.simpleconfigurator.manipulator_[2.0.0,3.0.0).
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-05 14:09:55.293
+!MESSAGE Bundle org.eclipse.equinox.p2.reconciler.dropins_1.1.200.v20130419-1850 [64] was not resolved.
+!SUBENTRY 2 org.eclipse.equinox.p2.reconciler.dropins 2 0 2016-04-05 14:09:55.294
+!MESSAGE Missing required bundle org.eclipse.equinox.p2.touchpoint.eclipse_1.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.reconciler.dropins 2 0 2016-04-05 14:09:55.295
+!MESSAGE Missing imported package org.eclipse.equinox.internal.p2.director_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.reconciler.dropins 2 0 2016-04-05 14:09:55.296
+!MESSAGE Missing imported package org.eclipse.equinox.internal.p2.extensionlocation_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.reconciler.dropins 2 0 2016-04-05 14:09:55.296
+!MESSAGE Missing imported package org.eclipse.equinox.internal.p2.update_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.reconciler.dropins 2 0 2016-04-05 14:09:55.297
+!MESSAGE Missing imported package org.eclipse.equinox.internal.provisional.configurator_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.reconciler.dropins 2 0 2016-04-05 14:09:55.298
+!MESSAGE Missing imported package org.eclipse.equinox.internal.provisional.p2.directorywatcher_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.reconciler.dropins 2 0 2016-04-05 14:09:55.298
+!MESSAGE Missing imported package org.eclipse.equinox.p2.planner_[2.0.0,3.0.0).
+!SUBENTRY 2 org.eclipse.equinox.p2.reconciler.dropins 2 0 2016-04-05 14:09:55.299
+!MESSAGE Missing required capability Require-Capability: osgi.ee; filter="(|(&(osgi.ee=JavaSE)(version=1.5))(&(osgi.ee=JavaSE)(version=1.4))(&(osgi.ee=CDC/Foundation)(version=1.1)))".
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-05 14:09:55.300
+!MESSAGE Bundle org.eclipse.equinox.p2.repository.tools_2.1.0.v20130327-2119 [66] was not resolved.
+!SUBENTRY 2 org.eclipse.equinox.p2.repository.tools 2 0 2016-04-05 14:09:55.301
+!MESSAGE Missing imported package org.eclipse.equinox.internal.p2.director_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.repository.tools 2 0 2016-04-05 14:09:55.301
+!MESSAGE Missing imported package org.eclipse.equinox.internal.p2.publisher.eclipse_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.repository.tools 2 0 2016-04-05 14:09:55.302
+!MESSAGE Missing imported package org.eclipse.equinox.internal.provisional.p2.director_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.repository.tools 2 0 2016-04-05 14:09:55.303
+!MESSAGE Missing imported package org.eclipse.equinox.p2.planner_[2.0.0,3.0.0).
+!SUBENTRY 2 org.eclipse.equinox.p2.repository.tools 2 0 2016-04-05 14:09:55.303
+!MESSAGE Missing imported package org.eclipse.equinox.p2.publisher.eclipse_0.0.0.
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-05 14:09:55.304
+!MESSAGE Bundle org.eclipse.equinox.p2.touchpoint.eclipse_2.1.200.v20130327-2119 [67] was not resolved.
+!SUBENTRY 2 org.eclipse.equinox.p2.touchpoint.eclipse 2 0 2016-04-05 14:09:55.305
+!MESSAGE Missing imported package org.eclipse.equinox.internal.simpleconfigurator.manipulator_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.touchpoint.eclipse 2 0 2016-04-05 14:09:55.307
+!MESSAGE Missing imported package org.eclipse.equinox.p2.planner_[2.0.0,3.0.0).
+!SUBENTRY 2 org.eclipse.equinox.p2.touchpoint.eclipse 2 0 2016-04-05 14:09:55.308
+!MESSAGE Missing optionally imported package org.eclipse.equinox.p2.publisher.eclipse_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.touchpoint.eclipse 2 0 2016-04-05 14:09:55.309
+!MESSAGE Missing imported package org.eclipse.equinox.simpleconfigurator.manipulator_[2.0.0,3.0.0).
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-05 14:09:55.310
+!MESSAGE Bundle org.eclipse.equinox.p2.ui_2.3.0.v20131209-2052 [70] was not resolved.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui 2 0 2016-04-05 14:09:55.311
+!MESSAGE Missing required bundle org.eclipse.ui_3.6.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui 2 0 2016-04-05 14:09:55.312
+!MESSAGE Missing required bundle org.eclipse.equinox.security.ui_[1.0.0,2.0.0).
+!SUBENTRY 2 org.eclipse.equinox.p2.ui 2 0 2016-04-05 14:09:55.313
+!MESSAGE Missing imported package com.ibm.icu.text_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui 2 0 2016-04-05 14:09:55.314
+!MESSAGE Missing imported package org.eclipse.equinox.internal.p2.director_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui 2 0 2016-04-05 14:09:55.315
+!MESSAGE Missing imported package org.eclipse.equinox.internal.provisional.configurator_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui 2 0 2016-04-05 14:09:55.316
+!MESSAGE Missing imported package org.eclipse.equinox.p2.operations_[2.0.0,3.0.0).
+!SUBENTRY 2 org.eclipse.equinox.p2.ui 2 0 2016-04-05 14:09:55.317
+!MESSAGE Missing imported package org.eclipse.equinox.p2.planner_[2.0.0,3.0.0).
+!SUBENTRY 2 org.eclipse.equinox.p2.ui 2 0 2016-04-05 14:09:55.317
+!MESSAGE Missing required capability Require-Capability: osgi.ee; filter="(|(&(osgi.ee=JavaSE)(version=1.5))(&(osgi.ee=JavaSE)(version=1.4))(&(osgi.ee=CDC/Foundation)(version=1.1)))".
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-05 14:09:55.318
+!MESSAGE Bundle org.eclipse.equinox.p2.ui.discovery_1.0.0.v20130502-0334 [71] was not resolved.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.discovery 2 0 2016-04-05 14:09:55.319
+!MESSAGE Missing required bundle org.eclipse.ui_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.discovery 2 0 2016-04-05 14:09:55.319
+!MESSAGE Missing required bundle org.eclipse.ui.browser_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.discovery 2 0 2016-04-05 14:09:55.320
+!MESSAGE Missing required bundle org.eclipse.equinox.p2.ui_2.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.discovery 2 0 2016-04-05 14:09:55.321
+!MESSAGE Missing required bundle org.eclipse.equinox.p2.operations_[2.0.0,3.0.0).
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.discovery 2 0 2016-04-05 14:09:55.323
+!MESSAGE Missing imported package com.ibm.icu.text_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.discovery 2 0 2016-04-05 14:09:55.323
+!MESSAGE Missing imported package org.eclipse.equinox.p2.planner_2.0.0.
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-05 14:09:55.324
+!MESSAGE Bundle org.eclipse.equinox.p2.ui.importexport_1.1.0.v20131209-2052 [72] was not resolved.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.importexport 2 0 2016-04-05 14:09:55.325
+!MESSAGE Missing required bundle org.eclipse.ui_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.importexport 2 0 2016-04-05 14:09:55.325
+!MESSAGE Missing required bundle org.eclipse.equinox.p2.ui_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.importexport 2 0 2016-04-05 14:09:55.326
+!MESSAGE Missing required bundle org.eclipse.equinox.p2.extensionlocation_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.importexport 2 0 2016-04-05 14:09:55.327
+!MESSAGE Missing required bundle org.eclipse.ui.forms_3.5.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.importexport 2 0 2016-04-05 14:09:55.328
+!MESSAGE Missing imported package org.eclipse.equinox.internal.p2.ui_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.importexport 2 0 2016-04-05 14:09:55.328
+!MESSAGE Missing imported package org.eclipse.equinox.internal.p2.ui.dialogs_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.importexport 2 0 2016-04-05 14:09:55.329
+!MESSAGE Missing imported package org.eclipse.equinox.internal.p2.ui.model_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.importexport 2 0 2016-04-05 14:09:55.330
+!MESSAGE Missing imported package org.eclipse.equinox.internal.p2.ui.viewers_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.importexport 2 0 2016-04-05 14:09:55.331
+!MESSAGE Missing imported package org.eclipse.equinox.internal.provisional.p2.director_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.importexport 2 0 2016-04-05 14:09:55.331
+!MESSAGE Missing imported package org.eclipse.equinox.p2.operations_2.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.importexport 2 0 2016-04-05 14:09:55.332
+!MESSAGE Missing imported package org.eclipse.equinox.p2.planner_2.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.importexport 2 0 2016-04-05 14:09:55.333
+!MESSAGE Missing required capability Require-Capability: osgi.ee; filter="(|(&(osgi.ee=JavaSE)(version=1.5))(&(osgi.ee=JavaSE)(version=1.4))(&(osgi.ee=CDC/Foundation)(version=1.1)))".
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-05 14:09:55.333
+!MESSAGE Bundle org.eclipse.equinox.p2.ui.sdk_1.0.300.v20130503-1750 [73] was not resolved.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.sdk 2 0 2016-04-05 14:09:55.334
+!MESSAGE Missing required bundle org.eclipse.ui_3.6.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.sdk 2 0 2016-04-05 14:09:55.335
+!MESSAGE Missing required bundle org.eclipse.equinox.p2.ui_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.sdk 2 0 2016-04-05 14:09:55.336
+!MESSAGE Missing optionally imported package org.eclipse.compare_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.sdk 2 0 2016-04-05 14:09:55.337
+!MESSAGE Missing optionally imported package org.eclipse.compare.structuremergeviewer_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.sdk 2 0 2016-04-05 14:09:55.338
+!MESSAGE Missing imported package org.eclipse.equinox.p2.operations_[2.0.0,3.0.0).
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.sdk 2 0 2016-04-05 14:09:55.339
+!MESSAGE Missing imported package org.eclipse.equinox.p2.planner_2.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.sdk 2 0 2016-04-05 14:09:55.340
+!MESSAGE Missing required capability Require-Capability: osgi.ee; filter="(|(&(osgi.ee=JavaSE)(version=1.5))(&(osgi.ee=JavaSE)(version=1.4))(&(osgi.ee=CDC/Foundation)(version=1.1)))".
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-05 14:09:55.341
+!MESSAGE Bundle org.eclipse.equinox.p2.ui.sdk.scheduler_1.2.0.v20140122-1840 [74] was not resolved.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.sdk.scheduler 2 0 2016-04-05 14:09:55.342
+!MESSAGE Missing required bundle org.eclipse.ui_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.sdk.scheduler 2 0 2016-04-05 14:09:55.343
+!MESSAGE Missing required bundle org.eclipse.equinox.p2.updatechecker_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.sdk.scheduler 2 0 2016-04-05 14:09:55.344
+!MESSAGE Missing required bundle org.eclipse.equinox.p2.ui_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.sdk.scheduler 2 0 2016-04-05 14:09:55.345
+!MESSAGE Missing imported package com.ibm.icu.util_4.0.1.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.sdk.scheduler 2 0 2016-04-05 14:09:55.346
+!MESSAGE Missing imported package org.eclipse.equinox.internal.p2.touchpoint.eclipse_2.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.sdk.scheduler 2 0 2016-04-05 14:09:55.348
+!MESSAGE Missing imported package org.eclipse.equinox.internal.p2.ui_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.sdk.scheduler 2 0 2016-04-05 14:09:55.349
+!MESSAGE Missing imported package org.eclipse.equinox.internal.p2.ui.actions_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.sdk.scheduler 2 0 2016-04-05 14:09:55.350
+!MESSAGE Missing imported package org.eclipse.equinox.internal.p2.ui.query_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.sdk.scheduler 2 0 2016-04-05 14:09:55.351
+!MESSAGE Missing imported package org.eclipse.equinox.internal.provisional.p2.updatechecker_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.sdk.scheduler 2 0 2016-04-05 14:09:55.352
+!MESSAGE Missing imported package org.eclipse.equinox.p2.operations_[2.0.0,3.0.0).
+!SUBENTRY 2 org.eclipse.equinox.p2.ui.sdk.scheduler 2 0 2016-04-05 14:09:55.354
+!MESSAGE Missing imported package org.eclipse.equinox.p2.ui_[2.0.0,3.0.0).
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-05 14:09:55.355
+!MESSAGE Bundle org.eclipse.equinox.p2.updatechecker_1.1.200.v20130327-2119 [75] was not resolved.
+!SUBENTRY 2 org.eclipse.equinox.p2.updatechecker 2 0 2016-04-05 14:09:55.356
+!MESSAGE Missing imported package org.eclipse.equinox.p2.planner_[2.0.0,3.0.0).
+!SUBENTRY 2 org.eclipse.equinox.p2.updatechecker 2 0 2016-04-05 14:09:55.357
+!MESSAGE Missing required capability Require-Capability: osgi.ee; filter="(|(&(osgi.ee=JavaSE)(version=1.5))(&(osgi.ee=JavaSE)(version=1.4))(&(osgi.ee=CDC/Foundation)(version=1.1)))".
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-05 14:09:55.357
+!MESSAGE Bundle org.eclipse.equinox.p2.updatesite_1.0.400.v20130515-2028 [76] was not resolved.
+!SUBENTRY 2 org.eclipse.equinox.p2.updatesite 2 0 2016-04-05 14:09:55.358
+!MESSAGE Missing imported package org.eclipse.equinox.internal.p2.publisher.eclipse_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.updatesite 2 0 2016-04-05 14:09:55.359
+!MESSAGE Missing imported package org.eclipse.equinox.p2.publisher.eclipse_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.p2.updatesite 2 0 2016-04-05 14:09:55.361
+!MESSAGE Missing required capability Require-Capability: osgi.ee; filter="(|(&(osgi.ee=JavaSE)(version=1.5))(&(osgi.ee=JavaSE)(version=1.4))(&(osgi.ee=CDC/Foundation)(version=1.1)))".
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-05 14:09:55.362
+!MESSAGE Bundle org.eclipse.equinox.security.ui_1.1.100.v20130327-1442 [80] was not resolved.
+!SUBENTRY 2 org.eclipse.equinox.security.ui 2 0 2016-04-05 14:09:55.363
+!MESSAGE Missing required bundle org.eclipse.ui_[3.4.0,4.0.0).
+!SUBENTRY 1 org.eclipse.osgi 2 0 2016-04-05 14:09:55.363
+!MESSAGE Bundle org.eclipse.equinox.simpleconfigurator.manipulator_2.0.0.v20130327-2119 [82] was not resolved.
+!SUBENTRY 2 org.eclipse.equinox.simpleconfigurator.manipulator 2 0 2016-04-05 14:09:55.364
+!MESSAGE Missing imported package org.eclipse.equinox.internal.simpleconfigurator_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.simpleconfigurator.manipulator 2 0 2016-04-05 14:09:55.365
+!MESSAGE Missing imported package org.eclipse.equinox.internal.simpleconfigurator.utils_0.0.0.
+!SUBENTRY 2 org.eclipse.equinox.simpleconfigurator.manipulator 2 0 2016-04-05 14:09:55.365
+!MESSAGE Missing required capability Require-Capability: osgi.ee; filter="(|(&(osgi.ee=CDC/Foundation)(version=1.1))(&(osgi.ee=JavaSE)(version=1.4)))".

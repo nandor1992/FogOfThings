@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Test1
+Bundle-SymbolicName: osgi.rest.test1
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: osgi.rest.test1.Activator
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Import-Package: javax.ws.rs,
+ org.osgi.framework;version="1.3.0"
+Bundle-ActivationPolicy: lazy

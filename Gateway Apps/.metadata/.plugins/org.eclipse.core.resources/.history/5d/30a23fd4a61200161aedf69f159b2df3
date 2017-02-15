@@ -1,0 +1,115 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package org.karaf.event_create;
+
+import java.sql.Timestamp;
+import java.util.Date;
+import java.util.Dictionary;
+import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.BundleException;
+import org.osgi.framework.ServiceEvent;
+import org.osgi.framework.ServiceListener;
+import org.osgi.framework.ServiceReference;
+import org.osgi.service.event.Event;
+import org.osgi.service.event.EventAdmin;
+
+public class Activator extends Thread implements BundleActivator {
+
+	private BundleContext bcontext = null;
+	ServiceReference sr = null;
+	EventAdmin ea = null;
+	Event event = null;
+	boolean sending = true;
+	private Map data;
+	private HashMap data2;
+
+	public void start(BundleContext bc) throws Exception {
+		this.bcontext = bc;
+
+		// Retrieving the Event Admin service from the OSGi framework
+		sr = bc.getServiceReference(EventAdmin.class.getName());
+		if (sr == null) {
+			throw new Exception("Failed to obtain EventAdmin service reference!");
+		}
+		ea = (EventAdmin) bc.getService(sr);
+		if (ea == null) {
+			throw new Exception("Failed to obtain EventAdmin service object!");
+		}
+		new Thread() {
+
+			public void run() {
+				try {
+					postEvent();
+				} catch (InterruptedException ex) {
+					Logger.getLogger(Activator.class.getName()).log(Level.SEVERE, null, ex);
+				}
+			}
+		}.start();
+
+		new Thread() {
+
+			public void run() {
+				try {
+					sendEvent();
+				} catch (InterruptedException ex) {
+					Logger.getLogger(Activator.class.getName()).log(Level.SEVERE, null, ex);
+				}
+			}
+		}.start();
+
+	}
+
+	public void stop(BundleContext bc) throws Exception {
+		bc.ungetService(sr);
+		sending = false;
+	}
+
+	private static final String POST_EVENT_QUEUE = "JTUNSIE/post";
+
+	private void postEvent() throws InterruptedException {
+		Dictionary props = new Hashtable();
+		int i = 0;
+		while (sending) {
+			Date d = new Date();
+			props.put("property", "" + i++ + " : " + d);
+			Event event = new Event(POST_EVENT_QUEUE, props);
+			ea.postEvent(event);
+			Thread.sleep(20 * 1000);
+		}
+	}
+
+	private static final String SEND_EVENT_QUEUE = "JTUNSIE/send";
+
+	private void sendEvent() throws InterruptedException {
+		Dictionary props = new Hashtable();
+		int i = 0;
+		while (sending) {
+			Date d = new Date();
+			props.put("property","Hello World Send!");
+			Event event = new Event(SEND_EVENT_QUEUE, props);
+			ea.sendEvent(event);
+			Thread.sleep(20 * 1000);
+		}
+	}
+}

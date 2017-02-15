@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;printfloat.h&apos; to &apos;NandorLightToSerial&apos;&#x0D;&#x0A;- Original project: &apos;NandorRadioLightSense&apos;&#x0D;&#x0A;- Destination element: &apos;NandorLightToSerial&apos;&#x0D;&#x0A;- Original element: &apos;printfloat.h&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move file" element1="printfloat.h" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1456929688126" target="/NandorLightToSerial" units="0" version="1.0"/>
+</session>

@@ -1,0 +1,13 @@
+package org.karaf.event_create;
+
+import org.osgi.service.event.Event;
+import org.osgi.service.event.EventHandler;
+
+public class EventToAmqp implements EventHandler{
+
+	public void handleEvent(Event event) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
