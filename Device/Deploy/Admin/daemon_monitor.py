@@ -124,6 +124,7 @@ class admin():
         print(comm)
     
     def resolveQue(self,queue):
+        #ToDo - Make this work dynamically
         drivers=['ardu_blue','ardu_rf24','ardu_xbee','atmega_rfa1']
         cloud=['mqtt_conn1','mqtt_conn2']
         if queue=="karaf_app":
