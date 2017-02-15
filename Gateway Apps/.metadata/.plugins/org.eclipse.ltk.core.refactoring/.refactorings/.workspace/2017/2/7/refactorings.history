@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;Copy of EventAdmin_to_amqp&apos; to &apos;Monitoring_Bundle&apos;&#x0D;&#x0A;- Original element: &apos;Copy of EventAdmin_to_amqp&apos;&#x0D;&#x0A;- Renamed element: &apos;Copy of EventAdmin_to_amqp&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;Copy of EventAdmin_to_amqp&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=Copy of EventAdmin_to_amqp" name="Monitoring_Bundle" references="true" stamp="1487082562824" version="1.0"/>
+</session>
