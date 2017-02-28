@@ -1,0 +1,259 @@
+DEBUG:root:Awaiting Requests!
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:{"device":{"Test_Dev":"1","test":"1"},"cloud":{},"region":{"appTest":"1"},"resource":{},"apps":{}}
+DEBUG:root:Results:
+DEBUG:root:{'apps': {}, 'federation': {}, 'cloud': {}}
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:{"device":{"Test_Dev":"1","test":"1"},"cloud":{},"region":{"appTest":"1"},"resource":{},"apps":{}}
+DEBUG:root:Results:
+DEBUG:root:{'apps': {}, 'federation': {}, 'cloud': {}}
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:{"device":{"Test_Dev":"1","test":"1"},"cloud":{},"region":{"appTest":"1"},"resource":{},"apps":{}}
+DEBUG:root:Results:
+DEBUG:root:{'apps': {}, 'federation': {}, 'cloud': {}}
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:{"device":{"Test_Dev":"1","test":"1"},"cloud":{},"region":{"appTest":"1"},"resource":{},"apps":{}}
+DEBUG:root:Results:
+DEBUG:root:{'apps': {}, 'federation': {}, 'cloud': {}}
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:{"device":{"Test_Dev":"1","test":"1"},"cloud":{},"region":{"appTest":"1"},"resource":{},"apps":{}}
+DEBUG:root:Results:
+DEBUG:root:{'apps': {}, 'federation': {}, 'cloud': {}}
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:{"device":{"Test_Dev":"1","test":"1"},"cloud":{},"region":{"appTest":"1"},"resource":{},"apps":{}}
+DEBUG:root:Results:
+DEBUG:root:{'apps': {}, 'federation': {}, 'cloud': {}}
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:{"device":{"Test_Dev":"1","test":"1"},"cloud":{},"region":{"appTest":"1"},"resource":{},"apps":{}}
+DEBUG:root:Results:
+DEBUG:root:{'apps': {}, 'federation': {}, 'cloud': {}}
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:{"device":{"Test_Dev":"1","test":"1"},"cloud":{},"region":{"appTest":"1"},"resource":{},"apps":{}}
+DEBUG:root:Results:
+DEBUG:root:{'apps': {}, 'federation': {}, 'cloud': {}}
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:{"device":{"Test_Dev":"1","test":"1"},"cloud":{},"region":{"appTest":"1"},"resource":{},"apps":{}}
+DEBUG:root:Results:
+DEBUG:root:{'apps': {}, 'federation': {}, 'cloud': {}}
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:{"device":{"Test_Dev":"1","test":"1"},"cloud":{},"region":{"appTest":"1"},"resource":{},"apps":{}}
+DEBUG:root:Results:
+DEBUG:root:{'apps': {}, 'federation': {}, 'cloud': {}}
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:{"device":{"Test_Dev":"1","test":"1"},"cloud":{},"region":{"appTest":"1"},"resource":{},"apps":{}}
+DEBUG:root:Results:
+DEBUG:root:{'apps': {}, 'federation': {}, 'cloud': {}}
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:{"device":{"Test_Dev":"1","test":"1"},"cloud":{},"region":{"appTest":"1"},"resource":{},"apps":{}}
+DEBUG:root:Results:
+DEBUG:root:{'apps': {}, 'federation': {}, 'cloud': {}}
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:{"device":{"Test_Dev":"1","test":"1"},"cloud":{},"region":{"appTest":"1"},"resource":{},"apps":{}}
+DEBUG:root:Results:
+DEBUG:root:{'apps': {}, 'federation': {}, 'cloud': {}}
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:{"device":{"Test_Dev":"1","test":"1"},"cloud":{},"region":{"appTest":"1"},"resource":{},"apps":{}}
+DEBUG:root:Results:
+DEBUG:root:{'apps': {}, 'federation': {}, 'cloud': {}}
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:{"device":{"Test_Dev":"1","test":"1"},"cloud":{},"region":{"appTest":"1"},"resource":{},"apps":{}}
+DEBUG:root:Results:
+DEBUG:root:{'apps': {}, 'federation': {}, 'cloud': {}}
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:{"device":{"Test_Dev":"1","test":"1"},"cloud":{},"region":{"appTest":"1"},"resource":{},"apps":{}}
+DEBUG:root:Results:
+DEBUG:root:{'apps': {}, 'federation': {}, 'cloud': {}}
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:{"device":{"Test_Dev":"1","test":"1"},"cloud":{},"region":{"appTest":"1"},"resource":{},"apps":{}}
+DEBUG:root:Results:
+DEBUG:root:{'apps': {}, 'federation': {}, 'cloud': {}}
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:{"device":{"Test_Dev":"1","test":"1"},"cloud":{},"region":{"appTest":"1"},"resource":{},"apps":{}}
+DEBUG:root:Results:
+DEBUG:root:{'apps': {}, 'federation': {}, 'cloud': {}}
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:{"device":{"Test_Dev":"1","test":"1"},"cloud":{},"region":{"appTest":"1"},"resource":{},"apps":{}}
+DEBUG:root:Results:
+DEBUG:root:{'apps': {}, 'federation': {}, 'cloud': {}}
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:{"device":{"Test_Dev":"1","test":"1"},"cloud":{},"region":{"appTest":"1"},"resource":{},"apps":{}}
+DEBUG:root:Results:
+DEBUG:root:{'apps': {}, 'federation': {}, 'cloud': {}}
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:{"device":{"Test_Dev":"1","test":"1"},"cloud":{},"region":{"appTest":"1"},"resource":{},"apps":{}}
+DEBUG:root:Results:
+DEBUG:root:{'apps': {}, 'federation': {}, 'cloud': {}}
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:{"device":{"Test_Dev":"1","test":"1"},"cloud":{},"region":{"appTest":"1"},"resource":{},"apps":{}}
+DEBUG:root:Results:
+DEBUG:root:{'apps': {}, 'federation': {}, 'cloud': {}}
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:{"device":{"Test_Dev":"1","test":"1"},"cloud":{},"region":{"appTest":"1"},"resource":{},"apps":{}}
+DEBUG:root:Results:
+DEBUG:root:{'apps': {}, 'federation': {}, 'cloud': {}}
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:{"device":{"Test_Dev":"1","test":"1"},"cloud":{},"region":{"appTest":"1"},"resource":{},"apps":{}}
+DEBUG:root:Results:
+DEBUG:root:{'apps': {}, 'federation': {}, 'cloud': {}}
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:{"device":{"Test_Dev":"1","test":"1"},"cloud":{},"region":{"appTest":"1"},"resource":{},"apps":{}}
+DEBUG:root:Results:
+DEBUG:root:{'apps': {}, 'federation': {}, 'cloud': {}}
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:{"device":{"Test_Dev":"1","test":"1"},"cloud":{},"region":{"appTest":"1"},"resource":{},"apps":{}}
+DEBUG:root:Results:
+DEBUG:root:{'apps': {}, 'federation': {}, 'cloud': {}}
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:{"device":{"Test_Dev":"1","test":"1"},"cloud":{},"region":{"appTest":"1"},"resource":{},"apps":{}}
+DEBUG:root:Results:
+DEBUG:root:{'apps': {}, 'federation': {}, 'cloud': {}}
+DEBUG:root:None
+DEBUG:root:None
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Data from Monitor-----
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Data from Monitor-----

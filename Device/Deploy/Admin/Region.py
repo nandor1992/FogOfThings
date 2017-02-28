@@ -271,7 +271,10 @@ class Region:
             return(msg)            
         else:
             return "Error"
-        
+
+    def checkDevsApps(self,dev):
+        return ['test1','test2']
+    
 if __name__ == "__main__":
     reg=Region("admin","hunter","test","admin","hunter")
     #print(reg.getDevsOnWan("B8:27:EB"))

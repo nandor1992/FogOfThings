@@ -29,16 +29,24 @@ class admin():
 #class admin(Daemon):
 
     def on_request(self,ch, method, properties, body):
-        monitor=properties.headers.get("monitor")
-        if (monitor!=None):
-            logging.debug("-----Received Data from Monitor-----")
-            response = self.resolve(body)
-            logging.debug(self.getQueueMonitor())
-            logging.debug(response)
-        else:
-            logging.debug("Missing component")
+        logging.debug("-----Received Data from Monitor-----")
+        response = self.resolveKaraf(ast.literal_eval(body))
+        logging.debug(self.getQueueMonitor())
+        logging.debug(response)
         ch.basic_ack(delivery_tag = method.delivery_tag)
 
+
+    def resolveKaraf(self,body):
+        for dev in body['device']:
+            apps=self.reg.checkDevsApp(dev)
+            if len(apps)!=0:
+                for app in apps:
+                    if app in body['device']:
+                        body['device'][app]=body['device'][app]+1
+                    else:
+                        body['device'][app]=1
+                del(body['device'][dev])
+    
     def getQueueMonitor(self):
         #Initilizing Comm
         comm={}
@@ -59,8 +67,6 @@ class admin():
                     comm[queue][curr_queue]=comm[queue][curr_queue]+cloud[element]
                 else:
                     comm[queue][curr_queue]=cloud[element]
-        print(cloud)
-        print(comm)
         #Device   
         dev=self.reg.getExchangeInfo("device")
         for element in dev:
@@ -71,8 +77,6 @@ class admin():
                     comm[queue][curr_queue]=comm[queue][curr_queue]+dev[element]
                 else:
                     comm[queue][curr_queue]=dev[element]
-        print(dev)
-        print(comm)
 
         #Region
         reg=self.reg.getExchangeInfo("region")
@@ -83,9 +87,7 @@ class admin():
                 if curr_queue in comm[queue]:
                     comm[queue][curr_queue]=comm[queue][curr_queue]+reg[element]
                 else:
-                    comm[queue][curr_queue]=reg[element]
-        print(reg)
-        print(comm)        
+                    comm[queue][curr_queue]=reg[element]        
         #Apps
         apps=self.reg.getExchangeInfo("apps")
         cloud=self.reg.getExchangeInfo("cloud")
@@ -101,8 +103,6 @@ class admin():
                     comm[queue][curr_queue]=comm[queue][curr_queue]+apps[element]
                 else:
                     comm[queue][curr_queue]=apps[element]
-        print(apps)
-        print(comm)
         #Do federation Next
         #Federation Me
         fed=self.reg.getExchangeInfo("federation."+self.controller_name)
@@ -119,9 +119,8 @@ class admin():
                     comm[queue][curr_queue]=comm[queue][curr_queue]+fed[element]
                 else:
                     comm[queue][curr_queue]=fed[element]
-        print(fed)
-        print("Results:")
-        print(comm)
+        logging.debug("Results:")
+        logging.debug(comm)
     
     def resolveQue(self,queue):
         #ToDo - Make this work dynamically
@@ -206,15 +205,15 @@ if __name__ == "__main_2_":
             sys.exit(2)
             sys.exit(0)
     else:
-        print( "usage: %s start|stop|restart|status" % sys.argv[0])
+        logging.debug( "usage: %s start|stop|restart|status" % sys.argv[0])
         sys.exit(2)
 
 if __name__ == "__main__":
     admin=admin()
     try:
-        admin.init()
-        admin.getQueueMonitor()
-        #admin.run()
+        #admin.init()
+        #admin.getQueueMonitor()
+        admin.run()
   #  except Exception , e:
        # logging.debug(e)
        # admin.shutdown()
