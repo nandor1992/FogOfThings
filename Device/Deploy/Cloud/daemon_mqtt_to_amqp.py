@@ -129,8 +129,10 @@ class down(Daemon):
                 while retr==False:
                     retr=self.publish('app',payload,properties_m)
             #channel.basic_publish(exchange='',routing_key='test_queue',body=msg.payload)
+       # except KeyboardInterrupt:
+           # logging.debug("Daah")
         except (ValueError,TypeError) as e:
-            logging.debug("Value Erro, probs something stupid happened")
+            logging.debug("Value Erro, probs something stupid happened"+str(e))
 
     def publish(self,route,body,properties):
         try:

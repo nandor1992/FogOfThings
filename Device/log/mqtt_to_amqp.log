@@ -5640,3 +5640,2868 @@ DEBUG:root:{u'app': u'Test_App1', u'test2': u'data', 'cloud': 'mqtt_conn1'}
 DEBUG:root:"data"
 DEBUG:root:Other message
 DEBUG:root:Driver Stopped
+DEBUG:root:Driver Restarted
+DEBUG:root:Starting New Session at 10:09:48 02/28/17 UTC
+DEBUG:root:Connected with result code 0
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"random stuff"
+DEBUG:root:("app":"Test_App1","payload":"random stuff")
+DEBUG:root:Value Erro, probs something stupid happened
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"random stuff"
+DEBUG:root:("app":"Test_App1","payload":"random stuff")
+DEBUG:root:Value Erro, probs something stupid happened
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"random stuff"
+DEBUG:root:("app":"Test_App1","payload":"random stuff")
+DEBUG:root:Value Erro, probs something stupid happened
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"random stuff"
+DEBUG:root:{"app":"Test_App1","payload":"random stuff"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "random stuff"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"random stuff"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"random stuff"
+DEBUG:root:{"app":"Test_App1","payload":"random stuff"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "random stuff"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"random stuff"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"random stuff"
+DEBUG:root:{"app":"Test_App1","payload":"random stuff"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "random stuff"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"random stuff"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"random stuff"
+DEBUG:root:{"app":"Test_App1","payload":"random stuff"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "random stuff"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"random stuff"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"random stuff","device":"none"
+DEBUG:root:{"app":"Test_App1","payload":"random stuff","device":"none"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "device": "none", 
+ "payload": "random stuff"
+}
+DEBUG:root:{u'device': u'none', u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"random stuff"
+DEBUG:root:Device message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"random stuff"
+DEBUG:root:{"app":"Test_App1","payload":"random stuff"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "random stuff"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"random stuff"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"device 1"
+DEBUG:root:{"app":"Test_App1","payload":"device 1"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "device 1"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"device 1"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"device 1"
+DEBUG:root:{"app":"Test_App1","payload":"device 1"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "device 1"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"device 1"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"device:1"
+DEBUG:root:{"app":"Test_App1","payload":"device:1"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "device:1"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"device:1"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"device:0"
+DEBUG:root:{"app":"Test_App1","payload":"device:0"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "device:0"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"device:0"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 {"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle remove Test_App1 "
+DEBUG:root: {"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle remove Test_App1 "}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "bundle remove Test_App1 ", 
+ "source": "test1", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'test1', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"bundle remove Test_App1 "
+DEBUG:root:Other message
+ERROR:pika.adapters.base_connection:Socket Error: 104
+DEBUG:root:Pika Disconnected 11:38:31 02/28/17 UTC, Reconnecting
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 'name':'Client_1','cluster':'Cluster_Cindy_1636','gateway':'Vazquez_7663','request':'bundle remove Test_App1'
+DEBUG:root:{'name':'Client_1','cluster':'Cluster_Cindy_1636','gateway':'Vazquez_7663','request':'bundle remove Test_App1'}
+DEBUG:root:Value Erro, probs something stupid happened
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 'name':'Client_1','cluster':'Cluster_Cindy_1636','gateway':'Vazquez_7663','request':'bundle remove Test_App1'
+DEBUG:root:{'name':'Client_1','cluster':'Cluster_Cindy_1636','gateway':'Vazquez_7663','request':'bundle remove Test_App1'}
+DEBUG:root:Value Erro, probs something stupid happened
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle remove Test_App1"
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle remove Test_App1"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "bundle remove Test_App1", 
+ "source": "test1", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'test1', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"bundle remove Test_App1"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {
+  'name': 'Test_App1',
+  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',
+  'description': 'Full Testing App',
+  'comm': {
+    'cloud': ['mqtt_conn1'],
+    'region':
+      [{'name':'FirstRegion',
+      'key' :'BasicApiKey1'}],
+    'apps':{
+      'required_apps':[],
+      'interrested_apps':[]
+    },
+    'resources':['storage'],
+	'fix_devices':{'ardRF24CNC':['UUID2']}
+    'devices': [
+      {
+        'type': 'ardRF24CNC',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      },
+      {
+        'type': 'AndroidPhone',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      }
+    ]
+  },
+  'migration':{
+    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},
+    'apps':['Test_App2']}
+  },
+  'deployment': {
+    'config': {
+      'file': 'org.karaf.full_test',
+      'custom_params': {
+        'dev_message':'Gcode:G01_X1_Y1_Z1'
+      }
+    },
+    'qos': {
+      'main': 'dev_latency',
+      'secondary': [
+        'cloud_latency,response_time'
+      ]
+    }
+  }
+}"}
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],	'fix_devices':{'ardRF24CNC':['UUID2']}    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"}
+DEBUG:root:Value Erro, probs something stupid happened
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {
+  'name': 'Test_App1',
+  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',
+  'description': 'Full Testing App',
+  'comm': {
+    'cloud': ['mqtt_conn1'],
+    'region':
+      [{'name':'FirstRegion',
+      'key' :'BasicApiKey1'}],
+    'apps':{
+      'required_apps':[],
+      'interrested_apps':[]
+    },
+    'resources':['storage'],
+	'fix_devices':{'ardRF24CNC':['UUID2']}
+    'devices': [
+      {
+        'type': 'ardRF24CNC',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      },
+      {
+        'type': 'AndroidPhone',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      }
+    ]
+  },
+  'migration':{
+    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},
+    'apps':['Test_App2']}
+  },
+  'deployment': {
+    'config': {
+      'file': 'org.karaf.full_test',
+      'custom_params': {
+        'dev_message':'Gcode:G01_X1_Y1_Z1'
+      }
+    },
+    'qos': {
+      'main': 'dev_latency',
+      'secondary': [
+        'cloud_latency,response_time'
+      ]
+    }
+  }
+}"}
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],	'fix_devices':{'ardRF24CNC':['UUID2']}    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"}
+DEBUG:root:Value Erro, probs something stupid happened
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {
+  'name': 'Test_App1',
+  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',
+  'description': 'Full Testing App',
+  'comm': {
+    'cloud': ['mqtt_conn1'],
+    'region':
+      [{'name':'FirstRegion',
+      'key' :'BasicApiKey1'}],
+    'apps':{
+      'required_apps':[],
+      'interrested_apps':[]
+    },
+    'resources':['storage'],
+	'fix_devices':{'ardRF24CNC':['UUID2']}
+    'devices': [
+      {
+        'type': 'ardRF24CNC',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      },
+      {
+        'type': 'AndroidPhone',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      }
+    ]
+  },
+  'migration':{
+    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},
+    'apps':['Test_App2']}
+  },
+  'deployment': {
+    'config': {
+      'file': 'org.karaf.full_test',
+      'custom_params': {
+        'dev_message':'Gcode:G01_X1_Y1_Z1'
+      }
+    },
+    'qos': {
+      'main': 'dev_latency',
+      'secondary': [
+        'cloud_latency,response_time'
+      ]
+    }
+  }
+}"}
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],	'fix_devices':{'ardRF24CNC':['UUID2']}    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"}
+DEBUG:root:Value Erro, probs something stupid happened
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {
+  'name': 'Test_App1',
+  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',
+  'description': 'Full Testing App',
+  'comm': {
+    'cloud': ['mqtt_conn1'],
+    'region':
+      [{'name':'FirstRegion',
+      'key' :'BasicApiKey1'}],
+    'apps':{
+      'required_apps':[],
+      'interrested_apps':[]
+    },
+    'resources':['storage'],
+	'fix_devices':{'ardRF24CNC':['UUID2']}
+    'devices': [
+      {
+        'type': 'ardRF24CNC',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      },
+      {
+        'type': 'AndroidPhone',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      }
+    ]
+  },
+  'migration':{
+    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},
+    'apps':['Test_App2']}
+  },
+  'deployment': {
+    'config': {
+      'file': 'org.karaf.full_test',
+      'custom_params': {
+        'dev_message':'Gcode:G01_X1_Y1_Z1'
+      }
+    },
+    'qos': {
+      'main': 'dev_latency',
+      'secondary': [
+        'cloud_latency,response_time'
+      ]
+    }
+  }
+}"}
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],	'fix_devices':{'ardRF24CNC':['UUID2']}    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"}
+DEBUG:root:Value Erro, probs something stupid happened
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {
+  'name': 'Test_App1',
+  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',
+  'description': 'Full Testing App',
+  'comm': {
+    'cloud': ['mqtt_conn1'],
+    'region':
+      [{'name':'FirstRegion',
+      'key' :'BasicApiKey1'}],
+    'apps':{
+      'required_apps':[],
+      'interrested_apps':[]
+    },
+    'resources':['storage'],
+	'fix_devices':{'ardRF24CNC':['UUID2']}
+    'devices': [
+      {
+        'type': 'ardRF24CNC',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      },
+      {
+        'type': 'AndroidPhone',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      }
+    ]
+  },
+  'migration':{
+    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},
+    'apps':['Test_App2']}
+  },
+  'deployment': {
+    'config': {
+      'file': 'org.karaf.full_test',
+      'custom_params': {
+        'dev_message':'Gcode:G01_X1_Y1_Z1'
+      }
+    },
+    'qos': {
+      'main': 'dev_latency',
+      'secondary': [
+        'cloud_latency,response_time'
+      ]
+    }
+  }
+}"}
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],	'fix_devices':{'ardRF24CNC':['UUID2']}    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"}
+DEBUG:root:Value Erro, probs something stupid happened
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {
+  'name': 'Test_App1',
+  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',
+  'description': 'Full Testing App',
+  'comm': {
+    'cloud': ['mqtt_conn1'],
+    'region':
+      [{'name':'FirstRegion',
+      'key' :'BasicApiKey1'}],
+    'apps':{
+      'required_apps':[],
+      'interrested_apps':[]
+    },
+    'resources':['storage'],
+	'fix_devices':{'ardRF24CNC':['UUID2']}
+    'devices': [
+      {
+        'type': 'ardRF24CNC',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      },
+      {
+        'type': 'AndroidPhone',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      }
+    ]
+  },
+  'migration':{
+    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},
+    'apps':['Test_App2']}
+  },
+  'deployment': {
+    'config': {
+      'file': 'org.karaf.full_test',
+      'custom_params': {
+        'dev_message':'Gcode:G01_X1_Y1_Z1'
+      }
+    },
+    'qos': {
+      'main': 'dev_latency',
+      'secondary': [
+        'cloud_latency,response_time'
+      ]
+    }
+  }
+}"}
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],	'fix_devices':{'ardRF24CNC':['UUID2']}    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"}
+DEBUG:root:Value Erro, probs something stupid happened
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {
+  'name': 'Test_App1',
+  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',
+  'description': 'Full Testing App',
+  'comm': {
+    'cloud': ['mqtt_conn1'],
+    'region':
+      [{'name':'FirstRegion',
+      'key' :'BasicApiKey1'}],
+    'apps':{
+      'required_apps':[],
+      'interrested_apps':[]
+    },
+    'resources':['storage'],
+	'fix_devices':{'ardRF24CNC':['UUID2']}
+    'devices': [
+      {
+        'type': 'ardRF24CNC',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      },
+      {
+        'type': 'AndroidPhone',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      }
+    ]
+  },
+  'migration':{
+    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},
+    'apps':['Test_App2']}
+  },
+  'deployment': {
+    'config': {
+      'file': 'org.karaf.full_test',
+      'custom_params': {
+        'dev_message':'Gcode:G01_X1_Y1_Z1'
+      }
+    },
+    'qos': {
+      'main': 'dev_latency',
+      'secondary': [
+        'cloud_latency,response_time'
+      ]
+    }
+  }
+}"}
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],	'fix_devices':{'ardRF24CNC':['UUID2']}    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"}
+DEBUG:root:Value Erro, probs something stupid happened
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {
+  'name': 'Test_App1',
+  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',
+  'description': 'Full Testing App',
+  'comm': {
+    'cloud': ['mqtt_conn1'],
+    'region':
+      [{'name':'FirstRegion',
+      'key' :'BasicApiKey1'}],
+    'apps':{
+      'required_apps':[],
+      'interrested_apps':[]
+    },
+    'resources':['storage'],
+	'fix_devices':{'ardRF24CNC':['UUID2']}
+    'devices': [
+      {
+        'type': 'ardRF24CNC',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      },
+      {
+        'type': 'AndroidPhone',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      }
+    ]
+  },
+  'migration':{
+    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},
+    'apps':['Test_App2']}
+  },
+  'deployment': {
+    'config': {
+      'file': 'org.karaf.full_test',
+      'custom_params': {
+        'dev_message':'Gcode:G01_X1_Y1_Z1'
+      }
+    },
+    'qos': {
+      'main': 'dev_latency',
+      'secondary': [
+        'cloud_latency,response_time'
+      ]
+    }
+  }
+}" }
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],	'fix_devices':{'ardRF24CNC':['UUID2']}    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}" }
+DEBUG:root:Value Erro, probs something stupid happened
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {
+  'name': 'Test_App1',
+  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',
+  'description': 'Full Testing App',
+  'comm': {
+    'cloud': ['mqtt_conn1'],
+    'region':
+      [{'name':'FirstRegion',
+      'key' :'BasicApiKey1'}],
+    'apps':{
+      'required_apps':[],
+      'interrested_apps':[]
+    },
+    'resources':['storage'],
+	'fix_devices':{'ardRF24CNC':['UUID2']}
+    'devices': [
+      {
+        'type': 'ardRF24CNC',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      },
+      {
+        'type': 'AndroidPhone',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      }
+    ]
+  },
+  'migration':{
+    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},
+    'apps':['Test_App2']}
+  },
+  'deployment': {
+    'config': {
+      'file': 'org.karaf.full_test',
+      'custom_params': {
+        'dev_message':'Gcode:G01_X1_Y1_Z1'
+      }
+    },
+    'qos': {
+      'main': 'dev_latency',
+      'secondary': [
+        'cloud_latency,response_time'
+      ]
+    }
+  }
+}" }
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],	'fix_devices':{'ardRF24CNC':['UUID2']}    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}" }
+DEBUG:root:Value Erro, probs something stupid happened
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {
+  'name': 'Test_App1',
+  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',
+  'description': 'Full Testing App',
+  'comm': {
+    'cloud': ['mqtt_conn1'],
+    'region':
+      [{'name':'FirstRegion',
+      'key' :'BasicApiKey1'}],
+    'apps':{
+      'required_apps':[],
+      'interrested_apps':[]
+    },
+    'resources':['storage'],
+	'fix_devices':{'ardRF24CNC':['UUID2']}
+    'devices': [
+      {
+        'type': 'ardRF24CNC',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      },
+      {
+        'type': 'AndroidPhone',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      }
+    ]
+  },
+  'migration':{
+    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},
+    'apps':['Test_App2']}
+  },
+  'deployment': {
+    'config': {
+      'file': 'org.karaf.full_test',
+      'custom_params': {
+        'dev_message':'Gcode:G01_X1_Y1_Z1'
+      }
+    },
+    'qos': {
+      'main': 'dev_latency',
+      'secondary': [
+        'cloud_latency,response_time'
+      ]
+    }
+  }
+}" }
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],	'fix_devices':{'ardRF24CNC':['UUID2']}    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}" }
+DEBUG:root:Value Erro, probs something stupid happened
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {
+  'name': 'Test_App1',
+  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',
+  'description': 'Full Testing App',
+  'comm': {
+    'cloud': ['mqtt_conn1'],
+    'region':
+      [{'name':'FirstRegion',
+      'key' :'BasicApiKey1'}],
+    'apps':{
+      'required_apps':[],
+      'interrested_apps':[]
+    },
+    'resources':['storage'],
+	'fix_devices':{'ardRF24CNC':['UUID2']}
+    'devices': [
+      {
+        'type': 'ardRF24CNC',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      },
+      {
+        'type': 'AndroidPhone',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      }
+    ]
+  },
+  'migration':{
+    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},
+    'apps':['Test_App2']}
+  },
+  'deployment': {
+    'config': {
+      'file': 'org.karaf.full_test',
+      'custom_params': {
+        'dev_message':'Gcode:G01_X1_Y1_Z1'
+      }
+    },
+    'qos': {
+      'main': 'dev_latency',
+      'secondary': [
+        'cloud_latency,response_time'
+      ]
+    }
+  }
+}" }
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],	'fix_devices':{'ardRF24CNC':['UUID2']}    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}" }
+DEBUG:root:Value Erro, probs something stupid happened
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {
+  'name': 'Test_App1',
+  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',
+  'description': 'Full Testing App',
+  'comm': {
+    'cloud': ['mqtt_conn1'],
+    'region':
+      [{'name':'FirstRegion',
+      'key' :'BasicApiKey1'}],
+    'apps':{
+      'required_apps':[],
+      'interrested_apps':[]
+    },
+    'resources':['storage'],
+	'fix_devices':{'ardRF24CNC':['UUID2']}
+    'devices': [
+      {
+        'type': 'ardRF24CNC',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      },
+      {
+        'type': 'AndroidPhone',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      }
+    ]
+  },
+  'migration':{
+    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},
+    'apps':['Test_App2']}
+  },
+  'deployment': {
+    'config': {
+      'file': 'org.karaf.full_test',
+      'custom_params': {
+        'dev_message':'Gcode:G01_X1_Y1_Z1'
+      }
+    },
+    'qos': {
+      'main': 'dev_latency',
+      'secondary': [
+        'cloud_latency,response_time'
+      ]
+    }
+  }
+}"
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],	'fix_devices':{'ardRF24CNC':['UUID2']}    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"}
+DEBUG:root:Value Erro, probs something stupid happened
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {
+  'name': 'Test_App1',
+  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',
+  'description': 'Full Testing App',
+  'comm': {
+    'cloud': ['mqtt_conn1'],
+    'region':
+      [{'name':'FirstRegion',
+      'key' :'BasicApiKey1'}],
+    'apps':{
+      'required_apps':[],
+      'interrested_apps':[]
+    },
+    'resources':['storage'],
+	'fix_devices':{'ardRF24CNC':['UUID2']}
+    'devices': [
+      {
+        'type': 'ardRF24CNC',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      },
+      {
+        'type': 'AndroidPhone',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      }
+    ]
+  },
+  'migration':{
+    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},
+    'apps':['Test_App2']}
+  },
+  'deployment': {
+    'config': {
+      'file': 'org.karaf.full_test',
+      'custom_params': {
+        'dev_message':'Gcode:G01_X1_Y1_Z1'
+      }
+    },
+    'qos': {
+      'main': 'dev_latency',
+      'secondary': [
+        'cloud_latency,response_time'
+      ]
+    }
+  }
+}"
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],	'fix_devices':{'ardRF24CNC':['UUID2']}    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"}
+DEBUG:root:Value Erro, probs something stupid happened
+DEBUG:root:Driver Stopped
+DEBUG:root:Starting New Session at 12:01:56 02/28/17 UTC
+DEBUG:root:Connected with result code 0
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {
+  'name': 'Test_App1',
+  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',
+  'description': 'Full Testing App',
+  'comm': {
+    'cloud': ['mqtt_conn1'],
+    'region':
+      [{'name':'FirstRegion',
+      'key' :'BasicApiKey1'}],
+    'apps':{
+      'required_apps':[],
+      'interrested_apps':[]
+    },
+    'resources':['storage'],
+	'fix_devices':{'ardRF24CNC':['UUID2']}
+    'devices': [
+      {
+        'type': 'ardRF24CNC',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      },
+      {
+        'type': 'AndroidPhone',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      }
+    ]
+  },
+  'migration':{
+    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},
+    'apps':['Test_App2']}
+  },
+  'deployment': {
+    'config': {
+      'file': 'org.karaf.full_test',
+      'custom_params': {
+        'dev_message':'Gcode:G01_X1_Y1_Z1'
+      }
+    },
+    'qos': {
+      'main': 'dev_latency',
+      'secondary': [
+        'cloud_latency,response_time'
+      ]
+    }
+  }
+}"
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],	'fix_devices':{'ardRF24CNC':['UUID2']}    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"}
+ERROR:root:Invalid control character at: line 1 column 425 (char 424)
+DEBUG:root:Exiting Main Thread - Error
+DEBUG:root:Starting New Session at 12:06:51 02/28/17 UTC
+DEBUG:root:Connected with result code 0
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {
+  'name': 'Test_App1',
+  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',
+  'description': 'Full Testing App',
+  'comm': {
+    'cloud': ['mqtt_conn1'],
+    'region':
+      [{'name':'FirstRegion',
+      'key' :'BasicApiKey1'}],
+    'apps':{
+      'required_apps':[],
+      'interrested_apps':[]
+    },
+    'resources':['storage'],
+	'fix_devices':{'ardRF24CNC':['UUID2']}
+    'devices': [
+      {
+        'type': 'ardRF24CNC',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      },
+      {
+        'type': 'AndroidPhone',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      }
+    ]
+  },
+  'migration':{
+    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},
+    'apps':['Test_App2']}
+  },
+  'deployment': {
+    'config': {
+      'file': 'org.karaf.full_test',
+      'custom_params': {
+        'dev_message':'Gcode:G01_X1_Y1_Z1'
+      }
+    },
+    'qos': {
+      'main': 'dev_latency',
+      'secondary': [
+        'cloud_latency,response_time'
+      ]
+    }
+  }
+}"
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],	'fix_devices':{'ardRF24CNC':['UUID2']}    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"}
+ERROR:root:Invalid control character at: line 1 column 425 (char 424)
+DEBUG:root:Exiting Main Thread - Error
+DEBUG:root:Starting New Session at 12:07:20 02/28/17 UTC
+DEBUG:root:Connected with result code 0
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {
+  \'name\': \'Test_App1\',
+  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',
+  'description': 'Full Testing App',
+  'comm': {
+    'cloud': ['mqtt_conn1'],
+    'region':
+      [{'name':'FirstRegion',
+      'key' :'BasicApiKey1'}],
+    'apps':{
+      'required_apps':[],
+      'interrested_apps':[]
+    },
+    'resources':['storage'],
+	'fix_devices':{'ardRF24CNC':['UUID2']}
+    'devices': [
+      {
+        'type': 'ardRF24CNC',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      },
+      {
+        'type': 'AndroidPhone',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      }
+    ]
+  },
+  'migration':{
+    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},
+    'apps':['Test_App2']}
+  },
+  'deployment': {
+    'config': {
+      'file': 'org.karaf.full_test',
+      'custom_params': {
+        'dev_message':'Gcode:G01_X1_Y1_Z1'
+      }
+    },
+    'qos': {
+      'main': 'dev_latency',
+      'secondary': [
+        'cloud_latency,response_time'
+      ]
+    }
+  }
+}"
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {  \'name\': \'Test_App1\',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],	'fix_devices':{'ardRF24CNC':['UUID2']}    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"}
+ERROR:root:Invalid \escape: line 1 column 115 (char 114)
+DEBUG:root:Exiting Main Thread - Error
+DEBUG:root:Starting New Session at 12:07:44 02/28/17 UTC
+DEBUG:root:Connected with result code 0
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {
+  'name': 'Test_App1',
+  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',
+  'description': 'Full Testing App',
+  'comm': {
+    'cloud': ['mqtt_conn1'],
+    'region':
+      [{'name':'FirstRegion',
+      'key' :'BasicApiKey1'}],
+    'apps':{
+      'required_apps':[],
+      'interrested_apps':[]
+    },
+    'resources':['storage'],
+	'fix_devices':{'ardRF24CNC':['UUID2']}
+    'devices': [
+      {
+        'type': 'ardRF24CNC',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      },
+      {
+        'type': 'AndroidPhone',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      }
+    ]
+  },
+  'migration':{
+    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},
+    'apps':['Test_App2']}
+  },
+  'deployment': {
+    'config': {
+      'file': 'org.karaf.full_test',
+      'custom_params': {
+        'dev_message':'Gcode:G01_X1_Y1_Z1'
+      }
+    },
+    'qos': {
+      'main': 'dev_latency',
+      'secondary': [
+        'cloud_latency,response_time'
+      ]
+    }
+  }
+}"
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],	'fix_devices':{'ardRF24CNC':['UUID2']}    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"}
+ERROR:root:Invalid control character at: line 1 column 425 (char 424)
+DEBUG:root:Exiting Main Thread - Error
+DEBUG:root:Starting New Session at 12:08:08 02/28/17 UTC
+DEBUG:root:Connected with result code 0
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {
+  'name': 'Test_App1',
+  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',
+  'description': 'Full Testing App',
+  'comm': {
+    'cloud': ['mqtt_conn1'],
+    'region':
+      [{'name':'FirstRegion',
+      'key' :'BasicApiKey1'}],
+    'apps':{
+      'required_apps':[],
+      'interrested_apps':[]
+    },
+    'resources':['storage'],
+	'fix_devices':{'ardRF24CNC':['UUID2']}
+    'devices': [
+      {
+        'type': 'ardRF24CNC',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      },
+      {
+        'type': 'AndroidPhone',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      }
+    ]
+  },
+  'migration':{
+    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},
+    'apps':['Test_App2']}
+  },
+  'deployment': {
+    'config': {
+      'file': 'org.karaf.full_test',
+      'custom_params': {
+        'dev_message':'Gcode:G01_X1_Y1_Z1'
+      }
+    },
+    'qos': {
+      'main': 'dev_latency',
+      'secondary': [
+        'cloud_latency,response_time'
+      ]
+    }
+  }
+}"
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],	'fix_devices':{'ardRF24CNC':['UUID2']}    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"}
+ERROR:root:Invalid control character at: line 1 column 425 (char 424)
+DEBUG:root:Exiting Main Thread - Error
+DEBUG:root:Starting New Session at 12:10:00 02/28/17 UTC
+DEBUG:root:Connected with result code 0
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy "
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy "}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "bundle deploy ", 
+ "source": "test1", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'test1', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"bundle deploy "
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {
+  'name': 'Test_App1',
+  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',
+  'description': 'Full Testing App',
+  'comm': {
+    'cloud': ['mqtt_conn1'],
+    'region':
+      [{'name':'FirstRegion',
+      'key' :'BasicApiKey1'}],
+    'apps':{
+      'required_apps':[],
+      'interrested_apps':[]
+    },
+    'resources':['storage'],
+    'devices': [
+      {
+        'type': 'ardRF24CNC',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      },
+      {
+        'type': 'AndroidPhone',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      }
+    ]
+  },
+  'migration':{
+    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},
+    'apps':['Test_App2']}
+  },
+  'deployment': {
+    'config': {
+      'file': 'org.karaf.full_test',
+      'custom_params': {
+        'dev_message':'Gcode:G01_X1_Y1_Z1'
+      }
+    },
+    'qos': {
+      'main': 'dev_latency',
+      'secondary': [
+        'cloud_latency,response_time'
+      ]
+    }
+  }
+}"
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}", 
+ "source": "test1", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'test1', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"
+DEBUG:root:Other message
+DEBUG:root:Driver Stopped
+DEBUG:root:Driver Stopped
+DEBUG:root:Starting New Session at 12:12:03 02/28/17 UTC
+DEBUG:root:Connected with result code 0
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {
+  'name': 'Test_App1',
+  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',
+  'description': 'Full Testing App',
+  'comm': {
+    'cloud': ['mqtt_conn1'],
+    'region':
+      [{'name':'FirstRegion',
+      'key' :'BasicApiKey1'}],
+    'apps':{
+      'required_apps':[],
+      'interrested_apps':[]
+    },
+    'resources':['storage'],
+    'devices': [
+      {
+        'type': 'ardRF24CNC',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      },
+      {
+        'type': 'AndroidPhone',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      }
+    ]
+  },
+  'migration':{
+    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},
+    'apps':['Test_App2']}
+  },
+  'deployment': {
+    'config': {
+      'file': 'org.karaf.full_test',
+      'custom_params': {
+        'dev_message':'Gcode:G01_X1_Y1_Z1'
+      }
+    },
+    'qos': {
+      'main': 'dev_latency',
+      'secondary': [
+        'cloud_latency,response_time'
+      ]
+    }
+  }
+}"
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}", 
+ "source": "test1", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'test1', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle remove "Test_App1"
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle remove "Test_App1"}
+ERROR:root:cannot concatenate 'str' and 'exceptions.ValueError' objects
+DEBUG:root:Exiting Main Thread - Error
+DEBUG:root:Driver Stopped
+DEBUG:root:Starting New Session at 12:15:27 02/28/17 UTC
+DEBUG:root:Connected with result code 0
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle remove Test_App1"
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle remove Test_App1"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "bundle remove Test_App1", 
+ "source": "test1", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'test1', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"bundle remove Test_App1"
+DEBUG:root:Other message
+DEBUG:root:Driver Restarted
+DEBUG:root:Starting New Session at 12:29:52 02/28/17 UTC
+DEBUG:root:Connected with result code 0
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {
+  'name': 'Test_App1',
+  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',
+  'description': 'Full Testing App',
+  'comm': {
+    'cloud': ['mqtt_conn1'],
+    'region':
+      [{'name':'FirstRegion',
+      'key' :'BasicApiKey1'}],
+    'apps':{
+      'required_apps':[],
+      'interrested_apps':[]
+    },
+    'resources':['storage'],
+    'devices': [
+      {
+        'type': 'ardRF24CNC',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      },
+      {
+        'type': 'AndroidPhone',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      }
+    ]
+  },
+  'migration':{
+    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},
+    'apps':['Test_App2']}
+  },
+  'deployment': {
+    'config': {
+      'file': 'org.karaf.full_test',
+      'custom_params': {
+        'dev_message':'Gcode:G01_X1_Y1_Z1'
+      }
+    },
+    'qos': {
+      'main': 'dev_latency',
+      'secondary': [
+        'cloud_latency,response_time'
+      ]
+    }
+  }
+}"
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}", 
+ "source": "test1", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'test1', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {
+  'name': 'Test_App1',
+  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',
+  'description': 'Full Testing App',
+  'comm': {
+    'cloud': ['mqtt_conn1'],
+    'region':
+      [{'name':'FirstRegion',
+      'key' :'BasicApiKey1'}],
+    'apps':{
+      'required_apps':[],
+      'interrested_apps':[]
+    },
+    'resources':['storage'],
+    'devices': [
+      {
+        'type': 'ardRF24CNC',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      },
+      {
+        'type': 'AndroidPhone',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      }
+    ]
+  },
+  'migration':{
+    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},
+    'apps':['Test_App2']}
+  },
+  'deployment': {
+    'config': {
+      'file': 'org.karaf.full_test',
+      'custom_params': {
+        'dev_message':'Gcode:G01_X1_Y1_Z1'
+      }
+    },
+    'qos': {
+      'main': 'dev_latency',
+      'secondary': [
+        'cloud_latency,response_time'
+      ]
+    }
+  }
+}"
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}", 
+ "source": "test1", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'test1', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {
+  'name': 'Test_App1',
+  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',
+  'description': 'Full Testing App',
+  'comm': {
+    'cloud': ['mqtt_conn1'],
+    'region':
+      [{'name':'FirstRegion',
+      'key' :'BasicApiKey1'}],
+    'apps':{
+      'required_apps':[],
+      'interrested_apps':[]
+    },
+    'resources':['storage'],
+    'devices': [
+      {
+        'type': 'ardRF24CNC',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      },
+      {
+        'type': 'AndroidPhone',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      }
+    ]
+  },
+  'migration':{
+    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},
+    'apps':['Test_App2']}
+  },
+  'deployment': {
+    'config': {
+      'file': 'org.karaf.full_test',
+      'custom_params': {
+        'dev_message':'Gcode:G01_X1_Y1_Z1'
+      }
+    },
+    'qos': {
+      'main': 'dev_latency',
+      'secondary': [
+        'cloud_latency,response_time'
+      ]
+    }
+  }
+}"
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}", 
+ "source": "test1", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'test1', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {
+  'name': 'Test_App1',
+  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',
+  'description': 'Full Testing App',
+  'comm': {
+    'cloud': ['mqtt_conn1'],
+    'region':
+      [{'name':'FirstRegion',
+      'key' :'BasicApiKey1'}],
+    'apps':{
+      'required_apps':[],
+      'interrested_apps':[]
+    },
+    'resources':['storage'],
+    'devices': [
+      {
+        'type': 'ardRF24CNC',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      },
+      {
+        'type': 'AndroidPhone',
+        'cnt': '1',
+        'required': '1',
+        'reserve': 'No'
+      }
+    ]
+  },
+  'migration':{
+    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},
+    'apps':['Test_App2']}
+  },
+  'deployment': {
+    'config': {
+      'file': 'org.karaf.full_test',
+      'custom_params': {
+        'dev_message':'Gcode:G01_X1_Y1_Z1'
+      }
+    },
+    'qos': {
+      'main': 'dev_latency',
+      'secondary': [
+        'cloud_latency,response_time'
+      ]
+    }
+  }
+}"
+DEBUG:root:{"type":"admin","source":"test1","uuid":"test1abc","api_key":"ThisIsRandomAPIKey1234","payload":"bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}", 
+ "source": "test1", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'test1', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"bundle deploy {  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar',  'description': 'Full Testing App',  'comm': {    'cloud': ['mqtt_conn1'],    'region':      [{'name':'FirstRegion',      'key' :'BasicApiKey1'}],    'apps':{      'required_apps':[],      'interrested_apps':[]    },    'resources':['storage'],    'devices': [      {        'type': 'ardRF24CNC',        'cnt': '1',        'required': '1',        'reserve': 'No'      },      {        'type': 'AndroidPhone',        'cnt': '1',        'required': '1',        'reserve': 'No'      }    ]  },  'migration':{    'Erickson_2204':{'devices':{'ardRF24CNC':['UUID1']},    'apps':['Test_App2']}  },  'deployment': {    'config': {      'file': 'org.karaf.full_test',      'custom_params': {        'dev_message':'Gcode:G01_X1_Y1_Z1'      }    },    'qos': {      'main': 'dev_latency',      'secondary': [        'cloud_latency,response_time'      ]    }  }}"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"device:0"
+DEBUG:root:{"app":"Test_App1","payload":"device:0"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "device:0"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"device:0"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"device:0"
+DEBUG:root:{"app":"Test_App1","payload":"device:0"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "device:0"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"device:0"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"device:0"
+DEBUG:root:{"app":"Test_App1","payload":"device:0"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "device:0"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"device:0"
+DEBUG:root:Other message
+ERROR:pika.adapters.base_connection:Socket Error: 104
+DEBUG:root:Pika Disconnected 14:16:25 02/28/17 UTC, Reconnecting
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"device:0"
+DEBUG:root:{"app":"Test_App1","payload":"device:0"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "device:0"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"device:0"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"device:0"
+DEBUG:root:{"app":"Test_App1","payload":"device:0"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "device:0"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"device:0"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"device:0"
+DEBUG:root:{"app":"Test_App1","payload":"device:0"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "device:0"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"device:0"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"device:0"
+DEBUG:root:{"app":"Test_App1","payload":"device:0"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "device:0"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"device:0"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"device:0"
+DEBUG:root:{"app":"Test_App1","payload":"device:0"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "device:0"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"device:0"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"device:0"
+DEBUG:root:{"app":"Test_App1","payload":"device:0"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "device:0"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"device:0"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"device:0"
+DEBUG:root:{"app":"Test_App1","payload":"device:0"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "device:0"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"device:0"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"device:0"
+DEBUG:root:{"app":"Test_App1","payload":"device:0"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "device:0"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"device:0"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"device:0"
+DEBUG:root:{"app":"Test_App1","payload":"device:0"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "device:0"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"device:0"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"device:0"
+DEBUG:root:{"app":"Test_App1","payload":"device:0"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "device:0"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"device:0"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"device:0"
+DEBUG:root:{"app":"Test_App1","payload":"device:0"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "device:0"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"device:0"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"device:0"
+DEBUG:root:{"app":"Test_App1","payload":"device:0"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "device:0"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"device:0"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"device:0"
+DEBUG:root:{"app":"Test_App1","payload":"device:0"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "device:0"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"device:0"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"device:0"
+DEBUG:root:{"app":"Test_App1","payload":"device:0"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "device:0"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"device:0"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"device:0"
+DEBUG:root:{"app":"Test_App1","payload":"device:0"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "device:0"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"device:0"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"device:0"
+DEBUG:root:{"app":"Test_App1","payload":"device:0"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "device:0"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"device:0"
+DEBUG:root:Other message
+DEBUG:root:Driver Restarted
+DEBUG:root:Starting New Session at 18:07:22 02/28/17 UTC
+DEBUG:root:Connected with result code 0
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"device:0"
+DEBUG:root:{"app":"Test_App1","payload":"device:0"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "device:0"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"device:0"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"app:0"
+DEBUG:root:{"app":"Test_App1","payload":"app:0"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "app:0"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"app:0"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"app:0"
+DEBUG:root:{"app":"Test_App1","payload":"app:0"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "app:0"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"app:0"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"app:0"
+DEBUG:root:{"app":"Test_App1","payload":"app:0"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "app:0"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"app:0"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"app:0"
+DEBUG:root:{"app":"Test_App1","payload":"app:0"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "app:0"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"app:0"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"app:0"
+DEBUG:root:{"app":"Test_App1","payload":"app:0"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "app:0"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"app:0"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"app:0"
+DEBUG:root:{"app":"Test_App1","payload":"app:0"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "app:0"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"app:0"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"app:0"
+DEBUG:root:{"app":"Test_App1","payload":"app:0"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "app:0"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"app:0"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"app:0:This_is_test"
+DEBUG:root:{"app":"Test_App1","payload":"app:0:This_is_test"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "app:0:This_is_test"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"app:0:This_is_test"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"app:0:This_is_test"
+DEBUG:root:{"app":"Test_App1","payload":"app:0:This_is_test"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "app:0:This_is_test"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"app:0:This_is_test"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"device:0"
+DEBUG:root:{"app":"Test_App1","payload":"device:0"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "device:0"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"device:0"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"device:1"
+DEBUG:root:{"app":"Test_App1","payload":"device:1"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "device:1"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"device:1"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"region:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"region:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "region:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"region:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"region:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"region:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "region:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"region:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+ERROR:pika.adapters.base_connection:Socket Error: 104
+DEBUG:root:Pika Disconnected 19:10:43 02/28/17 UTC, Reconnecting
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+ERROR:pika.adapters.base_connection:Socket Error: 104
+DEBUG:root:Pika Disconnected 14:30:24 03/01/17 UTC, Reconnecting
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+ERROR:pika.adapters.base_connection:Socket Error: 104
+DEBUG:root:Pika Disconnected 15:22:23 03/01/17 UTC, Reconnecting
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+ERROR:pika.adapters.base_connection:Socket Error: 104
+DEBUG:root:Pika Disconnected 17:47:34 03/01/17 UTC, Reconnecting
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"resource:Test_me"
+DEBUG:root:{"app":"Test_App1","payload":"resource:Test_me"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "resource:Test_me"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"resource:Test_me"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"device:0"
+DEBUG:root:{"app":"Test_App1","payload":"device:0"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "device:0"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"device:0"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"device:0"
+DEBUG:root:{"app":"Test_App1","payload":"device:0"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "device:0"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"device:0"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"device:0"
+DEBUG:root:{"app":"Test_App1","payload":"device:0"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "device:0"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"device:0"
+DEBUG:root:Other message
+DEBUG:root:Driver Restarted
+DEBUG:root:Starting New Session at 09:48:45 03/02/17 UTC
+DEBUG:root:Connected with result code 0
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"device:0"
+DEBUG:root:{"app":"Test_App1","payload":"device:0"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "device:0"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"device:0"
+DEBUG:root:Other message
+ERROR:pika.adapters.base_connection:Socket Error: 104
+DEBUG:root:Pika Disconnected 10:27:19 03/02/17 UTC, Reconnecting
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "app":"Test_App1","payload":"device:0"
+DEBUG:root:{"app":"Test_App1","payload":"device:0"}
+DEBUG:root:{
+ "app": "Test_App1", 
+ "payload": "device:0"
+}
+DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"device:0"
+DEBUG:root:Other message

@@ -390,3 +390,63 @@ DEBUG:root:Message Sent with result: 0 Message Id: 4
 DEBUG:root:Driver Restarted
 DEBUG:root:Broker started: 10:39:05 02/09/17 UTC
 DEBUG:root: [*] Waiting for messages. To exit press CTRL+C
+DEBUG:root:Driver Restarted
+DEBUG:root:Broker started: 10:09:35 02/28/17 UTC
+DEBUG:root: [*] Waiting for messages. To exit press CTRL+C
+DEBUG:root:[x] Received 'success: Removed Test_App1 from Gateway'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "success: Removed Test_App1 from Gateway", "cloud": "mqtt_conn1", "datetime": "2017-02-28 11:49:46"}
+DEBUG:root:Message Sent with result: 0 Message Id: 1
+DEBUG:root:[x] Received 'Error: Test_App1 not found'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Test_App1 not found", "cloud": "mqtt_conn1", "datetime": "2017-02-28 11:49:47"}
+DEBUG:root:Message Sent with result: 0 Message Id: 2
+DEBUG:root:[x] Received "success {'state':'Active','id':'139'}"
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "success {'state':'Active','id':'139'}", "cloud": "mqtt_conn1", "datetime": "2017-02-28 12:13:31"}
+DEBUG:root:Message Sent with result: 0 Message Id: 3
+DEBUG:root:[x] Received 'Error: Test_App1 not found'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "Error: Test_App1 not found", "cloud": "mqtt_conn1", "datetime": "2017-02-28 12:15:42"}
+DEBUG:root:Message Sent with result: 0 Message Id: 4
+DEBUG:root:Driver Restarted
+DEBUG:root:Broker started: 12:29:59 02/28/17 UTC
+DEBUG:root: [*] Waiting for messages. To exit press CTRL+C
+DEBUG:root:[x] Received "success {'state':'Active','id':'140'}"
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "success {'state':'Active','id':'140'}", "cloud": "mqtt_conn1", "datetime": "2017-02-28 12:30:51"}
+DEBUG:root:Message Sent with result: 0 Message Id: 1
+DEBUG:root:[x] Received "success {'state':'Active','id':'140'}"
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "success {'state':'Active','id':'140'}", "cloud": "mqtt_conn1", "datetime": "2017-02-28 12:32:48"}
+DEBUG:root:Message Sent with result: 0 Message Id: 2
+DEBUG:root:[x] Received "success {'state':'Active','id':'140'}"
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "success {'state':'Active','id':'140'}", "cloud": "mqtt_conn1", "datetime": "2017-02-28 12:33:24"}
+DEBUG:root:Message Sent with result: 0 Message Id: 3
+DEBUG:root:[x] Received "success {'state':'Active','id':'140'}"
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "test1", "uuid": "test1abc", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "success {'state':'Active','id':'140'}", "cloud": "mqtt_conn1", "datetime": "2017-02-28 12:33:54"}
+DEBUG:root:Message Sent with result: 0 Message Id: 4
+DEBUG:root:Driver Restarted
+DEBUG:root:Broker started: 18:07:16 02/28/17 UTC
+DEBUG:root: [*] Waiting for messages. To exit press CTRL+C
+DEBUG:root:Driver Restarted
+DEBUG:root:Broker started: 09:48:39 03/02/17 UTC
+DEBUG:root: [*] Waiting for messages. To exit press CTRL+C
+DEBUG:root:[x] Received 'This is a test for device'
+DEBUG:root:Non json payload
+DEBUG:root:{"device": "ynd0fdk9", "app": "Test_App1", "payload": "This is a test for device"}
+DEBUG:root:Message Sent with result: 0 Message Id: 1
+DEBUG:root:[x] Received 'Data'
+DEBUG:root:Non json payload
+DEBUG:root:{"app": "Test_App1", "payload": "Data"}
+DEBUG:root:Message Sent with result: 0 Message Id: 2
+DEBUG:root:[x] Received 'Data'
+DEBUG:root:Non json payload
+DEBUG:root:{"device": "ynd0fdk9", "app": "Test_App1", "payload": "Data"}
+DEBUG:root:Message Sent with result: 0 Message Id: 3
+DEBUG:root:[x] Received 'Data'
+DEBUG:root:Non json payload
+DEBUG:root:{"device": "ynd0fdk9", "app": "Test_App1", "payload": "Data"}
+DEBUG:root:Message Sent with result: 0 Message Id: 4

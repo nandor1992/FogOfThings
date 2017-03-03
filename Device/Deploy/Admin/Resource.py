@@ -57,8 +57,8 @@ class Resource:
             ret['gateway']=self.gw
             db.save(ret)
             return "ok"
-        except Exeption,e:
-            return "Error"
+        except Exception,e:
+            return "Error"+str(e)
 
     def getDeployedApps(self,needs):
         havs=[]

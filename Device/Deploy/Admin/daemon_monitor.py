@@ -16,6 +16,8 @@ from string import ascii_letters,digits
 from Init import Init,InitReq
 from daemon import Daemon
 import logging
+import psutil
+import multiprocessing
 #Config Settings
 Config=ConfigParser.ConfigParser()
 conf_loc="/home/pi/FogOfThings/Device/config.ini"
@@ -30,22 +32,38 @@ class admin():
 
     def on_request(self,ch, method, properties, body):
         logging.debug("-----Received Data from Monitor-----")
+        ##logging.debug(body)
         response = self.resolveKaraf(ast.literal_eval(body))
-        logging.debug(self.getQueueMonitor())
-        logging.debug(response)
+        ques=self.getQueueMonitor()
+        save={}
+        save['gateway']=ques
+        save['apps']=response
+        cpu=psutil.cpu_percent()
+        ram=psutil.virtual_memory()[2]
+        load=os.getloadavg()[0]/multiprocessing.cpu_count()
+        save['gateway']['processor']={'cpu':cpu,'load':load,'ram':ram}
+        save['gateway']['storage']=self.reg.checkDatabForApp()
+        #Save To Database
+        save['date']=time.strftime("%Y-%m-%d %H:%M")
+        save['type']="General"
+        self.reg.saveMonitoring(save)
+        logging.debug(save)
         ch.basic_ack(delivery_tag = method.delivery_tag)
 
 
     def resolveKaraf(self,body):
-        for dev in body['device']:
-            apps=self.reg.checkDevsApp(dev)
+        keys=body['device'].keys()
+        for key in keys:
+            apps=self.reg.checkDevsApp(key)
             if len(apps)!=0:
                 for app in apps:
                     if app in body['device']:
-                        body['device'][app]=body['device'][app]+1
+                        body['device'][app]=int(body['device'][app])+1
                     else:
                         body['device'][app]=1
-                del(body['device'][dev])
+                del(body['device'][key])
+        return body
+
     
     def getQueueMonitor(self):
         #Initilizing Comm
@@ -119,9 +137,8 @@ class admin():
                     comm[queue][curr_queue]=comm[queue][curr_queue]+fed[element]
                 else:
                     comm[queue][curr_queue]=fed[element]
-        logging.debug("Results:")
-        logging.debug(comm)
-    
+        return comm
+        
     def resolveQue(self,queue):
         #ToDo - Make this work dynamically
         drivers=['ardu_blue','ardu_rf24','ardu_xbee','atmega_rfa1']

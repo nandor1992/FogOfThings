@@ -379,6 +379,7 @@ class admin():
                         logging.debug("Cloud connection configuration successfull")
                 #Device Stuff
                 ##To-DO: Add Configured Devices to Deployment part of config maybe
+                conn_devs=[]
                 if devices!=None:
                     logging.debug("Devices Config Started")
                     for dev in devices:
@@ -392,6 +393,7 @@ class admin():
                             for dev_s in dev_l:
                                 dev_conf=dev_conf+":"+str(dev_s["id"])
                                 result1=self.route.add("apps_resolve","karaf_app",{"device":dev_s["id"]})
+                                conn_devs.append(dev_s["id"])
                                 if dev["reserve"]=="No":
                                     result2=self.route.add("device_resolve",Config.get("DeviceQ",dev_s["driver"]),{"device":dev_s["id"]})
                                 else:
@@ -400,6 +402,7 @@ class admin():
                             for i in range(0,int(dev["cnt"])):
                                 dev_conf=dev_conf+":"+str(dev_l[i]["id"])
                                 result1=self.route.add("apps_resolve","karaf_app",{"device":dev_l[i]["id"]})
+                                conn_devs.append(dev_l[i]["id"])
                                 if dev["reserve"]=="No":
                                     result2=self.route.add("device_resolve",Config.get("DeviceQ",dev_l[i]["driver"]),{"device":dev_l[i]["id"]})
                                 else:
@@ -504,6 +507,7 @@ class admin():
                                 #Route
                                 logging.debug("Add route for dev_type: "+dev_t+" devs:"+str(dev_n))
                                 for d in dev_n:
+                                    conn_devs.append(d)
                                     self.route.add("federation."+self.controller_name,"karaf_app",{"device":d})
                                     self.route.addExBind("apps","federation."+gate_n,{"app":name,"device":d})
                         ##Cloud
@@ -619,7 +623,9 @@ class admin():
                 #delay 100ms or something
                 bundle_info=self.karaf.getBundleInfo(depl_resp)
                 logging.debug(bundle_info)
-                
+                #Addig Devices to payload
+                payload=payload[:-1]+',"conn_devs" : '+str(conn_devs)+"}"
+                logging.debug(payload)
                 #Save config file to configs with name
                 if self.res.deleteDeployedFile(name)=="ok":
                     if self.res.saveDeployFile(name,payload)!="ok":
@@ -670,6 +676,23 @@ class admin():
                     devices=None
                     resource=None
                     apps=None
+                if 'migration' in doc:
+                    migrate=doc["migration"]
+                else:
+                    migration=None
+                if 'deployment' in doc:
+                    conf_f=str(doc["deployment"]["config"]["file"])
+                    conf=doc["deployment"]["config"]["custom_params"]
+                else:
+                    conf_f=None
+                    conf=None
+                if 'file' in doc:
+                    app_f=str(doc["file"])
+                else:
+                    app_f=None
+
+                name=str(doc["name"])
+                desc=str(doc["description"])
                 #Connection Stuff
                 ##ToDo: See if app had connection if yes delete that one
                 ##Do Cloud

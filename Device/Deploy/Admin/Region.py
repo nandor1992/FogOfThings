@@ -272,9 +272,33 @@ class Region:
         else:
             return "Error"
 
-    def checkDevsApps(self,dev):
-        return ['test1','test2']
-    
+    def checkDevsApp(self,dev):
+        db=self.couch['apps']
+        look=db.view('views/app_for_dev')
+        apps=[]
+        for p in look[dev]:
+            apps.append(p.value)
+        return apps
+
+    def checkDatabForApp(self):
+        db=self.couch['apps']
+        databs={}
+        app_n=[]
+        for doc in db:
+            name=db[doc].get('name')
+            if (name!=None):
+                app_n.append(name)
+        for d in self.couch:
+            if d[0:4]=="app_":
+                for a in app_n:
+                    if d[4:]==a.lower():
+                        databs[a]=self.couch[d].info().get('disk_size')
+        return databs
+
+    def saveMonitoring(self,save):
+        db=self.couch['monitoring']
+        db.save(save)
+         
 if __name__ == "__main__":
     reg=Region("admin","hunter","test","admin","hunter")
     #print(reg.getDevsOnWan("B8:27:EB"))
@@ -286,7 +310,9 @@ if __name__ == "__main__":
     #print(reg.setClustQueue('test'))
     #print(reg.createFedPolicy()) # This is Raspi
     #print(reg.addUpstream("admin","hunter","10.0.0.68","test"))
-    print(reg.getExchangeInfo("apps"))
-    print(reg.getExchangeInfo("cloud"))
+    #print(reg.getExchangeInfo("apps"))
+    #print(reg.getExchangeInfo("cloud"))
     #print(reg.myIp())
     #print(reg.myMac())
+    #print(reg.checkDevsApp("UUID1"))
+    print(reg.checkDatabForApp())
