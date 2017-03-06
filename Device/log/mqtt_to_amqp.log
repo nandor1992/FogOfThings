@@ -8505,3 +8505,6 @@ DEBUG:root:{
 DEBUG:root:{u'app': u'Test_App1', 'cloud': 'mqtt_conn1'}
 DEBUG:root:"device:0"
 DEBUG:root:Other message
+DEBUG:root:Driver Restarted
+DEBUG:root:Starting New Session at 09:29:04 03/06/17 UTC
+DEBUG:root:Connected with result code 0

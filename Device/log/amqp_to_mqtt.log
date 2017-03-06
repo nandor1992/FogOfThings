@@ -450,3 +450,8 @@ DEBUG:root:[x] Received 'Data'
 DEBUG:root:Non json payload
 DEBUG:root:{"device": "ynd0fdk9", "app": "Test_App1", "payload": "Data"}
 DEBUG:root:Message Sent with result: 0 Message Id: 4
+DEBUG:root:Driver Restarted
+DEBUG:root:Broker started: 09:28:58 03/06/17 UTC
+DEBUG:root: [*] Waiting for messages. To exit press CTRL+C
+CRITICAL:pika.adapters.blocking_connection:Connection close detected; result=BlockingConnection__OnClosedArgs(connection=<pika.adapters.select_connection.SelectConnection object at 0x7659f850>, reason_code=320, reason_text='CONNECTION_FORCED - Closed via management plugin')
+ERROR:root:(320, 'CONNECTION_FORCED - Closed via management plugin')
