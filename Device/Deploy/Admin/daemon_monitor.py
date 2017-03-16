@@ -27,8 +27,8 @@ LOGFILE = Config.get("Log","location")+'/monitor.log'
 logging.basicConfig(filename=LOGFILE,level=logging.DEBUG)
 logging.getLogger("pika").setLevel(logging.ERROR)
 
-class admin():
-#class admin(Daemon):
+#class admin():
+class admin(Daemon):
 
     def on_request(self,ch, method, properties, body):
         logging.debug("-----Received Data from Monitor-----")
@@ -44,7 +44,7 @@ class admin():
         save['gateway']['processor']={'cpu':cpu,'load':load,'ram':ram}
         save['gateway']['storage']=self.reg.checkDatabForApp()
         #Save To Database
-        save['date']=time.strftime("%Y-%m-%d %H:%M")
+        save['date']=time.strftime("%Y-%m-%d %H:%M:%S")
         save['type']="General"
         self.reg.saveMonitoring(save)
         logging.debug(save)
@@ -187,7 +187,7 @@ class admin():
             self.shutdown()
             logging.debug("Exiting Main Thread - Keyboard")
 
-if __name__ == "__main_2_":
+if __name__ == "__main__":
     daemon = admin(PIDFILE)
     if len(sys.argv) == 2:
         if 'start' == sys.argv[1]:
@@ -197,11 +197,11 @@ if __name__ == "__main_2_":
                 pass
         elif 'stop' == sys.argv[1]:
             print("Stopping ...")
-            logging.debug("Driver Stopped")
+            print("Driver Stopped")
             daemon.stop()
         elif 'restart' == sys.argv[1]:
             print( "Restaring ...")
-            logging.debug("Driver Restarted")
+            print("Driver Restarted")
             daemon.restart()
         elif 'status' == sys.argv[1]:
             try:
@@ -222,10 +222,10 @@ if __name__ == "__main_2_":
             sys.exit(2)
             sys.exit(0)
     else:
-        logging.debug( "usage: %s start|stop|restart|status" % sys.argv[0])
+        print( "usage: %s start|stop|restart|status" % sys.argv[0])
         sys.exit(2)
 
-if __name__ == "__main__":
+if __name__ == "__main2__":
     admin=admin()
     try:
         #admin.init()

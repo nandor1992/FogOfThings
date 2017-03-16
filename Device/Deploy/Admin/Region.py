@@ -252,7 +252,7 @@ class Region:
     def getExchangeInfo(self,name):
         buffer=StringIO()
         c=pycurl.Curl()
-        host="http://localhost:15672/api/exchanges/test/"+name+"?lengths_age=3600"
+        host="http://localhost:15672/api/exchanges/test/"+name+"?lengths_age=30"
         c.setopt(c.URL,host)
         c.setopt(c.WRITEDATA,buffer)
         c.setopt(c.USERPWD,'%s:%s' %(self.c_user,self.c_pass))

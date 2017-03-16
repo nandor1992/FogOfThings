@@ -5,9 +5,10 @@ import ast
 import time
 import threading
 import ctypes
-
+import datetime
+import sys
 class Listener():
-    def __init__(self,c_user,c_pass,user,passw,port,virt):
+    def __init__(self,c_user,c_pass,user,passw,port,virt,cnt,que):
         print("Initialized!")
         self.c_user=c_user
         self.c_pass=c_pass
@@ -18,25 +19,31 @@ class Listener():
         self.channel = self.connection.channel()
         self.channel.basic_qos(prefetch_count=1)
         self.device="Python_Dev"
-        self.channel.basic_consume(self.on_request, queue="dev_test",no_ack=True)
+        self.channel.basic_consume(self.on_request, queue=que,no_ack=True)
         self.sum=0.0
         self.count=0
         self.proc=0.0
         self.first=0;
+        self.tot=cnt
+        self.t_start=None
         
     def on_request(self,ch, method, properties, body):
         data=ast.literal_eval(body)
         print("---------------Message Received-----------")
+        print("Cnt:"+str(self.first))
         end=time.time()
         #print(data['start_time'])
         #print(end)
         start=float(data['start_time'])
         print("Elapsed: "+str((end-start)*1000))
         print("Processing: "+str(int(data['proc_time'])/1000.0))
-        if self.first>2:
+        if self.first==self.tot/10:
+           self.t_start=datetime.datetime.now()
+        if self.first>self.tot/10:
             self.sum=self.sum+(end-start)*1000
             self.proc=self.proc+float(data['proc_time'])/1000.0
             self.count=self.count+1
+            self.first=self.first+1
         else:
             self.first=self.first+1
                 
@@ -58,7 +65,7 @@ class Listener():
         self.channel.start_consuming()
 
 class Poster(threading.Thread):
-    def __init__(self,c_user,c_pass,user,passw,port,virt,rate,cnt):
+    def __init__(self,c_user,c_pass,user,passw,port,virt,rate,cnt,dev):
         print("Initialized!")
         threading.Thread.__init__(self)
         self.c_user=c_user
@@ -68,10 +75,9 @@ class Poster(threading.Thread):
         self.parameters = pika.ConnectionParameters('localhost',port,virt,self.credentials)
         self.connection = pika.BlockingConnection(self.parameters);
         self.channel = self.connection.channel()
-        self.channel.basic_qos(prefetch_count=2)
-        self.device="Python_Dev"
+        self.channel.basic_qos(prefetch_count=1)
+        self.device=dev
         self.rate=10.0/rate
-        self.stopMe=False
         self.count=0
         self.range=cnt
     def send_request(self):
@@ -96,15 +102,48 @@ class Poster(threading.Thread):
 
 
 if __name__ == "__main__":
-    msg_rate=10; #/10Seconds
-    t=time.clock()
+    dev=None
+    rate=None
+    msg_cnt=0
+    msg_rate=0
+    que=None
+    tmp=0
+    for arg in sys.argv:
+        print(arg)
+        part=arg.split("=")
+        if part[0][2:]=="device":
+            print("Device")
+            print(part[1])
+            dev=part[1]
+        elif part[0][2:]=="rate":
+            print("Rate")
+            print(part[1])
+            rate=int(part[1])
+        elif part[0][2:]=="time":
+            print("Rate")
+            print(part[1])
+            tmp=int(part[1])
+        elif part[0][2:]=="que":
+            print("Que")
+            print(part[1])
+            que=part[1]
+        else:
+            print("Unknown Exit")
+    if dev!=None and rate!=None and que!=None:
+        msg_cnt=rate*tmp*60
+        msg_rate=rate*10
+    else:
+        exit()
     try:
-        l=Listener("admin","hunter","admin","hunter",5672,"test")
-        p=Poster("admin","hunter","admin","hunter",5672,"test",msg_rate,10)
+        l=Listener("admin","hunter","admin","hunter",5672,"test",msg_cnt,que)
+        p=Poster("admin","hunter","admin","hunter",5672,"test",msg_rate,msg_cnt,dev)
         p.start()
         l.run()
     except KeyboardInterrupt:
         p.stop()
+        end=datetime.datetime.now()-datetime.timedelta(seconds=10)
         print(l.summary())
         l.stop()
+        print("Started: "+l.t_start.strftime("%Y-%m-%d %H:%M:%S"))
+        print("Now: "+end.strftime("%Y-%m-%d %H:%M:%S"))
         print("Interrupt Keyboard - Stop!")    
