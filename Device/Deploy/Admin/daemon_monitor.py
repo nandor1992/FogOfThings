@@ -46,6 +46,7 @@ class admin(Daemon):
         #Save To Database
         save['date']=time.strftime("%Y-%m-%d %H:%M:%S")
         save['type']="General"
+        save['Gateway']=Config.get("General","gateway_name")
         self.reg.saveMonitoring(save)
         logging.debug(save)
         ch.basic_ack(delivery_tag = method.delivery_tag)

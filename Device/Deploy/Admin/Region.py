@@ -85,6 +85,7 @@ class Region:
         if resp==201:
             return "ok"
         else:
+            print(resp)
             return "Error"         
 
     def removeCouchNode(self,ip):
@@ -301,11 +302,11 @@ class Region:
          
 if __name__ == "__main__":
     reg=Region("admin","hunter","test","admin","hunter")
-    print(reg.getDevsOnWan("B8:27:EB"))
+    #print(reg.getDevsOnWan("B8:27:EB"))
     #reg.addGwToDatabase("the_Great_test","192.168.0.2","Random MAc")
     #reg.initClustDatabase("Reg_name","Reg_api","My_name","My-ip","My_MAc")
     #print(reg.removeCouchNode("10.0.0.199"))
-    #print(reg.addCouchNode("10.0.0.199"))
+    print(reg.addCouchNode("10.0.0.78"))
     #print(reg.getCouchNodes())
     #print(reg.setClustQueue('test'))
     #print(reg.createFedPolicy()) # This is Raspi
