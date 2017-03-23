@@ -81,13 +81,15 @@ class admin():
             response="ok"
             if components[1]=='add':
                 logging.debug("Add Node to Existing Cluster (4 admin)") ##Working Case 
-            ##Only works fro Admin, modify to allow peers to add Node as well
-            ##To-Do
                 ret=ast.literal_eval("  ".join(components[2:]))
                 self.reg.addGwToDatabase(ret['peer_name'],ret['peer_ip'],ret['peer_mac'])
                 self.reg.addCouchNode(ret['peer_ip'])
                 self.reg.addUpstream("admin","hunter",ret['peer_ip'],"test")
             ##Add node to Couchdb and Rabbitmq cluster, update Database with it's value
+            elif components[1]=='addAsNode':
+                ## Add new node as upstream for Star Connection
+                ret=ast.literal_eval("  ".join(components[2:]))
+                self.reg.addUpstream("admin","hunter",ret['peer_ip'],"test")
             elif components[1]=='remove':
                 logging.debug("Remove Node")
                 ##Remove node from Rabbitmq and Couchdb, update Database with it's value 
@@ -113,9 +115,9 @@ class admin():
                     ##To-Do
                     ret=ast.literal_eval("  ".join(components[3:]))
                     self.modifyConfig(ret['reg_api'],ret['name'],ret['reg_name'],ret['master'])
-                    ##Add Uploding Rabbitmq file with configs
                     self.ini.initRabbitmq(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))+"/RabbitVersions/rabbit_bare.json")
                     self.reg.setClustQueue(ret['name'])
+                    #To-Do:Modify to add Updstream for all Other Nodes
                     self.reg.addUpstream("admin","hunter",ret['master'],"test")
                 elif components[2]=='initClust':
                     logging.debug("Initialize new Cluster you are Master") ## Working Case - Done

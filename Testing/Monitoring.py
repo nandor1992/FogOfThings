@@ -57,13 +57,14 @@ class monitor():
     
 if __name__ == "__main__":
    m=monitor("admin","hunter")
-   apps=["Testing_App","Testing_App2"]
+   apps=["Testing_App","Testing_App2","Testing_App3","Testing_App4","Testing_App5","Testing_App6","Testing_App7"]
    end=datetime.datetime.now()
    start=end-datetime.timedelta(minutes=15)
    start=start.strftime("%Y-%m-%d %H:%M:%S")
    end=end.strftime("%Y-%m-%d %H:%M:%S")
-   dataset=[["2017-03-15 13:19:04","2017-03-15 13:20:52"]]
+   dataset=[["2017-03-23 17:03:49","2017-03-23 17:08:10"]]
    resp={}
    for data in dataset:
        resp=m.getData(data[0],data[1],apps)
+       print("-------------------------------")
        print(resp)

@@ -37,9 +37,9 @@ class Listener():
         start=float(data['start_time'])
         print("Elapsed: "+str((end-start)*1000))
         print("Processing: "+str(int(data['proc_time'])/1000.0))
-        if self.first==self.tot/10:
+        if self.first==self.tot/5:
            self.t_start=datetime.datetime.now()
-        if self.first>self.tot/10:
+        if self.first>self.tot/5:
             self.sum=self.sum+(end-start)*1000
             self.proc=self.proc+float(data['proc_time'])/1000.0
             self.count=self.count+1
@@ -118,7 +118,7 @@ if __name__ == "__main__":
         elif part[0][2:]=="rate":
             print("Rate")
             print(part[1])
-            rate=int(part[1])
+            rate=float(part[1])
         elif part[0][2:]=="time":
             print("Rate")
             print(part[1])
@@ -130,7 +130,7 @@ if __name__ == "__main__":
         else:
             print("Unknown Exit")
     if dev!=None and rate!=None and que!=None:
-        msg_cnt=rate*tmp*60
+        msg_cnt=int(rate*tmp*60)
         msg_rate=rate*10
     else:
         exit()

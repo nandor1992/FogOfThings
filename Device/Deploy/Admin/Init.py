@@ -72,6 +72,8 @@ class Init:
             db.save({'_id':'_design/views',  'views': { "docs_by_type": {"map": "function (doc) {\n  emit(doc.type,doc._id);\n}" }},'language':'javascript'})                   
             db=self.couch.create("apps")
             db.save({'_id':'_design/views',  'views': { "app-name": {"map": "function (doc) {\n  emit(doc.name,[doc.name,doc._id]);\n}" },"app_for_dev":{"map":"function(doc){\n for(var dev in doc.conn_devs){\n emit(doc.conn_devs[dev],doc.name);\n}\n}"} },'language':'javascript'})                   
+            db=self.couch,create("monitoring")
+            db.save({'_id':'_design/views',  'views': { "dates": {"map": "function (doc) {\n  emit(doc.date,doc._id);\n}" }},'language':'javascript'})                   
             for q in queues:
                 db=self.couch.create(q[0])
                 db.save({'_id':'_design/views',  'views': { "device": {"map": "function (doc) {\n  emit([doc.mac,doc.dev_type,doc.version],[doc.dev_id,doc.gateway]);\n}" },
