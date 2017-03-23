@@ -5946,3 +5946,29 @@ DEBUG:root:{  'name': 'Test_App1',  'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 
 DEBUG:root:Deployment file saved
 DEBUG:root:---Request processed and Reponse Sent----
 DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [["b8:27:eb:20:b9:f4", "10.0.0.87", "b8:27:eb:80:24:c9", "10.0.0.78"]], "name": "Temp_GW_2482", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "lvZFgvKORLKzqllz"}
+DEBUG:root:register self nothing {'reg_api': 'yFuzJaJGfZUKQgLz', 'reg_role': 'master', 'reg_name': 'Cluster_Cindy_1636', 'name': 'Vazquez_7663'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:register add {'peer_name': 'Olson_8701', 'peer_mac': 'b8:27:eb:20:b9:f4', 'peer_ip': '10.0.0.87'}
+DEBUG:root:Register
+DEBUG:root:Add Node to Existing Cluster (4 admin)
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [["b8:27:eb:80:24:c9", "10.0.0.78"], ["b8:27:eb:20:b9:f4", "10.0.0.87"]], "name": "Temp_GW_8055", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "lvZFgvKORLKzqllz"}
+DEBUG:root:register self nothing {'reg_api': 'yFuzJaJGfZUKQgLz', 'reg_role': 'master', 'reg_name': 'Cluster_Cindy_1636', 'name': 'Vazquez_7663'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:register add {'peer_name': 'Olson_8701', 'peer_mac': 'b8:27:eb:20:b9:f4', 'peer_ip': '10.0.0.87'}
+DEBUG:root:Register
+DEBUG:root:Add Node to Existing Cluster (4 admin)
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard

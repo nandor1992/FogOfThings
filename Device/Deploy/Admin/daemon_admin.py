@@ -118,6 +118,7 @@ class admin():
                     self.ini.initRabbitmq(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))+"/RabbitVersions/rabbit_bare.json")
                     self.reg.setClustQueue(ret['name'])
                     #To-Do:Modify to add Updstream for all Other Nodes
+                    self.reg.createFedPolicy(ret['name'])
                     self.reg.addUpstream("admin","hunter",ret['master'],"test")
                 elif components[2]=='initClust':
                     logging.debug("Initialize new Cluster you are Master") ## Working Case - Done
@@ -127,6 +128,7 @@ class admin():
                     self.ini.initRabbitmq(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))+"/RabbitVersions/rabbit_bare.json")
                     self.ini.initCouchDB(Config.items("DeviceQ"))
                     self.reg.setClustQueue(ret['name'])
+                    self.reg.createFedPolicy(ret['name'])
                     self.reg.initClustDatabase(ret['reg_name'],ret['reg_api'],ret['name'],self.reg.myIp(),self.reg.myMac())
                 elif components[2]=='update':
                     logging.debug("New Ip for me the Master")
@@ -891,7 +893,7 @@ class admin():
         data['local_ip']=self.reg.myIp()
         data['hw_addr']=self.reg.myMac()
         data['api_key']=Config.get("Mqtt1","admin_api")
-        data['peers']=[self.discoverRegion()]
+        data['peers']=self.discoverRegion()
         data['info']=self.getGwInfo()
         return data
 

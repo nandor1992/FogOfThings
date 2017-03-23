@@ -455,3 +455,10 @@ DEBUG:root:Broker started: 09:28:58 03/06/17 UTC
 DEBUG:root: [*] Waiting for messages. To exit press CTRL+C
 CRITICAL:pika.adapters.blocking_connection:Connection close detected; result=BlockingConnection__OnClosedArgs(connection=<pika.adapters.select_connection.SelectConnection object at 0x7659f850>, reason_code=320, reason_text='CONNECTION_FORCED - Closed via management plugin')
 ERROR:root:(320, 'CONNECTION_FORCED - Closed via management plugin')
+DEBUG:root:Driver Restarted
+DEBUG:root:Broker started: 19:18:57 03/23/17 UTC
+DEBUG:root: [*] Waiting for messages. To exit press CTRL+C
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "fFAyZbvSdlBzldot", "name": "Vazquez_7663", "api_key": "ThisIsRandomAPIKey1234", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-03-23 20:25:47"}
+DEBUG:root:Message Sent with result: 0 Message Id: 1

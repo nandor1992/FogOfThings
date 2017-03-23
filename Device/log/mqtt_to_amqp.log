@@ -8508,3 +8508,21 @@ DEBUG:root:Other message
 DEBUG:root:Driver Restarted
 DEBUG:root:Starting New Session at 09:29:04 03/06/17 UTC
 DEBUG:root:Connected with result code 0
+DEBUG:root:Driver Restarted
+DEBUG:root:Starting New Session at 19:18:52 03/23/17 UTC
+DEBUG:root:Connected with result code 0
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/Vazquez_7663 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "fFAyZbvSdlBzldot", "payload": "register add {'peer_name': 'Olson_8701', 'peer_mac': 'b8:27:eb:20:b9:f4', 'peer_ip': '10.0.0.87'}"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "fFAyZbvSdlBzldot", "payload": "register add {'peer_name': 'Olson_8701', 'peer_mac': 'b8:27:eb:20:b9:f4', 'peer_ip': '10.0.0.87'}"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "register add {'peer_name': 'Olson_8701', 'peer_mac': 'b8:27:eb:20:b9:f4', 'peer_ip': '10.0.0.87'}", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "fFAyZbvSdlBzldot"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'fFAyZbvSdlBzldot', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"register add {'peer_name': 'Olson_8701', 'peer_mac': 'b8:27:eb:20:b9:f4', 'peer_ip': '10.0.0.87'}"
+DEBUG:root:Other message
+ERROR:pika.adapters.base_connection:Socket Error: 104
+DEBUG:root:Pika Disconnected 20:23:37 03/23/17 UTC, Reconnecting

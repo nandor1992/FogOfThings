@@ -150,7 +150,7 @@ class Region:
         else:
             return "Error"
 
-    def createFedPolicy(self):
+    def createFedPolicy(self,name):
         buffer=StringIO()
         c=pycurl.Curl()
         #c.setopt(c.URL,"http://localhost:15672/api/paremeters/federation-upstream/%2f/my-upstream")
@@ -159,7 +159,7 @@ class Region:
         c.setopt(c.WRITEDATA,buffer)
         c.setopt(c.USERPWD,'%s:%s' %(self.rab_user,self.rab_pass))
         c.setopt(pycurl.HTTPHEADER,['Content-type: application/json'])
-        data2 = json.dumps({"pattern":"^federation\.","definition":{"federation-upstream-set":"all"},"apply-to":"exchanges"})
+        data2 = json.dumps({"pattern":"^federation."+name,"definition":{"federation-upstream-set":"all"},"apply-to":"exchanges"})
         c.setopt(pycurl.POSTFIELDS,data2)
         c.setopt(c.CUSTOMREQUEST,"PUT")
         c.perform()
@@ -173,7 +173,7 @@ class Region:
     def addUpstream(self,user,passw,addr,virt):
         buffer=StringIO()
         c=pycurl.Curl()
-        host="http://localhost:15672/api/parameters/federation-upstream/"+self.rab_vhost+"/Fed-upstream"
+        host="http://localhost:15672/api/parameters/federation-upstream/"+self.rab_vhost+"/Fed-upstream-addr"
         c.setopt(c.URL,host)
         c.setopt(c.WRITEDATA,buffer)
         c.setopt(c.USERPWD,'%s:%s' %(self.rab_user,self.rab_pass))
@@ -246,7 +246,7 @@ class Region:
         res=[]
         for [net,interface] in networks:
             for item in self.scan_and_print_neighbors(net, interface,ref):
-                res=res+item[0:2]
+                res.append(item[0:2])
         return res
 
     def getExchangeInfo(self,name):
@@ -301,7 +301,7 @@ class Region:
          
 if __name__ == "__main__":
     reg=Region("admin","hunter","test","admin","hunter")
-    #print(reg.getDevsOnWan("B8:27:EB"))
+    print(reg.getDevsOnWan("B8:27:EB"))
     #reg.addGwToDatabase("the_Great_test","192.168.0.2","Random MAc")
     #reg.initClustDatabase("Reg_name","Reg_api","My_name","My-ip","My_MAc")
     #print(reg.removeCouchNode("10.0.0.199"))
@@ -315,4 +315,4 @@ if __name__ == "__main__":
     #print(reg.myIp())
     #print(reg.myMac())
     #print(reg.checkDevsApp("UUID1"))
-    print(reg.checkDatabForApp())
+    #print(reg.checkDatabForApp())
