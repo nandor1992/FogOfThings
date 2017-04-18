@@ -7,6 +7,9 @@ import threading
 import ctypes
 import datetime
 import sys
+
+t=time
+t.clock()
 class Listener():
     def __init__(self,c_user,c_pass,user,passw,port,virt,cnt,que):
         print("Initialized!")
@@ -28,10 +31,11 @@ class Listener():
         self.t_start=None
         
     def on_request(self,ch, method, properties, body):
+        global t
         data=ast.literal_eval(body)
         print("---------------Message Received-----------")
         print("Cnt:"+str(self.first))
-        end=time.time()
+        end=t.time()
         #print(data['start_time'])
         #print(end)
         start=float(data['start_time'])
@@ -46,6 +50,7 @@ class Listener():
             self.first=self.first+1
         else:
             self.first=self.first+1
+        self.end=datetime.datetime.now()
                 
     def putData(data):
         db=self.couch['monitoring']
@@ -81,9 +86,10 @@ class Poster(threading.Thread):
         self.count=0
         self.range=cnt
     def send_request(self):
-        message_amqp=time.time()
+        global t
+        message_amqp=t.time()
         properties_m=pika.BasicProperties(headers={'device':self.device})
-        self.channel.basic_publish(exchange='device', routing_key='', body=str(message_amqp), properties=properties_m)
+        self.channel.basic_publish(exchange='device', routing_key='', body="{:10.8f}".format(message_amqp), properties=properties_m)
                 
     def stop(self):
         self.stopMe=True
@@ -141,7 +147,7 @@ if __name__ == "__main__":
         l.run()
     except KeyboardInterrupt:
         p.stop()
-        end=datetime.datetime.now()-datetime.timedelta(seconds=10)
+        end=l.end
         print(l.summary())
         l.stop()
         print("Started: "+l.t_start.strftime("%Y-%m-%d %H:%M:%S"))
