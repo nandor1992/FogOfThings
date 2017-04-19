@@ -71,7 +71,7 @@ class Init:
             db=self.couch.create("admin")
             db.save({'_id':'_design/views',  'views': { "docs_by_type": {"map": "function (doc) {\n  emit(doc.type,doc._id);\n}" }},'language':'javascript'})                   
             db=self.couch.create("apps")
-            db.save({'_id':'_design/views',  'views': { "app-name": {"map": "function (doc) {\n  emit(doc.name,[doc.name,doc._id]);\n}" },"app_for_dev":{"map":"function(doc){\n for(var dev in doc.conn_devs){\n emit(doc.conn_devs[dev],doc.name);\n}\n}"} },'language':'javascript'})                   
+            db.save({'_id':'_design/views',  'views': { "app-name": {"map": "function (doc) {\n  emit([doc.name,doc.current_gateway],[doc.name,doc._id]);\n}" },"app_for_dev":{"map":"function(doc){\n for(var dev in doc.conn_devs){\n emit(doc.conn_devs[dev],doc.name);\n}\n}"} },'language':'javascript'})                   
             db=self.couch,create("monitoring")
             db.save({'_id':'_design/views',  'views': { "dates": {"map": "function (doc) {\n  emit(doc.date,doc._id);\n}" }},'language':'javascript'})                   
             for q in queues:
@@ -85,11 +85,12 @@ class Init:
         return "ok"
     
 if __name__ == "__main__":
-    inir=InitReq("admin","hunter","10.0.0.137","1883","Test_Me")
+    inir=InitReq("admin","hunter","10.0.0.134","1883","Test_Me")
     ini=Init("admin","hunter","admin","hunter")
     data=[('blue', 'ardu_blue'), ('rf24', 'ardu_rf24'), ('rf434', 'atmega_rfa1')]
-    print(ini.initRabbitmq("/home/pi/FogOfThings/Device/RabbitVersions/rabbit_bare.json"))
+    print(ini.initCouchDB(data))
+    #print(ini.initRabbitmq("/home/pi/FogOfThings/Device/RabbitVersions/rabbit_bare.json"))
     #print(ini.initCouchDB(data))
-    #print(ini.register("{'name':'Test_Gw1','request':'register','uuid':'TestUUIDGW1', \
+    #print(inir.register("{'name':'Test_Gw1','request':'register','uuid':'TestUUIDGW1', \
     #'local_ip':'10.0.0.67','hw_addr':'b8:27:eb:c5:ed:e4','api_key':'ThisIsRandomAPIKey1234', \
     #'peers':[['b9:27:eb:c5:ed:e4','10.0.0.68']],'info':'Prity Random Gw info this will just be saved as is, might be usefull later'}"))

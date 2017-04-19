@@ -1,0 +1,2394 @@
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--task=start
+DEBUG:root:Task
+DEBUG:root:start
+DEBUG:root:--rate=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:Device
+DEBUG:root:Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Que
+DEBUG:root:dev_test
+DEBUG:root:--time=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:Initialized!
+DEBUG:pika.adapters.select_connection:Using EPollPoller
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x76429b48>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x76429ad0>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x76429bc0>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_start of <pika.adapters.select_connection.SelectConnection object at 0x76428a30>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+INFO:pika.adapters.base_connection:Connecting to ::1:5672
+DEBUG:pika.callback:Processing 0:Connection.Start
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method SelectConnection._on_connection_start of <pika.adapters.select_connection.SelectConnection object at 0x76428a30>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method SelectConnection._on_connection_start of <pika.adapters.select_connection.SelectConnection object at 0x76428a30>> for "0:Connection.Start"
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_tune of <pika.adapters.select_connection.SelectConnection object at 0x76428a30>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 0:Connection.Tune
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method SelectConnection._on_connection_tune of <pika.adapters.select_connection.SelectConnection object at 0x76428a30>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method SelectConnection._on_connection_tune of <pika.adapters.select_connection.SelectConnection object at 0x76428a30>> for "0:Connection.Tune"
+DEBUG:pika.connection:Creating a HeartbeatChecker: 580
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_open of <pika.adapters.select_connection.SelectConnection object at 0x76428a30>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 0:Connection.OpenOk
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method SelectConnection._on_connection_open of <pika.adapters.select_connection.SelectConnection object at 0x76428a30>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method SelectConnection._on_connection_open of <pika.adapters.select_connection.SelectConnection object at 0x76428a30>> for "0:Connection.OpenOk"
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_closed of <pika.adapters.select_connection.SelectConnection object at 0x76428a30>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 0:_on_connection_open
+DEBUG:pika.callback:Calling <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x76429ad0>> for "0:_on_connection_open"
+DEBUG:pika.connection:Creating channel 1
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_channel_cleanup of <pika.adapters.select_connection.SelectConnection object at 0x76428a30>>, 'only': <pika.channel.Channel object at 0x76c69730>, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_getempty of <pika.channel.Channel object at 0x76c69730>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_cancel of <pika.channel.Channel object at 0x76c69730>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_flow of <pika.channel.Channel object at 0x76c69730>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_close of <pika.channel.Channel object at 0x76c69730>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.channel:Adding in on_synchronous_complete callback
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76c69730>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.channel:Adding passed in callback
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_openok of <pika.channel.Channel object at 0x76c69730>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Added: {'callback': <bound method BlockingChannel._on_consumer_cancelled_by_broker of <pika.adapters.blocking_connection.BlockingChannel object at 0x76428ab0>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7643a418>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7643a210>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7643a3f0>>, 'only': None, 'one_shot': False, 'arguments': None}
+INFO:pika.adapters.blocking_connection:Created channel=1
+DEBUG:pika.callback:Processing 1:Channel.OpenOk
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76c69730>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method Channel._on_openok of <pika.channel.Channel object at 0x76c69730>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76c69730>> for "1:Channel.OpenOk"
+DEBUG:pika.channel:0 blocked frames
+DEBUG:pika.callback:Calling <bound method Channel._on_openok of <pika.channel.Channel object at 0x76c69730>> for "1:Channel.OpenOk"
+DEBUG:pika.channel:Adding in on_synchronous_complete callback
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76c69730>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.channel:Adding passed in callback
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7643a5a8>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 1:Basic.QosOk
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76c69730>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7643a5a8>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76c69730>> for "1:Basic.QosOk"
+DEBUG:pika.channel:0 blocked frames
+DEBUG:pika.callback:Calling <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7643a5a8>> for "1:Basic.QosOk"
+DEBUG:pika.channel:Adding in on_synchronous_complete callback
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76c69730>>, 'only': None, 'one_shot': True, 'arguments': {'consumer_tag': 'ctag1.3e68ce4615cf48249c570c82dadfa2a8'}, 'calls': 1}
+DEBUG:pika.channel:Adding passed in callback
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_eventok of <pika.channel.Channel object at 0x76c69730>>, 'only': None, 'one_shot': True, 'arguments': {'consumer_tag': 'ctag1.3e68ce4615cf48249c570c82dadfa2a8'}, 'calls': 1}
+DEBUG:pika.callback:Processing 1:Basic.ConsumeOk
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Comparing {'consumer_tag': 'ctag1.3e68ce4615cf48249c570c82dadfa2a8'} to {'consumer_tag': 'ctag1.3e68ce4615cf48249c570c82dadfa2a8'}
+DEBUG:pika.callback:Removing callback #1: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76c69730>>, 'only': None, 'one_shot': True, 'arguments': {'consumer_tag': 'ctag1.3e68ce4615cf48249c570c82dadfa2a8'}, 'calls': 0}
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Comparing {'consumer_tag': 'ctag1.3e68ce4615cf48249c570c82dadfa2a8'} to {'consumer_tag': 'ctag1.3e68ce4615cf48249c570c82dadfa2a8'}
+DEBUG:pika.callback:Removing callback #1: {'callback': <bound method Channel._on_eventok of <pika.channel.Channel object at 0x76c69730>>, 'only': None, 'one_shot': True, 'arguments': {'consumer_tag': 'ctag1.3e68ce4615cf48249c570c82dadfa2a8'}, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7643a418>> for "1:Basic.ConsumeOk"
+DEBUG:pika.callback:Calling <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76c69730>> for "1:Basic.ConsumeOk"
+DEBUG:pika.channel:0 blocked frames
+DEBUG:pika.callback:Calling <bound method Channel._on_eventok of <pika.channel.Channel object at 0x76c69730>> for "1:Basic.ConsumeOk"
+DEBUG:pika.channel:Discarding frame <METHOD(['channel_number=1', 'frame_type=1', "method=<Basic.ConsumeOk(['consumer_tag=ctag1.3e68ce4615cf48249c570c82dadfa2a8'])>"])>
+DEBUG:root:Initialized!
+DEBUG:pika.adapters.select_connection:Using EPollPoller
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7643a7d8>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7643a6c0>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7643a800>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_start of <pika.adapters.select_connection.SelectConnection object at 0x76428f90>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+INFO:pika.adapters.base_connection:Connecting to ::1:5672
+DEBUG:pika.callback:Processing 0:Connection.Start
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method SelectConnection._on_connection_start of <pika.adapters.select_connection.SelectConnection object at 0x76428f90>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method SelectConnection._on_connection_start of <pika.adapters.select_connection.SelectConnection object at 0x76428f90>> for "0:Connection.Start"
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_tune of <pika.adapters.select_connection.SelectConnection object at 0x76428f90>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 0:Connection.Tune
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method SelectConnection._on_connection_tune of <pika.adapters.select_connection.SelectConnection object at 0x76428f90>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method SelectConnection._on_connection_tune of <pika.adapters.select_connection.SelectConnection object at 0x76428f90>> for "0:Connection.Tune"
+DEBUG:pika.connection:Creating a HeartbeatChecker: 580
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_open of <pika.adapters.select_connection.SelectConnection object at 0x76428f90>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 0:Connection.OpenOk
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method SelectConnection._on_connection_open of <pika.adapters.select_connection.SelectConnection object at 0x76428f90>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method SelectConnection._on_connection_open of <pika.adapters.select_connection.SelectConnection object at 0x76428f90>> for "0:Connection.OpenOk"
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_closed of <pika.adapters.select_connection.SelectConnection object at 0x76428f90>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 0:_on_connection_open
+DEBUG:pika.callback:Calling <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7643a6c0>> for "0:_on_connection_open"
+DEBUG:pika.connection:Creating channel 1
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_channel_cleanup of <pika.adapters.select_connection.SelectConnection object at 0x76428f90>>, 'only': <pika.channel.Channel object at 0x76448070>, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_getempty of <pika.channel.Channel object at 0x76448070>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_cancel of <pika.channel.Channel object at 0x76448070>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_flow of <pika.channel.Channel object at 0x76448070>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_close of <pika.channel.Channel object at 0x76448070>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.channel:Adding in on_synchronous_complete callback
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76448070>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.channel:Adding passed in callback
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_openok of <pika.channel.Channel object at 0x76448070>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Added: {'callback': <bound method BlockingChannel._on_consumer_cancelled_by_broker of <pika.adapters.blocking_connection.BlockingChannel object at 0x76448050>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7643ae68>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7643ada0>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7643ae40>>, 'only': None, 'one_shot': False, 'arguments': None}
+INFO:pika.adapters.blocking_connection:Created channel=1
+DEBUG:pika.callback:Processing 1:Channel.OpenOk
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76448070>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method Channel._on_openok of <pika.channel.Channel object at 0x76448070>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76448070>> for "1:Channel.OpenOk"
+DEBUG:pika.channel:0 blocked frames
+DEBUG:pika.callback:Calling <bound method Channel._on_openok of <pika.channel.Channel object at 0x76448070>> for "1:Channel.OpenOk"
+DEBUG:pika.channel:Adding in on_synchronous_complete callback
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76448070>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.channel:Adding passed in callback
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7643ae18>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 1:Basic.QosOk
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76448070>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7643ae18>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76448070>> for "1:Basic.QosOk"
+DEBUG:pika.channel:0 blocked frames
+DEBUG:pika.callback:Calling <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7643ae18>> for "1:Basic.QosOk"
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--task=restart
+DEBUG:root:Task
+DEBUG:root:restart
+DEBUG:root:--rate=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:Device
+DEBUG:root:Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Que
+DEBUG:root:dev_test
+DEBUG:root:--time=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:Initialized!
+DEBUG:pika.adapters.select_connection:Using EPollPoller
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x764e1b48>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x764e1ad0>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x764e1bc0>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_start of <pika.adapters.select_connection.SelectConnection object at 0x764e0a30>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+INFO:pika.adapters.base_connection:Connecting to ::1:5672
+DEBUG:pika.callback:Processing 0:Connection.Start
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method SelectConnection._on_connection_start of <pika.adapters.select_connection.SelectConnection object at 0x764e0a30>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method SelectConnection._on_connection_start of <pika.adapters.select_connection.SelectConnection object at 0x764e0a30>> for "0:Connection.Start"
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_tune of <pika.adapters.select_connection.SelectConnection object at 0x764e0a30>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 0:Connection.Tune
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method SelectConnection._on_connection_tune of <pika.adapters.select_connection.SelectConnection object at 0x764e0a30>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method SelectConnection._on_connection_tune of <pika.adapters.select_connection.SelectConnection object at 0x764e0a30>> for "0:Connection.Tune"
+DEBUG:pika.connection:Creating a HeartbeatChecker: 580
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_open of <pika.adapters.select_connection.SelectConnection object at 0x764e0a30>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 0:Connection.OpenOk
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method SelectConnection._on_connection_open of <pika.adapters.select_connection.SelectConnection object at 0x764e0a30>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method SelectConnection._on_connection_open of <pika.adapters.select_connection.SelectConnection object at 0x764e0a30>> for "0:Connection.OpenOk"
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_closed of <pika.adapters.select_connection.SelectConnection object at 0x764e0a30>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 0:_on_connection_open
+DEBUG:pika.callback:Calling <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x764e1ad0>> for "0:_on_connection_open"
+DEBUG:pika.connection:Creating channel 1
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_channel_cleanup of <pika.adapters.select_connection.SelectConnection object at 0x764e0a30>>, 'only': <pika.channel.Channel object at 0x76d21730>, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_getempty of <pika.channel.Channel object at 0x76d21730>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_cancel of <pika.channel.Channel object at 0x76d21730>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_flow of <pika.channel.Channel object at 0x76d21730>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_close of <pika.channel.Channel object at 0x76d21730>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.channel:Adding in on_synchronous_complete callback
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76d21730>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.channel:Adding passed in callback
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_openok of <pika.channel.Channel object at 0x76d21730>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Added: {'callback': <bound method BlockingChannel._on_consumer_cancelled_by_broker of <pika.adapters.blocking_connection.BlockingChannel object at 0x764e0ab0>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x764f2418>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x764f2210>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x764f23f0>>, 'only': None, 'one_shot': False, 'arguments': None}
+INFO:pika.adapters.blocking_connection:Created channel=1
+DEBUG:pika.callback:Processing 1:Channel.OpenOk
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76d21730>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method Channel._on_openok of <pika.channel.Channel object at 0x76d21730>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76d21730>> for "1:Channel.OpenOk"
+DEBUG:pika.channel:0 blocked frames
+DEBUG:pika.callback:Calling <bound method Channel._on_openok of <pika.channel.Channel object at 0x76d21730>> for "1:Channel.OpenOk"
+DEBUG:pika.channel:Adding in on_synchronous_complete callback
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76d21730>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.channel:Adding passed in callback
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x764f25a8>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 1:Basic.QosOk
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76d21730>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x764f25a8>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76d21730>> for "1:Basic.QosOk"
+DEBUG:pika.channel:0 blocked frames
+DEBUG:pika.callback:Calling <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x764f25a8>> for "1:Basic.QosOk"
+DEBUG:pika.channel:Adding in on_synchronous_complete callback
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76d21730>>, 'only': None, 'one_shot': True, 'arguments': {'consumer_tag': 'ctag1.d474f1fc4c954c5eb1e515a4ff9c911f'}, 'calls': 1}
+DEBUG:pika.channel:Adding passed in callback
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_eventok of <pika.channel.Channel object at 0x76d21730>>, 'only': None, 'one_shot': True, 'arguments': {'consumer_tag': 'ctag1.d474f1fc4c954c5eb1e515a4ff9c911f'}, 'calls': 1}
+DEBUG:pika.callback:Processing 1:Basic.ConsumeOk
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Comparing {'consumer_tag': 'ctag1.d474f1fc4c954c5eb1e515a4ff9c911f'} to {'consumer_tag': 'ctag1.d474f1fc4c954c5eb1e515a4ff9c911f'}
+DEBUG:pika.callback:Removing callback #1: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76d21730>>, 'only': None, 'one_shot': True, 'arguments': {'consumer_tag': 'ctag1.d474f1fc4c954c5eb1e515a4ff9c911f'}, 'calls': 0}
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Comparing {'consumer_tag': 'ctag1.d474f1fc4c954c5eb1e515a4ff9c911f'} to {'consumer_tag': 'ctag1.d474f1fc4c954c5eb1e515a4ff9c911f'}
+DEBUG:pika.callback:Removing callback #1: {'callback': <bound method Channel._on_eventok of <pika.channel.Channel object at 0x76d21730>>, 'only': None, 'one_shot': True, 'arguments': {'consumer_tag': 'ctag1.d474f1fc4c954c5eb1e515a4ff9c911f'}, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x764f2418>> for "1:Basic.ConsumeOk"
+DEBUG:pika.callback:Calling <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76d21730>> for "1:Basic.ConsumeOk"
+DEBUG:pika.channel:0 blocked frames
+DEBUG:pika.callback:Calling <bound method Channel._on_eventok of <pika.channel.Channel object at 0x76d21730>> for "1:Basic.ConsumeOk"
+DEBUG:pika.channel:Discarding frame <METHOD(['channel_number=1', 'frame_type=1', "method=<Basic.ConsumeOk(['consumer_tag=ctag1.d474f1fc4c954c5eb1e515a4ff9c911f'])>"])>
+DEBUG:root:Initialized!
+DEBUG:pika.adapters.select_connection:Using EPollPoller
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x764f27d8>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x764f26c0>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x764f2800>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_start of <pika.adapters.select_connection.SelectConnection object at 0x764e0f90>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+INFO:pika.adapters.base_connection:Connecting to ::1:5672
+DEBUG:pika.callback:Processing 0:Connection.Start
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method SelectConnection._on_connection_start of <pika.adapters.select_connection.SelectConnection object at 0x764e0f90>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method SelectConnection._on_connection_start of <pika.adapters.select_connection.SelectConnection object at 0x764e0f90>> for "0:Connection.Start"
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_tune of <pika.adapters.select_connection.SelectConnection object at 0x764e0f90>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 0:Connection.Tune
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method SelectConnection._on_connection_tune of <pika.adapters.select_connection.SelectConnection object at 0x764e0f90>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method SelectConnection._on_connection_tune of <pika.adapters.select_connection.SelectConnection object at 0x764e0f90>> for "0:Connection.Tune"
+DEBUG:pika.connection:Creating a HeartbeatChecker: 580
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_open of <pika.adapters.select_connection.SelectConnection object at 0x764e0f90>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 0:Connection.OpenOk
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method SelectConnection._on_connection_open of <pika.adapters.select_connection.SelectConnection object at 0x764e0f90>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method SelectConnection._on_connection_open of <pika.adapters.select_connection.SelectConnection object at 0x764e0f90>> for "0:Connection.OpenOk"
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_closed of <pika.adapters.select_connection.SelectConnection object at 0x764e0f90>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 0:_on_connection_open
+DEBUG:pika.callback:Calling <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x764f26c0>> for "0:_on_connection_open"
+DEBUG:pika.connection:Creating channel 1
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_channel_cleanup of <pika.adapters.select_connection.SelectConnection object at 0x764e0f90>>, 'only': <pika.channel.Channel object at 0x76500070>, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_getempty of <pika.channel.Channel object at 0x76500070>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_cancel of <pika.channel.Channel object at 0x76500070>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_flow of <pika.channel.Channel object at 0x76500070>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_close of <pika.channel.Channel object at 0x76500070>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.channel:Adding in on_synchronous_complete callback
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76500070>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.channel:Adding passed in callback
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_openok of <pika.channel.Channel object at 0x76500070>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Added: {'callback': <bound method BlockingChannel._on_consumer_cancelled_by_broker of <pika.adapters.blocking_connection.BlockingChannel object at 0x76500050>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x764f2e68>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x764f2da0>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x764f2e40>>, 'only': None, 'one_shot': False, 'arguments': None}
+INFO:pika.adapters.blocking_connection:Created channel=1
+DEBUG:pika.callback:Processing 1:Channel.OpenOk
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76500070>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method Channel._on_openok of <pika.channel.Channel object at 0x76500070>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76500070>> for "1:Channel.OpenOk"
+DEBUG:pika.channel:0 blocked frames
+DEBUG:pika.callback:Calling <bound method Channel._on_openok of <pika.channel.Channel object at 0x76500070>> for "1:Channel.OpenOk"
+DEBUG:pika.channel:Adding in on_synchronous_complete callback
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76500070>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.channel:Adding passed in callback
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x764f2e18>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 1:Basic.QosOk
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76500070>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x764f2e18>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76500070>> for "1:Basic.QosOk"
+DEBUG:pika.channel:0 blocked frames
+DEBUG:pika.callback:Calling <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x764f2e18>> for "1:Basic.QosOk"
+DEBUG:root:Driver Restarted
+DEBUG:pika.adapters.blocking_connection:Cancelling 1 consumers
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x764f2e18>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.channel:Adding in on_synchronous_complete callback
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76d21730>>, 'only': None, 'one_shot': True, 'arguments': {'consumer_tag': 'ctag1.d474f1fc4c954c5eb1e515a4ff9c911f'}, 'calls': 1}
+DEBUG:pika.channel:Adding passed in callback
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_cancelok of <pika.channel.Channel object at 0x76d21730>>, 'only': None, 'one_shot': True, 'arguments': {'consumer_tag': 'ctag1.d474f1fc4c954c5eb1e515a4ff9c911f'}, 'calls': 1}
+DEBUG:pika.callback:Processing 1:Basic.CancelOk
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x764f2e18>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Comparing {'consumer_tag': 'ctag1.d474f1fc4c954c5eb1e515a4ff9c911f'} to {'consumer_tag': 'ctag1.d474f1fc4c954c5eb1e515a4ff9c911f'}
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76d21730>>, 'only': None, 'one_shot': True, 'arguments': {'consumer_tag': 'ctag1.d474f1fc4c954c5eb1e515a4ff9c911f'}, 'calls': 0}
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Comparing {'consumer_tag': 'ctag1.d474f1fc4c954c5eb1e515a4ff9c911f'} to {'consumer_tag': 'ctag1.d474f1fc4c954c5eb1e515a4ff9c911f'}
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method Channel._on_cancelok of <pika.channel.Channel object at 0x76d21730>>, 'only': None, 'one_shot': True, 'arguments': {'consumer_tag': 'ctag1.d474f1fc4c954c5eb1e515a4ff9c911f'}, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x764f2e18>> for "1:Basic.CancelOk"
+DEBUG:pika.callback:Calling <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76d21730>> for "1:Basic.CancelOk"
+DEBUG:pika.channel:0 blocked frames
+DEBUG:pika.callback:Calling <bound method Channel._on_cancelok of <pika.channel.Channel object at 0x76d21730>> for "1:Basic.CancelOk"
+INFO:pika.adapters.blocking_connection:Channel.close(0, Normal Shutdown)
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x764f2fd0>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+INFO:pika.channel:Channel.close(0, Normal Shutdown)
+DEBUG:pika.channel:Adding in on_synchronous_complete callback
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76d21730>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.channel:Adding passed in callback
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_closeok of <pika.channel.Channel object at 0x76d21730>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 1:Channel.CloseOk
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x764f2fd0>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76d21730>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method Channel._on_closeok of <pika.channel.Channel object at 0x76d21730>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x764f2fd0>> for "1:Channel.CloseOk"
+DEBUG:pika.callback:Calling <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76d21730>> for "1:Channel.CloseOk"
+DEBUG:pika.channel:0 blocked frames
+DEBUG:pika.callback:Calling <bound method Channel._on_closeok of <pika.channel.Channel object at 0x76d21730>> for "1:Channel.CloseOk"
+DEBUG:pika.callback:Processing 1:_on_channel_cleanup
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method SelectConnection._on_channel_cleanup of <pika.adapters.select_connection.SelectConnection object at 0x764e0a30>>, 'only': <pika.channel.Channel object at 0x76d21730>, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method SelectConnection._on_channel_cleanup of <pika.adapters.select_connection.SelectConnection object at 0x764e0a30>> for "1:_on_channel_cleanup"
+DEBUG:pika.connection:Removed channel 1
+DEBUG:pika.callback:Clearing out '1' from the stack
+INFO:pika.adapters.blocking_connection:Closing connection (200): Normal shutdown
+INFO:pika.connection:Closing connection (200): Normal shutdown
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_closed of <pika.adapters.select_connection.SelectConnection object at 0x764e0a30>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 0:Connection.CloseOk
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method SelectConnection._on_connection_closed of <pika.adapters.select_connection.SelectConnection object at 0x764e0a30>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method SelectConnection._on_connection_closed of <pika.adapters.select_connection.SelectConnection object at 0x764e0a30>> for "0:Connection.CloseOk"
+DEBUG:pika.heartbeat:Removing timeout for next heartbeat interval
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_start of <pika.adapters.select_connection.SelectConnection object at 0x764e0a30>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+WARNING:pika.connection:Disconnected from RabbitMQ at localhost:5672 (200): Normal shutdown
+DEBUG:pika.callback:Processing 0:_on_connection_closed
+DEBUG:pika.callback:Calling <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x764e1bc0>> for "0:_on_connection_closed"
+INFO:pika.adapters.blocking_connection:Connection closed; result=BlockingConnection__OnClosedArgs(connection=<pika.adapters.select_connection.SelectConnection object at 0x764e0a30>, reason_code=200, reason_text='Normal shutdown')
+DEBUG:root:Stopped Listening!
+DEBUG:root:Interrupt Keyboard - Stop!
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--task=restart
+DEBUG:root:Task
+DEBUG:root:restart
+DEBUG:root:--rate=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:Device
+DEBUG:root:Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Que
+DEBUG:root:dev_test
+DEBUG:root:--time=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:Initialized!
+DEBUG:pika.adapters.select_connection:Using EPollPoller
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7648db48>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7648dad0>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7648dbc0>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_start of <pika.adapters.select_connection.SelectConnection object at 0x7648ca30>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+INFO:pika.adapters.base_connection:Connecting to ::1:5672
+DEBUG:pika.callback:Processing 0:Connection.Start
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method SelectConnection._on_connection_start of <pika.adapters.select_connection.SelectConnection object at 0x7648ca30>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method SelectConnection._on_connection_start of <pika.adapters.select_connection.SelectConnection object at 0x7648ca30>> for "0:Connection.Start"
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_tune of <pika.adapters.select_connection.SelectConnection object at 0x7648ca30>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 0:Connection.Tune
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method SelectConnection._on_connection_tune of <pika.adapters.select_connection.SelectConnection object at 0x7648ca30>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method SelectConnection._on_connection_tune of <pika.adapters.select_connection.SelectConnection object at 0x7648ca30>> for "0:Connection.Tune"
+DEBUG:pika.connection:Creating a HeartbeatChecker: 580
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_open of <pika.adapters.select_connection.SelectConnection object at 0x7648ca30>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 0:Connection.OpenOk
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method SelectConnection._on_connection_open of <pika.adapters.select_connection.SelectConnection object at 0x7648ca30>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method SelectConnection._on_connection_open of <pika.adapters.select_connection.SelectConnection object at 0x7648ca30>> for "0:Connection.OpenOk"
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_closed of <pika.adapters.select_connection.SelectConnection object at 0x7648ca30>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 0:_on_connection_open
+DEBUG:pika.callback:Calling <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7648dad0>> for "0:_on_connection_open"
+DEBUG:pika.connection:Creating channel 1
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_channel_cleanup of <pika.adapters.select_connection.SelectConnection object at 0x7648ca30>>, 'only': <pika.channel.Channel object at 0x76ccd730>, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_getempty of <pika.channel.Channel object at 0x76ccd730>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_cancel of <pika.channel.Channel object at 0x76ccd730>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_flow of <pika.channel.Channel object at 0x76ccd730>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_close of <pika.channel.Channel object at 0x76ccd730>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.channel:Adding in on_synchronous_complete callback
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76ccd730>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.channel:Adding passed in callback
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_openok of <pika.channel.Channel object at 0x76ccd730>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Added: {'callback': <bound method BlockingChannel._on_consumer_cancelled_by_broker of <pika.adapters.blocking_connection.BlockingChannel object at 0x7648cab0>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7649e418>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7649e210>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7649e3f0>>, 'only': None, 'one_shot': False, 'arguments': None}
+INFO:pika.adapters.blocking_connection:Created channel=1
+DEBUG:pika.callback:Processing 1:Channel.OpenOk
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76ccd730>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method Channel._on_openok of <pika.channel.Channel object at 0x76ccd730>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76ccd730>> for "1:Channel.OpenOk"
+DEBUG:pika.channel:0 blocked frames
+DEBUG:pika.callback:Calling <bound method Channel._on_openok of <pika.channel.Channel object at 0x76ccd730>> for "1:Channel.OpenOk"
+DEBUG:pika.channel:Adding in on_synchronous_complete callback
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76ccd730>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.channel:Adding passed in callback
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7649e5a8>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 1:Basic.QosOk
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76ccd730>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7649e5a8>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76ccd730>> for "1:Basic.QosOk"
+DEBUG:pika.channel:0 blocked frames
+DEBUG:pika.callback:Calling <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7649e5a8>> for "1:Basic.QosOk"
+DEBUG:pika.channel:Adding in on_synchronous_complete callback
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76ccd730>>, 'only': None, 'one_shot': True, 'arguments': {'consumer_tag': 'ctag1.0cdb2ed6dc5a40b6be5bbf224523d894'}, 'calls': 1}
+DEBUG:pika.channel:Adding passed in callback
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_eventok of <pika.channel.Channel object at 0x76ccd730>>, 'only': None, 'one_shot': True, 'arguments': {'consumer_tag': 'ctag1.0cdb2ed6dc5a40b6be5bbf224523d894'}, 'calls': 1}
+DEBUG:pika.callback:Processing 1:Basic.ConsumeOk
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Comparing {'consumer_tag': 'ctag1.0cdb2ed6dc5a40b6be5bbf224523d894'} to {'consumer_tag': 'ctag1.0cdb2ed6dc5a40b6be5bbf224523d894'}
+DEBUG:pika.callback:Removing callback #1: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76ccd730>>, 'only': None, 'one_shot': True, 'arguments': {'consumer_tag': 'ctag1.0cdb2ed6dc5a40b6be5bbf224523d894'}, 'calls': 0}
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Comparing {'consumer_tag': 'ctag1.0cdb2ed6dc5a40b6be5bbf224523d894'} to {'consumer_tag': 'ctag1.0cdb2ed6dc5a40b6be5bbf224523d894'}
+DEBUG:pika.callback:Removing callback #1: {'callback': <bound method Channel._on_eventok of <pika.channel.Channel object at 0x76ccd730>>, 'only': None, 'one_shot': True, 'arguments': {'consumer_tag': 'ctag1.0cdb2ed6dc5a40b6be5bbf224523d894'}, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7649e418>> for "1:Basic.ConsumeOk"
+DEBUG:pika.callback:Calling <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76ccd730>> for "1:Basic.ConsumeOk"
+DEBUG:pika.channel:0 blocked frames
+DEBUG:pika.callback:Calling <bound method Channel._on_eventok of <pika.channel.Channel object at 0x76ccd730>> for "1:Basic.ConsumeOk"
+DEBUG:pika.channel:Discarding frame <METHOD(['channel_number=1', 'frame_type=1', "method=<Basic.ConsumeOk(['consumer_tag=ctag1.0cdb2ed6dc5a40b6be5bbf224523d894'])>"])>
+DEBUG:root:Initialized!
+DEBUG:pika.adapters.select_connection:Using EPollPoller
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7649e7d8>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7649e6c0>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7649e800>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_start of <pika.adapters.select_connection.SelectConnection object at 0x7648cf90>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+INFO:pika.adapters.base_connection:Connecting to ::1:5672
+DEBUG:pika.callback:Processing 0:Connection.Start
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method SelectConnection._on_connection_start of <pika.adapters.select_connection.SelectConnection object at 0x7648cf90>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method SelectConnection._on_connection_start of <pika.adapters.select_connection.SelectConnection object at 0x7648cf90>> for "0:Connection.Start"
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_tune of <pika.adapters.select_connection.SelectConnection object at 0x7648cf90>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 0:Connection.Tune
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method SelectConnection._on_connection_tune of <pika.adapters.select_connection.SelectConnection object at 0x7648cf90>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method SelectConnection._on_connection_tune of <pika.adapters.select_connection.SelectConnection object at 0x7648cf90>> for "0:Connection.Tune"
+DEBUG:pika.connection:Creating a HeartbeatChecker: 580
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_open of <pika.adapters.select_connection.SelectConnection object at 0x7648cf90>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 0:Connection.OpenOk
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method SelectConnection._on_connection_open of <pika.adapters.select_connection.SelectConnection object at 0x7648cf90>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method SelectConnection._on_connection_open of <pika.adapters.select_connection.SelectConnection object at 0x7648cf90>> for "0:Connection.OpenOk"
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_closed of <pika.adapters.select_connection.SelectConnection object at 0x7648cf90>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 0:_on_connection_open
+DEBUG:pika.callback:Calling <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7649e6c0>> for "0:_on_connection_open"
+DEBUG:pika.connection:Creating channel 1
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_channel_cleanup of <pika.adapters.select_connection.SelectConnection object at 0x7648cf90>>, 'only': <pika.channel.Channel object at 0x764ac070>, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_getempty of <pika.channel.Channel object at 0x764ac070>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_cancel of <pika.channel.Channel object at 0x764ac070>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_flow of <pika.channel.Channel object at 0x764ac070>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_close of <pika.channel.Channel object at 0x764ac070>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.channel:Adding in on_synchronous_complete callback
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x764ac070>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.channel:Adding passed in callback
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_openok of <pika.channel.Channel object at 0x764ac070>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Added: {'callback': <bound method BlockingChannel._on_consumer_cancelled_by_broker of <pika.adapters.blocking_connection.BlockingChannel object at 0x764ac050>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7649ee68>>, 'only': None, 'one_shot': False, 'arguments': None}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7649eda0>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7649ee40>>, 'only': None, 'one_shot': False, 'arguments': None}
+INFO:pika.adapters.blocking_connection:Created channel=1
+DEBUG:pika.callback:Processing 1:Channel.OpenOk
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x764ac070>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method Channel._on_openok of <pika.channel.Channel object at 0x764ac070>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x764ac070>> for "1:Channel.OpenOk"
+DEBUG:pika.channel:0 blocked frames
+DEBUG:pika.callback:Calling <bound method Channel._on_openok of <pika.channel.Channel object at 0x764ac070>> for "1:Channel.OpenOk"
+DEBUG:pika.channel:Adding in on_synchronous_complete callback
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x764ac070>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.channel:Adding passed in callback
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7649ee18>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 1:Basic.QosOk
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x764ac070>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7649ee18>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x764ac070>> for "1:Basic.QosOk"
+DEBUG:pika.channel:0 blocked frames
+DEBUG:pika.callback:Calling <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7649ee18>> for "1:Basic.QosOk"
+DEBUG:root:Driver Restarted
+DEBUG:pika.adapters.blocking_connection:Cancelling 1 consumers
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7649ee18>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.channel:Adding in on_synchronous_complete callback
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76ccd730>>, 'only': None, 'one_shot': True, 'arguments': {'consumer_tag': 'ctag1.0cdb2ed6dc5a40b6be5bbf224523d894'}, 'calls': 1}
+DEBUG:pika.channel:Adding passed in callback
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_cancelok of <pika.channel.Channel object at 0x76ccd730>>, 'only': None, 'one_shot': True, 'arguments': {'consumer_tag': 'ctag1.0cdb2ed6dc5a40b6be5bbf224523d894'}, 'calls': 1}
+DEBUG:pika.callback:Processing 1:Basic.CancelOk
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7649ee18>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Comparing {'consumer_tag': 'ctag1.0cdb2ed6dc5a40b6be5bbf224523d894'} to {'consumer_tag': 'ctag1.0cdb2ed6dc5a40b6be5bbf224523d894'}
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76ccd730>>, 'only': None, 'one_shot': True, 'arguments': {'consumer_tag': 'ctag1.0cdb2ed6dc5a40b6be5bbf224523d894'}, 'calls': 0}
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Comparing {'consumer_tag': 'ctag1.0cdb2ed6dc5a40b6be5bbf224523d894'} to {'consumer_tag': 'ctag1.0cdb2ed6dc5a40b6be5bbf224523d894'}
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method Channel._on_cancelok of <pika.channel.Channel object at 0x76ccd730>>, 'only': None, 'one_shot': True, 'arguments': {'consumer_tag': 'ctag1.0cdb2ed6dc5a40b6be5bbf224523d894'}, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7649ee18>> for "1:Basic.CancelOk"
+DEBUG:pika.callback:Calling <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76ccd730>> for "1:Basic.CancelOk"
+DEBUG:pika.channel:0 blocked frames
+DEBUG:pika.callback:Calling <bound method Channel._on_cancelok of <pika.channel.Channel object at 0x76ccd730>> for "1:Basic.CancelOk"
+INFO:pika.adapters.blocking_connection:Channel.close(0, Normal Shutdown)
+DEBUG:pika.callback:Added: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7649efd0>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+INFO:pika.channel:Channel.close(0, Normal Shutdown)
+DEBUG:pika.channel:Adding in on_synchronous_complete callback
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76ccd730>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.channel:Adding passed in callback
+DEBUG:pika.callback:Added: {'callback': <bound method Channel._on_closeok of <pika.channel.Channel object at 0x76ccd730>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 1:Channel.CloseOk
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7649efd0>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76ccd730>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method Channel._on_closeok of <pika.channel.Channel object at 0x76ccd730>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method _CallbackResult.signal_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7649efd0>> for "1:Channel.CloseOk"
+DEBUG:pika.callback:Calling <bound method Channel._on_synchronous_complete of <pika.channel.Channel object at 0x76ccd730>> for "1:Channel.CloseOk"
+DEBUG:pika.channel:0 blocked frames
+DEBUG:pika.callback:Calling <bound method Channel._on_closeok of <pika.channel.Channel object at 0x76ccd730>> for "1:Channel.CloseOk"
+DEBUG:pika.callback:Processing 1:_on_channel_cleanup
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method SelectConnection._on_channel_cleanup of <pika.adapters.select_connection.SelectConnection object at 0x7648ca30>>, 'only': <pika.channel.Channel object at 0x76ccd730>, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method SelectConnection._on_channel_cleanup of <pika.adapters.select_connection.SelectConnection object at 0x7648ca30>> for "1:_on_channel_cleanup"
+DEBUG:pika.connection:Removed channel 1
+DEBUG:pika.callback:Clearing out '1' from the stack
+INFO:pika.adapters.blocking_connection:Closing connection (200): Normal shutdown
+INFO:pika.connection:Closing connection (200): Normal shutdown
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_closed of <pika.adapters.select_connection.SelectConnection object at 0x7648ca30>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+DEBUG:pika.callback:Processing 0:Connection.CloseOk
+DEBUG:pika.callback:Processing use of oneshot callback
+DEBUG:pika.callback:0 registered uses left
+DEBUG:pika.callback:Removing callback #0: {'callback': <bound method SelectConnection._on_connection_closed of <pika.adapters.select_connection.SelectConnection object at 0x7648ca30>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 0}
+DEBUG:pika.callback:Calling <bound method SelectConnection._on_connection_closed of <pika.adapters.select_connection.SelectConnection object at 0x7648ca30>> for "0:Connection.CloseOk"
+DEBUG:pika.heartbeat:Removing timeout for next heartbeat interval
+DEBUG:pika.callback:Added: {'callback': <bound method SelectConnection._on_connection_start of <pika.adapters.select_connection.SelectConnection object at 0x7648ca30>>, 'only': None, 'one_shot': True, 'arguments': None, 'calls': 1}
+WARNING:pika.connection:Disconnected from RabbitMQ at localhost:5672 (200): Normal shutdown
+DEBUG:pika.callback:Processing 0:_on_connection_closed
+DEBUG:pika.callback:Calling <bound method _CallbackResult.set_value_once of <pika.adapters.blocking_connection._CallbackResult object at 0x7648dbc0>> for "0:_on_connection_closed"
+INFO:pika.adapters.blocking_connection:Connection closed; result=BlockingConnection__OnClosedArgs(connection=<pika.adapters.select_connection.SelectConnection object at 0x7648ca30>, reason_code=200, reason_text='Normal shutdown')
+DEBUG:root:Stopped Listening!
+DEBUG:root:Interrupt Keyboard - Stop!
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--task=stop
+DEBUG:root:Task
+DEBUG:root:stop
+DEBUG:root:--rate=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:Device
+DEBUG:root:Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Que
+DEBUG:root:dev_test
+DEBUG:root:--time=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:Initialized!
+DEBUG:root:Initialized!
+DEBUG:root:Driver Stopped
+DEBUG:root:Stopped Listening!
+DEBUG:root:Interrupt Keyboard - Stop!
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--task=start
+DEBUG:root:Task
+DEBUG:root:start
+DEBUG:root:--rate=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:Device
+DEBUG:root:Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Que
+DEBUG:root:dev_test
+DEBUG:root:--time=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:Initialized!
+DEBUG:root:Initialized!
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--task=stop
+DEBUG:root:Task
+DEBUG:root:stop
+DEBUG:root:--rate=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:Device
+DEBUG:root:Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Que
+DEBUG:root:dev_test
+DEBUG:root:--time=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:Driver Stopped
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--task=stop
+DEBUG:root:Task
+DEBUG:root:stop
+DEBUG:root:--rate=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:Device
+DEBUG:root:Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Que
+DEBUG:root:dev_test
+DEBUG:root:--time=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:Driver Stopped
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--task=restart
+DEBUG:root:Task
+DEBUG:root:restart
+DEBUG:root:--rate=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:Device
+DEBUG:root:Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Que
+DEBUG:root:dev_test
+DEBUG:root:--time=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:Driver Restarted
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--task=restart
+DEBUG:root:Task
+DEBUG:root:restart
+DEBUG:root:--rate=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:Device
+DEBUG:root:Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Que
+DEBUG:root:dev_test
+DEBUG:root:--time=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:Driver Restarted
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--task=restart
+DEBUG:root:Task
+DEBUG:root:restart
+DEBUG:root:--rate=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:Device
+DEBUG:root:Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Que
+DEBUG:root:dev_test
+DEBUG:root:--time=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:Driver Restarted
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--task=start
+DEBUG:root:Task
+DEBUG:root:start
+DEBUG:root:--rate=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:Device
+DEBUG:root:Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Que
+DEBUG:root:dev_test
+DEBUG:root:--time=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:Initialized!
+DEBUG:root:Initialized!
+DEBUG:root:Started Posting!
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--task=restart
+DEBUG:root:Task
+DEBUG:root:restart
+DEBUG:root:--rate=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:Device
+DEBUG:root:Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Que
+DEBUG:root:dev_test
+DEBUG:root:--time=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:Driver Restarted
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--task=start
+DEBUG:root:Task
+DEBUG:root:start
+DEBUG:root:--rate=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:Device
+DEBUG:root:Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Que
+DEBUG:root:dev_test
+DEBUG:root:--time=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--task=stop
+DEBUG:root:Task
+DEBUG:root:stop
+DEBUG:root:--rate=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:Device
+DEBUG:root:Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Que
+DEBUG:root:dev_test
+DEBUG:root:--time=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:Driver Stopped
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--task=stop
+DEBUG:root:Task
+DEBUG:root:stop
+DEBUG:root:--rate=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:Device
+DEBUG:root:Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Que
+DEBUG:root:dev_test
+DEBUG:root:--time=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:Driver Stopped
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--task=stop
+DEBUG:root:Task
+DEBUG:root:stop
+DEBUG:root:--rate=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:Device
+DEBUG:root:Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Que
+DEBUG:root:dev_test
+DEBUG:root:--time=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:Driver Stopped
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--task=start
+DEBUG:root:Task
+DEBUG:root:start
+DEBUG:root:--rate=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:Device
+DEBUG:root:Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Que
+DEBUG:root:dev_test
+DEBUG:root:--time=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--task=restart
+DEBUG:root:Task
+DEBUG:root:restart
+DEBUG:root:--rate=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:Device
+DEBUG:root:Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Que
+DEBUG:root:dev_test
+DEBUG:root:--time=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:Driver Restarted
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--task=restart
+DEBUG:root:Task
+DEBUG:root:restart
+DEBUG:root:--rate=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:Device
+DEBUG:root:Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Que
+DEBUG:root:dev_test
+DEBUG:root:--time=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:Driver Restarted
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--task=restart
+DEBUG:root:Task
+DEBUG:root:restart
+DEBUG:root:--rate=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:Device
+DEBUG:root:Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Que
+DEBUG:root:dev_test
+DEBUG:root:--time=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:Driver Restarted
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--task=restart
+DEBUG:root:Task
+DEBUG:root:restart
+DEBUG:root:--rate=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:Device
+DEBUG:root:Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Que
+DEBUG:root:dev_test
+DEBUG:root:--time=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:Driver Restarted
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--task=restart
+DEBUG:root:Task
+DEBUG:root:restart
+DEBUG:root:--rate=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:Device
+DEBUG:root:Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Que
+DEBUG:root:dev_test
+DEBUG:root:--time=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:Driver Restarted
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--task=restart
+DEBUG:root:Task
+DEBUG:root:restart
+DEBUG:root:--rate=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:Device
+DEBUG:root:Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Que
+DEBUG:root:dev_test
+DEBUG:root:--time=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:Driver Restarted
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--task=restart
+DEBUG:root:Task
+DEBUG:root:restart
+DEBUG:root:--rate=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:Device
+DEBUG:root:Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Que
+DEBUG:root:dev_test
+DEBUG:root:--time=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:Driver Restarted
+DEBUG:root:Interrupt Keyboard - Stop!
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--task=restart
+DEBUG:root:Task
+DEBUG:root:restart
+DEBUG:root:--rate=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:Device
+DEBUG:root:Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Que
+DEBUG:root:dev_test
+DEBUG:root:--time=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:Driver Restarted
+DEBUG:root:Interrupt Keyboard - Stop!
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--task=start
+DEBUG:root:Task
+DEBUG:root:start
+DEBUG:root:--rate=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:Device
+DEBUG:root:Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Que
+DEBUG:root:dev_test
+DEBUG:root:--time=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--task=stop
+DEBUG:root:Task
+DEBUG:root:stop
+DEBUG:root:--rate=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:Device
+DEBUG:root:Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Que
+DEBUG:root:dev_test
+DEBUG:root:--time=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:Driver Stopped
+DEBUG:root:Interrupt Keyboard - Stop!
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--task=start
+DEBUG:root:Task
+DEBUG:root:start
+DEBUG:root:--rate=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:Device
+DEBUG:root:Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Que
+DEBUG:root:dev_test
+DEBUG:root:--time=1
+DEBUG:root:Rate
+DEBUG:root:1
+DEBUG:root:Initialized!
+DEBUG:root:Initialized!
+DEBUG:root:thread.__init__() not called
+DEBUG:root:Stopped Listening!
+DEBUG:root:Interrupt Keyboard - Stop!
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Initialized!
+DEBUG:root:Initialized!
+DEBUG:root:Listener instance has no attribute 'start'
+DEBUG:root:Stopped Listening!
+DEBUG:root:Interrupt Keyboard - Stop!
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Initialized!
+DEBUG:root:Initialized!
+DEBUG:root:Started Listening!
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:0
+DEBUG:root:Elapsed: 48.0451583862
+DEBUG:root:Processing: 38.094
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:1
+DEBUG:root:Elapsed: 88.693857193
+DEBUG:root:Processing: 77.246
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:2
+DEBUG:root:Elapsed: 46.6630458832
+DEBUG:root:Processing: 37.216
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:3
+DEBUG:root:Elapsed: 62.5488758087
+DEBUG:root:Processing: 51.951
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:4
+DEBUG:root:Elapsed: 47.3670959473
+DEBUG:root:Processing: 37.07
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:5
+DEBUG:root:Elapsed: 47.7068424225
+DEBUG:root:Processing: 36.851
+DEBUG:root:Started at:None
+DEBUG:root:{'proc_time': 48.3154, 'response_time': 58.66360664367676}
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:0
+DEBUG:root:Elapsed: 77.9240131378
+DEBUG:root:Processing: 64.264
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:1
+DEBUG:root:Elapsed: 50.9171485901
+DEBUG:root:Processing: 40.545
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:2
+DEBUG:root:Elapsed: 64.9178028107
+DEBUG:root:Processing: 54.815
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:3
+DEBUG:root:Elapsed: 46.6201305389
+DEBUG:root:Processing: 37.061
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:4
+DEBUG:root:Elapsed: 47.2550392151
+DEBUG:root:Processing: 36.739
+DEBUG:root:Started at:None
+DEBUG:root:{'proc_time': 49.17125, 'response_time': 60.09477376937866}
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:0
+DEBUG:root:Elapsed: 67.3139095306
+DEBUG:root:Processing: 53.698
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:1
+DEBUG:root:Elapsed: 49.2749214172
+DEBUG:root:Processing: 37.567
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:2
+DEBUG:root:Elapsed: 49.544095993
+DEBUG:root:Processing: 38.819
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:3
+DEBUG:root:Elapsed: 46.7290878296
+DEBUG:root:Processing: 36.75
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:4
+DEBUG:root:Elapsed: 48.1989383698
+DEBUG:root:Processing: 37.934
+DEBUG:root:Started at:None
+DEBUG:root:{'proc_time': 41.7085, 'response_time': 53.21550369262695}
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:0
+DEBUG:root:Elapsed: 92.6628112793
+DEBUG:root:Processing: 73.695
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:1
+DEBUG:root:Elapsed: 49.2029190063
+DEBUG:root:Processing: 39.422
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:2
+DEBUG:root:Elapsed: 49.8299598694
+DEBUG:root:Processing: 39.601
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:3
+DEBUG:root:Elapsed: 61.8391036987
+DEBUG:root:Processing: 52.299
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:4
+DEBUG:root:Elapsed: 47.6410388947
+DEBUG:root:Processing: 37.518
+DEBUG:root:Started at:None
+DEBUG:root:{'proc_time': 51.25425, 'response_time': 63.38369846343994}
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:0
+DEBUG:root:Elapsed: 87.8388881683
+DEBUG:root:Processing: 72.996
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:1
+DEBUG:root:Elapsed: 55.2890300751
+DEBUG:root:Processing: 45.722
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:2
+DEBUG:root:Elapsed: 48.5892295837
+DEBUG:root:Processing: 38.865
+DEBUG:root:Stopped Listening!
+DEBUG:root:Interrupt Keyboard - Stop!
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--rate=1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:--time=1
+DEBUG:root:Unknown Exit
+DEBUG:root:name 'tmp' is not defined
+DEBUG:root:Interrupt Keyboard - Stop!
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--rate=1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:name 'tmp' is not defined
+DEBUG:root:Interrupt Keyboard - Stop!
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--rate=1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Initialized!
+DEBUG:root:(404, "NOT_FOUND - no queue 'Python_Dev' in vhost 'test'")
+DEBUG:root:Interrupt Keyboard - Stop!
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--rate=1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Initialized!
+DEBUG:root:Initialized!
+DEBUG:root:Started Listening!
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:0
+DEBUG:root:Elapsed: 47.5039482117
+DEBUG:root:Processing: 36.984
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:1
+DEBUG:root:Elapsed: 47.1501350403
+DEBUG:root:Processing: 36.742
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:2
+DEBUG:root:Elapsed: 93.4579372406
+DEBUG:root:Processing: 80.236
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:3
+DEBUG:root:Elapsed: 50.8880615234
+DEBUG:root:Processing: 37.434
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:4
+DEBUG:root:Elapsed: 56.5869808197
+DEBUG:root:Processing: 37.147
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:5
+DEBUG:root:Elapsed: 50.3571033478
+DEBUG:root:Processing: 40.622
+DEBUG:root:Started at:None
+DEBUG:root:{'proc_time': 45.7086, 'response_time': 59.11741256713867}
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:0
+DEBUG:root:Elapsed: 49.6299266815
+DEBUG:root:Processing: 39.025
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:1
+DEBUG:root:Elapsed: 93.2509899139
+DEBUG:root:Processing: 77.906
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:2
+DEBUG:root:Elapsed: 102.614164352
+DEBUG:root:Processing: 86.12
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:3
+DEBUG:root:Elapsed: 47.4059581757
+DEBUG:root:Processing: 37.31
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:4
+DEBUG:root:Elapsed: 92.1900272369
+DEBUG:root:Processing: 77.042
+DEBUG:root:Started at:None
+DEBUG:root:{'proc_time': 60.090250000000005, 'response_time': 73.22525978088379}
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:0
+DEBUG:root:Elapsed: 46.7150211334
+DEBUG:root:Processing: 37.465
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:1
+DEBUG:root:Elapsed: 74.2099285126
+DEBUG:root:Processing: 62.43
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:2
+DEBUG:root:Elapsed: 70.0600147247
+DEBUG:root:Processing: 60.233
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:3
+DEBUG:root:Elapsed: 50.369977951
+DEBUG:root:Processing: 40.167
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:4
+DEBUG:root:Elapsed: 49.1449832916
+DEBUG:root:Processing: 37.108
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:5
+DEBUG:root:Elapsed: 48.4359264374
+DEBUG:root:Processing: 37.936
+DEBUG:root:Started at:None
+DEBUG:root:{'proc_time': 47.4806, 'response_time': 58.099985122680664}
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:0
+DEBUG:root:Elapsed: 93.7969684601
+DEBUG:root:Processing: 78.695
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:1
+DEBUG:root:Elapsed: 72.1809864044
+DEBUG:root:Processing: 60.785
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:2
+DEBUG:root:Elapsed: 52.0160198212
+DEBUG:root:Processing: 38.121
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:3
+DEBUG:root:Elapsed: 48.3639240265
+DEBUG:root:Processing: 38.283
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:4
+DEBUG:root:Elapsed: 47.7249622345
+DEBUG:root:Processing: 38.159
+DEBUG:root:Started at:None
+DEBUG:root:{'proc_time': 53.971000000000004, 'response_time': 66.58947467803955}
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:0
+DEBUG:root:Elapsed: 52.3281097412
+DEBUG:root:Processing: 38.475
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:1
+DEBUG:root:Elapsed: 49.1290092468
+DEBUG:root:Processing: 39.186
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:2
+DEBUG:root:Elapsed: 47.4169254303
+DEBUG:root:Processing: 36.739
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:3
+DEBUG:root:Elapsed: 50.5340099335
+DEBUG:root:Processing: 37.918
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:4
+DEBUG:root:Elapsed: 47.6908683777
+DEBUG:root:Processing: 37.659
+DEBUG:root:Started at:None
+DEBUG:root:{'proc_time': 38.0795, 'response_time': 49.85201358795166}
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:0
+DEBUG:root:Elapsed: 75.3757953644
+DEBUG:root:Processing: 63.349
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:1
+DEBUG:root:Elapsed: 52.4230003357
+DEBUG:root:Processing: 42.928
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:2
+DEBUG:root:Elapsed: 62.8049373627
+DEBUG:root:Processing: 52.734
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:3
+DEBUG:root:Elapsed: 48.0570793152
+DEBUG:root:Processing: 37.67
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:4
+DEBUG:root:Elapsed: 46.6990470886
+DEBUG:root:Processing: 36.927
+DEBUG:root:Started at:None
+DEBUG:root:{'proc_time': 49.170249999999996, 'response_time': 59.66520309448242}
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:0
+DEBUG:root:Elapsed: 92.169046402
+DEBUG:root:Processing: 76.774
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:1
+DEBUG:root:Elapsed: 66.1101341248
+DEBUG:root:Processing: 53.751
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:2
+DEBUG:root:Elapsed: 63.4999275208
+DEBUG:root:Processing: 53.13
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:3
+DEBUG:root:Elapsed: 47.4190711975
+DEBUG:root:Processing: 36.782
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:4
+DEBUG:root:Elapsed: 49.379825592
+DEBUG:root:Processing: 39.031
+DEBUG:root:Started at:None
+DEBUG:root:{'proc_time': 55.10925, 'response_time': 67.29954481124878}
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:0
+DEBUG:root:Elapsed: 93.7118530273
+DEBUG:root:Processing: 74.909
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:1
+DEBUG:root:Elapsed: 47.7130413055
+DEBUG:root:Processing: 37.701
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:2
+DEBUG:root:Elapsed: 48.4619140625
+DEBUG:root:Processing: 38.359
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:3
+DEBUG:root:Elapsed: 47.5869178772
+DEBUG:root:Processing: 37.322
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:4
+DEBUG:root:Elapsed: 46.5250015259
+DEBUG:root:Processing: 36.703
+DEBUG:root:Started at:None
+DEBUG:root:{'proc_time': 47.072750000000006, 'response_time': 59.36843156814575}
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:0
+DEBUG:root:Elapsed: 89.9310112
+DEBUG:root:Processing: 73.505
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:1
+DEBUG:root:Elapsed: 51.253080368
+DEBUG:root:Processing: 38.413
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:2
+DEBUG:root:Elapsed: 46.7958450317
+DEBUG:root:Processing: 36.759
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:3
+DEBUG:root:Elapsed: 68.7940120697
+DEBUG:root:Processing: 58.06
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:4
+DEBUG:root:Elapsed: 47.6198196411
+DEBUG:root:Processing: 37.656
+DEBUG:root:Started at:None
+DEBUG:root:{'proc_time': 51.68425, 'response_time': 64.1934871673584}
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:0
+DEBUG:root:Elapsed: 83.4250450134
+DEBUG:root:Processing: 71.399
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:1
+DEBUG:root:Elapsed: 48.6481189728
+DEBUG:root:Processing: 38.114
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:2
+DEBUG:root:Elapsed: 50.360918045
+DEBUG:root:Processing: 38.826
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:3
+DEBUG:root:Elapsed: 47.5559234619
+DEBUG:root:Processing: 36.991
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:4
+DEBUG:root:Elapsed: 48.6090183258
+DEBUG:root:Processing: 38.304
+DEBUG:root:Started at:None
+DEBUG:root:{'proc_time': 46.332499999999996, 'response_time': 57.497501373291016}
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:0
+DEBUG:root:Elapsed: 73.6219882965
+DEBUG:root:Processing: 62.312
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:1
+DEBUG:root:Elapsed: 46.3619232178
+DEBUG:root:Processing: 37.18
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:2
+DEBUG:root:Elapsed: 48.33984375
+DEBUG:root:Processing: 37.117
+DEBUG:root:Stopped Listening!
+DEBUG:root:Interrupt Keyboard - Stop!
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--rate=1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Initialized!
+DEBUG:root:Initialized!
+DEBUG:root:Started Listening!
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:0
+DEBUG:root:Elapsed: 46.6349124908
+DEBUG:root:Processing: 36.814
+DEBUG:root:Started at:None
+DEBUG:root:float division by zero
+DEBUG:root:Stopped Listening!
+DEBUG:root:Interrupt Keyboard - Stop!
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--rate=1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:__init__() takes exactly 9 arguments (8 given)
+DEBUG:root:Interrupt Keyboard - Stop!
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--rate=1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Initialized!
+DEBUG:root:Initialized!
+DEBUG:root:Started Listening!
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:0
+DEBUG:root:Elapsed: 73.2798576355
+DEBUG:root:Processing: 59.991
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:1
+DEBUG:root:Elapsed: 47.7609634399
+DEBUG:root:Processing: 38.015
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:2
+DEBUG:root:Elapsed: 48.003911972
+DEBUG:root:Processing: 38.316
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:3
+DEBUG:root:Elapsed: 48.7921237946
+DEBUG:root:Processing: 38.057
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:4
+DEBUG:root:Elapsed: 50.2989292145
+DEBUG:root:Processing: 38.256
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:5
+DEBUG:root:Elapsed: 88.5319709778
+DEBUG:root:Processing: 73.75
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:6
+DEBUG:root:Elapsed: 48.3620166779
+DEBUG:root:Processing: 39.121
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:7
+DEBUG:root:Elapsed: 50.3349304199
+DEBUG:root:Processing: 39.995
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:8
+DEBUG:root:Elapsed: 50.0581264496
+DEBUG:root:Processing: 39.846
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:9
+DEBUG:root:Elapsed: 47.886133194
+DEBUG:root:Processing: 37.948
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:10
+DEBUG:root:Elapsed: 90.8019542694
+DEBUG:root:Processing: 73.884
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:11
+DEBUG:root:Elapsed: 47.0449924469
+DEBUG:root:Processing: 37.312
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:12
+DEBUG:root:Elapsed: 46.4940071106
+DEBUG:root:Processing: 36.963
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:13
+DEBUG:root:Elapsed: 46.2229251862
+DEBUG:root:Processing: 36.757
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:14
+DEBUG:root:Elapsed: 48.1879711151
+DEBUG:root:Processing: 38.624
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:15
+DEBUG:root:Elapsed: 103.247880936
+DEBUG:root:Processing: 91.136
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:16
+DEBUG:root:Elapsed: 46.9551086426
+DEBUG:root:Processing: 37.029
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:17
+DEBUG:root:Elapsed: 47.9040145874
+DEBUG:root:Processing: 38.535
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:18
+DEBUG:root:Elapsed: 46.5388298035
+DEBUG:root:Processing: 37.145
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:19
+DEBUG:root:Elapsed: 46.4239120483
+DEBUG:root:Processing: 36.868
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:20
+DEBUG:root:Elapsed: 79.9310207367
+DEBUG:root:Processing: 68.458
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:21
+DEBUG:root:Elapsed: 46.9269752502
+DEBUG:root:Processing: 36.882
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:22
+DEBUG:root:Elapsed: 50.3180027008
+DEBUG:root:Processing: 40.762
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:23
+DEBUG:root:Elapsed: 53.1358718872
+DEBUG:root:Processing: 38.696
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:24
+DEBUG:root:Elapsed: 47.9590892792
+DEBUG:root:Processing: 38.386
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:25
+DEBUG:root:Elapsed: 80.0111293793
+DEBUG:root:Processing: 67.174
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:26
+DEBUG:root:Elapsed: 47.3210811615
+DEBUG:root:Processing: 37.102
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:27
+DEBUG:root:Elapsed: 47.2159385681
+DEBUG:root:Processing: 37.466
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:28
+DEBUG:root:Elapsed: 47.5740432739
+DEBUG:root:Processing: 36.687
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:29
+DEBUG:root:Elapsed: 50.3239631653
+DEBUG:root:Processing: 38.153
+DEBUG:root:Started at:None
+DEBUG:root:{'proc_time': 45.14348275862068, 'response_time': 55.98357628131735}
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:0
+DEBUG:root:Elapsed: 89.6439552307
+DEBUG:root:Processing: 73.654
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:1
+DEBUG:root:Elapsed: 61.7349147797
+DEBUG:root:Processing: 52.183
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:2
+DEBUG:root:Elapsed: 47.9431152344
+DEBUG:root:Processing: 38.385
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:3
+DEBUG:root:Elapsed: 89.4410610199
+DEBUG:root:Processing: 74.687
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:4
+DEBUG:root:Elapsed: 52.0968437195
+DEBUG:root:Processing: 39.209
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:5
+DEBUG:root:Elapsed: 93.6770439148
+DEBUG:root:Processing: 77.065
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:6
+DEBUG:root:Elapsed: 49.4110584259
+DEBUG:root:Processing: 39.731
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:7
+DEBUG:root:Elapsed: 46.6570854187
+DEBUG:root:Processing: 37.25
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:8
+DEBUG:root:Elapsed: 47.012090683
+DEBUG:root:Processing: 37.385
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:9
+DEBUG:root:Elapsed: 46.8530654907
+DEBUG:root:Processing: 36.956
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:10
+DEBUG:root:Elapsed: 91.2640094757
+DEBUG:root:Processing: 74.857
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:11
+DEBUG:root:Elapsed: 45.8929538727
+DEBUG:root:Processing: 36.655
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:12
+DEBUG:root:Elapsed: 60.9109401703
+DEBUG:root:Processing: 51.033
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:13
+DEBUG:root:Elapsed: 48.5670566559
+DEBUG:root:Processing: 38.93
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:14
+DEBUG:root:Elapsed: 46.8680858612
+DEBUG:root:Processing: 37.558
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:15
+DEBUG:root:Elapsed: 78.9000988007
+DEBUG:root:Processing: 67.103
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:16
+DEBUG:root:Elapsed: 46.3209152222
+DEBUG:root:Processing: 36.757
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:17
+DEBUG:root:Elapsed: 60.5270862579
+DEBUG:root:Processing: 51.128
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:18
+DEBUG:root:Elapsed: 46.6578006744
+DEBUG:root:Processing: 36.668
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:19
+DEBUG:root:Elapsed: 48.150062561
+DEBUG:root:Processing: 38.098
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:20
+DEBUG:root:Elapsed: 72.0200538635
+DEBUG:root:Processing: 59.179
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:21
+DEBUG:root:Elapsed: 46.8978881836
+DEBUG:root:Processing: 37.377
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:22
+DEBUG:root:Elapsed: 46.8599796295
+DEBUG:root:Processing: 37.09
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:23
+DEBUG:root:Elapsed: 51.7611503601
+DEBUG:root:Processing: 41.37
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:24
+DEBUG:root:Elapsed: 50.8489608765
+DEBUG:root:Processing: 40.911
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:25
+DEBUG:root:Elapsed: 88.6149406433
+DEBUG:root:Processing: 73.648
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:26
+DEBUG:root:Elapsed: 47.219991684
+DEBUG:root:Processing: 37.713
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:27
+DEBUG:root:Elapsed: 47.4879741669
+DEBUG:root:Processing: 38.229
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:28
+DEBUG:root:Elapsed: 70.3771114349
+DEBUG:root:Processing: 60.339
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:29
+DEBUG:root:Elapsed: 49.1118431091
+DEBUG:root:Processing: 39.67
+DEBUG:root:Started at:None
+DEBUG:root:{'proc_time': 48.31544827586205, 'response_time': 59.331630838328394}
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:0
+DEBUG:root:Elapsed: 90.6109809875
+DEBUG:root:Processing: 79.335
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:1
+DEBUG:root:Elapsed: 49.1988658905
+DEBUG:root:Processing: 39.082
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:2
+DEBUG:root:Elapsed: 46.9830036163
+DEBUG:root:Processing: 36.984
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:3
+DEBUG:root:Elapsed: 48.2029914856
+DEBUG:root:Processing: 39.074
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:4
+DEBUG:root:Elapsed: 49.0889549255
+DEBUG:root:Processing: 38.806
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:5
+DEBUG:root:Elapsed: 87.7339839935
+DEBUG:root:Processing: 72.934
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:6
+DEBUG:root:Elapsed: 48.2070446014
+DEBUG:root:Processing: 37.353
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:7
+DEBUG:root:Elapsed: 52.7632236481
+DEBUG:root:Processing: 42.613
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:8
+DEBUG:root:Elapsed: 49.1771697998
+DEBUG:root:Processing: 38.932
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:9
+DEBUG:root:Elapsed: 48.1600761414
+DEBUG:root:Processing: 38.507
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:10
+DEBUG:root:Elapsed: 76.700925827
+DEBUG:root:Processing: 64.924
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:11
+DEBUG:root:Elapsed: 47.5521087646
+DEBUG:root:Processing: 37.44
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:12
+DEBUG:root:Elapsed: 46.8411445618
+DEBUG:root:Processing: 36.727
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:13
+DEBUG:root:Elapsed: 46.7538833618
+DEBUG:root:Processing: 37.439
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:14
+DEBUG:root:Elapsed: 61.6149902344
+DEBUG:root:Processing: 51.859
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:15
+DEBUG:root:Elapsed: 88.1199836731
+DEBUG:root:Processing: 72.703
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:16
+DEBUG:root:Elapsed: 47.9509830475
+DEBUG:root:Processing: 38.174
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:17
+DEBUG:root:Elapsed: 47.1439361572
+DEBUG:root:Processing: 37.74
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:18
+DEBUG:root:Elapsed: 46.993970871
+DEBUG:root:Processing: 37.146
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:19
+DEBUG:root:Elapsed: 47.2960472107
+DEBUG:root:Processing: 37.124
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:20
+DEBUG:root:Elapsed: 59.4761371613
+DEBUG:root:Processing: 46.993
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:21
+DEBUG:root:Elapsed: 46.4050769806
+DEBUG:root:Processing: 36.9
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:22
+DEBUG:root:Elapsed: 46.6959476471
+DEBUG:root:Processing: 36.853
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:23
+DEBUG:root:Elapsed: 46.0979938507
+DEBUG:root:Processing: 37.012
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:24
+DEBUG:root:Elapsed: 50.2560138702
+DEBUG:root:Processing: 40.615
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:25
+DEBUG:root:Elapsed: 87.9299640656
+DEBUG:root:Processing: 73.682
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:26
+DEBUG:root:Elapsed: 46.5440750122
+DEBUG:root:Processing: 36.724
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:27
+DEBUG:root:Elapsed: 47.0869541168
+DEBUG:root:Processing: 36.821
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:28
+DEBUG:root:Elapsed: 47.9180812836
+DEBUG:root:Processing: 36.976
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:29
+DEBUG:root:Elapsed: 47.0559597015
+DEBUG:root:Processing: 37.829
+DEBUG:root:Started at:None
+DEBUG:root:{'proc_time': 44.74041379310344, 'response_time': 55.36222457885742}
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:0
+DEBUG:root:Elapsed: 98.1528759003
+DEBUG:root:Processing: 86.089
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:1
+DEBUG:root:Elapsed: 49.0930080414
+DEBUG:root:Processing: 39.246
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:2
+DEBUG:root:Elapsed: 47.6479530334
+DEBUG:root:Processing: 37.059
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:3
+DEBUG:root:Elapsed: 47.8000640869
+DEBUG:root:Processing: 37.761
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:4
+DEBUG:root:Elapsed: 51.0840415955
+DEBUG:root:Processing: 39.557
+DEBUG:root:Stopped Listening!
+DEBUG:root:Interrupt Keyboard - Stop!
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--rate=1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Initialized!
+DEBUG:root:Initialized!
+DEBUG:root:Started Listening!
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:0
+DEBUG:root:Elapsed: 76.7390727997
+DEBUG:root:Processing: 41.892
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:1
+DEBUG:root:Elapsed: 89.9991989136
+DEBUG:root:Processing: 75.185
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:2
+DEBUG:root:Elapsed: 47.5800037384
+DEBUG:root:Processing: 37.605
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:3
+DEBUG:root:Elapsed: 46.471118927
+DEBUG:root:Processing: 36.8
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:4
+DEBUG:root:Elapsed: 47.4050045013
+DEBUG:root:Processing: 37.928
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:5
+DEBUG:root:Elapsed: 48.4051704407
+DEBUG:root:Processing: 38.478
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:6
+DEBUG:root:Elapsed: 95.242023468
+DEBUG:root:Processing: 80.188
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:7
+DEBUG:root:Elapsed: 47.7290153503
+DEBUG:root:Processing: 37.741
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:8
+DEBUG:root:Elapsed: 45.9499359131
+DEBUG:root:Processing: 36.769
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:9
+DEBUG:root:Elapsed: 46.4050769806
+DEBUG:root:Processing: 37.61
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:10
+DEBUG:root:Elapsed: 54.4939041138
+DEBUG:root:Processing: 42.21
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:11
+DEBUG:root:Elapsed: 87.6579284668
+DEBUG:root:Processing: 72.772
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:12
+DEBUG:root:Elapsed: 46.5631484985
+DEBUG:root:Processing: 36.791
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:13
+DEBUG:root:Elapsed: 50.5809783936
+DEBUG:root:Processing: 41.269
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:14
+DEBUG:root:Elapsed: 46.8349456787
+DEBUG:root:Processing: 37.355
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:15
+DEBUG:root:Elapsed: 63.9560222626
+DEBUG:root:Processing: 52.002
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:16
+DEBUG:root:Elapsed: 89.3440246582
+DEBUG:root:Processing: 74.249
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:17
+DEBUG:root:Elapsed: 46.6439723969
+DEBUG:root:Processing: 37.193
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:18
+DEBUG:root:Elapsed: 48.2270717621
+DEBUG:root:Processing: 38.039
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:19
+DEBUG:root:Elapsed: 49.9069690704
+DEBUG:root:Processing: 40.094
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:20
+DEBUG:root:Elapsed: 55.1340579987
+DEBUG:root:Processing: 44.617
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:21
+DEBUG:root:Elapsed: 83.5912227631
+DEBUG:root:Processing: 71.77
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:22
+DEBUG:root:Elapsed: 46.5030670166
+DEBUG:root:Processing: 36.744
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:23
+DEBUG:root:Elapsed: 49.3669509888
+DEBUG:root:Processing: 38.624
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:24
+DEBUG:root:Elapsed: 50.4589080811
+DEBUG:root:Processing: 40.697
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:25
+DEBUG:root:Elapsed: 49.6649742126
+DEBUG:root:Processing: 40.161
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:26
+DEBUG:root:Elapsed: 113.008975983
+DEBUG:root:Processing: 72.962
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:27
+DEBUG:root:Elapsed: 50.1408576965
+DEBUG:root:Processing: 40.176
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:28
+DEBUG:root:Elapsed: 46.7510223389
+DEBUG:root:Processing: 37.374
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:29
+DEBUG:root:Elapsed: 91.1610126495
+DEBUG:root:Processing: 75.484
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:30
+DEBUG:root:Elapsed: 88.1729125977
+DEBUG:root:Processing: 73.329
+DEBUG:root:Started at:2017-04-19 03:27:33.319442
+DEBUG:root:{'proc_time': 47.692633333333326, 'response_time': 60.39718786875407}
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:0
+DEBUG:root:Elapsed: 121.901035309
+DEBUG:root:Processing: 105.924
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:1
+DEBUG:root:Elapsed: 47.2719669342
+DEBUG:root:Processing: 37.242
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:2
+DEBUG:root:Elapsed: 46.5679168701
+DEBUG:root:Processing: 37.179
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:3
+DEBUG:root:Elapsed: 89.7309780121
+DEBUG:root:Processing: 74.75
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:4
+DEBUG:root:Elapsed: 48.7499237061
+DEBUG:root:Processing: 38.023
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:5
+DEBUG:root:Elapsed: 87.9521369934
+DEBUG:root:Processing: 72.765
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:6
+DEBUG:root:Elapsed: 46.7789173126
+DEBUG:root:Processing: 36.786
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:7
+DEBUG:root:Elapsed: 48.6578941345
+DEBUG:root:Processing: 38.828
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:8
+DEBUG:root:Elapsed: 46.3869571686
+DEBUG:root:Processing: 36.647
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:9
+DEBUG:root:Elapsed: 54.7940731049
+DEBUG:root:Processing: 44.751
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:10
+DEBUG:root:Elapsed: 88.2229804993
+DEBUG:root:Processing: 73.202
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:11
+DEBUG:root:Elapsed: 61.7070198059
+DEBUG:root:Processing: 52.232
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:12
+DEBUG:root:Elapsed: 49.8631000519
+DEBUG:root:Processing: 40.326
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:13
+DEBUG:root:Elapsed: 47.3589897156
+DEBUG:root:Processing: 37.278
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:14
+DEBUG:root:Elapsed: 46.7231273651
+DEBUG:root:Processing: 37.34
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:15
+DEBUG:root:Elapsed: 81.2158584595
+DEBUG:root:Processing: 66.285
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:16
+DEBUG:root:Elapsed: 61.2180233002
+DEBUG:root:Processing: 51.636
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:17
+DEBUG:root:Elapsed: 51.7179965973
+DEBUG:root:Processing: 42.321
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:18
+DEBUG:root:Elapsed: 52.6211261749
+DEBUG:root:Processing: 43.152
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:19
+DEBUG:root:Elapsed: 49.0000247955
+DEBUG:root:Processing: 37.494
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:20
+DEBUG:root:Elapsed: 69.188117981
+DEBUG:root:Processing: 56.636
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:21
+DEBUG:root:Elapsed: 46.236038208
+DEBUG:root:Processing: 36.876
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:22
+DEBUG:root:Elapsed: 49.0930080414
+DEBUG:root:Processing: 38.22
+DEBUG:root:Stopped Listening!
+DEBUG:root:Interrupt Keyboard - Stop!
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--rate=1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Initialized!
+DEBUG:root:Initialized!
+DEBUG:root:Started Listening!
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:0
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:1
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:2
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:3
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:4
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:5
+DEBUG:root:Started at:2017-04-19 03:29:22.933568
+DEBUG:root:{'proc_time': 45.583, 'response_time': 60.81647872924805}
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:0
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:1
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:2
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:3
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:4
+DEBUG:root:Started at:2017-04-19 03:29:22.933568
+DEBUG:root:{'proc_time': 53.72225, 'response_time': 64.14800882339478}
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:0
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:1
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:2
+DEBUG:root:---------------Message Received-----------
+DEBUG:root:Cnt:3
+DEBUG:root:Stopped Listening!
+DEBUG:root:Interrupt Keyboard - Stop!
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Exit
+DEBUG:root:--rate=1
+DEBUG:root:--device=Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Initialized!
+DEBUG:root:Initialized!
+DEBUG:root:Started Listening!
+DEBUG:root:Started at:2017-04-19 03:29:54.433531
+DEBUG:root:{'proc_time': 44.674, 'response_time': 55.400943756103516}
+DEBUG:root:Started at:2017-04-19 03:29:54.433531
+DEBUG:root:{'proc_time': 48.348749999999995, 'response_time': 57.58953094482422}
+DEBUG:root:Started at:2017-04-19 03:29:54.433531
+DEBUG:root:{'proc_time': 51.692750000000004, 'response_time': 61.975717544555664}
+DEBUG:root:Started at:2017-04-19 03:29:54.433531
+DEBUG:root:{'proc_time': 53.369, 'response_time': 63.174545764923096}
+DEBUG:root:Stopped Listening!
+DEBUG:root:Interrupt Keyboard - Stop!
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:./FogOfThings/Testing/daemon_Fake_Dev.py
+DEBUG:root:Unknown Component
+DEBUG:root:--rate=5
+DEBUG:root:--device=Python_Dev
+DEBUG:root:--que=dev_test
+DEBUG:root:Initialized!
+DEBUG:root:Initialized!
+DEBUG:root:Started Listening!
+DEBUG:root:Started at:2017-04-19 03:31:29.715515
+DEBUG:root:{'proc_time': 48.00359999999999, 'response_time': 57.97462463378906}
+DEBUG:root:Started at:2017-04-19 03:31:29.715515
+DEBUG:root:{'proc_time': 54.33166666666667, 'response_time': 65.29000070359972}
+DEBUG:root:Started at:2017-04-19 03:31:29.715515
+DEBUG:root:{'proc_time': 46.708333333333336, 'response_time': 56.72807163662381}
+DEBUG:root:Started at:2017-04-19 03:31:29.715515
+DEBUG:root:{'proc_time': 43.88466666666667, 'response_time': 53.3339712354872}
+DEBUG:root:Started at:2017-04-19 03:31:29.715515
+DEBUG:root:{'proc_time': 44.814499999999995, 'response_time': 54.11574840545654}
+DEBUG:root:Started at:2017-04-19 03:31:29.715515
+DEBUG:root:{'proc_time': 45.12733333333333, 'response_time': 54.7487735748291}
+DEBUG:root:Started at:2017-04-19 03:31:29.715515
+DEBUG:root:{'proc_time': 48.14922222222222, 'response_time': 58.17347102695041}
+DEBUG:root:Started at:2017-04-19 03:31:29.715515
+DEBUG:root:{'proc_time': 47.2797, 'response_time': 56.974077224731445}
+DEBUG:root:Started at:2017-04-19 03:31:29.715515
+DEBUG:root:{'proc_time': 48.02977777777779, 'response_time': 58.08258056640625}
+DEBUG:root:Started at:2017-04-19 03:31:29.715515
+DEBUG:root:{'proc_time': 46.636, 'response_time': 57.38520622253418}
+DEBUG:root:Stopped Listening!
+DEBUG:root:Interrupt Keyboard - Stop!
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Initialized!
+DEBUG:root:Initialized!
+DEBUG:root:Started Listening!
+DEBUG:root:Started at:2017-04-19 03:34:32.729175
+DEBUG:root:{'proc_time': 45.689693181818186, 'response_time': 35010.20445065065}
+DEBUG:root:Started at:2017-04-19 03:34:42.942755
+DEBUG:root:{'proc_time': 44.690444444444445, 'response_time': 53.789165284898544}
+DEBUG:root:Started at:2017-04-19 03:34:52.980109
+DEBUG:root:{'proc_time': 48.64555555555555, 'response_time': 58.48593182033963}
+DEBUG:root:Started at:2017-04-19 03:35:02.984153
+DEBUG:root:{'proc_time': 47.60133333333333, 'response_time': 57.53000577290853}
+DEBUG:root:Started at:2017-04-19 03:35:13.008590
+DEBUG:root:{'proc_time': 47.37, 'response_time': 57.56521224975586}
+DEBUG:root:Started at:2017-04-19 03:35:23.026729
+DEBUG:root:{'proc_time': 48.20188888888888, 'response_time': 57.70341555277506}
+DEBUG:root:Stopped Listening!
+DEBUG:root:Interrupt Keyboard - Stop!
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Initialized!
+DEBUG:root:Initialized!
+DEBUG:root:Started Listening!
+DEBUG:root:Started at:2017-04-19 03:54:32.366984
+DEBUG:root:{'proc_time': 47.237854513584566, 'response_time': 562762.1045240073}
+DEBUG:root:Started at:2017-04-19 03:54:42.385420
+DEBUG:root:{'proc_time': 48.64366666666667, 'response_time': 58.252573013305664}
+DEBUG:root:Started at:2017-04-19 03:54:52.392204
+DEBUG:root:{'proc_time': 48.89277777777778, 'response_time': 58.90774726867676}
+DEBUG:root:Started at:2017-04-19 03:55:02.468037
+DEBUG:root:{'proc_time': 48.374, 'response_time': 59.029579162597656}
+DEBUG:root:Started at:2017-04-19 03:55:13.421303
+DEBUG:root:{'proc_time': 48.12588888888889, 'response_time': 58.62712860107422}
+DEBUG:root:Started at:2017-04-19 03:55:23.442956
+DEBUG:root:{'proc_time': 48.26877777777778, 'response_time': 58.09521675109863}
+DEBUG:root:Started at:2017-04-19 03:55:33.447055
+DEBUG:root:{'proc_time': 47.590888888888884, 'response_time': 57.96403355068631}
+DEBUG:root:Started at:2017-04-19 03:55:43.465069
+DEBUG:root:{'proc_time': 52.994, 'response_time': 65.36176469590929}
+DEBUG:root:Started at:2017-04-19 03:55:53.530519
+DEBUG:root:{'proc_time': 49.6133, 'response_time': 60.31782627105713}
+DEBUG:root:Started at:2017-04-19 03:56:04.569482
+DEBUG:root:{'proc_time': 47.62349999999999, 'response_time': 57.89079666137695}
+DEBUG:root:Started at:2017-04-19 03:56:15.532175
+DEBUG:root:{'proc_time': 51.285555555555554, 'response_time': 63.912153244018555}
+DEBUG:root:Started at:2017-04-19 03:56:25.567962
+DEBUG:root:{'proc_time': 49.55822222222223, 'response_time': 60.14823913574219}
+DEBUG:root:Started at:2017-04-19 03:56:35.588541
+DEBUG:root:{'proc_time': 58.52599999999999, 'response_time': 70.36508454216852}
+DEBUG:root:Started at:2017-04-19 03:56:45.592009
+DEBUG:root:{'proc_time': 50.626444444444445, 'response_time': 61.346001095241974}
+DEBUG:root:Started at:2017-04-19 03:56:55.611196
+DEBUG:root:{'proc_time': 47.723222222222226, 'response_time': 58.22830730014377}
+DEBUG:root:Started at:2017-04-19 03:57:05.657864
+DEBUG:root:{'proc_time': 47.026555555555554, 'response_time': 57.9218864440918}
+DEBUG:root:Stopped Listening!
+DEBUG:root:Interrupt Keyboard - Stop!
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Initialized!
+DEBUG:root:Initialized!
+DEBUG:root:Started Listening!
+DEBUG:root:Started at:2017-04-19 04:19:18.494251
+DEBUG:root:{'date': '2017-04-19 04:19:18', 'proc_time': 49.23672987208431, 'response_time': 656214.1190682075}
+DEBUG:root:saveToCouch() takes exactly 1 argument (2 given)
+DEBUG:root:Stopped Listening!
+DEBUG:root:Interrupt Keyboard - Stop!
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Initialized!
+DEBUG:root:Initialized!
+DEBUG:root:Started Listening!
+DEBUG:root:Started at:2017-04-19 04:19:45.283696
+DEBUG:root:{'date': '2017-04-19 04:19:45', 'proc_time': 48.86596, 'response_time': 4811.865282058716}
+DEBUG:root:Started at:2017-04-19 04:19:55.416206
+DEBUG:root:{'date': '2017-04-19 04:19:55', 'proc_time': 49.992666666666665, 'response_time': 61.36102146572537}
+DEBUG:root:Started at:2017-04-19 04:20:05.436890
+DEBUG:root:{'date': '2017-04-19 04:20:05', 'proc_time': 48.63977777777778, 'response_time': 58.27543470594618}
+DEBUG:root:Started at:2017-04-19 04:20:15.459880
+DEBUG:root:{'date': '2017-04-19 04:20:15', 'proc_time': 52.60322222222222, 'response_time': 63.25202518039279}
+DEBUG:root:Stopped Listening!
+DEBUG:root:Interrupt Keyboard - Stop!
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Initialized!
+DEBUG:root:Initialized!
+DEBUG:root:Started Listening!
+DEBUG:root:Started at:2017-04-19 04:34:56.896447
+DEBUG:root:{'date': '2017-04-19 04:34:56', 'proc_time': 48.115708237986254, 'response_time': 428524.50115838915}
+DEBUG:root:Started at:2017-04-19 04:35:07.298950
+DEBUG:root:{'date': '2017-04-19 04:35:07', 'proc_time': 44.087222222222216, 'response_time': 53.82513999938965}
+DEBUG:root:Stopped Listening!
+DEBUG:root:Interrupt Keyboard - Stop!
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Initialized!
+DEBUG:root:Initialized!
+DEBUG:root:Started Listening!
+DEBUG:root:Started at:2017-04-19 04:35:48.713602
+DEBUG:root:{'date': '2017-04-19 04:35:48', 'proc_time': 47.29735897435897, 'response_time': 10773.602277804644}
+DEBUG:root:Started at:2017-04-19 04:35:59.386680
+DEBUG:root:{'date': '2017-04-19 04:35:59', 'proc_time': 50.01211111111111, 'response_time': 60.09009149339464}
+DEBUG:root:Stopped Listening!
+DEBUG:root:Interrupt Keyboard - Stop!
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Initialized!
+DEBUG:root:Initialized!
+DEBUG:root:Started Listening!
+DEBUG:root:Started at:2017-04-19 04:36:15.721599
+DEBUG:root:{'date': '2017-04-19 04:36:15', 'proc_time': 42.57376923076923, 'response_time': 362.16644140390247}
+DEBUG:root:Started at:2017-04-19 04:36:26.439892
+DEBUG:root:{'date': '2017-04-19 04:36:26', 'proc_time': 48.54533333333333, 'response_time': 58.75855022006564}
+DEBUG:root:Stopped Listening!
+DEBUG:root:Interrupt Keyboard - Stop!
+DEBUG:root:Exiting Main Thread - Keyboard
+ERROR:pika.adapters.base_connection:Socket Error: 104
+DEBUG:root:Initialized!
+DEBUG:root:Initialized!
+DEBUG:root:Started Listening!
+DEBUG:root:Stopped Listening!
+DEBUG:root:Interrupt Keyboard - Stop!
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Initialized!
+DEBUG:root:Initialized!
+DEBUG:root:Started Listening!
+DEBUG:root:Initialized!
+DEBUG:root:Initialized!
+DEBUG:root:Started Listening!
+DEBUG:root:Stopped Listening!
+DEBUG:root:Interrupt Keyboard - Stop!
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Initialized!
+DEBUG:root:Initialized!
+DEBUG:root:Started Listening!
+DEBUG:root:Stopped Listening!
+DEBUG:root:Interrupt Keyboard - Stop!
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Initialized!
+DEBUG:root:Initialized!
+DEBUG:root:Started Listening!
+DEBUG:root:Stopped Listening!
+DEBUG:root:Interrupt Keyboard - Stop!
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Initialized!
+DEBUG:root:Initialized!
+DEBUG:root:Started Posting!
+DEBUG:root:Started Listening!
+DEBUG:root:Started at:2017-04-19 05:16:12.127321
+DEBUG:root:{'date': '2017-04-19 05:16:12', 'proc_time': 45.3734, 'response_time': 55.87468147277832}
+DEBUG:root:{'proc_time': 45.3734, 'Device': 'Python_Dev', 'Rate': 5.0, 'date': '2017-04-19 05:16:12', 'type': 'Driver', 'Gateway': 'James_2344', 'response_time': 55.87468147277832}
+DEBUG:root:Started at:2017-04-19 05:16:22.269280
+DEBUG:root:{'date': '2017-04-19 05:16:22', 'proc_time': 44.27625, 'response_time': 54.25757169723511}
+DEBUG:root:{'proc_time': 44.27625, 'Device': 'Python_Dev', 'Rate': 5.0, 'date': '2017-04-19 05:16:22', 'type': 'Driver', 'Gateway': 'James_2344', 'response_time': 54.25757169723511}
+DEBUG:root:Posting Done!
+DEBUG:root:Stopped Listening!
+DEBUG:root:Interrupt Keyboard - Stop!
+DEBUG:root:Exiting Main Thread - Keyboard

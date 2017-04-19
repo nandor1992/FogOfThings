@@ -53,12 +53,11 @@ class Resource:
         #Save Gateway 
         db=self.couch['apps']
         try:
-            ret=ast.literal_eval(payload)
-            ret['gateway']=self.gw
-            db.save(ret)
+            db.save(payload)
             return "ok"
         except Exception,e:
-            return "Error"+str(e)
+            print(e)
+            return "Error "+str(e)
 
     def getDeployedApps(self,needs):
         havs=[]
@@ -94,9 +93,11 @@ class Resource:
 
 if __name__ == "__main__":
     data = [('metadata', 'res_metadata'), ('position', 'res_position'), ('storage', 'res_storage')]
+    data2={'config_file': 'org.karaf.full_test', 'name': 'Test_App1', 'host_gateway': 'James_2344', 'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'apps': [], 'cluster': 'Cluster_Jasmine_1529', 'resources': ['storage'], 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'AppId': '697bbbe0e7f3d065ae4652d7100044af', 'device': {'AndroidPhoneT': ['ZOfxl5hv']}, 'config': {'name': 'Test_App1', 'dev_AndroidPhoneT': 'ZOfxl5hv', 'region': 'FirstRegion;BasicApiKey1', 'resources': 'storage', 'dev_message': 'Gcode:G01_X1_Y1_Z1', 'cloud': 'mqtt_conn1'}, 'cloud': ['mqtt_conn1'], 'current_gateway': 'James_2344'}
     res=Resource('admin','hunter','Vazquez_7663',data)
     #print(res.getDeployedApps(['Thermostat_App','Dummy_app']))
-    print(res.getDeployFile('Thermostat_App'))
+    print(res.saveDeployFile("Testing_App2",data2))
+    #print(res.getDeployFile('Thermostat_App'))
     #print(res.checkDeviceDependency('ardUnoTemp'))
     #print(res.deleteDeployedFile('Thermostat_App2'))
     #print(res.getResourceQue('metadata'))

@@ -125,7 +125,7 @@ class admin():
                     ##To-Do
                     ret=ast.literal_eval("  ".join(components[3:]))
                     self.modifyConfig(ret['reg_api'],ret['name'],ret['reg_name'],None)
-                    self.ini.initRabbitmq(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))+"/RabbitVersions/rabbit_bare.json")
+                    self.ini.initRabbitmq(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))+"/RabbitVersions/rabbit_Base_04-18.json")
                     self.ini.initCouchDB(Config.items("DeviceQ"))
                     self.reg.setClustQueue(ret['name'])
                     self.reg.createFedPolicy(ret['name'])
@@ -361,17 +361,34 @@ class admin():
                     app_f=str(d_son["file"])
                 else:
                     app_f=None
-
-                name=str(d_son.get("name"))
-                desc=str(d_son.get("description"))
+                if '_id'in d_son and 'name' in d_son and 'description' in d_son:
+                    app_uuid=str(d_son.get("_id"))
+                    name=str(d_son.get("name"))
+                    desc=str(d_son.get("description"))
+                else:
+                    return "Error: App uuid, or name or description not present"
 
                 #Add Device Name
-                list_conf['name']=name
-                
+                list_conf["name"]=name
+                deployment={}
+                deployment['name']=name
+                deployment['AppId']=app_uuid
+                deployment['host_gateway']=Config.get("General","Gateway_Name")
+                deployment['current_gateway']=Config.get("General","Gateway_Name")
+                deployment['cluster']=Config.get("Cluster","cluster_name")
+                deployment['cloud']=[]
+                deployment['device']={}
+                deployment['apps']=[]
+                deployment['resources']=[]
+                deployment['region']=[]
+                deployment['config']={}
+                deployment['config_file']=conf_f
+                deployment['file']=app_f
                 #Cloud Stuff
                 if cloud!=None:
                     logging.debug("Cloud Config Started")
                     conf_cloud=""
+                    deployment['cloud']=[str(i) for i in cloud]
                     for con in cloud:
                         result1=self.route.add("cloud_resolve",str(con),{"app":name,"cloud":str(con)})
                         conf_cloud=conf_cloud+con+":"
@@ -393,11 +410,14 @@ class admin():
                     for dev in devices:
                         dev_l=self.device.getSpecDevList(dev["type"],self.dev_status,self.controller_name) #Change Idle to Available
                         dev_conf=""
+                        deployment['device'][str(dev['type'])]=[]
                         if dev["cnt"]=="":
                             for dev_s in dev_l:
                                 dev_conf=dev_conf+":"+str(dev_s["id"])
+                                deployment['device'][str(dev['type'])].append(str(dev_s['id']))
                                 result1=self.route.add("apps_resolve","karaf_app",{"device":dev_s["id"]})
                                 conn_devs.append(dev_s["id"])
+
                                 if dev["reserve"]=="No":
                                     result2=self.route.add("device_resolve",Config.get("DeviceQ",dev_s["driver"]),{"device":dev_s["id"]})
                                 else:
@@ -405,13 +425,14 @@ class admin():
                         else:
                             for i in range(0,int(dev["cnt"])):
                                 dev_conf=dev_conf+":"+str(dev_l[i]["id"])
+                                deployment['device'][str(dev['type'])].append(str(dev_l[i]["id"]))
                                 result1=self.route.add("apps_resolve","karaf_app",{"device":dev_l[i]["id"]})
                                 conn_devs.append(dev_l[i]["id"])
                                 if dev["reserve"]=="No":
                                     result2=self.route.add("device_resolve",Config.get("DeviceQ",dev_l[i]["driver"]),{"device":dev_l[i]["id"]})
                                 else:
                                     result2=self.route.add("device_resolve",Config.get("DeviceQ",dev_l[i]["driver"]),{"device":dev_l[i]["id"],"app":name})
-                        list_conf["dev_"+dev["type"]]=str(dev_conf[1:])
+                        list_conf["dev_"+dev["type"]]=str(dev_conf[1:])                      
                         if result1!="ok" or result2!="ok":
                             return "Error: Devices Connection Setup"
                     logging.debug("Device connection configuration successfull")               
@@ -429,13 +450,17 @@ class admin():
                             for dev_s in dev_l:
                                 driver=Config.get("DeviceQ",dev_s["driver"])
                             for d in fix[dev_t]:
+                                
                                 self.route.add("apps_resolve","karaf_app",{"device":d})
                                 self.route.add("device_resolve",driver,{"device":d,"app":name})
                                 #Config
                                 if 'dev_'+dev_t in list_conf:
                                     list_conf['dev_'+dev_t]=list_conf['dev_'+dev_t]+":"+":".join(d)
+                                    deployment['device'][dev_t].append(d)
                                 else:
                                     list_conf['dev_'+dev_t]=":".join(d)
+                                    deployment['device'][dev_t]=[]
+                                    deployment['device'][dev_t].append(d)
                         logging.debug("Fix device Config successfull")
                     
                 #Region Stuff
@@ -446,11 +471,13 @@ class admin():
                     for reg in region:
                         result2=self.route.addQueue("reg_"+str(reg["name"]))
                         if str(reg["key"])=="":
+                            deployment['region'].append({'name':str(reg['name'])})
                             region_conf=region_conf+str(reg["name"])+";None:";
                             result2b=self.route.add("region_resolve","reg_"+str(reg["name"]),{"app":name,"region":str(reg["name"])})
                             result2d=self.route.addExBind("region","apps_resolve",{"app":name,"region":str(reg["name"])})
                             result3=self.route.add("apps_resolve","karaf_app",{"app":name})
                         else:
+                            deployment['region'].append({'name':str(reg['name']),'key':str(reg['key'])})
                             region_conf=region_conf+str(reg["name"])+";"+str(reg['key'])+":";
                             result2b=self.route.add("region_resolve","reg_"+str(reg["name"]),{"app":name,"region":str(reg["name"])})
                             result2d=self.route.addExBind("region","apps_resolve",{"app":name,"region":str(reg["name"]),"key":str(reg["key"])})
@@ -469,6 +496,7 @@ class admin():
                     int_l=self.res.getDeployedApps(apps["interrested_apps"])
                     if len(apps["required_apps"])!=len(must_l):
                         return "Error: Required Apps Not met"
+                    deployment['apps']=must_l+int_l
                     apps_list=":".join(must_l)+":".join(int_l)
                     if len(must_l)+len(int_l)!=0:
                         list_conf["apps"]=str(apps_list)
@@ -477,6 +505,7 @@ class admin():
                 #Resource Stuff
                 #ToDo: Add part to notify/resolve Resource
                 if resource!=None:
+                    deployment['resources']=[str(i) for i in resource]
                     logging.debug("Resource Config Started")
                     res_list=""
                     for res_1 in resource:
@@ -492,6 +521,7 @@ class admin():
                     logging.debug("Resource connection configuration successfull")
 
                 ##Migration Resolving!!!!!!!!!!!!!!!!!!
+                ##To-Do: Figure Out how to modify the freaking Config to Suit This!!!!
                 if migrate!=None:
                     logging.debug("Migration Config Started")
                     ##Do magic Here
@@ -499,7 +529,7 @@ class admin():
                     for gate_n in migrate.keys():
                         gate_v=migrate[gate_n]
                         logging.debug("Working on: "+gate_n)
-                        ##Devices -- add queue and add device to type
+                        ##Devices -- add queue ande add device to type
                         if 'devices' in gate_v:
                             for dev_t in gate_v['devices'].keys():
                                 #Config
@@ -566,7 +596,7 @@ class admin():
                             self.route.addExBind("apps","federation."+gate_n,{"app":name})
                             self.karaf.addMigratedApp([name],"forward")
                         ##Resources
-                        if 'resources' in gate_v:
+                        if 'resources' in gate_v:                         
                             #Config
                             if 'resources' in list_conf:
                                 list_conf['resources']=list_conf['resources']+":"+":".join(gate_v['resources'])
@@ -584,10 +614,12 @@ class admin():
                     logging.debug("Conf-File Config Started")
                     lst=[]
                     for param in list_conf.keys():
-                        lst.append(""+param+" = "+list_conf[param])   
+                        lst.append(""+param+" = "+list_conf[param])
+                        deployment['config'][str(param)]=str(list_conf[param])
                     if conf!=None:
                         for param in conf:
                             lst.append(""+param+" = "+conf[param])
+                            deployment['config'][str(param)]=str(conf[param])
                     if self.karaf.createConfig(conf_f,lst)!="ok":
                         return "Error: Config Not Written to File"
                     else:
@@ -596,7 +628,7 @@ class admin():
 
                 #Check if file available if not Download
                 if self.karaf.verifyBundleExists(app_f)!="ok":
-                    if self.karaf.getApp(app_f)!="ok":
+                    if self.karaf.getApp(app_uuid,app_f)!="ok":
                         return "Error: App Not found on Repo"
 
                 #Deploy Bundle do not start yet
@@ -628,19 +660,106 @@ class admin():
                 bundle_info=self.karaf.getBundleInfo(depl_resp)
                 logging.debug(bundle_info)
                 #Addig Devices to payload
-                payload=payload[:-1]+',"conn_devs" : '+str(conn_devs)+"}"
-                logging.debug(payload)
+                logging.debug(deployment)
                 #Save config file to configs with name
                 if self.res.deleteDeployedFile(name)=="ok":
-                    if self.res.saveDeployFile(name,payload)!="ok":
+                    if self.res.saveDeployFile(name,deployment)!="ok":
                         logging.debug("Deployment file could not be saved")
                     else:
                         logging.debug("Deployment file saved")
                 #Verify if application started and return stuff
                 
-                return "success "+str(bundle_info).replace(' ','')
+                return deployment
+
+    
 
     def removeTask(self,payload):
+        logging.debug("Remove App: "+payload)
+        doc=self.res.getDeployFile(payload)
+        if doc==None:
+            return "Error: "+name+" not found"
+        else:
+            #ToDo:verify cloud,device,region,name,deployment_config
+            if self.removeVerify(doc)!=None:
+                return "Error:Verify"
+            else:
+                name=doc.get("name")
+                #Do Cloud
+                logging.debug("Cloud Unconfig Started")
+                for con in doc.get("cloud"):
+                    self.route.remove("cloud_resolve",str(con),{"app":name,"cloud":str(con)})
+                    self.route.remove("apps_resolve","karaf_app",{"app":name})
+
+
+                ###Do Devices
+                devs=doc.get("device")
+                for dev_type in devs:
+                    for dev in devs[dev_type]:
+                        if len(self.device.checkAppsForDev(self.controller_name,name,dev))==0:
+                            driver=self.device.getDriverForDev(dev)
+                            self.route.remove("apps_resolve","karaf_app",{"device":dev})
+                            self.route.remove("device_resolve",driver,{"device":dev,"app":name})
+                            self.route.remove("device_resolve",driver,{"device":dev})
+                        else:
+                            self.route.remove("device_resolve",driver,{"device":dev,"app":name})
+                        logging.debug("Removed Dev Type: "+dev_type+" Device:"+dev)
+                    
+                ##Do Region - Delete Regions connection for this app
+                logging.debug("Region Deconfig Started")
+                for reg in doc.get("region"):
+                    self.route.removeQueue("reg_"+str(reg["name"]))
+                    if str(reg["key"])=="":
+                        self.route.remove("region_resolve","reg_"+str(reg["name"]),{"app":name,"region":str(reg["name"])})
+                        self.route.addExUnBind("region","apps_resolve",{"app":name,"region":str(reg["name"])})
+                        self.route.remove("apps_resolve","karaf_app",{"app":name})
+                    else:
+                        self.route.remove("region_resolve","reg_"+str(reg["name"]),{"app":name,"region":str(reg["name"])})
+                        self.route.addExUnBind("region","apps_resolve",{"app":name,"region":str(reg["name"]),"key":str(reg["key"])})
+                        self.route.remove("apps_resolve","karaf_app",{"app":name})
+                    self.route.remove("apps_resolve","karaf_app",{"app":name})
+                logging.debug("Region connection un-configuration successfull") 
+
+                ##Do Resource
+                logging.debug("Resource Un-Config Started")
+                for res_1 in doc.get("resources"):
+                    res_queue=self.res.getResourceQue(str(res_1))
+                    if res_queue!=None:
+                        self.res.deleteRes(res_1,name)
+                        self.route.remove("resource_resolve",res_queue,{"app":name,"res":str(res_1)})
+                self.route.remove("apps_resolve","karaf_app",{"app":name})
+                logging.debug("Resource connection un-configuration successfull")
+
+                #HouseKeeping
+                logging.debug("Deleting Bundle from Karaf")
+                app_f=doc.get("file")
+                del_id=str(self.karaf.getBundleId(app_f))
+                if self.karaf.delBundle(del_id)=="ok":
+                    logging.debug("Deregleted Bundle: "+del_id)
+                else:
+                    return "Error: Deletin App"
+                    
+                ##Delte Conf-file
+                conf_f=doc.get("config_file")
+                if conf_f!=None:
+                    logging.debug("Conf-File Removal Started")
+                    if self.karaf.delConfig(conf_f)!="ok":
+                        return "Error: Config File not deleted"
+                    else:
+                        logging.debug("Config file Written")
+                logging.debug("Conf-File removal successfull")                       
+
+                ##Delete Deploy file
+                if self.res.deleteDeployedFile(name)!="ok":
+                    logging.debug("Deployment file could not be deleted")
+                else:
+                    logging.debug("Deployment file deleted")
+                
+
+        return "success: Removed App "+name+" from Gateway"
+
+
+    
+    def removeTask2(self,payload):
         name=str(payload).strip()
         logging.debug(name)
         doc=self.res.getDeployFile(name)
@@ -854,7 +973,7 @@ class admin():
 
     def checkAuth(self,key):
         #Maybe need to consider other mqtt-keys or maybe not 
-        if key==Config.get("Mqtt1","admin_api"):
+        if key==Config.get("Mqtt1","admin_api") or key==Config.get("Cluster","cluster_api"):
             return True
         else:
             return False
@@ -866,8 +985,8 @@ class admin():
         api_key=properties.headers.get("api_key")
         if (cloud_conn!=None and source!=None and uuid != None and self.checkAuth(api_key)):
             logging.debug("-----Received Request from Cloud-----")
-            response = self.resolve(body)
-            properties_m=pika.BasicProperties(headers={'name':self.controller_name,'api_key':api_key,'cloud':""+cloud_conn, 'source':""+source , 'uuid':uuid, 'datetime':""+datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
+            response = str(self.resolve(body))
+            properties_m=pika.BasicProperties(headers={'name':self.controller_name,'api_key':api_key,'request':'response','cloud':""+cloud_conn, 'source':""+source , 'uuid':uuid, 'datetime':""+datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
             ch.basic_publish(exchange='cloud_resolve', routing_key='', properties=properties_m ,body=str(response))
             logging.debug("---Request processed and Reponse Sent----")
         else:

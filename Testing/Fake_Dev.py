@@ -117,6 +117,7 @@ if __name__ == "__main__":
     for arg in sys.argv:
         print(arg)
         part=arg.split("=")
+
         if part[0][2:]=="device":
             print("Device")
             print(part[1])
