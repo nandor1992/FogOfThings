@@ -25391,3 +25391,7 @@ DEBUG:root:New UUID=ynd0fdk9
 DEBUG:root:Driver Stopped
 DEBUG:root:RF24 Radio started: 12:12:27 02/07/17 UTC
 DEBUG:root:Driver Stopped
+DEBUG:root:RF24 Radio started: 15:07:40 04/18/17 UTC
+DEBUG:root:Driver Restarted
+DEBUG:root:RF24 Radio started: 15:08:56 04/18/17 UTC
+DEBUG:root:Driver Stopped

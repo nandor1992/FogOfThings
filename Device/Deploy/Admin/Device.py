@@ -42,11 +42,29 @@ class Device:
                                 "status":doc['status']})
         return device        
 
+    def getDriverForDev(self,dev_id):
+        for p in self.queue:
+            db2=self.couch[p[0]]
+            look=db2.view('views/doc')
+            for p2 in look[dev_id]:
+                return p[1]
 
+    def checkAppsForDev(self,gw,app,dev_id):
+        db=self.couch['apps']
+        havs=[]
+        look=db.view('views/app_for_dev')
+        for p in look[dev_id,gw]:
+            if p.value!=app:
+                havs.append(str(p.value))
+        return havs
+        
+    
 if __name__ == "__main__":
     data=[('blue', 'ardu_blue'), ('rf24', 'ardu_rf24'), ('rf434', 'atmega_rfa1')]
     d=Device("admin","hunter",data)
+    print(d.getDriverForDev("ZOfxl5hv"))
+    #print(len(d.checkAppsForDev("James_2344","Test_App1","ZOfxl5hv")))
     #d.modifyDevStatus("ardu_rf24","OWaDMY9V","Idle")
     #print(d.getDevList("Gateway_Work_2"))
     #print(d.getSensorList("ardu_rf24","OWaDMY9V"))
-    print(d.getSpecDevList("ardUnoTemp","Idle",None))
+    #print(d.getSpecDevList("ardUnoTemp","Idle",None))

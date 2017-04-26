@@ -299,7 +299,7 @@ class Region:
     def saveMonitoring(self,save):
         db=self.couch['monitoring']
         db.save(save)
-         
+             
 if __name__ == "__main__":
     reg=Region("admin","hunter","test","admin","hunter")
     #print(reg.getDevsOnWan("B8:27:EB"))

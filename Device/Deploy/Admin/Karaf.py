@@ -11,6 +11,7 @@ class Karaf:
         self.conf=conf_loc
         self.loc=location
         self.apach=apache_loc+"/etc/"
+
     def getBundleInfo(self,id):
         buffer=StringIO()
         status={}
@@ -116,10 +117,10 @@ class Karaf:
         else:
             return "error:"+str(status)
 
-    def getApp(self,filename):
+    def getApp(self,uuid,filename):
         buffer=StringIO()
         c1=pycurl.Curl()
-        url=self.repo+filename
+        url="http://10.0.0.134:5984/apps/"+uuid+"/"+filename
         c1.setopt(c1.URL,url)
         c1.setopt(c1.WRITEDATA,buffer)
         c1.perform()
@@ -204,7 +205,8 @@ class Karaf:
         fp.close()
 
 if __name__ == "__main__":
-    k=Karaf('karaf','karaf',"http://10.0.0.63/swift/v1/test/","/home/pi/apps/","/home/pi/configs/","/home/pi/apache-karaf-4.0.5/")
+    k=Karaf('karaf','karaf',"10.0.0.134","/home/pi/","/home/pi","/home/pi/apache-karaf-3.0.8")
+    k.getApp('697bbbe0e7f3d065ae4652d7100044af','full_test_app-0.0.1-SNAPSHOT.jar')
 #result=k.getBundleInfo(123)
 #result=k.deployBundle("dummy_app-0.0.1-SNAPSHOT.jar")
 #result=k.modifyConfig("org.karaf.test","test","test1")
@@ -213,7 +215,7 @@ if __name__ == "__main__":
 #result=k.readConfig("org.karaf.test")
     #print(k.createConfig("org.karaf.test2",{'arg1':'val1','arg2':'val2'}))
     #k.addMigratedApp(['Thermostat_App'],"forward")
-    k.removeMigratedApp(['Thermostat_App2','Bullcrap_app2'])
+    #k.removeMigratedApp(['Thermostat_App2','Bullcrap_app2'])
 #result = k.delConfig("org.karaf.test2")
 #result=k.readConfig("org.karaf.test2")
 #result=k.saveDeployFile("sample_file","{'test1'}")

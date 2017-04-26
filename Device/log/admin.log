@@ -5991,3 +5991,3038 @@ DEBUG:root:---Request processed and Reponse Sent----
 DEBUG:root:Exiting Main Thread - Keyboard
 DEBUG:root:Sending Initial Request to Cloud
 DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [["b8:27:eb:c5:ed:e4", "10.0.0.67"], ["b8:27:eb:80:24:c9", "10.0.0.78"], ["b8:27:eb:20:b9:f4", "10.0.0.87"]], "name": "Temp_GW_5312", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "lvZFgvKORLKzqllz"}
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_2405", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_2144", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_9156", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_9146", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self initClust {'reg_api': 'uCYOLiBdUOPbePKX', 'reg_role': 'master', 'reg_name': 'Cluster_Johnny_7277', 'name': 'Pennington_1466'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Initialize new Cluster you are Master
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_8755", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'uCYOLiBdUOPbePKX', 'reg_role': 'master', 'reg_name': 'Cluster_Johnny_7277', 'name': 'Pennington_1466'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_3121", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self initClust {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Initialize new Cluster you are Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_6850", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'ardRF24CNC', 'reserve': 'No'}, {'cnt': '1', 'required': '1', 'type': 'AndroidPhone', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {'Erickson_2204': {'apps': ['Test_App2'], 'devices': {'ardRF24CNC': ['UUID1']}}}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "ardRF24CNC", "reserve": "No"}, {"cnt": "1", "required": "1", "type": "AndroidPhone", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {"Erickson_2204": {"apps": ["Test_App2"], "devices": {"ardRF24CNC": ["UUID1"]}}}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "ardRF24CNC", 
+        "reserve": "No"
+      }, 
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhone", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {
+    "Erickson_2204": {
+      "apps": [
+        "Test_App2"
+      ], 
+      "devices": {
+        "ardRF24CNC": [
+          "UUID1"
+        ]
+      }
+    }
+  }, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_2720", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'ardRF24CNC', 'reserve': 'No'}, {'cnt': '1', 'required': '1', 'type': 'AndroidPhone', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {'Erickson_2204': {'apps': ['Test_App2'], 'devices': {'ardRF24CNC': ['UUID1']}}}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "ardRF24CNC", "reserve": "No"}, {"cnt": "1", "required": "1", "type": "AndroidPhone", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {"Erickson_2204": {"apps": ["Test_App2"], "devices": {"ardRF24CNC": ["UUID1"]}}}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "ardRF24CNC", 
+        "reserve": "No"
+      }, 
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhone", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {
+    "Erickson_2204": {
+      "apps": [
+        "Test_App2"
+      ], 
+      "devices": {
+        "ardRF24CNC": [
+          "UUID1"
+        ]
+      }
+    }
+  }, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "AndroidPhoneT", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhoneT", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {}, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Migration Config Started
+DEBUG:root:Migration configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_5703", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "AndroidPhoneT", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhoneT", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {}, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Migration Config Started
+DEBUG:root:Migration configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 174
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '174'}
+DEBUG:root:{'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App',"conn_devs" : [u'ZOfxl5hv']}
+DEBUG:root:Deployment file saved
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "AndroidPhoneT", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhoneT", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {}, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Migration Config Started
+DEBUG:root:Migration configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 174
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '174'}
+DEBUG:root:{'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App',"conn_devs" : [u'ZOfxl5hv']}
+DEBUG:root:Deployment file could not be saved
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_6014", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "AndroidPhoneT", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhoneT", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {}, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Migration Config Started
+DEBUG:root:Migration configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 174
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '174'}
+DEBUG:root:{'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App',"conn_devs" : [u'ZOfxl5hv']}
+DEBUG:root:Deployment file could not be saved
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_7730", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_3732", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "AndroidPhoneT", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhoneT", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {}, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Migration Config Started
+DEBUG:root:Migration configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 174
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '174'}
+DEBUG:root:{'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App',"conn_devs" : [u'ZOfxl5hv']}
+DEBUG:root:Deployment file saved
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_4148", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "AndroidPhoneT", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhoneT", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {}, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Migration Config Started
+DEBUG:root:Migration configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 174
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '174'}
+DEBUG:root:{'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App',"conn_devs" : [u'ZOfxl5hv']}
+DEBUG:root:Deployment file saved
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "AndroidPhoneT", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhoneT", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {}, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Migration Config Started
+DEBUG:root:Migration configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 174
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '174'}
+DEBUG:root:{'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App',"conn_devs" : [u'ZOfxl5hv']}
+DEBUG:root:Deployment file saved
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_8595", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "AndroidPhoneT", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhoneT", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {}, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Migration Config Started
+DEBUG:root:Migration configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 174
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '174'}
+DEBUG:root:{'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App',"conn_devs" : [u'ZOfxl5hv']}
+DEBUG:root:Deployment file saved
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_1577", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "AndroidPhoneT", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhoneT", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {}, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_3349", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "AndroidPhoneT", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhoneT", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {}, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_8543", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "AndroidPhoneT", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhoneT", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {}, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Migration Config Started
+DEBUG:root:Migration configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 174
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '174'}
+DEBUG:root:{'config_file': 'org.karaf.full_test', 'name': 'Test_App1', 'host_gateway': 'James_2344', 'region': [{u'name': u'FirstRegion', u'key': u'BasicApiKey1'}], 'apps': [], 'cluster': 'Cluster_Jasmine_1529', 'resources': [u'storage'], 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'AppId': '697bbbe0e7f3d065ae4652d7100044af', 'device': {u'AndroidPhoneT': ['ZOfxl5hv']}, 'config': {'name': 'Test_App1', u'dev_AndroidPhoneT': 'ZOfxl5hv', 'region': 'FirstRegion;BasicApiKey1', 'resources': 'storage', u'dev_message': u'Gcode:G01_X1_Y1_Z1', 'cloud': ''}, 'cloud': [u'mqtt_conn1'], 'current_gateway': 'James_2344'}
+DEBUG:root:Deployment file could not be saved
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_3817", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "AndroidPhoneT", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhoneT", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {}, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Migration Config Started
+DEBUG:root:Migration configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 174
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '174'}
+DEBUG:root:{'config_file': 'org.karaf.full_test', 'name': 'Test_App1', 'host_gateway': 'James_2344', 'region': ["{u'name': u'FirstRegion', u'key': u'BasicApiKey1'}"], 'apps': [], 'cluster': 'Cluster_Jasmine_1529', 'resources': [u'storage'], 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'AppId': '697bbbe0e7f3d065ae4652d7100044af', 'device': {'AndroidPhoneT': ['ZOfxl5hv']}, 'config': {'name': 'Test_App1', u'dev_AndroidPhoneT': 'ZOfxl5hv', 'region': 'FirstRegion;BasicApiKey1', 'resources': 'storage', 'dev_message': 'Gcode:G01_X1_Y1_Z1', 'cloud': 'mqtt_conn1'}, 'cloud': ['mqtt_conn1'], 'current_gateway': 'James_2344'}
+DEBUG:root:Deployment file could not be saved
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_4594", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "AndroidPhoneT", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhoneT", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {}, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Migration Config Started
+DEBUG:root:Migration configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 174
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '174'}
+DEBUG:root:{'config_file': 'org.karaf.full_test', 'name': 'Test_App1', 'host_gateway': 'James_2344', 'region': ["{u'name': u'FirstRegion', u'key': u'BasicApiKey1'}"], 'apps': [], 'cluster': 'Cluster_Jasmine_1529', 'resources': [u'storage'], 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'AppId': '697bbbe0e7f3d065ae4652d7100044af', 'device': {'AndroidPhoneT': ['ZOfxl5hv']}, 'config': {'name': 'Test_App1', u'dev_AndroidPhoneT': 'ZOfxl5hv', 'region': 'FirstRegion;BasicApiKey1', 'resources': 'storage', 'dev_message': 'Gcode:G01_X1_Y1_Z1', 'cloud': 'mqtt_conn1'}, 'cloud': ['mqtt_conn1'], 'current_gateway': 'James_2344'}
+DEBUG:root:Deployment file could not be saved
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_5323", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "AndroidPhoneT", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhoneT", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {}, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Migration Config Started
+DEBUG:root:Migration configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 174
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '174'}
+DEBUG:root:{'config_file': 'org.karaf.full_test', 'name': 'Test_App1', 'host_gateway': 'James_2344', 'region': [{u'name': u'FirstRegion', u'key': u'BasicApiKey1'}], 'apps': [], 'cluster': 'Cluster_Jasmine_1529', 'resources': [u'storage'], 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'AppId': '697bbbe0e7f3d065ae4652d7100044af', 'device': {'AndroidPhoneT': ['ZOfxl5hv']}, 'config': {'name': 'Test_App1', u'dev_AndroidPhoneT': 'ZOfxl5hv', 'region': 'FirstRegion;BasicApiKey1', 'resources': 'storage', 'dev_message': 'Gcode:G01_X1_Y1_Z1', 'cloud': 'mqtt_conn1'}, 'cloud': ['mqtt_conn1'], 'current_gateway': 'James_2344'}
+DEBUG:root:Deployment file could not be saved
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_4273", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "AndroidPhoneT", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhoneT", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {}, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Migration Config Started
+DEBUG:root:Migration configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 174
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '174'}
+DEBUG:root:{'config_file': 'org.karaf.full_test', 'name': 'Test_App1', 'host_gateway': 'James_2344', 'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'apps': [], 'cluster': 'Cluster_Jasmine_1529', 'resources': ['storage'], 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'AppId': '697bbbe0e7f3d065ae4652d7100044af', 'device': {'AndroidPhoneT': ['ZOfxl5hv']}, 'config': {'name': 'Test_App1', 'dev_AndroidPhoneT': 'ZOfxl5hv', 'region': 'FirstRegion;BasicApiKey1', 'resources': 'storage', 'dev_message': 'Gcode:G01_X1_Y1_Z1', 'cloud': 'mqtt_conn1'}, 'cloud': ['mqtt_conn1'], 'current_gateway': 'James_2344'}
+DEBUG:root:Deployment file could not be saved
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_7652", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "AndroidPhoneT", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhoneT", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {}, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Migration Config Started
+DEBUG:root:Migration configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 174
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '174'}
+DEBUG:root:{'config_file': 'org.karaf.full_test', 'name': 'Test_App1', 'host_gateway': 'James_2344', 'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'apps': [], 'cluster': 'Cluster_Jasmine_1529', 'resources': ['storage'], 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'AppId': '697bbbe0e7f3d065ae4652d7100044af', 'device': {'AndroidPhoneT': ['ZOfxl5hv']}, 'config': {'name': 'Test_App1', 'dev_AndroidPhoneT': 'ZOfxl5hv', 'region': 'FirstRegion;BasicApiKey1', 'resources': 'storage', 'dev_message': 'Gcode:G01_X1_Y1_Z1', 'cloud': 'mqtt_conn1'}, 'cloud': ['mqtt_conn1'], 'current_gateway': 'James_2344'}
+DEBUG:root:Deployment file saved
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle remove Test_App1
+DEBUG:root:Bundle Task
+DEBUG:root:Remove Bundle
+DEBUG:root:Test_App1
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_6482", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle remove Test_App1
+DEBUG:root:Bundle Task
+DEBUG:root:Remove Bundle
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_4700", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle remove Test_App1
+DEBUG:root:Bundle Task
+DEBUG:root:Remove Bundle
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_2961", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle remove Test_App1
+DEBUG:root:Bundle Task
+DEBUG:root:Remove Bundle
+DEBUG:root:Remove App: Test_App1
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_8291", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle remove Test_App1
+DEBUG:root:Bundle Task
+DEBUG:root:Remove Bundle
+DEBUG:root:Remove App: Test_App1
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_6171", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle remove Test_App1
+DEBUG:root:Bundle Task
+DEBUG:root:Remove Bundle
+DEBUG:root:Remove App: Test_App1
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:A
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:n
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:d
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:r
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:o
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:i
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:d
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:P
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:h
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:o
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:n
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:e
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:T
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_6075", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle remove Test_App1
+DEBUG:root:Bundle Task
+DEBUG:root:Remove Bundle
+DEBUG:root:Remove App: Test_App1
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:A
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:n
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:d
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:r
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:o
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:i
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:d
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:P
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:h
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:o
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:n
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:e
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:T
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_3764", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle remove Test_App1
+DEBUG:root:Bundle Task
+DEBUG:root:Remove Bundle
+DEBUG:root:Remove App: Test_App1
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:A
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:n
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:d
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:r
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:o
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:i
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:d
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:P
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:h
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:o
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:n
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:e
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:T
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Deleting Bundle from Karaf
+DEBUG:root:Deregleted Bundle: 174
+DEBUG:root:Conf-File Removal Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File removal successfull
+DEBUG:root:Deployment file deleted
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_4575", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "AndroidPhoneT", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhoneT", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {}, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Migration Config Started
+DEBUG:root:Migration configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 175
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '175'}
+DEBUG:root:{'config_file': 'org.karaf.full_test', 'name': 'Test_App1', 'host_gateway': 'James_2344', 'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'apps': [], 'cluster': 'Cluster_Jasmine_1529', 'resources': ['storage'], 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'AppId': '697bbbe0e7f3d065ae4652d7100044af', 'device': {'AndroidPhoneT': ['ZOfxl5hv']}, 'config': {'name': 'Test_App1', 'dev_AndroidPhoneT': 'ZOfxl5hv', 'region': 'FirstRegion;BasicApiKey1', 'resources': 'storage', 'dev_message': 'Gcode:G01_X1_Y1_Z1', 'cloud': 'mqtt_conn1'}, 'cloud': ['mqtt_conn1'], 'current_gateway': 'James_2344'}
+DEBUG:root:Deployment file saved
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle remove Test_App1
+DEBUG:root:Bundle Task
+DEBUG:root:Remove Bundle
+DEBUG:root:Remove App: Test_App1
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:A
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:n
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:d
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:r
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:o
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:i
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:d
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:P
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:h
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:o
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:n
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:e
+DEBUG:root:SHoudl remove Dev Type: AndroidPhoneT Device:T
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Deleting Bundle from Karaf
+DEBUG:root:Deregleted Bundle: 175
+DEBUG:root:Conf-File Removal Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File removal successfull
+DEBUG:root:Deployment file deleted
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_8061", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "AndroidPhoneT", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhoneT", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {}, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Migration Config Started
+DEBUG:root:Migration configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 176
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '176'}
+DEBUG:root:{'config_file': 'org.karaf.full_test', 'name': 'Test_App1', 'host_gateway': 'James_2344', 'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'apps': [], 'cluster': 'Cluster_Jasmine_1529', 'resources': ['storage'], 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'AppId': '697bbbe0e7f3d065ae4652d7100044af', 'device': {'AndroidPhoneT': ['ZOfxl5hv']}, 'config': {'name': 'Test_App1', 'dev_AndroidPhoneT': 'ZOfxl5hv', 'region': 'FirstRegion;BasicApiKey1', 'resources': 'storage', 'dev_message': 'Gcode:G01_X1_Y1_Z1', 'cloud': 'mqtt_conn1'}, 'cloud': ['mqtt_conn1'], 'current_gateway': 'James_2344'}
+DEBUG:root:Deployment file saved
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_1874", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle remove Test_App1
+DEBUG:root:Bundle Task
+DEBUG:root:Remove Bundle
+DEBUG:root:Remove App: Test_App1
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Shold remove Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Deleting Bundle from Karaf
+DEBUG:root:Deregleted Bundle: 176
+DEBUG:root:Conf-File Removal Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File removal successfull
+DEBUG:root:Deployment file deleted
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "AndroidPhoneT", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhoneT", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {}, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Migration Config Started
+DEBUG:root:Migration configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 177
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '177'}
+DEBUG:root:{'config_file': 'org.karaf.full_test', 'name': 'Test_App1', 'host_gateway': 'James_2344', 'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'apps': [], 'cluster': 'Cluster_Jasmine_1529', 'resources': ['storage'], 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'AppId': '697bbbe0e7f3d065ae4652d7100044af', 'device': {'AndroidPhoneT': ['ZOfxl5hv']}, 'config': {'name': 'Test_App1', 'dev_AndroidPhoneT': 'ZOfxl5hv', 'region': 'FirstRegion;BasicApiKey1', 'resources': 'storage', 'dev_message': 'Gcode:G01_X1_Y1_Z1', 'cloud': 'mqtt_conn1'}, 'cloud': ['mqtt_conn1'], 'current_gateway': 'James_2344'}
+DEBUG:root:Deployment file saved
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_1555", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle remove Test_App1
+DEBUG:root:Bundle Task
+DEBUG:root:Remove Bundle
+DEBUG:root:Remove App: Test_App1
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Deleting Bundle from Karaf
+DEBUG:root:Deregleted Bundle: 177
+DEBUG:root:Conf-File Removal Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File removal successfull
+DEBUG:root:Deployment file deleted
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "AndroidPhoneT", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhoneT", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {}, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Migration Config Started
+DEBUG:root:Migration configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 178
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '178'}
+DEBUG:root:{'config_file': 'org.karaf.full_test', 'name': 'Test_App1', 'host_gateway': 'James_2344', 'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'apps': [], 'cluster': 'Cluster_Jasmine_1529', 'resources': ['storage'], 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'AppId': '697bbbe0e7f3d065ae4652d7100044af', 'device': {'AndroidPhoneT': ['ZOfxl5hv']}, 'config': {'name': 'Test_App1', 'dev_AndroidPhoneT': 'ZOfxl5hv', 'region': 'FirstRegion;BasicApiKey1', 'resources': 'storage', 'dev_message': 'Gcode:G01_X1_Y1_Z1', 'cloud': 'mqtt_conn1'}, 'cloud': ['mqtt_conn1'], 'current_gateway': 'James_2344'}
+DEBUG:root:Deployment file saved
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "AndroidPhoneT", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhoneT", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {}, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Migration Config Started
+DEBUG:root:Migration configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 178
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '178'}
+DEBUG:root:{'config_file': 'org.karaf.full_test', 'name': 'Test_App1', 'host_gateway': 'James_2344', 'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'apps': [], 'cluster': 'Cluster_Jasmine_1529', 'resources': ['storage'], 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'AppId': '697bbbe0e7f3d065ae4652d7100044af', 'device': {'AndroidPhoneT': ['ZOfxl5hv']}, 'config': {'name': 'Test_App1', 'dev_AndroidPhoneT': 'ZOfxl5hv', 'region': 'FirstRegion;BasicApiKey1', 'resources': 'storage', 'dev_message': 'Gcode:G01_X1_Y1_Z1', 'cloud': 'mqtt_conn1'}, 'cloud': ['mqtt_conn1'], 'current_gateway': 'James_2344'}
+DEBUG:root:Deployment file saved
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_2595", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_5716", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "AndroidPhoneT", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhoneT", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {}, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Migration Config Started
+DEBUG:root:Migration configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 178
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '178'}
+DEBUG:root:{'config_file': 'org.karaf.full_test', 'name': 'Test_App1', 'host_gateway': 'James_2344', 'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'apps': [], 'cluster': 'Cluster_Jasmine_1529', 'resources': ['storage'], 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'AppId': '697bbbe0e7f3d065ae4652d7100044af', 'device': {'AndroidPhoneT': ['ZOfxl5hv']}, 'config': {'name': 'Test_App1', 'dev_AndroidPhoneT': 'ZOfxl5hv', 'region': 'FirstRegion;BasicApiKey1', 'resources': 'storage', 'dev_message': 'Gcode:G01_X1_Y1_Z1', 'cloud': 'mqtt_conn1'}, 'cloud': ['mqtt_conn1'], 'current_gateway': 'James_2344'}
+DEBUG:root:Deployment file saved
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_7772", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "AndroidPhoneT", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhoneT", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {}, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Migration Config Started
+DEBUG:root:Migration configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 178
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '178'}
+DEBUG:root:{'config_file': 'org.karaf.full_test', 'name': 'Test_App1', 'host_gateway': 'James_2344', 'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'apps': [], 'cluster': 'Cluster_Jasmine_1529', 'resources': ['storage'], 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'AppId': '697bbbe0e7f3d065ae4652d7100044af', 'device': {'AndroidPhoneT': ['ZOfxl5hv']}, 'config': {'name': 'Test_App1', 'dev_AndroidPhoneT': 'ZOfxl5hv', 'region': 'FirstRegion;BasicApiKey1', 'resources': 'storage', 'dev_message': 'Gcode:G01_X1_Y1_Z1', 'cloud': 'mqtt_conn1'}, 'cloud': ['mqtt_conn1'], 'current_gateway': 'James_2344'}
+DEBUG:root:Deployment file saved
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_3503", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "AndroidPhoneT", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhoneT", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {}, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Migration Config Started
+DEBUG:root:Migration configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 178
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '178'}
+DEBUG:root:{'config_file': 'org.karaf.full_test', 'name': 'Test_App1', 'host_gateway': 'James_2344', 'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'apps': [], 'cluster': 'Cluster_Jasmine_1529', 'resources': ['storage'], 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'AppId': '697bbbe0e7f3d065ae4652d7100044af', 'device': {'AndroidPhoneT': ['ZOfxl5hv']}, 'config': {'name': 'Test_App1', 'dev_AndroidPhoneT': 'ZOfxl5hv', 'region': 'FirstRegion;BasicApiKey1', 'resources': 'storage', 'dev_message': 'Gcode:G01_X1_Y1_Z1', 'cloud': 'mqtt_conn1'}, 'cloud': ['mqtt_conn1'], 'current_gateway': 'James_2344'}
+DEBUG:root:Deployment file saved
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "AndroidPhoneT", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhoneT", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {}, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Migration Config Started
+DEBUG:root:Migration configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 178
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '178'}
+DEBUG:root:{'config_file': 'org.karaf.full_test', 'name': 'Test_App1', 'host_gateway': 'James_2344', 'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'apps': [], 'cluster': 'Cluster_Jasmine_1529', 'resources': ['storage'], 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'AppId': '697bbbe0e7f3d065ae4652d7100044af', 'device': {'AndroidPhoneT': ['ZOfxl5hv']}, 'config': {'name': 'Test_App1', 'dev_AndroidPhoneT': 'ZOfxl5hv', 'region': 'FirstRegion;BasicApiKey1', 'resources': 'storage', 'dev_message': 'Gcode:G01_X1_Y1_Z1', 'cloud': 'mqtt_conn1'}, 'cloud': ['mqtt_conn1'], 'current_gateway': 'James_2344'}
+DEBUG:root:Deployment file saved
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "AndroidPhoneT", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhoneT", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {}, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Migration Config Started
+DEBUG:root:Migration configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 178
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '178'}
+DEBUG:root:{'config_file': 'org.karaf.full_test', 'name': 'Test_App1', 'host_gateway': 'James_2344', 'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'apps': [], 'cluster': 'Cluster_Jasmine_1529', 'resources': ['storage'], 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'AppId': '697bbbe0e7f3d065ae4652d7100044af', 'device': {'AndroidPhoneT': ['ZOfxl5hv']}, 'config': {'name': 'Test_App1', 'dev_AndroidPhoneT': 'ZOfxl5hv', 'region': 'FirstRegion;BasicApiKey1', 'resources': 'storage', 'dev_message': 'Gcode:G01_X1_Y1_Z1', 'cloud': 'mqtt_conn1'}, 'cloud': ['mqtt_conn1'], 'current_gateway': 'James_2344'}
+DEBUG:root:Deployment file saved
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "AndroidPhoneT", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhoneT", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {}, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Migration Config Started
+DEBUG:root:Migration configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 178
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '178'}
+DEBUG:root:{'config_file': 'org.karaf.full_test', 'name': 'Test_App1', 'host_gateway': 'James_2344', 'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'apps': [], 'cluster': 'Cluster_Jasmine_1529', 'resources': ['storage'], 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'AppId': '697bbbe0e7f3d065ae4652d7100044af', 'device': {'AndroidPhoneT': ['ZOfxl5hv']}, 'config': {'name': 'Test_App1', 'dev_AndroidPhoneT': 'ZOfxl5hv', 'region': 'FirstRegion;BasicApiKey1', 'resources': 'storage', 'dev_message': 'Gcode:G01_X1_Y1_Z1', 'cloud': 'mqtt_conn1'}, 'cloud': ['mqtt_conn1'], 'current_gateway': 'James_2344'}
+DEBUG:root:Deployment file saved
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "AndroidPhoneT", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhoneT", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {}, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Migration Config Started
+DEBUG:root:Migration configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 178
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '178'}
+DEBUG:root:{'config_file': 'org.karaf.full_test', 'name': 'Test_App1', 'host_gateway': 'James_2344', 'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'apps': [], 'cluster': 'Cluster_Jasmine_1529', 'resources': ['storage'], 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'AppId': '697bbbe0e7f3d065ae4652d7100044af', 'device': {'AndroidPhoneT': ['ZOfxl5hv']}, 'config': {'name': 'Test_App1', 'dev_AndroidPhoneT': 'ZOfxl5hv', 'region': 'FirstRegion;BasicApiKey1', 'resources': 'storage', 'dev_message': 'Gcode:G01_X1_Y1_Z1', 'cloud': 'mqtt_conn1'}, 'cloud': ['mqtt_conn1'], 'current_gateway': 'James_2344'}
+DEBUG:root:Deployment file saved
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "AndroidPhoneT", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhoneT", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {}, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Migration Config Started
+DEBUG:root:Migration configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 178
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '178'}
+DEBUG:root:{'config_file': 'org.karaf.full_test', 'name': 'Test_App1', 'host_gateway': 'James_2344', 'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'apps': [], 'cluster': 'Cluster_Jasmine_1529', 'resources': ['storage'], 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'AppId': '697bbbe0e7f3d065ae4652d7100044af', 'device': {'AndroidPhoneT': ['ZOfxl5hv']}, 'config': {'name': 'Test_App1', 'dev_AndroidPhoneT': 'ZOfxl5hv', 'region': 'FirstRegion;BasicApiKey1', 'resources': 'storage', 'dev_message': 'Gcode:G01_X1_Y1_Z1', 'cloud': 'mqtt_conn1'}, 'cloud': ['mqtt_conn1'], 'current_gateway': 'James_2344'}
+DEBUG:root:Deployment file saved
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "AndroidPhoneT", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhoneT", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {}, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Migration Config Started
+DEBUG:root:Migration configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 178
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '178'}
+DEBUG:root:{'config_file': 'org.karaf.full_test', 'name': 'Test_App1', 'host_gateway': 'James_2344', 'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'apps': [], 'cluster': 'Cluster_Jasmine_1529', 'resources': ['storage'], 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'AppId': '697bbbe0e7f3d065ae4652d7100044af', 'device': {'AndroidPhoneT': ['ZOfxl5hv']}, 'config': {'name': 'Test_App1', 'dev_AndroidPhoneT': 'ZOfxl5hv', 'region': 'FirstRegion;BasicApiKey1', 'resources': 'storage', 'dev_message': 'Gcode:G01_X1_Y1_Z1', 'cloud': 'mqtt_conn1'}, 'cloud': ['mqtt_conn1'], 'current_gateway': 'James_2344'}
+DEBUG:root:Deployment file saved
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "AndroidPhoneT", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhoneT", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {}, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Migration Config Started
+DEBUG:root:Migration configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 178
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '178'}
+DEBUG:root:{'config_file': 'org.karaf.full_test', 'name': 'Test_App1', 'host_gateway': 'James_2344', 'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'apps': [], 'cluster': 'Cluster_Jasmine_1529', 'resources': ['storage'], 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'AppId': '697bbbe0e7f3d065ae4652d7100044af', 'device': {'AndroidPhoneT': ['ZOfxl5hv']}, 'config': {'name': 'Test_App1', 'dev_AndroidPhoneT': 'ZOfxl5hv', 'region': 'FirstRegion;BasicApiKey1', 'resources': 'storage', 'dev_message': 'Gcode:G01_X1_Y1_Z1', 'cloud': 'mqtt_conn1'}, 'cloud': ['mqtt_conn1'], 'current_gateway': 'James_2344'}
+DEBUG:root:Deployment file saved
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "AndroidPhoneT", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhoneT", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {}, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Migration Config Started
+DEBUG:root:Migration configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 178
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '178'}
+DEBUG:root:{'config_file': 'org.karaf.full_test', 'name': 'Test_App1', 'host_gateway': 'James_2344', 'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'apps': [], 'cluster': 'Cluster_Jasmine_1529', 'resources': ['storage'], 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'AppId': '697bbbe0e7f3d065ae4652d7100044af', 'device': {'AndroidPhoneT': ['ZOfxl5hv']}, 'config': {'name': 'Test_App1', 'dev_AndroidPhoneT': 'ZOfxl5hv', 'region': 'FirstRegion;BasicApiKey1', 'resources': 'storage', 'dev_message': 'Gcode:G01_X1_Y1_Z1', 'cloud': 'mqtt_conn1'}, 'cloud': ['mqtt_conn1'], 'current_gateway': 'James_2344'}
+DEBUG:root:Deployment file saved
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "AndroidPhoneT", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhoneT", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {}, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Migration Config Started
+DEBUG:root:Migration configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 178
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '178'}
+DEBUG:root:{'config_file': 'org.karaf.full_test', 'name': 'Test_App1', 'host_gateway': 'James_2344', 'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'apps': [], 'cluster': 'Cluster_Jasmine_1529', 'resources': ['storage'], 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'AppId': '697bbbe0e7f3d065ae4652d7100044af', 'device': {'AndroidPhoneT': ['ZOfxl5hv']}, 'config': {'name': 'Test_App1', 'dev_AndroidPhoneT': 'ZOfxl5hv', 'region': 'FirstRegion;BasicApiKey1', 'resources': 'storage', 'dev_message': 'Gcode:G01_X1_Y1_Z1', 'cloud': 'mqtt_conn1'}, 'cloud': ['mqtt_conn1'], 'current_gateway': 'James_2344'}
+DEBUG:root:Deployment file saved
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "AndroidPhoneT", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhoneT", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {}, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Migration Config Started
+DEBUG:root:Migration configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 178
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '178'}
+DEBUG:root:{'config_file': 'org.karaf.full_test', 'name': 'Test_App1', 'host_gateway': 'James_2344', 'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'apps': [], 'cluster': 'Cluster_Jasmine_1529', 'resources': ['storage'], 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'AppId': '697bbbe0e7f3d065ae4652d7100044af', 'device': {'AndroidPhoneT': ['ZOfxl5hv']}, 'config': {'name': 'Test_App1', 'dev_AndroidPhoneT': 'ZOfxl5hv', 'region': 'FirstRegion;BasicApiKey1', 'resources': 'storage', 'dev_message': 'Gcode:G01_X1_Y1_Z1', 'cloud': 'mqtt_conn1'}, 'cloud': ['mqtt_conn1'], 'current_gateway': 'James_2344'}
+DEBUG:root:Deployment file saved
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
