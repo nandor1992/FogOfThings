@@ -30,6 +30,7 @@ class GatewayResolver:
 			elif clust['reg_role']=="new_slave":
 				print("New Node Inside existing cluster")
 				new_cls=self.addGwToCluster(clust['_id'],ip,new_gw,hw)
+				clust['old_peers']=self.getClusterIPs(clust['_id'])
 				clust['reg_role']="slave"
 				clust['task']="Add New"
 				del(clust['_id'])
@@ -115,6 +116,11 @@ class GatewayResolver:
 				if peer!=doc['master'][1]:
 					ret.append(peer)
 			return [len(doc['nodes_name'])-1,ret]
+
+	def getClusterIPs(self,id):
+		db=self.couch['clusters']
+		doc=db[id]
+		return [doc['nodes_name'],doc['nodes_ip']]
 	
 	def checkIfExists(self,uuid,ip,hw):
 		db=self.couch['gateways']
@@ -124,8 +130,6 @@ class GatewayResolver:
 		return None
 
 	def checkIfCluster(self,ip,hw,peers):
-		print(ip)
-		print(hw)
 		print(peers)
 		db=self.couch['clusters']
 		look=db.view('cluster/find')
@@ -247,12 +251,24 @@ class GatewayResolver:
 				return "ok"
 		return "Not Found"
 
+	def saveDeployment(self, my_json):
+		db=self.couch['deployments']
+#		try:
+		print(my_json)
+		del(my_json['_id'])
+		del(my_json['_rev'])
+		db.save(my_json)
+		return "ok"
+#		except Exception,e:
+#			print(e)
+#			return "Error"
+
 if __name__ == '__main__':
     #Config Settings#
     print("Gateway Resolver")
-    gw=GatewayResolver("admin","hunter","10.0.0.138")
+    gw=GatewayResolver("admin","hunter","10.0.0.134")
     #print(gw.deleteGatewayFromOthers("b9:27:eb:c5:ed:e4","10.0.0.68"))
-    #ip="10.0.0.67";uuid="TestUUIDGW1";hw="b8:27:eb:c5:ed:e4"; peers=[["b9:27:eb:c5:ed:e4","10.0.0.68"]]                                     # Cluster Master
+    ip="10.0.0.23";uuid="TestUUIDG41W1";hw="b84:27:eb:c5:ed:e4"; peers=[["b9:27:eb:c5:ed:e4","10.0.0.68"]]                                     # Cluster Master
     #ip="10.0.0.71";uuid="TestUUIDGW1";hw="b8:27:eb:c5:ed:e4"; peers=[["b1:27:eb:c5:ed:e4","10.0.0.69"]]                                     # Cluster Master moved as slave to new cluster
     #ip="10.0.0.71";uuid="TestUUIDGW1";hw="b8:27:eb:c5:ed:e4"; peers=[["b9:27:eb:c5:ed:e4","10.0.0.68"]]                                     # Cluster Master changed ip address 
     #ip="10.0.0.68";uuid="TestUUIDGW2"; hw="b9:27:eb:c5:ed:e4"; peers=[["b8:27:eb:c5:ed:e4","10.0.0.67"]]    								# Cluster Slave
@@ -263,7 +279,9 @@ if __name__ == '__main__':
     #ip="10.0.0.267";uuid="TestUUIDGW4";hw="b3:27:eb:c5:ed:e4"; peers=[["b8:27:eb:c5:ed:e4","10.0.0.67"],["b9:27:eb:c5:ed:e4","10.0.0.68"]]  # New GW in cluster
     #ip="10.0.0.368";uuid="TestUUIDGW5";hw="b3:27:ef:c5:ed:e4"; peers=[["b3:27:eb:c5:ed:e4","10.0.0.367"]]                                    # New Gw new cluster
     #print(gw.resolveGateway(uuid,ip,hw,peers,"Just some random info to add, probs should be json 2"))
-    print(gw.checkIfClustGW("Cluster_Cindy_1636",["Vazquez_7663","Erickson_2204"]))
-    print(gw.checkIfClustGW("Cluster_Cindy_1636",["Erickson_2204"]))
-    print(gw.checkIfClustGW("Cluster_Cindy_1636",["Vazquez_7663","Erickson_2204","Sunny Side Up "]))  
-    print(gw.checkIfClustGW("Cluster_Cindy_16326",["Erickson_2204"])) 
+    #print(gw.checkIfClustGW("Cluster_Jasmine_1529","James_2344"))
+    print(gw.getClusterIPs('697bbbe0e7f3d065ae4652d71000b0ea'))
+    #print(gw.checkIfClustGW("Cluster_Cindy_1636",["Erickson_2204"]))
+    #print(gw.checkIfClustGW("Cluster_Cindy_1636",["Vazquez_7663","Erickson_2204","Sunny Side Up "]))  
+    #print(gw.checkIfCluster("Cluster_Cindy_16326",["Erickson_2204"])) 
+    #gw.checkIfCluster("10.0.0.51","gr9fafaf",[["b8:27:eb:57:e7:84","10.0.0.68"]])

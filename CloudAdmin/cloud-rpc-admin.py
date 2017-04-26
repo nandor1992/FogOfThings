@@ -7,10 +7,12 @@ import os,sys
 import uuid
 import ConfigParser
 import GatewayResolver
+import AppResolver
 import random
+import ast
 from string import ascii_letters
 class AmqpClient:
-    def __init__(self,host,user,passw,port,virt,api_key,res):
+    def __init__(self,host,user,passw,port,virt,api_key,res,resA):
         
         self.credentials = pika.PlainCredentials(user,passw)
         self.parameters = pika.ConnectionParameters(host,port,virt,self.credentials)
@@ -19,6 +21,7 @@ class AmqpClient:
         self.api_key = api_key
         self.channel.basic_consume(self.callback,queue="admin",no_ack=True)
         self.resolver=res
+        self.resolverApp=resA
 
     def close(self):
         self.channel.close()
@@ -42,10 +45,19 @@ class AmqpClient:
             del(resp['task'])
             print(resp)
             print("Notify Cluster leader to add GW")
+            #TO-DO : Send to peers
             #Send message to Leader with info, might modify this to send to peers !!!!!!!!!!
             msg={'peer_ip':ip,'peer_name':resp['name'],'peer_mac':hw_addr}
             self.publishMsg(resp['new_clust'],"add",msg)
             #Message for Peer
+            ind=resp['old_peers'][0].index(resp['name'])
+            del(resp['old_peers'][0][ind])
+            del(resp['old_peers'][1][ind])
+            print(resp['old_peers'])
+            for peep in resp['old_peers'][0]:
+                if peep != resp['new_clust']:
+                    self.publishMsg(peep,"addPeer",msg)
+            #Message to new unit
             del(resp['new_clust'])
             self.publishMsg(gw_name,"self init",resp)
         elif resp['task']=="Remove Old":
@@ -101,30 +113,22 @@ class AmqpClient:
             del(resp['old_peers'])
             self.publishMsg(gw_name,"self init",resp)
 
-    def resolveDeploy(self,cluster,main_gw,gw,payload,task,uuid):
-        print("For Clust: "+cluster+" and GW: "+str(gw))
+    def resolveDeploy(self,cluster,main_gw,payload,task,uuid):
+        print("For Clust: "+cluster+" and GW: "+str(main_gw))
         print(payload)
         print(task)
-        if self.resolver.checkIfClustGW(cluster,gw)=="ok":
+        if self.resolver.checkIfClustGW(cluster,[main_gw])=="ok":
             print("Gateways and Cluster Found!")
             #GW 0 is always the main Gateway 
+            ##Retreive App Info
             if task=="bundle deploy":
-                self.publishDeplMsg(main_gw,uuid,task,payload)
+                app_data=self.resolverApp.getData(payload)
+                if app_data==None:
+                    return "App Not Found in Database"
+                else:      
+                    self.publishDeplMsg(main_gw,uuid,task,app_data)
             else:
-                self.publishDeplMsg(main_gw,uuid,task,payload['name'])
-            ##Do other gateways
-            ##<aybe modify so file can be retreived
-            for g in gw:
-                if task=="bundle deploy":
-                    payload2=payload['migration'][g]
-                    payload2['gateway']=main_gw
-                    payload2['name']=payload['name']
-                    self.publishDeplMsg(g,uuid,"migrate add",payload2)
-                else:
-                    payload2=payload['migration'][g]
-                    payload2['gateway']=main_gw
-                    payload2['name']=payload['name']
-                    self.publishDeplMsg(g,uuid,"migrate remove",payload2)
+                self.publishDeplMsg(main_gw,uuid,task,payload)
             return "Bundle Resolved and Published to GW(s)"
         else:
             return "Bundle Gateways not found so not deploying"
@@ -158,13 +162,18 @@ class AmqpClient:
 
     def callback(self,ch,method,properties,body):
         try:
-            body=body.replace('\n', '').replace('\r', '')
-            body=body.replace("'",'"')
+            body2=body.replace('\n', '').replace('\r', '')
+            body2=body2.replace("'",'"')
             print("--------------------New Message Received--------------------")
-            print(body)
-            my_json=json.loads(body);
+            print(body2)
+            my_json=json.loads(body2);
         except ValueError:
             print "Non json payload"
+            try:
+                my_json=ast.literal_eval(body)
+            except ValueError:
+                print("Very Non Json Payload")
+                return None
         try:
             #gw_name=method.routing_key.split(".")[2]
             req=my_json["request"]
@@ -188,34 +197,42 @@ class AmqpClient:
                             print("Doesn't fit anything!")
                     elif req=="deploy bundle":
                         print("Deploy Bundle")
-                        if set(['name','cluster','gateway','uuid']).issubset(my_json):
+                        if set(['name','cluster','gateway','uuid','payload']).issubset(my_json):
                             name=my_json['name']
                             clust=my_json['cluster']
                             gw=my_json['gateway']
-                            all_gw=my_json['payload']['migration'].keys()
                             uuid=my_json['uuid']
-                            resp=self.resolveDeploy(clust,gw,all_gw,my_json['payload'],"bundle deploy",uuid)
+                            resp=self.resolveDeploy(clust,gw,my_json['payload'],"bundle deploy",uuid)
                             send={'type':'admin','source':'Cloud_Controller','uuid':uuid,'api_key':self.api_key}
                             send['payload']=resp
                             print("Sending to: "+name+" Message: "+str(send))
                             snd=json.dumps(send)
                             rt_key="receive."+name
                             self.channel.basic_publish(exchange='amq.topic', routing_key=rt_key, body=snd)
+                        else:
+                            print("Stuff not Given!")
                     elif req=="remove bundle":
                         print("remove bundle")
                         if set(['name','cluster','gateway','uuid']).issubset(my_json):
                             name=my_json['name']
                             clust=my_json['cluster']
                             gw=my_json['gateway']
-                            all_gw=my_json['payload']['migration'].keys()
                             uuid=my_json['uuid']
-                            resp=self.resolveDeploy(clust,gw,all_gw,my_json['payload'],"bundle remove",uuid)
+                            resp=self.resolveDeploy(clust,gw,my_json['payload'],"bundle remove",uuid)
                             send={'type':'admin','source':'Cloud_Controller','uuid':uuid,'api_key':self.api_key}
                             send['payload']=resp
                             print("Sending to: "+name+" Message: "+str(send))
                             snd=json.dumps(send)
                             rt_key="receive."+name
                             self.channel.basic_publish(exchange='amq.topic', routing_key=rt_key, body=snd)
+                        else:
+                            print("Stuff not Given!")
+                    elif req=="response":
+                        print("Response from GW")
+                        if self.resolver.saveDeployment(ast.literal_eval(my_json['payload'])) =="ok":
+                            print("Deployment Saved to Cloud")
+                        else:
+                            print("Error with saving!")
                     else:
                         print("Request Unknown!")
                 else:
@@ -236,8 +253,9 @@ if __name__ == '__main__':
     Config.read(os.path.dirname(os.path.realpath(__file__))+"/config.ini")
     #Configurator Init
     res=GatewayResolver.GatewayResolver(Config.get("Database","user"),Config.get("Database","pass"),Config.get("Database","host"))
+    resA=AppResolver.AppResolver(Config.get("Database","user"),Config.get("Database","pass"),Config.get("Database","host"))
     #Setting for AMQP Init
-    amqp=AmqpClient(Config.get("Messaging","host"),Config.get("Messaging","user"),Config.get("Messaging","pass"),int(Config.get("Messaging","port")),Config.get("Messaging","virt"),Config.get("Messaging","api_key"),res)   
+    amqp=AmqpClient(Config.get("Messaging","host"),Config.get("Messaging","user"),Config.get("Messaging","pass"),int(Config.get("Messaging","port")),Config.get("Messaging","virt"),Config.get("Messaging","api_key"),res,resA)   
     try:
         amqp.start()
     except KeyboardInterrupt:
