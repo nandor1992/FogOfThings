@@ -9026,3 +9026,2016 @@ DEBUG:root:{'config_file': 'org.karaf.full_test', 'name': 'Test_App1', 'host_gat
 DEBUG:root:Deployment file saved
 DEBUG:root:---Request processed and Reponse Sent----
 DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_1770", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_9208", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_1193", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate back Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app back
+DEBUG:root:Migration Back for App: Test_App1 Gateway: James_2345
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate away Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app away
+DEBUG:root:Migration Away for App: Test_App1 Gateway: James_2345
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2346
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2346
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate back Test_App1 James_2346
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app back
+DEBUG:root:Migration Back for App: Test_App1 Gateway: James_2346
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_7847", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate add Test_App2 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Set up migration
+DEBUG:root:Migration Add for App: Test_App2 Gateway: James_2345
+DEBUG:root:Add route for dev_type: AndroidPhoneT dev:A
+DEBUG:root:Add route for dev_type: AndroidPhoneT dev:n
+DEBUG:root:Add route for dev_type: AndroidPhoneT dev:d
+DEBUG:root:Add route for dev_type: AndroidPhoneT dev:r
+DEBUG:root:Add route for dev_type: AndroidPhoneT dev:o
+DEBUG:root:Add route for dev_type: AndroidPhoneT dev:i
+DEBUG:root:Add route for dev_type: AndroidPhoneT dev:d
+DEBUG:root:Add route for dev_type: AndroidPhoneT dev:P
+DEBUG:root:Add route for dev_type: AndroidPhoneT dev:h
+DEBUG:root:Add route for dev_type: AndroidPhoneT dev:o
+DEBUG:root:Add route for dev_type: AndroidPhoneT dev:n
+DEBUG:root:Add route for dev_type: AndroidPhoneT dev:e
+DEBUG:root:Add route for dev_type: AndroidPhoneT dev:T
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_4408", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate add Test_App2 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Set up migration
+DEBUG:root:Migration Add for App: Test_App2 Gateway: James_2345
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_9933", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate add Test_App2 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Set up migration
+DEBUG:root:Migration Add for App: Test_App2 Gateway: James_2345
+DEBUG:root:Add route for dev_type: AndroidPhoneT dev:ZOfxl5hv
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_7997", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate add Test_App2 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Set up migration
+DEBUG:root:Migration Add for App: Test_App2 Gateway: James_2345
+DEBUG:root:Add route for dev_type: AndroidPhoneT dev:ZOfxl5hv
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_6852", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate add Test_App2 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Set up migration
+DEBUG:root:Migration Add for App: Test_App2 Gateway: James_2345
+DEBUG:root:Add route for dev_type: AndroidPhoneT dev:ZOfxl5hv
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_7294", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate add Test_App2 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Set up migration
+DEBUG:root:Migration Add for App: Test_App2 Gateway: James_2345
+DEBUG:root:Add route for dev_type: AndroidPhoneT dev:ZOfxl5hv
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 178
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '178'}
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate add Test_App2 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Set up migration
+DEBUG:root:Migration Add for App: Test_App2 Gateway: James_2345
+DEBUG:root:Add route for dev_type: AndroidPhoneT dev:ZOfxl5hv
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 178
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '178'}
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_5148", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate away Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app away
+DEBUG:root:Migration Away for App: Test_App1 Gateway: James_2345
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:Deleting Bundle from Karaf
+DEBUG:root:Deregleted Bundle: 178
+DEBUG:root:Conf-File Removal Started
+DEBUG:root:Config file Deleted
+DEBUG:root:Conf-File removal successfull
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2346
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2346
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_9351", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2346
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2346
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_7139", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2346
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2346
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_5508", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2346
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2346
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_1669", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2346
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2346
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2345
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_6472", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_8620", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2346
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2346
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_1236", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2346
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2346
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_2001", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2346
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2346
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_4065", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2346
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2346
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_8366", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2346
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2346
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_8419", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2345
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2346
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2346
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_8015", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2346
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2346
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2345
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2346
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2346
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2345
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_8543", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2346
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2346
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2345
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2346
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2346
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2345
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_2411", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2346
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2346
+DEBUG:root:Removing route from gw: James_2345 for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate back Test_App1 James_2346
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app back
+DEBUG:root:Migration Back for App: Test_App1 Gateway: James_2346
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate away Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app away
+DEBUG:root:Migration Away for App: Test_App1 Gateway: James_2345
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_9559", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate away Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app away
+DEBUG:root:Migration Away for App: Test_App1 Gateway: James_2345
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:Deleting Bundle from Karaf
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_2564", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2346
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2346
+DEBUG:root:Removing route from gw: James_2345 for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_1593", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2345
+DEBUG:root:Removing route from gw: James_2345 for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2346
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2346
+DEBUG:root:Removing route from gw: James_2345 for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_2292", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2345
+DEBUG:root:Removing route from gw: James_2345 for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_7672", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2346
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2346
+DEBUG:root:Removing route from gw: James_2345 for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_9227", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2345
+DEBUG:root:Removing route from gw: James_2345 for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_4936", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2346
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2346
+DEBUG:root:Removing route from gw: James_2345 for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_6873", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate back Test_App1 James_2346
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app back
+DEBUG:root:Migration Back for App: Test_App1 Gateway: James_2346
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_3440", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate back Test_App1 James_2346
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app back
+DEBUG:root:Migration Back for App: Test_App1 Gateway: James_2346
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate away Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app away
+DEBUG:root:Migration Away for App: Test_App1 Gateway: James_2345
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_8048", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate away Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app away
+DEBUG:root:Migration Away for App: Test_App1 Gateway: James_2345
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:Deleting Bundle from Karaf
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate back Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app back
+DEBUG:root:Migration Back for App: Test_App1 Gateway: James_2345
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_7217", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate away Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app away
+DEBUG:root:Migration Away for App: Test_App1 Gateway: James_2345
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:Deleting Bundle from Karaf
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate back Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app back
+DEBUG:root:Migration Back for App: Test_App1 Gateway: James_2345
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_5106", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate away Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app away
+DEBUG:root:Migration Away for App: Test_App1 Gateway: James_2345
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_6996", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate away Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app away
+DEBUG:root:Migration Away for App: Test_App1 Gateway: James_2345
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:Deleting Bundle from Karaf
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate back Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app back
+DEBUG:root:Migration Back for App: Test_App1 Gateway: James_2345
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate away Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app away
+DEBUG:root:Migration Away for App: Test_App1 Gateway: James_2345
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:Deleting Bundle from Karaf
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate back Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app back
+DEBUG:root:Migration Back for App: Test_App1 Gateway: James_2345
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_6694", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate away Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app away
+DEBUG:root:Migration Away for App: Test_App1 Gateway: James_2345
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:Deleting Bundle from Karaf
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2346
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2346
+DEBUG:root:Removing route from gw: James_2345 for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_4390", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2345
+DEBUG:root:Removing route from gw: James_2345 for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2346
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2346
+DEBUG:root:Removing route from gw: James_2345 for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2345
+DEBUG:root:Removing route from gw: James_2345 for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2346
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2346
+DEBUG:root:Removing route from gw: James_2345 for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2345
+DEBUG:root:Removing route from gw: James_2345 for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2346
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2346
+DEBUG:root:Removing route from gw: James_2345 for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2345
+DEBUG:root:Removing route from gw: James_2346 for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_9493", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate change Test_App1 James_2346
+DEBUG:root:Migrate Task
+DEBUG:root:Change Destination of App migrate
+DEBUG:root:Migration Change for App: Test_App1 Gateway: James_2346
+DEBUG:root:Removing route from gw: James_2345 for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate back Test_App1 James_2346
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app back
+DEBUG:root:Migration Back for App: Test_App1 Gateway: James_2346
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate away Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app away
+DEBUG:root:Migration Away for App: Test_App1 Gateway: James_2345
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:Deleting Bundle from Karaf
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_4406", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate add Test_App2 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Set up migration
+DEBUG:root:Migration Add for App: Test_App2 Gateway: James_2345
+DEBUG:root:Add route for dev_type: AndroidPhoneT dev:ZOfxl5hv
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 179
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '179'}
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate back Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app back
+DEBUG:root:Migration Back for App: Test_App1 Gateway: James_2345
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate remove Test_App2 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Remove migration setup 
+DEBUG:root:Migration Remove for App: Test_App2 Gateway: James_2345
+DEBUG:root:Migration Un-Config Started
+DEBUG:root:Rmoving route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_9591", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate remove Test_App2 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Remove migration setup 
+DEBUG:root:Migration Remove for App: Test_App2 Gateway: James_2345
+DEBUG:root:Migration Un-Config Started
+DEBUG:root:Rmoving route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Deleting Bundle from Karaf
+DEBUG:root:Deregleted Bundle: 179
+DEBUG:root:Conf-File Removal Started
+DEBUG:root:Config file Deleted
+DEBUG:root:Conf-File removal successfull
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate away Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app away
+DEBUG:root:Migration Away for App: Test_App1 Gateway: James_2345
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:Deleting Bundle from Karaf
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_9065", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate back Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app back
+DEBUG:root:Migration Back for App: Test_App1 Gateway: James_2345
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_3199", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate away Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app away
+DEBUG:root:Migration Away for App: Test_App1 Gateway: James_2345
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:Deleting Bundle from Karaf
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate back Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app back
+DEBUG:root:Migration Back for App: Test_App1 Gateway: James_2345
+DEBUG:root:Removing route from gw: James_2344 for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_9197", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate away Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app away
+DEBUG:root:Migration Away for App: Test_App1 Gateway: James_2345
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:Deleting Bundle from Karaf
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate back Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app back
+DEBUG:root:Migration Back for App: Test_App1 Gateway: James_2345
+DEBUG:root:Removing route from gw: James_2344 for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_7684", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate away Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app away
+DEBUG:root:Migration Away for App: Test_App1 Gateway: James_2345
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:Deleting Bundle from Karaf
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate back Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app back
+DEBUG:root:Migration Back for App: Test_App1 Gateway: James_2345
+DEBUG:root:Removing route from gw: James_2344 for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_5623", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate away Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app away
+DEBUG:root:Migration Away for App: Test_App1 Gateway: James_2345
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:Deleting Bundle from Karaf
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate back Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app back
+DEBUG:root:Migration Back for App: Test_App1 Gateway: James_2345
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_4051", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate away Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app away
+DEBUG:root:Migration Away for App: Test_App1 Gateway: James_2345
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:Deleting Bundle from Karaf
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate back Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app back
+DEBUG:root:Migration Back for App: Test_App1 Gateway: James_2345
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate away Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app away
+DEBUG:root:Migration Away for App: Test_App1 Gateway: James_2345
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:Deleting Bundle from Karaf
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_6968", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate back Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app back
+DEBUG:root:Migration Back for App: Test_App1 Gateway: James_2345
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_5523", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_1171", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate away Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app away
+DEBUG:root:Migration Away for App: Test_App1 Gateway: James_2345
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:Deleting Bundle from Karaf
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_8102", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate back Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app back
+DEBUG:root:Migration Back for App: Test_App1 Gateway: James_2345
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_3509", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate away Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app away
+DEBUG:root:Migration Away for App: Test_App1 Gateway: James_2345
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_4224", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate away Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app away
+DEBUG:root:Migration Away for App: Test_App1 Gateway: James_2345
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:Deleting Bundle from Karaf
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_6796", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_6971", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate back Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app back
+DEBUG:root:Migration Back for App: Test_App1 Gateway: James_2345
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_7411", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate away Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app away
+DEBUG:root:Migration Away for App: Test_App1 Gateway: James_2345
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:Deleting Bundle from Karaf
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_9398", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate back Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app back
+DEBUG:root:Migration Back for App: Test_App1 Gateway: James_2345
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_2964", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate back Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app back
+DEBUG:root:Migration Back for App: Test_App1 Gateway: James_2345
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_2252", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate away Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app away
+DEBUG:root:Migration Away for App: Test_App1 Gateway: James_2345
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:Deleting Bundle from Karaf
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate back Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app back
+DEBUG:root:Migration Back for App: Test_App1 Gateway: James_2345
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 180
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '180'}
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate away Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app away
+DEBUG:root:Migration Away for App: Test_App1 Gateway: James_2345
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Add route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:Deleting Bundle from Karaf
+DEBUG:root:Deregleted Bundle: 180
+DEBUG:root:Conf-File Removal Started
+DEBUG:root:Config file Deleted
+DEBUG:root:Conf-File removal successfull
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate back Test_App1 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Migrate app back
+DEBUG:root:Migration Back for App: Test_App1 Gateway: James_2345
+DEBUG:root:Removing route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:ZOfxl5hv
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 181
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '181'}
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate add Test_App2 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Set up migration
+DEBUG:root:Migration Add for App: Test_App2 Gateway: James_2345
+DEBUG:root:Add route for dev_type: AndroidPhoneT dev:ZOfxl5hv
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 181
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '181'}
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate remove Test_App2 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Remove migration setup 
+DEBUG:root:Migration Remove for App: Test_App2 Gateway: James_2345
+DEBUG:root:Migration Un-Config Started
+DEBUG:root:Rmoving route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Deleting Bundle from Karaf
+DEBUG:root:Deregleted Bundle: 181
+DEBUG:root:Conf-File Removal Started
+DEBUG:root:Config file Deleted
+DEBUG:root:Conf-File removal successfull
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_1962", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "sDTpUzFjiJiZvjwH"}
+DEBUG:root:register self nothing {'reg_api': 'DiVIdpYMriyVfVfr', 'reg_role': 'master', 'reg_name': 'Cluster_Jasmine_1529', 'name': 'James_2344'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate add Test_App2 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Set up migration
+DEBUG:root:Migration Add for App: Test_App2 Gateway: James_2345
+DEBUG:root:Add route for dev_type: AndroidPhoneT dev:ZOfxl5hv
+DEBUG:root:Add route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Add Route for Resource:storage
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 182
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '182'}
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:migrate remove Test_App2 James_2345
+DEBUG:root:Migrate Task
+DEBUG:root:Remove migration setup 
+DEBUG:root:Migration Remove for App: Test_App2 Gateway: James_2345
+DEBUG:root:Migration Un-Config Started
+DEBUG:root:Rmoving route for dev_type: AndroidPhoneT devs:[u'ZOfxl5hv']
+DEBUG:root:Remove route for cloud conn: mqtt_conn1
+DEBUG:root:Add route for region conn: FirstRegion
+DEBUG:root:Remove Route for Resource:storage
+DEBUG:root:Migration un-configuration successfull
+DEBUG:root:Deleting Bundle from Karaf
+DEBUG:root:Deregleted Bundle: 182
+DEBUG:root:Conf-File Removal Started
+DEBUG:root:Config file Deleted
+DEBUG:root:Conf-File removal successfull
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard

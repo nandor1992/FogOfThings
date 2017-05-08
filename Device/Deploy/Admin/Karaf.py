@@ -10,7 +10,7 @@ class Karaf:
         self.repo=repo
         self.conf=conf_loc
         self.loc=location
-        self.apach=apache_loc+"/etc/"
+        self.apach=apache_loc+"etc/"
 
     def getBundleInfo(self,id):
         buffer=StringIO()

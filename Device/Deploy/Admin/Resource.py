@@ -59,6 +59,15 @@ class Resource:
             print(e)
             return "Error "+str(e)
 
+    def updateDeplFile(self,app,old,gw):
+        doc=None
+        db=self.couch['apps']
+        look=db.view('views/app-name')
+        for v in look[[app,old]]:
+            doc=db[v.value[1]]
+            doc['current_gateway']=gw
+            db[doc.id]=doc
+    
     def getDeployedApps(self,needs):
         havs=[]
         ##Add gw as constraint
@@ -69,11 +78,11 @@ class Resource:
                 havs.append(p.value[0])
         return havs
 
-    def getDeployFile(self,name):
+    def getDeployFile(self,name,gw):
         doc=None
         db=self.couch['apps']
         look=db.view('views/app-name')
-        for v in look[[name,self.gw]]:
+        for v in look[[name,gw]]:
             doc=db[v.value[1]]
             del(doc['_id'])
             del(doc['_rev'])

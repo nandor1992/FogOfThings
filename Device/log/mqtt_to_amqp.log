@@ -9022,3 +9022,1091 @@ DEBUG:root:{
 DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
 DEBUG:root:"bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}"
 DEBUG:root:Other message
+DEBUG:root:Driver Restarted
+DEBUG:root:Starting New Session at 12:37:11 05/05/17 UTC
+DEBUG:root:Connected with result code 0
+DEBUG:root:Driver Stopped
+DEBUG:root:Driver Stopped
+DEBUG:root:Driver Restarted
+DEBUG:root:Starting New Session at 09:18:04 05/08/17 UTC
+DEBUG:root:Connected with result code 0
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate back Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate back Test_App1 James_2345"
+DEBUG:root:Other message
+ERROR:pika.adapters.base_connection:Socket Error: 104
+DEBUG:root:Pika Disconnected 09:56:22 05/08/17 UTC, Reconnecting
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate away Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate away Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2346"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2346"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate change Test_App1 James_2346", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate change Test_App1 James_2346"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2346"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2346"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate back Test_App1 James_2346", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate back Test_App1 James_2346"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate add Test_App2 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate add Test_App2 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate add Test_App2 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate add Test_App2 James_2345"
+DEBUG:root:Other message
+ERROR:pika.adapters.base_connection:Socket Error: 104
+DEBUG:root:Pika Disconnected 11:04:37 05/08/17 UTC, Reconnecting
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate add Test_App2 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate add Test_App2 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate add Test_App2 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate add Test_App2 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate away Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate away Test_App1 James_2345"
+DEBUG:root:Other message
+ERROR:pika.adapters.base_connection:Socket Error: 104
+DEBUG:root:Pika Disconnected 12:34:42 05/08/17 UTC, Reconnecting
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2346"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2346"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate change Test_App1 James_2346", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate change Test_App1 James_2346"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate change Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate change Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2346"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2346"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate change Test_App1 James_2346", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate change Test_App1 James_2346"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate change Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate change Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2346"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2346"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate change Test_App1 James_2346", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate change Test_App1 James_2346"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate change Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate change Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2346"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2346"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate change Test_App1 James_2346", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate change Test_App1 James_2346"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate change Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate change Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2346"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2346"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate change Test_App1 James_2346", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate change Test_App1 James_2346"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate change Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate change Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2346"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2346"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate change Test_App1 James_2346", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate change Test_App1 James_2346"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate change Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate change Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2346"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2346"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate change Test_App1 James_2346", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate change Test_App1 James_2346"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2346"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2346"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate back Test_App1 James_2346", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate back Test_App1 James_2346"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate away Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate away Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2346"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2346"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate change Test_App1 James_2346", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate change Test_App1 James_2346"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate change Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate change Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2346"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2346"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate change Test_App1 James_2346", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate change Test_App1 James_2346"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate change Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate change Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2346"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2346"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate change Test_App1 James_2346", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate change Test_App1 James_2346"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate change Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate change Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2346"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2346"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate change Test_App1 James_2346", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate change Test_App1 James_2346"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2346"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2346"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate back Test_App1 James_2346", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate back Test_App1 James_2346"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate away Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate away Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate back Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate back Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate away Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate away Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate back Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate back Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate away Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate away Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate back Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate back Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate away Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate away Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate back Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate back Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate away Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate away Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2346"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2346"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate change Test_App1 James_2346", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate change Test_App1 James_2346"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate change Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate change Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2346"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2346"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate change Test_App1 James_2346", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate change Test_App1 James_2346"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate change Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate change Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2346"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2346"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate change Test_App1 James_2346", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate change Test_App1 James_2346"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate change Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate change Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2346"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2346"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate change Test_App1 James_2346", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate change Test_App1 James_2346"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate change Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate change Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2346"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate change Test_App1 James_2346"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate change Test_App1 James_2346", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate change Test_App1 James_2346"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2346"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2346"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate back Test_App1 James_2346", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate back Test_App1 James_2346"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate away Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate away Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate add Test_App2 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate add Test_App2 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate add Test_App2 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate add Test_App2 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate back Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate back Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate remove Test_App2 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate remove Test_App2 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate remove Test_App2 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate remove Test_App2 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate away Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate away Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate back Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate back Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate away Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate away Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate back Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate back Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate away Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate away Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate back Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate back Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate away Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate away Test_App1 James_2345"
+DEBUG:root:Other message
+ERROR:pika.adapters.base_connection:Socket Error: 104
+DEBUG:root:Pika Disconnected 15:26:19 05/08/17 UTC, Reconnecting
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate back Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate back Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate away Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate away Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate back Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate back Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate away Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate away Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate back Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate back Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate away Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate away Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate back Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate back Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate away Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate away Test_App1 James_2345"
+DEBUG:root:Other message
+ERROR:pika.adapters.base_connection:Socket Error: 104
+DEBUG:root:Pika Disconnected 15:41:55 05/08/17 UTC, Reconnecting
+DEBUG:root:Driver Restarted
+DEBUG:root:Starting New Session at 15:44:32 05/08/17 UTC
+DEBUG:root:Connected with result code 0
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate back Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate back Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate away Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate away Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate back Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate back Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate away Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate away Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate back Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate back Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate back Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate back Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate away Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate away Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate back Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate back Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate away Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate away Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate away Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate back Test_App1 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate back Test_App1 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate back Test_App1 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate add Test_App2 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate add Test_App2 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate add Test_App2 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate add Test_App2 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate remove Test_App2 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate remove Test_App2 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate remove Test_App2 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate remove Test_App2 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate add Test_App2 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate add Test_App2 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate add Test_App2 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate add Test_App2 James_2345"
+DEBUG:root:Other message
+DEBUG:root:------Received Message-------
+DEBUG:root:Message: receive/James_2344 "source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate remove Test_App2 James_2345"
+DEBUG:root:{"source": "Cloud_Controller", "api_key": "ThisIsRandomAPIKey1234", "type": "admin", "uuid": "test1abc", "payload": "migrate remove Test_App2 James_2345"}
+DEBUG:root:{
+ "api_key": "ThisIsRandomAPIKey1234", 
+ "payload": "migrate remove Test_App2 James_2345", 
+ "source": "Cloud_Controller", 
+ "type": "admin", 
+ "uuid": "test1abc"
+}
+DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234', u'type': u'admin', u'uuid': u'test1abc', 'cloud': 'mqtt_conn1'}
+DEBUG:root:"migrate remove Test_App2 James_2345"
+DEBUG:root:Other message
+DEBUG:root:Driver Stopped
