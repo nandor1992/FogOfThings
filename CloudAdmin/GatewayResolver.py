@@ -102,7 +102,57 @@ class GatewayResolver:
 						clust['new_clust']=new_cls
 				return clust
 
+	##Check Migration stuff
+	def checkApp(self,app,clust,gw):
+		ret={}
+		a_id=None
+		db=self.couch['deployments']
+		look=db.view('views/name')
+		for p in look[app]:
+			a_id=p.value
+		c_id=None
+		db2=self.couch['clusters']
+		look2=db2.view('cluster/unique')
+		for p in look2[clust]:
+			c_id=p.value
+		##Check if everything is where it should be
+		if a_id==None or c_id==None:
+			ret['type']='Error'
+		else:
+			doc=db[a_id]
+			doc2=db2[c_id]
+			if doc['cluster']!=clust or doc['current_gateway']==gw or (gw not in doc2['nodes_name']):
+				ret['type']='Error Misfit'
+			else:
+				#Figure out the type of operation and return variables
+				ret['host']=doc['host_gateway']
+				ret['current']=doc['current_gateway']
+				if doc['current_gateway']==doc['host_gateway']:
+					ret['type']='O->N'
+				elif doc['host_gateway']==gw:
+					ret['type']='N->O'
+				else:
+					ret['type']='N->N'
+		return ret
 
+	
+
+	def updateApp(self,app,gw):
+		print("Update Deployment")
+		a_id=None
+		db=self.couch['deployments']
+		look=db.view('views/name')
+		for p in look[app]:
+			a_id=p.value
+		if a_id!=None:
+			doc=db[a_id]
+			doc['current_gateway']=gw
+			##Comment out for actual work
+			db[doc.id]=doc
+			return "ok"
+		else:
+			return "Error ID None"
+	##Check My Cluster Stuff
 	def checkMyCluster(self,id,name):
 		db=self.couch['clusters']
 		doc=db[id]
@@ -253,22 +303,23 @@ class GatewayResolver:
 
 	def saveDeployment(self, my_json):
 		db=self.couch['deployments']
-#		try:
-		print(my_json)
-		del(my_json['_id'])
-		del(my_json['_rev'])
-		db.save(my_json)
-		return "ok"
-#		except Exception,e:
-#			print(e)
-#			return "Error"
+		try:
+			print(my_json)
+			del(my_json['_id'])
+			del(my_json['_rev'])
+			db.save(my_json)
+			return "ok"
+		except Exception,e:
+			print(e)
+			return "Error"
 
 if __name__ == '__main__':
     #Config Settings#
     print("Gateway Resolver")
     gw=GatewayResolver("admin","hunter","10.0.0.134")
+    print(gw.checkApp("Test_App1","Cluster_Jasmine_1529","James_2345"))
     #print(gw.deleteGatewayFromOthers("b9:27:eb:c5:ed:e4","10.0.0.68"))
-    ip="10.0.0.23";uuid="TestUUIDG41W1";hw="b84:27:eb:c5:ed:e4"; peers=[["b9:27:eb:c5:ed:e4","10.0.0.68"]]                                     # Cluster Master
+    #ip="10.0.0.23";uuid="TestUUIDG41W1";hw="b84:27:eb:c5:ed:e4"; peers=[["b9:27:eb:c5:ed:e4","10.0.0.68"]]                                     # Cluster Master
     #ip="10.0.0.71";uuid="TestUUIDGW1";hw="b8:27:eb:c5:ed:e4"; peers=[["b1:27:eb:c5:ed:e4","10.0.0.69"]]                                     # Cluster Master moved as slave to new cluster
     #ip="10.0.0.71";uuid="TestUUIDGW1";hw="b8:27:eb:c5:ed:e4"; peers=[["b9:27:eb:c5:ed:e4","10.0.0.68"]]                                     # Cluster Master changed ip address 
     #ip="10.0.0.68";uuid="TestUUIDGW2"; hw="b9:27:eb:c5:ed:e4"; peers=[["b8:27:eb:c5:ed:e4","10.0.0.67"]]    								# Cluster Slave
@@ -280,7 +331,7 @@ if __name__ == '__main__':
     #ip="10.0.0.368";uuid="TestUUIDGW5";hw="b3:27:ef:c5:ed:e4"; peers=[["b3:27:eb:c5:ed:e4","10.0.0.367"]]                                    # New Gw new cluster
     #print(gw.resolveGateway(uuid,ip,hw,peers,"Just some random info to add, probs should be json 2"))
     #print(gw.checkIfClustGW("Cluster_Jasmine_1529","James_2344"))
-    print(gw.getClusterIPs('697bbbe0e7f3d065ae4652d71000b0ea'))
+    #print(gw.getClusterIPs('697bbbe0e7f3d065ae4652d71000b0ea'))
     #print(gw.checkIfClustGW("Cluster_Cindy_1636",["Erickson_2204"]))
     #print(gw.checkIfClustGW("Cluster_Cindy_1636",["Vazquez_7663","Erickson_2204","Sunny Side Up "]))  
     #print(gw.checkIfCluster("Cluster_Cindy_16326",["Erickson_2204"])) 

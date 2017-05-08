@@ -30,6 +30,35 @@ class AmqpClient:
     def start(self):
         self.channel.start_consuming()
 
+    def resolveMigrate(self,cluster,uuid,gw,app):
+        print("For Cluster: "+cluster+" with uuid: "+uuid+" Migrate App: "+app +" To host: "+gw)
+        data_app=self.resolver.checkApp(app,cluster,gw)
+        print(data_app)
+        if data_app['type']=='O->N':
+            #Migrating app to new GW
+            #Tell Host to Migrate Away
+            self.publishDeplMsg(data_app['host'],uuid,'migrate away',app+" "+gw)
+            #Tell New Host to Receive App 
+            self.publishDeplMsg(gw,uuid,'migrate add',app+" "+data_app['host'])
+        elif data_app['type']=='N->O':
+            #Tell Host to migrate app back
+            self.publishDeplMsg(gw,uuid,'migrate back',app+" "+data_app['current'])
+            #Tell Old Host to Forget App
+            self.publishDeplMsg(data_app['current'],uuid,'migrate remove',app+" "+gw)
+        elif data_app['type']=='N->N':
+            #Tell Host to Migrate to other 
+            self.publishDeplMsg(data_app['host'],uuid,'migrate change',app+" "+gw)
+            #Tell Old Host to Forget App
+            self.publishDeplMsg(data_app['current'],uuid,'migrate remove',app+" "+data_app['host'])
+            self.publishDeplMsg(gw,uuid,'migrate add',app+" "+data_app['host'])
+        else:
+            #Either Nothing to do or App not in Clust or GW not in clust
+            return "Error: Nothing to Do or No way of Doing it"
+        #Save Changes to DB
+        self.resolver.updateApp(app,gw)
+        return "Request Processed and Sent to Gw(s)"
+
+
     def resolveReg(self,gw_name,uuid,ip,hw_addr,peers,gw_info):
         resp=self.resolver.resolveGateway(uuid,ip,hw_addr,peers,gw_info)
         print(resp)
@@ -123,6 +152,7 @@ class AmqpClient:
             ##Retreive App Info
             if task=="bundle deploy":
                 app_data=self.resolverApp.getData(payload)
+                add_gw=self.resolver
                 if app_data==None:
                     return "App Not Found in Database"
                 else:      
@@ -136,11 +166,13 @@ class AmqpClient:
 
     def publishDeplMsg(self,name,uuid,task,payload):
         send={'type':'admin','source':'Cloud_Controller','uuid':uuid,'api_key':self.api_key}
-        if task!="bundle remove":
+        if task=="bundle deploy":
             ret=json.dumps(payload)
             send['payload']=""+task+" "+ret.replace('"',"'")
-        else:
+        elif task=="bundle remove":
             send['payload']="bundle remove "+payload
+        else:
+            send['payload']=str(task)+" "+payload
         print("Sending to: "+name+" Message: "+str(send))
         snd=json.dumps(send)
         rt_key="receive."+name
@@ -227,12 +259,33 @@ class AmqpClient:
                             self.channel.basic_publish(exchange='amq.topic', routing_key=rt_key, body=snd)
                         else:
                             print("Stuff not Given!")
+                    elif req=="migrate bundle":
+                        print("Migrate Bundle")
+                        if set(['name','cluster','uuid','gateway']).issubset(my_json):
+                            name=my_json['name']
+                            gw=my_json['gateway']
+                            clust=my_json['cluster']
+                            uuid=my_json['uuid'] 
+                            resp=self.resolveMigrate(clust,uuid,gw,str(my_json['payload']))
+                            send={'type':'admin','source':'Cloud_Controller','uuid':uuid,'api_key':self.api_key}
+                            send['payload']=resp
+                            print("Sending to: "+name+" Message: "+str(send))
+                            snd=json.dumps(send)
+                            rt_key="receive."+name
+                            self.channel.basic_publish(exchange='amq.topic', routing_key=rt_key, body=snd)
+                        else:
+                            print("Stuff not Given!")
                     elif req=="response":
                         print("Response from GW")
-                        if self.resolver.saveDeployment(ast.literal_eval(my_json['payload'])) =="ok":
-                            print("Deployment Saved to Cloud")
-                        else:
-                            print("Error with saving!")
+                        try:
+                            save=ast.literal_eval(my_json['payload'])
+                            if self.resolver.saveDeployment(save) =="ok":
+                                print("Deployment Saved to Cloud")
+                            else:
+                                print("Error with saving!")
+                        except:
+                            print("Non Json or Python type")
+                            print(my_json['payload'])
                     else:
                         print("Request Unknown!")
                 else:
