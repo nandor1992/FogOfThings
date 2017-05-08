@@ -613,3 +613,308 @@ DEBUG:root:[x] Received '{"config_file": "org.karaf.full_test", "name": "Test_Ap
 DEBUG:root:Non json payload
 DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "{'config_file': 'org.karaf.full_test', 'name': 'Test_App1', 'host_gateway': 'James_2344', 'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'apps': [], 'cluster': 'Cluster_Jasmine_1529', 'resources': ['storage'], 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'AppId': '697bbbe0e7f3d065ae4652d7100044af', 'device': {'AndroidPhoneT': ['ZOfxl5hv']}, '_id': u'ca9da1c72ecbf03936ab4d428a01fa2c', 'config': {'name': 'Test_App1', 'dev_AndroidPhoneT': 'ZOfxl5hv', 'region': 'FirstRegion;BasicApiKey1', 'resources': 'storage', 'dev_message': 'Gcode:G01_X1_Y1_Z1', 'cloud': 'mqtt_conn1'}, '_rev': u'1-5629a0c3e231444087934c12aed29d0a', 'cloud': ['mqtt_conn1'], 'current_gateway': 'James_2344'}", "cloud": "mqtt_conn1", "datetime": "2017-04-18 22:38:49"}
 DEBUG:root:Message Sent with result: 0 Message Id: 36
+DEBUG:root:Driver Restarted
+DEBUG:root:Broker started: 12:37:05 05/05/17 UTC
+DEBUG:root: [*] Waiting for messages. To exit press CTRL+C
+DEBUG:root:Driver Stopped
+DEBUG:root:Driver Restarted
+DEBUG:root:Broker started: 09:18:18 05/08/17 UTC
+DEBUG:root: [*] Waiting for messages. To exit press CTRL+C
+DEBUG:root:[x] Received 'Migrate Back Done'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "Migrate Back Done", "cloud": "mqtt_conn1", "datetime": "2017-05-08 09:56:22"}
+DEBUG:root:Message Sent with result: 0 Message Id: 1
+DEBUG:root:[x] Received 'Migrate Away Done'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "Migrate Away Done", "cloud": "mqtt_conn1", "datetime": "2017-05-08 10:09:09"}
+DEBUG:root:Message Sent with result: 0 Message Id: 2
+DEBUG:root:[x] Received 'Migrate Change Done'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "Migrate Change Done", "cloud": "mqtt_conn1", "datetime": "2017-05-08 10:11:24"}
+DEBUG:root:Message Sent with result: 0 Message Id: 3
+DEBUG:root:[x] Received 'Migrate Back Done'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "Migrate Back Done", "cloud": "mqtt_conn1", "datetime": "2017-05-08 10:11:36"}
+DEBUG:root:Message Sent with result: 0 Message Id: 4
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 11:13:10"}
+DEBUG:root:Message Sent with result: 0 Message Id: 5
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 11:16:42"}
+DEBUG:root:Message Sent with result: 0 Message Id: 6
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 12:34:43"}
+DEBUG:root:Message Sent with result: 0 Message Id: 7
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 12:55:34"}
+DEBUG:root:Message Sent with result: 0 Message Id: 8
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 12:56:55"}
+DEBUG:root:Message Sent with result: 0 Message Id: 9
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 13:10:49"}
+DEBUG:root:Message Sent with result: 0 Message Id: 10
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 13:12:35"}
+DEBUG:root:Message Sent with result: 0 Message Id: 11
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 13:17:21"}
+DEBUG:root:Message Sent with result: 0 Message Id: 12
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 13:18:02"}
+DEBUG:root:Message Sent with result: 0 Message Id: 13
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 13:19:05"}
+DEBUG:root:Message Sent with result: 0 Message Id: 14
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 13:19:09"}
+DEBUG:root:Message Sent with result: 0 Message Id: 15
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 13:20:38"}
+DEBUG:root:Message Sent with result: 0 Message Id: 16
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 13:20:44"}
+DEBUG:root:Message Sent with result: 0 Message Id: 17
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 13:23:09"}
+DEBUG:root:Message Sent with result: 0 Message Id: 18
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 13:24:43"}
+DEBUG:root:Message Sent with result: 0 Message Id: 19
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 13:28:15"}
+DEBUG:root:Message Sent with result: 0 Message Id: 20
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 13:30:12"}
+DEBUG:root:Message Sent with result: 0 Message Id: 21
+DEBUG:root:[x] Received 'Error: Deletin App'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "Error: Deletin App", "cloud": "mqtt_conn1", "datetime": "2017-05-08 13:32:47"}
+DEBUG:root:Message Sent with result: 0 Message Id: 22
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 13:37:14"}
+DEBUG:root:Message Sent with result: 0 Message Id: 23
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 13:38:33"}
+DEBUG:root:Message Sent with result: 0 Message Id: 24
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 13:40:42"}
+DEBUG:root:Message Sent with result: 0 Message Id: 25
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 13:40:52"}
+DEBUG:root:Message Sent with result: 0 Message Id: 26
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 13:41:43"}
+DEBUG:root:Message Sent with result: 0 Message Id: 27
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 13:43:36"}
+DEBUG:root:Message Sent with result: 0 Message Id: 28
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 13:51:44"}
+DEBUG:root:Message Sent with result: 0 Message Id: 29
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 14:07:06"}
+DEBUG:root:Message Sent with result: 0 Message Id: 30
+DEBUG:root:[x] Received 'Error: Deletin App'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "Error: Deletin App", "cloud": "mqtt_conn1", "datetime": "2017-05-08 14:08:27"}
+DEBUG:root:Message Sent with result: 0 Message Id: 31
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 14:11:51"}
+DEBUG:root:Message Sent with result: 0 Message Id: 32
+DEBUG:root:[x] Received 'Error: Deletin App'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "Error: Deletin App", "cloud": "mqtt_conn1", "datetime": "2017-05-08 14:24:50"}
+DEBUG:root:Message Sent with result: 0 Message Id: 33
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 14:27:12"}
+DEBUG:root:Message Sent with result: 0 Message Id: 34
+DEBUG:root:[x] Received 'Error: Deletin App'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "Error: Deletin App", "cloud": "mqtt_conn1", "datetime": "2017-05-08 14:35:17"}
+DEBUG:root:Message Sent with result: 0 Message Id: 35
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 14:36:02"}
+DEBUG:root:Message Sent with result: 0 Message Id: 36
+DEBUG:root:[x] Received 'Error: Deletin App'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "Error: Deletin App", "cloud": "mqtt_conn1", "datetime": "2017-05-08 14:37:53"}
+DEBUG:root:Message Sent with result: 0 Message Id: 37
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 14:44:34"}
+DEBUG:root:Message Sent with result: 0 Message Id: 38
+DEBUG:root:[x] Received 'Error: Deletin App'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "Error: Deletin App", "cloud": "mqtt_conn1", "datetime": "2017-05-08 14:49:58"}
+DEBUG:root:Message Sent with result: 0 Message Id: 39
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 14:52:03"}
+DEBUG:root:Message Sent with result: 0 Message Id: 40
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 14:58:23"}
+DEBUG:root:Message Sent with result: 0 Message Id: 41
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 14:59:12"}
+DEBUG:root:Message Sent with result: 0 Message Id: 42
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 14:59:16"}
+DEBUG:root:Message Sent with result: 0 Message Id: 43
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 14:59:21"}
+DEBUG:root:Message Sent with result: 0 Message Id: 44
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 14:59:46"}
+DEBUG:root:Message Sent with result: 0 Message Id: 45
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 15:01:35"}
+DEBUG:root:Message Sent with result: 0 Message Id: 46
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 15:02:50"}
+DEBUG:root:Message Sent with result: 0 Message Id: 47
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 15:05:11"}
+DEBUG:root:Message Sent with result: 0 Message Id: 48
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 15:05:42"}
+DEBUG:root:Message Sent with result: 0 Message Id: 49
+DEBUG:root:[x] Received 'Error: Deletin App'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "Error: Deletin App", "cloud": "mqtt_conn1", "datetime": "2017-05-08 15:08:11"}
+DEBUG:root:Message Sent with result: 0 Message Id: 50
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 15:09:23"}
+DEBUG:root:Message Sent with result: 0 Message Id: 51
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 15:10:38"}
+DEBUG:root:Message Sent with result: 0 Message Id: 52
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 15:12:29"}
+DEBUG:root:Message Sent with result: 0 Message Id: 53
+DEBUG:root:[x] Received 'Error: Deletin App'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "Error: Deletin App", "cloud": "mqtt_conn1", "datetime": "2017-05-08 15:13:18"}
+DEBUG:root:Message Sent with result: 0 Message Id: 54
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 15:19:43"}
+DEBUG:root:Message Sent with result: 0 Message Id: 55
+DEBUG:root:[x] Received 'Error: Deletin App'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "Error: Deletin App", "cloud": "mqtt_conn1", "datetime": "2017-05-08 15:22:10"}
+DEBUG:root:Message Sent with result: 0 Message Id: 56
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 15:22:44"}
+DEBUG:root:Message Sent with result: 0 Message Id: 57
+DEBUG:root:[x] Received 'Error: Deletin App'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "Error: Deletin App", "cloud": "mqtt_conn1", "datetime": "2017-05-08 15:24:43"}
+DEBUG:root:Message Sent with result: 0 Message Id: 58
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 15:24:51"}
+DEBUG:root:Message Sent with result: 0 Message Id: 59
+CRITICAL:pika.adapters.blocking_connection:Connection close detected; result=BlockingConnection__OnClosedArgs(connection=<pika.adapters.select_connection.SelectConnection object at 0x764fa870>, reason_code=320, reason_text='CONNECTION_FORCED - Closed via management plugin')
+ERROR:root:(320, 'CONNECTION_FORCED - Closed via management plugin')
+DEBUG:root:Driver Restarted
+DEBUG:root:Broker started: 15:44:25 05/08/17 UTC
+DEBUG:root: [*] Waiting for messages. To exit press CTRL+C
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 15:44:49"}
+DEBUG:root:Message Sent with result: 0 Message Id: 1
+DEBUG:root:[x] Received 'Error: Deletin App'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "Error: Deletin App", "cloud": "mqtt_conn1", "datetime": "2017-05-08 15:46:39"}
+DEBUG:root:Message Sent with result: 0 Message Id: 2
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 15:48:34"}
+DEBUG:root:Message Sent with result: 0 Message Id: 3
+DEBUG:root:[x] Received 'Error: Deletin App'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "Error: Deletin App", "cloud": "mqtt_conn1", "datetime": "2017-05-08 15:49:12"}
+DEBUG:root:Message Sent with result: 0 Message Id: 4
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 15:49:26"}
+DEBUG:root:Message Sent with result: 0 Message Id: 5
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 15:50:46"}
+DEBUG:root:Message Sent with result: 0 Message Id: 6
+DEBUG:root:[x] Received 'Error: Deletin App'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "Error: Deletin App", "cloud": "mqtt_conn1", "datetime": "2017-05-08 15:54:15"}
+DEBUG:root:Message Sent with result: 0 Message Id: 7
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 15:54:28"}
+DEBUG:root:Message Sent with result: 0 Message Id: 8
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 15:54:51"}
+DEBUG:root:Message Sent with result: 0 Message Id: 9
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 15:55:27"}
+DEBUG:root:Message Sent with result: 0 Message Id: 10
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 15:56:02"}
+DEBUG:root:Message Sent with result: 0 Message Id: 11
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 15:57:12"}
+DEBUG:root:Message Sent with result: 0 Message Id: 12
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 16:00:39"}
+DEBUG:root:Message Sent with result: 0 Message Id: 13
+DEBUG:root:[x] Received 'ok'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "James_2344", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "ok", "cloud": "mqtt_conn1", "datetime": "2017-05-08 16:00:50"}
+DEBUG:root:Message Sent with result: 0 Message Id: 14
+DEBUG:root:Driver Stopped
