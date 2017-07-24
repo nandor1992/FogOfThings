@@ -292,8 +292,8 @@ class AmqpClient:
                     print("Wrong API Key!")
             else:
                 print("No request found!")
-        #except Exception,e:
-        except KeyboardInterrupt,e:
+        except Exception,e:
+        #except KeyboardInterrupt,e:
             print("Key Error or Incomplete Values or Else!"+str(e))
 
 

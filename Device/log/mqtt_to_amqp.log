@@ -10110,3 +10110,6 @@ DEBUG:root:{u'source': u'Cloud_Controller', u'api_key': u'ThisIsRandomAPIKey1234
 DEBUG:root:"migrate remove Test_App2 James_2345"
 DEBUG:root:Other message
 DEBUG:root:Driver Stopped
+DEBUG:root:Starting New Session at 10:39:00 07/24/17 UTC
+DEBUG:root:Connected with result code 0
+DEBUG:root:Driver Stopped
