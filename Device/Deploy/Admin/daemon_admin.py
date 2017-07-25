@@ -154,6 +154,7 @@ class admin():
 
     def modifyConfig(self,reg_api,name,clust_name,admin):
         Config.set('General','gateway_name',name)
+        Config.set('General','configured',True)
         Config.set('Cluster','cluster_name',clust_name)
         Config.set('Cluster','cluster_api',reg_api)
         if admin!=None:
@@ -798,8 +799,8 @@ class admin():
                 deployment={}
                 deployment['name']=name
                 deployment['AppId']=app_uuid
-                deployment['host_gateway']=Config.get("General","Gateway_Name")
-                deployment['current_gateway']=Config.get("General","Gateway_Name")
+                deployment['host_gateway']=Config.get("General","gateway_name")
+                deployment['current_gateway']=Config.get("General","gateway_name")
                 deployment['cluster']=Config.get("Cluster","cluster_name")
                 deployment['cloud']=[]
                 deployment['device']={}
@@ -1015,7 +1016,7 @@ class admin():
 
     def removeTask(self,payload):
         logging.debug("Remove App: "+payload)
-        doc=self.res.getDeployFile(payload,Config.get("General","Gateway_Name"))
+        doc=self.res.getDeployFile(payload,Config.get("General","gateway_name"))
         if doc==None:
             return "Error: "+name+" not found"
         else:
@@ -1196,7 +1197,7 @@ class admin():
         logging.debug("Sending Initial Request to Cloud")
         self.initialRequest()
         #Set variables for later use and start RPC request queueu    
-        self.controller_name= Config.get("General","Gateway_Name")
+        self.controller_name= Config.get("General","gateway_name")
         self.res=Resource.Resource(Config.get("couchDB","user"),Config.get("couchDB","pass"),self.controller_name,Config.items("ResourceQ"))
 
     def shutdown(self):
