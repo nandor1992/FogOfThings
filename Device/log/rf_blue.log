@@ -534,3 +534,31 @@ DEBUG:root:Bluetooth Radio started: 15:11:07 04/18/17 UTC
 DEBUG:root:Started Server Thread
 DEBUG:root:Waiting for connection on RFCOMM channel 1
 DEBUG:root:Driver Stopped
+DEBUG:root:Bluetooth Radio started: 11:52:25 07/25/17 UTC
+DEBUG:root:Driver Restarted
+DEBUG:root:Bluetooth Radio started: 11:58:54 07/25/17 UTC
+DEBUG:root:Driver Stopped
+DEBUG:root:Bluetooth Radio started: 12:01:56 07/25/17 UTC
+DEBUG:root:Bluetooth Radio started: 12:04:51 07/25/17 UTC
+DEBUG:root:Bluetooth Radio started: 12:05:02 07/25/17 UTC
+DEBUG:root:Bluetooth Radio started: 12:06:02 07/25/17 UTC
+DEBUG:root:Bluetooth Radio started: 12:08:54 07/25/17 UTC
+DEBUG:root:Bluetooth Radio started: 12:09:41 07/25/17 UTC
+ERROR:root:
+DEBUG:root:Bluetooth Radio started: 12:09:44 07/25/17 UTC
+ERROR:root:
+DEBUG:root:Bluetooth Radio started: 12:21:44 07/25/17 UTC
+DEBUG:root:Started Server Thread
+DEBUG:root:Waiting for connection on RFCOMM channel 1
+DEBUG:root:Starting Blue Stuff for 14:DD:A9:32:E9:A4
+DEBUG:root:--------Message Received from: 14:DD:A9:32:E9:A4-------
+DEBUG:root:Register data received
+DEBUG:root:Json Parts!
+DEBUG:root:No details found
+DEBUG:root:g95Fvxxt-14:DD:A9:32:E9:A4
+DEBUG:root:Sending: {'bn':['trans:id:743','urn:dev:id:g95Fvxxt']}
+DEBUG:root:Driver Stopped
+DEBUG:root:Bluetooth Radio started: 12:22:45 07/25/17 UTC
+DEBUG:root:Started Server Thread
+DEBUG:root:Waiting for connection on RFCOMM channel 1
+DEBUG:root:Driver Stopped

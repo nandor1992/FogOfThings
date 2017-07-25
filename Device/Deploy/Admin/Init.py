@@ -5,6 +5,7 @@ import time
 import pycurl
 import os,sys
 import couchdb
+import ConfigParser
 from StringIO import StringIO
 class InitReq:
     def __init__(self,user,passw,address,port,gw_name):
@@ -64,31 +65,63 @@ class Init:
     def initCouchDB(self,queues):
         try:
             self.couch.create("_global_changes")
+        except couchdb.PreconditionFailed:
+            pass
+        try:
             self.couch.create("_metadata")
+        except couchdb.PreconditionFailed:
+            pass
+        try:        
             self.couch.create("_replicator")
+        except couchdb.PreconditionFailed:
+            pass
+        try: 
             self.couch.create("_users")
+        except couchdb.PreconditionFailed:
+            pass
+        try: 
             self.couch.create("monitoring")
+        except couchdb.PreconditionFailed:
+            pass
+        try: 
             db=self.couch.create("admin")
             db.save({'_id':'_design/views',  'views': { "docs_by_type": {"map": "function (doc) {\n  emit(doc.type,doc._id);\n}" }},'language':'javascript'})                   
+        except couchdb.PreconditionFailed:
+            pass
+        try: 
             db=self.couch.create("apps")
             db.save({'_id':'_design/views',  'views': { "app-name": {"map": "function (doc) {\n  emit([doc.name,doc.current_gateway],[doc.name,doc._id]);\n}" },"app_for_dev":{"map":"function(doc){\n for(var dev in doc.conn_devs){\n emit(doc.conn_devs[dev],doc.name);\n}\n}"} },'language':'javascript'})                   
-            db=self.couch,create("monitoring")
-            db.save({'_id':'_design/views',  'views': { "dates": {"map": "function (doc) {\n  emit(doc.date,doc._id);\n}" }},'language':'javascript'})                   
-            for q in queues:
-                db=self.couch.create(q[0])
-                db.save({'_id':'_design/views',  'views': { "device": {"map": "function (doc) {\n  emit([doc.mac,doc.dev_type,doc.version],[doc.dev_id,doc.gateway]);\n}" },
-                        "doc": {"map": "function (doc) {\n  emit(doc.dev_id,doc._id);\n}"},"dev-gw": {"map": "function (doc) {\n  emit([doc.dev_id,doc.gateway],doc._id);\n}"}},'language':'javascript'})            
         except couchdb.PreconditionFailed:
-            return "ok"
+            pass
+        try: 
+            db=self.couch.create("monitoring")
+            db.save({'_id':'_design/views',  'views': { "dates": {"map": "function (doc) {\n  emit(doc.date,doc._id);\n}" }},'language':'javascript'})                   
+        except couchdb.PreconditionFailed:
+            pass
+        try: 
+            print(queues)
+            for q in queues:
+                print(q)
+                print(q[0])
+                try:
+                    db=self.couch.create(q[0])
+                    db.save({'_id':'_design/views',  'views': { "device": {"map": "function (doc) {\n  emit([doc.mac,doc.dev_type,doc.version],[doc.dev_id,doc.gateway]);\n}" },
+                        "doc": {"map": "function (doc) {\n  emit(doc.dev_id,doc._id);\n}"},"dev-gw": {"map": "function (doc) {\n  emit([doc.dev_id,doc.gateway],doc._id);\n}"}},'language':'javascript'})            
+                except couchdb.PreconditionFailed:
+                    pass
         except:
             return "error in DB"
         return "ok"
     
 if __name__ == "__main__":
-    inir=InitReq("admin","hunter","10.0.0.134","1883","Test_Me")
+    #inir=InitReq("admin","hunter","10.0.0.134","1883","Test_Me")
     ini=Init("admin","hunter","admin","hunter")
-    data=[('blue', 'ardu_blue'), ('rf24', 'ardu_rf24'), ('rf434', 'atmega_rfa1')]
-    print(ini.initCouchDB(data))
+    #data=[('blue', 'ardu_blue'), ('rf24', 'ardu_rf24'), ('rf434', 'atmega_rfa1')]
+    Config=ConfigParser.ConfigParser()
+    conf_loc="/home/pi/FogOfThings/Device/config.ini"
+    Config.read(conf_loc)
+    print(Config.items("DeviceQ"))
+    print(ini.initCouchDB(Config.items("DeviceQ")))
     #print(ini.initRabbitmq("/home/pi/FogOfThings/Device/RabbitVersions/rabbit_bare.json"))
     #print(ini.initCouchDB(data))
     #print(inir.register("{'name':'Test_Gw1','request':'register','uuid':'TestUUIDGW1', \

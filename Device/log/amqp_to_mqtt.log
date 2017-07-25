@@ -921,3 +921,16 @@ DEBUG:root:Driver Stopped
 DEBUG:root:Broker started: 10:38:52 07/24/17 UTC
 DEBUG:root: [*] Waiting for messages. To exit press CTRL+C
 DEBUG:root:Driver Stopped
+DEBUG:root:Broker started: 11:16:27 07/25/17 UTC
+DEBUG:root: [*] Waiting for messages. To exit press CTRL+C
+DEBUG:root:[x] Received "{'config_file': 'org.karaf.full_test', 'name': 'Test_App1', 'host_gateway': 'Weaver_3167', 'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'apps': [], 'cluster': 'Cluster_Amanda_9108', 'resources': ['storage'], 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'AppId': '697bbbe0e7f3d065ae4652d7100044af', 'device': {'AndroidPhoneT': ['g95Fvxxt']}, '_id': u'fa7009568623f3e7c2fe4638f2003955', 'config': {'name': 'Test_App1', 'dev_AndroidPhoneT': 'g95Fvxxt', 'region': 'FirstRegion;BasicApiKey1', 'resources': 'storage', 'dev_message': 'Gcode:G01_X1_Y1_Z1', 'cloud': 'mqtt_conn1'}, '_rev': u'1-b38e1cd6dd23129a1b8e873ca73be528', 'cloud': ['mqtt_conn1'], 'current_gateway': 'Weaver_3167'}"
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "Weaver_3167", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "{'config_file': 'org.karaf.full_test', 'name': 'Test_App1', 'host_gateway': 'Weaver_3167', 'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'apps': [], 'cluster': 'Cluster_Amanda_9108', 'resources': ['storage'], 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'AppId': '697bbbe0e7f3d065ae4652d7100044af', 'device': {'AndroidPhoneT': ['g95Fvxxt']}, '_id': u'fa7009568623f3e7c2fe4638f2003955', 'config': {'name': 'Test_App1', 'dev_AndroidPhoneT': 'g95Fvxxt', 'region': 'FirstRegion;BasicApiKey1', 'resources': 'storage', 'dev_message': 'Gcode:G01_X1_Y1_Z1', 'cloud': 'mqtt_conn1'}, '_rev': u'1-b38e1cd6dd23129a1b8e873ca73be528', 'cloud': ['mqtt_conn1'], 'current_gateway': 'Weaver_3167'}", "cloud": "mqtt_conn1", "datetime": "2017-07-25 12:25:43"}
+DEBUG:root:Message Sent with result: 0 Message Id: 1
+DEBUG:root:[x] Received 'success: Removed App Test_App1 from Gateway'
+DEBUG:root:Non json payload
+DEBUG:root:{"source": "Cloud_Controller", "uuid": "test1abc", "name": "Weaver_3167", "api_key": "ThisIsRandomAPIKey1234", "request": "response", "payload": "success: Removed App Test_App1 from Gateway", "cloud": "mqtt_conn1", "datetime": "2017-07-25 12:28:04"}
+DEBUG:root:Message Sent with result: 0 Message Id: 2
+DEBUG:root:Driver Restarted
+DEBUG:root:Broker started: 14:17:59 07/25/17 UTC
+DEBUG:root: [*] Waiting for messages. To exit press CTRL+C

@@ -11057,3 +11057,108 @@ DEBUG:root:Update Variables received but nothing else to do
 DEBUG:root:Master
 DEBUG:root:Awaiting Requests!
 DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [], "name": "Temp_GW_2449", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "rLsMdIyXKRqDmzlE"}
+DEBUG:root:register self initClust {'reg_api': 'EKIAjhZVXDjKUhXM', 'reg_role': 'master', 'reg_name': 'Cluster_Amanda_9108', 'name': 'Weaver_3167'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Initialize new Cluster you are Master
+DEBUG:root:Awaiting Requests!
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle deploy {'name': 'Test_App1', 'comm': {'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'devices': [{'cnt': '1', 'required': '1', 'type': 'AndroidPhoneT', 'reserve': 'No'}], 'apps': {'interrested_apps': [], 'required_apps': []}, 'resources': ['storage'], 'cloud': ['mqtt_conn1']}, 'migration': {}, 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'deployment': {'qos': {'main': 'dev_latency', 'secondary': ['cloud_latency,response_time']}, 'config': {'custom_params': {'dev_message': 'Gcode:G01_X1_Y1_Z1'}, 'file': 'org.karaf.full_test'}}, '_id': '697bbbe0e7f3d065ae4652d7100044af', 'description': 'Full Testing App'}
+DEBUG:root:Bundle Task
+DEBUG:root:Deploy Bundle
+DEBUG:root:{"name": "Test_App1", "comm": {"region": [{"name": "FirstRegion", "key": "BasicApiKey1"}], "devices": [{"cnt": "1", "required": "1", "type": "AndroidPhoneT", "reserve": "No"}], "apps": {"interrested_apps": [], "required_apps": []}, "resources": ["storage"], "cloud": ["mqtt_conn1"]}, "migration": {}, "file": "full_test_app-0.0.1-SNAPSHOT.jar", "deployment": {"qos": {"main": "dev_latency", "secondary": ["cloud_latency,response_time"]}, "config": {"custom_params": {"dev_message": "Gcode:G01_X1_Y1_Z1"}, "file": "org.karaf.full_test"}}, "_id": "697bbbe0e7f3d065ae4652d7100044af", "description": "Full Testing App"}
+DEBUG:root:{
+  "name": "Test_App1", 
+  "comm": {
+    "cloud": [
+      "mqtt_conn1"
+    ], 
+    "region": [
+      {
+        "name": "FirstRegion", 
+        "key": "BasicApiKey1"
+      }
+    ], 
+    "apps": {
+      "interrested_apps": [], 
+      "required_apps": []
+    }, 
+    "resources": [
+      "storage"
+    ], 
+    "devices": [
+      {
+        "cnt": "1", 
+        "required": "1", 
+        "type": "AndroidPhoneT", 
+        "reserve": "No"
+      }
+    ]
+  }, 
+  "migration": {}, 
+  "file": "full_test_app-0.0.1-SNAPSHOT.jar", 
+  "deployment": {
+    "config": {
+      "custom_params": {
+        "dev_message": "Gcode:G01_X1_Y1_Z1"
+      }, 
+      "file": "org.karaf.full_test"
+    }, 
+    "qos": {
+      "main": "dev_latency", 
+      "secondary": [
+        "cloud_latency,response_time"
+      ]
+    }
+  }, 
+  "_id": "697bbbe0e7f3d065ae4652d7100044af", 
+  "description": "Full Testing App"
+}
+DEBUG:root:Cloud Config Started
+DEBUG:root:Cloud connection configuration successfull
+DEBUG:root:Devices Config Started
+DEBUG:root:Device connection configuration successfull
+DEBUG:root:Region Config Started
+DEBUG:root:Region connection configuration successfull
+DEBUG:root:Apps Config Started
+DEBUG:root:Apps connection configuration successfull
+DEBUG:root:Resource Config Started
+DEBUG:root:Resource connection configuration successfull
+DEBUG:root:Conf-File Config Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File configuration successfull
+DEBUG:root:Bundle Deployed with id: 183
+DEBUG:root:Bundle Started
+DEBUG:root:{'state': 'Active', 'id': '183'}
+DEBUG:root:{'config_file': 'org.karaf.full_test', 'name': 'Test_App1', 'host_gateway': 'Weaver_3167', 'region': [{'name': 'FirstRegion', 'key': 'BasicApiKey1'}], 'apps': [], 'cluster': 'Cluster_Amanda_9108', 'resources': ['storage'], 'file': 'full_test_app-0.0.1-SNAPSHOT.jar', 'AppId': '697bbbe0e7f3d065ae4652d7100044af', 'device': {'AndroidPhoneT': ['g95Fvxxt']}, 'config': {'name': 'Test_App1', 'dev_AndroidPhoneT': 'g95Fvxxt', 'region': 'FirstRegion;BasicApiKey1', 'resources': 'storage', 'dev_message': 'Gcode:G01_X1_Y1_Z1', 'cloud': 'mqtt_conn1'}, 'cloud': ['mqtt_conn1'], 'current_gateway': 'Weaver_3167'}
+DEBUG:root:Deployment file saved
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:-----Received Request from Cloud-----
+DEBUG:root:bundle remove Test_App1
+DEBUG:root:Bundle Task
+DEBUG:root:Remove Bundle
+DEBUG:root:Remove App: Test_App1
+DEBUG:root:Cloud Unconfig Started
+DEBUG:root:Removed Dev Type: AndroidPhoneT Device:g95Fvxxt
+DEBUG:root:Region Deconfig Started
+DEBUG:root:Region connection un-configuration successfull
+DEBUG:root:Resource Un-Config Started
+DEBUG:root:Resource connection un-configuration successfull
+DEBUG:root:Deleting Bundle from Karaf
+DEBUG:root:Deregleted Bundle: 183
+DEBUG:root:Conf-File Removal Started
+DEBUG:root:Config file Written
+DEBUG:root:Conf-File removal successfull
+DEBUG:root:Deployment file deleted
+DEBUG:root:---Request processed and Reponse Sent----
+DEBUG:root:Exiting Main Thread - Keyboard
+DEBUG:root:Sending Initial Request to Cloud
+DEBUG:root:{"hw_addr": "b8:27:eb:57:e7:84", "info": {"peripherals": ["rf24", "bluetooth", "rf434", "Xbee"], "apps": "None", "resources": ["database", "location", "metadata"]}, "peers": [["b8:27:eb:c5:ed:e4", "10.0.0.67"]], "name": "Temp_GW_6838", "local_ip": "10.0.0.68", "request": "register", "api_key": "ThisIsRandomAPIKey1234", "uuid": "rLsMdIyXKRqDmzlE"}
+DEBUG:root:register self nothing {'reg_api': 'EKIAjhZVXDjKUhXM', 'reg_role': 'master', 'reg_name': 'Cluster_Amanda_9108', 'name': 'Weaver_3167'}
+DEBUG:root:Register
+DEBUG:root:Self
+DEBUG:root:Update Variables received but nothing else to do
+DEBUG:root:Master
+DEBUG:root:Awaiting Requests!
