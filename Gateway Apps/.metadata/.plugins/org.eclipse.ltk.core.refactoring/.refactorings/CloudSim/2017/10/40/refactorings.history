@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;build.xml&apos; to &apos;cloudsim&apos;" description="Move &apos;build.xml&apos; to &apos;cloudsim&apos;" destination="sources/org/cloudbus/cloudsim" element1="build.xml" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1507226758061" updateReferences="true"/>
+</session>

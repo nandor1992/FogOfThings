@@ -5,8 +5,9 @@
     <uses-permission android:name="android.permission.BLUETOOTH"/>
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
     <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
     <application
             android:allowBackup="true"
             android:icon="@drawable/icon"
@@ -27,6 +28,11 @@
         <activity android:name=".MqttActivity">
         </activity>
         <activity android:name=".TalkActivity">
+        </activity>
+        <activity
+                android:name=".BetaActivity"
+                android:label="@string/title_activity_beta"
+                android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
 

@@ -1,0 +1,156 @@
+package org.nandor.spark;
+
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Random;
+
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.JavaSparkContext;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+public class Testing{
+
+	public static JSONObject readJson(String file){
+		JSONParser parser = new JSONParser();
+		JSONObject a = new JSONObject();
+		try {
+			a = (JSONObject) parser.parse(new FileReader(file));
+		} catch (IOException | ParseException e) {
+			e.printStackTrace();
+		}
+		return a;
+	}
+	
+	public static void writeJson(String file,JSONObject json){
+		FileWriter f;
+		try {
+			f = new FileWriter(file);
+			f.write(json.toJSONString());
+			f.flush();
+			f.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+
+	public static void DisplayData(Fog f) {
+		/*for (Integer i : f.getApps().keySet()) {
+			System.out.println(f.getApps().get(i).getInfo());
+		}
+		System.out.println(f.getApps().get(1).getAppLoad((float) 1) + " "
+				+ f.getApps().get(1).getProcDelay((float) 56.0, (float) 1.0));
+		*/
+		System.out.println("----Displaying Fog----");
+		System.out.println(f.toString());
+		System.out.println("Apps: " + f.getApps());
+		System.out.println("Apps of  1: "+f.getApps().get(1).getTotDelay());
+		System.out.println("Gw1 1: "+f.getGateways().get(1).getInfo());
+		System.out.println("Resource: " + f.getResources().toString());
+		System.out.println("Gateways: " + f.getGateways().toString());
+		System.out.println("Clusters: " + f.getClusters().toString());
+		for (Integer i : f.getClusters().keySet()) {
+			System.out.println("Cluster "+i+" Load: "+f.getClusters().get(i).getClusterLoad());
+		}
+		for (Integer i : f.getGateways().keySet()) {
+			System.out.println("Gateway " + f.getGateways().get(i).getInfo());
+			for (Integer j: f.getGateways().get(i).getCluster().keySet()){
+				System.out.println("Gw "+i+" Cluster "+j+" Share: "+f.getGateways().get(i).getClusterShare(j));
+			}
+		}
+		
+		print("Fog Utility: "+f.getFogCompoundUtility());
+		print("Fog Delay: "+f.getFogCompoundDelay());
+		print("Fog Reliability: "+f.getFogCompoundReliability());
+	}
+	
+	public static Fog InitFog(int ClsCount, int cloudGw){
+		//Initialization and Generation
+		Fog f = new Fog("Main Fog");
+		float[] lat = {(float)8.97,(float)30.897};
+		float[] lat2 = {(float)37.37,(float)87.89};
+		float[] lat3 = {(float)2.37,(float)6.89};
+		f.generateNewFog(ClsCount,(float)40,(float)65,(float)0.1,(float)0.05,lat,cloudGw,lat2,lat3,4,1);
+		//Analysis part, of distributing Gw's to clusters		
+		return f;
+	}
+
+	public static float GAGlobalStuff(Fog f,int size,int cnt){
+		print("----- GA Stuff -----");
+		Genetic g = new Genetic(f);
+		long start=System.currentTimeMillis();
+		f.setDeplpyment(g.GAGlobal(size,cnt));
+		f.deployFog();
+		print("Fog Utility: "+f.getFogCompoundUtility());
+		float tot_sec=(System.currentTimeMillis()-start)/(float)1000;
+		System.out.println("Finished First Part in:"+tot_sec);
+		System.out.println("Unalocated Apps: "+f.checkIfAppsAllocated());	
+		return tot_sec;
+	}
+	
+	public static float GAClusStuff(Fog f,int size,int cnt){
+		print("----- GA Stuff -----");
+		Genetic g = new Genetic(f);
+		long start=System.currentTimeMillis();
+		Clustering(f);
+		ResourceAllocation(f);
+		//DisplayData(f);
+		for (Integer i: f.getClusters().keySet()){
+			f.getClusters().get(i).setDeployment(g.GACluster(size,cnt, f.getClusters().get(i)));
+		}
+		f.deployClusters();
+		float tot_sec=(System.currentTimeMillis()-start)/(float)1000;
+		print("Fog Utility: "+f.getFogCompoundUtility());
+		System.out.println("Finished Second Part in:"+tot_sec);
+		System.out.println("Unalocated Apps: "+f.checkIfAppsAllocated());
+		return tot_sec;
+	}
+	
+	public static void Clustering(Fog f){
+		print("----- Clustering -----");
+		f.clearGwClustConns();
+		f.removeClusters();
+		Clustering cls = new Clustering(f);
+		f.createClusters(cls.DBScan(1,7));//eps, minPts
+		//cls.DBScan(1,5);
+		
+	}
+	
+	public static void ResourceAllocation(Fog f){
+		print("----- Resource Allocation -----");
+		f.clearAppToGws();
+		f.distributeGw2Cluster();
+		
+	}
+
+	public static void main(String[] args) {
+
+		Fog f = InitFog(6,0);//Cluster Count, Cloud Gw Count
+	    //Fog f=Exporter.readJsonFog(readJson("C:/Users/Nandor/Documents/FogOfThings/Gateway Apps/spark-test/src/main/java/org/nandor/spark/deploy-W.json"));
+	  		
+	    //DisplayData(f);
+		//Global Optimization
+		GAGlobalStuff(f, 20, 20);//Fog, Generation Size, Generation Cunt
+		
+		//Clustering(f);
+		// CLustering based GA
+		GAClusStuff(f, 20, 20);//Fog, Generation Size, Generation Count
+		
+		writeJson("C:/Users/Nandor/Documents/FogOfThings/Gateway Apps/spark-test/src/main/java/org/nandor/spark/deploy-W.json",Exporter.writeJsonFog(f));
+	  }
+	
+	//Prints
+	public static void print(String str){
+		System.out.println(str);
+	}
+	public static void print(Float str){
+		System.out.println(str);
+	}
+}

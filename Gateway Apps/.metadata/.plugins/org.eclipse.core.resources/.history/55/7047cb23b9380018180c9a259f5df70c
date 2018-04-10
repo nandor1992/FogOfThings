@@ -1,0 +1,50 @@
+package org.nandor.spark;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import scala.collection.parallel.ParIterableLike.Collect;
+
+public class genStack {
+	
+	List<Generation> generations = new ArrayList<>();
+	private int size = 1;
+	
+	public genStack(int size){
+		this.size = size;
+	}
+	
+	public void addGeneration(Map<Integer,Integer> gen,Float utility){
+		Collections.sort(generations, new Comparator<Generation>() {
+
+			@Override
+			public int compare(Generation o1, Generation o2) {
+				if o1.getUtility()>o2.getUtility()
+			}
+		});
+	}
+
+}
+
+class Generation{
+	Map<Integer,Integer> gen = new HashMap<>();
+	Float utility = (float) 0.0;
+	
+	public Generation(Map<Integer,Integer> gen,Float utility){
+		this.gen=gen;
+		this.utility=utility;
+	}
+	
+	public Float getUtility(){
+		return utility;
+	}
+	
+	public Map<Integer,Integer> getGeneration(){
+		return gen;
+	}
+	
+}

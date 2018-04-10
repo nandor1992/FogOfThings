@@ -1,0 +1,11 @@
+package org.nandor.spark;
+
+public class AdvancedGA extends Genetic{
+
+	public AdvancedGA(Fog fog) {
+		super(fog);
+	}
+
+	
+	
+}

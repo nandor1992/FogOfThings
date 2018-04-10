@@ -1,0 +1,72 @@
+{
+	"ResourceUse": {
+		"Device": {
+			"Loc": {
+				"min": 0,
+				"max": 8,
+				"avg":2.3
+			},
+			"Ext": {
+				"min": 0,
+				"max": 1,
+				"avg":0.1
+			},
+			"Tot": {
+				"min": 0,
+				"max": 8,
+				"avg":2.4
+			}
+		},
+		"Cloud": {
+			"Loc": {
+				"min": 0,
+				"max": 1,
+				"avg":0.1
+			},
+			"Ext": {
+				"min": 0,
+				"max": 1,
+				"avg":0.1
+			},
+			"Tot": {
+				"min": 0,
+				"max": 1,
+				"avg":0.2
+			}
+		},
+		"Storage": {
+			"Loc": {
+				"min": 0,
+				"max": 1,
+				"avg":0.15
+			},
+			"Ext": {
+				"min": 0,
+				"max": 1,
+				"avg":0.1
+			},
+			"Tot": {
+				"min": 0,
+				"max": 1,
+				"avg":0.25
+			}
+		},
+		"LocalAccess": {
+			"Loc": {
+				"min": 0,
+				"max": 2,
+				"avg":0.26
+			},
+			"Ext": {
+				"min": 0,
+				"max": 2,
+				"avg":0.1
+			},
+			"Tot": {
+				"min": 0,
+				"max": 2,
+				"avg":0.36
+			}
+		}
+	}
+}

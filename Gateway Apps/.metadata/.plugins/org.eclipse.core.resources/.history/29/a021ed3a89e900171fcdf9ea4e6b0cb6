@@ -1,0 +1,101 @@
+package org.nandor.spark;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+public class Local {
+
+	public static Fog InitFog() {
+		//Initialization and Generation
+		Fog f = new Fog("Main Fog");
+		float[] lat = {(float)8.97,(float)30.897};
+		float[] lat2 = {(float)37.37,(float)87.89};
+		f.generateNewFog(1,(float)42,(float)60.0,lat,3,lat2,(float)2.0);
+		//Analysis part, of distributing Gw's to clusters
+		//f.distributeGw2Cluster();
+		return f;
+	}
+
+	public static void DisplayData(Fog f) {
+		/*for (Integer i : f.getApps().keySet()) {
+			System.out.println(f.getApps().get(i).getInfo());
+		}
+		System.out.println(f.getApps().get(1).getAppLoad((float) 1) + " "
+				+ f.getApps().get(1).getProcDelay((float) 56.0, (float) 1.0));
+		*/
+		System.out.println("----Displaying Fog----");
+		System.out.println(f.toString());
+		System.out.println("Apps: " + f.getApps());
+		System.out.println("App 1: "+f.getApps().get(1).getInfo());
+		System.out.println("Resource: " + f.getResources().toString());
+		System.out.println("Gateways: " + f.getGateways().toString());
+		System.out.println("Clusters: " + f.getClusters().toString());
+		for (Integer i : f.getClusters().keySet()) {
+			System.out.println("Cluster "+i+" Load: "+f.getClusters().get(i).getClusterLoad());
+		}
+		for (Integer i : f.getGateways().keySet()) {
+			System.out.println("Gateway " + i + " Load:" + f.getGateways().get(i).getGwLoad());
+			for (Integer j: f.getGateways().get(i).getCluster().keySet()){
+				System.out.println("Gw "+i+" Cluster "+j+" Share: "+f.getGateways().get(i).getClusterShare(j)+" Load: "+f.getGateways().get(i).getClusterLoadShare(j));
+			}
+		}
+		//print("Fog Utility: "+f.getFogCompoundUtility());
+		//print("Fog Delay: "+f.getFogCompoundDelay());
+		//print("Fog Reliability: "+f.getFogCompoundReliability());
+	}
+	
+	public static void GAStuff(Fog f){
+		print("----- GA Stuff -----");
+		Genetic g = new Genetic(f);
+		int size=200;
+		int cnt=10;
+		long start=System.currentTimeMillis();
+		f.setDeplpyment(g.GAGlobal(size,cnt));
+		f.deployFog();
+		print("Fog Utility: "+f.getFogCompoundUtility());
+		System.out.println("Finished First Part in:"+(System.currentTimeMillis()-start)/(float)1000);
+		start=System.currentTimeMillis();
+		for (Integer i: f.getClusters().keySet()){
+			f.getClusters().get(i).setDeployment(g.GACluster(size,cnt, f.getClusters().get(i)));
+		}
+		f.deployClusters();
+		print("Fog Utility: "+f.getFogCompoundUtility());
+		System.out.println("Finished Second Part in:"+(System.currentTimeMillis()-start)/(float)1000);
+	}
+	
+	public static void testAppAllocate(Fog f){
+		print("----- Test App Allocation -----");
+		print("GwLoad: "+f.getGateways().get(1).getGwLoad());
+		print("GW Reliability:"+f.getGateways().get(1).getGwReliabiltiy());
+		for (int i = 1; i <= 12; i++) {
+			f.addGwAppConn(i%5+1,i);
+		}
+		print("App Proc Delay: "+f.getApps().get(1).getProcDelay());
+		print("App Netw Delay: "+f.getApps().get(1).getNetworkDelay());
+		print("App Tot Delay: "+f.getApps().get(1).getTotDelay());
+		print("App Load: "+f.getApps().get(1).getAppLoad());
+		print("App Reliability: "+f.getApps().get(1).getAppReliability());
+		f.getApps().get(1).setConstraints(f.getApps().get(1).getTotDelay()-20, f.getApps().get(1).getAppReliability()-(float)0.1);
+		print("App Const Viol: "+f.getApps().get(1).getConstraintViolations());
+		print("App App utility: "+f.getApps().get(1).getAppUtility());
+		print("New Gw Load:"+f.getGateways().get(1).getGwLoad());
+		print("GW Reliability:"+f.getGateways().get(1).getGwReliabiltiy());
+	}
+	
+	public static void main(String[] args) {
+		long start=System.currentTimeMillis();
+		Fog f = InitFog();
+		//testAppAllocate(f);
+		DisplayData(f);
+		GAStuff(f);
+		System.out.println("Finished in:"+(System.currentTimeMillis()-start)/(float)1000);
+	}
+	//Prints
+	public static void print(String str){
+		System.out.println(str);
+	}
+	public static void print(Float str){
+		System.out.println(str);
+	}
+}

@@ -13,84 +13,133 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent" android:weightSum="1" android:nestedScrollingEnabled="true">
-        <TextView
+        <TabHost
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Connecting to Device"
-                android:id="@+id/textView" android:layout_gravity="center_horizontal"
-                android:textSize="26dp" android:textAlignment="center" android:background="#9fbafe"
-                android:paddingLeft="5dp" android:paddingTop="5dp" android:paddingRight="5dp"
-                android:paddingBottom="5dp"/>
-        <TextView
-                android:layout_width="328dp"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Medium Text"
-                android:id="@+id/textView2" android:layout_gravity="center_horizontal" android:textAlignment="center"
-                android:textSize="21dp"/>
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="House State"
-                android:id="@+id/textmsg" android:layout_gravity="center_horizontal"
-                android:textSize="26dp" android:textAlignment="center" android:background="#9fbafe"
-                android:paddingLeft="5dp" android:paddingTop="5dp" android:paddingRight="5dp"
-                android:paddingBottom="5dp" android:visibility="visible"/>
-
-        <TextView android:layout_width="328dp" android:layout_height="wrap_content"
-                  android:textAppearance="?android:attr/textAppearanceMedium" android:text="No State"
-                  android:id="@+id/textView3" android:layout_gravity="center_horizontal" android:textAlignment="center"
-                  android:textSize="21dp"/>
-        <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Get State"
-                android:id="@+id/button2" android:layout_gravity="center_horizontal"/>
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-                  android:textAppearance="?android:attr/textAppearanceLarge" android:text="Timetable"
-                  android:id="@+id/textView5" android:layout_gravity="center_horizontal" android:textSize="26dp"
-                  android:textAlignment="center" android:background="#9fbafe" android:paddingLeft="5dp"
-                  android:paddingTop="5dp" android:paddingRight="5dp" android:paddingBottom="5dp"
-                  android:visibility="visible"/>
-        <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:id="@+id/scrollView">
-            <TableLayout
+                android:layout_height="match_parent" android:id="@+id/tabHost">
+            <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/table_layout" android:showDividers="middle">
-                <TableRow
+                    android:orientation="vertical">
+                <TabWidget
+                        android:id="@android:id/tabs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                </TabWidget>
+                <FrameLayout
+                        android:id="@android:id/tabcontent"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
-                    <TextView android:layout_width="130dp" android:layout_height="wrap_content"
-                              android:textAppearance="?android:attr/textAppearanceMedium" android:text="Time"
-                              android:id="@+id/textView9" android:layout_gravity="left|center_horizontal"
-                              android:textAlignment="center" android:textSize="21dp" android:textColor="#000000"/>
-                    <TextView android:layout_width="130dp" android:layout_height="wrap_content"
-                                      android:textAppearance="?android:attr/textAppearanceMedium" android:text="Temp °C"
-                                      android:id="@+id/textView10" android:layout_gravity="left|center_horizontal"
-                                      android:textAlignment="center" android:textSize="21dp" android:textColor="#000000"/>
-                    <TextView android:layout_width="80dp" android:layout_height="wrap_content"
-                                      android:textAppearance="?android:attr/textAppearanceMedium" android:text="Action"
-                                      android:id="@+id/textView11" android:layout_gravity="center_horizontal"
-                                      android:textAlignment="center" android:textSize="21dp" android:textColor="#000000"/>
-                </TableRow>
-                <Button android:layout_width="343dp" android:layout_height="wrap_content"
-                        android:text="Add Timetable Row" android:id="@+id/button4"
-                        android:layout_gravity="center_horizontal|right"/>
-            </TableLayout>
-        </ScrollView>
-        <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:gravity="center_horizontal">
-            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Get Settings"
-                    android:id="@+id/button3" android:layout_gravity="center_horizontal"/>
-            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Update Settings"
-                        android:id="@+id/button" android:layout_gravity="center_horizontal"/>
-        </LinearLayout>
+                    <LinearLayout
+                            android:id="@+id/State"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                        <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:text="Connecting to Device"
+                                android:id="@+id/textView" android:layout_gravity="center_horizontal"
+                                android:textSize="18dp" android:textAlignment="center" android:background="#9fbafe"
+                                android:paddingLeft="5dp" android:paddingTop="5dp" android:paddingRight="5dp"
+                                android:paddingBottom="5dp"/>
+                        <TextView
+                                android:layout_width="328dp"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:text="Medium Text"
+                                android:id="@+id/textView2" android:layout_gravity="center_horizontal" android:textAlignment="center"
+                                android:textSize="16dp"/>
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                                  android:textAppearance="?android:attr/textAppearanceLarge" android:text="Timetable"
+                                  android:id="@+id/textView5" android:layout_gravity="center_horizontal" android:textSize="21dp"
+                                  android:textAlignment="center" android:background="#9fbafe" android:paddingLeft="5dp"
+                                  android:paddingTop="5dp" android:paddingRight="5dp" android:paddingBottom="5dp"
+                                  android:visibility="visible"/>
+                        <ScrollView
+                                android:layout_width="match_parent"
+                                android:layout_height="250dp"
+                                android:id="@+id/scrollView">
+                            <TableLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:id="@+id/table_layout" android:showDividers="middle">
+                                <TableRow
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+                                    <TextView android:layout_width="130dp" android:layout_height="wrap_content"
+                                              android:textAppearance="?android:attr/textAppearanceMedium" android:text="Time"
+                                              android:id="@+id/textView9" android:layout_gravity="left|center_horizontal"
+                                              android:textAlignment="center" android:textSize="21dp" android:textColor="#000000"/>
+                                    <TextView android:layout_width="130dp" android:layout_height="wrap_content"
+                                              android:textAppearance="?android:attr/textAppearanceMedium" android:text="Temp °C"
+                                              android:id="@+id/textView10" android:layout_gravity="left|center_horizontal"
+                                              android:textAlignment="center" android:textSize="21dp" android:textColor="#000000"/>
+                                    <TextView android:layout_width="80dp" android:layout_height="wrap_content"
+                                              android:textAppearance="?android:attr/textAppearanceMedium" android:text="Action"
+                                              android:id="@+id/textView11" android:layout_gravity="center_horizontal"
+                                              android:textAlignment="center" android:textSize="21dp" android:textColor="#000000"/>
+                                </TableRow>
+                                <Button android:layout_width="343dp" android:layout_height="wrap_content"
+                                        android:text="Add Timetable Row" android:id="@+id/button4"
+                                        android:layout_gravity="center_horizontal|right"/>
+                            </TableLayout>
+                        </ScrollView>
+                        <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" android:gravity="center_horizontal">
+                            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Get Settings"
+                                    android:id="@+id/button3" android:layout_gravity="center_horizontal"/>
+                            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Update Settings"
+                                    android:id="@+id/button" android:layout_gravity="center_horizontal"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" android:weightSum="1">
+                            <TextView
+                                    android:layout_width="184dp"
+                                    android:layout_height="wrap_content"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:text="House State"
+                                    android:id="@+id/textmsg" android:layout_gravity="center_horizontal"
+                                    android:textSize="26dp" android:textAlignment="center" android:background="#9fbafe"
+                                    android:paddingLeft="5dp" android:paddingTop="5dp" android:paddingRight="5dp"
+                                    android:paddingBottom="5dp" android:visibility="visible" android:layout_weight="0.88"/>
+                            <Button
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Get State"
+                                    android:id="@+id/button2" android:layout_gravity="center_horizontal" android:layout_weight="0.26"/>
+                        </LinearLayout>
+
+                        <TextView android:layout_width="328dp" android:layout_height="wrap_content"
+                                  android:textAppearance="?android:attr/textAppearanceMedium" android:text="No State"
+                                  android:id="@+id/textView3" android:layout_gravity="center_horizontal" android:textAlignment="center"
+                                  android:textSize="18dp"/>
+                    </LinearLayout>
+                    <LinearLayout
+                            android:id="@+id/Schedule"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                    </LinearLayout>
+                    <LinearLayout
+                            android:id="@+id/Historic"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                    </LinearLayout>
+                    <LinearLayout
+                            android:id="@+id/Control"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+        </TabHost>
     </LinearLayout>
 </RelativeLayout>

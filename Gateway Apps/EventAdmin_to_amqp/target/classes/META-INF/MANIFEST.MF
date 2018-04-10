@@ -1,12 +1,12 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1486487282379
-Build-Jdk: 1.7.0_80
+Bnd-LastModified: 1520357556836
+Build-Jdk: 1.8.0_161
 Built-By: Nandor
 Bundle-Activator: org.karaf.event_create.Activator
-Bundle-Description: eventAdmin to Amqp Bundle project.
+Bundle-Description: eventAdmin to Amqp Bundle project. CLoud
 Bundle-ManifestVersion: 2
-Bundle-Name: eventAdmin to Amqp Bundle
-Bundle-SymbolicName: event_to_amqp
+Bundle-Name: eventAdmin to Amqp BundleCloud
+Bundle-SymbolicName: event_to_amqp-cloud
 Bundle-Version: 0.0.1.SNAPSHOT
 Created-By: Apache Maven Bundle Plugin
 Export-Package: org.karaf.event_create;version="0.0.1.SNAPSHOT";uses:="o

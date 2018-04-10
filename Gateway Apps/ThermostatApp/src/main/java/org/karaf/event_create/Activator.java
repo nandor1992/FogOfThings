@@ -50,12 +50,12 @@ public class Activator extends Thread implements BundleActivator, ManagedService
 	private static final String DEVICE_QUEUE = "device/receive/";
 	private static final String CLOUD_QUEUE = "cloud/receive/";
 	private static final String REGION_QUEUE = "region/receive/";
-	private static final String RESOURCE_QUEUE="resource/receive/";
+	private static final String RESOURCE_QUEUE = "resource/receive/";
 	private static final String DEVICE_SEND = "device/send";
 	private static final String CLOUD_SEND = "cloud/send";
 	private static final String REGION_SEND = "region/send/";
-	private static final String RESOURCE_SEND="resource/send/";
-	
+	private static final String RESOURCE_SEND = "resource/send/";
+
 	public static Integer MAX_RETRANSMIT = 20;
 	private BundleContext bcontext = null;
 	ServiceReference sr = null;
@@ -75,16 +75,19 @@ public class Activator extends Thread implements BundleActivator, ManagedService
 	static Logger logger;
 	private boolean configured = false;
 	private Timer t1;
-	private String mqtt_conn="mqtt_conn1";
-	//App Values
-	private int relayValue=0;
-	private int proprelayValue=0;
-	private int confirm_rel=0;
-	//Avarage n stuff
+	private String mqtt_conn = "mqtt_conn1";
+	// App Values
+	private int relayValue = 0;
+	private int proprelayValue = 0;
+	private int confirm_rel = 0;
+	// Avarage n stuff
 	private double recVal = 0.0;
+	private double recBval = 0.0;
 	private int recCount = 0;
 	private double recAvg = 0.0;
-	
+	private String recTime = "";
+	private String state = "Everything Fine!";
+
 	public void start(BundleContext bc) throws Exception {
 		this.bcontext = bc;
 		logger = LoggerFactory.getLogger(Activator.class.getName());
@@ -104,9 +107,9 @@ public class Activator extends Thread implements BundleActivator, ManagedService
 			throw new Exception("Failed to obtain EventAdmin service object!");
 		}
 		mySched = new Schedule();
-		t1=new Timer();
+		t1 = new Timer();
 		t1.scheduleAtFixedRate(new TimerTsk(), 300000, 300000);
-		//Add control loop here 
+		// Add control loop here
 	}
 
 	public void stop(BundleContext bc) throws Exception {
@@ -119,141 +122,157 @@ public class Activator extends Thread implements BundleActivator, ManagedService
 		dev_reg.clear();
 		t1.cancel();
 		logger.warn("Stopped Bundle");
-		
+
 	}
 
 	public class TimerTsk extends TimerTask {
-		
-		    public void run(){
-		        //toy implementation
-				logger.warn("Timer Task Running");
-				Date dt = new Date(); 
-				int hours=dt.getHours();
-				if (recCount > 0){
-				recAvg=recVal/recCount;
-				recCount=0;
-				recVal=0;
-				}
-				logger.warn("For time and temp:"+String.valueOf(hours)+":"+mySched.getTemp(hours)+"curr tmp:"+recAvg);
-				logger.warn("Params: "+confirm_rel+" : "+String.valueOf(relayValue)+" : "+String.valueOf(proprelayValue));
-				if ((confirm_rel!=1) || (relayValue != proprelayValue)){
-					deviceSendEvent("[{'n':'relay','v':'"+proprelayValue+"'}]", dev_names.get(2));
-				}else{
-				if ( (recAvg > 0.0) && (recAvg+1.0)<=mySched.getTemp(hours) && (relayValue==0)){
-					proprelayValue=1;
-					confirm_rel=0;
+
+		public void run() {
+			// toy implementation
+			logger.warn("Timer Task Running");
+			Date dt = new Date();
+			int hours = dt.getHours();
+			if ((confirm_rel != 1) || (relayValue != proprelayValue)) {
+				// Check if Value was se on boiler
+				deviceSendEvent("[{'n':'relay','v':'" + proprelayValue + "'}]", dev_names.get(2));
+			}
+			if (recCount == 0) {
+				state = "No Temp Received!";
+				deviceSendEvent("[{'n':'relay','v':'0'}]", dev_names.get(2));
+			} else {
+				state = "Everything Fine!";
+				recAvg = recVal / recCount;
+				recCount = 0;
+				recVal = 0;
+
+				deviceSendEvent("[{'n':'msg','v':'Temp " +String.format("%.2f", recAvg)+"'}]","MwZKeWmQ");
+				logger.warn("For time and temp:" + String.valueOf(hours) + ":" + mySched.getTemp(hours) + "curr tmp:"
+						+ recAvg);
+				logger.warn("Params: " + confirm_rel + " : " + String.valueOf(relayValue) + " : "
+						+ String.valueOf(proprelayValue));
+				if ((recAvg > 0.0) && (recAvg + 1.0) <= mySched.getTemp(hours) && (relayValue == 0)) {
+					proprelayValue = 1;
+					confirm_rel = 0;
 					deviceSendEvent("[{'n':'relay','v':'1'}]", dev_names.get(2));
-				} 
-				if ((recAvg > 0.0) && (recAvg>=mySched.getTemp(hours)) && (relayValue==1)){
-					proprelayValue=0;
-					confirm_rel=0;
-					deviceSendEvent("[{'n':'relay','v':'0'}]", dev_names.get(2));					
 				}
+				if ((recAvg > 0.0) && (recAvg >= mySched.getTemp(hours)) && (relayValue == 1)) {
+					proprelayValue = 0;
+					confirm_rel = 0;
+					deviceSendEvent("[{'n':'relay','v':'0'}]", dev_names.get(2));
 				}
-		    }
+			}
+		}
 	}
+
 	public class SendEventHandler implements EventHandler {
 
 		public void handleEvent(Event event) {
-			//What happens when devices send messages
+			// What happens when devices send messages
 			String value = event.getProperty("payload").toString();
 			String comm = event.getProperty("device").toString();
-			String send="";
+			String send = "";
 			String commun = event.getProperty("comm").toString();
-			int dev_ind=dev_names.indexOf(comm.trim());
-			if (dev_ind==0)
-			{
-			//ard Uno Temp Msg
-				int ind1=value.indexOf("'v':");
-				int ind2=value.indexOf("'",ind1+8);
-				String command=value.substring(ind1+5,ind2);
-				recVal+=Double.parseDouble(command);
-				recCount+=1;
-				logger.warn("Received: "+command+" New value="+String.valueOf(recVal/recCount));
-			}
-			else if (dev_ind==1)
-			{
-				int ind1=value.indexOf("'v':");
-				int ind2=value.indexOf("'",ind1+8);
-				String command=value.substring(ind1+6,ind2);
-				String resp=resolveCmd(command);
-				if (!resp.equals("ok")){
-					deviceSendEvent("[{'v':'"+resp+"','n':'Resp'}]", comm.trim());
+			int dev_ind = dev_names.indexOf(comm.trim());
+			if (dev_ind == 0) {
+				// ard Uno Temp Msg
+				int ind1 = value.indexOf("'v':");
+				int ind2 = value.indexOf("'", ind1 + 8);
+				String command = value.substring(ind1 + 5, ind2);
+				recTime = event.getProperty("datetime").toString();
+				recVal += Double.parseDouble(command);
+				recCount += 1;
+				logger.warn("Received: " + command + " New value=" + String.valueOf(recVal / recCount));
+			}else if (dev_ind ==1){
+				int ind1 = value.indexOf("'v':");
+				int ind2 = value.indexOf("'", ind1 + 8);
+				String command = value.substring(ind1 + 5, ind2);
+				recBval = Double.parseDouble(command);
+				logger.warn("Received: " + command + " New value=" + String.valueOf(recVal / recCount));
+				
+			} else if (dev_ind == 2) {
+				int ind1 = value.indexOf("'v':");
+				int ind2 = value.indexOf("'", ind1 + 8);
+				String command = value.substring(ind1 + 6, ind2);
+				String resp = resolveCmd(command);
+				if (!resp.equals("ok")) {
+					deviceSendEvent("[{'v':'" + resp + "','n':'Resp'}]", comm.trim());
+				}
+			} else if (dev_ind == 3) {
+				// Relay
+				// Confirm that it's okay, if it's okay and save value as
+				// confirmed
+				if (value.equals("[{'v':'ok','n':'Resp'}]")) {
+					confirm_rel = 1;
+					relayValue = proprelayValue;
 				}
 			}
-			else if (dev_ind==2)
-			{
-				//Relay 
-				//Confirm that it's okay, if it's okay and save value as confirmed
-				if (value.equals("[{'v':'ok','n':'Resp'}]")){
-					confirm_rel=1;
-					relayValue=proprelayValue;
-				}
-			}
-			logger.warn("Received from: "+comm+"what"+value);
-		
+			logger.warn("Received from: " + comm + "what" + value);
+
 		}
 
 	}
-	
+
 	public class CloudEventHandler implements EventHandler {
 
 		public void handleEvent(Event event) {
 			String value = event.getProperty("payload").toString();
-			String resp=resolveCmd(value);
-			if (!resp.equals("ok")){
+			String resp = resolveCmd(value);
+			if (!resp.equals("ok")) {
 				cloudSendEvent(resp);
 			}
 		}
 	}
 
-	
-	public String resolveCmd(String command)
-	{
+	public String resolveCmd(String command) {
 		String parts[] = command.split(":");
-		if (parts[0].equals("get")){
-			if (parts[1].equals("temp"))
-			{
-				return "Temp: "+String.format("%.2f", recAvg);
-			}else if (parts[1].equals("ref"))
-			{
-				return "Sched Period:"+mySched.getSched();
-			}
-			else if (parts[1].equals("state"))
-			{
-				String boiler="";
-				if (relayValue==1){
-					boiler="On";
-				} else{
-					boiler="Off";
+		if (parts[0].equals("get")) {
+			if (parts[1].equals("temp")) {
+				return "Temp: " + String.format("%.2f", recAvg) + " TempB: "+String.format("%.2f", recBval)+ " Time: " + recTime + " State: " + state;
+			} else if (parts[1].equals("ref")) {
+				return "Sched Period:" + mySched.getSched();
+			} else if (parts[1].equals("state")) {
+				String boiler = "";
+				if (relayValue == 1) {
+					boiler = "On";
+				} else {
+					boiler = "Off";
 				}
-				return "Temperature: "+String.format("%.2f", recAvg)+" Boiler: "+boiler;
+				return "Temp: " + String.format("%.2f", recAvg) + " TempB: "+String.format("%.2f", recBval)+ " Heat: " + boiler + " Time: " + recTime
+						+ " State: " + state;
 			}
-		}else if (parts[0].equals("set"))
-		{
+		} else if (parts[0].equals("set")) {
 			mySched.setSched(parts[1]);
+		} else if (parts[0].equals("onoff")) {
+			if (parts[1].equals("1")) {
+				proprelayValue = 1;
+				deviceSendEvent("[{'n':'relay','v':'1'}]", dev_names.get(2));
+			} else {
+				proprelayValue = 0;
+				deviceSendEvent("[{'n':'relay','v':'0'}]", dev_names.get(2));
+			}
 		}
-		return "ok";	
+		return "ok";
 	}
-	
+
 	public void cloudSendEvent(String payload) {
 		Dictionary props = new Hashtable();
 		props.put("payload", payload);
 		props.put("app", app_name);
-		props.put("cloud",mqtt_conn);
+		props.put("cloud", mqtt_conn);
 		Event event = new Event(CLOUD_SEND, props);
 		ea.sendEvent(event);
 	}
-	
+
 	public void deviceSendEvent(String payload, String device) {
-		//Send event to device
+		logger.warn("Dev: " + device + " what:" + payload);
+		// Send event to device
 		Dictionary props = new Hashtable();
 		props.put("app", app_name);
 		props.put("payload", payload);
 		props.put("device", device);
-		int dev_ind=dev_names.indexOf(device);
-		if (dev_ind==2){
-			props.put("qos","1");
+		int dev_ind = dev_names.indexOf(device);
+		if (dev_ind == 2) {
+			props.put("qos", "1");
 		}
 		Event event = new Event(DEVICE_SEND, props);
 		ea.sendEvent(event);
@@ -270,11 +289,11 @@ public class Activator extends Thread implements BundleActivator, ManagedService
 			String devs3 = (String) properties.get("dev_ardRelayBoiler");
 			String app = (String) properties.get("name");
 			String clouds = (String) properties.get("cloud");
-			if (devs1 != null && devs2 != null && devs3 != null && app != null && clouds !=null) {
-				reconfigureDev(devs1.trim(),devs2.trim(),devs3.trim());
+			if (devs1 != null && devs2 != null && devs3 != null && app != null && clouds != null) {
+				reconfigureDev(devs1.trim(), devs2.trim(), devs3.trim());
 				reconfigureApp(app.trim());
-				mqtt_conn=clouds;
-				configured=true;
+				mqtt_conn = clouds;
+				configured = true;
 			}
 		}
 	}
@@ -283,7 +302,7 @@ public class Activator extends Thread implements BundleActivator, ManagedService
 		if (configured) {
 			for (ServiceRegistration reg : dev_reg) {
 				reg.unregister();
-				dev_names.clear();	
+				dev_names.clear();
 			}
 		}
 		dev_names.add(dev1);
@@ -293,25 +312,32 @@ public class Activator extends Thread implements BundleActivator, ManagedService
 		Dictionary dp = new Hashtable();
 		dp.put(EventConstants.EVENT_TOPIC, DEVICE_QUEUE + dev1);
 		logger.warn("New Device Registered:" + dev1);
-		ServiceRegistration reg_temp = bcontext.registerService(EventHandler.class.getName(),
-				new SendEventHandler(), dp);
+		ServiceRegistration reg_temp = bcontext.registerService(EventHandler.class.getName(), new SendEventHandler(),
+				dp);
 		dev_reg.add(reg_temp);
 		
+		Dictionary dpB = new Hashtable();
+		dpB.put(EventConstants.EVENT_TOPIC, DEVICE_QUEUE + dev1+"2");
+		logger.warn("New Device Registered:" + dev1+"2");
+		ServiceRegistration reg_tempB = bcontext.registerService(EventHandler.class.getName(), new SendEventHandler(),
+				dpB);
+		dev_reg.add(reg_tempB);
+
 		Dictionary dp2 = new Hashtable();
 		dp2.put(EventConstants.EVENT_TOPIC, DEVICE_QUEUE + dev2);
 		logger.warn("New Device Registered:" + dev2);
-		ServiceRegistration reg_temp2 = bcontext.registerService(EventHandler.class.getName(),
-				new SendEventHandler(), dp2);
+		ServiceRegistration reg_temp2 = bcontext.registerService(EventHandler.class.getName(), new SendEventHandler(),
+				dp2);
 		dev_reg.add(reg_temp2);
-		
+
 		Dictionary dp3 = new Hashtable();
 		dp3.put(EventConstants.EVENT_TOPIC, DEVICE_QUEUE + dev3);
 		logger.warn("New Device Registered:" + dev3);
-		ServiceRegistration reg_temp3 = bcontext.registerService(EventHandler.class.getName(),
-				new SendEventHandler(), dp3);
+		ServiceRegistration reg_temp3 = bcontext.registerService(EventHandler.class.getName(), new SendEventHandler(),
+				dp3);
 		dev_reg.add(reg_temp3);
 	}
-	
+
 	public void reconfigureApp(String name) {
 		app_name = name;
 		if (configured) {

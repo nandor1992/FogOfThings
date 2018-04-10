@@ -1,0 +1,209 @@
+package org.nandor.spark;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TimerTask;
+
+public class Methods {
+
+	public static void DisplayData(Fog f) {
+		/*for (Integer i : f.getApps().keySet()) {
+			System.out.println(f.getApps().get(i).getInfo());
+		}
+		System.out.println(f.getApps().get(1).getAppLoad((float) 1) + " "
+				+ f.getApps().get(1).getProcDelay((float) 56.0, (float) 1.0));
+		*/
+		System.out.println("----Displaying Fog----");
+		System.out.println(f.toString());
+		System.out.println("Apps: " + f.getApps());
+		System.out.println("Apps of  1: "+f.getApps().get(1).getTotDelay());
+		System.out.println("Gw1 1: "+f.getGateways().get(1).getInfo());
+		System.out.println("Resource: " + f.getResources().toString());
+		System.out.println("Gateways: " + f.getGateways().toString());
+		System.out.println("Clusters: " + f.getClusters().toString());
+		for (Integer i : f.getClusters().keySet()) {
+			System.out.println("Cluster "+i+" Load: "+f.getClusters().get(i).getClusterLoad());
+		}
+		for (Integer i : f.getGateways().keySet()) {
+			System.out.println("Gateway " + f.getGateways().get(i).getInfo());
+			for (Integer j: f.getGateways().get(i).getCluster().keySet()){
+				System.out.println("Gw "+i+" Cluster "+j+" Share: "+f.getGateways().get(i).getClusterShare(j));
+			}
+		}
+		
+		System.out.println("Fog Utility: "+f.getFogCompoundUtility());
+		System.out.println("Fog Delay: "+f.getFogCompoundDelay());
+		System.out.println("Fog Reliability: "+f.getFogCompoundReliability());
+	}
+	
+	static TimerTask timerTask = new TimerTask() {
+	    @Override
+	    public void run() {
+	    	Runtime runtime = Runtime.getRuntime();
+
+	    	long maxMemory = runtime.maxMemory();
+	    	long allocatedMemory = runtime.totalMemory();
+	    	long freeMemory = runtime.freeMemory();
+	    	System.out.println("-----Memory Use-----");
+	    	System.out.println("free memory: " + (freeMemory / 1024.0/1024.0));
+	    	System.out.println("allocated memory: " + (allocatedMemory / 1024.0/1024.0));
+	    	System.out.println("max memory: " + (maxMemory / 1024.0/1024.0));
+	    	System.out.println("total free memory: " + (freeMemory + (maxMemory - allocatedMemory))/1024.0/1024.0);
+	    	System.out.println("-----End Memory Use-----");
+	    }
+	};
+	
+	public static Fog InitFog(int ClsCount, int cloudGw){
+		//Initialization and Generation
+		Fog f = new Fog("Main Fog");
+		float[] lat = {(float)8.97,(float)30.897};
+		float[] lat2 = {(float)37.37,(float)87.89};
+		float[] lat3 = {(float)2.37,(float)6.89};
+		f.generateNewFog(ClsCount,(float)40,(float)75,(float)0.1,(float)0.05,lat,cloudGw,lat2,lat3,7,1);
+		//Analysis part, of distributing Gw's to clusters		
+		return f;
+	}
+
+	public static Map<String,Float> GAGlobalStuff(Fog f,int size,int cnt,boolean safe){
+		Map<String,Float> data = new HashMap<>();
+		System.out.println("----- GA Stuff -----");
+		long start=System.currentTimeMillis();
+		Genetic g = new Genetic(f);
+		f.setDeplpyment(g.GAGlobal(size,cnt,safe));
+		f.deployFog();
+		data.put("Utility",f.getFogCompoundUtility());
+		data.put("Time",(System.currentTimeMillis()-start)/(float)1000);
+		System.out.println("Unalocated Apps: "+f.checkIfAppsAllocated());	
+		System.out.println("Fog Utility: "+f.getFogCompoundUtility());
+		System.out.println("Time Elapsed: "+(System.currentTimeMillis()-start)/(float)1000);
+		return data;
+	}
+	
+	public static Map<String,String> GAClusStuff(Fog f,int size,int cnt,boolean safe){
+		System.out.println("----- Clust GA Stuff -----");
+		Map<String,String> data = new HashMap<>();
+		long start=System.currentTimeMillis();
+		Genetic g = new AdvancedGA(f);
+		//DisplayData(f);
+		for (Integer i: f.getClusters().keySet()){
+			f.getClusters().get(i).setDeployment(g.GACluster(size,cnt, f.getClusters().get(i),safe));
+		}
+		f.deployClusters();
+		if (f.checkIfAppsAllocated().size()==0){
+			data.put("1.Utility",f.getFogCompoundUtility().toString());
+			data.put("2.Time",String.format("%.2f",(System.currentTimeMillis()-start)/(float)1000));
+			data.put("3.Cluster",f.getClusters().toString());
+			data.put("4.BestPop",f.getDeployment().toString());
+			System.out.println("Unalocated Apps: "+f.checkIfAppsAllocated());
+			System.out.println("Fog Utility: "+f.getFogCompoundUtility());
+			System.out.println("Time Elapsed: "+(System.currentTimeMillis()-start)/(float)1000);
+			System.out.println("Cluster: "+f.getClusters());
+			System.out.println("BestPop: "+f.getDeployment());
+			return data;}
+		else{
+				return null;
+			}
+	}
+	
+	public static float clusteredDeployment(Fog f,int eps, int minPts,int size,int cnt,boolean safe){
+		System.out.println("----- Clust GA Stuff -----");
+		Genetic g = new Genetic(f);
+		long start=System.currentTimeMillis();
+		Clustering(f,eps,minPts);
+		ResourceAllocation(f);
+		//CLustered GA
+		//DisplayData(f);
+		for (Integer i: f.getClusters().keySet()){
+			f.getClusters().get(i).setDeployment(g.GACluster(size,cnt, f.getClusters().get(i),safe));
+		}
+		f.deployClusters();
+		float tot_sec=(System.currentTimeMillis()-start)/(float)1000;
+		System.out.println("Fog Utility: "+f.getFogCompoundUtility());
+		System.out.println("Finished Clusering Part in:"+tot_sec);
+		System.out.println("Unalocated Apps: "+f.checkIfAppsAllocated());
+		start=System.currentTimeMillis();
+		//Exchaustive Clustering
+		System.out.println("----- Clust Exhaustive Stuff -----");
+		for (Integer i: f.getClusters().keySet()){
+			f.getClusters().get(i).setDeployment(g.ExhaustiveCluster(f.getClusters().get(i)));
+		}
+		f.deployClusters();
+		tot_sec=(System.currentTimeMillis()-start)/(float)1000;
+		System.out.println("Fog Utility: "+f.getFogCompoundUtility());
+		System.out.println("Finished Exhaustive Part in:"+tot_sec);
+		System.out.println("Unalocated Apps: "+f.checkIfAppsAllocated());
+		return tot_sec;
+	}
+	
+	public static void ExhaustiveClusStuff(Fog f){
+		System.out.println("----- Clust GA Stuff -----");
+		Genetic g = new Genetic(f);
+		//DisplayData(f);
+		for (Integer i: f.getClusters().keySet()){
+			f.getClusters().get(i).setDeployment(g.ExhaustiveCluster(f.getClusters().get(i)));
+		}
+		f.deployClusters();
+		System.out.println("Fog Utility: "+f.getFogCompoundUtility());
+		System.out.println("Unalocated Apps: "+f.checkIfAppsAllocated());
+	}
+	
+	
+	public static boolean Clustering(Fog f,int eps, int minPts){
+		//System.out.println("----- Clustering -----");
+		f.clearGwClustConns();
+		f.removeClusters();
+		AdvancedCls cls = new AdvancedCls(f);
+		f.createClusters(cls.DBScan(eps,minPts));//eps, minPts
+		/*for (Integer i : f.getClusters().keySet()) {
+			System.out.println("Cluster "+i+" Apps: "+f.getClusters().get(i).getApps().keySet());
+		}*/
+		if(f.checkIfAppsAllocated().size()!=0 && f.getClusters().size()>=1){
+			return false;
+		}else{
+			return true;
+		}
+		
+	}
+	
+	public static void ResourceAllocation(Fog f){
+		f.clearAppToGws();
+		f.distributeGw2Cluster();	
+	}
+	
+	public static void nandorsAlphaResourceAlloc(Fog f){
+		f.clearAppToGws();
+		AdvancedCls cls = new AdvancedCls(f);
+		cls.distributeGw2Cluster();
+		//displayClsAndRes(f);
+		cls.resolveAnomalies();
+		//displayClsAndRes(f);
+	}
+	
+	public static void displayClsAndRes(Fog f){
+		System.out.println("-----Cluster Share Apps and Load-----");
+		System.out.println("Total Load on System: " + f.getTotalLoad());
+		System.out.println("Total Free Space on System: " + f.getTotalFreeCapacity());
+		for (Integer i : f.getClusters().keySet()) {
+			System.out.print("Cluster "+i+" Load: "+f.getClusters().get(i).getClusterLoad()+" AllocatedRes: "+f.getClusters().get(i).getTotResShare()+" Rate: "+f.getClusters().get(i).ShareRate());
+			System.out.println(" Apps: "+f.getClusters().get(i).getApps().keySet()+" Gateways: "+f.getClusters().get(i).getGateways().keySet());
+			System.out.print("Gw Shares: ");
+			for (Integer g : f.getClusters().get(i).getGateways().keySet()){
+				System.out.print(" | " + String.format("%.1f",f.getGateways().get(g).getClusterShare(i)));
+			}
+			System.out.println();
+		}
+		for (Integer g:f.getGateways().keySet()){
+			System.out.print("Gateway "+g+" Shares: ");
+			Float tot = (float)0.0;
+			tot+=f.getGateways().get(g).getGwLoad();
+			System.out.print( String.format("%.1f",f.getGateways().get(g).getGwBaseLoad())+" |");
+			for (Integer c:f.getGateways().get(g).getCluster().keySet()){
+				System.out.print("| " + String.format("%.1f",f.getGateways().get(g).getClusterShare(c))+" ");
+				tot+=f.getGateways().get(g).getClusterShare(c);
+			}
+			System.out.println(" || "+tot);
+		}
+	}
+
+	
+}

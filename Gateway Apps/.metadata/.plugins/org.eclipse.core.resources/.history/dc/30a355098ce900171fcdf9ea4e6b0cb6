@@ -1,0 +1,76 @@
+package org.nandor.spark;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
+
+public class Resource {
+	private String type;
+	private String name;
+	private static final AtomicInteger count = new AtomicInteger(0);
+	private int id; 
+	//Types of Resources: Cloud, Storage, LocalAccesPoint, Device
+	private Gateway gateway=null;
+	private Map<Integer,App> apps;
+	private Map<Integer,Float> Amessages;
+	//Initialization
+	public Resource(String name,String type){
+		this.type=type;
+		this.name=name;
+		apps=new HashMap<>();
+		Amessages=new HashMap<>();
+		this.id=count.incrementAndGet();
+	}
+	
+	
+	public void addApps(App app,Float msg) {
+		this.apps.put(app.getId(), app);	
+		this.Amessages.put(app.getId(), msg);
+	}
+	
+	public Float getTotMsgs()
+	{
+		Float msg=(float)0.0;
+		for (Integer key:this.Amessages.keySet()){
+			msg+=this.Amessages.get(key);
+		}
+		return msg;
+	}
+	
+	public String toString(){
+		return name;
+}
+	public String getInfo(){
+		String ret=name+"; "
+	    		 +"Type: "+type+"; ";
+		if (gateway!=null){
+	    		 ret+="GatewayID: "+gateway.getId()+"; ";
+		}
+	     		 ret+="Apps:"+apps.keySet();
+	    return ret;
+	}
+	//Basic Setters and Getters for Resource
+	public Gateway getGateway() {
+		return this.gateway;
+	}
+	public void setGateway(Gateway gw) {
+		this.gateway = gw;
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public Map<Integer,App> getAps() {
+		return this.apps;
+	}
+
+
+	public void setApps(Map<Integer,App> apps) {
+		this.apps = apps;
+	}
+
+
+	
+}

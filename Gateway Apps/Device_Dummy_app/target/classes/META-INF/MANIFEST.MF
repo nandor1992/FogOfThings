@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1486478387643
-Build-Jdk: 1.8.0_101
+Bnd-LastModified: 1520357553382
+Build-Jdk: 1.8.0_161
 Built-By: Nandor
 Bundle-Activator: org.karaf.event_create.Activator
 Bundle-Description: Dummy application for the CNC stuff

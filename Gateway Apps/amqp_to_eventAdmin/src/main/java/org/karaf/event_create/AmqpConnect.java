@@ -18,13 +18,13 @@ import org.osgi.service.cm.ManagedService;
 import org.osgi.service.event.Event;
 import org.osgi.service.event.EventAdmin;
 
-public class AmqpConnect {
-	private static BundleContext bcontext = null;
-	static ServiceReference sr = null;
-	static EventAdmin ea = null;
+public class AmqpConnect extends Thread{
+	private BundleContext bcontext = null;
+	private ServiceReference sr = null;
+	private EventAdmin ea = null;
 	Event event = null;
-	private static Connection connection;
-	private static Channel channel;
+	private Connection connection;
+	private Channel channel;
 	boolean sending = true;
 	private Map data;
 	private HashMap data2;
@@ -37,19 +37,25 @@ public class AmqpConnect {
 	private final static String QUEUE_NAME = "karaf_app";
 	// private static final String SEND_EVENT_QUEUE = "external/send";
 	
-	
-	public static void startThis(BundleContext bc) throws Exception {
-		bcontext = bc;
+	public AmqpConnect(BundleContext bc){
+		this.bcontext = bc;
+	}
+	public void run() {
 		
 		// Retrieving the Event Admin service from the OSGi framework
-		sr = bc.getServiceReference(EventAdmin.class.getName());
+		sr = this.bcontext.getServiceReference(EventAdmin.class.getName());
+		try{
 		if (sr == null) {
 			throw new Exception("Failed to obtain EventAdmin service reference!");
 		}
-		ea = (EventAdmin) bc.getService(sr);
+		ea = (EventAdmin) this.bcontext.getService(sr);
 		if (ea == null) {
 			throw new Exception("Failed to obtain EventAdmin service object!");
 		}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+			
 
 		// AMQP Stuff
 		ConnectionFactory factory = new ConnectionFactory();
@@ -58,8 +64,14 @@ public class AmqpConnect {
 		factory.setVirtualHost("test");
 		factory.setHost("localhost");
 		factory.setPort(5672);
-		connection = factory.newConnection();
-		channel = connection.createChannel();
+		try {
+			connection = factory.newConnection();
+			channel = connection.createChannel();
+			channel.basicQos(1);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		Consumer consumer = new DefaultConsumer(channel) {
 			@Override
 			public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties,
@@ -73,13 +85,19 @@ public class AmqpConnect {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+				channel.basicAck(envelope.getDeliveryTag(), false);
 			}
 		};
-		channel.basicConsume(QUEUE_NAME, true, consumer);
+		try {
+			channel.basicConsume(QUEUE_NAME, false, consumer);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
-	public static void stopThis() {
-		bcontext.ungetService(sr);
+	public void stopThis() {
+		this.bcontext.ungetService(sr);
 		try {
 			channel.close();
 			connection.close();
@@ -89,7 +107,7 @@ public class AmqpConnect {
 		}
 	}
 
-	private static void sendEvent(String message, Map<String, Object> headers) throws InterruptedException {
+	private void sendEvent(String message, Map<String, Object> headers) throws InterruptedException {
 		Dictionary props = new Hashtable();
 		for (Map.Entry<String, Object> header : headers.entrySet()) {
 			props.put(header.getKey(), header.getValue());

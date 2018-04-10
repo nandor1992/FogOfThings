@@ -45,7 +45,8 @@ import org.slf4j.LoggerFactory;
 import com.rabbitmq.client.*;
 import com.rabbitmq.client.impl.AMQBasicProperties;
 
-public class Activator implements BundleActivator, EventHandler {
+
+public class Activator implements BundleActivator, EventHandler,ManagedService {
 	
 	private static BundleContext bcontext = null;
 	private static final List<String> regs = Arrays.asList("device/send","device/receive/*",
@@ -53,8 +54,9 @@ public class Activator implements BundleActivator, EventHandler {
 															"region/send","region/receive/*",
 															"resource/send","resource/receive/*",
 															"app/receive/*","app/send/*");
-	private static String CONFIG_PID = "org.karaf.messaging";
+	private static String CONFIG_PID = "org.karaf.monitoring";
 	private List <ServiceRegistration> register = new ArrayList<ServiceRegistration>();
+	private ServiceRegistration ppcService;
 	private static Connection connection;
 	private static Channel channel;
 	private static boolean configured=false;
@@ -63,25 +65,31 @@ public class Activator implements BundleActivator, EventHandler {
 	private Timer timer = new Timer();
 	private Monitor m1 = new Monitor();
 	static Logger logger;
-	
+	private int delay = 10000;
+	private Threads threads;
 	private class Monitor{
 		
-		private Map<String, Integer>  device = new Hashtable();
+		private Map<String,Integer>  device = new Hashtable();
 		private Map<String, Integer>  cloud = new Hashtable();
 		private Map<String, Integer>  resource = new Hashtable();
 		private Map<String, Integer>  region = new Hashtable();
 		private Map<String, Integer>  apps = new Hashtable();
-
+		private Map<String, Double>   processing = new Hashtable();
+		
 		public String hashToJson(){
 			String totString;
 			totString="{'device':"+returnVars(device)+",";
 			totString=totString+"'cloud':"+returnVars(cloud)+",";
 			totString=totString+"'region':"+returnVars(region)+",";
 			totString=totString+"'resource':"+returnVars(resource)+",";
-			totString=totString+"'apps':"+returnVars(apps)+"}";
+			totString=totString+"'apps':"+returnVars(apps)+",";
+			totString=totString+"'processing':"+returnVarsD(processing)+"}";
 			return totString;
 		}
 		
+		public void addProcessing(Map<String,Double> proc){
+			this.processing=proc;
+		}
 		public String returnVars(Map<String, Integer>  map)
 		{
 			if( map.size()==0){
@@ -90,6 +98,19 @@ public class Activator implements BundleActivator, EventHandler {
 			String ret="{";
 			for (Map.Entry<String, Integer> entry : map.entrySet()) {
 				ret=ret.concat("'"+entry.getKey()+"':'"+entry.getValue()+"',");
+			}	
+			ret=ret.substring(0, ret.lastIndexOf(","))+"}";
+			return ret;
+			}
+		}
+		public String returnVarsD(Map<String, Double>  map)
+		{
+			if( map.size()==0){
+				return "{}";
+			}else{
+			String ret="{";
+			for (Map.Entry<String, Double> entry : map.entrySet()) {
+				ret=ret.concat("'"+entry.getKey()+"':'"+String.format("%5.2f",entry.getValue())+"',");
 			}	
 			ret=ret.substring(0, ret.lastIndexOf(","))+"}";
 			return ret;
@@ -144,37 +165,39 @@ public class Activator implements BundleActivator, EventHandler {
 				if (device.get(app_dev)==null)
 					device.put(app_dev, 1);
 				else
-					device.put(app_dev, device.get(app_dev));
+					device.put(app_dev, device.get(app_dev)+1);
 			}
 			if (type.equals("cloud")){
 				if (cloud.get(app_dev)==null)
 					cloud.put(app_dev, 1);
 				else
-					cloud.put(app_dev, cloud.get(app_dev));
+					cloud.put(app_dev, cloud.get(app_dev)+1);
 			}
 			if (type.equals("resource")){
 				if (resource.get(app_dev)==null)
 					resource.put(app_dev, 1);
 				else
-					resource.put(app_dev, resource.get(app_dev));
+					resource.put(app_dev, resource.get(app_dev)+1);
 			};
 			if (type.equals("region")){
 				if (region.get(app_dev)==null)
 					region.put(app_dev, 1);
 				else
-					region.put(app_dev, region.get(app_dev));
+					region.put(app_dev, region.get(app_dev)+1);
 			}
 			if (type.equals("apps")){
 				if (apps.get(app_dev)==null)
 					apps.put(app_dev, 1);
 				else
-					apps.put(app_dev, apps.get(app_dev));
+					apps.put(app_dev, apps.get(app_dev)+1);
 			}
 		}	
 	}
 	
 	public class TimerTsk extends TimerTask {	
 	    public void run(){
+	    	Thread.currentThread().setName("Monitor Thread");
+	    	m1.addProcessing(threads.getThreadsInfo());
 	    	publishMsg();
 	    }
 	}
@@ -184,6 +207,9 @@ public class Activator implements BundleActivator, EventHandler {
 		Dictionary props = new Hashtable();
 		logger = LoggerFactory.getLogger(Activator.class.getName());
 		// AMQP Stuff
+		Dictionary props2 = new Hashtable();
+		props2.put(Constants.SERVICE_PID, CONFIG_PID);
+		ppcService = bcontext.registerService(ManagedService.class.getName(), this, props2);
 		ConnectionFactory factory = new ConnectionFactory();
 		factory.setUsername("admin");
 		factory.setPassword("hunter");
@@ -200,17 +226,31 @@ public class Activator implements BundleActivator, EventHandler {
 			sr = context.registerService(EventHandler.class.getName(), this, dic);
 			register.add(sr);
 		}
-		
-		timer.scheduleAtFixedRate(new TimerTsk(), 600000, 600000);
+		Thread.currentThread().setName("Monitor Thread");
 		logger.warn("Started Logging!");
+		//Do threads
+		List<String> a = new ArrayList<String>();
+		a.add("Testing_App");
+		a.add("Testing_App2");
+		a.add("Testing_App3");
+		a.add("Testing_App4");
+		a.add("Testing_App5");
+		a.add("Testing_App6");
+		a.add("Testing_App7");
+		a.add("Monitor Thread");
+		a.add("Load_App");
+		threads=new Threads(a);
+		timer.scheduleAtFixedRate(new TimerTsk(), delay, delay);
 	}
 
 	public void publishMsg()
 	{
 		try {
+			
 			logger.warn("Published Log with"+m1.hashToJson());
+			//logger.warn("Processor Stats: "+Arrays.toString(threads.getThreadsInfo().entrySet().toArray()));
 			channel.basicPublish("", "monitor",null, m1.hashToJson().replace('\'', '"').getBytes());
-			//m1.clear();
+			m1.clear();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -220,9 +260,15 @@ public class Activator implements BundleActivator, EventHandler {
 	
 	public void handleEvent(Event event) {
 		String type = event.getProperty("event.topics").toString();
-		String app =(String) event.getProperty("app");
-		String device =(String) event.getProperty("device");
-		logger.warn("Event"+type+" "+app+" "+device);
+		String[] names = event.getPropertyNames();
+		String device = null;
+		String app = null;
+		if (Arrays.asList(names).contains("app")){
+			app =event.getProperty("app").toString();
+		}
+		if (Arrays.asList(names).contains("device")){
+			device= event.getProperty("device").toString();
+		}
 		m1.resolveAdd(type, app, device);
 	}
 	
@@ -233,7 +279,18 @@ public class Activator implements BundleActivator, EventHandler {
 		timer.cancel();
 		channel.close();
 		connection.close();
-		logger.warn("Stopped EventAdmin to AMQP");
+		logger.warn("Stopped Logging!");
+	}
+
+	@Override
+	public void updated(Dictionary properties) throws ConfigurationException {
+		String apps = properties.get("apps").toString().trim();
+		String app[]=apps.split(":");
+		List<String> a = new ArrayList<String>();
+		for (String comp : app){
+			a.add(comp);
+		}
+		logger.warn("Updated Monitor With:"+apps+" Len:"+app.length);		
 	}
 
 

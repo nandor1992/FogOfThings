@@ -13,44 +13,33 @@ import org.apache.spark.api.java.function.PairFunction;
 
 import com.fasterxml.jackson.core.format.DataFormatMatcher;
 
-
-
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import org.apache.spark.SparkConf;
 
 public class Main {
-  public static void main(String[] args) {
-	Logger logger = Logger.getRootLogger();
-    String logFile = "swift://spark.SparkTest/hughmungus.txt"; // Should be some file on your system
-    SparkConf conf = new SparkConf().setAppName("Simple Application");
+  private static int NUM_SAMPLES = 10000;
+
+public static void main(String[] args) {
+	//Logger logger = Logger.getRootLogger();
+    SparkConf conf = new SparkConf();
     JavaSparkContext sc = new JavaSparkContext(conf);
-    JavaRDD<String> logData = sc.textFile(logFile,1);
+    for (String s :args){
+    	NUM_SAMPLES = Integer.parseInt(s);
+    }
+    List<Integer> l = new ArrayList<>(NUM_SAMPLES);
+    for (int i = 0; i < NUM_SAMPLES; i++) {
+      l.add(i);
+    }
 
-    long numAs = logData.filter(new Function<String, Boolean>() {
-      public Boolean call(String s) { return s.contains("a"); }
+    long count = sc.parallelize(l).filter(i -> {
+      double x = Math.random();
+      double y = Math.random();
+      return x*x + y*y < 1;
     }).count();
-
-    long numBs = logData.filter(new Function<String, Boolean>() {
-      public Boolean call(String s) { return s.contains("b"); }
-    }).count();
-    
-    //Search
-    JavaRDD<String> lines = logData.filter(s -> s.contains("this"));
-    long numErrors = lines.count();
-    
-    //Word Count
-  //  JavaRDD<String> words = logData.flatMap(line -> Arrays.asList(line.split(" ")).iterator());
-    //JavaPairRDD<Object, Object> counts = words.mapToPair( t -> new Tuple( t, 1 ) ).reduceByKey( (x, y) -> (int)x + (int)y ).sortByKey();
- /*   logger.warn("Test - Warn");
-    logger.error("Test - Error");
-    logger.debug("Test - Debug");
-    logger.info("Test - Info");
-    logger.fatal("Test - Fatal");*/
-  //  counts.saveAsTextFile("swift://spark.SparkTest/result");
-    System.out.println("Output for Test");
-    System.out.println("Lines with a: " + numAs + ", lines with b: " + numBs);
-    System.out.println("Search Result: "+numErrors);
+    System.out.println("Pi is roughly " + 4.0 * count / NUM_SAMPLES);
     System.out.println("-------Reduce Results-------");
    // System.out.println(counts.collect());
     sc.stop();

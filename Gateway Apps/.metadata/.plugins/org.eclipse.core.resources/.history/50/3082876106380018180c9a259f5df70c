@@ -1,0 +1,358 @@
+package org.nandor.spark;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+
+public class WeightedCls extends Clustering{
+
+	protected Map<String, Double> simWeights = new HashMap<>();
+	
+	public WeightedCls(Fog f) {
+		super(f);
+	}
+	//Connections in a way that is not directional
+	public Map<Integer,List<Integer>> getConnections(){
+		Map<Integer,List<Integer>> nodes = new HashMap<>();
+		for (Integer p: this.fog.getApps().keySet()){
+			if (nodes.containsKey(p)){
+				nodes.get(p).addAll(this.fog.getApps().get(p).getApps().keySet());
+			}else{
+				List<Integer> point = new ArrayList<>();
+				point.addAll(this.fog.getApps().get(p).getApps().keySet());
+				nodes.put(p, point);
+			}
+			for (Integer pBack: this.fog.getApps().get(p).getApps().keySet()){
+					if (nodes.containsKey(pBack)){
+						nodes.get(pBack).add(p);
+					}else{
+						List<Integer> pointBack = new ArrayList<>();
+						pointBack.add(p);
+						nodes.put(pBack, pointBack);
+					}
+				}
+		}
+		for (Integer p: nodes.keySet()){
+			List<Integer> deDupStringList = new ArrayList<>(new HashSet<>(nodes.get(p)));
+			nodes.put(p, deDupStringList);
+			
+		}
+		//System.out.println(nodes);
+		return nodes;
+	}
+	
+	//Correlation Stuff 
+	//TODO Just a marker
+	public Map<String,Double> sameGwCorrelation(String variable,List<Map<String, Double>> data){
+		Map<String,Double> ret = new HashMap<>();
+		//Assume that the first is representative
+		for (String n:data.get(0).keySet()){
+			if (n!=variable){
+				ret.put(n, sameGwCorrelationByVar(n,variable,data));
+			}
+		}
+		return ret;
+	}
+	
+	//Similarities between all points
+	public  Double sameGwCorrelationByVar(String variable2,String variable,List<Map<String, Double>> data){
+		
+		//Using the equation
+		//Pearson R Correlation
+		// Rxy=1/(n-1)*(Sum_x,y((x-x')*(y-y')))/(Sx*Sy)
+		//Where R[x,y] - Correlation between x and y 
+		//n - total number of data points
+		//x,y - single data points
+		//x',y' - Mean of all values of x and y
+		//Sx,Sy - Standard Deviation for x and y
+		
+		//List<Map<String, Double>> data = allSimilarities();
+		//System.out.println("Corr on Variable: "+variable+" Data Size: "+data.size());
+		
+		//Check if any variable is NaN
+		for (Map<String, Double> point:data){
+			for (String n: point.keySet()){
+				if (point.get(n).isNaN()){
+					System.out.println("Point is NaN:"+point);
+				}
+			}
+		}
+		//Get the mean of the Deployments on the samme GW
+		Double meanGw = 0.0;
+		for (Map<String, Double> point:data){
+			meanGw+=point.get(variable2);
+		}
+		meanGw=meanGw/data.size();
+		//System.out.println("Mean Gw: "+meanGw);
+		
+		//Get the mean of the Distance Variable
+		Double meanVar = 0.0;
+		for (Map<String, Double> point:data){
+			meanVar+=point.get(variable);
+		}
+		meanVar=meanVar/data.size();
+		//System.out.println("Mean Var: "+meanVar);
+		
+		//Standard Deviation of Gw values
+		Double stdGw = 0.0;
+		for (Map<String, Double> point:data){
+			stdGw+=(point.get(variable2)-meanGw)*(point.get(variable2)-meanGw);
+		}
+		stdGw = Math.sqrt(stdGw/(data.size()-1));
+		//System.out.println("Standard Dev Gw: "+stdGw);
+		
+		//Standard Deviation of Variable values
+		Double stdVar = 0.0;
+		for (Map<String, Double> point:data){
+			stdVar+=(point.get(variable)-meanVar)*(point.get(variable)-meanVar);
+		}
+		stdVar = Math.sqrt(stdVar/(data.size()-1));
+		//System.out.println("Standard Dev Variable: "+stdVar);
+		
+		//Calculating the top part of the equation
+		Double topSum = 0.0;
+		for (Map<String, Double> point:data){
+			topSum +=(point.get(variable2)-meanGw)*(point.get(variable)-meanVar);
+		}
+		//Return correlation value of the two variables
+		Double corr = topSum/(stdVar*stdGw)/(data.size()-1);
+		//System.out.println("R: "+corr);
+		//System.out.println("R^2: "+corr*corr);
+		//In case of dummb/dummy data
+		if (stdVar.isNaN() || stdGw.isNaN() || corr.isNaN()){
+			return 0.0;
+		}
+		return corr;
+	}
+	
+	public  List<Map<String, Double>> allSimilarities(){
+		List<Map<String, Double>> ret = new ArrayList();
+		//get all values for all Apps deployed check if they are on the same gw
+		//TODO try and only get unique data sets p1->p2 == p2->p1
+		List<Integer> visited = new ArrayList();
+		for (Integer a1: this.fog.getApps().keySet()){
+			for (Integer a2: this.fog.getApps().keySet()){
+				if (a1!=a2 && !visited.contains(a2)){
+					Map<String, Double> tmp = getSimilarities(a1, a2);
+					if (this.fog.getApps().get(a1).getGateway().getId()==this.fog.getApps().get(a2).getGateway().getId()){
+						tmp.put("Deployment",1.0);
+					}else{
+						tmp.put("Deployment",0.0);
+					}
+					ret.add(tmp);
+				}
+			}
+			visited.add(a1);
+		}
+		return ret;
+	}
+	
+	//Similarities between points
+	public  Map<String, Double> getSimilarities(Integer p1,Integer p2){	
+		//Inti
+		Map<String,Double> ret = new HashMap<>();
+		/*
+		 * Need to make sure that these methods and non-directional so dist p1-p2 == dist p2-p1 in all cases
+		 * The values found can be totally arbitrary as later on they will be compared to a min and max in the 
+		 * and given weights based on correlation parameters 
+		 */
+		//Connection Distance
+		ret.put("Distance", this.dijkstraSearsch(p1, p2));
+		//Resource Location share
+		ret.put("ResourceShare",this.getResShare(p1,p2));
+		//Constraint Component
+		ret.put("Constraints",this.getConstSim(p1,p2));
+		//Msg Rate
+		ret.put("MessageRate",this.getMsgRateComp(p1,p2));
+		//Unit Load
+		ret.put("UnitLoad",this.getUnitLoadComp(p1,p2));
+		//Utility Weights ratio
+		ret.put("UtilityWeights",this.getUtilityComp(p1,p2));
+		//Requirements
+		ret.put("RequirementSim",this.getReqComp(p1,p2));
+		
+		//Return
+		return ret;
+	}
+	
+	//Methods for getting Similarities
+	private Double getResShare(Integer p1, Integer p2) {
+		Double sim = 0.0;
+		Double sim2 = 0.0;
+		boolean found = false;
+		//Find all Resources that share a gw from p1 to p2
+		for (Integer res: this.fog.getApps().get(p1).getResources().keySet()){
+			for (Integer res2: this.fog.getApps().get(p2).getResources().keySet()){
+				if (this.fog.getResources().get(res).getGateway().getId()==this.fog.getResources().get(res2).getGateway().getId()){
+					sim+=1.0;
+					break;
+				}
+			}
+		}
+		//Find all Resources that share a gw from p2 to p1
+		for (Integer res: this.fog.getApps().get(p2).getResources().keySet()){
+			for (Integer res2: this.fog.getApps().get(p1).getResources().keySet()){
+				if (this.fog.getResources().get(res).getGateway().getId()==this.fog.getResources().get(res2).getGateway().getId()){
+					sim2+=1.0;
+					break;
+				}
+			}
+		}
+		/*System.out.println(sim);
+		System.out.println(sim2);
+		System.out.println(this.fog.getApps().get(p1).getResources().size());
+		System.out.println(this.fog.getApps().get(p2).getResources().size());*/
+		//Return the number of resources shared for each app divided by total and multiplied 
+		//ret = share1/tot1 * share2/tot2; where 
+		//share[x] - total number of resources for app x that shares a gw with the other app; tot[x]-tot res count
+		if (this.fog.getApps().get(p1).getResources().size()==0 || this.fog.getApps().get(p2).getResources().size()==0){
+			return 0.0;
+		}
+		Double ret = sim/this.fog.getApps().get(p1).getResources().size()*sim2/this.fog.getApps().get(p2).getResources().size();
+		return ret;
+	}	
+	private Double getConstSim(Integer p1, Integer p2) {
+		// Check if they have constraints or not, and if they have these on the same thing
+		Double constVal = 0.0;
+		for (String ct: this.fog.getApps().get(p1).getConstraints().keySet()){
+			if (this.fog.getApps().get(p2).getConstraints().get(ct)!=null){
+				//We have found a constraint that both of them have,
+				//first check if same type (existing, non existing)
+				//check difference if existing
+				Float ct1 = this.fog.getApps().get(p1).getConstraints().get(ct);
+				Float ct2 = this.fog.getApps().get(p2).getConstraints().get(ct);
+				/*if ((ct1 == Float.MAX_VALUE && ct2 == Float.MAX_VALUE) || ( ct2 == Float.MIN_VALUE && ct1 == Float.MIN_VALUE)){
+					//Neither has a constraint
+					System.out.println("No Constraints");
+				}*/
+				if ((ct1 != Float.MAX_VALUE && ct2 != Float.MAX_VALUE) && ( ct2 != Float.MIN_VALUE && ct1 != Float.MIN_VALUE)){
+					//Both have constraints, compare
+					//System.out.println("Both have Constraints, compare then");
+					//System.out.println(ct1+" "+ct2);
+					//System.out.println(this.relDiff((double)ct1,(double) ct2));
+					constVal +=(1.0-this.relDiff((double)ct1,(double) ct2));
+				}
+			}
+		}
+		/*System.out.println(constVal);
+		System.out.println(this.fog.getApps().get(p1).getConstraints().size());
+		System.out.println(this.fog.getApps().get(p2).getConstraints().size());*/
+		//ret = ct/tot1 * ct/tot2; where 
+		//ct - existing constraint diffrences; tot[x]-tot constraint count
+		Double ret = constVal/this.fog.getApps().get(p1).getConstraints().size()*constVal/this.fog.getApps().get(p2).getConstraints().size();
+		return ret;
+	}		
+	private Double getMsgRateComp(Integer p1, Integer p2) {
+		//System.out.println((1-relDiff((double)this.fog.getApps().get(p1).getTotalMsgRate(),(double)this.fog.getApps().get(p2).getTotalMsgRate())));
+		//Similarity between the two message rates
+		return (1-relDiff((double)this.fog.getApps().get(p1).getTotalMsgRate(),(double)this.fog.getApps().get(p2).getTotalMsgRate()));
+	}	
+	private Double getUnitLoadComp(Integer p1, Integer p2) {
+		//System.out.println((1-relDiff((double)this.fog.getApps().get(p1).getUnitLoad(),(double)this.fog.getApps().get(p2).getUnitLoad())));
+		//Similarity between the two Unit Loads
+		return (1-relDiff((double)this.fog.getApps().get(p1).getUnitLoad(),(double)this.fog.getApps().get(p2).getUnitLoad()));
+	}
+	private Double getUtilityComp(Integer p1, Integer p2) {
+		// Check if they have utilityweights or not, and if they have these on the same thing
+		Double utilVal = 0.0;
+		for (String u: this.fog.getApps().get(p1).getUtilityWeights().keySet()){
+			if (this.fog.getApps().get(p2).getUtilityWeights().get(u)!=null){
+				//We have found a constraint that both of them have,
+				//first check if same type (existing, non existing)
+				//check difference if existing
+				Float u1 = this.fog.getApps().get(p1).getUtilityWeights().get(u);
+				Float u2 = this.fog.getApps().get(p2).getUtilityWeights().get(u);
+				utilVal +=(1.0-this.relDiff((double)u1,(double) u2));
+			}
+		}
+		//ret = u/tot1 * u/tot2; where 
+		//u - existing utility weight diffrences; tot[x]-tot utility weight count
+		Double ret = utilVal/this.fog.getApps().get(p1).getUtilityWeights().size()*utilVal/this.fog.getApps().get(p2).getUtilityWeights().size();
+		return ret;
+	}
+	private Double getReqComp(Integer p1, Integer p2) {
+		Double sim = 0.0;
+		Double sim2 = 0.0;
+		//Find all Requirements that are similar
+		for (String req: this.fog.getApps().get(p1).getRequirements()){
+			for (String req2: this.fog.getApps().get(p2).getRequirements()){
+				if (req.compareTo(req2)==0){
+					sim+=1.0;
+					break;
+				}
+			}
+		}
+		//Find all Requirements that are similar
+		for (String req: this.fog.getApps().get(p2).getRequirements()){
+			for (String req2: this.fog.getApps().get(p1).getRequirements()){
+				if (req.compareTo(req2)==0){
+					sim2+=1.0;
+					break;
+				}
+			}
+		}
+		//Return the number of requirements shared for each app divided by total and multiplied 
+		//ret = share1/tot1 * share2/tot2; where 
+		//share[x] - total number of requirements for app x the other app has ; tot[x]-tot req count
+		Double ret = sim/this.fog.getApps().get(p1).getRequirements().size()*sim2/this.fog.getApps().get(p2).getRequirements().size();
+		return ret;
+	}
+	
+	//Extra Methods, usefull
+	public Double relDiff(Double x,Double y){
+		//Get RelativeDiffrence of two numbers
+		// RelDiff = | x - y | / max(|x|,|y|)
+		// |x| = sqrt(x^2)
+		if (x.compareTo(y)==0){
+			return 0.0;
+		}else{
+			return Math.sqrt((x-y)*(x-y))/Math.max(Math.sqrt(x*x),Math.sqrt(y*y));
+		}
+	}
+	
+	//Modified and Re-Implemented
+	public Double dijkstraSearsch(Integer p,Integer p2){
+		//Init
+		List<Integer> queue = new ArrayList<>();
+		Map<Integer,Integer> prev = new HashMap<>();
+		Map<Integer,Double> dist = new HashMap<>();
+		for (Integer i: this.nodes.keySet()){
+			dist.put(i, Double.POSITIVE_INFINITY);
+			prev.put(i, null);
+			queue.add(i);
+		}
+		dist.put(p,0.0);		
+		while (queue.size()>0){
+			//System.out.println(queue);
+			//System.out.println(dist);
+			Integer u = getShortestDist(dist,queue);
+			if (u!=null){
+				//System.out.println(u);
+				queue.remove(queue.indexOf(u));
+				for (Integer i: this.nodes.get(u)){
+					Double newDist = dist.get(u)+1.0;
+					if (newDist < dist.get(i)){
+						dist.put(i,newDist);
+						prev.put(i, u);
+					}
+				}
+			}else{
+				if (dist.get(p2)!=Double.POSITIVE_INFINITY){
+					return dist.get(p2);
+				}else{
+					//Find longest distance, use that, to not create an outlier
+					Double maxD = 0.0;
+					for (Integer d:dist.keySet()){
+						if (dist.get(d)>maxD && dist.get(d)!=Double.POSITIVE_INFINITY){
+							maxD=dist.get(d);
+						}
+					}
+					return maxD;
+				}
+			}
+		}
+		return dist.get(p2);
+	}
+}

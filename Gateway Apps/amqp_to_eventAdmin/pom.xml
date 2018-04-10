@@ -28,9 +28,7 @@
     <packaging>bundle</packaging>
 
     <name>Amqp to Event Admin</name>
-    <description>
-        Amqp to Event Admin
-    </description>
+    <description>Amqp to Event Admin</description>
 
     <properties>
         <maven-bundle-plugin.version>3.0.1</maven-bundle-plugin.version>

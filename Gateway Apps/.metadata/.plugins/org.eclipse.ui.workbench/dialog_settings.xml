@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="WorkbenchPreferenceDialogSettings">
-		<item value="41" key="DIALOG_Y_ORIGIN"/>
-		<item value="100" key="DIALOG_X_ORIGIN"/>
+		<item value="241" key="DIALOG_Y_ORIGIN"/>
+		<item value="863" key="DIALOG_X_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
 		<item value="-1" key="dialogHeight"/>
@@ -19,11 +19,9 @@
 	<section name="PreferencesImportWizard">
 	</section>
 	<section name="NewWizardAction">
-		<item value="org.eclipse.pde.ui.NewProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<item value="org.eclipse.ui.wizards.new.file" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
 			<item value="org.eclipse.ui.Basic"/>
-			<item value="org.knopflerfish.eclipse.core.ui"/>
-			<item value="org.eclipse.pde.PDE"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.internal.dialogs.WorkbenchEditorsDialog">
@@ -60,6 +58,12 @@
 			<item value="org.eclipse.wst.web.ui"/>
 			<item value="org.eclipse.jst.ws.creation.ui.wsexport.category"/>
 			<item value="org.eclipse.wst.XMLCategory"/>
+		</list>
+	</section>
+	<section name="ZipFileImportWizard">
+		<item value="false" key="WizardZipFileResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID"/>
+		<list key="WizardZipFileResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="C:\Users\Nandor\Documents\FogOfThings\Gateway Apps\Test_my_stuff\ujmp-complete-0.3.0.jar"/>
 		</list>
 	</section>
 	<section name="FileSystemImportWizard">

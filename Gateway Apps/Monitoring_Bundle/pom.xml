@@ -86,6 +86,6 @@
         </plugins>
     </build>
 
-    <name>Event Monitoring Bunle</name>
+    <name>Event Monitoring Bundle</name>
     <description>Event Monitoring bundle</description>
 </project>

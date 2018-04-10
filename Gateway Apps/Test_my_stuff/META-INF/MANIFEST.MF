@@ -1,0 +1,61 @@
+Manifest-Version: 1.0
+Built-By: arndt
+Build-Jdk: 1.7.0_79
+Class-Path: ujmp-colt-0.3.0.jar colt-1.2.0.jar concurrent-1.3.4.jar uj
+ mp-commonsmath-0.3.0.jar commons-math3-3.2.jar ujmp-core-0.3.0.jar js
+ on-20141113.jar ujmp-ehcache-0.3.0.jar ehcache-2.8.0.jar slf4j-api-1.
+ 6.6.jar ujmp-ejml-0.3.0.jar core-0.26.jar ujmp-elasticsearch-0.3.0.ja
+ r elasticsearch-1.0.0.jar lucene-codecs-4.6.1.jar lucene-memory-4.6.1
+ .jar lucene-highlighter-4.6.1.jar lucene-sandbox-4.6.1.jar lucene-sug
+ gest-4.6.1.jar lucene-misc-4.6.1.jar lucene-join-4.6.1.jar lucene-gro
+ uping-4.6.1.jar lucene-spatial-4.6.1.jar spatial4j-0.3.jar ujmp-examp
+ les-0.3.0.jar ujmp-gui-0.3.0.jar ujmp-hadoop-0.3.0.jar hadoop-core-0.
+ 20.2.jar commons-cli-1.2.jar xmlenc-0.52.jar commons-httpclient-3.0.1
+ .jar commons-codec-1.3.jar commons-net-1.4.1.jar jetty-6.1.14.jar jet
+ ty-util-6.1.14.jar jasper-runtime-5.5.12.jar jasper-compiler-5.5.12.j
+ ar jsp-api-2.1-6.1.14.jar jsp-2.1-6.1.14.jar ant-1.6.5.jar commons-el
+ -1.0.jar jets3t-0.7.1.jar servlet-api-2.5-6.1.14.jar kfs-0.3.jar hsql
+ db-1.8.0.10.jar oro-2.0.8.jar core-3.1.1.jar ujmp-itext-0.3.0.jar ite
+ xtpdf-5.4.5.jar ujmp-jackcess-0.3.0.jar jackcess-2.0.2.jar commons-la
+ ng-2.0.jar commons-logging-1.0.3.jar ujmp-jama-0.3.0.jar jama-1.0.3.j
+ ar ujmp-jblas-0.3.0.jar jblas-1.2.3.jar ujmp-jdbc-0.3.0.jar mysql-con
+ nector-java-5.1.18.jar postgresql-9.1-901.jdbc4.jar derby-10.8.2.2.ja
+ r hsqldb-2.2.8.jar h2-1.4.177.jar sqlite-jdbc-3.7.2.jar ujmp-jetty-0.
+ 3.0.jar jetty-server-9.2.6.v20141205.jar javax.servlet-api-3.1.0.jar 
+ jetty-http-9.2.6.v20141205.jar jetty-util-9.2.6.v20141205.jar jetty-i
+ o-9.2.6.v20141205.jar ujmp-jfreechart-0.3.0.jar jfreechart-1.0.15.jar
+  jcommon-1.0.17.jar xml-apis-1.3.04.jar itext-2.1.5.jar bcmail-jdk14-
+ 138.jar bcprov-jdk14-138.jar ujmp-jmatio-0.3.0.jar jmatio-1.0.jar ujm
+ p-jsch-0.3.0.jar jsch-0.1.51.jar jzlib-1.1.3.jar ujmp-jsci-0.3.0.jar 
+ jsci-1.2.jar lpsolve-2003-11-03.jar mathml-dom-java-2.0.jar xercesImp
+ l-2.8.1.jar ujmp-jscience-0.3.0.jar jscience-4.3.1.jar javolution-5.2
+ .3.jar ujmp-jung-0.3.0.jar jung-visualization-2.0.1.jar jung-api-2.0.
+ 1.jar collections-generic-4.01.jar jung-algorithms-2.0.1.jar jung-sam
+ ples-2.0.1.jar jung-graph-impl-2.0.1.jar jung-io-2.0.1.jar wstx-asl-3
+ .2.6.jar stax-api-1.0.1.jar ujmp-la4j-0.3.0.jar la4j-0.5.5.jar ujmp-l
+ ucene-0.3.0.jar lucene-core-4.7.0.jar lucene-queries-4.7.0.jar lucene
+ -analyzers-common-4.7.0.jar lucene-queryparser-4.7.0.jar ujmp-mail-0.
+ 3.0.jar mail-1.4.3.jar activation-1.1.jar ujmp-mtj-0.3.0.jar mtj-1.0.
+ 1.jar arpack_combined_all-0.1.jar core-1.1.2.jar netlib-native_ref-os
+ x-x86_64-1.1-natives.jar native_ref-java-1.1.jar jniloader-1.1.jar ne
+ tlib-native_ref-linux-x86_64-1.1-natives.jar netlib-native_ref-linux-
+ i686-1.1-natives.jar netlib-native_ref-win-x86_64-1.1-natives.jar net
+ lib-native_ref-win-i686-1.1-natives.jar netlib-native_ref-linux-armhf
+ -1.1-natives.jar netlib-native_system-osx-x86_64-1.1-natives.jar nati
+ ve_system-java-1.1.jar netlib-native_system-linux-x86_64-1.1-natives.
+ jar netlib-native_system-linux-i686-1.1-natives.jar netlib-native_sys
+ tem-linux-armhf-1.1-natives.jar netlib-native_system-win-x86_64-1.1-n
+ atives.jar netlib-native_system-win-i686-1.1-natives.jar ujmp-ojalgo-
+ 0.3.0.jar ojalgo-31.0.jar ujmp-parallelcolt-0.3.0.jar parallelcolt-0.
+ 10.1.jar jplasma-1.2.0.jar core-lapack-0.1.jar jtransforms-2.4.0.jar 
+ csparsej-1.1.1.jar optimization-1.0.jar netlib-java-0.9.3.jar JKLU-1.
+ 0.0.jar BTFJ-1.0.1.jar AMDJ-1.0.1.jar COLAMDJ-1.0.1.jar ujmp-pdfbox-0
+ .3.0.jar pdfbox-1.8.8.jar fontbox-1.8.8.jar jempbox-1.8.8.jar ujmp-po
+ i-0.3.0.jar poi-ooxml-3.9.jar poi-3.9.jar poi-ooxml-schemas-3.9.jar x
+ mlbeans-2.3.0.jar dom4j-1.6.1.jar ujmp-vecmath-0.3.0.jar vecmath-1.3.
+ 1.jar
+Created-By: Apache Maven 3.0.4
+Main-Class: org.ujmp.gui.UJMP
+url: https://ujmp.org/
+Archiver-Version: Plexus Archiver
+

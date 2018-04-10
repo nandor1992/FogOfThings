@@ -1,0 +1,599 @@
+package org.nandor.spark;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Random;
+import java.util.Set;
+
+public class Genetic {
+	
+	protected Fog fog;
+	protected Cluster cls;
+	protected int gwCount;
+	protected int AppCnt;
+	protected double randPop = 0.4;
+	protected double elitPop = 0.2;
+	protected double crossPop = 0.2;
+	protected double mutPop = 0.2;
+	protected double mutChance  = 0.1;
+	protected Map<Integer, Integer> bestIndi = new HashMap<>();
+	
+	public Genetic(Fog fog){
+		this.fog=fog;
+		this.gwCount=this.fog.getGateways().size();
+		this.AppCnt=this.fog.getApps().size();
+	}
+	/*
+	 * Methods Created for Cluster wide Exhaustive Deplyment
+	 */
+	
+	public Map<Integer,Integer> ExhaustiveCluster( Cluster c) {
+		//TODO Exhaustive Easy to find
+		Set<Integer> gwIDs =c.getGateways().keySet();
+		Set<Integer> appIDs =c.getApps().keySet();
+		System.out.println("-------Cluster Search: "+c.getId()+" Apps: "+appIDs+" Gws: "+gwIDs);
+		//System.out.println(gwIDs);
+		//System.out.println(appIDs);
+		Map<Integer,Integer> randInd = this.initFirstGen(new ArrayList<Integer>(gwIDs), new ArrayList<Integer>(appIDs));
+		Map<Integer,Integer> bestGen = new HashMap<Integer,Integer>(randInd);
+		Long cnt = (long) 0;
+		Float util = (float)0.0;
+		while (randInd!=null){
+			cnt++;
+			this.fog.clearAppToGws();
+			this.fog.AssignAppsToGws(randInd);
+			if (c.verifyIndValidity()){
+				if (c.getClusterCompoundUtility()>util){
+					util=c.getClusterCompoundUtility();
+					bestGen=new HashMap<Integer,Integer>(randInd);
+					//System.out.println("New Best Gen: "+cnt+" Util: "+util+" Gen: "+bestGen);
+				}
+			}
+			if (cnt % 10000000==0){
+				System.out.println("Count: "+cnt+" Gen: "+randInd);
+			}
+			randInd =  nextGeneration(new ArrayList<Integer>(gwIDs),randInd);
+		}
+		this.fog.clearAppToGws();
+		this.fog.AssignAppsToGws(bestGen);
+		System.out.println("The best of the Population "+cnt+" for Cls: "+c.getId()+" is: "+c.getClusterCompoundUtility()+" With: "+bestGen);
+		return bestGen;
+	}
+	
+	
+	public Map<Integer,Integer> initFirstGen(ArrayList<Integer> gws, ArrayList<Integer> apps){
+		Integer first = gws.get(0);
+		Map<Integer,Integer> gen = new HashMap<>();
+		for (Integer a: apps){
+			gen.put(a, first);
+		}
+		return gen;
+	}
+	
+	public Map<Integer,Integer> nextGeneration(ArrayList<Integer> gws, Map<Integer,Integer> gen){
+		Integer first = gws.get(0);
+		Integer last = gws.get(gws.size()-1);
+		Integer iter = 0;
+		for (Integer g: gen.keySet()){
+			if (gen.get(g)==last){
+				gen.put(g, first);
+				iter++;
+			}else{
+				gen.put(g, gws.get(gws.indexOf(gen.get(g))+1));
+				break;
+			}
+		}
+		if (iter == gen.size()){
+			return null;
+		}else{
+			return gen;
+		}
+	}
+	
+	/*
+	 * Methods Created for Cluster Wide Deployment based on Gateways available for Cluster
+	 */	
+	
+	public Map<Integer,Integer> GACluster(int size, int count, Cluster c,boolean safe) {
+		
+		//TODO CLustering easy to Find
+		int gwCnt = c.getGateways().size();
+		int appCnt = c.getApps().size();
+		this.fog.clearAppToGws();
+		Set<Integer> gwIDs =c.getGateways().keySet();
+		Set<Integer> appIDs =c.getApps().keySet();
+		System.out.println("GA Cluster GwCount: " + gwCnt + " AppCnt: " +appCnt);
+		// Ga Parameters
+		float bestUtil = (float)0.0;
+		System.out.println("----- Initializing new Population for Cluster "+c.getId()+" -----");
+		List<Map<Integer, Integer>> pop = randomPop(size,gwIDs,appIDs,c); 
+		int i=0;
+		while (i < count || (!safe || bestUtil==0.0 )) {
+			i++;
+			if (i % 2000 == 0){
+				System.out.println("Pop "+pop.toString());
+				this.fog.clearAppToGws();
+				this.fog.AssignAppsToGws(pop.get(0));
+				System.out.println(pop.get(0));
+				System.out.println(c.verifyValidityVerbose());
+				this.fog.clearAppToGws();
+				break;
+			}
+			//System.out.print("Loop Count " + i + ": ");
+			//System.out.println("----- Get Elite Population -----");
+			List<Map<Integer, Integer>> newpop = getBest(pop, (int)(size*elitPop),c);
+			//System.out.print("Best: "+newpop.size());
+			//System.out.println("----- Initializing new Population -----");
+			//System.out.println("----- Get Crossover Population -----");
+			newpop.addAll(crossingPop(pop,(int)(size*crossPop),c));
+			//System.out.print("Cross: "+newpop.size());
+			//System.out.println("----- Get Mutated Population -----");
+			newpop.addAll(mutatePop(pop,(int)(size*mutPop),c.getGateways().keySet(),c));
+			//System.out.print("Mutate: "+newpop.size());
+			newpop.addAll(randomPop((int)(size-newpop.size()),gwIDs,appIDs,c));
+			//System.out.println("Tot: "+newpop.size());
+			float newUtil=getBest(newpop,c);
+			if (newUtil>bestUtil){
+				bestUtil=newUtil;
+				System.out.println("The best of the Population "+i+" is: "+bestUtil+" With: "+this.bestIndi);
+			}
+			pop=newpop;
+		}
+		System.out.println("The best of the Population "+i+" is: "+bestUtil+" With: "+this.bestIndi);
+		return this.bestIndi;
+	}
+	
+	//Cross Version 2
+	private List<Map<Integer,Integer>> crossingPop(List<Map<Integer,Integer>> pop, int i,Cluster c) {
+		List<Map<Integer,Integer>> ret = new ArrayList<>();
+		Random rand = new Random();
+		List<Map<Integer,Integer>> basepop = getBest(pop,2*i,c);
+		Iterator<Map<Integer, Integer>> iter = basepop.iterator();
+		while( iter.hasNext()){
+			Map<Integer,Integer> indi = iter.next();
+			if (iter.hasNext()){
+				Map<Integer,Integer> indi2 = iter.next();
+				Map<Integer,Integer> newIndi = new HashMap<>();
+				for (int j: indi.keySet()){
+					newIndi.put(j,  rand.nextBoolean() ? indi.get(j) : indi2.get(j));
+				}
+				//System.out.println("Crossing");
+				//System.out.println(indi);
+				//System.out.println(indi2);
+				//System.out.println(newIndi);
+				ret.add(newIndi);
+			}
+			else{
+				ret.add(indi);
+			}
+		}
+		return ret;
+	}
+	
+	
+	//Mute Version 2
+	private List<Map<Integer,Integer>> mutatePop(List<Map<Integer,Integer>> pop, int i,Set<Integer> gw,Cluster c) {
+		List<Map<Integer,Integer>> ret = new ArrayList<>();
+		Random rand = new Random();
+		List<Integer> gws = new ArrayList<Integer>(gw);
+		List<Map<Integer,Integer>> basepop = getBest(pop,i,c);
+		Iterator<Map<Integer, Integer>> iter = basepop.iterator();
+		while( iter.hasNext()){
+			Map<Integer,Integer> indi = iter.next();
+			Map<Integer,Integer> newIndi = new HashMap<>();
+			for (int j: indi.keySet()){
+				if (rand.nextFloat()<mutChance){
+					Collections.shuffle(gws);
+					newIndi.put(j,gws.get(0));
+				}else{
+					newIndi.put(j, indi.get(j));
+				}
+			}
+			//System.out.println("Mutation");
+			//System.out.println(indi);
+			//System.out.println(newIndi);
+			ret.add(newIndi);
+		}
+		return ret;
+	}
+	
+	//Get Best Stuff
+	public Float getBest(List<Map<Integer,Integer>> pop,Cluster c){
+		Float best = (float)0.0;
+		Map<Integer,Integer> bestIndi = new HashMap<>();
+		Iterator<Map<Integer, Integer>> iter = pop.iterator();
+		while( iter.hasNext()){
+			Map<Integer,Integer> indi = iter.next();
+			this.fog.clearAppToGws();
+			this.fog.AssignAppsToGws(indi);
+			if (c.verifyIndValidity()){
+				float tmp = c.getClusterCompoundUtility();
+				if (tmp>best){
+					best=tmp;
+					bestIndi = indi;
+				}
+			}
+		}
+		this.bestIndi=bestIndi;
+		return best;
+	}
+	
+	public List<Map<Integer, Integer>> getBest(List<Map<Integer, Integer>> pop, int size,Cluster c) {
+		List<Map<Integer, Integer>> ret = new ArrayList<>();
+		Map<Integer, Float> stack = new HashMap<>();
+		Map<Integer, Float> stack2 = new HashMap<>();
+		Iterator<Map<Integer, Integer>> iter = pop.iterator();
+		int retS = 0;
+		while (iter.hasNext() && retS < size) {
+			Map<Integer, Integer> indi = iter.next();
+			this.fog.clearAppToGws();
+			this.fog.AssignAppsToGws(indi);
+			float tmp = c.getClusterCompoundUtility();
+			if (c.verifyIndValidity()) {
+				//System.out.println(tmp);
+				stack.put(pop.indexOf(indi), tmp);
+				retS += 1;
+			}
+		}
+		// System.out.println("Stack:"+stack);
+		while (iter.hasNext()) {
+			Map<Integer, Integer> indi = iter.next();
+			this.fog.clearAppToGws();
+			this.fog.AssignAppsToGws(indi);
+			if (c.verifyIndValidity()) {
+				// System.out.println(tmp);
+				float tmp = c.getClusterCompoundUtility();
+				Entry<Integer, Float> min = null;
+				for (Entry<Integer, Float> entry : stack.entrySet()) {
+					if (min == null || min.getValue() > entry.getValue()) {
+						min = entry;
+					}
+				}
+				if( min != null){
+					if (min.getValue() < tmp) {
+						stack.remove(min.getKey());
+						stack.put(pop.indexOf(indi), tmp);
+					}
+				}
+
+			}
+		}
+		Iterator<Map<Integer, Integer>> iter2 = pop.iterator();
+		int retS2 = size - retS;
+		while (iter2.hasNext() && retS2 > stack2.size()) {
+			Map<Integer, Integer> indi = iter2.next();
+			this.fog.clearAppToGws();
+			this.fog.AssignAppsToGws(indi);
+			float tmp = this.fog.getFogCompoundUtility();
+			if (!stack.containsValue(pop.indexOf(indi))) {
+				// System.out.println(tmp);
+				stack2.put(pop.indexOf(indi), tmp);
+			}
+		}
+		while (iter2.hasNext()&& retS2>0) {
+			Map<Integer, Integer> indi = iter2.next();
+			this.fog.clearAppToGws();
+			this.fog.AssignAppsToGws(indi);
+			float tmp = this.fog.getFogCompoundUtility();
+			if (!stack.containsValue(pop.indexOf(indi))) {
+				// System.out.println(tmp);
+				Entry<Integer, Float> min = null;
+				for (Entry<Integer, Float> entry : stack2.entrySet()) {
+					if (min == null || min.getValue() > entry.getValue()) {
+						min = entry;
+					}
+				}
+				if (min.getValue() < tmp) {
+					stack2.remove(min.getKey());
+					stack2.put(pop.indexOf(indi), tmp);
+				}
+
+			}
+		}
+		// System.out.println("Stack:"+stack);
+		for (Integer i : stack.keySet()) {
+			ret.add(pop.get(i));
+		}
+		for (Integer i : stack2.keySet()) {
+			ret.add(pop.get(i));
+		}
+		return ret;
+	}
+	
+	
+	
+	//Random Generate Stuff
+	public Map<Integer,Integer> randomInd(Set<Integer> gw, Set<Integer> app){
+		Map<Integer,Integer> gen = new HashMap<>();
+		Random rand = new Random();
+		List<Integer> gws = new ArrayList<Integer>(gw);
+		for (Integer i:app){
+			Collections.shuffle(gws);
+			gen.put(i,gws.get(0));
+		}
+		return gen;		
+	}
+	
+	public Map<Integer,Integer> randomInd(Set<Integer> gw, Set<Integer> app, Cluster c){
+		Map<Integer,Integer> gen = new HashMap<>();
+		Random rand = new Random();
+		List<Integer> gws = new ArrayList<Integer>(gw);
+		for (Integer i:app){
+			Collections.shuffle(gws);
+			gen.put(i,gws.get(0));
+		}
+		this.fog.clearAppToGws();
+		this.fog.AssignAppsToGws(gen);
+		while (!c.verifyIndValidity()){
+			this.fog.clearAppToGws();
+			gen = new HashMap<>();
+			for (Integer i:app){
+				Collections.shuffle(gws);
+				gen.put(i,gws.get(0));
+			}
+			this.fog.AssignAppsToGws(gen);
+		}
+		return gen;		
+	}
+	
+	
+	public List<Map<Integer,Integer>> randomPop(int size,Set<Integer> gw, Set<Integer> app,Cluster c){
+		List<Map<Integer,Integer>> pop = new ArrayList<>();
+		for (int i=0; i<size;i++){
+			pop.add(randomInd(gw,app));
+		}
+		return pop;
+	}
+	
+	
+	
+	
+	
+	/*
+	 * This is the part that take care of the Global optimization, most methods are created for this
+	 */
+	public Map<Integer,Integer> GAGlobal(int size, int count,boolean safe) {
+		System.out.println("GA Global GwCount: " + this.gwCount + " AppCnt: " + this.AppCnt);
+		long start=System.currentTimeMillis();
+		// Ga Parameters
+		//TODO Easy to find Global
+		this.fog.clearAppToGws();
+		float bestUtil = (float)0.0;
+		System.out.println("----- Initializing new Population for Global GA -----");
+		List<Map<Integer, Integer>> pop = randomPop(size);
+		int i=0;
+		while (i < count || (!safe || bestUtil==0.0 )) {
+			i++;
+			if (i % 2000 == 0){
+				System.out.println("Pop "+pop.toString());
+				this.fog.clearAppToGws();
+				this.fog.AssignAppsToGws(pop.get(0));
+				System.out.println(pop.get(0));
+				System.out.println(this.fog.verifyValidityVerbose());
+				this.fog.clearAppToGws();
+				break;
+			}
+			//System.out.println("Pop "+pop.toString());
+			//System.out.print("Loop Count " + i + ": ");
+			//System.out.println("----- Get Elite Population -----");
+			List<Map<Integer, Integer>> newpop = getBest(pop, (int)(size*elitPop));
+			//System.out.print("Best: "+newpop.size());
+			//System.out.println("----- Get Crossover Population -----");
+			newpop.addAll(crossingPop(pop,(int)(size*crossPop)));
+			//System.out.print("Cross: "+newpop.size());
+			//System.out.println("----- Get Mutated Population -----");
+			newpop.addAll(mutatePop(pop,(int)(size*mutPop)));
+			//System.out.print("Mutate: "+newpop.size());
+			//System.out.println("----- Initializing new Population -----");
+			newpop.addAll(randomPop((int)(size-newpop.size())));
+			//System.out.println("Tot: "+newpop.size());
+			float newUtil=getBest(newpop);
+			if (newUtil>bestUtil){
+				bestUtil=newUtil;
+				System.out.println("The best of the Population "+i+" is: "+bestUtil+" With: "+this.bestIndi+" At: "+(System.currentTimeMillis()-start)/(float)1000);
+			}
+			pop=newpop;
+		}
+		return this.bestIndi;
+	}
+	
+	/*
+	  Map<Integer, Integer> rand = randomInd();
+			System.out.println(rand);
+			this.fog.AssignAppsToGws(rand);
+			System.out.println("Fog Utility: " + this.fog.getFogCompoundUtility());
+			System.out.println("Fog Delay: " + this.fog.getFogCompoundDelay());
+			System.out.println("Fog Reliability: " + this.fog.getFogCompoundReliability());
+	 */
+	
+	private List<Map<Integer,Integer>> crossingPop(List<Map<Integer,Integer>> pop, int i) {
+		List<Map<Integer,Integer>> ret = new ArrayList<>();
+		Random rand = new Random();
+		List<Map<Integer,Integer>> basepop = getBest(pop,2*i);
+		Iterator<Map<Integer, Integer>> iter = basepop.iterator();
+		while( iter.hasNext()){
+			Map<Integer,Integer> indi = iter.next();
+			if (iter.hasNext()){
+				Map<Integer,Integer> indi2 = iter.next();
+				Map<Integer,Integer> newIndi = new HashMap<>();
+				for (int j: indi.keySet()){
+					newIndi.put(j,  rand.nextBoolean() ? indi.get(j) : indi2.get(j));
+				}
+				//System.out.println("Crossing");
+				//System.out.println(indi);
+				//System.out.println(indi2);
+				//System.out.println(newIndi);
+				ret.add(newIndi);
+			}
+			else{
+				ret.add(indi);
+			}
+		}
+		return ret;
+	}
+
+	private List<Map<Integer,Integer>> mutatePop(List<Map<Integer,Integer>> pop, int i) {
+		List<Map<Integer,Integer>> ret = new ArrayList<>();
+		Random rand = new Random();
+		List<Map<Integer,Integer>> basepop = getBest(pop,i);
+		Iterator<Map<Integer, Integer>> iter = basepop.iterator();
+		while( iter.hasNext()){
+			Map<Integer,Integer> indi = iter.next();
+			Map<Integer,Integer> newIndi = new HashMap<>();
+			for (int j: indi.keySet()){
+				if (rand.nextFloat()<mutChance){
+					newIndi.put(j,rand.nextInt(this.gwCount)+1);
+				}else{
+					newIndi.put(j, indi.get(j));
+				}
+			}
+			//System.out.println("Mutation");
+			//System.out.println(indi);
+			//System.out.println(newIndi);
+			ret.add(newIndi);
+		}
+		return ret;
+	}
+	
+	public Float getBest(List<Map<Integer,Integer>> pop){
+		Float best = (float)0.0;
+		Map<Integer,Integer> bestIndi = new HashMap<>();
+		Iterator<Map<Integer, Integer>> iter = pop.iterator();
+		while( iter.hasNext()){
+			Map<Integer,Integer> indi = iter.next();
+			this.fog.clearAppToGws();
+			this.fog.AssignAppsToGws(indi);
+			float tmp = this.fog.getFogCompoundUtility();
+			if (tmp>best && this.fog.verifyIndValidity()){
+				best=tmp;
+				bestIndi = indi;
+			}
+		}
+		this.bestIndi=bestIndi;
+		return best;
+	}
+	
+	public List<Map<Integer, Integer>> getBest(List<Map<Integer, Integer>> pop, int size) {
+		List<Map<Integer, Integer>> ret = new ArrayList<>();
+		Map<Integer, Float> stack = new HashMap<>();
+		Map<Integer, Float> stack2 = new HashMap<>();
+		Iterator<Map<Integer, Integer>> iter = pop.iterator();
+		int retS = 0;
+		while (iter.hasNext() && retS < size) {
+			Map<Integer, Integer> indi = iter.next();
+			this.fog.clearAppToGws();
+			this.fog.AssignAppsToGws(indi);
+			float tmp = this.fog.getFogCompoundUtility();
+			if (this.fog.verifyIndValidity()) {
+				// System.out.println(tmp);
+				stack.put(pop.indexOf(indi), tmp);
+				retS += 1;
+			}
+		}
+		// System.out.println("Stack:"+stack);
+		while (iter.hasNext()) {
+			Map<Integer, Integer> indi = iter.next();
+			this.fog.clearAppToGws();
+			this.fog.AssignAppsToGws(indi);
+			float tmp = this.fog.getFogCompoundUtility();
+			if (this.fog.verifyIndValidity()) {
+				// System.out.println(tmp);
+				Entry<Integer, Float> min = null;
+				for (Entry<Integer, Float> entry : stack.entrySet()) {
+					if (min == null || min.getValue() > entry.getValue()) {
+						min = entry;
+					}
+				}
+				if (min.getValue() < tmp) {
+					stack.remove(min.getKey());
+					stack.put(pop.indexOf(indi), tmp);
+				}
+
+			}
+		}
+		Iterator<Map<Integer, Integer>> iter2 = pop.iterator();
+		int retS2 = size - retS;
+		while (iter2.hasNext() && retS2 > stack2.size()) {
+			Map<Integer, Integer> indi = iter2.next();
+			this.fog.clearAppToGws();
+			this.fog.AssignAppsToGws(indi);
+			float tmp = this.fog.getFogCompoundUtility();
+			if (!stack.containsValue(pop.indexOf(indi))) {
+				// System.out.println(tmp);
+				stack2.put(pop.indexOf(indi), tmp);
+			}
+		}
+		while (iter2.hasNext()&& retS2>0) {
+			Map<Integer, Integer> indi = iter2.next();
+			this.fog.clearAppToGws();
+			this.fog.AssignAppsToGws(indi);
+			float tmp = this.fog.getFogCompoundUtility();
+			if (!stack.containsValue(pop.indexOf(indi))) {
+				// System.out.println(tmp);
+				Entry<Integer, Float> min = null;
+				for (Entry<Integer, Float> entry : stack2.entrySet()) {
+					if (min == null || min.getValue() > entry.getValue()) {
+						min = entry;
+					}
+				}
+				if (min.getValue() < tmp) {
+					stack2.remove(min.getKey());
+					stack2.put(pop.indexOf(indi), tmp);
+				}
+
+			}
+		}
+		// System.out.println("Stack:"+stack);
+		for (Integer i : stack.keySet()) {
+			ret.add(pop.get(i));
+		}
+		for (Integer i : stack2.keySet()) {
+			ret.add(pop.get(i));
+		}
+		return ret;
+	}
+	
+	public Map<Integer,Integer> randomInd(){
+		Map<Integer,Integer> gen = new HashMap<>();
+		Random rand = new Random();
+		for (int i=1;i<=AppCnt;i++){
+			gen.put(i,rand.nextInt(this.gwCount)+1);
+		}
+		return gen;		
+	}
+	
+	public Map<Integer,Integer> randomInd(boolean safe){
+		Map<Integer,Integer> gen = new HashMap<>();
+		Random rand = new Random();
+		for (int i=1;i<=AppCnt;i++){
+			gen.put(i,rand.nextInt(this.gwCount)+1);
+		}
+		this.fog.clearAppToGws();
+		this.fog.AssignAppsToGws(gen);
+		while (!this.fog.verifyIndValidity()){
+			this.fog.clearAppToGws();
+			gen = new HashMap<>();
+			for (int i=1;i<=AppCnt;i++){
+				gen.put(i,rand.nextInt(this.gwCount)+1);
+			}
+			this.fog.AssignAppsToGws(gen);
+		}
+		return gen;		
+	}
+	
+	public List<Map<Integer,Integer>> randomPop(int size){
+		List<Map<Integer,Integer>> pop = new ArrayList<>();
+		for (int i=0; i<size;i++){
+			pop.add(randomInd());
+		}
+		return pop;
+	}
+	
+	
+}

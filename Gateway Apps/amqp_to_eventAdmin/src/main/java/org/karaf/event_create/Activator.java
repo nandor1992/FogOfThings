@@ -16,8 +16,14 @@
  */
 package org.karaf.event_create;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.Dictionary;
 import java.util.Hashtable;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
@@ -25,27 +31,53 @@ import org.osgi.framework.Constants;
 import org.osgi.framework.ServiceRegistration;
 import org.osgi.service.cm.ConfigurationException;
 import org.osgi.service.cm.ManagedService;
+import org.osgi.service.event.EventConstants;
+import org.osgi.service.event.EventHandler;
 
-public class Activator implements BundleActivator{
-	
-	
-	AmqpConnect ac=new AmqpConnect();
+public class Activator implements BundleActivator,ManagedService{
+	private List<AmqpConnect> ac = new ArrayList<AmqpConnect>();
+	private int cnt=5;
+	private BundleContext bcontext;
+	private static String CONFIG_PID = "org.karaf.amqp2event";
+	private ServiceRegistration ppcService;
 	
 	public void start(BundleContext bc) throws Exception {
-		System.out.println("Starting Amqp to Event Admin");
-		
-		
-		try {
-			ac.startThis(bc);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		this.bcontext=bc;
+		Dictionary props2 = new Hashtable();
+		props2.put(Constants.SERVICE_PID, CONFIG_PID);
+		ppcService = bcontext.registerService(ManagedService.class.getName(), this, props2);
+		for (int i=0;i<this.cnt;i++)
+		{
+			AmqpConnect ac1=new AmqpConnect(bc);
+			ac1.start();
+			ac.add(ac1);
 		}
 	}
 
 	public void stop(BundleContext bc) throws Exception {
-		ac.stopThis();
-		System.out.println("Stopping Amqp to Event Admin");
+		for (AmqpConnect a:ac)
+		{
+			a.stopThis();
+		}
+		ac.clear();
+		ppcService.unregister();
+	}
+
+	public void updated(Dictionary properties) throws ConfigurationException {
+		
+		cnt = Integer.parseInt(properties.get("cnt").toString().trim());
+		this.cnt=cnt;
+		for (AmqpConnect a:ac)
+		{
+			a.stopThis();
+		}
+		ac.clear();
+		for (int i=0;i<this.cnt;i++)
+		{
+			AmqpConnect ac1=new AmqpConnect(this.bcontext);
+			ac1.start();
+			ac.add(ac1);
+		}
 	}
 
 

@@ -1,0 +1,14 @@
+package org.nandor.spark;
+
+import java.util.ArrayList;
+
+public class genStack {
+	
+	List<Map<Integer,Integer>> generations = new ArrayList<>();
+	private int size = 1;
+	
+	public genStack(int size){
+		this.size = size;
+	}
+
+}

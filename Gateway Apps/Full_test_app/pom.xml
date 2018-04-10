@@ -19,7 +19,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>bundle</packaging>
 
-	<name>Full Test App</name>
+	<name>Full Test App 2</name>
 
     <properties>
         <maven-bundle-plugin.version>3.0.1</maven-bundle-plugin.version>
@@ -74,6 +74,6 @@
         </plugins>
     </build>
 
-    <artifactId>full_test_app</artifactId>
-    <description>This app is used to test the full functionalities of the gateway, every single thing </description>
+    <artifactId>full_test_app2</artifactId>
+    <description>This app is used to test the full functionalities of the gateway, every single thing 2</description>
 </project>

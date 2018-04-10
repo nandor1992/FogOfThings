@@ -4,11 +4,12 @@
 	<item value="false" key="TypeHierarchyViewPart.qualifiednames"/>
 	<item value="3" key="TypeHierarchyViewPart.orientation"/>
 	<item value="false" key="TypeHierarchyViewPart.linkeditors"/>
-	<item value="D:\Doktori\Testing\knopflerfish_osgi_4.0.1\osgi" key="org.eclipse.jdt.ui.lastextjar"/>
+	<item value="C:\Users\Nandor\Documents\FogOfThings\Gateway Apps\spark-test\src\main\java\org\nandor\spark" key="org.eclipse.jdt.ui.lastextjar"/>
 	<item value="2" key="TypeHierarchyViewPart.hierarchyview"/>
-	<item value="D:\Doktori\Modules\Cloud and Distributed Systems\CloudSim\CloudSim" key="org.eclipse.jdt.ui.last.external.project"/>
+	<item value="D:\Doktori\Modules\Cloud and Distributed Systems\CloudSim" key="org.eclipse.jdt.ui.last.external.project"/>
 	<item value="640,680" key="UserLibraryLoadSaveDialog.size"/>
 	<item value="1" key="org.eclipse.jdt.ui.last.selected.jre.kind2"/>
+	<item value="jdk1.7.0_80" key="org.eclipse.jdt.ui.last.selected.project.jre"/>
 	<section name="org.eclipse.ltk.ui.refactoring.settings">
 		<item value="false" key="renameSubpackages"/>
 		<item value="false" key="updateQualifiedNames"/>
@@ -24,6 +25,9 @@
 		<item value="false" key="expanded5"/>
 		<item value="false" key="expanded7"/>
 		<item value="true" key="expanded0"/>
+	</section>
+	<section name="SelfEncapsulateFieldWizard">
+		<item value="false" key="GenerateJavadoc"/>
 	</section>
 	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
 		<item value="2" key="layout"/>
@@ -56,6 +60,20 @@
 		<item value="450" key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_WIDTH"/>
 		<item value="false" key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_USE_PERSISTED_LOCATION"/>
 	</section>
+	<section name="DialogBounds_OverrideMethodDialog">
+		<item value="659" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="603" key="DIALOG_HEIGHT"/>
+		<item value="640" key="DIALOG_X_ORIGIN"/>
+		<item value="123" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="DialogBounds_GetterSetterTreeSelectionDialog">
+		<item value="678" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="887" key="DIALOG_HEIGHT"/>
+		<item value="551" key="DIALOG_X_ORIGIN"/>
+		<item value="9" key="DIALOG_Y_ORIGIN"/>
+	</section>
 	<section name="RefactoringWizard.preview">
 		<item value="600" key="width"/>
 		<item value="400" key="height"/>
@@ -64,6 +82,18 @@
 		<item value="false" key="expanded2"/>
 		<item value="false" key="expanded1"/>
 		<item value="true" key="expanded0"/>
+	</section>
+	<section name="SourceActionDialog.methods">
+		<item value="false" key="SynchronizedModifier"/>
+		<item value="false" key="Comments"/>
+		<item value="2" key="InsertPosition.v2"/>
+		<item value="1" key="VisibilityModifier"/>
+		<item value="false" key="FinalModifier"/>
+	</section>
+	<section name="BreadcrumbItemDropDown">
+	</section>
+	<section name="OverrideMethodDialog">
+		<item value="true" key="showtypes"/>
 	</section>
 	<section name="ClasspathContainerSelectionPage">
 		<item value="3" key="index"/>
@@ -77,8 +107,14 @@
 		<item value="false" key="create_package_info_java"/>
 	</section>
 	<section name="completion_proposal_size">
-		<item value="328" key="size.y"/>
+		<item value="1080" key="size.y"/>
 		<item value="821" key="size.x"/>
+		<item value="277" key="contextSelector.size.y"/>
+		<item value="337" key="contextSelector.size.x"/>
+	</section>
+	<section name="AddGetterSetterDialog">
+		<item value="false" key="SortOrdering"/>
+		<item value="false" key="RemoveFinal"/>
 	</section>
 	<section name="JavaElementSearchActions">
 	</section>

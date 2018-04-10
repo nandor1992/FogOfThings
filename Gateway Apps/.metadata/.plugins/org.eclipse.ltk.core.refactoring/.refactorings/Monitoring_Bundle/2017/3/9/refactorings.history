@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Threads.java&apos; to &apos;Test_my_stuff/src/main&apos;&#x0D;&#x0A;- Original project: &apos;Monitoring_Bundle&apos;&#x0D;&#x0A;- Destination element: &apos;Test_my_stuff/src/main&apos;&#x0D;&#x0A;- Original element: &apos;org.karaf.event_create.Threads.java&apos;" description="Copy compilation unit" destination="=Test_my_stuff/src&lt;main" element1="/src\/main\/java&lt;org.karaf.event_create{Threads.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1488369334593" units="1" version="1.0"/>
+</session>

@@ -1,0 +1,130 @@
+package org.nandor.spark;
+
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+import java.util.Set;
+import java.util.Timer;
+
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.JavaSparkContext;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+import scala.collection.mutable.HashMap;
+
+public class Testing {
+
+	public static JSONObject readJson(String file) {
+		JSONParser parser = new JSONParser();
+		JSONObject a = new JSONObject();
+		try {
+			a = (JSONObject) parser.parse(new FileReader(file));
+		} catch (IOException | ParseException e) {
+			e.printStackTrace();
+		}
+		return a;
+	}
+
+	public static void writeJson(String file, JSONObject json) {
+		FileWriter f;
+		try {
+			f = new FileWriter(file);
+			f.write(json.toJSONString());
+			f.flush();
+			f.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void main2(String[] args) {
+		// Timer
+
+		Timer timer = new Timer();
+		// timer.schedule(Methods.timerTask, 300, 600000);
+
+		// Init
+		Fog f = Methods.InitFog(12, 2);// Cluster Count, Cloud Gw Count
+		// Fog
+		// f=Exporter.readJsonFog(readJson("C:/Users/Nandor/Documents/FogOfThings/Gateway
+		// Apps/spark-test/src/main/java/org/nandor/spark/deploy-W.json"));
+		// writeJson("C:/Users/Nandor/Documents/FogOfThings/Gateway
+		// Apps/spark-test/src/main/java/org/nandor/spark/deploy-W.json",Exporter.writeJsonFog(f));
+
+		// DisplayData(f);
+		// Global Optimization
+		Map<String, Float> data = Methods.GAGlobalStuff(f, 60, 200, true);// Fog,
+																			// Generation
+																			// Size,
+																			// Generation
+																			// Cunt
+
+		// Clustering
+		long start = System.currentTimeMillis();
+		System.out.println("Clustering Time Elapsed: " + (System.currentTimeMillis() - start) / (float) 1000);
+		Methods.displayClsAndRes(f);
+		Map<String, Map<String, String>> results = new java.util.HashMap<>();
+		for (int i = 1; i <= 3; i++) {
+			for (int j = 5; j < 15; j++) {
+				if (Methods.Clustering(f, i, j)) {
+					// Methods.ResourceAllocation(f);
+					Methods.nandorsAlphaResourceAlloc(f);
+					results.put("Eps:" + i + "MinPts" + j, Methods.GAClusStuff(f, 20, 200, true));
+				}
+			}
+		}
+		// GA Cluster Stuff
+		// Map<String,Float> data2 = Methods.GAClusStuff(f, 60, 200,true);
+		System.out.println("All cls GA: " + results);
+		System.out.println("Global GA: " + data);
+		System.out.print("Clustr GA: ");
+		Map<String, String> bestMethod = new java.util.HashMap<>();
+		float bestUtil = (float) 0.0;
+		start=System.currentTimeMillis();
+		for (String d : results.keySet()) {
+			// System.out.println(results.get(d));
+			if (results.get(d) != null) {
+				if (Float.parseFloat(results.get(d).get("1.Utility")) > bestUtil) {
+					bestUtil = Float.parseFloat(results.get(d).get("1.Utility"));
+					bestMethod = results.get(d);
+				}
+			}
+		}
+		System.out.println(bestMethod);
+		System.out.println((System.currentTimeMillis() - start) / (float) 1000);
+		/*
+		 * //Exhaustive Cluster Stuff start=System.currentTimeMillis();
+		 * Methods.ExhaustiveClusStuff(f); System.out.println("Time Elapsed: "
+		 * +(System.currentTimeMillis()-start)/(float)1000);
+		 * start=System.currentTimeMillis();
+		 */
+
+		// writeJson("C:/Users/Nandor/Documents/FogOfThings/Gateway
+		// Apps/spark-test/src/main/java/org/nandor/spark/deploy-W.json",Exporter.writeJsonFog(f));
+		timer.cancel();
+	}
+
+	public static void main(String[] args) {
+
+		// Init
+		Fog f = Methods.InitFog(1, 0);// Cluster Count, Cloud Gw Count
+		writeJson("C:/Users/Nandor/Documents/FogOfThings/Gateway Apps/spark-test/src/main/java/org/nandor/spark/deploy-W.json",Exporter.writeJsonFog(f));
+		//Methods.Clustering(f, 2, 8);
+		f=Exporter.readJsonFog(readJson("C:/Users/Nandor/Documents/FogOfThings/Gateway Apps/spark-test/src/main/java/org/nandor/spark/deploy-W.json"));
+		AdvancedCls cls = new AdvancedCls(f);
+		cls.getNeighbours2(1,2,0);
+		Set<Integer> test = new HashSet<Integer>();
+		test.add(2);test.add(3);test.add(4);test.add(5);test.add(6);
+		cls.distanceToCluster2(1,test);
+
+	}
+}

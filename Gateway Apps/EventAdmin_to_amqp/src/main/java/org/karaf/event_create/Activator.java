@@ -82,7 +82,7 @@ public class Activator implements BundleActivator, EventHandler, ManagedService 
 		factory.setUsername("admin");
 		factory.setPassword("hunter");
 		factory.setVirtualHost("test");
-		factory.setHost("localhost");
+		factory.setHost("10.0.0.137");
 		factory.setPort(5672);
 		connection = factory.newConnection();
 		channel = connection.createChannel();

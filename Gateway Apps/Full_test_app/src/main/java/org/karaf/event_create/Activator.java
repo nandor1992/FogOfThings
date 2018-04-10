@@ -56,8 +56,8 @@ public class Activator implements BundleActivator, ManagedService {
 	private static final String APP_SEND = "app/send";
 	private static final String DEVICE_SEND = "device/send";
 	private static final String CLOUD_SEND = "cloud/send";
-	private static final String REGION_SEND = "region/send/";
-	private static final String RESOURCE_SEND="resource/send/";
+	private static final String REGION_SEND = "region/send";
+	private static final String RESOURCE_SEND="resource/send";
 	
 	private BundleContext bcontext = null;
 	ServiceReference sr = null;
@@ -71,12 +71,13 @@ public class Activator implements BundleActivator, ManagedService {
 	private ServiceRegistration ppcService;
 	// Device
 	private List<ServiceRegistration> reg = new ArrayList<ServiceRegistration>();
-	private static String CONFIG_PID = "org.karaf.full_test";
+	private static String CONFIG_PID = "org.karaf.full_test2";
 	static Logger logger;
 	private boolean configured = false;
 	
 	public void start(BundleContext bc) throws Exception {
 		this.bcontext = bc;
+		Thread.currentThread().setName("Test_App2");
 		logger = LoggerFactory.getLogger(Activator.class.getName());
 		// Context stuff
 		Dictionary props = new Hashtable();
@@ -111,6 +112,7 @@ public class Activator implements BundleActivator, ManagedService {
 
 		public void handleEvent(Event event) {
 			//What happens when devices send messages
+			Thread.currentThread().setName("Test_App2");
 			String value = event.getProperty("payload").toString();
 			String topic = event.getTopic();
 			String params[] = event.getPropertyNames();
@@ -130,6 +132,7 @@ public class Activator implements BundleActivator, ManagedService {
 
 		public void handleEvent(Event event) {
 			//What happens when devices send messages
+			Thread.currentThread().setName("Test_App2");
 			String value = event.getProperty("payload").toString();
 			String topic = event.getTopic();
 			Dictionary send = new Hashtable();
@@ -165,7 +168,7 @@ public class Activator implements BundleActivator, ManagedService {
 					send.put("payload",params[1]);
 					send.put("region", reg_name);
 					send.put("key",reg_api);
-					MainSendEvent(send,RESOURCE_SEND);
+					MainSendEvent(send,REGION_SEND);
 					break;
 				default:
 					logger.warn("Unknown Message");
@@ -194,11 +197,13 @@ public class Activator implements BundleActivator, ManagedService {
 		// TODO Auto-generated method stub
 		// TODO Add registration of services if non existant full
 		logger.warn("Update Entered");
+		Thread.currentThread().setName("Test_App2");
 		if (properties != null) {
 			logger.info("Properties not null");
 			String devices =properties.get("dev_ardRF24CNC").toString().trim();
 			devices=devices.concat(":"+properties.get("dev_AndroidPhone").toString().trim());
 			app_name = properties.get("name").toString().trim();
+			Thread.currentThread().setName(app_name);
 			String resource =properties.get("resources").toString().trim();
 			String clouds = properties.get("cloud").toString().trim();
 			String region = properties.get("region").toString().trim();
