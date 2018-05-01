@@ -1,9 +1,0 @@
-package org.nandor.spark;
-
-public class WeightedCls extends Clustering{
-
-	public WeightedCls(Fog f) {
-		super(f);
-	}
-
-}

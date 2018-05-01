@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+  <title>Network | Basic usage</title>
+
+  <script type="text/javascript" src="./vis/dist/vis.js"></script>
+  <link href="./vis/dist/vis-network.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <style type="text/css">
+    #mynetwork {
+      width: 800px;
+      height: 640px;
+      border: 1px solid lightgray;
+    }
+  </style>
+</head>
+<body>
+
+<p>
+  Test Network for Nandor 2!
+</p>
+
+<div id="mynetwork"></div>
+
+<script type="text/javascript">
+  // create an array with nodes
+  var DIR = '../fot/';
+
+  var nodes = new vis.DataSet([
+    {id: 1, value: 4,group: 'testGroup',label: 'Node Nandor'},
+    {id: 2,value: 4, group: 'testGroup',label: 'Node 2'},
+    {id: 3, value: 4,group: 'testGroup',label: 'Node 3'},
+    {id: 4, value: 4, label: 'Coley', shape: 'dot'  },
+    {id: 5,value: 20, label: 'Node 5'},
+    {id: 6,value: 4, label: 'Node 2-1'},
+    {id: 7, value: 4,label: 'Node 2-2'},
+    {id: 8, value: 4, label: 'box',  shape: 'box'  },
+    {id: 9,value: 4, group: 'cloud',label: 'Node Nandor2'},
+    {id: 10, value: 4,group: 'database',label: 'Node Nandor'},
+    {id: 11,value: 4, group: 'server',label: 'Node Nandor4'},
+    {id: 12, value: 4,label: 'Office', image: 'computer-microprocessor.png', shape: 'image'}
+  ]);
+
+  // create an array with edges
+
+  var edges = new vis.DataSet([
+    {from: 1, to: 3,value: 3,color:'#9322FC'},
+    {from: 1, to: 2},
+    {from: 2, to: 4, value: 3},
+    {from: 2, to: 5},
+    {from: 3, to: 3},
+    {from: 6, to: 7,label:'7ms', font: {align: 'top'}},
+    {from: 6, to: 7,label:'3ms', font: {align: 'top'}},
+    {from: 6, to: 7,label:'5ms', font: {align: 'top'}},
+    {from: 11, to: 12,label:'5ms', font: {align: 'top'}}
+  ]);
+
+  // create a network
+  var container = document.getElementById('mynetwork');
+  var data = {
+    nodes: nodes,
+    edges: edges
+  };
+  var options = {
+  nodes: {
+      shape: 'dot',
+        },
+	groups: {
+		testGroup:{
+			shape: 'icon',
+                icon: {
+                    face: 'FontAwesome',
+                    code: '\uf0c0',
+                    size: 50,
+                    color: 'orange'
+                }
+		},
+    cloud:{
+      shape: 'icon',
+                icon: {
+                    face: 'FontAwesome',
+                    code: '\uf0c2',
+                    size: 50,
+                    color: 'blue'
+                }
+    },
+    database:{
+      shape: 'icon',
+                icon: {
+                    face: 'FontAwesome',
+                    code: '\uf1c0',
+                    size: 50,
+                    color: 'red'
+                }
+    },
+    server:{
+      shape: 'icon',
+                icon: {
+                    face: 'FontAwesome',
+                    code: '\uf233',
+                    size: 50,
+                    color: 'green'
+                }
+    }
+	}
+}
+  var network = new vis.Network(container, data, options);
+</script>
+
+<script src="./vis/dist/googleAnalytics.js"></script>
+</body>
+</html>

@@ -113,9 +113,9 @@ public class Fog {
 			perfC.set(i, perfC.get(i) + diff);
 			totPerfC2 += perfC.get(i) + diff;
 		}
-		System.out.println("Tot Res Required Count: " + fogLoad + "  Gw Count: "
+		/*System.out.println("Tot Res Required Count: " + fogLoad + "  Gw Count: "
 				+ (new Double(fogLoad / 1.1 / 100 * ((float) 100.0 / gwLoad)).intValue() + 1) + " ResProvided: "
-				+ totPerfC2*100.0 + " App Cnt: " + this.getApps().size());
+				+ totPerfC2*100.0 + " App Cnt: " + this.getApps().size());*/
 
 		// Create Actuall gateways with Capabilities
 		for (int i = 0; i < perfC.size(); i++) {
@@ -157,6 +157,9 @@ public class Fog {
 		//this.addRandomWeights();
 		this.addExtraGwConns(newGws, currGws,gwExtLatency,gwCloudIntLat);
 		// System.out.println("Clearing Connections for Empty Intit Phase");
+		System.out.println("Tot Res Required Count: " + this.getTotalLoad() + "  Gw Count: "
+				+ this.getGateways().size()+ " ResProvided: "
+				+ this.getTotRes()+ " at Rate: "+this.getShareRate()+" App Cnt: " + this.getApps().size()+" Utility: "+this.getFogCompoundUtility());
 	}
 
 	
@@ -232,6 +235,14 @@ public class Fog {
 				+ "Apps:" + apps.keySet() + "; " + "Resources:" + resources.keySet();
 	}
 	
+	public Float cumClustShare() {
+		Float tot = (float)0.0;
+		for (Integer c: this.getClusters().keySet()){
+			tot+=this.getClusters().get(c).ShareRate();
+		}
+		return tot/this.getClusters().size();
+	}
+	
 	//Share Rate 
 	public Float getShareRate() {
 		return this.getTotRes()/this.getTotLoad();
@@ -258,6 +269,23 @@ public class Fog {
 		if (checkIfAppsAllocated().size()==0)
 		{
 			for (Integer a : getApps().keySet()) {
+				if (getApps().get(a).getAppUtility().isNaN()){
+					System.out.println("App Utility Nan: "+a);
+					System.out.print("Components: ");
+					System.out.print("Reliablity:"+getApps().get(a).getAppReliability());
+					//System.out.println("util-rel: "+utilityWeights.get("reliability")*this.getAppReliability());
+					System.out.print("Const Viol: "+getApps().get(a).getConstraintViolations());
+					//Get Reference Delay
+					//System.out.println("util-constr: "+utilityWeights.get("constraint")*(1.0-this.getConstraintViolations()));
+					System.out.print("Proc Del:"+getApps().get(a).getProcDelay((float)5.4, (float)1));
+					System.out.print("Tot del: "+getApps().get(a).getTotDelay());
+					System.out.print("Tot proc: "+getApps().get(a).getProcDelay());
+					System.out.print("Tot Netw: "+getApps().get(a).getNetworkDelay());
+					System.out.print("ResSize: "+getApps().get(a).getResources().size());
+					System.out.print("AppSize: "+getApps().get(a).getApps().size());
+					System.out.println("Tot Netw: "+getApps().get(a).getNetworkDelay());
+					
+				}
 				util += getApps().get(a).getAppUtility();
 			}
 		}
@@ -743,9 +771,29 @@ public class Fog {
 		for (Integer c: this.getClusters().keySet()){
 			apps.removeAll(new ArrayList(this.getClusters().get(c).getApps().keySet()));
 		}
-		for (Integer a: this.getApps().keySet()){
+		//Check for GW Allocations, totally useless piece of fking code
+		/*for (Integer a: this.getApps().keySet()){
 			if (this.getApps().get(a).getGateway()==null){
 				apps.add(a);
+			}
+		}*/
+		return apps;
+	}
+	
+	public List<Integer> checkIfAppsOverAlloc() {
+		List<Integer> apps= new ArrayList<>();
+		for (Integer c1: this.getClusters().keySet()){
+			for (Integer a: this.getClusters().get(c1).getApps().keySet()){
+				for (Integer c2: this.getClusters().keySet()){
+					if (c1 != c2){
+						if (this.getClusters().get(c2).getApps().get(a)!=null){
+							//System.out.println("Clusters: "+c1+" : "+c2+" On App:"+a);
+							//System.out.println(this.getClusters().get(c1).getApps().keySet());
+							//System.out.println(this.getClusters().get(c2).getApps().keySet());
+							apps.add(a);
+						}
+					}
+				}
 			}
 		}
 		return apps;
@@ -1051,5 +1099,8 @@ public class Fog {
 	public void setClusters(Map<Integer, Cluster> clusters) {
 		this.clusters = clusters;
 	}
+
+
+
 
 }

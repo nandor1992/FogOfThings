@@ -264,4 +264,34 @@ public class Clustering {
 		return dist;
 	}
 	
+	public Map<Integer, Double> dijkstraSearsch(Integer p, Float maxDist) {
+		// Init
+		List<Integer> queue = new ArrayList<>();
+		Map<Integer, Integer> prev = new HashMap<>();
+		Map<Integer, Double> dist = new HashMap<>();
+		for (Integer i : this.nodes.keySet()) {
+			dist.put(i, Double.POSITIVE_INFINITY);
+			prev.put(i, null);
+			queue.add(i);
+		}
+		dist.put(p, 0.0);
+		while (queue.size() > 0) {
+			//System.out.println(queue);
+			//System.out.println(dist);
+			Integer u = getShortestDist(dist, queue);
+			if (u != null) {
+				//System.out.println(u);
+				queue.remove(queue.indexOf(u));
+				for (Integer i : this.nodes.get(u)) {
+					Double newDist = dist.get(u) + 1.0;
+					if (newDist < dist.get(i)) {
+						dist.put(i, newDist);
+						prev.put(i, u);
+					}
+				}
+			}else{break;}
+		}
+		return dist;
+	}
+	
 }

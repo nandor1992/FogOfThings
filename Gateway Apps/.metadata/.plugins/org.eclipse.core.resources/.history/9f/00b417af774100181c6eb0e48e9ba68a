@@ -1,0 +1,51 @@
+package org.nandor.spark;
+
+import org.apache.hadoop.util.UTF8ByteArrayUtils;
+
+public class WeighTrainer {
+		//Maybe Use Hooke-Jeeves Algorithm
+		//https://www.siam.org/books/textbooks/fr18_book.pdf
+		private int count = 0;
+		private float prevRes = (float) 0.0;
+		private int maxStep;
+
+	public  WeighTrainer(int maxStep){
+		this.maxStep = maxStep;
+	}
+	
+	public boolean getNextStep(){
+		//Empty request for the next step, will be reimplemented
+		count++;
+		if (count>maxStep){
+			return false;
+		}else
+		{
+			return true;
+		}
+	}
+
+	public void setFailed() {
+		//Triggered when an attemt failed for one reason or another
+		maxStep = count;
+	}
+	
+	public String getChar() {
+		////Return Characteristics as a string
+		return "Count: "+count;
+	}
+	
+	public void attemptResult(Float utility) {
+		if (utility<prevRes){
+			setFailed();
+		}else{
+			prevRes=utility;
+		}
+		
+	}
+
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

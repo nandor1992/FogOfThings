@@ -143,10 +143,10 @@ public class Genetic {
 		this.fog.clearAppToGws();
 		Set<Integer> gwIDs =c.getGateways().keySet();
 		Set<Integer> appIDs =c.getApps().keySet();
-		System.out.println("GA Cluster GwCount: " + gwCnt + " AppCnt: " +appCnt);
+		System.out.println(" -> GA Cluster "+c.getId()+" GwCount: " + gwCnt + " AppCnt: " +appCnt);
 		// Ga Parameters
 		float bestUtil = (float)0.0;
-		System.out.println("----- Initializing new Population for Cluster "+c.getId()+" -----");
+		//System.out.println("----- Initializing new Population for Cluster "+c.getId()+" -----");
 		List<Map<Integer, Integer>> pop = randomPop(size,gwIDs,appIDs,c); 
 		int i=0;
 		int bestI = 0;
@@ -183,13 +183,13 @@ public class Genetic {
 					this.fog.AssignAppsToGws(pop.get(0));
 					System.out.println(pop.get(0));
 					c.verifyValidityVerbose();
-					break;
+					return null;
 				}
 				
 			}
 		}
-		this.bestCGens.put(c.getId(),getBestGens(pop, 5,c,true));
-		System.out.println("The best of the Population "+bestI+" is: "+bestUtil+" With: "+this.bestIndi);
+		this.bestCGens.put(c.getId(),getBestGens(pop, (int)(size*elitPop),c,true));
+		System.out.println("The best of the Population "+bestI+" is: "+bestUtil);//+" With: "+this.bestIndi
 		return this.bestIndi;
 	}
 	
@@ -259,7 +259,7 @@ public class Genetic {
 		while (i<size){
 			Map<Integer, Integer> tmp = new HashMap<>();
 			for (Integer c:this.bestCGens.keySet()){
-				if (this.bestCGens.get(c).get(i)==null){
+				if (i>this.bestCGens.get(c).size()-1){
 					tmp.putAll(this.bestCGens.get(c).get(this.bestCGens.get(c).size()-1));
 				}else{
 					tmp.putAll(this.bestCGens.get(c).get(i));
@@ -275,7 +275,7 @@ public class Genetic {
 	private List<Map<Integer,Integer>> crossingPop(List<Map<Integer,Integer>> pop, int i,Cluster c) {
 		List<Map<Integer,Integer>> ret = new ArrayList<>();
 		Random rand = new Random();
-		List<Map<Integer,Integer>> basepop = getBest(pop,2*i,c);
+		List<Map<Integer,Integer>> basepop = getBestGens(pop, 2*i,c,false);
 		Iterator<Map<Integer, Integer>> iter = basepop.iterator();
 		while( iter.hasNext()){
 			Map<Integer,Integer> indi = iter.next();
@@ -304,7 +304,7 @@ public class Genetic {
 		List<Map<Integer,Integer>> ret = new ArrayList<>();
 		Random rand = new Random();
 		List<Integer> gws = new ArrayList<Integer>(gw);
-		List<Map<Integer,Integer>> basepop = getBest(pop,i,c);
+		List<Map<Integer,Integer>> basepop = getBestGens(pop, i,c,false);
 		Iterator<Map<Integer, Integer>> iter = basepop.iterator();
 		while( iter.hasNext()){
 			Map<Integer,Integer> indi = iter.next();
@@ -368,10 +368,12 @@ public class Genetic {
 			/// All the gens that are valid
 			while (iter.hasNext() && size > g1.generations.size()) {
 				Map<Integer, Integer> indi = iter.next();
-				this.fog.clearAppToGws();
-				this.fog.AssignAppsToGws(indi);
-				float tmp = c.getClusterCompoundUtility();
-				g2.addGeneration(indi, tmp);
+				if (!g1.isUnique(indi)){
+					this.fog.clearAppToGws();
+					this.fog.AssignAppsToGws(indi);
+					float tmp = c.getClusterCompoundUtility();
+					g2.addGeneration(indi, tmp);
+				}
 			}
 			ret.addAll(g2.getGenerations());
 		}
@@ -571,7 +573,7 @@ public class Genetic {
 		this.fog.clearAppToGws();
 		float bestUtil = (float)0.0;
 		int sinceLastBest = 0;
-		System.out.println("----- Initializing new Population for Global GA -----");
+		//System.out.println("----- Initializing new Population for Global GA -----");
 		List<Map<Integer, Integer>> pop = randomPop(size);
 		int i=0;
 		int bestI=0;
@@ -586,7 +588,6 @@ public class Genetic {
 					this.fog.AssignAppsToGws(pop.get(0));
 					System.out.println(pop.get(0));
 					System.out.println(this.fog.verifyValidityVerbose());
-					this.fog.clearAppToGws();
 					Methods.displayClsAndRes(this.fog);
 					//this.fog.clearAppToGws();
 					break;
@@ -621,7 +622,7 @@ public class Genetic {
 		this.bestGens  = getBestGens(pop, 20,true);
 		System.out.println("Best of "+i+"  Population was at: "+bestI+" is: "+bestUtil+" At: "+(System.currentTimeMillis()-start)/(float)1000);
 		
-		return this.bestIndi;
+		return pop.get(0);
 	}
 	
 	public List<Map<Integer, Integer>> getBestGens(){
@@ -726,10 +727,12 @@ public class Genetic {
 			/// All the gens that are valid
 			while (iter.hasNext() && size > g1.generations.size()) {
 				Map<Integer, Integer> indi = iter.next();
-				this.fog.clearAppToGws();
-				this.fog.AssignAppsToGws(indi);
-				float tmp = this.fog.getFogCompoundUtility();
-				g2.addGeneration(indi, tmp);
+				if (!g1.isUnique(indi)){
+					this.fog.clearAppToGws();
+					this.fog.AssignAppsToGws(indi);
+					float tmp = this.fog.getFogCompoundUtility();
+					g2.addGeneration(indi, tmp);
+				}
 			}
 			ret.addAll(g2.getGenerations());
 		}

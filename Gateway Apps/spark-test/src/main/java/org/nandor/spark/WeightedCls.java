@@ -16,6 +16,7 @@ public class WeightedCls extends Clustering {
 
 	protected Map<String, Double> appWeights = new HashMap<>();
 	protected Map<String, Double> gwWeights = new HashMap<>();
+	protected WeighTrainer Wtrain = new WeighTrainer(0,0);
 	public WeightedCls(Fog f) {
 		super(f);
 	}
@@ -50,6 +51,16 @@ public class WeightedCls extends Clustering {
 		return nodes;
 	}
 
+	//Weight Training Stuff
+	
+	public WeighTrainer getWeight(){
+		return Wtrain;
+	}
+	
+	public void initTrain(int maxStep,int maxFails){
+		Wtrain = new WeighTrainer(maxStep,maxFails);
+	}
+	
 	// Correlation Stuff
 	// TODO Just a marker
 	public Map<String, Double> Correlation(String variable, List<Map<String, Double>> data) {
@@ -161,21 +172,24 @@ public class WeightedCls extends Clustering {
 		for (Map<Integer, Integer> b : bests) {
 			this.fog.clearAppToGws();
 			this.fog.AssignAppsToGws(b);
-			if (this.fog.verifyIndValidity() && this.fog.checkIfAppsAllocated().size() == 0) {
+//			if (this.fog.verifyIndValidity() && this.fog.checkIfAppsAllocated().size() == 0) {
 				//List<Integer> visited = new ArrayList<Integer>();
 				for (Integer a : this.fog.getApps().keySet()) {
 					for (Integer g : this.fog.getGateways().keySet()) {
 						Map<String, Double> tmp = getGwSimilarities(a, g);
-						if (this.fog.getApps().get(a).getGateway().getId() == g) {
-							tmp.put("Deployment", this.fog.getFogCompoundUtility().doubleValue());
-							ret.add(tmp);
-						} else {
-							tmp.put("Deployment", 0.0);
-							ret.add(tmp);
+						if (!(this.fog.getApps().get(a).getGateway() == null)) {
+							if (this.fog.getApps().get(a).getGateway().getId() == g) {
+								//tmp.put("Deployment", this.fog.getFogCompoundUtility().doubleValue());
+								tmp.put("Deployment", 1.0);
+								ret.add(tmp);
+							} else {
+								tmp.put("Deployment", 0.0);
+								ret.add(tmp);
+							}
 						}
 					}
 				}
-			}
+//			}
 		}
 		return ret;
 	}
@@ -403,19 +417,24 @@ public class WeightedCls extends Clustering {
 		for (Integer a1 : this.fog.getApps().keySet()) {
 			for (Integer a2 : this.fog.getApps().keySet()) {
 				if (a1 != a2 && !visited.contains(a2)) {
-					Map<String, Double> tmp = getAppSimilarities(a1, a2);
-					if (this.fog.getApps().get(a1).getGateway().getId() == this.fog.getApps().get(a2).getGateway()
-							.getId()) {
-						tmp.put("Deployment", this.fog.getFogCompoundUtility().doubleValue());
-						ret.add(tmp);
-					} else {
-						tmp.put("Deployment", 0.0);
-						ret.add(tmp);
+					if (this.fog.getApps().get(a1).getGateway() != null
+							&& this.fog.getApps().get(a2).getGateway() != null) {
+						Map<String, Double> tmp = getAppSimilarities(a1, a2);
+						if (this.fog.getApps().get(a1).getGateway().getId() == this.fog.getApps().get(a2).getGateway()
+								.getId()) {
+							//tmp.put("Deployment", this.fog.getFogCompoundUtility().doubleValue());
+							tmp.put("Deployment", 1.0);
+							ret.add(tmp);
+						} else {
+							tmp.put("Deployment", 0.0);
+							ret.add(tmp);
+						}
 					}
 				}
 			}
 			visited.add(a1);
 		}
+		//System.out.println(ret);
 		return ret;
 	}
 
@@ -661,7 +680,8 @@ public class WeightedCls extends Clustering {
 	public void setCorrelation(Map<String, Double> corrApp, Map<String, Double> corrGw, double limApp,double limGws) {
 		//Find parameters of interest
 		//appWeights gwWeights
-		
+		appWeights = new HashMap<>();
+		gwWeights = new HashMap<>();
 		//Apps
 		for (String name: corrApp.keySet()){
 			if (Math.abs(corrApp.get(name))>limApp){
@@ -690,10 +710,142 @@ public class WeightedCls extends Clustering {
 		for (String name: gwWeights.keySet()){
 			gwWeights.put(name,gwWeights.get(name)/sum2);
 		}
-		
 		System.out.println("Corr App: "+appWeights+" Corr Gw:"+gwWeights);
 	}
 
+	public void setCorrelation(Map<String, Double> corrApp, Map<String, Double> corrGw,double procLim) {
+		//Find parameters of interest
+		//appWeights gwWeights
+		appWeights = new HashMap<>();
+		gwWeights = new HashMap<>();
+		//Get Maxes 
+		Double appMax = 0.0;
+		Double gwMax = 0.0;
+		for (String name: corrApp.keySet()){
+			if (Math.abs(corrApp.get(name))>appMax){
+				appMax = Math.abs(corrApp.get(name));
+			}
+		}
+		for (String name: corrGw.keySet()){
+			if (Math.abs(corrGw.get(name))>gwMax){
+				gwMax = Math.abs(corrGw.get(name));
+			}
+		}
+		//Apps
+		for (String name: corrApp.keySet()){
+			if (Math.abs(corrApp.get(name))>appMax*procLim){
+				appWeights.put(name, Math.abs(corrApp.get(name)));
+			}
+		}
+		//Gateways
+		for (String name: corrGw.keySet()){
+			if (Math.abs(corrGw.get(name))>gwMax*procLim){
+				gwWeights.put(name, Math.abs(corrGw.get(name)));
+			}
+		}
+		
+		//Adjust so that their sum is 1 (why dunno, seems to make sense to me)
+		double sum1=0.0;
+		for (String name: appWeights.keySet()){
+			sum1+=appWeights.get(name);
+		}
+		for (String name: appWeights.keySet()){
+			appWeights.put(name,appWeights.get(name)/sum1);
+		}
+		double sum2=0.0;
+		for (String name: gwWeights.keySet()){
+			sum2+=gwWeights.get(name);
+		}
+		for (String name: gwWeights.keySet()){
+			gwWeights.put(name,gwWeights.get(name)/sum2);
+		}
+		System.out.println("Corr App: "+appWeights+" Corr Gw:"+gwWeights);
+	}
+	
+	public void resetGwWeights(Double val) {
+		//Find parameters of interest
+		//appWeights gwWeights
+		gwWeights = new HashMap<>();
+		List<String> names = new ArrayList<>();
+		names.add("Capabilities");
+		names.add("PerfToULoad");
+		names.add("CapToULoad");
+		names.add("SharedRes");
+		names.add("BaseLoad");
+		//Adjust so that their sum is 1 (why dunno, seems to make sense to me)
+		for (String name: names){
+			gwWeights.put(name,val);
+		}
+	}
+	
+	public void resetAppWeights(Double val) {
+		//Find parameters of interest
+		//appWeights gwWeights
+		appWeights = new HashMap<>();
+		List<String> names = new ArrayList<>();
+		names.add("Distance");
+		names.add("ResourceShare");
+		names.add("Constraints");
+		names.add("MessageRate");
+		names.add("UnitLoad");
+		names.add("UtilityWeights");
+		names.add("RequirementSim");
+		//Adjust so that their sum is 1 (why dunno, seems to make sense to me)
+		for (String name: names){
+			appWeights.put(name,val);
+		}
+	}
+	
+ public void clearWeights(){
+	 appWeights = new HashMap<>();
+	 gwWeights = new HashMap<>();
+ }
+	
+	public void setCorrelation(Map<String, Double> corrApp, Map<String, Double> corrGw) {
+		//Find parameters of interest
+		//appWeights gwWeights
+		appWeights = new HashMap<>();
+		gwWeights = new HashMap<>();
+		//Get Maxes 
+		Double appMax = 0.0;
+		Double gwMax = 0.0;
+		for (String name: corrApp.keySet()){
+			if (Math.abs(corrApp.get(name))>appMax){
+				appMax = Math.abs(corrApp.get(name));
+			}
+		}
+		for (String name: corrGw.keySet()){
+			if (Math.abs(corrGw.get(name))>gwMax){
+				gwMax = Math.abs(corrGw.get(name));
+			}
+		}
+		//Apps
+		for (String name: corrApp.keySet()){
+				appWeights.put(name, Math.abs(corrApp.get(name)));
+		}
+		//Gateways
+		for (String name: corrGw.keySet()){
+				gwWeights.put(name, Math.abs(corrGw.get(name)));
+		}
+		
+		//Adjust so that their sum is 1 (why dunno, seems to make sense to me)
+		double sum1=0.0;
+		for (String name: appWeights.keySet()){
+			sum1+=appWeights.get(name);
+		}
+		for (String name: appWeights.keySet()){
+			appWeights.put(name,appWeights.get(name)/sum1);
+		}
+		double sum2=0.0;
+		for (String name: gwWeights.keySet()){
+			sum2+=gwWeights.get(name);
+		}
+		for (String name: gwWeights.keySet()){
+			gwWeights.put(name,gwWeights.get(name)/sum2);
+		}
+		System.out.println("Corr App: "+appWeights+" Corr Gw:"+gwWeights);
+	}
+	
 	public List<Set<Integer>> DBScan(Float eps,Integer minPts,Integer maxPts){
 		//System.out.println("Apps:"+this.nodes.keySet());
 		this.visited = new HashSet<>();
@@ -703,7 +855,7 @@ public class WeightedCls extends Clustering {
 			if (!this.visited.contains(p)){
 				this.visited.add(p);
 				//System.out.println("Neighbourhood Queest: "+p+" Apps: "+nodes.get(p));
-				List<Integer> neighbour = getNeighbours(p,eps,0);
+				List<Integer> neighbour = getNeighbours(p,eps,4);
 				//System.out.println(neighbour);
 				if (neighbour.size()<minPts){
 					this.noise.add(p);
@@ -712,6 +864,8 @@ public class WeightedCls extends Clustering {
 				}
 			}
 		}
+		//System.out.println("Clusters: "+this.clust);
+		//System.out.println("Noise: "+this.noise);
 		noiseSort(maxPts);
 		//Removing Clusters that are too small
 		List<Set<Integer>> newClust = new ArrayList<>();
@@ -724,24 +878,368 @@ public class WeightedCls extends Clustering {
 		}
 		this.clust=newClust;
 		noiseSort(maxPts);
-		//System.out.println("Clusters: "+this.clust);
-		//System.out.println("Noise: "+this.noise);
+		
+		//Sort out stragglers Just ofr this type, otherwise it gets cray-cray
+		newClust = new ArrayList<>();
+		for (Set<Integer> cls: this.clust){
+			if (cls.size()<minPts/1.5){
+				this.noise.addAll(cls);
+			}else{
+				newClust.add(cls);
+			}
+		}
+		this.clust=newClust;
+		noiseSort(maxPts+2);
 		return this.clust;
 	}
 	
-	public Set<Integer> expandCluster(Integer p, List<Integer> neighbour, Float eps, Integer minPts,Integer maxPts){
+	public List<Set<Integer>> DBScan(Integer minPts){
+		//System.out.println("Apps:"+this.nodes.keySet());
+		this.visited = new HashSet<>();
+		this.noise = new HashSet<>();
+		this.clust = new ArrayList<>();
+		List<Set<Integer>> bestCls = new ArrayList<>();
+		Float eps = (float)0.1;
+		int iter = 0;
+		int failiter = 0;
+		Double prevValid = Double.MAX_VALUE;
+		Double bestValid = Double.MAX_VALUE;
+		List<Double> epsVals = this.getMinMaxEpsValues(5.0,4);
+		eps=epsVals.get(0).floatValue();
+		boolean found = false;
+		int fails = 0;
+		//while ((this.validateClust(minPts)<=prevValid || bestValid > minPts*1.5)&& eps<epsVals.get(1).floatValue()){
+		while (eps<epsVals.get(1).floatValue() && (!found || fails<3)){
+			prevValid=this.validateClust(minPts);
+			System.out.println(" -> Clustering iter: "+iter+" with Eps: "+eps+" Valid: "+prevValid+"Found: "+found+" Fails:" +fails);
+			eps+=epsVals.get(2).floatValue();
+			this.visited = new HashSet<>();
+			this.noise = new HashSet<>();
+			this.clust = new ArrayList<>();
+			for (Integer p : nodes.keySet()){
+				if (!this.visited.contains(p)){
+					this.visited.add(p);
+					//System.out.println("Neighbourhood Queest: "+p+" Apps: "+nodes.get(p));
+					List<Integer> neighbour = getNeighbours(p,eps,4);
+					//System.out.println(neighbour);
+					if (neighbour.size()<minPts){
+						this.noise.add(p);
+					}else{
+						this.clust.add(expandCluster(p,neighbour, eps,minPts));
+					}
+				}
+			}
+			noiseSort();
+			//Removing Clusters that are too small
+			List<Set<Integer>> newClust = new ArrayList<>();
+			for (Set<Integer> cls: this.clust){
+				if (cls.size()<minPts){
+					this.noise.addAll(cls);
+				}else{
+					newClust.add(cls);
+				}
+			}
+			this.clust=newClust;
+			noiseSort();
+			prevValid = this.validateClust(minPts);
+			if (prevValid<bestValid){
+				found=true;
+				bestCls=this.clust;
+				bestValid=prevValid;
+			}
+			if (prevValid == Double.MAX_VALUE){
+				fails++;
+			}else{
+				fails=0;
+			}
+			iter++;
+			/*System.out.println(" -> Eps: "+eps);
+			System.out.println("Valid : "+this.validateClust(minPts));
+			System.out.println("Clusters: "+this.clust);
+			System.out.println("Noise: "+this.noise);*/
+		}
+		this.clust=bestCls;
+		//Simple fix to overallocation resolve
+		this.resolveOverAllocation();
+		noiseSort();
+		//System.out.println("Clusters: "+this.clust);
+		//System.out.println("Noise: "+this.noise);*/
+		return this.clust;
+	}
+	
+	public List<Set<Integer>> DBScan(Integer minPts,List<Double> epsVals){
+		//System.out.println("Apps:"+this.nodes.keySet());
+		this.visited = new HashSet<>();
+		this.noise = new HashSet<>();
+		this.clust = new ArrayList<>();
+		List<Set<Integer>> bestCls = new ArrayList<>();
+		int iter = 0;
+		int failiter = 0;
+		Double prevValid = Double.MAX_VALUE;
+		Double bestValid = Double.MAX_VALUE;
+		Float eps=epsVals.get(0).floatValue();
+		boolean found = false;
+		int fails = 0;
+		//while ((this.validateClust(minPts)<=prevValid || bestValid > minPts*1.5)&& eps<epsVals.get(1).floatValue()){
+		while (eps<epsVals.get(1).floatValue() && (!found || fails<3)){
+			prevValid=this.validateClust(minPts);
+			System.out.println(" -> Clustering iter: "+iter+" with Eps: "+eps+" Valid: "+prevValid+"Found: "+found+" Fails:" +fails);
+			eps+=epsVals.get(2).floatValue();
+			this.visited = new HashSet<>();
+			this.noise = new HashSet<>();
+			this.clust = new ArrayList<>();
+			for (Integer p : nodes.keySet()){
+				if (!this.visited.contains(p)){
+					this.visited.add(p);
+					//System.out.println("Neighbourhood Queest: "+p+" Apps: "+nodes.get(p));
+					List<Integer> neighbour = getNeighbours(p,eps,4);
+					//System.out.println(neighbour);
+					if (neighbour.size()<minPts){
+						this.noise.add(p);
+					}else{
+						this.clust.add(expandCluster(p,neighbour, eps,minPts));
+					}
+				}
+			}
+			noiseSort();
+			//Removing Clusters that are too small
+			List<Set<Integer>> newClust = new ArrayList<>();
+			for (Set<Integer> cls: this.clust){
+				if (cls.size()<minPts){
+					this.noise.addAll(cls);
+				}else{
+					newClust.add(cls);
+				}
+			}
+			this.clust=newClust;
+			noiseSort();
+			prevValid = this.validateClust(minPts);
+			if (prevValid<bestValid){
+				found=true;
+				bestCls=this.clust;
+				bestValid=prevValid;
+			}
+			if (prevValid == Double.MAX_VALUE){
+				fails++;
+			}else{
+				fails=0;
+			}
+			iter++;
+			/*System.out.println(" -> Eps: "+eps);
+			System.out.println("Valid : "+this.validateClust(minPts));
+			System.out.println("Clusters: "+this.clust);
+			System.out.println("Noise: "+this.noise);*/
+		}
+		this.clust=bestCls;
+		//Simple fix to overallocation resolve
+		this.resolveOverAllocation();
+		this.noiseSort();
+		//System.out.println("Clusters: "+this.clust);
+		//System.out.println("Noise: "+this.noise);*/
+		return this.clust;
+	}
+	
+	private void resolveOverAllocation() {
+		Map<Integer,Integer> app = new HashMap<>();
+		for (Set<Integer> c: this.clust){
+			for (Integer a:c){
+				if (app.get(a)==null){
+					app.put(a, 1);
+				}else{
+					app.put(a,app.get(a)+1);
+				}
+			}
+		}
+		for (Integer a: app.keySet()){
+			if (app.get(a)>1){
+				//System.out.println("Duplicate app: "+a);
+				//Search for all clusters, find distance and delete from all but the biggest 
+				Set<Integer> tmpCls = null;
+				double maxDist = 0.0;
+				for (Set<Integer> c: this.clust){
+					//Best CLuster found 
+					if (c.contains(a)){
+					    double tmp = this.distanceToCluster(a, c);
+					    if (maxDist<tmp || tmpCls == null){
+					    	maxDist=tmp;
+					    	tmpCls=c;
+					    }
+					}
+				}
+				for (Set<Integer> c: this.clust){
+					//Remove the rest of the useless clusters and F them
+					if (c.contains(a)){
+						if (c!=tmpCls){
+							c.remove(a);
+						}
+					}
+				}
+			}
+		}
+		
+	}
+	
+	private List<Double> getMinMaxEpsValues(Double div,Integer lvl) {
+		List<Double> ret = new ArrayList<>();
+		//For All apps get all the others Distance, get min max, split into ten
+		List<Double> distances = new ArrayList<>();
+		List<Integer> visited = new ArrayList<>();
+		Map<Double,Integer> histogram = new HashMap<>();
+		Double min=Double.MAX_VALUE,max=0.0;
+		for (Integer a1: this.fog.getApps().keySet()){
+			visited.add(a1);
+			Map<Integer, Double> apps = dijkstraSearsch(a1,lvl.floatValue());
+			for (Integer app:new HashSet<Integer>(apps.keySet())){
+				if (apps.get(app)>lvl){
+					apps.remove(app);
+				}
+			}
+			for (Integer a2 : apps.keySet()) {
+				if (!visited.contains(a2)){
+					//Compute distance]
+					Double tmp = this.getAppDistance(a1, a2);
+					if (tmp>max){max=tmp;}
+					if (tmp<min){min=tmp;}
+					distances.add(tmp);
+				}
+			}
+		}
+		Double band = (max-min)/10.0;
+		System.out.println("Min: "+min+" Max:"+max+" Band "+band);
+		for (int i=0;i<=10;i++){
+			histogram.put(min+band*i, 0);
+		}
+		for (Double d: distances){
+			int loc = (int) ((d-min)/band);
+			//System.out.println("Loc:"+loc+"Value:"+(min+band*loc));
+			histogram.put(min+band*loc, histogram.get(min+band*loc)+1);
+		}
+		System.out.println("Histogram: "+histogram);
+		Double retMin = Double.MAX_VALUE,retMax=0.0;
+		//Min Maxes
+		int tmpMax = 0;
+		for (Double d: histogram.keySet()){
+			if (histogram.get(d)>tmpMax){
+				tmpMax = histogram.get(d);
+				retMin = d;
+			}
+		}
+		/*for (Double d: histogram.keySet()){
+			if (histogram.get(d)>tmpMax/5 && d<retMax){
+				if (d<retMin){retMin=d;}
+			}
+		}*/
+		retMax = retMin+band/10;
+		retMin = retMin-band;
+		for (Double d: histogram.keySet()){
+			if (histogram.get(d)>this.fog.getApps().size() && d>retMin){
+				if (d>retMax){retMax=d;}
+			}
+		}
+		retMax+=2*band;
+		//Return
+		ret.add(retMin);
+		ret.add(retMax);
+		ret.add((retMax-retMin)/div);
+		System.out.println(ret);
+		/*ret = new ArrayList<>();
+		ret.add(0.1);
+		ret.add(7.0);
+		ret.add(0.1);
+		System.out.println(ret);*/
+		//System.exit(1992);
+		return ret;
+	}
+	
+	private Double getAppDistance(Integer a1,Integer a2){
+		double tmp = 0.0;
+		for (String name : appWeights.keySet()) {
+				switch (name) {
+				case "Distance":
+					tmp += this.dijkstraSearsch(a1, a2) * appWeights.get(name);
+					break;
+				case "ResourceShare":
+					tmp += this.getResShare(a1, a2) * appWeights.get(name);
+					break;
+				case "Constraints":
+					tmp += this.getConstSim(a1, a2) * appWeights.get(name);
+					break;
+				case "MessageRate":
+					tmp += this.getMsgRateComp(a1, a2) * appWeights.get(name);
+					break;
+				case "UnitLoad":
+					tmp += this.getUnitLoadComp(a1, a2) * appWeights.get(name);
+					break;
+				case "UtilityWeights":
+					tmp += this.getUtilityComp(a1, a2) * appWeights.get(name);
+					break;
+				case "RequirementSim":
+					tmp += this.getReqComp(a1, a2) * appWeights.get(name);
+					break;
+				}
+		}
+		return tmp;
+	}
+
+	private Double validateClust(Integer minPts) {
+		double stdDev = 0.0;
+		double min = Double.MAX_VALUE;
+		double max = 0.0;
+		double avg = 0.0;
+		if (this.clust.size()<=1){
+			return Double.MAX_VALUE;
+		}else{
+			for (Set<Integer> clust: this.clust){
+				if (clust.size()<min){min=clust.size();}
+				if (clust.size()>max){max=clust.size();}
+				avg+=clust.size();
+			}
+			avg=avg/(double)this.clust.size();
+			for (Set<Integer> clust: this.clust){
+				stdDev+=Math.abs(clust.size()-avg);
+			}
+			stdDev=stdDev/(double)this.clust.size();
+			//System.out.println("Max: "+max+" Min: "+min+" Avg: "+avg+" Std Dev: "+stdDev);
+			return stdDev;
+		}
+	}
+
+	public Set<Integer> expandCluster(Integer p, List<Integer> neighbour, Float eps, Integer minPts) {
 		Set<Integer> C = new HashSet<>();
 		C.add(p);
 		CopyOnWriteArrayList<Integer> neighbourSafe = new CopyOnWriteArrayList<Integer>();
 		neighbourSafe.addAll(neighbour);
-		//System.out.println(neighbourSafe);
-		for (Integer n: neighbourSafe){
-			if (!this.visited.contains(n)){
+		// System.out.println(neighbourSafe);
+		for (Integer n : neighbourSafe) {
+			if (!this.visited.contains(n)) {
 				this.visited.add(n);
-				List<Integer> neighbourInt=getNeighbours(n, eps, 0);
-				if (neighbourInt.size()>=minPts){
-					for (Integer n2: neighbourInt){
-						if (!neighbourSafe.contains(n2)){
+				List<Integer> neighbourInt = getNeighbours(n, eps, 3);
+				if (neighbourInt.size() >= minPts) {
+					for (Integer n2 : neighbourInt) {
+						if (!neighbourSafe.contains(n2)) {
+							neighbourSafe.add(n2);
+						}
+					}
+				}
+				C.add(n);
+			}
+		}
+		return C;
+	}
+	
+	public Set<Integer> expandCluster(Integer p, List<Integer> neighbour, Float eps, Integer minPts,Integer maxPts) {
+		Set<Integer> C = new HashSet<>();
+		C.add(p);
+		CopyOnWriteArrayList<Integer> neighbourSafe = new CopyOnWriteArrayList<Integer>();
+		neighbourSafe.addAll(neighbour);
+		// System.out.println(neighbourSafe);
+		for (Integer n : neighbourSafe) {
+			if (!this.visited.contains(n)) {
+				this.visited.add(n);
+				List<Integer> neighbourInt = getNeighbours(n, eps, 4);
+				if (neighbourInt.size() >= minPts) {
+					for (Integer n2 : neighbourInt) {
+						if (!neighbourSafe.contains(n2)) {
 							neighbourSafe.add(n2);
 						}
 					}
@@ -753,14 +1251,21 @@ public class WeightedCls extends Clustering {
 				}
 			}
 		}
-		return C;	
+		return C;
 	}
 	
 	public List<Integer> getNeighbours(Integer p, Float eps, Integer lvl) {
 		// TODO Need to Reimplement all of this
 		//System.out.println("Point: "+p+"Eps: "+eps+" Weights:"+appWeights);
 		List<Integer> neighbour = new ArrayList<>();
-		for (Integer a : this.fog.getApps().keySet()) {
+		//Get Apps Close to this one Only use Those maybe 
+		Map<Integer, Double> apps = dijkstraSearsch(p,lvl.floatValue());
+		for (Integer app:new HashSet<Integer>(apps.keySet())){
+			if (apps.get(app)>lvl){
+				apps.remove(app);
+			}
+		}
+		for (Integer a : apps.keySet()) {
 			double tmp = 0.0;
 			for (String name : appWeights.keySet()) {
 				if (a != p) {
@@ -832,58 +1337,134 @@ public class WeightedCls extends Clustering {
 		return tmp/clustP.size();
 	}
 
-	public void noiseSort(Integer maxPts){	
-		Set<Integer> intNoise = new HashSet<>();
-		for (Integer p:this.noise){
-			Double minDist=Double.POSITIVE_INFINITY;
-			Set<Integer> tmpCls=new HashSet<>();
-			for (Set<Integer> cls:this.clust){
-				Double tmpDist=distanceToCluster(p, cls);
-				if (tmpDist<minDist && cls.size()<maxPts){
-					minDist=tmpDist;
-					tmpCls=cls;
+	public void noiseSort() {
+		Set<Integer> noise = new HashSet<Integer>(this.fog.getApps().keySet());
+		for (Set<Integer> clInt : this.clust) {
+			noise.removeAll(clInt);
+		}
+		for (Integer p : noise) {
+			Double minDist = Double.POSITIVE_INFINITY;
+			Set<Integer> tmpCls = new HashSet<>();
+			for (Set<Integer> cls : this.clust) {
+				Double tmpDist = distanceToCluster(p, cls);
+				if (tmpDist < minDist) {
+					minDist = tmpDist;
+					tmpCls = cls;
 				}
 			}
-			if (tmpCls.size()==0){
-				//Select random gw, add to it
+			if (tmpCls.size() == 0) {
+				// Select random gw, add to it
 				int max = 20;
-				if (this.clust.size()!=0){
-					//Check if we found any Clusters at all
-					Random rnd = new Random();
-					int r = rnd.nextInt(this.clust.size()-1);
-					int maxRetry = 0;
-					while (this.clust.get(r).size()>=maxPts && maxRetry<max){
-						maxRetry++;
-						r = rnd.nextInt(this.clust.size()-1);
-					}
-					if (maxRetry==max){
-						//Create Cluster if none found
+				if (this.clust.size() != 0) {
+					// Check if we found any Clusters at all
+					if (this.clust.size() != 1) {
+						Random rnd = new Random();
+						int r = rnd.nextInt(this.clust.size() - 1);
+						int maxRetry = 0;
+						while (maxRetry < max) {
+							maxRetry++;
+							r = rnd.nextInt(this.clust.size() - 1);
+						}
+						if (maxRetry == max) {
+							// Create Cluster if none found
+							Set<Integer> newCls = new HashSet<Integer>();
+							newCls.add(p);
+							this.clust.add(newCls);
+						}else{
+							this.clust.get(r).add(p);
+						}
+					}else{
 						Set<Integer> newCls = new HashSet<Integer>();
 						newCls.add(p);
 						this.clust.add(newCls);
 					}
-				}else{
-					//Create Cluster if none found
+				} else {
+					// Create Cluster if none found
 					Set<Integer> newCls = new HashSet<Integer>();
 					newCls.add(p);
 					this.clust.add(newCls);
 				}
-			}else{
-			//A min Distance Cluster was found, we should add the point to it
-			tmpCls.add(p);
+			} else {
+				// A min Distance Cluster was found, we should add the point to
+				// it
+				tmpCls.add(p);
 			}
 		}
-		this.noise=intNoise;
 	}
 
+
+	public void noiseSort(int maxPts) {
+		Set<Integer> noise = new HashSet<Integer>();
+		for (Integer a : this.fog.getApps().keySet()) {
+			boolean found = false;
+			for (Set<Integer> clInt : this.clust) {
+				for (Integer a1 : clInt) {
+					if (a1 == a) {
+						found = true;
+					}
+				}
+			}
+			if (found == false) {
+				noise.add(a);
+			}
+		}
+		for (Integer p : noise) {
+			Double minDist = Double.POSITIVE_INFINITY;
+			Set<Integer> tmpCls = new HashSet<>();
+			for (Set<Integer> cls : this.clust) {
+				Double tmpDist = distanceToCluster(p, cls);
+				if (tmpDist < minDist) {
+					minDist = tmpDist;
+					tmpCls = cls;
+				}
+			}
+			if (tmpCls.size() == 0 || tmpCls.size()>maxPts) {
+				// Select random gw, add to it
+				int max = 20;
+				if (this.clust.size() != 0) {
+					// Check if we found any Clusters at all
+					if (this.clust.size() != 1) {
+						Random rnd = new Random();
+						int r = rnd.nextInt(this.clust.size() - 1);
+						int maxRetry = 0;
+						while (maxRetry < max && this.clust.get(r).size()>maxPts) {
+							maxRetry++;
+							r = rnd.nextInt(this.clust.size() - 1);
+						}
+						if (maxRetry == max) {
+							// Create Cluster if none found
+							Set<Integer> newCls = new HashSet<Integer>();
+							newCls.add(p);
+							this.clust.add(newCls);
+						}else{
+							this.clust.get(r).add(p);
+						}
+					}else{
+						Set<Integer> newCls = new HashSet<Integer>();
+						newCls.add(p);
+						this.clust.add(newCls);
+					}
+				} else {
+					// Create Cluster if none found
+					Set<Integer> newCls = new HashSet<Integer>();
+					newCls.add(p);
+					this.clust.add(newCls);
+				}
+			} else {
+				// A min Distance Cluster was found, we should add the point to
+				// it
+				tmpCls.add(p);
+			}
+		}
+	}
 	//Distribute Clusters to Gateways, sometimes wen eed to share so we need
 	//Max Share to say how many clusters can share 1 resource 
 	public void distributeGw2Cluster(int maxShare, double shareThreshold) {
 		// TODO Auto-generated method stub
-		System.out.println("----- Distributing -----");
-		System.out.println("Distribute " + this.fog.getGateways().size() + " Gateways to "
+		//System.out.println("----- Distributing -----");
+		/*System.out.println("Distribute " + this.fog.getGateways().size() + " Gateways to "
 				+ this.fog.getClusters().size() + " Clusters with Rate: " + this.fog.getShareRate()
-				+ " having MaxShare: " + maxShare + " Threshold: " + shareThreshold);
+				+ " having MaxShare: " + maxShare + " Threshold: " + shareThreshold);*/
 		// Minmax for values:
 		//Set<Integer> gwNoise = new HashSet<Integer>();
 		//Set<Integer> clsNoise = new HashSet<Integer>();
@@ -915,7 +1496,7 @@ public class WeightedCls extends Clustering {
 			Collections.shuffle(clust);
 			emptyCls=0;
 			for (Integer c : clust) {
-				if (this.fog.getClusters().get(c).ShareRate()*1.2>this.fog.getShareRate()){
+				if (this.fog.getClusters().get(c).ShareRate()>this.fog.getShareRate()*0.8){
 					Map<Integer,Double> empty = new HashMap<Integer,Double>();
 					clsGwPrefs.put(c, empty);
 				}
@@ -941,14 +1522,17 @@ public class WeightedCls extends Clustering {
 					// Get Competing Clusters
 					Double maxCompDist = 0.0;
 					for (Integer c2 : clsGwPrefs.keySet()) {
-						if (c2 != c && clsGwPrefs.get(c2).get(maxGw) != null) {
-							if (maxCompDist < adjustClsDistByShare(c2, clsGwPrefs.get(c2).get(maxGw))) {
-								maxCompDist = adjustClsDistByShare(c2, clsGwPrefs.get(c2).get(maxGw));
-							}
-							if (adjustClsDistByShare(c2,
-									clsGwPrefs.get(c2).get(maxGw)) > adjustClsDistByShare(c, maxDist)
-											* shareThreshold) {
-								clsOfInter.put(c2, adjustClsDistByShare(c2, clsGwPrefs.get(c2).get(maxGw)));
+						if (this.fog.getClusters().get(c2).ShareRate() < this.fog.getShareRate()*0.8) {
+							if (c2 != c && clsGwPrefs.get(c2).get(maxGw) != null) {
+								//System.out.println(adjustClsDistByShare(c2, clsGwPrefs.get(c2).get(maxGw)));
+								if (maxCompDist < adjustClsDistByShare(c2, clsGwPrefs.get(c2).get(maxGw))) {
+									maxCompDist = adjustClsDistByShare(c2, clsGwPrefs.get(c2).get(maxGw));
+								}
+								if (adjustClsDistByShare(c2,
+										clsGwPrefs.get(c2).get(maxGw)) > adjustClsDistByShare(c, maxDist)
+												* shareThreshold) {
+									clsOfInter.put(c2, adjustClsDistByShare(c2, clsGwPrefs.get(c2).get(maxGw)));
+								}
 							}
 						}
 					}
@@ -974,6 +1558,74 @@ public class WeightedCls extends Clustering {
 					 * +maxCompDist); break;
 					 */
 				}
+			}
+		} // End of CLuster Loop
+	}
+	
+	public void sampleGw2Cluster() {
+		Map<String, Map<String, Double>> minMax = getMinMaxs();
+		Map<Integer, Map<Integer, Double>> clsGwPrefs = new HashMap<>();
+		Integer c = new ArrayList<Integer>(this.fog.getClusters().keySet()).get(0);
+		for (Integer g : this.fog.getGateways().keySet()) {
+			double max = 0.0;
+			// Get Distance between clust and Gw
+			double dist = cluster2GwDistance(c, g, minMax);
+			if (dist > 0.0) {
+				// Add info propperly
+				if (clsGwPrefs.get(c) == null) {
+					Map<Integer, Double> gwtmp = new HashMap<>();
+					gwtmp.put(g, dist);
+					clsGwPrefs.put(c, gwtmp);
+				} else {
+					clsGwPrefs.get(c).put(g, dist);
+				}
+			}
+		}
+		int emptyCls = 0;
+		while (emptyCls != clsGwPrefs.size()) {
+			List<Integer> clust = new ArrayList<Integer>(clsGwPrefs.keySet());
+			Collections.shuffle(clust);
+			emptyCls = 0;
+			if (this.fog.getClusters().get(c).ShareRate() >= this.fog.getShareRate()*0.95) {
+				Map<Integer, Double> empty = new HashMap<Integer, Double>();
+				clsGwPrefs.put(c, empty);
+			}
+			if (clsGwPrefs.get(c).size() == 0) {
+				emptyCls++;
+			} else {
+				// System.out.println(clsGwPrefs.get(c));
+				// Might be better to switch this for for a while that stops
+				// when all gws are allocated
+				// It should just go through the Clusters and not consider
+				// those that are 0.1 above the system Avg
+				// If not null then do the allocations
+				Map<Integer, Double> clsOfInter = new HashMap<>();
+				// Get Gw of Interest
+				Integer maxGw = 0;
+				Double maxDist = 0.0;
+				for (Integer g : clsGwPrefs.get(c).keySet()) {
+					if (clsGwPrefs.get(c).get(g) > maxDist) {
+						maxDist = clsGwPrefs.get(c).get(g);
+						maxGw = g;
+					}
+				}
+				// This Cluster should get a share and we know the Other
+				// Clusters and their values
+				if (this.fog.getClusters().get(c).ShareRate() < this.fog.getShareRate()*0.95) {
+					clsOfInter.put(c, adjustClsDistByShare(c, maxDist));
+					distributeGwtoCls(clsOfInter, maxGw, 1);
+					// Remove Gw if it has been Allocated
+					for (Integer cInt : clsGwPrefs.keySet()) {
+						clsGwPrefs.get(cInt).remove(maxGw);
+					}
+				}
+				/*
+				 * System.out.println(clsGwPrefs.get(c));
+				 * System.out.println(clsOfInter);
+				 * System.out.println("Maxs:"+maxGw+ "Dist: "
+				 * +adjustClsDistByShare(c,maxDist)+" CompDist: " +maxCompDist);
+				 * break;
+				 */
 			}
 		} // End of CLuster Loop
 	}
@@ -1009,8 +1661,8 @@ public class WeightedCls extends Clustering {
 
 	public double adjustClsDistByShare(Integer cls, Double ret){
 		double share = this.fog.getClusters().get(cls).ShareRate();
-		if (share <= 0.5) {
-			ret = ret /0.5;
+		if (share <= 1.2) {
+			ret = ret /0.1;
 		}else{
 			ret= ret / share;
 		}
@@ -1066,7 +1718,7 @@ public class WeightedCls extends Clustering {
 	//Done fairly but randomly 
 	public void resolveApptoGwNoise() {
 		// Delete all rubbish allocations
-		// Redistribute things to make sane
+		// Redistribute things to make sense
 		for (Integer g : this.fog.getGateways().keySet()) {
 			Float tot = this.fog.getGateways().get(g).getGwBaseLoad();
 			for (Integer c : this.fog.getGateways().get(g).getCluster().keySet()) {
@@ -1091,4 +1743,5 @@ public class WeightedCls extends Clustering {
 			}
 		}
 	}
+
 }

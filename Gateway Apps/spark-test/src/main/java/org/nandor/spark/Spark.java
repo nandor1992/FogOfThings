@@ -71,7 +71,7 @@ public class Spark{
 		return data;	
 	}
 
-	public static void main(String[] args) {
+	public static void mainOld(String[] args) {
 		//Logger logger = Logger.getRootLogger();
 	    SparkConf conf = new SparkConf();
 	    JavaSparkContext sc = new JavaSparkContext(conf);
@@ -133,5 +133,17 @@ public class Spark{
 	    
 	    sc.stop();
 	  }
+	
+	public static void main(String[] args) {
+		//Fog f=Exporter.readJsonFog(readJson("C:/Users/Nandor/Documents/FogOfThings/Gateway Apps/spark-test/src/main/java/org/nandor/spark/deploy-W.json"));
+	    SparkConf conf = new SparkConf();
+	    JavaSparkContext sc = new JavaSparkContext(conf);
+	    String fogFile = args[0];    
+		Fog f = Methods.InitFog(Integer.valueOf(args[0]), 0);
+		//Methods.CorrelationClusterin(f);
+		Methods.GAGlobal(f, 150, 500, true);
+		//Methods.weightedDistanceClusteringOptimization(f);
+		Methods.SampleWeDiCOptimization(f);
+	}
 	
 }

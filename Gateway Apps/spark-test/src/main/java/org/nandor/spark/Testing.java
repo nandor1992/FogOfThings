@@ -152,7 +152,7 @@ public class Testing {
 		Methods.nandorsAlphaResourceAlloc(f);
 		Methods.displayClsAndRes(f);
 		List<Map<Integer, Integer>> bestsCls2 = Methods.GAClus(f, 40, 60, true);
-		//Correlation 
+		//Correlation `
 		WeightedCls cls = new WeightedCls(f);
 		WeightedCls cls2 = new WeightedCls(f);
 		WeightedCls clsGlob = new WeightedCls(f);
@@ -171,10 +171,48 @@ public class Testing {
 
 	}
 	
+	public static void main222(String[] args) {
+		//Fog f=Exporter.readJsonFog(readJson("C:/Users/Nandor/Documents/FogOfThings/Gateway Apps/spark-test/src/main/java/org/nandor/spark/deploy-W.json"));
+		Fog f = Methods.InitFog(60, 0);
+		WeightedCls cls = new WeightedCls(f);
+		/*List<Map<Integer, Integer>> bests = Methods.GAGlobal(f, 60, 150, true);
+		if (bests == null) {
+			System.out.println("Failed Global GA");
+		}
+		//writeJson("C:/Users/Nandor/Documents/FogOfThings/Gateway Apps/spark-test/src/main/java/org/nandor/spark/deploy-W.json",Exporter.writeJsonFog(f));
+		Map<String, Double> corrApp = cls.Correlation("Deployment", cls.allAppSimilarities(bests));
+		Map<String, Double> corrGw = cls.Correlation("Deployment", cls.allGwSimilarities(bests));
+		System.out.println("Apps Correlations: "+corrApp);
+		System.out.println("Gws Correlations: "+corrGw);
+		cls.setCorrelation(corrApp, corrGw,0.3);*/
+		cls.appWeights = new java.util.HashMap<>();
+		cls.gwWeights = new java.util.HashMap<>();
+		cls.appWeights.put("Constraints",0.1581055177966246);
+		cls.appWeights.put("RequirementSim",0.2830447252327823);
+		cls.appWeights.put("ResourceShare",0.2492529182282662);
+		cls.appWeights.put("Distance",0.30959683874232696);
+		cls.gwWeights.put("SharedRes",1.0);
+		//System.out.println(cls.getNeighbours(f.getApps().get(1).getId(),(float)2.7,0));
+		double start = System.currentTimeMillis();
+		if (Methods.WeightedClustering(f, cls, 7)) {	
+			Methods.weightedResourceAlloc(f, cls, 2, 0.5);
+			Methods.displayClsAndRes(f);
+			//Methods.GAClus(f, 40, 100, true);
+		}
+		System.out.println("Time finished: "+((System.currentTimeMillis()-start)/1000.0));
+	}
+	
 	public static void main(String[] args) {
 		//Fog f=Exporter.readJsonFog(readJson("C:/Users/Nandor/Documents/FogOfThings/Gateway Apps/spark-test/src/main/java/org/nandor/spark/deploy-W.json"));
 		Fog f = Methods.InitFog(12, 0);
-		Methods.CorrelationClusterin(f);
+		//Methods.CorrelationClusterin(f);
+		//Methods.GAGlobal(f, 100, 50, true);
+		//Methods.weightedDistanceClusteringOptimization(f);
+		f.setDeplpyment(Methods.SampleWeDiCOptimization(f));
+		f.deployFog();
+		writeJson("C:/Users/Nandor/Documents/FogOfThings/Gateway Apps/spark-test/src/main/java/org/nandor/spark/deploy-W.json",Exporter.writeJsonFog(f));
+		//Methods.IterativeCorrelationClustering(f,5);
 	}
-
+	
+	
 }

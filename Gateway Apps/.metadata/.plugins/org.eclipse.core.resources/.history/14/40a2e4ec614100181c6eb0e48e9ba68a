@@ -1,0 +1,9 @@
+package org.nandor.spark;
+
+public class WeighTrainer {
+	
+	public weightTrainer(){
+		
+	}
+
+}

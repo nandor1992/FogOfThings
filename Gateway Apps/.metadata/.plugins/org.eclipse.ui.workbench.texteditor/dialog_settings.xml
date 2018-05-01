@@ -6,22 +6,25 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="46" key="selection"/>
+		<item value="r" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wrap"/>
-		<item value="true" key="wholeword"/>
+		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="46"/>
-			<item value="23"/>
-			<item value="clustParam"/>
-			<item value="reliability"/>
-			<item value="reliablity"/>
-			<item value="random"/>
-			<item value="utilityWeights"/>
-			<item value="gwCloudIntLat"/>
+			<item value="r"/>
+			<item value="ShareRate()"/>
+			<item value="gw"/>
+			<item value="p2"/>
+			<item value="p1"/>
+			<item value="simWeights"/>
+			<item value="delay"/>
+			<item value="Point is"/>
 		</list>
 		<list key="replacehistory">
+			<item value="a"/>
+			<item value="1"/>
+			<item value="p"/>
 			<item value="this."/>
 			<item value="Test_App2"/>
 		</list>

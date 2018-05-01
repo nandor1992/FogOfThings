@@ -1,0 +1,253 @@
+package org.nandor.spark;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.hadoop.util.UTF8ByteArrayUtils;
+
+public class WeighTrainer {
+		//Maybe Use Hooke-Jeeves Algorithm
+		//https://www.siam.org/books/textbooks/fr18_book.pdf
+		private int maxStep;
+		private boolean failed = false;
+		private double procLim = 0.1;
+		private double diffLim = 0.005;
+		private int bestIter = 0;
+		private  List<Float>utils = new ArrayList<>();
+		private List<Map<String, Double>> appWeights = new ArrayList<>();
+		private List<Map<String, Double>> gwWeights = new ArrayList<>();
+		private List<Map<String, Double>> corrApp = new ArrayList<>();
+		private List<Map<String, Double>> corrGw = new ArrayList<>();
+
+	public  WeighTrainer(int maxStep){
+		//Constructor for Class, might be empty, or some constants
+		this.maxStep = maxStep;
+		appWeights.add(new HashMap<>());
+		gwWeights.add(new HashMap<>());
+		corrApp.add(new HashMap<>());
+		corrGw.add(new HashMap<>());
+	}
+	
+	public void correlationResults(Map<String, Double> corrApp, Map<String, Double> corrGw) {
+		//Increase iter
+		System.out.println("Corr");	
+		//Add Data
+		if (fullStopCriterion()){
+			//Everything Fine, keep Probing to see how deep this goes 
+			if (dirStopCriterion()){
+				probe(corrApp, corrGw);
+			}
+		}else{
+			this.setFailed();
+		}
+	}
+	
+	private void probe(Map<String, Double> corrApp, Map<String, Double> corrGw){
+		Double appMax = 0.0;
+		Double gwMax = 0.0;
+		for (String name: corrApp.keySet()){
+			if (Math.abs(corrApp.get(name))>appMax){
+				appMax = Math.abs(corrApp.get(name));
+			}
+		}
+		for (String name: corrGw.keySet()){
+			if (Math.abs(corrGw.get(name))>gwMax){
+				gwMax = Math.abs(corrGw.get(name));
+			}
+		}
+		this.corrApp.add(corrApp);
+		this.corrGw.add(corrGw);
+		
+		//
+		this.appWeights.add(new HashMap<>());
+		this.gwWeights.add(new HashMap<>());
+		int i = this.gwWeights.size()-1;
+		//Apps
+		for (String name: corrApp.keySet()){
+			if (Math.abs(corrApp.get(name))>appMax*procLim){
+				appWeights.get(i).put(name, Math.abs(corrApp.get(name)));
+			}
+		}
+		//Gateways
+		for (String name: corrGw.keySet()){
+			if (Math.abs(corrGw.get(name))>gwMax*procLim){
+				gwWeights.get(i).put(name, Math.abs(corrGw.get(name)));
+			}
+		}
+		
+		//Adjust so that their sum is 1 (why dunno, seems to make sense to me)
+		double sum1=0.0;
+		for (String name: appWeights.get(i).keySet()){
+			sum1+=appWeights.get(i).get(name);
+		}
+		for (String name: appWeights.get(i).keySet()){
+			appWeights.get(i).put(name,appWeights.get(i).get(name)/sum1);
+		}
+		double sum2=0.0;
+		for (String name: gwWeights.get(i).keySet()){
+			sum2+=gwWeights.get(i).get(name);
+		}
+		for (String name: gwWeights.get(i).keySet()){
+			gwWeights.get(i).put(name,gwWeights.get(i).get(name)/sum2);
+		}
+		
+	}
+	
+	private boolean dirStopCriterion(){
+		if (failed){
+			failed=false;
+			return false;
+		}
+		if (utils.size()<=1){
+			return true;
+		}
+		if ((utils.get(utils.size()-1)>(double)utils.get(utils.size()-2) && relDiff((double)utils.get(utils.size()-1),(double)utils.get(utils.size()-2))>diffLim)){
+			return true;
+		}
+		return false;
+	}
+	
+	private boolean fullStopCriterion() {
+		// TODO Auto-generated method stub
+		return dirStopCriterion();
+	}
+	
+	public void attemptResult(Float utility) {
+		//Insert the value of the solution just attempted
+		//System.out.println("Utility:");
+		utils.add(utility);
+		if (utility>utils.get(bestIter)){
+			bestIter = utils.size()-1;
+		}
+		if (utils.size()>1){
+			//Not First Iteration
+			if (!fullStopCriterion()){
+				//Everything Fine, keep Probing to see how deep this goes 
+				this.setFailed();
+			}
+		}
+	}
+	
+
+	public boolean getNextStep(){
+		//Empty request for the next step, will be reimplemented
+		return !failed;
+	}
+
+	public void setFailed() {
+		//Triggered when an attemt failed for one reason or another
+		failed = true;
+	}
+	
+	public String getChar() {
+		////Return Characteristics as a string
+		return "Count: "+utils.size();
+	}
+	
+	public void showData(){
+		System.out.println("Data:");
+		System.out.println("Utils:"+utils);
+		System.out.println("Best Iter: "+bestIter);
+		System.out.println("CorrApp:"+corrApp);
+		System.out.println("CorrGw:"+corrGw);
+		System.out.println("Weight Apps:"+appWeights);
+		System.out.println("Weight Gws:"+gwWeights);
+	}
+
+	public Map<String, Double> appWeights() {
+		return appWeights.get(appWeights.size()-1);
+	}
+
+	public Map<String, Double> gwWeights() {
+		return gwWeights.get(gwWeights.size()-1);
+	}
+	//Math part
+	public Double relDiff(Double x, Double y) {
+		// Get RelativeDiffrence of two numbers
+		// RelDiff = | x - y | / max(|x|,|y|)
+		// |x| = sqrt(x^2)
+		if (x.compareTo(y) == 0) {
+			return 0.0;
+		} else {
+			return Math.sqrt((x - y) * (x - y)) / Math.max(Math.sqrt(x * x), Math.sqrt(y * y));
+		}
+	}
+	
+	public static void main(String[] args) {
+		WeighTrainer w1 = new WeighTrainer(5);
+		List<Map<String, Double>> corrApp = new ArrayList<Map<String,Double>>();
+		List<Map<String, Double>> corrGw  = new ArrayList<Map<String,Double>>();
+		List<Double> util = new ArrayList<Double>();
+		//Iteration Nr. 1
+		int iter =0;
+		corrApp.add(new HashMap());
+		corrGw.add(new HashMap());
+		util.add(57.29681);
+		//App
+		corrApp.get(iter).put("Constraints",0.0349);
+		corrApp.get(iter).put("RequirementSim",0.002361);
+		corrApp.get(iter).put("ResourceShare",0.01075);
+		corrApp.get(iter).put("MessageRate",-0.00127);
+		corrApp.get(iter).put("UtilityWeights",0.0);
+		corrApp.get(iter).put("UnitLoad",-0.0071);
+		corrApp.get(iter).put("Distance",-0.07927);
+		//GW
+		corrGw.get(iter).put("Capabilities",0.0);
+		corrGw.get(iter).put("SharedRes",0.15986);
+		corrGw.get(iter).put("PerfToULoad",0.0);
+		corrGw.get(iter).put("BaseLoad",0.007514);
+		corrGw.get(iter).put("CapToULoad",0.003785);
+		//Iteration Nr. 2
+		iter = 1;
+		corrApp.add(new HashMap());
+		corrGw.add(new HashMap());
+		util.add(57.65052);
+		//App
+		corrApp.get(iter).put("Constraints",0.01849);
+		corrApp.get(iter).put("RequirementSim",0.0059);
+		corrApp.get(iter).put("ResourceShare",0.3482);
+		corrApp.get(iter).put("MessageRate",0.00137);
+		corrApp.get(iter).put("UtilityWeights",0.0);
+		corrApp.get(iter).put("UnitLoad",-0.02149);
+		corrApp.get(iter).put("Distance",-0.08280);
+		//GW
+		corrGw.get(iter).put("Capabilities",0.0);
+		corrGw.get(iter).put("SharedRes",0.53);
+		corrGw.get(iter).put("PerfToULoad",0.0);
+		corrGw.get(iter).put("BaseLoad",0.00737);
+		corrGw.get(iter).put("CapToULoad",0.0048);
+		//Iteration Nr. 3
+		iter = 2;
+		corrApp.add(new HashMap());
+		corrGw.add(new HashMap());
+		util.add(57.7019);
+		//App
+		corrApp.get(iter).put("Constraints",0.00957);
+		corrApp.get(iter).put("RequirementSim",0.01175);
+		corrApp.get(iter).put("ResourceShare",0.1392);
+		corrApp.get(iter).put("MessageRate",0.00943);
+		corrApp.get(iter).put("UtilityWeights",0.0);
+		corrApp.get(iter).put("UnitLoad",-0.005983);
+		corrApp.get(iter).put("Distance",-0.077426);
+		//GW
+		corrGw.get(iter).put("Capabilities",0.0);
+		corrGw.get(iter).put("SharedRes",0.4290);
+		corrGw.get(iter).put("PerfToULoad",0.0);
+		corrGw.get(iter).put("BaseLoad",0.0);
+		corrGw.get(iter).put("CapToULoad",0.00619);
+		int i = 0;
+		w1.attemptResult((float)51.05);
+		while (w1.getNextStep()){
+			System.out.println("Step: "+w1.getChar());
+			w1.correlationResults(corrApp.get(i), corrGw.get(i));
+			w1.showData();
+			w1.attemptResult(util.get(i).floatValue());
+			if (i<2){i++;}else{w1.setFailed();}
+		}
+		System.out.println("Final:");
+		w1.showData();
+	}
+
+}

@@ -1,0 +1,72 @@
+package org.nandor.spark;
+
+import java.util.Map;
+
+import org.apache.hadoop.util.UTF8ByteArrayUtils;
+
+public class WeighTrainer {
+		//Maybe Use Hooke-Jeeves Algorithm
+		//https://www.siam.org/books/textbooks/fr18_book.pdf
+		private int count = 0;
+		private float prevRes = (float) 0.0;
+		private int maxStep;
+
+	public  WeighTrainer(int maxStep){
+		//Constructor for Class, might be empty, or some constants
+		this.maxStep = maxStep;
+	}
+	
+	
+	public void correlationResults(Map<String, Double> corrApp, Map<String, Double> corrGw) {
+		//Add the correlation results of the attempted tests 
+		
+	}
+	
+	public void attemptResult(Float utility) {
+		//Insert the value of the solution just attempted
+		if (utility<prevRes){
+			setFailed();
+		}else{
+			prevRes=utility;
+		}
+		
+	}
+	
+	public boolean getNextStep(){
+		//Empty request for the next step, will be reimplemented
+		count++;
+		if (count>=maxStep){
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+	public void setFailed() {
+		//Triggered when an attemt failed for one reason or another
+		maxStep = count;
+	}
+	
+	public String getChar() {
+		////Return Characteristics as a string
+		return "Count: "+count;
+	}
+
+	
+	public static void main(String[] args) {
+		WeighTrainer w1 = new WeighTrainer(5);
+		Map<String, Double> corrApp = new HashMap<String,Double>();
+		Map<String, Double> corrGw;
+		cls.gwWeights = new java.util.HashMap<>();
+		cls.appWeights.put("Constraints",0.1581055177966246);
+		cls.appWeights.put("RequirementSim",0.2830447252327823);
+		cls.appWeights.put("ResourceShare",0.2492529182282662);
+		cls.appWeights.put("Distance",0.30959683874232696);
+		cls.gwWeights.put("SharedRes",1.0);*/
+		while (w1.getNextStep()){
+			w1.correlationResults(corrApp, corrGw);
+			w1.attemptResult(10.5);
+		}
+	}
+
+}

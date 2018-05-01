@@ -1,5 +1,0 @@
-package org.nandor.spark;
-
-public class AdvancedCls extends Clustering {
-
-}

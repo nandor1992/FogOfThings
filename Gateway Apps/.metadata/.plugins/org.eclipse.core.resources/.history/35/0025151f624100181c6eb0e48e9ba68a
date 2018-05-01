@@ -1,0 +1,21 @@
+package org.nandor.spark;
+
+public class WeighTrainer {
+	
+		private int count = 0;
+		private int maxStep;
+	public void weightTrainer(){
+		count = 0;
+	}
+	
+	public boolean getNextStep(){
+		count++;
+		if count>5){
+			return false;
+		}else
+		{
+			return true;
+		}
+	}
+
+}

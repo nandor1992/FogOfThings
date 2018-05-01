@@ -169,7 +169,7 @@ public class App {
 		Float relApp = (float) 1.0;
 		Map<Integer,Float> GRel = new HashMap<>();
 		for (Integer r : resources.keySet()) {
-			if (resources.get(r).getGateway() != null) {
+			if (resources.get(r).getGateway() != null && this.getGateway()!=null) {
 				int id = resources.get(r).getGateway().getId();
 				if (id != this.getGateway().getId()) {
 					GRel.put(id, resources.get(r).getGateway().getGwReliabiltiy());
@@ -177,7 +177,7 @@ public class App {
 			}
 		}
 		for (Integer a : apps.keySet()) {
-			if (apps.get(a).getGateway() != null) {
+			if (apps.get(a).getGateway() != null && this.getGateway()!=null) {
 				int id = apps.get(a).getGateway().getId();
 				if (id != this.getGateway().getId()) {
 					GRel.put(id, apps.get(a).getGateway().getGwReliabiltiy());
@@ -193,7 +193,11 @@ public class App {
 		}
 		//System.out.println("Res n App Rel:" + (1 - relApp));
 		//System.out.println("Gw Rel:" + this.getGateway().getGwReliabiltiy());
-		return ((float)(1.0 - relApp) * this.getGateway().getGwReliabiltiy());
+		if (this.getGateway()==null){
+			return (float)0.0;
+		}else{
+			return ((float)(1.0 - relApp) * this.getGateway().getGwReliabiltiy());
+		}
 	}
 	
 	//Proc Delay
@@ -233,7 +237,11 @@ public class App {
 				netwDel+=apps.get(a).getGateway().getGatewayLatency(this.getGateway().getId());
 			}
 		}	
-		return netwDel/((float)(resources.size()+apps.size()));
+		if (resources.size()+apps.size()==0){
+			return (float)0.0;
+		}else{
+			return netwDel/((float)(resources.size()+apps.size()));
+		}
 	}
 	
 	public Float getTotDelay(){
