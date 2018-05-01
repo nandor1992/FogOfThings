@@ -15,9 +15,12 @@ public class WeighTrainer {
 		private int maxStep;
 		private int failMax;
 		private boolean exit = false;
-		private boolean failed = false;
+		private boolean appFailed = false;
+		private boolean gwFailed = false;
 		private int failCnt = 0;
-		private double procLim = 0.2;
+		private double procLim = 0.2; //Delete Later 
+		private double appProcLim = 0.2;
+		private double gwProcLim = 0.0;
 		private double diffLim = 0.01;
 		private int bestIter = 0;
 		private  List<Float>utils = new ArrayList<>();
@@ -51,28 +54,44 @@ public class WeighTrainer {
 			this.corrGw.add(corrGw);
 			if (dirStopCriterion()){
 				//System.out.println(" - Not Dir Stop - ");
-				failed=false;
 				probe(corrApp, corrGw);
+				appFailed=false;
+				gwFailed=false;
 			}else{
 				//System.out.print(" - Dir Stop - ");
-				failed=false;
 				failCnt++;
 				//utils.get(utils.size()-1)<(double)utils.get(bestIter) ||
-				if ( bestIter==utils.size()-1){
+				//Check if any the any of the clust or alloc Failed 
+				if (appFailed==true){
+					//Make App changes
+					makeAppChanges(this.corrApp.get(bestIter));
+					probe(this.corrApp.get(bestIter), this.corrGw.get(bestIter));
+				}else if (gwFailed==true){
+					//Make Gw Changes
+					makeGwChanges(this.corrGw.get(bestIter));
+					probe(this.corrApp.get(bestIter), this.corrGw.get(bestIter));
+				}else if ( bestIter==utils.size()-1){
 					//System.out.println(" - Better Util");
-					makeChanges(corrApp, corrGw);
+					//makeChanges(corrApp, corrGw);
+					makeAppChanges(corrApp);
+					makeGwChanges(corrGw);
 					probe(corrApp, corrGw);
 				}else{
 					//System.out.println(" - Worse Util");
-					makeChanges(this.corrApp.get(bestIter), this.corrGw.get(bestIter));
+					//makeChanges(this.corrApp.get(bestIter), this.corrGw.get(bestIter));
+					makeAppChanges(this.corrApp.get(bestIter));
+					makeGwChanges(this.corrGw.get(bestIter));
 					probe(this.corrApp.get(bestIter), this.corrGw.get(bestIter));
 				}
+				appFailed=false;
+				gwFailed=false;
 			}
 		}else{
 			exit = true;
 		}
 	}
 	
+	//Make Changes
 	private void makeChanges(Map<String, Double> corrApp, Map<String, Double> corrGw) {
 		//System.out.println("Weights:");
 		//System.out.println(appWeights);
@@ -98,7 +117,58 @@ public class WeighTrainer {
 		//System.out.println(procLim);
 	}
 
+	private void makeAppChanges(Map<String, Double> corrApp) {
+		//System.out.println("Weights:");
+		//System.out.println(appWeights);
+		//System.out.println(gwWeights);
+		if (verifyAppUnderfitting(appWeights.get(bestIter),corrApp.size())){
+			//Increase procLim by *1+(1*failRate)
+			System.out.println("Underfitted App Solution, Solving...");
+			appProcLim=appProcLim*(1+(0.2*(double)failCnt));
+		}else if (verifyAppOverFitiing(appWeights.get(bestIter))){
+			//Decrease procLim buy *1-(1*failRate)
+			System.out.println("Overfitted App Solution, Solving...");
+			appProcLim=appProcLim*(1-(0.2*(double)failCnt));
+			//Add penalty for top weights of refPenalty*failRate
+			modifyAppPenalties(appWeights.get(bestIter),0.2*(double)failCnt);
+		}else{
+			//Consider the solution to stagnation as something that can be used generically
+			System.out.println("General App Stagnation, Solving...");
+			appProcLim=appProcLim*(1+(0.1*(double)failCnt));
+			modifyAppRandPenalties(0.2*(double)failCnt,1.0*(double)failCnt);
+		}
+		//System.out.println("proc/Penalties:");
+		//System.out.println(appPenalties+" : "+gwPenalties);
+		//System.out.println(procLim);
+	}
+	
+	private void makeGwChanges(Map<String, Double> corrGw) {
+		//System.out.println("Weights:");
+		//System.out.println(appWeights);
+		//System.out.println(gwWeights);
+		if (verifyGwUnderfitting(gwWeights.get(bestIter),corrGw.size())){
+			//Increase procLim by *1+(1*failRate)
+			System.out.println("Underfitted Gw Solution, Solving...");
+			gwProcLim=gwProcLim*(1+(0.2*(double)failCnt));
+		}else if (verifyGwOverFitiing(gwWeights.get(bestIter))){
+			//Decrease procLim buy *1-(1*failRate)
+			System.out.println("Overfitted Gw Solution, Solving...");
+			gwProcLim=gwProcLim*(1-(0.2*(double)failCnt));
+			//Add penalty for top weights of refPenalty*failRate
+			modifyGwPenalties(gwWeights.get(bestIter),0.5*(double)failCnt);
+		}else{
+			//Consider the solution to stagnation as something that can be used generically
+			System.out.println("General Gw Stagnation, Solving...");
+			gwProcLim=gwProcLim*(1+(0.1*(double)failCnt));
+			modifyGwRandPenalties(0.2*(double)failCnt,1.0*(double)failCnt);
+		}
+		//System.out.println("proc/Penalties:");
+		//System.out.println(appPenalties+" : "+gwPenalties);
+		//System.out.println(procLim);
+	}
 
+	
+	//Modify Penalties
 	private void modifyPenalties(Map<String, Double> appWeights, Map<String, Double> gwWeights,Double appRem,Double gwRem) {
 		Double appAvg = 0.0;
 		Double gwAvg = 0.0;
@@ -140,6 +210,55 @@ public class WeighTrainer {
 		}
 	}
 	
+	private void modifyAppPenalties(Map<String, Double> appWeights,Double appRem) {
+		Double appAvg = 0.0;
+		//App
+		for (String name: appWeights.keySet()){
+			appAvg+=appWeights.get(name);
+		}
+		appAvg=appAvg/(double)appWeights.size();
+		//System.out.println("----->Averages:");
+		//System.out.println(appAvg);
+		//System.out.println(gwAvg);
+		//Penalties for those that exist
+		for (String name: corrApp.get(corrApp.size()-1).keySet()){
+			if (appWeights.containsKey(name)){
+				if (appWeights.get(name)>appAvg){
+					appPenalties.put(name,1-appRem);
+				}else{
+					appPenalties.put(name, 1+appRem);
+				}
+			}else{
+				appPenalties.put(name, 1+appRem);
+			}
+		}
+	}
+	
+	private void modifyGwPenalties(Map<String, Double> gwWeights,Double gwRem) {
+		Double gwAvg = 0.0;
+		//Gw
+		for (String name: gwWeights.keySet()){
+			gwAvg+=gwWeights.get(name);
+		}
+		gwAvg=gwAvg/(double)gwWeights.size();
+		//System.out.println("----->Averages:");
+		//System.out.println(appAvg);
+		//System.out.println(gwAvg);
+		//Penalties for those that exist
+		for (String name: corrGw.get(corrGw.size()-1).keySet()){
+			if (gwWeights.containsKey(name)){
+				if (gwWeights.get(name)>=gwAvg){
+					gwPenalties.put(name, 1-gwRem);
+				}else{
+					gwPenalties.put(name, 1+gwRem);
+				}
+			}else{
+				gwPenalties.put(name, 1+gwRem);
+			}
+		}
+	}
+	
+	//Rand Modify
 	private void modifyRandPenalties(double min, double max) {
 		Random rand = new Random();
 		for (String name:this.corrApp.get(bestIter).keySet()){
@@ -150,7 +269,24 @@ public class WeighTrainer {
 		}
 		
 	}
-
+	
+	private void modifyAppRandPenalties(double min, double max) {
+		Random rand = new Random();
+		for (String name:this.corrApp.get(bestIter).keySet()){
+			appPenalties.put(name, rand.nextDouble()*(max-min)*min);
+		}
+	}
+	
+	private void modifyGwRandPenalties(double min, double max) {
+		Random rand = new Random();
+		for (String name:this.corrApp.get(bestIter).keySet()){
+			appPenalties.put(name, rand.nextDouble()*(max-min)*min);
+		}
+	}
+	
+	
+	
+	//Overfitting
 	private boolean verifyOverFitiing(Map<String,Double> appWeights,Map<String,Double> gwWeights) {
 		// if any component is at 0.8 or higher
 		double overfitThresh = 0.8;
@@ -166,7 +302,30 @@ public class WeighTrainer {
 		}
 		return false;
 	}
-
+	
+	private boolean verifyAppOverFitiing(Map<String,Double> appWeights) {
+		// if any component is at 0.8 or higher
+		double overfitThresh = 0.8;
+		for (String value: appWeights.keySet()){
+			if (appWeights.get(value)>=overfitThresh){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	private boolean verifyGwOverFitiing(Map<String,Double> gwWeights) {
+		// if any component is at 0.8 or higher
+		double overfitThresh = 0.8;
+		for (String value: gwWeights.keySet()){
+			if (gwWeights.get(value)>=overfitThresh){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	//Verify Underfitting
 	private boolean verifyUnderfitting(Map<String,Double> appWeights,Map<String,Double> gwWeights,int appSize,int gwSize) {
 		Double appAvg = 0.0;
 		Double gwAvg = 0.0;
@@ -186,6 +345,37 @@ public class WeighTrainer {
 		return false;
 	}
 	
+	private boolean verifyAppUnderfitting(Map<String,Double> appWeights,int appSize) {
+		Double appAvg = 0.0;
+		double avgThresh = 0.35;
+		for (String value: appWeights.keySet()){
+			appAvg+=appWeights.get(value);
+		}
+		if (appWeights.size()==0){
+			return true;
+		}
+		if ( appAvg/(double)appWeights.size()<avgThresh){
+			return true;
+		}
+		return false;
+	}
+	
+	private boolean verifyGwUnderfitting(Map<String,Double> gwWeights,int gwSize) {
+		Double appAvg = 0.0;
+		Double gwAvg = 0.0;
+		double avgThresh = 0.35;
+		for (String value: gwWeights.keySet()){
+			gwAvg+=gwWeights.get(value);
+		}
+		if (gwWeights.size()==0 ){
+			return true;
+		}
+		if (gwAvg/(double)gwWeights.size()<avgThresh){
+			return true;
+		}
+		return false;
+	}
+	
 	private Map<String,Double> getWeights(Map<String, Double> corr){
 		//slimmed down to just one type 
 		Double Max = 0.0;
@@ -198,15 +388,15 @@ public class WeighTrainer {
 		Map<String,Double> Weights = new HashMap<>();
 		for (String name : corr.keySet()) {
 			if (appPenalties.containsKey(name)) {
-				if (Math.abs(corr.get(name)) > Max * procLim) {
+				if (Math.abs(corr.get(name)) > Max * appProcLim) {
 					Weights.put(name, Math.abs(corr.get(name)) * appPenalties.get(name));
 				}
 			} else if (gwPenalties.containsKey(name)) {
-				if (Math.abs(corr.get(name)) > Max * procLim) {
+				if (Math.abs(corr.get(name)) > Max * gwProcLim) {
 					Weights.put(name, Math.abs(corr.get(name)) * gwPenalties.get(name));
 				}
 			} else {
-				if (Math.abs(corr.get(name)) > Max * procLim) {
+				if (Math.abs(corr.get(name)) > Max * procLim) { //Seems like error but its not Just leave it be
 					Weights.put(name, Math.abs(corr.get(name)));
 				}
 			}
@@ -247,11 +437,11 @@ public class WeighTrainer {
 		for (String name: corrApp.keySet()){
 			//System.out.println("Name:"+name);
 			if (appPenalties.get(name)!=null){
-				if (Math.abs(corrApp.get(name))>appMax*procLim){
+				if (Math.abs(corrApp.get(name))>appMax*appProcLim){
 					appWeights.get(i).put(name, Math.abs(corrApp.get(name))*appPenalties.get(name));
 				}
 			}else{
-				if (Math.abs(corrApp.get(name))>appMax*procLim){
+				if (Math.abs(corrApp.get(name))>appMax*appProcLim){
 					appWeights.get(i).put(name, Math.abs(corrApp.get(name)));
 				}
 			}
@@ -259,11 +449,11 @@ public class WeighTrainer {
 		//Gateways
 		for (String name: corrGw.keySet()){
 			if (gwPenalties.get(name)!=null){
-				if (Math.abs(corrGw.get(name))>gwMax*procLim){
+				if (Math.abs(corrGw.get(name))>gwMax*gwProcLim){
 					gwWeights.get(i).put(name, Math.abs(corrGw.get(name))*gwPenalties.get(name));
 				}
 			}else{
-				if (Math.abs(corrGw.get(name))>gwMax*procLim){
+				if (Math.abs(corrGw.get(name))>gwMax*gwProcLim){
 					gwWeights.get(i).put(name, Math.abs(corrGw.get(name)));
 				}
 			}
@@ -288,7 +478,7 @@ public class WeighTrainer {
 	}
 	
 	private boolean dirStopCriterion(){
-		if (failed){
+		if (appFailed==false || gwFailed==false){
 			return false;
 		}
 		if (utils.size()<=1){
@@ -333,14 +523,19 @@ public class WeighTrainer {
 		return !exit;
 	}
 
-	public void setFailed() {
+	public void setAppFailed() {
 		//Triggered when an attemt failed for one reason or another
-		failed = true;
+		appFailed = true;
+	}
+	
+	public void setGwFailed() {
+		//Triggered when an attemt failed for one reason or another
+		gwFailed = true;
 	}
 	
 	public String getChar() {
 		////Return Characteristics as a string
-		return "Count:"+utils.size()+" FailSteps:"+failCnt+" ProcLim:"+procLim+" App-Penalties:"+appPenalties+" Gw-Penalties:"+gwPenalties;
+		return "Count:"+utils.size()+" FailSteps:"+failCnt+" ProcLim[app/gw]:"+appProcLim+"/"+gwProcLim+" App-Penalties:"+appPenalties+" Gw-Penalties:"+gwPenalties;
 	}
 	
 	public void showData(){

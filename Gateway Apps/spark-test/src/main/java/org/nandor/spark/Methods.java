@@ -388,7 +388,7 @@ public class Methods {
 				List<Map<Integer, Integer>> tmpbests = Methods.GAClus(f, 60, 30, true);
 				if (tmpbests == null){
 						System.out.println("Direction Clustering Failed!");
-						cls.getWeight().setFailed();
+						cls.getWeight().setGwFailed();
 					}else{
 						System.out.println("Direction Clustering Done in :"+((System.currentTimeMillis()-start)/1000.0));
 						bests=tmpbests;
@@ -401,7 +401,7 @@ public class Methods {
 					}
 			}else{
 				System.out.println("Direction Clustering Failed!");
-				cls.getWeight().setFailed();
+				cls.getWeight().setAppFailed();
 			}
 		}
 		System.out.println("Results: ");
@@ -448,7 +448,7 @@ public class Methods {
 				List<Map<Integer, Integer>> tmpbests = Methods.GAClus(f, 60, 150, true);
 				if (tmpbests == null){
 						System.out.println("Direction Clustering Failed!");
-						cls.getWeight().setFailed();
+						cls.getWeight().setGwFailed();
 					}else{
 						System.out.println("Direction Clustering Done in :"+((System.currentTimeMillis()-start)/1000.0));
 						bests=tmpbests;
@@ -461,7 +461,7 @@ public class Methods {
 					}
 			}else{
 				System.out.println("Direction Clustering Failed!");
-				cls.getWeight().setFailed();
+				cls.getWeight().setAppFailed();
 			}
 		}
 		System.out.println("Results: ");
