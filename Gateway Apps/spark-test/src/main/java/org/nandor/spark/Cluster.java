@@ -74,41 +74,55 @@ public class Cluster {
 	}
 	
 	//Verify Validity of Deployment
-	public boolean verifyIndValidity(){
+	public int verifyIndValidity(){
 		//System.out.println("Verifying Validity");
+		int viol = 0;
 		for (Integer g: this.getGateways().keySet()){
 			Gateway gate = this.gateways.get(g);
 			Float load = gate.getGwBaseLoad()+gate.getClusterShare(this.getId());
 			if (gate.getGwLoad()>load){
 				//System.out.println("False");
 				//System.out.println("GW: "+gate.getId()+" Validity: "+gate.getGwLoad()+" Load: "+load);
-				return false;
+				viol++;
 			}
 		}
-		return this.verifyCapabilityVailidty();
+		return viol + this.verifyCapabilityVailidty();
 	}
 	
-	public boolean verifyValidityVerbose() {
+	public int verifyValidityVerbose() {
+		int viol = 0;
 		for (Integer g: this.getGateways().keySet()){
 			Gateway gate = this.gateways.get(g);
 			Float load = gate.getGwBaseLoad()+gate.getClusterShare(this.getId());
-			System.out.println("GW: "+gate.getId()+" Load: "+gate.getGwLoad()+" MaxLoad: "+load);
 			if (gate.getGwLoad()>load){
-				System.out.println("False");
+				System.out.println("GW: "+gate.getId()+" Load: "+gate.getGwLoad()+" MaxLoad: "+load);
+				viol++;
 			}
 		}
+		System.out.println("Final Resp:"+this.verifyCapabilityVailidtyVerbose());
 		System.out.println("Utility:"+this.getClusterCompoundUtility());
-		System.out.println("Final Resp:"+this.verifyCapabilityVailidty());
-		return this.verifyCapabilityVailidty();
+		return viol+this.verifyCapabilityVailidty();
 	}
 	
-	public boolean verifyCapabilityVailidty(){
+	public int verifyCapabilityVailidty(){
+		int viol =0;
 		for (Integer a: this.getApps().keySet()){
 			if (!this.getApps().get(a).validateRequirements()){
-				return false;
+				viol++;
 			}
 		}
-		return true;
+		return viol;
+	}
+	
+	public int verifyCapabilityVailidtyVerbose(){
+		int viol =0;
+		for (Integer a: this.getApps().keySet()){
+			if (!this.getApps().get(a).validateRequirements()){
+				System.out.println("Failed App "+a+" req of: "+this.getApps().get(a).getRequirements()+" on Gw: "+this.getApps().get(a).getGateway().getId()+" with Capabilities: "+this.getApps().get(a).getGateway().getCapabilities());
+				viol++;
+			}
+		}
+		return viol;
 	}
 	
 	

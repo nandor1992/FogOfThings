@@ -20,9 +20,10 @@ public class WeighTrainer {
 		private int failCnt = 0;
 		private double procLim = 0.2; //Delete Later 
 		private double appProcLim = 0.2;
-		private double gwProcLim = 0.0;
-		private double diffLim = 0.01;
+		private double gwProcLim = 0.05;
+		private double diffLim = 0.1;
 		private int bestIter = 0;
+		private int prevBestIter = 0;
 		private  List<Float>utils = new ArrayList<>();
 		private Map<String,Double> appPenalties = new HashMap<>();
 		private Map<String,Double> gwPenalties = new HashMap<>();
@@ -46,38 +47,40 @@ public class WeighTrainer {
 		//Increase iter
 		//System.out.println("Corr");	
 		//Add Data
-		//System.out.println(" -> Sorting Correlation Results:");
+		System.out.print(" -> Sorting Correlation Results");
 		if (fullStopCriterion()){
 			//System.out.print(" - Not Full Stop - ");
 			//Everything Fine, keep Probing to see how deep this goes 
 			this.corrApp.add(corrApp);
 			this.corrGw.add(corrGw);
 			if (dirStopCriterion()){
-				//System.out.println(" - Not Dir Stop - ");
+				System.out.println(" - Not Dir Stop - ");
 				probe(corrApp, corrGw);
 				appFailed=false;
 				gwFailed=false;
 			}else{
-				//System.out.print(" - Dir Stop - ");
+				System.out.print(" - Dir Stop - ");
 				failCnt++;
 				//utils.get(utils.size()-1)<(double)utils.get(bestIter) ||
 				//Check if any the any of the clust or alloc Failed 
 				if (appFailed==true){
 					//Make App changes
+					System.out.print(" - App Failed ");
 					makeAppChanges(this.corrApp.get(bestIter));
 					probe(this.corrApp.get(bestIter), this.corrGw.get(bestIter));
 				}else if (gwFailed==true){
 					//Make Gw Changes
+					System.out.print(" - Gw Failed");
 					makeGwChanges(this.corrGw.get(bestIter));
 					probe(this.corrApp.get(bestIter), this.corrGw.get(bestIter));
 				}else if ( bestIter==utils.size()-1){
-					//System.out.println(" - Better Util");
+					System.out.println(" - Better Util");
 					//makeChanges(corrApp, corrGw);
 					makeAppChanges(corrApp);
 					makeGwChanges(corrGw);
 					probe(corrApp, corrGw);
 				}else{
-					//System.out.println(" - Worse Util");
+					System.out.println(" - Worse Util");
 					//makeChanges(this.corrApp.get(bestIter), this.corrGw.get(bestIter));
 					makeAppChanges(this.corrApp.get(bestIter));
 					makeGwChanges(this.corrGw.get(bestIter));
@@ -273,14 +276,14 @@ public class WeighTrainer {
 	private void modifyAppRandPenalties(double min, double max) {
 		Random rand = new Random();
 		for (String name:this.corrApp.get(bestIter).keySet()){
-			appPenalties.put(name, rand.nextDouble()*(max-min)*min);
+			appPenalties.put(name, rand.nextDouble()*(max-min)+min);
 		}
 	}
 	
 	private void modifyGwRandPenalties(double min, double max) {
 		Random rand = new Random();
 		for (String name:this.corrApp.get(bestIter).keySet()){
-			appPenalties.put(name, rand.nextDouble()*(max-min)*min);
+			appPenalties.put(name, rand.nextDouble()*(max-min)+min);
 		}
 	}
 	
@@ -478,13 +481,13 @@ public class WeighTrainer {
 	}
 	
 	private boolean dirStopCriterion(){
-		if (appFailed==false || gwFailed==false){
+		if (appFailed==true|| gwFailed==true){
 			return false;
 		}
 		if (utils.size()<=1){
 			return true;
 		}
-		if ((utils.get(utils.size()-1)>(double)utils.get(bestIter) && relDiff((double)utils.get(utils.size()-1),(double)utils.get(bestIter))>diffLim) || bestIter==utils.size()-1){
+		if (relDiff((double)utils.get(prevBestIter),(double)utils.get(bestIter))>diffLim && bestIter==utils.size()-1){
 			return true;
 		}
 		return false;
@@ -501,9 +504,10 @@ public class WeighTrainer {
 	
 	public void attemptResult(Float utility) {
 		//Insert the value of the solution just attempted
-		//System.out.println("Utility:");
+		System.out.println("Utility:"+utils);
 		utils.add(utility);
 		if (utility>utils.get(bestIter)){
+			prevBestIter = bestIter;
 			bestIter = utils.size()-1;
 			//Reset only when new best point is found
 			failCnt = 0;

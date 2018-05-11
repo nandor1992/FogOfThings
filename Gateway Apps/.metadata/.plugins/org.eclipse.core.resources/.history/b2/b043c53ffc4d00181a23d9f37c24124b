@@ -1,0 +1,128 @@
+package org.nandor.spark;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+public class WayFinder {
+	
+	private Fog f;
+	private WeightedCls cls;
+	private int count;
+	private int size;
+	private double proc;
+	private int minSize;
+	private Map<String,Double> appWeights;
+	private Map<String,Double> gwWeights;
+	
+	public WayFinder(Fog f, WeightedCls cls, int count, int size, double proc,int minSize){
+		this.f=f;
+		this.cls=cls;
+		this.count=count;
+		this.size=size;
+		this.proc=proc;
+		this.minSize=minSize;
+	}
+	
+	
+	
+	public List<Map<Integer, Integer>> sampleFogAttempt(){
+		genAppWeights(1.0);
+		genGwWeights(1.0);
+		List<Map<Integer, Integer>> ret = attemptRandInstance((int)(f.getApps().size()*proc));
+		while (ret == null){
+			//First Attempt failed do diiiiive util size < min then do min while solution is found and if none is found escape
+			this.modifyWeights();
+			ret = attemptRandInstance((int)(f.getApps().size()*proc));
+		}
+		return null;
+	}
+	//Modify Weights we are working with
+	private void modifyWeights() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	//Generate App Weights
+	public Map<String,Double> genAppWeights(double constr,double req,double share,double rate,double weights, double ul, double dist){
+		Map<String,Double> ret = new HashMap<>();
+		ret.put("Constraints",constr);
+		ret.put("RequirementSim",req);
+		ret.put("ResourceShare",share);
+		ret.put("MessageRate",rate);
+		ret.put("UtilityWeights",weights);
+		ret.put("UnitLoad",ul);
+		ret.put("Distance",dist);
+		return ret;
+	}
+	//Generate GW Weights
+	public Map<String,Double> genGwWeights(double capab,double res, double perf, double base, double capac){
+		Map<String,Double> ret = new HashMap<>();
+		ret.put("Capabilities",capab);
+		ret.put("SharedRes",res);
+		ret.put("PerfToULoad",perf);
+		ret.put("BaseLoad",base);
+		ret.put("CapToULoad",capac);
+		return null;
+	}
+	//Single Instance Attempt
+	public List<Map<Integer, Integer>> attemptRandInstance(int size){
+		List<Integer> apps = new ArrayList<>();
+		List<Integer> totApps = new ArrayList<Integer>(f.getApps().keySet());
+		while (apps.size()<proc*totApps.size()){
+			//Get Random app add it to list
+			Collections.shuffle(totApps);
+				apps.add(totApps.get(0));
+			
+		}
+		f.clearGwClustConns();
+		f.removeClusters();
+		List<Set<Integer>> tmpList= new ArrayList<>();
+		tmpList.add(new HashSet<Integer>(apps));
+		f.createClusters(tmpList);//eps, minPts
+		cls.setGwWeights(gwWeights);
+		cls.setAppWeights(appWeights);
+		Methods.sampleResourceAlloc(f,cls);
+		//displayClsAndRes(f);
+		List<Map<Integer, Integer>> tmp = Methods.sampGAClus(f, size, count, true);
+		cls.clearWeights();
+		return  tmp;
+	}
+	
+	//Single Shot old Method
+	public List<Map<Integer, Integer>> singleShot(){
+		List<Integer> apps = new ArrayList<>();
+		List<Integer> totApps = new ArrayList<Integer>(f.getApps().keySet());
+		while (apps.size()<proc*totApps.size()){
+			//Get Random app add it to list
+			Collections.shuffle(totApps);
+				apps.add(totApps.get(0));
+			
+		}
+		f.clearGwClustConns();
+		f.removeClusters();
+		List<Set<Integer>> tmpList= new ArrayList<>();
+		tmpList.add(new HashSet<Integer>(apps));
+		f.createClusters(tmpList);//eps, minPts
+		cls.resetGwWeights(1.0);
+		cls.resetAppWeights(1.0);
+		Methods.sampleResourceAlloc(f,cls);
+		//displayClsAndRes(f);
+		List<Map<Integer, Integer>> tmp = Methods.sampGAClus(f, size, count, true);
+		cls.clearWeights();
+		return tmp;
+	}
+	
+	//Main
+	public static void main(String[] args) {
+		Fog f = Methods.InitFog(20, 0);
+		WeightedCls cls = new WeightedCls(f);
+		WayFinder wf = new WayFinder(f, cls, 10, 5, 0.2, 10);
+		wf.singleShot();
+	}
+
+}

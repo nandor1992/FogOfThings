@@ -233,6 +233,18 @@ public class Clustering {
 		}
 		return minI;
 	}
+	
+	public Double getShortestDistVal(Map<Integer,Double> dist,List<Integer> queue){
+		Double min = Double.POSITIVE_INFINITY;
+		Integer minI = null;
+		for (Integer i: queue){
+			if (dist.get(i)<min){
+				minI=i;
+				min=dist.get(i);
+			}
+		}
+		return min;
+	}
 
 	public Map<Integer, Double> dijkstraSearsch(Integer p) {
 		// Init
@@ -279,7 +291,8 @@ public class Clustering {
 			//System.out.println(queue);
 			//System.out.println(dist);
 			Integer u = getShortestDist(dist, queue);
-			if (u != null) {
+			Double dist1 = getShortestDistVal(dist, queue);
+			if (u != null & dist1<=maxDist) {
 				//System.out.println(u);
 				queue.remove(queue.indexOf(u));
 				for (Integer i : this.nodes.get(u)) {

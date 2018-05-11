@@ -1,0 +1,12 @@
+package org.nandor.spark;
+
+public class WayFinder {
+
+	public WayFinder()
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

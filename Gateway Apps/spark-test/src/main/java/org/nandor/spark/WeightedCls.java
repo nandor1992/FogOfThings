@@ -762,6 +762,7 @@ public class WeightedCls extends Clustering {
 		System.out.println("Corr App: "+appWeights+" Corr Gw:"+gwWeights);
 	}
 	
+	//Reset Wiehgts to same value
 	public void resetGwWeights(Double val) {
 		//Find parameters of interest
 		//appWeights gwWeights
@@ -794,6 +795,14 @@ public class WeightedCls extends Clustering {
 		for (String name: names){
 			appWeights.put(name,val);
 		}
+	}
+	
+	public void setGwWeights(Map<String, Double> gwWeights) {
+		this.gwWeights=gwWeights;
+		
+	}
+	public void setAppWeights(Map<String, Double> appWeights) {
+		this.appWeights=appWeights;	
 	}
 	
  public void clearWeights(){
@@ -967,6 +976,51 @@ public class WeightedCls extends Clustering {
 		return this.clust;
 	}
 	
+	public List<Set<Integer>> singleClsDB(int minPts,int clsSize) {
+		// TODO Auto-generated method stub
+		boolean success = false;
+		List<Set<Integer>> ret = new ArrayList<>();
+		
+		List<Double> epsVals = this.getMinMaxEpsValues(5.0,4);
+		float eps = (epsVals.get(0).floatValue()+epsVals.get(1).floatValue())/2;
+		visited = new HashSet<>();
+		noise = new HashSet<>();
+		clust = new ArrayList<>();
+		List<Integer> points = new ArrayList<>(nodes.keySet());
+		Random rand;
+		int fails = 0;
+		while (success == false) {
+			Collections.shuffle(points);
+			int p = points.get(0);
+			if (fails%10==0){
+				eps=eps-epsVals.get(2).floatValue();
+			}
+			if (eps<0){
+				break;
+			}
+			System.out.println("SingleDB Attempt - Point: "+p+" Eps: "+eps+" fails: "+fails);
+			if (!this.visited.contains(p)) {
+				this.visited.add(p);
+				// System.out.println("Neighbourhood Queest: "+p+" Apps:
+				// "+nodes.get(p));
+				List<Integer> neighbour = getNeighbours(p, eps, 4);
+				// System.out.println(neighbour);
+				if (neighbour.size() < minPts) {
+					this.noise.add(p);
+				} else {
+					Set<Integer> cls = expandCluster(p, neighbour, eps, minPts,clsSize);
+					if (cls.size()>=clsSize){
+						this.clust.add(cls);
+						ret.add(cls);
+						return ret;
+					}
+				}
+			}
+			fails++;
+		}
+		return ret;
+	}
+
 	public List<Set<Integer>> DBScan(Integer minPts,List<Double> epsVals){
 		//System.out.println("Apps:"+this.nodes.keySet());
 		this.visited = new HashSet<>();
@@ -1105,7 +1159,7 @@ public class WeightedCls extends Clustering {
 			}
 		}
 		Double band = (max-min)/10.0;
-		System.out.println("Min: "+min+" Max:"+max+" Band "+band);
+		//System.out.println("Min: "+min+" Max:"+max+" Band "+band);
 		for (int i=0;i<=10;i++){
 			histogram.put(min+band*i, 0);
 		}
@@ -1114,7 +1168,7 @@ public class WeightedCls extends Clustering {
 			//System.out.println("Loc:"+loc+"Value:"+(min+band*loc));
 			histogram.put(min+band*loc, histogram.get(min+band*loc)+1);
 		}
-		System.out.println("Histogram: "+histogram);
+		//System.out.println("Histogram: "+histogram);
 		Double retMin = Double.MAX_VALUE,retMax=0.0;
 		//Min Maxes
 		int tmpMax = 0;
@@ -1141,7 +1195,7 @@ public class WeightedCls extends Clustering {
 		ret.add(retMin);
 		ret.add(retMax);
 		ret.add((retMax-retMin)/div);
-		System.out.println(ret);
+		System.out.println("Eps Vals:"+ret);
 		/*ret = new ArrayList<>();
 		ret.add(0.1);
 		ret.add(7.0);
@@ -1743,5 +1797,6 @@ public class WeightedCls extends Clustering {
 			}
 		}
 	}
+
 
 }

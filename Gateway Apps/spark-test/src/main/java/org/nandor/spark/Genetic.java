@@ -50,7 +50,7 @@ public class Genetic {
 			cnt++;
 			this.fog.clearAppToGws();
 			this.fog.AssignAppsToGws(randInd);
-			if (c.verifyIndValidity()){
+			if (c.verifyIndValidity()==0){
 				if (c.getClusterCompoundUtility()>util){
 					util=c.getClusterCompoundUtility();
 					bestGen=new HashMap<Integer,Integer>(randInd);
@@ -84,7 +84,7 @@ public class Genetic {
 			cnt++;
 			this.fog.clearAppToGws();
 			this.fog.AssignAppsToGws(randInd);
-			if (this.fog.verifyIndValidity()){
+			if (this.fog.verifyIndValidity()==0){
 				if (this.fog.getFogCompoundUtility()>util){
 					util=this.fog.getFogCompoundUtility();
 					bestGen=new HashMap<Integer,Integer>(randInd);
@@ -151,7 +151,7 @@ public class Genetic {
 		int i=0;
 		int bestI = 0;
 		int sinceLastBest = 0;
-		while (sinceLastBest<generations || (!safe || bestUtil==0.0 )) {
+		while (sinceLastBest<generations || (safe  && bestUtil==0.0 )) {
 			i++;
 			//System.out.print("Loop Count " + i + ": ");
 			//System.out.println("----- Get Elite Population -----");
@@ -172,13 +172,13 @@ public class Genetic {
 				bestI = i;
 				sinceLastBest=0;
 				//System.out.println("The best of the Population "+i+" is: "+bestUtil+" With: "+this.bestIndi);
-			}
+			}else{sinceLastBest++;}
 			pop=newpop;
 			if (i % max == 0){
 				if (bestUtil!=0.0){
 					break;
 				}else{
-					System.out.println("Ga Failed!");
+					System.out.println("Ga Failed at pop "+i+" !");
 					this.fog.clearAppToGws();
 					this.fog.AssignAppsToGws(pop.get(0));
 					System.out.println(pop.get(0));
@@ -188,9 +188,18 @@ public class Genetic {
 				
 			}
 		}
-		this.bestCGens.put(c.getId(),getBestGens(pop, (int)(size*elitPop),c,true));
-		System.out.println("The best of the Population "+bestI+" is: "+bestUtil);//+" With: "+this.bestIndi
-		return this.bestIndi;
+		if (bestUtil!=0){
+			this.bestCGens.put(c.getId(),getBestGens(pop, (int)(size*elitPop),c,true));
+			System.out.println("The best of the Population "+bestI+" is: "+bestUtil);//+" With: "+this.bestIndi
+			return this.bestIndi;
+		}else{
+			System.out.println("Ga Failed at pop "+i+" !");
+			this.fog.clearAppToGws();
+			this.fog.AssignAppsToGws(pop.get(0));
+			System.out.println(pop.get(0));
+			//c.verifyValidityVerbose();
+			return null;
+		}
 	}
 	
 	
@@ -334,7 +343,7 @@ public class Genetic {
 			Map<Integer,Integer> indi = iter.next();
 			this.fog.clearAppToGws();
 			this.fog.AssignAppsToGws(indi);
-			if (c.verifyIndValidity()){
+			if (c.verifyIndValidity()==0){
 				float tmp = c.getClusterCompoundUtility();
 				if (tmp>best){
 					best=tmp;
@@ -355,7 +364,7 @@ public class Genetic {
 			this.fog.clearAppToGws();
 			this.fog.AssignAppsToGws(indi);
 			float tmp = c.getClusterCompoundUtility();
-			if (c.verifyIndValidity()) {
+			if (c.verifyIndValidity()==0) {
 				g1.addGeneration(indi, tmp);
 			}
 		}
@@ -372,7 +381,9 @@ public class Genetic {
 					this.fog.clearAppToGws();
 					this.fog.AssignAppsToGws(indi);
 					float tmp = c.getClusterCompoundUtility();
-					g2.addGeneration(indi, tmp);
+					//If it breaks here you are using valid ones which would be odd
+					float viol = (float)c.verifyIndValidity();
+					g2.addGeneration(indi, tmp/viol);
 				}
 			}
 			ret.addAll(g2.getGenerations());
@@ -391,7 +402,7 @@ public class Genetic {
 			this.fog.clearAppToGws();
 			this.fog.AssignAppsToGws(indi);
 			float tmp = c.getClusterCompoundUtility();
-			if (c.verifyIndValidity()) {
+			if (c.verifyIndValidity()==0) {
 				//System.out.println(tmp);
 				stack.put(pop.indexOf(indi), tmp);
 				retS += 1;
@@ -402,7 +413,7 @@ public class Genetic {
 			Map<Integer, Integer> indi = iter.next();
 			this.fog.clearAppToGws();
 			this.fog.AssignAppsToGws(indi);
-			if (c.verifyIndValidity()) {
+			if (c.verifyIndValidity()==0) {
 				// System.out.println(tmp);
 				float tmp = c.getClusterCompoundUtility();
 				Entry<Integer, Float> min = null;
@@ -486,7 +497,7 @@ public class Genetic {
 		}
 		this.fog.clearAppToGws();
 		this.fog.AssignAppsToGws(gen);
-		while (!c.verifyIndValidity()){
+		while (!(c.verifyIndValidity()==0)){
 			this.fog.clearAppToGws();
 			gen = new HashMap<>();
 			for (Integer i:app){
@@ -514,7 +525,7 @@ public class Genetic {
 	/*
 	 * This is the part that take care of the Global optimization, most methods are created for this
 	 */
-	public Map<Integer,Integer> GAGlobal(int size, int count,boolean safe) {
+	public Map<Integer, Integer> GAGlobal(int size, int count,boolean safe) {
 		System.out.println("GA Global GwCount: " + this.gwCount + " AppCnt: " + this.AppCnt);
 		long start=System.currentTimeMillis();
 		// Ga Parameters
@@ -559,15 +570,25 @@ public class Genetic {
 			}
 			pop=newpop;
 		}
-		this.bestGens  = getBestGens(pop, 20,true);
-		System.out.println("The best of the Population "+bestI+" is: "+bestUtil+" At: "+(System.currentTimeMillis()-start)/(float)1000);
-		
-		return this.bestIndi;
+		if (bestUtil!=0){
+			this.bestGens  = getBestGens(pop, 20,true);
+			System.out.println("The best of the Population "+bestI+" is: "+bestUtil+" At: "+(System.currentTimeMillis()-start)/(float)1000);
+			return this.bestIndi;
+		}else{
+			System.out.println("GA Global Failed");
+			this.fog.clearAppToGws();
+			this.fog.AssignAppsToGws(pop.get(0));
+			System.out.println(pop.get(0));
+			System.out.println(this.fog.verifyValidityVerbose());
+			//this.fog.clearAppToGws();
+			return null;
+		}
 	}
 	
 	public Map<Integer,Integer> GAGlobal(int size,int generations,boolean safe,int max) {
 		System.out.println("GA Global GwCount: " + this.gwCount + " AppCnt: " + this.AppCnt);
 		long start=System.currentTimeMillis();
+		float prevBestUtil =(float) 0.0;
 		// Ga Parameters
 		//TODO Easy to find Global
 		this.fog.clearAppToGws();
@@ -588,7 +609,7 @@ public class Genetic {
 					this.fog.AssignAppsToGws(pop.get(0));
 					System.out.println(pop.get(0));
 					System.out.println(this.fog.verifyValidityVerbose());
-					Methods.displayClsAndRes(this.fog);
+					//Methods.displayClsAndRes(this.fog);
 					//this.fog.clearAppToGws();
 					break;
 				}
@@ -613,7 +634,10 @@ public class Genetic {
 				bestI=i;
 				sinceLastBest=0;
 				//" With: "+this.bestIndi+
-				//System.out.println("The best of the Population "+i+" is: "+bestUtil+" At: "+(System.currentTimeMillis()-start)/(float)1000);
+				if (bestUtil>prevBestUtil+0.5){
+					prevBestUtil=bestUtil;
+					System.out.println("The best of the Population "+i+" is: "+bestUtil+" At: "+(System.currentTimeMillis()-start)/(float)1000);
+				}
 			}else{
 				sinceLastBest++;
 			}
@@ -696,7 +720,7 @@ public class Genetic {
 			this.fog.clearAppToGws();
 			this.fog.AssignAppsToGws(indi);
 			float tmp = this.fog.getFogCompoundUtility();
-			if (tmp>best && this.fog.verifyIndValidity()){
+			if (tmp>best && this.fog.verifyIndValidity()==0){
 				best=tmp;
 				bestIndi = indi;
 			}
@@ -714,7 +738,7 @@ public class Genetic {
 			this.fog.clearAppToGws();
 			this.fog.AssignAppsToGws(indi);
 			float tmp = this.fog.getFogCompoundUtility();
-			if (this.fog.verifyIndValidity()) {
+			if (this.fog.verifyIndValidity()==0) {
 				g1.addGeneration(indi, tmp);
 			}
 		}
@@ -731,7 +755,9 @@ public class Genetic {
 					this.fog.clearAppToGws();
 					this.fog.AssignAppsToGws(indi);
 					float tmp = this.fog.getFogCompoundUtility();
-					g2.addGeneration(indi, tmp);
+					float viol = this.fog.verifyIndValidity();
+					//If fails you are using the wrong data
+					g2.addGeneration(indi, tmp/viol);
 				}
 			}
 			ret.addAll(g2.getGenerations());
@@ -750,7 +776,7 @@ public class Genetic {
 			this.fog.clearAppToGws();
 			this.fog.AssignAppsToGws(indi);
 			float tmp = this.fog.getFogCompoundUtility();
-			if (this.fog.verifyIndValidity()) {
+			if (this.fog.verifyIndValidity()==0) {
 				// System.out.println(tmp);
 				stack.put(pop.indexOf(indi), tmp);
 				retS += 1;
@@ -762,7 +788,7 @@ public class Genetic {
 			this.fog.clearAppToGws();
 			this.fog.AssignAppsToGws(indi);
 			float tmp = this.fog.getFogCompoundUtility();
-			if (this.fog.verifyIndValidity()) {
+			if (this.fog.verifyIndValidity()==0) {
 				// System.out.println(tmp);
 				Entry<Integer, Float> min = null;
 				for (Entry<Integer, Float> entry : stack.entrySet()) {
@@ -836,7 +862,7 @@ public class Genetic {
 		}
 		this.fog.clearAppToGws();
 		this.fog.AssignAppsToGws(gen);
-		while (!this.fog.verifyIndValidity()){
+		while (!(this.fog.verifyIndValidity()==0)){
 			this.fog.clearAppToGws();
 			gen = new HashMap<>();
 			for (int i=1;i<=AppCnt;i++){

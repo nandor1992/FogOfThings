@@ -141,9 +141,10 @@ public class Spark{
 	    String fogFile = args[0];    
 		Fog f = Methods.InitFog(Integer.valueOf(args[0]), 0);
 		//Methods.CorrelationClusterin(f);
-		Methods.GAGlobal(f, 150, 500, true);
-		//Methods.weightedDistanceClusteringOptimization(f);
+		Methods.GAGlobal(f, 100, 500, true);
 		Methods.SampleWeDiCOptimization(f);
+		//Methods.weightedDistanceClusteringOptimization(f);
+		f.setDeplpyment(Methods.SampleWeDiCOptimization(f));
 	}
 	
 }

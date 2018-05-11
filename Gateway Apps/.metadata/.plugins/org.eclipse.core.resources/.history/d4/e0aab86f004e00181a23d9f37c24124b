@@ -1,0 +1,135 @@
+package org.nandor.spark;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+public class WayFinder {
+	
+	private Fog f;
+	private WeightedCls cls;
+	private int count;
+	private int size;
+	private int clsSize;
+	private int minSize;
+	private Map<String,Double> appWeights;
+	private Map<String,Double> gwWeights;
+	private int failCnt = 0;
+	private int maxFailCnt = 10;
+	
+	public WayFinder(Fog f, WeightedCls cls, int count, int size, double proc,int minSize){
+		this.f=f;
+		this.cls=cls;
+		this.count=count;
+		this.size=size;
+		this.clsSize = (int)(f.getApps().size()*proc);
+		this.minSize=minSize;
+	}
+	
+	
+	
+	public List<Map<Integer, Integer>> sampleFogAttempt(){
+		//Starting Condition
+		genAppWeights(1.0,1.0,1.0,1.0,1.0,1.0,1.0);
+		genGwWeights(1.0,1.0,1.0,1.0,1.0);
+		//Initial Attempt
+		List<Map<Integer, Integer>> ret = attemptRandInstance(clsSize);
+		while (ret == null){
+			//First Attempt failed do diiiiive util size < min then do min while solution is found and if none is found escape
+			System.out.println("Attempt with clsSize"+clsSize+" and Weights:" +appWeights+" - "+gwWeights+" Failed!");
+			this.modifyWeights();
+			if (clsSize==minSize){failCnt++;}
+			if (clsSize/2>minSize){clsSize=minSize;}else{clsSize=clsSize/2;}
+			ret = attemptRandInstance(clsSize);
+		}
+		return ret;
+	}
+	//Modify Weights we are working with
+	private void modifyWeights() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	//Generate App Weights
+	public void genAppWeights(double constr,double req,double share,double rate,double weights, double ul, double dist){
+		Map<String,Double> ret = new HashMap<>();
+		ret.put("Constraints",constr);
+		ret.put("RequirementSim",req);
+		ret.put("ResourceShare",share);
+		ret.put("MessageRate",rate);
+		ret.put("UtilityWeights",weights);
+		ret.put("UnitLoad",ul);
+		ret.put("Distance",dist);
+		appWeights=ret;
+	}
+	//Generate GW Weights
+	public void genGwWeights(double capab,double res, double perf, double base, double capac){
+		Map<String,Double> ret = new HashMap<>();
+		ret.put("Capabilities",capab);
+		ret.put("SharedRes",res);
+		ret.put("PerfToULoad",perf);
+		ret.put("BaseLoad",base);
+		ret.put("CapToULoad",capac);
+		gwWeights=ret;
+	}
+	//Single Instance Attempt
+	public List<Map<Integer, Integer>> attemptRandInstance(int size){
+		List<Integer> apps = new ArrayList<>();
+		List<Integer> totApps = new ArrayList<Integer>(f.getApps().keySet());
+		while (apps.size()<clsSize){
+			//Get Random app add it to list
+			Collections.shuffle(totApps);
+				apps.add(totApps.get(0));
+			
+		}
+		f.clearGwClustConns();
+		f.removeClusters();
+		List<Set<Integer>> tmpList= new ArrayList<>();
+		tmpList.add(new HashSet<Integer>(apps));
+		f.createClusters(tmpList);//eps, minPts
+		cls.setGwWeights(gwWeights);
+		cls.setAppWeights(appWeights);
+		Methods.sampleResourceAlloc(f,cls);
+		//displayClsAndRes(f);
+		List<Map<Integer, Integer>> tmp = Methods.sampGAClus(f, size, count,false);
+		cls.clearWeights();
+		return  tmp;
+	}
+	
+	//Single Shot old Method
+	public List<Map<Integer, Integer>> singleShot(){
+		List<Integer> apps = new ArrayList<>();
+		List<Integer> totApps = new ArrayList<Integer>(f.getApps().keySet());
+		while (apps.size()<clsSize){
+			//Get Random app add it to list
+			Collections.shuffle(totApps);
+				apps.add(totApps.get(0));
+			
+		}
+		f.clearGwClustConns();
+		f.removeClusters();
+		List<Set<Integer>> tmpList= new ArrayList<>();
+		tmpList.add(new HashSet<Integer>(apps));
+		f.createClusters(tmpList);//eps, minPts
+		cls.resetGwWeights(1.0);
+		cls.resetAppWeights(1.0);
+		Methods.sampleResourceAlloc(f,cls);
+		//displayClsAndRes(f);
+		List<Map<Integer, Integer>> tmp = Methods.sampGAClus(f, size, count, true);
+		cls.clearWeights();
+		return tmp;
+	}
+	
+	//Main
+	public static void main(String[] args) {
+		Fog f = Methods.InitFog(20, 0);
+		WeightedCls cls = new WeightedCls(f);
+		WayFinder wf = new WayFinder(f, cls, 10, 5, 0.4, 10);
+		wf.sampleFogAttempt();
+	}
+
+}

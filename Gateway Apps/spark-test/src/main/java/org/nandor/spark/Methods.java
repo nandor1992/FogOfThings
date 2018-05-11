@@ -68,7 +68,7 @@ public class Methods {
 		float[] lat = {(float)8.97,(float)30.897};
 		float[] lat2 = {(float)37.37,(float)87.89};
 		float[] lat3 = {(float)2.37,(float)6.89};
-		f.generateNewFog(ClsCount,(float)30,(float)60,(float)0.1,(float)0.05,lat,cloudGw,lat2,lat3,7,1);
+		f.generateNewFog(ClsCount,(float)30,(float)60,(float)0.1,(float)0.05,lat,cloudGw,lat2,lat3,5,1);
 		//Analysis part, of distributing Gw's to clusters		
 		return f;
 	}
@@ -191,7 +191,10 @@ public class Methods {
 			//System.out.println("Time Elapsed: "+(System.currentTimeMillis()-start)/(float)1000);
 			//System.out.println("Cluster: "+f.getClusters());
 			//System.out.println("BestPop: "+f.getDeployment());
-			return g.getBestClsGens();}
+			List<Map<Integer,Integer>> ret = new ArrayList<>();
+			ret.add(f.getDeployment());
+			ret.addAll(g.getBestClsGens());
+			return ret;}
 		else{
 				System.out.println("Failed with Unallocated: "+f.checkIfAppsAllocated());
 				return null;
@@ -316,7 +319,7 @@ public class Methods {
 	}
 	
 	public static boolean WeightedClustering(Fog f, WeightedCls cls, int minPts) {
-		System.out.println("----- Clustering -----");
+		System.out.println("-> Clustering");
 		f.clearGwClustConns();
 		f.removeClusters();
 		f.createClusters(cls.DBScan(minPts));//eps, minPts
@@ -415,6 +418,8 @@ public class Methods {
 	public static Map<Integer, Integer> SampleWeDiCOptimization(Fog f) {
 		// TODO Auto-generated method stub
 		//Init
+		System.out.println("----- Sample Weighted Distance Clustering Optimization -----");
+		long startIni = System.currentTimeMillis();
 		WeightedCls cls = new WeightedCls(f);
 		Map<Integer,Integer> bestSolution = new HashMap<>();
 		Double bestUtil = 0.0;
@@ -423,7 +428,8 @@ public class Methods {
 		boolean nextStep = true;
 		//Random Population Initialization using Initial Weights
 		//Create Random Cluster and Optimize that, it needs to have a certain size 
-		List<Map<Integer, Integer>> bests = sampleClustGA(f,cls,60,50,0.1);
+		//List<Map<Integer, Integer>> bests = sampleClustGA(f,cls,60,50,0.1);
+		List<Map<Integer, Integer>> bests = iterSampleClustGA(f,cls,60,50,0.2,15);
 		//List<Map<Integer, Integer>> bests = randomClustGA(f,cls,60,30);
 		//List<Map<Integer, Integer>> bests = GAGlobal(f, 60, 50, true);
 		Map<String,Double> corrApp = cls.Correlation("Deployment",cls.allAppSimilarities(bests));
@@ -438,7 +444,8 @@ public class Methods {
 			long start = System.currentTimeMillis();
 			//Put values to the new weights Calculation
 			weightsCorrBasedTraining(cls,bests);
-			System.out.println("---------- New iter for Opt Started with: "+cls.getWeight().getChar()+" ----------");
+			System.out.println();
+			System.out.println("--> New iter for Opt Started with: "+cls.getWeight().getChar()+" ----------");
 			//Try Clustering based on given weights If all eps failes then weights fail
 			if (WeightedClustering(f, cls,7)) {	
 				weightedResourceAlloc(f, cls, 2, 0.3);
@@ -468,6 +475,7 @@ public class Methods {
 		for (String name: prog.keySet()){
 			System.out.println(name+ " = "+ prog.get(name));
 		}
+		System.out.println("Method Finished in :"+((System.currentTimeMillis()-startIni)/1000.0));
 		return bests.get(0);
 	}
 
@@ -532,7 +540,18 @@ public class Methods {
 		System.out.println("Sample Clustering finished in :"+((System.currentTimeMillis()-start)/1000.0));
 		return tmp;
 	}
-
+	
+	private static List<Map<Integer, Integer>> iterSampleClustGA(Fog f, WeightedCls cls, int count, int size, double proc,int minSize) {
+		// TODO Auto-generated method stub
+		//Gnerate new Cluster Randomply Random select Apps, the size will be of 
+		long start = System.currentTimeMillis();
+		System.out.println("-> SampleClustering");
+		WayFinder wf = new WayFinder(f,cls,count,size,proc,minSize);
+		//List<Map<Integer, Integer>> tmp = wf.singleShot();
+		List<Map<Integer, Integer>> tmp = wf.sampleFogAttempt();
+		System.out.println("Sample Clustering finished in :"+((System.currentTimeMillis()-start)/1000.0));
+		return tmp;
+	}
 
 	//End of Weighted Part
 

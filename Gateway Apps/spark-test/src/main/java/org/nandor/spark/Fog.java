@@ -308,40 +308,44 @@ public class Fog {
 		return rel;
 	}
 
-	public boolean verifyIndValidity() {
+	public int verifyIndValidity() {
+		int viol = 0;
 		//System.out.println("Testing");
 		for (Integer g: this.getGateways().keySet()) {
 			//System.out.println("GW "+g.toString()+" Load: "+this.getGateways().get(g).getGwLoad());
 			if (this.getGateways().get(g).getGwLoad() > 99) {
 				//System.out.println("False");
-				return false;
+				viol++;
 			}
 		}
-		return this.verifyCapabilityVailidty();
+		return viol+this.verifyCapabilityVailidty();
 	}
 	
-	public boolean verifyValidityVerbose(){
+	public int  verifyValidityVerbose(){
+		int viol = 0;
 		System.out.println("Testing");
 		for (Integer g: this.getGateways().keySet()) {
 			System.out.println("GW "+g.toString()+" Load: "+this.getGateways().get(g).getGwLoad());
 			if (this.getGateways().get(g).getGwLoad() > 99) {
 				System.out.println("False");
+				viol++;
 			}
 		}
-		return this.verifyCapabilityVailidty();
+		return viol+this.verifyCapabilityVailidty();
 	}
 	
-	public boolean verifyCapabilityVailidty(){
+	public int verifyCapabilityVailidty(){
+		int viol = 0;
 		for (Integer a: this.getApps().keySet()){
 			if (!this.getApps().get(a).validateRequirements()){
 				//System.out.println("App"+this.getApps().get(a).getRequirements());
 				//System.out.println("GW"+this.getApps().get(a).getGateway().getCapabilities());
 				//System.out.println("False");
 				//System.exit(1);
-				return false;
+				viol++;
 			}
 		}
-		return true;
+		return viol;
 	}
 	
 	// After we have Clust to Gw we need initial App to GW
