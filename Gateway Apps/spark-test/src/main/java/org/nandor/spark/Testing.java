@@ -140,7 +140,7 @@ public class Testing {
 		Fog f = Methods.InitFog(10, 0);
 		
 		//Global GA
-		List<Map<Integer, Integer>> bests = Methods.GAGlobal(f, 60, 150, true);
+		List<Map<Integer, Integer>> bests = Methods.GAGlobal(f);
 		
 		//Clustering GA
 		Methods.Clustering(f, 1, 7);
@@ -199,19 +199,33 @@ public class Testing {
 			Methods.displayClsAndRes(f);
 			//Methods.GAClus(f, 40, 100, true);
 		}
+		//Methods.weightedDistanceClusteringOptimization(f);
 		System.out.println("Time finished: "+((System.currentTimeMillis()-start)/1000.0));
 	}
 	
 	public static void main(String[] args) {
+		//Read from exported File
 		//Fog f=Exporter.readJsonFog(readJson("C:/Users/Nandor/Documents/FogOfThings/Gateway Apps/spark-test/src/main/java/org/nandor/spark/deploy-W.json"));
-		Fog f = Methods.InitFog(12, 0);
-		//Methods.CorrelationClusterin(f);
-		//Methods.GAGlobal(f, 80, 500, true);
-		//Methods.weightedDistanceClusteringOptimization(f);
-		f.setDeplpyment(Methods.SampleWeDiCOptimization(f));
-		f.deployFog();
-		writeJson("C:/Users/Nandor/Documents/FogOfThings/Gateway Apps/spark-test/src/main/java/org/nandor/spark/deploy-W.json",Exporter.writeJsonFog(f));
-		//Methods.IterativeCorrelationClustering(f,5);
+
+		//Generate New Fog
+		Fog f = Methods.InitDelayFog(40);
+		//Fog f = Methods.InitMultiFog(40);
+		//Fog f = Methods.InitReqFog(40);
+		
+		//Optimization Section
+		Methods.GAGlobal(f);
+		Methods.DistanceClusteringDeployment(f);
+		Methods.SampleWeDiCOptimization(f);
+		Methods.InitWeDiCOptimization(f);
+		Methods.RandomDeployment(f);
+		
+		//Set Deplopyment and leave best as current
+		//Map<Integer, Integer> best = Methods.SampleWeDiCOptimization(f,12);
+		//f.setDeplpyment(best);
+		//f.deployFog();
+		
+		//Write Results to File
+		//writeJson("C:/Users/Nandor/Documents/FogOfThings/Gateway Apps/spark-test/src/main/java/org/nandor/spark/deploy-W.json",Exporter.writeJsonFog(f));
 	}
 	
 	

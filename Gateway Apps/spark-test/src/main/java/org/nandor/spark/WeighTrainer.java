@@ -19,7 +19,7 @@ public class WeighTrainer {
 		private boolean gwFailed = false;
 		private int failCnt = 0;
 		private double procLim = 0.2; //Delete Later 
-		private double appProcLim = 0.2;
+		private double appProcLim = 0.1;
 		private double gwProcLim = 0.05;
 		private double diffLim = 0.1;
 		private int bestIter = 0;
@@ -441,11 +441,11 @@ public class WeighTrainer {
 			//System.out.println("Name:"+name);
 			if (appPenalties.get(name)!=null){
 				if (Math.abs(corrApp.get(name))>appMax*appProcLim){
-					appWeights.get(i).put(name, Math.abs(corrApp.get(name))*appPenalties.get(name));
+					appWeights.get(i).put(name, corrApp.get(name)*appPenalties.get(name));
 				}
 			}else{
 				if (Math.abs(corrApp.get(name))>appMax*appProcLim){
-					appWeights.get(i).put(name, Math.abs(corrApp.get(name)));
+					appWeights.get(i).put(name,corrApp.get(name));
 				}
 			}
 		}
@@ -453,11 +453,11 @@ public class WeighTrainer {
 		for (String name: corrGw.keySet()){
 			if (gwPenalties.get(name)!=null){
 				if (Math.abs(corrGw.get(name))>gwMax*gwProcLim){
-					gwWeights.get(i).put(name, Math.abs(corrGw.get(name))*gwPenalties.get(name));
+					gwWeights.get(i).put(name, corrGw.get(name)*gwPenalties.get(name));
 				}
 			}else{
 				if (Math.abs(corrGw.get(name))>gwMax*gwProcLim){
-					gwWeights.get(i).put(name, Math.abs(corrGw.get(name)));
+					gwWeights.get(i).put(name, corrGw.get(name));
 				}
 			}
 		}
@@ -465,14 +465,14 @@ public class WeighTrainer {
 		//Adjust so that their sum is 1 (why dunno, seems to make sense to me)
 		double sum1=0.0;
 		for (String name: appWeights.get(i).keySet()){
-			sum1+=appWeights.get(i).get(name);
+			sum1+=Math.abs(appWeights.get(i).get(name));
 		}
 		for (String name: appWeights.get(i).keySet()){
 			appWeights.get(i).put(name,appWeights.get(i).get(name)/sum1);
 		}
 		double sum2=0.0;
 		for (String name: gwWeights.get(i).keySet()){
-			sum2+=gwWeights.get(i).get(name);
+			sum2+=Math.abs(gwWeights.get(i).get(name));
 		}
 		for (String name: gwWeights.get(i).keySet()){
 			gwWeights.get(i).put(name,gwWeights.get(i).get(name)/sum2);
@@ -504,8 +504,8 @@ public class WeighTrainer {
 	
 	public void attemptResult(Float utility) {
 		//Insert the value of the solution just attempted
-		System.out.println("Utility:"+utils);
 		utils.add(utility);
+		System.out.println("Utility:"+utils);
 		if (utility>utils.get(bestIter)){
 			prevBestIter = bestIter;
 			bestIter = utils.size()-1;

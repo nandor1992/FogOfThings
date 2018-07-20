@@ -1,5 +1,6 @@
 package org.nandor.spark;
 
+import java.lang.instrument.Instrumentation;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -68,7 +69,7 @@ public class Methods {
 		float[] lat = {(float)8.97,(float)30.897};
 		float[] lat2 = {(float)37.37,(float)87.89};
 		float[] lat3 = {(float)2.37,(float)6.89};
-		f.generateNewFog(ClsCount,(float)30,(float)60,(float)0.1,(float)0.05,lat,cloudGw,lat2,lat3,5,1);
+		f.generateNewFog(ClsCount,(float)30,(float)60,(float)0.1,(float)0.05,lat,cloudGw,lat2,lat3,7,1);
 		//Analysis part, of distributing Gw's to clusters		
 		return f;
 	}
@@ -105,12 +106,16 @@ public class Methods {
 		return data;
 	}
 	
-	public static List<Map<Integer, Integer>> GAGlobal(Fog f,int size,int cnt,boolean safe){
+	public static List<Map<Integer, Integer>> GAGlobal(Fog f){
 		Map<String,Float> data = new HashMap<>();
-		System.out.println("----- GA Stuff -----");
+		System.out.println("---------------------------");
+		System.out.println("----- Global GA Stuff -----");
+		System.out.println("---------------------------");
 		long start=System.currentTimeMillis();
 		Genetic g = new Genetic(f);
-		f.setDeplpyment(g.GAGlobal(size,cnt,safe,10000));
+		int size = getMinPtsSize(f.getApps().size());
+		int cnt = getMinPtsCount(f.getApps().size());
+		f.setDeplpyment(g.GAGlobal(size,cnt,true,10000));
 		//System.out.println("Unalocated Apps: "+f.checkIfAppsAllocated());	
 		//f.deployFog();
 		//System.out.println("Fog Utility: "+f.getFogCompoundUtility());
@@ -133,10 +138,21 @@ public class Methods {
 
 	public static Float getUtility(Fog f,Map<Integer, Integer> pop){
 		f.clearAppToGws();
-		f.deployFog();
 		f.AssignAppsToGws(pop);
-		return f.getFogCompoundUtility();
+		float ret = f.getFogCompoundUtility();
+		f.clearAppToGws();
+		return ret;
 	}
+	
+	public static Float getPartialUtility(Fog f,Map<Integer, Integer> pop){
+		f.clearAppToGws();
+		f.AssignAppsToGws(pop);
+		float ret = f.getPartialFogUtility();
+		f.clearAppToGws();
+		return ret;
+	}
+	
+
 	public static Map<String,String> GAClusStuff(Fog f,int size,int cnt,boolean safe){
 		System.out.println("----- Clust GA Stuff -----");
 		Map<String,String> data = new HashMap<>();
@@ -220,16 +236,23 @@ public class Methods {
 		return null;
 	}
 	
-	public static float clusteredDeployment(Fog f,int eps, int minPts,int size,int cnt,boolean safe){
-		System.out.println("----- Clust GA Stuff -----");
+	public static Map<Integer, Integer> DistanceClusteringDeployment(Fog f){
+		System.out.println("------------------------------------------");
+		System.out.println("----- Distance Clustering Deployment -----");
+		System.out.println("------------------------------------------");
 		Genetic g = new Genetic(f);
+		int eps = 2;
+		int minPts = getMinPts(f);
+		int size = getMinPtsSize(minPts);
+		int count = getMinPtsCount(minPts);
 		long start=System.currentTimeMillis();
 		Clustering(f,eps,minPts);
 		ResourceAllocation(f);
 		//CLustered GA
 		//DisplayData(f);
 		for (Integer i: f.getClusters().keySet()){
-			f.getClusters().get(i).setDeployment(g.GACluster(size,cnt, f.getClusters().get(i),safe));
+			f.getClusters().get(i).setDeployment(Methods.GAClus(f, 60, 250, true).get(0));
+			//f.getClusters().get(i).setDeployment(g.GACluster(size,cnt, f.getClusters().get(i),safe));
 		}
 		f.deployClusters();
 		float tot_sec=(System.currentTimeMillis()-start)/(float)1000;
@@ -237,19 +260,59 @@ public class Methods {
 		System.out.println("Finished Clusering Part in:"+tot_sec);
 		System.out.println("Unalocated Apps: "+f.checkIfAppsAllocated());
 		start=System.currentTimeMillis();
-		//Exchaustive Clustering
-		System.out.println("----- Clust Exhaustive Stuff -----");
-		for (Integer i: f.getClusters().keySet()){
-			f.getClusters().get(i).setDeployment(g.ExhaustiveCluster(f.getClusters().get(i)));
-		}
-		f.deployClusters();
-		tot_sec=(System.currentTimeMillis()-start)/(float)1000;
-		System.out.println("Fog Utility: "+f.getFogCompoundUtility());
-		System.out.println("Finished Exhaustive Part in:"+tot_sec);
-		System.out.println("Unalocated Apps: "+f.checkIfAppsAllocated());
-		return tot_sec;
+		System.out.println("Total Elapsed Time:"+ (System.currentTimeMillis()-start)/1000.0);
+		return f.getDeployment();
 	}
 	
+	private static int getMinPtsCount(int minPts) {
+		int ret = minPts*18;
+		
+		//Min
+		if (ret<100){
+			return 100;
+		}
+		
+		//Max
+		if (ret>500){
+			return 500;
+		}
+			
+		return ret;
+	}
+
+	private static int getMinPtsSize(int minPts) {
+		int ret = minPts*6;
+		
+		//Min
+		if (ret<40){
+			return 40;
+		}
+		
+		//Max
+		if (ret>120){
+			return 120;
+		}
+			
+		return ret;
+	}
+
+
+
+	private static int getMinPts(Fog f) {
+		switch (f.getScenario()) {
+		case "Delay":
+			return 12;
+		case "Multi":
+			return 9;
+		case "Capab":
+			return 5;
+		default:
+			return 7;
+		}
+	}
+
+
+
 	public static void ExhaustiveClusStuff(Fog f){
 		System.out.println("----- Clust GA Stuff -----");
 		Genetic g = new Genetic(f);
@@ -327,7 +390,7 @@ public class Methods {
 			System.out.println("Cluster "+i+" Apps: "+f.getClusters().get(i).getApps().keySet());
 		}
 		System.out.println("Unallocated Apps: "+f.checkIfAppsAllocated());
-		if(f.checkIfAppsAllocated().size()!=0 || f.getClusters().size()<=1){
+		if(f.checkIfAppsAllocated().size()!=0 || f.getClusters().size()==0){
 			System.out.println("Clustering Failed!");
 			return false;
 		}else{
@@ -345,13 +408,47 @@ public class Methods {
 			System.out.println("Cluster "+i+" Apps: "+f.getClusters().get(i).getApps().keySet());
 		}
 		System.out.println("Unallocated Apps: "+f.checkIfAppsAllocated());
-		if(f.checkIfAppsAllocated().size()!=0 || f.getClusters().size()<=1){
+		if(f.checkIfAppsAllocated().size()!=0 || f.getClusters().size()==0){
 			System.out.println("Clustering Failed!");
 			return false;
 		}else{
 			return true;
 		}
 		
+	}
+	
+	public static Map<Integer, Integer> RandomDeployment(Fog f){
+		System.out.println("-----------------------------");
+		System.out.println("----- Random Deployment -----");
+		System.out.println("-----------------------------");
+		Genetic g = new Genetic(f);
+		int minPts = getMinPts(f);
+		//Res Share
+		int maxShare = 2;
+		double shareThreshold = (float) 0.3;
+		//GA
+		int size = getMinPtsSize(minPts);
+		int count = getMinPtsCount(minPts);
+		
+		long start=System.currentTimeMillis();
+		WeightedCls cls = new WeightedCls(f);
+		if (RandomClustering(f, cls,minPts,(int)((int)minPts*1.5))) {	
+			weightedResourceAlloc(f, cls, maxShare, shareThreshold);
+			//CLustered GA
+			//DisplayData(f);
+			for (Integer i: f.getClusters().keySet()){
+				f.getClusters().get(i).setDeployment(Methods.GAClus(f, count, size, true).get(0));
+				//f.getClusters().get(i).setDeployment(g.GACluster(size,cnt, f.getClusters().get(i),safe));
+			}
+		}
+		f.deployClusters();
+		float tot_sec=(System.currentTimeMillis()-start)/(float)1000;
+		System.out.println("Fog Utility: "+f.getFogCompoundUtility());
+		System.out.println("Finished Clusering Part in:"+tot_sec);
+		System.out.println("Unalocated Apps: "+f.checkIfAppsAllocated());
+		start=System.currentTimeMillis();
+		System.out.println("Total Elapsed Time:"+ (System.currentTimeMillis()-start)/1000.0);
+		return f.getDeployment();	
 	}
 	
 	/* Section for the weighted/CorrelationBased/Clustering GA
@@ -416,69 +513,132 @@ public class Methods {
 	}
 	
 	public static Map<Integer, Integer> SampleWeDiCOptimization(Fog f) {
-		// TODO Auto-generated method stub
 		//Init
+		System.out.println("------------------------------------------------------------");
 		System.out.println("----- Sample Weighted Distance Clustering Optimization -----");
+		System.out.println("------------------------------------------------------------");
+		f.clearAppToGws();
+		//Sampling
+		float sampleProc = (float)0.2;
+		int minSampleSize = 10;
+		//Clustering 
+		int minPts = getMinPts(f);
+		//Res Share
+		int maxShare = 2;
+		double shareThreshold = (float) 0.3;
+		//GA
+		int size = getMinPtsSize(minPts);
+		int count = getMinPtsCount(minPts);
+		//Time start
 		long startIni = System.currentTimeMillis();
 		WeightedCls cls = new WeightedCls(f);
 		Map<Integer,Integer> bestSolution = new HashMap<>();
 		Double bestUtil = 0.0;
 		cls.initTrain(10,2);
-		Map<String,Float> prog = new HashMap<String,Float>();
-		boolean nextStep = true;
 		//Random Population Initialization using Initial Weights
 		//Create Random Cluster and Optimize that, it needs to have a certain size 
 		//List<Map<Integer, Integer>> bests = sampleClustGA(f,cls,60,50,0.1);
-		List<Map<Integer, Integer>> bests = iterSampleClustGA(f,cls,60,50,0.2,15);
+		List<Map<Integer, Integer>> bests = iterSampleClustGA(f,cls,getMinPtsCount((int)sampleProc*f.getApps().size()),getMinPtsSize((int)sampleProc*f.getApps().size()),sampleProc,minSampleSize);
 		//List<Map<Integer, Integer>> bests = randomClustGA(f,cls,60,30);
 		//List<Map<Integer, Integer>> bests = GAGlobal(f, 60, 50, true);
 		Map<String,Double> corrApp = cls.Correlation("Deployment",cls.allAppSimilarities(bests));
 		Map<String,Double> corrGw = cls.Correlation("Deployment",cls.allGwSimilarities(bests));
 		if (bests == null){ System.out.println("Initial Random Clustering Failed!");return null;}
 		//prog.put("Init",getUtility(f,bests.get(0)));
-		//bestUtil = getUtility(f,bests.get(0)).doubleValue();
-		//bestSolution = bests.get(0);
-		cls.getWeight().attemptResult(getUtility(f,bests.get(0)));
-		//Loop here while Weighting Algorithm knows what to do next
-		while (cls.getWeight().getNextStep()){
+		bestUtil = getPartialUtility(f,bests.get(0)).doubleValue();
+		bestSolution = bests.get(0);
+		System.out.println("Sampling Best Util:"+bestUtil+" with solution: "+bestSolution);
+		cls.getWeight().attemptResult(bestUtil.floatValue());
+		System.out.println("Sampling Finished in :"+((System.currentTimeMillis()-startIni)/1000.0));
+		
+		//Iterative Solution
+		Map<Integer, Integer> best = IterWeDiCompOptimization(f, cls, bests, minPts, maxShare, shareThreshold, size, count, bestUtil, bestSolution);
+		
+		//Final Write Out
+		System.out.println("Method Finished in :"+((System.currentTimeMillis()-startIni)/1000.0));
+		return best;
+	}
+
+	public static Map<Integer, Integer> InitWeDiCOptimization(Fog f) {
+		//TODO Part
+		System.out.println("------------------------------------------------------------------------");
+		System.out.println("----- D. Initial Weights Weighted Distance Clustering Optimization -----");
+		System.out.println("------------------------------------------------------------------------");
+		f.clearAppToGws();
+		//Sampling
+		float sampleProc = (float)0.2;
+		int minSampleSize = 10;
+		//Clustering 
+		int minPts = getMinPts(f);
+		//Res Share
+		int maxShare = 2;
+		double shareThreshold = (float) 0.3;
+		//GA
+		int size = getMinPtsSize(minPts);
+		int count = getMinPtsCount(minPts);
+		//Time start
+		long startIni = System.currentTimeMillis();
+		WeightedCls cls = new WeightedCls(f);
+		Map<Integer,Integer> bestSolution = new HashMap<>();
+		Double bestUtil = 0.0;
+		
+		//Iterative Solution
+		Map<Integer, Integer> best = IterWeDiCompOptimization(f, cls, null, minPts, maxShare, shareThreshold, size, count, bestUtil, bestSolution);
+		
+		//Final Write Out
+		System.out.println("Method Finished in :"+((System.currentTimeMillis()-startIni)/1000.0));
+		return best;
+		
+	}
+	
+	public static Map<Integer, Integer> IterWeDiCompOptimization(Fog f, WeightedCls cls,
+			List<Map<Integer, Integer>> bests, int minPts, int maxShare, double shareThreshold, int size, int count,
+			Double bestUtil, Map<Integer, Integer> bestSolution) {
+		Map<String, Float> prog = new HashMap<String, Float>();
+		boolean nextStep = true;
+		// Loop here while Weighting Algorithm knows what to do next
+		while (cls.getWeight().getNextStep()) {
 			long start = System.currentTimeMillis();
-			//Put values to the new weights Calculation
-			weightsCorrBasedTraining(cls,bests);
+			// Put values to the new weights Calculation
+			weightsCorrBasedTraining(cls, bests);
 			System.out.println();
-			System.out.println("--> New iter for Opt Started with: "+cls.getWeight().getChar()+" ----------");
-			//Try Clustering based on given weights If all eps failes then weights fail
-			if (WeightedClustering(f, cls,7)) {	
-				weightedResourceAlloc(f, cls, 2, 0.3);
-				//displayClsAndRes(f);
-				//Do weighted Resource Allocation based algorithm
-				//Do Local GA, if Any fail then the method fails 
-				List<Map<Integer, Integer>> tmpbests = Methods.GAClus(f, 60, 150, true);
-				if (tmpbests == null){
-						System.out.println("Direction Clustering Failed!");
-						cls.getWeight().setGwFailed();
-					}else{
-						System.out.println("Direction Clustering Done in :"+((System.currentTimeMillis()-start)/1000.0));
-						bests=tmpbests;
-						prog.put("Clust["+cls.getWeight().getChar()+"]",getUtility(f,bests.get(0)));
-						if (getUtility(f,bests.get(0))>bestUtil){
-							bestUtil = getUtility(f,bests.get(0)).doubleValue();
-							bestSolution = bests.get(0);
-						}
-						cls.getWeight().attemptResult(getUtility(f,bests.get(0)));
+			System.out.println("--> New iter for Opt Started with: " + cls.getWeight().getChar() + " ----------");
+			// Try Clustering based on given weights If all eps failes then
+			// weights fail
+			if (WeightedClustering(f, cls, minPts)) {
+				weightedResourceAlloc(f, cls, maxShare, shareThreshold);
+				// displayClsAndRes(f);
+				// Do weighted Resource Allocation based algorithm
+				// Do Local GA, if Any fail then the method fails
+				List<Map<Integer, Integer>> tmpbests = Methods.GAClus(f, size, count, true);
+				if (tmpbests == null) {
+					System.out.println("Direction Clustering Failed!");
+					cls.getWeight().setGwFailed();
+				} else {
+					System.out.println(
+							"Direction Clustering Done in :" + ((System.currentTimeMillis() - start) / 1000.0));
+					bests = tmpbests;
+					prog.put(
+							"Clust[" + cls.getWeight().getChar() + " Time: "
+									+ ((System.currentTimeMillis() - start) / 1000.0) + "]",
+							getUtility(f, bests.get(0)));
+					if (getUtility(f, bests.get(0)) > bestUtil) {
+						bestUtil = getUtility(f, bests.get(0)).doubleValue();
+						bestSolution = bests.get(0);
 					}
-			}else{
+					cls.getWeight().attemptResult(getUtility(f, bests.get(0)));
+				}
+			} else {
 				System.out.println("Direction Clustering Failed!");
 				cls.getWeight().setAppFailed();
 			}
 		}
 		System.out.println("Results: ");
-		for (String name: prog.keySet()){
-			System.out.println(name+ " = "+ prog.get(name));
+		for (String name : prog.keySet()) {
+			System.out.println(name + " = " + prog.get(name));
 		}
-		System.out.println("Method Finished in :"+((System.currentTimeMillis()-startIni)/1000.0));
 		return bests.get(0);
 	}
-
 
 
 	private static void weightsCorrBasedTraining(WeightedCls cls,List<Map<Integer, Integer>> bests) {
@@ -559,7 +719,7 @@ public class Methods {
 		long start = System.currentTimeMillis();
 		WeightedCls cls = new WeightedCls(f);
 		Map<String,Float> prog = new HashMap<String,Float>();
-		List<Map<Integer, Integer>> bests = Methods.GAGlobal(f, 120, 500, true);
+		List<Map<Integer, Integer>> bests = Methods.GAGlobal(f);
 		prog.put("Global",getUtility(f,bests.get(0)));
 		if (bests==null){		
 			//displayClsAndRes(f);
@@ -616,7 +776,7 @@ public class Methods {
 	public static boolean CorrelationClusterin(Fog f){
 		long start = System.currentTimeMillis();
 		WeightedCls cls = new WeightedCls(f);
-		List<Map<Integer, Integer>> bests = Methods.GAGlobal(f, 60, 500, true);
+		List<Map<Integer, Integer>> bests = Methods.GAGlobal(f);
 		/*if (bests==null){		
 			displayClsAndRes(f);
 			System.out.println("Failed Global GA");
@@ -699,6 +859,49 @@ public class Methods {
 		System.out.println("OverAllocatedApps:"+f.checkIfAppsOverAlloc());
 		System.out.println("Cumulative share Rate:"+f.cumClustShare());
 	}
+
+
+
+	public static Fog InitDelayFog(int appCnt) {
+		Fog f = new Fog("Delay Fog");
+		f.setScenario("Delay");
+		float cloudGWRatio = (float) 0.1;
+		float[] lat = {(float)8.97,(float)30.897};
+		float[] lat2 = {(float)37.37,(float)87.89};
+		float[] lat3 = {(float)2.37,(float)6.89};
+		f.generateNewFogV2(appCnt,(float)30,(float)60,(float)0.2,(float)0.05,lat,cloudGWRatio,lat2,lat3,7,1,"Delay");
+		//Analysis part, of distributing Gw's to clusters		
+		return f;
+	}
+
+
+
+	public static Fog InitMultiFog(int appCnt) {
+		Fog f = new Fog("Delay Fog");
+		f.setScenario("Multi");
+		float cloudGWRatio = (float) 0.1;
+		float[] lat = {(float)8.97,(float)30.897};
+		float[] lat2 = {(float)37.37,(float)87.89};
+		float[] lat3 = {(float)2.37,(float)6.89};
+		f.generateNewFogV2(appCnt,(float)30,(float)60,(float)0.2,(float)0.05,lat,cloudGWRatio,lat2,lat3,7,1,"Multi");
+		//Analysis part, of distributing Gw's to clusters		
+		return f;
+	}
+
+
+
+	public static Fog InitReqFog(int appCnt) {
+		Fog f = new Fog("Requirement Fog");
+		f.setScenario("Capab");
+		float cloudGWRatio = (float) 0.1;
+		float[] lat = {(float)8.97,(float)30.897};
+		float[] lat2 = {(float)37.37,(float)87.89};
+		float[] lat3 = {(float)2.37,(float)6.89};
+		f.generateNewFogV2(appCnt,(float)30,(float)60,(float)0.2,(float)0.05,lat,cloudGWRatio,lat2,lat3,4,1,"Capab");
+		//Analysis part, of distributing Gw's to clusters		
+		return f;
+	}
+
 
 
 

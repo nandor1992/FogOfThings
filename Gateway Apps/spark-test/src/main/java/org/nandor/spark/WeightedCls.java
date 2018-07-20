@@ -189,6 +189,7 @@ public class WeightedCls extends Clustering {
 						}
 					}
 				}
+				this.fog.clearAppToGws();
 //			}
 		}
 		return ret;
@@ -413,26 +414,32 @@ public class WeightedCls extends Clustering {
 		//TODO Make it to bests
 		List<Map<String, Double>> ret = new ArrayList<Map<String, Double>>();
 		// get all values for all Apps deployed check if they are on the same gw
-		List<Integer> visited = new ArrayList<Integer>();
-		for (Integer a1 : this.fog.getApps().keySet()) {
-			for (Integer a2 : this.fog.getApps().keySet()) {
-				if (a1 != a2 && !visited.contains(a2)) {
-					if (this.fog.getApps().get(a1).getGateway() != null
-							&& this.fog.getApps().get(a2).getGateway() != null) {
-						Map<String, Double> tmp = getAppSimilarities(a1, a2);
-						if (this.fog.getApps().get(a1).getGateway().getId() == this.fog.getApps().get(a2).getGateway()
-								.getId()) {
-							//tmp.put("Deployment", this.fog.getFogCompoundUtility().doubleValue());
-							tmp.put("Deployment", 1.0);
-							ret.add(tmp);
-						} else {
-							tmp.put("Deployment", 0.0);
-							ret.add(tmp);
+		for (Map<Integer,Integer> best : bests){
+			//Deploy Apps
+			this.fog.clearAppToGws();
+			this.fog.AssignAppsToGws(best);
+			List<Integer> visited = new ArrayList<Integer>();
+			for (Integer a1 : best.keySet()) {
+				for (Integer a2 : best.keySet()) {
+					if (a1 != a2 && !visited.contains(a2)) {
+						if (this.fog.getApps().get(a1).getGateway() != null
+								&& this.fog.getApps().get(a2).getGateway() != null) {
+							Map<String, Double> tmp = getAppSimilarities(a1, a2);
+							if (this.fog.getApps().get(a1).getGateway().getId() == this.fog.getApps().get(a2).getGateway()
+									.getId()) {
+								//tmp.put("Deployment", this.fog.getFogCompoundUtility().doubleValue());
+								tmp.put("Deployment", 1.0);
+								ret.add(tmp);
+							} else {
+								tmp.put("Deployment", 0.0);
+								ret.add(tmp);
+							}
 						}
 					}
 				}
+				visited.add(a1);
 			}
-			visited.add(a1);
+			this.fog.clearAppToGws();
 		}
 		//System.out.println(ret);
 		return ret;
@@ -674,7 +681,7 @@ public class WeightedCls extends Clustering {
 				}
 			}
 		}
-		return dist.get(p2);
+		return 1.0/dist.get(p2);
 	}
 	
 	public void setCorrelation(Map<String, Double> corrApp, Map<String, Double> corrGw, double limApp,double limGws) {
@@ -830,28 +837,29 @@ public class WeightedCls extends Clustering {
 		}
 		//Apps
 		for (String name: corrApp.keySet()){
-				appWeights.put(name, Math.abs(corrApp.get(name)));
+				appWeights.put(name, corrApp.get(name));
 		}
 		//Gateways
 		for (String name: corrGw.keySet()){
-				gwWeights.put(name, Math.abs(corrGw.get(name)));
+				gwWeights.put(name, corrGw.get(name));
 		}
 		
 		//Adjust so that their sum is 1 (why dunno, seems to make sense to me)
 		double sum1=0.0;
 		for (String name: appWeights.keySet()){
-			sum1+=appWeights.get(name);
+			sum1+=Math.abs(appWeights.get(name));
 		}
 		for (String name: appWeights.keySet()){
 			appWeights.put(name,appWeights.get(name)/sum1);
 		}
 		double sum2=0.0;
 		for (String name: gwWeights.keySet()){
-			sum2+=gwWeights.get(name);
+			sum2+=Math.abs(gwWeights.get(name));
 		}
 		for (String name: gwWeights.keySet()){
 			gwWeights.put(name,gwWeights.get(name)/sum2);
 		}
+		
 		System.out.println("Corr App: "+appWeights+" Corr Gw:"+gwWeights);
 	}
 	
@@ -913,7 +921,7 @@ public class WeightedCls extends Clustering {
 		int failiter = 0;
 		Double prevValid = Double.MAX_VALUE;
 		Double bestValid = Double.MAX_VALUE;
-		List<Double> epsVals = this.getMinMaxEpsValues(5.0,4);
+		List<Double> epsVals = this.getMinMaxEpsValues(10.0,4);
 		eps=epsVals.get(0).floatValue();
 		boolean found = false;
 		int fails = 0;
@@ -966,6 +974,7 @@ public class WeightedCls extends Clustering {
 			System.out.println("Valid : "+this.validateClust(minPts));
 			System.out.println("Clusters: "+this.clust);
 			System.out.println("Noise: "+this.noise);*/
+			System.out.println("Eps Search Results - Best Eps:"+eps+" BestValid: "+this.validateClust(minPts));
 		}
 		this.clust=bestCls;
 		//Simple fix to overallocation resolve
@@ -1241,7 +1250,11 @@ public class WeightedCls extends Clustering {
 		double max = 0.0;
 		double avg = 0.0;
 		if (this.clust.size()<=1){
-			return Double.MAX_VALUE;
+			if (this.clust.size()==1){
+				return (double) this.clust.get(0).size();
+			}else{
+				return Double.MAX_VALUE;
+			}
 		}else{
 			for (Set<Integer> clust: this.clust){
 				if (clust.size()<min){min=clust.size();}
@@ -1309,7 +1322,6 @@ public class WeightedCls extends Clustering {
 	}
 	
 	public List<Integer> getNeighbours(Integer p, Float eps, Integer lvl) {
-		// TODO Need to Reimplement all of this
 		//System.out.println("Point: "+p+"Eps: "+eps+" Weights:"+appWeights);
 		List<Integer> neighbour = new ArrayList<>();
 		//Get Apps Close to this one Only use Those maybe 

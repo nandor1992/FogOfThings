@@ -31,6 +31,7 @@ public class Fog {
 	private int appToClusterAvg[] = { 3, 22 };
 	private Random random = new Random();
 	private float gwLoadAdj = (float) 0.0;
+	private String ScenarioType = "";
 	private List<String> capabilityList = new ArrayList<String>() {{
 	    add("Capability A");
 	    add("Capability B");
@@ -59,6 +60,143 @@ public class Fog {
 		this.InitStructure(null, null, null, null, null);
 	}
 
+	public void generateNewFogV2(int appCnt, float maxAppLoad, float gwLoad,float constRate,float constImprove, float[] gwLatency,float cloudGWRatio,
+			float[] gwExtLatency, float[] gwCloudIntLat,int capRate, int reqRate,String scenarioType) {
+		// c.saveToFile("testing.json", c.addCloud(int(k/5), 42,
+		// c.createGwSet(k-int(k/5), 30, 80, 19.53, 22.34)
+		System.out.println("----------------------------");
+		System.out.println("-----Generating new Fog-----");
+		System.out.println("----------------------------");
+		System.out.println("Parameters - AppCount: " + appCnt + " Gw Count's Ext: " + cloudGWRatio + " Load: "
+				+ gwLoad + " Latency: " + gwLatency[0] + "," + gwLatency[1] + "Ext Lat: " + gwExtLatency[0] + ","
+				+ gwExtLatency[1]+ " Fog Type: "+scenarioType);
+		// Init Clusters and their Apps
+		// Apps Parameters
+		Map<Integer, Map<String, Map<String, Map<String, Float>>>> appMsges = new HashMap<>();
+		float fogLoad = (float) 0.0;
+		Map<Integer, Float> clsLoad = new HashMap<>();
+		int i2=0;
+		int totAppCnt = 0;
+		while(appCnt>totAppCnt) {
+			i2++;
+			int c = this.addCluster("Cluster_" + i2);
+			int app_cnt = generateRandomClustSize();
+			if (totAppCnt+app_cnt>=appCnt){
+				app_cnt = appCnt-totAppCnt;
+				totAppCnt = appCnt;
+			}else{
+				totAppCnt+=app_cnt;
+			}
+			float totLoad = (float) 0.0;
+			for (int j = 0; j < app_cnt; j++) {
+				int app_type = this.random.nextInt(10) + 1;
+				int a = this.addApp("TestAppC" + i2 + "_Nr" + (j+1), "Testing_App" + app_type);
+				addRandReq(a,reqRate);
+				this.addClustAppConn(c, a);
+				float aLoad = (float) 99.0;
+				Map<String, Map<String, Map<String, Float>>> tmp = null;
+				while (aLoad > maxAppLoad) {
+					tmp = this.getAppRandMsges(this.getApps().get(a).getUnitLoad());
+					aLoad = this.apps.get(a).getEstAppResLoad((float) 1.0,
+							tmp.get("Tot").get("Tot").get("Res"),
+							tmp.get("Tot").get("Tot").get("App"));
+				}
+				appMsges.put(a,tmp); 
+				totLoad += aLoad;
+				//System.out.println("Added App to Cluster: "+i+"App: "+a+"Type: "+app_type+" MessageRates:"+appMsges.get(a).get("Tot").get("Tot").get("Res")+","+appMsges.get(a).get("Tot").get("Tot").get("App")+"Load:"+aLoad);
+				//System.out.println();
+			}
+			clsLoad.put(c, totLoad);
+			//System.out.println("Created Cluster Id: " + c + " AppCnt:" + app_cnt + " TotLoad:" + totLoad);
+			fogLoad += totLoad;
+		}
+		// Total Gateway Count
+		List<Float> perfC = new ArrayList<>();
+		Float totPerfC = (float) 0.0;
+		for (int i = 0; i < new Double(fogLoad / 1.1 / 100 * ((float) 100.0 / gwLoad)).intValue() + 1; i++) {
+			float perf = random.nextFloat() * (float) (1.4 - 1.0) + (float)1.0;
+			perfC.add(perf);
+			totPerfC += perf;
+		}
+		// Calculate Diffrence
+		float totPerfC2 = (float) 0.0;
+		float diff = (fogLoad / (float) 100 * ((float) 100.0 / gwLoad) / -totPerfC) / (float) perfC.size();
+		for (int i = 0; i < perfC.size(); i++) {
+			perfC.set(i, perfC.get(i) + diff);
+			totPerfC2 += perfC.get(i) + diff;
+		}
+		/*System.out.println("Tot Res Required Count: " + fogLoad + "  Gw Count: "
+				+ (new Double(fogLoad / 1.1 / 100 * ((float) 100.0 / gwLoad)).intValue() + 1) + " ResProvided: "
+				+ totPerfC2*100.0 + " App Cnt: " + this.getApps().size());*/
+
+		// Create Actuall gateways with Capabilities
+		for (int i = 0; i < perfC.size(); i++) {
+			int g1 = this.addGateway("TestGw" + i, "Basic");
+			this.gateways.get(g1).setPjCap(perfC.get(i));
+			this.gateways.get(g1).setPjSpeed(perfC.get(i));
+			addRandCap(g1,capRate);
+			// System.out.println("Gw
+			// ProcCoef:"+this.gateways.get(g1).getPerfCoef());
+		}
+
+		// Randomly Distribute Gateways to Clusters based on Requirements Of
+		// courese....
+		this.basicDistributeGw2Cluster(clsLoad);
+
+		this.basicAppToGwDistribution();
+
+		/// Make sure to Delete Return Later
+		// if (true){return;}
+		// Can't yet run this
+		// System.out.println("Create Resources and Connection for Apps Based on
+		/// Conns");
+		for (Integer i : this.getApps().keySet()) {
+			this.addAppConns(i, appMsges.get(i));
+		}
+		// System.out.println("Adding Gateway to Gateway Connections");
+		this.addGwConns(gwLatency[0], gwLatency[1]);
+		// Get Already Connected Gw's
+		// System.out.println("Adding External Gateways and Connns");
+		Set<Integer> currGws = this.getGateways().keySet();
+		List<Integer> newGws = new ArrayList<>();
+		for (int i = 1; i <= currGws.size()*cloudGWRatio; i++) {
+			int g1 = this.addGateway("ExtGw" + i, "External");
+			newGws.add(g1);
+			this.gateways.get(g1).setPjCap(random.nextFloat() * (float) (0.7) + (float) 1.8);
+			this.gateways.get(g1).setPjSpeed(random.nextFloat() * (float) (1.5) + (float) 2.8);
+			addRandCap(g1,capRate);
+		}
+		// System.out.println(this.getGateways().keySet());
+		//this.addRandomConstraints(constRate,constImprove);
+		switch (scenarioType) {
+		case "Delay":
+			//Delay Improvement Scenario
+			this.setConstraints(Float.MAX_VALUE, Float.MIN_VALUE);
+			this.setWeights((float)1.0,(float)0.0);
+			break;
+		case "Multi":
+			this.addRandomConstraints(constRate,constImprove);
+			this.addRandomWeights();
+			break;
+		case "Capab":
+			this.addRandomConstraints(constRate,constImprove);
+			this.addRandomWeights();
+			break;
+		default:
+			break;
+		}
+		//All Types Here
+		//this.addRandomConstraints(constRate,constImprove);
+		//this.setConstraints(Float.MAX_VALUE, Float.MIN_VALUE);
+		//this.setWeights((float)1.0,(float)0.0,(float)0.0);
+		//this.addRandomWeights();
+		this.addExtraGwConns(newGws, currGws,gwExtLatency,gwCloudIntLat);
+		// System.out.println("Clearing Connections for Empty Intit Phase");
+		System.out.println("Tot Res Required Count: " + this.getTotalLoad() + "  Gw Count: "
+				+ this.getGateways().size()+ " ResProvided: "
+				+ this.getTotRes()+ " at Rate: "+this.getShareRate()+" App Cnt: " + this.getApps().size()+" Utility: "+this.getFogCompoundUtility());
+	}
+	
 	public void generateNewFog(int clustCnt, float maxAppLoad, float gwLoad,float constRate,float constImprove, float[] gwLatency,int extGwCnt,
 			float[] gwExtLatency, float[] gwCloudIntLat,int capRate, int reqRate) {
 		// c.saveToFile("testing.json", c.addCloud(int(k/5), 42,
@@ -178,9 +316,21 @@ public class Fog {
 	}
 	
 	private void addRandomWeights() {
+		float[] vals = {(float)0.0,(float)0.33,(float)0.66,(float)1.0};
+		
 		for (Integer a:this.getApps().keySet())
 		{
-				this.getApps().get(a).setUtilityWeights(random.nextFloat(), random.nextFloat(), random.nextFloat());
+				float delay = vals[new Random().nextInt(vals.length)];
+				float reliability = vals[new Random().nextInt(vals.length)];
+				this.getApps().get(a).setUtilityWeights(delay,reliability);
+		}
+		
+	}
+	
+	private void setWeights(float delay, float reliability) {
+		for (Integer a:this.getApps().keySet())
+		{
+				this.getApps().get(a).setUtilityWeights(delay,reliability);
 		}
 		
 	}
@@ -190,9 +340,19 @@ public class Fog {
 		{
 			if (random.nextFloat()<constRate){
 				this.getApps().get(a).setConstraints(this.getApps().get(a).getTotDelay()*(float)(1.0-constImprove),this.getApps().get(a).getAppReliability()*(float)(1.0+constImprove));
+				this.getApps().get(a).setWeightConstraint((float)1.0);
+			}else{
+				this.getApps().get(a).setWeightConstraint((float)0.0);
 			}
 		}
 		
+	}
+	
+	private void setConstraints(float delay,float reliability){
+		for (Integer a:this.getApps().keySet())
+		{
+			this.getApps().get(a).setConstraints(delay, reliability);
+		}
 	}
 
 	public int generateRandomClustSize() {
@@ -287,6 +447,18 @@ public class Fog {
 					
 				}
 				util += getApps().get(a).getAppUtility();
+			}
+		}
+		return util;
+	}
+	
+	public Float getPartialFogUtility() {
+		float util = (float) 0.0;
+		for (Integer a : getApps().keySet()) {
+			if (getApps().get(a).getGateway()!=null){
+				if (!getApps().get(a).getAppUtility().isNaN()){
+					util += getApps().get(a).getAppUtility();
+				}
 			}
 		}
 		return util;
@@ -829,7 +1001,6 @@ public class Fog {
 	}
 
 	public float getTotalFreeCapacity() {
-		// TODO Auto-generated method stub
 		Float free = (float) 0.0;
 		for (Integer g: this.getGateways().keySet()){
 			free = free + (float)(100.0-this.getGateways().get(g).getGwLoad())*this.getGateways().get(g).getPjCap();
@@ -1102,6 +1273,14 @@ public class Fog {
 
 	public void setClusters(Map<Integer, Cluster> clusters) {
 		this.clusters = clusters;
+	}
+
+	public String getScenario() {
+		return ScenarioType;
+	}
+
+	public void setScenario(String scenarioType) {
+		ScenarioType = scenarioType;
 	}
 
 

@@ -39,9 +39,9 @@ public class App {
 		Rmessages=new HashMap<>();
 		Amessages=new HashMap<>();
 		utilityWeights = new HashMap<>();
-		utilityWeights.put("reliability", (float)0.0);
+		utilityWeights.put("reliability", (float)1.0);
 		utilityWeights.put("delay", (float)1.0);
-		utilityWeights.put("constraint", (float)0.0);
+		utilityWeights.put("constraint", (float)1.0);
 		constraints = new HashMap<>();
 		constraints.put("reliability", Float.MIN_VALUE);
 		constraints.put("delay", Float.MAX_VALUE);
@@ -57,9 +57,9 @@ public class App {
 		Rmessages=new HashMap<>();
 		Amessages=new HashMap<>();
 		utilityWeights = new HashMap<>();
-		utilityWeights.put("reliability", (float)1.0);
+		utilityWeights.put("reliability", (float)0.0);
 		utilityWeights.put("delay", (float)1.0);
-		utilityWeights.put("constraint", (float)1.0);
+		utilityWeights.put("constraint", (float)0.0);
 		constraints = new HashMap<>();
 		constraints.put("reliability", Float.POSITIVE_INFINITY);
 		constraints.put("delay", Float.POSITIVE_INFINITY);
@@ -331,13 +331,19 @@ public class App {
 		return utilityWeights;
 	}
 
-	public void setUtilityWeights(float delay, float reliability, float constraints) {
+	public void setUtilityWeights(float delay, float reliability) {
+		utilityWeights.put("reliability", reliability);
+		utilityWeights.put("delay", delay);
+	}
+	public void setUtilityWeights(float delay, float reliability,float constraints) {
 		utilityWeights.put("reliability", reliability);
 		utilityWeights.put("delay", delay);
 		utilityWeights.put("constraint", constraints);
 	}
 	
-	
+	public void setWeightConstraint(float constraints) {
+		utilityWeights.put("constraint", constraints);
+	}
 	//basic Setters and Getters
 	public Gateway getGateway() {
 		return this.gateway;
@@ -419,6 +425,7 @@ public class App {
 	public void removeRequirements(String req) {
 		this.requirements.remove(req);
 	}
+
 	
 	
 }

@@ -143,7 +143,7 @@ public class Genetic {
 		this.fog.clearAppToGws();
 		Set<Integer> gwIDs =c.getGateways().keySet();
 		Set<Integer> appIDs =c.getApps().keySet();
-		System.out.println(" -> GA Cluster "+c.getId()+" GwCount: " + gwCnt + " AppCnt: " +appCnt);
+		System.out.println(" -> GA Cluster "+c.getId()+" GwCount:" + gwCnt + " AppCnt:" +appCnt+ " Size:"+size+" Gens:"+generations);
 		// Ga Parameters
 		float bestUtil = (float)0.0;
 		//System.out.println("----- Initializing new Population for Cluster "+c.getId()+" -----");
