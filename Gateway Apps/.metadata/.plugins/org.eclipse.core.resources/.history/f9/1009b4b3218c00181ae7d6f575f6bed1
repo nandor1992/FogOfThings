@@ -215,8 +215,8 @@ public class Testing {
 		//Optimization Section
 		Methods.GAGlobal(f);
 		Methods.DistanceClusteringDeployment(f);
-		//Methods.SampleWeDiCOptimization(f);
-		//Methods.InitWeDiCOptimization(f);
+		Methods.SampleWeDiCOptimization(f);
+		Methods.InitWeDiCOptimization(f);
 		Methods.RandomDeployment(f);
 		
 		//Set Deplopyment and leave best as current

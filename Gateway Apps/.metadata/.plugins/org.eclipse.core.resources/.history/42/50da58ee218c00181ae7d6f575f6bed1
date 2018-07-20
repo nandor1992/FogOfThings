@@ -586,7 +586,7 @@ public class Genetic {
 	}
 	
 	public Map<Integer,Integer> GAGlobal(int size,int generations,boolean safe,int max) {
-		System.out.println("GA Global GwCount:" + this.gwCount + " AppCnt:" + this.AppCnt + " Size:"+size+" Gens:"+generations);
+		System.out.println("GA Global GwCount: " + this.gwCount + " AppCnt: " + this.AppCnt);
 		long start=System.currentTimeMillis();
 		float prevBestUtil =(float) 0.0;
 		// Ga Parameters
