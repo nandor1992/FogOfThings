@@ -241,7 +241,7 @@ public class Methods {
 		System.out.println("----- Distance Clustering Deployment -----");
 		System.out.println("------------------------------------------");
 		Genetic g = new Genetic(f);
-		int eps = 2;
+		int eps = 1;
 		int minPts = getMinPts(f);
 		int size = getMinPtsSize(minPts);
 		int count = getMinPtsCount(minPts);

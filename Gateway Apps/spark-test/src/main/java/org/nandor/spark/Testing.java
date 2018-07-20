@@ -213,7 +213,7 @@ public class Testing {
 		//Fog f = Methods.InitReqFog(40);
 		
 		//Optimization Section
-		Methods.GAGlobal(f);
+		//Methods.GAGlobal(f);
 		Methods.DistanceClusteringDeployment(f);
 		//Methods.SampleWeDiCOptimization(f);
 		//Methods.InitWeDiCOptimization(f);

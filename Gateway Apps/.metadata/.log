@@ -5187,3 +5187,81 @@ java.net.UnknownHostException: m2e-code-quality.github.com
 
 !ENTRY org.eclipse.core.resources 4 567 2018-07-20 14:39:46.727
 !MESSAGE Could not read metadata for 'C:\Users\Nandor\Documents\FogOfThings\Gateway Apps\.metadata\.plugins\org.eclipse.core.resources\.projects\amqp_to_eventAdmin\.indexes\properties.index'. Unexpected version: 0.
+
+!ENTRY org.eclipse.core.resources 4 567 2018-07-20 14:46:27.382
+!MESSAGE Could not read metadata for 'C:\Users\Nandor\Documents\FogOfThings\Gateway Apps\.metadata\.plugins\org.eclipse.core.resources\.projects\Monitoring_Bundle\.indexes\properties.index'. Unexpected version: 0.
+
+!ENTRY org.eclipse.core.resources 4 567 2018-07-20 14:46:27.441
+!MESSAGE Could not read metadata for 'C:\Users\Nandor\Documents\FogOfThings\Gateway Apps\.metadata\.plugins\org.eclipse.core.resources\.projects\Testing_Application\.indexes\properties.index'. Unexpected version: 0.
+
+!ENTRY org.eclipse.core.resources 4 567 2018-07-20 14:46:27.542
+!MESSAGE Could not read metadata for 'C:\Users\Nandor\Documents\FogOfThings\Gateway Apps\.metadata\.plugins\org.eclipse.core.resources\.projects\amqp_to_eventAdmin\.indexes\properties.index'. Unexpected version: 0.
+
+!ENTRY org.eclipse.core.resources 4 567 2018-07-20 14:46:29.601
+!MESSAGE Could not read metadata for 'C:\Users\Nandor\Documents\FogOfThings\Gateway Apps\.metadata\.plugins\org.eclipse.core.resources\.projects\Monitoring_Bundle\.indexes\properties.index'. Unexpected version: 0.
+
+!ENTRY org.eclipse.core.resources 4 567 2018-07-20 14:46:30.053
+!MESSAGE Could not read metadata for 'C:\Users\Nandor\Documents\FogOfThings\Gateway Apps\.metadata\.plugins\org.eclipse.core.resources\.projects\Testing_Application\.indexes\properties.index'. Unexpected version: 0.
+
+!ENTRY org.eclipse.core.resources 4 567 2018-07-20 14:46:30.443
+!MESSAGE Could not read metadata for 'C:\Users\Nandor\Documents\FogOfThings\Gateway Apps\.metadata\.plugins\org.eclipse.core.resources\.projects\amqp_to_eventAdmin\.indexes\properties.index'. Unexpected version: 0.
+
+!ENTRY org.eclipse.core.resources 4 567 2018-07-20 14:46:31.176
+!MESSAGE Could not read metadata for 'C:\Users\Nandor\Documents\FogOfThings\Gateway Apps\.metadata\.plugins\org.eclipse.core.resources\.projects\amqp_to_eventAdmin\.indexes\properties.index'. Unexpected version: 0.
+
+!ENTRY org.eclipse.core.resources 4 567 2018-07-20 14:46:31.325
+!MESSAGE Could not read metadata for 'C:\Users\Nandor\Documents\FogOfThings\Gateway Apps\.metadata\.plugins\org.eclipse.core.resources\.projects\Monitoring_Bundle\.indexes\properties.index'. Unexpected version: 0.
+
+!ENTRY org.eclipse.core.resources 4 567 2018-07-20 14:46:31.399
+!MESSAGE Could not read metadata for 'C:\Users\Nandor\Documents\FogOfThings\Gateway Apps\.metadata\.plugins\org.eclipse.core.resources\.projects\Testing_Application\.indexes\properties.index'. Unexpected version: 0.
+
+!ENTRY org.eclipse.core.resources 4 567 2018-07-20 14:49:32.141
+!MESSAGE Could not read metadata for 'C:\Users\Nandor\Documents\FogOfThings\Gateway Apps\.metadata\.plugins\org.eclipse.core.resources\.projects\Monitoring_Bundle\.indexes\properties.index'. Unexpected version: 0.
+
+!ENTRY org.eclipse.core.resources 4 567 2018-07-20 14:49:32.191
+!MESSAGE Could not read metadata for 'C:\Users\Nandor\Documents\FogOfThings\Gateway Apps\.metadata\.plugins\org.eclipse.core.resources\.projects\Testing_Application\.indexes\properties.index'. Unexpected version: 0.
+
+!ENTRY org.eclipse.core.resources 4 567 2018-07-20 14:49:32.222
+!MESSAGE Could not read metadata for 'C:\Users\Nandor\Documents\FogOfThings\Gateway Apps\.metadata\.plugins\org.eclipse.core.resources\.projects\amqp_to_eventAdmin\.indexes\properties.index'. Unexpected version: 0.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2018-07-20 14:49:32.692
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2018-07-20 14:49:32.772
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.core.resources 4 567 2018-07-20 14:49:33.269
+!MESSAGE Could not read metadata for 'C:\Users\Nandor\Documents\FogOfThings\Gateway Apps\.metadata\.plugins\org.eclipse.core.resources\.projects\amqp_to_eventAdmin\.indexes\properties.index'. Unexpected version: 0.
+
+!ENTRY org.eclipse.core.resources 4 567 2018-07-20 14:49:33.280
+!MESSAGE Could not read metadata for 'C:\Users\Nandor\Documents\FogOfThings\Gateway Apps\.metadata\.plugins\org.eclipse.core.resources\.projects\Monitoring_Bundle\.indexes\properties.index'. Unexpected version: 0.
+
+!ENTRY org.eclipse.core.resources 4 567 2018-07-20 14:49:33.298
+!MESSAGE Could not read metadata for 'C:\Users\Nandor\Documents\FogOfThings\Gateway Apps\.metadata\.plugins\org.eclipse.core.resources\.projects\Testing_Application\.indexes\properties.index'. Unexpected version: 0.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2018-07-20 14:49:47.037
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.core.resources 4 567 2018-07-20 14:49:47.682
+!MESSAGE Could not read metadata for 'C:\Users\Nandor\Documents\FogOfThings\Gateway Apps\.metadata\.plugins\org.eclipse.core.resources\.projects\amqp_to_eventAdmin\.indexes\properties.index'. Unexpected version: 0.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2018-07-20 14:49:48.034
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.core.resources 4 567 2018-07-20 14:49:48.044
+!MESSAGE Could not read metadata for 'C:\Users\Nandor\Documents\FogOfThings\Gateway Apps\.metadata\.plugins\org.eclipse.core.resources\.projects\Monitoring_Bundle\.indexes\properties.index'. Unexpected version: 0.
+
+!ENTRY org.eclipse.core.resources 4 567 2018-07-20 14:49:48.264
+!MESSAGE Could not read metadata for 'C:\Users\Nandor\Documents\FogOfThings\Gateway Apps\.metadata\.plugins\org.eclipse.core.resources\.projects\Monitoring_Bundle\.indexes\properties.index'. Unexpected version: 0.
+
+!ENTRY org.eclipse.core.resources 4 567 2018-07-20 14:49:48.268
+!MESSAGE Could not read metadata for 'C:\Users\Nandor\Documents\FogOfThings\Gateway Apps\.metadata\.plugins\org.eclipse.core.resources\.projects\Monitoring_Bundle\.indexes\properties.index'. Unexpected version: 0.
+
+!ENTRY org.eclipse.core.resources 4 567 2018-07-20 14:49:48.271
+!MESSAGE Could not read metadata for 'C:\Users\Nandor\Documents\FogOfThings\Gateway Apps\.metadata\.plugins\org.eclipse.core.resources\.projects\Testing_Application\.indexes\properties.index'. Unexpected version: 0.
+
+!ENTRY org.eclipse.core.resources 4 567 2018-07-20 14:49:48.273
+!MESSAGE Could not read metadata for 'C:\Users\Nandor\Documents\FogOfThings\Gateway Apps\.metadata\.plugins\org.eclipse.core.resources\.projects\amqp_to_eventAdmin\.indexes\properties.index'. Unexpected version: 0.
+
+!ENTRY org.eclipse.core.resources 4 567 2018-07-20 14:49:48.286
+!MESSAGE Could not read metadata for 'C:\Users\Nandor\Documents\FogOfThings\Gateway Apps\.metadata\.plugins\org.eclipse.core.resources\.projects\Testing_Application\.indexes\properties.index'. Unexpected version: 0.
