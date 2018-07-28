@@ -154,7 +154,7 @@ public class Clustering {
 				if (this.clust.size()!=0){
 					Random rnd = new Random();
 					int r = rnd.nextInt(this.clust.size()-1);
-					//System.out.println("No cls found, add: "+p+" to: "+this.clust.get(r));
+					System.out.println("No cls found, add: "+p+" to: "+this.clust.get(r));
 					this.clust.get(r).add(p);
 				}else{
 				intNoise.add(p);

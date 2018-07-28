@@ -418,7 +418,6 @@ public class AdvancedCls extends Clustering {
 					this.fog.getClusters().get(share).removeGateway(this.fog.getGateways().get(g));
 				}
 			}
-			this.fog.getGateways().get(g).filleavenClusters();
 			Float tot = this.fog.getGateways().get(g).getGwBaseLoad();
 			for (Integer c : this.fog.getGateways().get(g).getCluster().keySet()) {
 				tot += this.fog.getGateways().get(g).getClusterShare(c);

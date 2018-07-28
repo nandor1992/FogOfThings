@@ -797,7 +797,7 @@ public class Fog {
 				try{
 					this.addGwAppConn(con.get(a), a);
 				} catch(NullPointerException e) {
-					System.out.print("Gateway: "+con.get(a)+" App:"+a);
+					System.out.print("Add App to Gw Conns Exception Gateway: "+con.get(a)+" App:"+a);
 					e.printStackTrace();
 				}
 		//	System.out.println("Assigning App"+a+"to gw:"+con.get(a));
@@ -1236,9 +1236,17 @@ public class Fog {
 			this.appTypes = app;
 		}
 	}
-
+	
+	
+	//Reset Stuff
+	public void resetCounts() {
+		App.resetCount();
+		Gateway.resetCount();
+		Resource.resetCount();
+	}
 	// Basic Setters and Getters for Gateway
-
+	
+	
 	public Map<Integer, Gateway> getGateways() {
 		return gateways;
 	}

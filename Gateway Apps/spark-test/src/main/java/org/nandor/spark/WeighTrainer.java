@@ -19,9 +19,9 @@ public class WeighTrainer {
 		private boolean gwFailed = false;
 		private int failCnt = 0;
 		private double procLim = 0.2; //Delete Later 
-		private double appProcLim = 0.1;
+		private double appProcLim = 0.2;
 		private double gwProcLim = 0.05;
-		private double diffLim = 0.1;
+		private double diffLim = 0.04;
 		private int bestIter = 0;
 		private int prevBestIter = 0;
 		private  List<Float>utils = new ArrayList<>();
@@ -90,6 +90,7 @@ public class WeighTrainer {
 				gwFailed=false;
 			}
 		}else{
+			System.out.println();
 			exit = true;
 		}
 	}
@@ -419,6 +420,7 @@ public class WeighTrainer {
 	private void probe(Map<String, Double> corrApp, Map<String, Double> corrGw){
 		Double appMax = 0.0;
 		Double gwMax = 0.0;
+		
 		for (String name: corrApp.keySet()){
 			if (Math.abs(corrApp.get(name))>appMax){
 				appMax = Math.abs(corrApp.get(name));
@@ -505,7 +507,6 @@ public class WeighTrainer {
 	public void attemptResult(Float utility) {
 		//Insert the value of the solution just attempted
 		utils.add(utility);
-		System.out.println("Utility:"+utils);
 		if (utility>utils.get(bestIter)){
 			prevBestIter = bestIter;
 			bestIter = utils.size()-1;
@@ -553,6 +554,11 @@ public class WeighTrainer {
 		System.out.println("Weight Gws:"+gwWeights);
 		System.out.println("Penalty Apps:"+appPenalties);
 		System.out.println("Penalty Gws:"+gwPenalties);
+	}
+	
+	public void showWeights(){
+		System.out.print("Weight Apps:"+appWeights.get(appWeights.size()-1));
+		System.out.println("Weight Gws:"+gwWeights.get(gwWeights.size()-1));
 	}
 
 	public Map<String, Double> appWeights() {

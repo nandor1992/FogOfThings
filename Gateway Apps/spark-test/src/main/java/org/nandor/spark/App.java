@@ -344,6 +344,11 @@ public class App {
 	public void setWeightConstraint(float constraints) {
 		utilityWeights.put("constraint", constraints);
 	}
+	
+	public static void resetCount(){
+		count.set(0);
+	}
+	
 	//basic Setters and Getters
 	public Gateway getGateway() {
 		return this.gateway;

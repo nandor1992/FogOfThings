@@ -1,0 +1,21 @@
+package org.nandor.spark;
+
+public class DataGatherer {
+
+	public void setTestType(String string) {
+		// TODO Enable and disable stuff 
+		
+	}
+
+	
+	
+	//print out Results
+	public void getResults() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	//Create Constants of diffrent types 
+	//Use methods to add data and to write it out
+
+}

@@ -31,6 +31,9 @@ public class WayFinder {
 		this.size=size;
 		this.proc=proc;
 		this.clsSize = (int)(f.getApps().size()*proc);
+		if(this.clsSize<minSize){
+			this.clsSize=minSize;
+		}
 		this.minSize=minSize;
 	}
 	

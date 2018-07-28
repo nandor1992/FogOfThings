@@ -1,0 +1,59 @@
+package org.nandor.spark;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class DataGatherer {
+
+	
+	boolean utilBool = true;
+	boolean iterBool = true;
+	boolean timeBool = true;
+	List<Float> utility = new LinkedList<>();
+	List<Integer> iteration = new LinkedList<>();
+	List<Float> execTime = new LinkedList<>();
+	//Set Test
+	public void setTestType(String type) {
+		
+		switch (type) {
+		case "Perf":
+			utilBool = true;
+			iterBool = false;
+			timeBool = true;
+			break;
+		
+		default:
+			break;
+		}
+	}
+
+
+	//Add Components
+	public void addUtility(float bestUtil) {
+		if (utilBool){
+			utility.add(bestUtil);
+		}	
+	}
+	public void addIteration(int i) {
+		if (iterBool){
+			iteration.add(i);
+		}
+	}
+	public void addTime(float f) {
+		if (timeBool){
+			execTime.add(f);
+		}
+	}
+	
+	public void reset() {
+		utility = new LinkedList<>();
+		iteration = new LinkedList<>();
+		execTime = new LinkedList<>();
+	}
+	//print out Results
+	public void getResults() {
+		System.out.println(utility);
+		System.out.println(iteration);
+		System.out.println(execTime);
+	}
+}

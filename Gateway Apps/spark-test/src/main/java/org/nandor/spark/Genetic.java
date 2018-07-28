@@ -585,7 +585,7 @@ public class Genetic {
 		}
 	}
 	
-	public Map<Integer,Integer> GAGlobal(int size,int generations,boolean safe,int max) {
+	public Map<Integer,Integer> GAGlobal(int size,int generations,boolean safe,int max,DataGatherer dg) {
 		System.out.println("GA Global GwCount:" + this.gwCount + " AppCnt:" + this.AppCnt + " Size:"+size+" Gens:"+generations);
 		long start=System.currentTimeMillis();
 		float prevBestUtil =(float) 0.0;
@@ -598,7 +598,8 @@ public class Genetic {
 		List<Map<Integer, Integer>> pop = randomPop(size);
 		int i=0;
 		int bestI=0;
-		while (sinceLastBest<generations || (!safe || bestUtil==0.0 )) {
+		//while (sinceLastBest<generations || (!safe || bestUtil==0.0 )) {
+		while (sinceLastBest<generations || (safe  && bestUtil==0.0 )) {
 			i++;
 			if (i % max == 0){
 				if (bestUtil!=0.0){
@@ -634,6 +635,77 @@ public class Genetic {
 				bestI=i;
 				sinceLastBest=0;
 				//" With: "+this.bestIndi+
+				if (bestUtil>prevBestUtil+0.1){
+					prevBestUtil=bestUtil;
+					System.out.println("The best of the Population "+i+" is: "+bestUtil+" At: "+(System.currentTimeMillis()-start)/(float)1000);
+				}	
+			}else{
+				sinceLastBest++;
+			}
+			if ((i%10==0 && (i >= 10))||i==1){
+				dg.addUtility(bestUtil);
+				dg.addIteration(i);
+				dg.addTime((System.currentTimeMillis()-start)/(float)1000);
+			}
+			pop=newpop;
+		}
+		this.bestGens  = getBestGens(pop, 20,true);
+		System.out.println("Best of "+i+"  Population was at: "+bestI+" is: "+bestUtil+" At: "+(System.currentTimeMillis()-start)/(float)1000);
+		
+		return pop.get(0);
+	}
+	
+	public float GAGlobal(int size,Double value) {
+		System.out.println("GA Global GwCount:" + this.gwCount + " AppCnt:" + this.AppCnt + " Size:"+size+ " Ref: "+value);
+		long start=System.currentTimeMillis();
+		float prevBestUtil =(float) 0.0;
+		int max = 10000;
+		// Ga Parameters
+		//TODO Easy to find Global
+		this.fog.clearAppToGws();
+		float bestUtil = (float)0.0;
+		int sinceLastBest = 0;
+		//System.out.println("----- Initializing new Population for Global GA -----");
+		List<Map<Integer, Integer>> pop = randomPop(size);
+		int i=0;
+		int bestI=0;
+		//while (sinceLastBest<generations || (!safe || bestUtil==0.0 )) {
+		while (bestUtil<value) {
+			i++;
+			if (i % max == 0){
+				if (bestUtil!=0.0){
+					break;
+				}else{
+					System.out.println("------ GA Global Failed ------");
+					this.fog.clearAppToGws();
+					this.fog.AssignAppsToGws(pop.get(0));
+					System.out.println(pop.get(0));
+					System.out.println(this.fog.verifyValidityVerbose());
+					//Methods.displayClsAndRes(this.fog);
+					//this.fog.clearAppToGws();
+					return (float)0.0;
+				}
+			}
+			//System.out.println("Pop "+pop.toString());
+			//System.out.print("Loop Count " + i + ": ");
+			//System.out.println("----- Get Elite Population -----");
+			List<Map<Integer, Integer>> newpop = getBestGens(pop, (int)(size*elitPop),false);
+			//System.out.println("Best Size: "+newpop.size()+" When needed: "+(size*elitPop));
+			//System.out.println("----- Get Crossover Population -----");
+			newpop.addAll(crossingPop(pop,(int)(size*crossPop)));
+			//System.out.print("Cross: "+newpop.size());
+			//System.out.println("----- Get Mutated Population -----");
+			newpop.addAll(mutatePop(pop,(int)(size*mutPop)));
+			//System.out.print("Mutate: "+newpop.size());
+			//System.out.println("----- Initializing new Population -----");
+			newpop.addAll(randomPop((int)(size-newpop.size())));
+			//System.out.println("Tot: "+newpop.size());
+			float newUtil=getBest(newpop);
+			if (newUtil>bestUtil){
+				bestUtil=newUtil;
+				bestI=i;
+				sinceLastBest=0;
+				//" With: "+this.bestIndi+
 				if (bestUtil>prevBestUtil+0.5){
 					prevBestUtil=bestUtil;
 					System.out.println("The best of the Population "+i+" is: "+bestUtil+" At: "+(System.currentTimeMillis()-start)/(float)1000);
@@ -645,8 +717,8 @@ public class Genetic {
 		}
 		this.bestGens  = getBestGens(pop, 20,true);
 		System.out.println("Best of "+i+"  Population was at: "+bestI+" is: "+bestUtil+" At: "+(System.currentTimeMillis()-start)/(float)1000);
-		
-		return pop.get(0);
+		this.fog.setDeplpyment(pop.get(0));
+		return (System.currentTimeMillis()-start)/(float)1000;
 	}
 	
 	public List<Map<Integer, Integer>> getBestGens(){
@@ -661,6 +733,121 @@ public class Genetic {
 			System.out.println("Fog Delay: " + this.fog.getFogCompoundDelay());
 			System.out.println("Fog Reliability: " + this.fog.getFogCompoundReliability());
 	 */
+	
+	
+	public Map<Integer, Float> GAGlobalEndCnd(int size, int count) {
+		System.out.println("GA Global GwCount:" + this.gwCount + " AppCnt:" + this.AppCnt + " Size:"+size+" Gens:"+count);
+		long start=System.currentTimeMillis();
+		// Ga Parameters
+		this.fog.clearAppToGws();
+		float bestUtil = (float)0.0;
+		float prevBestUtil = (float)0.0;
+		List<Map<Integer, Integer>> pop = randomPop(size);
+		int i=0;
+		int bestI=0;
+		Map<Integer,Float> bests = new HashMap<>();
+		while (i < count ) {
+			i++;
+			//System.out.println("Pop "+pop.toString());
+			//System.out.print("Loop Count " + i + ": ");
+			//System.out.println("----- Get Elite Population -----");
+			List<Map<Integer, Integer>> newpop = getBestGens(pop, (int)(size*elitPop),false);
+			//System.out.print("Best: "+newpop.size());
+			//System.out.println("----- Get Crossover Population -----");
+			newpop.addAll(crossingPop(pop,(int)(size*crossPop)));
+			//System.out.print("Cross: "+newpop.size());
+			//System.out.println("----- Get Mutated Population -----");
+			newpop.addAll(mutatePop(pop,(int)(size*mutPop)));
+			//System.out.print("Mutate: "+newpop.size());
+			//System.out.println("----- Initializing new Population -----");
+			newpop.addAll(randomPop((int)(size-newpop.size())));
+			//System.out.println("Tot: "+newpop.size());
+			float newUtil=getBest(newpop);
+			if (newUtil>bestUtil){
+				if (newUtil>prevBestUtil+0.1){
+					System.out.println("The best of the Population "+i+" is: "+newUtil+" At: "+(System.currentTimeMillis()-start)/(float)1000);	
+					prevBestUtil = newUtil;
+				}
+				bestUtil=newUtil;
+				bestI=i;
+				//" With: "+this.bestIndi+
+				}
+			if ((i%10==0 && (i >= 10))||i==1){
+				bests.put(i, bestUtil);
+			}
+			pop=newpop;
+		}
+		if (bestUtil!=0){
+			bests.put(i, bestUtil);
+			this.bestGens  = getBestGens(pop, 20,true);
+			System.out.println("The best of the Population "+bestI+" is: "+bestUtil+" At: "+(System.currentTimeMillis()-start)/(float)1000);
+			return bests;
+		}else{
+			System.out.println("GA Global Failed");
+			this.fog.clearAppToGws();
+			this.fog.AssignAppsToGws(pop.get(0));
+			System.out.println(pop.get(0));
+			System.out.println(this.fog.verifyValidityVerbose());
+			//this.fog.clearAppToGws();
+			return null;
+		}
+	}
+	
+	public Float GAGlobalSize(int size, int count) {
+		System.out.println("GA Global GwCount:" + this.gwCount + " AppCnt:" + this.AppCnt + " Size:"+size+" Gens:"+count);
+		long start=System.currentTimeMillis();
+		// Ga Parameters
+		this.fog.clearAppToGws();
+		float bestUtil = (float)0.0;
+		float prevBestUtil = (float)0.0;
+		List<Map<Integer, Integer>> pop = randomPop(size);
+		int i=0;
+		int bestI=0;
+		float iniBUtil = (float)0.0;
+		while (i < count ) {
+			i++;
+			//System.out.println("Pop "+pop.toString());
+			//System.out.print("Loop Count " + i + ": ");
+			//System.out.println("----- Get Elite Population -----");
+			List<Map<Integer, Integer>> newpop = getBestGens(pop, (int)(size*elitPop),false);
+			//System.out.print("Best: "+newpop.size());
+			//System.out.println("----- Get Crossover Population -----");
+			newpop.addAll(crossingPop(pop,(int)(size*crossPop)));
+			//System.out.print("Cross: "+newpop.size());
+			//System.out.println("----- Get Mutated Population -----");
+			newpop.addAll(mutatePop(pop,(int)(size*mutPop)));
+			//System.out.print("Mutate: "+newpop.size());
+			//System.out.println("----- Initializing new Population -----");
+			newpop.addAll(randomPop((int)(size-newpop.size())));
+			//System.out.println("Tot: "+newpop.size());
+			float newUtil=getBest(newpop);
+			if (newUtil>bestUtil){
+				if (bestUtil==0.0){
+					iniBUtil = newUtil;
+				}
+				if (newUtil>prevBestUtil+0.1){
+					System.out.println("The best of the Population "+i+" is: "+newUtil+" At: "+(System.currentTimeMillis()-start)/(float)1000);	
+					prevBestUtil = newUtil;
+				}
+				bestUtil=newUtil;
+				//" With: "+this.bestIndi+
+				}
+			pop=newpop;
+		}
+		if (bestUtil!=0){
+			this.bestGens  = getBestGens(pop, 20,true);
+			System.out.println("The best of the Population "+bestI+" is: "+bestUtil+"Init:"+iniBUtil+" At: "+(System.currentTimeMillis()-start)/(float)1000);
+			return (bestUtil-iniBUtil)/this.fog.getApps().size();
+		}else{
+			System.out.println("GA Global Failed");
+			this.fog.clearAppToGws();
+			this.fog.AssignAppsToGws(pop.get(0));
+			System.out.println(pop.get(0));
+			System.out.println(this.fog.verifyValidityVerbose());
+			//this.fog.clearAppToGws();
+			return null;
+		}
+	}
 	
 	private List<Map<Integer,Integer>> crossingPop(List<Map<Integer,Integer>> pop, int i) {
 		List<Map<Integer,Integer>> ret = new ArrayList<>();

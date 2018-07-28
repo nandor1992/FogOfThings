@@ -820,6 +820,9 @@ public class WeightedCls extends Clustering {
 	public void setCorrelation(Map<String, Double> corrApp, Map<String, Double> corrGw) {
 		//Find parameters of interest
 		//appWeights gwWeights
+		if (corrApp.size()==0 && corrGw.size()==0){
+			return;
+		}
 		appWeights = new HashMap<>();
 		gwWeights = new HashMap<>();
 		//Get Maxes 
@@ -860,7 +863,7 @@ public class WeightedCls extends Clustering {
 			gwWeights.put(name,gwWeights.get(name)/sum2);
 		}
 		
-		System.out.println("Corr App: "+appWeights+" Corr Gw:"+gwWeights);
+		//System.out.println("Corr App: "+appWeights+" Corr Gw:"+gwWeights);
 	}
 	
 	public List<Set<Integer>> DBScan(Float eps,Integer minPts,Integer maxPts){
@@ -921,6 +924,7 @@ public class WeightedCls extends Clustering {
 		int failiter = 0;
 		Double prevValid = Double.MAX_VALUE;
 		Double bestValid = Double.MAX_VALUE;
+		Float bestEps = Float.MAX_VALUE;
 		List<Double> epsVals = this.getMinMaxEpsValues(10.0,4);
 		eps=epsVals.get(0).floatValue();
 		boolean found = false;
@@ -928,7 +932,7 @@ public class WeightedCls extends Clustering {
 		//while ((this.validateClust(minPts)<=prevValid || bestValid > minPts*1.5)&& eps<epsVals.get(1).floatValue()){
 		while (eps<epsVals.get(1).floatValue() && (!found || fails<3)){
 			prevValid=this.validateClust(minPts);
-			System.out.println(" -> Clustering iter: "+iter+" with Eps: "+eps+" Valid: "+prevValid+"Found: "+found+" Fails:" +fails);
+			//System.out.println(" -> Clustering iter: "+iter+" with Eps: "+eps+" Valid: "+prevValid+"Found: "+found+" Fails:" +fails);
 			eps+=epsVals.get(2).floatValue();
 			this.visited = new HashSet<>();
 			this.noise = new HashSet<>();
@@ -963,6 +967,7 @@ public class WeightedCls extends Clustering {
 				found=true;
 				bestCls=this.clust;
 				bestValid=prevValid;
+				bestEps = eps;
 			}
 			if (prevValid == Double.MAX_VALUE){
 				fails++;
@@ -974,8 +979,8 @@ public class WeightedCls extends Clustering {
 			System.out.println("Valid : "+this.validateClust(minPts));
 			System.out.println("Clusters: "+this.clust);
 			System.out.println("Noise: "+this.noise);*/
-			System.out.println("Eps Search Results - Best Eps:"+eps+" BestValid: "+this.validateClust(minPts));
 		}
+		System.out.println("Eps Search Results - Best Eps:"+bestEps+" BestValid: "+bestValid);
 		this.clust=bestCls;
 		//Simple fix to overallocation resolve
 		this.resolveOverAllocation();

@@ -53,6 +53,12 @@ public class Resource {
 	     		 ret+="App:"+apps;
 	    return ret;
 	}
+	
+	
+	public static void resetCount(){
+		count.set(0);
+	}
+	
 	//Basic Setters and Getters for Resource
 	public Gateway getGateway() {
 		return this.gateway;

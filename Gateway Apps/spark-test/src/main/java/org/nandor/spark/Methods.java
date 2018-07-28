@@ -6,16 +6,21 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.Set;
+import java.util.SortedSet;
 import java.util.TimerTask;
+import java.util.TreeSet;
 
 import com.sun.org.apache.bcel.internal.generic.POP;
 
 public class Methods {
 
+	public static DataGatherer dataG = new DataGatherer();
+	
 	public static void DisplayData(Fog f) {
 		/*for (Integer i : f.getApps().keySet()) {
 			System.out.println(f.getApps().get(i).getInfo());
@@ -109,13 +114,13 @@ public class Methods {
 	public static List<Map<Integer, Integer>> GAGlobal(Fog f){
 		Map<String,Float> data = new HashMap<>();
 		System.out.println("---------------------------");
-		System.out.println("----- Global GA Stuff -----");
+		System.out.println("----- A. Global GA Stuff -----");
 		System.out.println("---------------------------");
 		long start=System.currentTimeMillis();
 		Genetic g = new Genetic(f);
-		int size = getMinPtsSize(f.getApps().size());
-		int cnt = getMinPtsCount(f.getApps().size());
-		f.setDeplpyment(g.GAGlobal(size,cnt,true,10000));
+		int size = getMinPtsSize(f.getApps().size(),f.getScenario());
+		int cnt = getMinPtsCount(f.getApps().size(),f.getScenario());
+		f.setDeplpyment(g.GAGlobal(size,cnt,true,10000,dataG));
 		//System.out.println("Unalocated Apps: "+f.checkIfAppsAllocated());	
 		//f.deployFog();
 		//System.out.println("Fog Utility: "+f.getFogCompoundUtility());
@@ -135,6 +140,71 @@ public class Methods {
 			}
 		}*/
 	}
+	
+	public static float GAGlobal(Fog f,int size, int generations){
+		Map<String,Float> data = new HashMap<>();
+		System.out.println("------------------------");
+		System.out.println("----- GA Reference -----");
+		System.out.println("------------------------");
+		long start=System.currentTimeMillis();
+		Genetic g = new Genetic(f);
+		f.setDeplpyment(g.GAGlobal(size,generations,true,10000,dataG));
+		f.deployFog();
+		if (f.checkIfAppsAllocated().size()!=0 || f.getFogCompoundUtility().isNaN() || f.verifyIndValidity()!=0){
+			System.out.println("GA Failed with FailAppCnt:"+f.checkIfAppsAllocated().size()+" Utility:"+f.getFogCompoundUtility()+ " Valid:"+f.verifyIndValidity());
+			return (float)0.0;
+		}else{
+			return f.getFogCompoundUtility();
+		}
+	}
+	
+	public static Map<Integer, Float> GAGlobalEndCnd(Fog f,int size){
+		Map<String,Float> data = new HashMap<>();
+		System.out.println("------------------------");
+		System.out.println("----- GA End Condition -----");
+		System.out.println("------------------------");
+		long start=System.currentTimeMillis();
+		Genetic g = new Genetic(f);
+		Map<Integer, Float> best = g.GAGlobalEndCnd(size,5000);
+		if (best==null){
+			return null;
+		}else{
+			return best;
+		}
+	}
+	
+	public static Float GAGlobalSize(Fog f,int size){
+		Map<String,Float> data = new HashMap<>();
+		System.out.println("------------------------");
+		System.out.println("----- GA Size -----");
+		System.out.println("------------------------");
+		long start=System.currentTimeMillis();
+		Genetic g = new Genetic(f);
+		Float best = g.GAGlobalSize(size,5000);
+		if (best==null){
+			return null;
+		}else{
+			return best;
+		}
+	}
+	
+	public static Float GAGlobal(Fog f,int size,double d){
+		Map<String,Float> data = new HashMap<>();
+		float proc = (float) 0.9995;
+		System.out.println("---------------------");
+		System.out.println("----- GA Follow -----");
+		System.out.println("---------------------");
+		long start=System.currentTimeMillis();
+		Genetic g = new Genetic(f);
+		Float time = g.GAGlobal(size,d*proc);
+		f.deployFog();
+		if (f.checkIfAppsAllocated().size()!=0 || f.getFogCompoundUtility().isNaN()){
+			return Float.MAX_VALUE;
+		}else{
+			return time;
+		}
+	}
+	
 
 	public static Float getUtility(Fog f,Map<Integer, Integer> pop){
 		f.clearAppToGws();
@@ -181,7 +251,7 @@ public class Methods {
 			}
 	}
 	
-	public static List<Map<Integer, Integer>> GAClus(Fog f,int size,int cnt,boolean safe){
+	public static List<Map<Integer, Integer>> GAClus(Fog f,int size,int cnt,boolean safe,DataGatherer dg){
 		//System.out.println("----- Clust GA Stuff -----");
 		Map<String,String> data = new HashMap<>();
 		long start=System.currentTimeMillis();
@@ -207,10 +277,11 @@ public class Methods {
 			//System.out.println("Time Elapsed: "+(System.currentTimeMillis()-start)/(float)1000);
 			//System.out.println("Cluster: "+f.getClusters());
 			//System.out.println("BestPop: "+f.getDeployment());
-			List<Map<Integer,Integer>> ret = new ArrayList<>();
+			List<Map<Integer,Integer>> ret = new LinkedList<>();
 			ret.add(f.getDeployment());
 			ret.addAll(g.getBestClsGens());
-			return ret;}
+			return ret;
+			}
 		else{
 				System.out.println("Failed with Unallocated: "+f.checkIfAppsAllocated());
 				return null;
@@ -236,78 +307,112 @@ public class Methods {
 		return null;
 	}
 	
-	public static Map<Integer, Integer> DistanceClusteringDeployment(Fog f){
+	public static List<Map<Integer, Integer>> DistanceClusteringDeployment(Fog f){
 		System.out.println("------------------------------------------");
-		System.out.println("----- Distance Clustering Deployment -----");
+		System.out.println("----- B. Distance Clustering Deployment -----");
 		System.out.println("------------------------------------------");
 		Genetic g = new Genetic(f);
 		int eps = 1;
-		int minPts = getMinPts(f);
-		int size = getMinPtsSize(minPts);
-		int count = getMinPtsCount(minPts);
+		//int minPts = getMinPts(f);
+		int minPts = 10;
+		int size = getMinPtsSize(minPts,f.getScenario());
+		int count = getMinPtsCount(minPts,f.getScenario());
 		long start=System.currentTimeMillis();
-		Clustering(f,eps,minPts);
+		
+		dataG.addTime((float)(System.currentTimeMillis()-start)/(float)1000.0);
+		dataG.addUtility((float)0.0);
+		
+		while(!Clustering(f,eps,minPts)){
+			minPts = minPts-1;
+			if (minPts<3){
+				return null;
+			}
+		};
+		dataG.addTime((float)(System.currentTimeMillis()-start)/(float)1000.0);
+		dataG.addUtility((float)0.0);
+		
 		ResourceAllocation(f);
-		//CLustered GA
-		//DisplayData(f);
-		for (Integer i: f.getClusters().keySet()){
-			f.getClusters().get(i).setDeployment(Methods.GAClus(f, 60, 250, true).get(0));
-			//f.getClusters().get(i).setDeployment(g.GACluster(size,cnt, f.getClusters().get(i),safe));
+		dataG.addTime((float)(System.currentTimeMillis()-start)/(float)1000.0);
+		dataG.addUtility((float)0.0);
+		List<Map<Integer, Integer>> ret = Methods.GAClus(f, size, count, true,dataG);
+		if (ret!=null){
+			dataG.addTime((float)(System.currentTimeMillis()-start)/(float)1000.0);	
+			f.setDeplpyment(ret.get(0));
+			f.deployFog();
+			dataG.addUtility(f.getFogCompoundUtility());	
+			float tot_sec=(System.currentTimeMillis()-start)/(float)1000;
+			System.out.println("Finished Clusering Part in:"+tot_sec);
+			System.out.println("Unalocated Apps: "+f.checkIfAppsAllocated());
+			System.out.println("Total Elapsed Time:"+ (System.currentTimeMillis()-start)/1000.0);
+			return ret;
+		}else{
+			System.out.println("Distance Clustering Failed");
+			return null;
 		}
-		f.deployClusters();
-		float tot_sec=(System.currentTimeMillis()-start)/(float)1000;
-		System.out.println("Fog Utility: "+f.getFogCompoundUtility());
-		System.out.println("Finished Clusering Part in:"+tot_sec);
-		System.out.println("Unalocated Apps: "+f.checkIfAppsAllocated());
-		start=System.currentTimeMillis();
-		System.out.println("Total Elapsed Time:"+ (System.currentTimeMillis()-start)/1000.0);
-		return f.getDeployment();
 	}
 	
-	private static int getMinPtsCount(int minPts) {
-		int ret = minPts*18;
-		
-		//Min
-		if (ret<100){
-			return 100;
+	private static int getMinPtsCount(int minPts,String scenario) {
+		int ret =0;
+		switch (scenario) {
+		case "Multi":
+			ret =  (int)(694.57+0.2922*(double)minPts);
+			break;
+		case "Capab":			
+			ret =  (int)(178.45*(double)minPts);
+			break;
+		case "Delay":
+			ret = (int)(176.88+11.168*(double)minPts);
+			break;
+		default:
+			System.out.println("Default:");
+			ret =  (int)(694.57+0.2922*(double)minPts);
+			break;
 		}
-		
-		//Max
-		if (ret>500){
-			return 500;
+		if (ret>20000){
+			System.out.println("Limited from: "+ret);
+			ret =20000;
 		}
-			
 		return ret;
 	}
 
-	private static int getMinPtsSize(int minPts) {
-		int ret = minPts*6;
-		
-		//Min
-		if (ret<40){
-			return 40;
+	private static int getMinPtsSize(int minPts,String scenario) {
+		int ret = 0;
+		switch (scenario) {
+		case "Multi":
+			ret =  (int)(40.31+0.22*(double)minPts);
+			break;
+		case "Capab":			
+			ret =  (int)(36.43+0.76*(double)minPts);
+			break;
+		case "Delay":
+			ret =  (int)(47.69+0.079*(double)minPts);
+			break;
+		default:
+			System.out.println("Default:");
+			ret =  (int)(40.31+0.22*(double)minPts);
+			break;
 		}
-		
-		//Max
-		if (ret>120){
-			return 120;
+		if (ret>400){
+			System.out.println("Limited from: "+ret);
+			ret = 400;
 		}
-			
 		return ret;
 	}
 
 
 
 	private static int getMinPts(Fog f) {
+		//System.out.println(f.getScenario());
 		switch (f.getScenario()) {
 		case "Delay":
-			return 12;
+			return 18;
 		case "Multi":
-			return 9;
+			return 15;
 		case "Capab":
 			return 5;
 		default:
-			return 7;
+			System.out.println("Default:");
+			return 12;
 		}
 	}
 
@@ -331,11 +436,18 @@ public class Methods {
 		f.clearGwClustConns();
 		f.removeClusters();
 		Clustering cls = new Clustering(f);
-		f.createClusters(cls.DBScan(eps,minPts));//eps, minPts
+		List<Set<Integer>> tmp = cls.DBScan(eps,minPts);//eps, minPts
+		if (tmp.size()<1){
+			System.out.println("Clustering Failed - No CLusters");
+			return false;
+		}else{
+			f.createClusters(tmp);
+		}
 		for (Integer i : f.getClusters().keySet()) {
 			System.out.println("Cluster "+i+" Apps: "+f.getClusters().get(i).getApps().keySet());
 		}
-		if(f.checkIfAppsAllocated().size()!=0 || f.getClusters().size()<=1){
+		if(f.checkIfAppsAllocated().size()!=0){
+			System.out.println("Clustering Failed - Alloc ");
 			return false;
 		}else{
 			return true;
@@ -387,7 +499,7 @@ public class Methods {
 		f.removeClusters();
 		f.createClusters(cls.DBScan(minPts));//eps, minPts
 		for (Integer i : f.getClusters().keySet()) {
-			System.out.println("Cluster "+i+" Apps: "+f.getClusters().get(i).getApps().keySet());
+			System.out.println("Cluster "+i+" Size:"+f.getClusters().get(i).getApps().size()+" Apps: "+f.getClusters().get(i).getApps().keySet());
 		}
 		System.out.println("Unallocated Apps: "+f.checkIfAppsAllocated());
 		if(f.checkIfAppsAllocated().size()!=0 || f.getClusters().size()==0){
@@ -417,9 +529,9 @@ public class Methods {
 		
 	}
 	
-	public static Map<Integer, Integer> RandomDeployment(Fog f){
+	public static List<Map<Integer, Integer>> RandomDeployment(Fog f){
 		System.out.println("-----------------------------");
-		System.out.println("----- Random Deployment -----");
+		System.out.println("----- B(0). Random Deployment -----");
 		System.out.println("-----------------------------");
 		Genetic g = new Genetic(f);
 		int minPts = getMinPts(f);
@@ -427,28 +539,38 @@ public class Methods {
 		int maxShare = 2;
 		double shareThreshold = (float) 0.3;
 		//GA
-		int size = getMinPtsSize(minPts);
-		int count = getMinPtsCount(minPts);
+		int size = getMinPtsSize(minPts,f.getScenario());
+		int count = getMinPtsCount(minPts,f.getScenario());
 		
 		long start=System.currentTimeMillis();
+		dataG.addTime((float)(System.currentTimeMillis()-start)/(float)1000.0);
+		dataG.addUtility((float)0.0);
+		f.clearGwClustConns();
+		f.removeClusters();
 		WeightedCls cls = new WeightedCls(f);
-		if (RandomClustering(f, cls,minPts,(int)((int)minPts*1.5))) {	
-			weightedResourceAlloc(f, cls, maxShare, shareThreshold);
-			//CLustered GA
-			//DisplayData(f);
-			for (Integer i: f.getClusters().keySet()){
-				f.getClusters().get(i).setDeployment(Methods.GAClus(f, count, size, true).get(0));
-				//f.getClusters().get(i).setDeployment(g.GACluster(size,cnt, f.getClusters().get(i),safe));
-			}
+		
+		RandomClustering(f, cls,minPts,(int)((int)minPts*1.5));
+		dataG.addTime((float)(System.currentTimeMillis()-start)/(float)1000.0);
+		dataG.addUtility((float)0.0);
+		
+		weightedResourceAlloc(f, cls, maxShare, shareThreshold);
+		dataG.addTime((float)(System.currentTimeMillis()-start)/(float)1000.0);
+		dataG.addUtility((float)0.0);
+		List<Map<Integer, Integer>> ret = Methods.GAClus(f, count, size, true,dataG);
+		if (ret!=null){
+			dataG.addTime((float)(System.currentTimeMillis()-start)/(float)1000.0);	
+			f.setDeplpyment(ret.get(0));
+			f.deployFog();
+			dataG.addUtility(f.getFogCompoundUtility());
+			float tot_sec=(System.currentTimeMillis()-start)/(float)1000;
+			System.out.println("Finished Clusering Part in:"+tot_sec);
+			System.out.println("Unalocated Apps: "+f.checkIfAppsAllocated());
+			System.out.println("Total Elapsed Time:"+ (System.currentTimeMillis()-start)/1000.0);
+			return ret;
+		}else{
+			System.out.println("Distance Clustering Failed");
+			return null;
 		}
-		f.deployClusters();
-		float tot_sec=(System.currentTimeMillis()-start)/(float)1000;
-		System.out.println("Fog Utility: "+f.getFogCompoundUtility());
-		System.out.println("Finished Clusering Part in:"+tot_sec);
-		System.out.println("Unalocated Apps: "+f.checkIfAppsAllocated());
-		start=System.currentTimeMillis();
-		System.out.println("Total Elapsed Time:"+ (System.currentTimeMillis()-start)/1000.0);
-		return f.getDeployment();	
 	}
 	
 	/* Section for the weighted/CorrelationBased/Clustering GA
@@ -485,7 +607,7 @@ public class Methods {
 				displayClsAndRes(f);
 				//Do weighted Resource Allocation based algorithm
 				//Do Local GA, if Any fail then the method fails 
-				List<Map<Integer, Integer>> tmpbests = Methods.GAClus(f, 60, 30, true);
+				List<Map<Integer, Integer>> tmpbests = Methods.GAClus(f, 60, 30, true,dataG);
 				if (tmpbests == null){
 						System.out.println("Direction Clustering Failed!");
 						cls.getWeight().setGwFailed();
@@ -512,10 +634,10 @@ public class Methods {
 		
 	}
 	
-	public static Map<Integer, Integer> SampleWeDiCOptimization(Fog f) {
+	public static List<Map<Integer, Integer>> SampleWeDiCOptimization(Fog f) {
 		//Init
 		System.out.println("------------------------------------------------------------");
-		System.out.println("----- Sample Weighted Distance Clustering Optimization -----");
+		System.out.println("----- C. Sample Weighted Distance Clustering Optimization -----");
 		System.out.println("------------------------------------------------------------");
 		f.clearAppToGws();
 		//Sampling
@@ -527,18 +649,22 @@ public class Methods {
 		int maxShare = 2;
 		double shareThreshold = (float) 0.3;
 		//GA
-		int size = getMinPtsSize(minPts);
-		int count = getMinPtsCount(minPts);
+		int size = getMinPtsSize(minPts,f.getScenario());
+		int count = getMinPtsCount(minPts,f.getScenario());
 		//Time start
 		long startIni = System.currentTimeMillis();
+		dataG.addTime((float)(System.currentTimeMillis()-startIni)/(float)1000.0);
+		dataG.addUtility((float)0.0);
 		WeightedCls cls = new WeightedCls(f);
 		Map<Integer,Integer> bestSolution = new HashMap<>();
 		Double bestUtil = 0.0;
+		dataG.addTime((float)(System.currentTimeMillis()-startIni)/(float)1000.0);
+		dataG.addUtility((float)0.0);
 		cls.initTrain(10,2);
 		//Random Population Initialization using Initial Weights
 		//Create Random Cluster and Optimize that, it needs to have a certain size 
 		//List<Map<Integer, Integer>> bests = sampleClustGA(f,cls,60,50,0.1);
-		List<Map<Integer, Integer>> bests = iterSampleClustGA(f,cls,getMinPtsCount((int)sampleProc*f.getApps().size()),getMinPtsSize((int)sampleProc*f.getApps().size()),sampleProc,minSampleSize);
+		List<Map<Integer, Integer>> bests = iterSampleClustGA(f,cls,getMinPtsCount((int)sampleProc*f.getApps().size(),f.getScenario()),getMinPtsSize((int)sampleProc*f.getApps().size(),f.getScenario()),sampleProc,minSampleSize);
 		//List<Map<Integer, Integer>> bests = randomClustGA(f,cls,60,30);
 		//List<Map<Integer, Integer>> bests = GAGlobal(f, 60, 50, true);
 		Map<String,Double> corrApp = cls.Correlation("Deployment",cls.allAppSimilarities(bests));
@@ -551,15 +677,18 @@ public class Methods {
 		cls.getWeight().attemptResult(bestUtil.floatValue());
 		System.out.println("Sampling Finished in :"+((System.currentTimeMillis()-startIni)/1000.0));
 		
+		dataG.addTime((float)(System.currentTimeMillis()-startIni)/(float)1000.0);
+		dataG.addUtility((float)0.0);
 		//Iterative Solution
-		Map<Integer, Integer> best = IterWeDiCompOptimization(f, cls, bests, minPts, maxShare, shareThreshold, size, count, bestUtil, bestSolution);
-		
+		Map<Integer, Integer> best = IterWeDiCompOptimization(f, cls, bests, minPts, maxShare, shareThreshold, size, count, bestUtil, bestSolution,startIni);
 		//Final Write Out
 		System.out.println("Method Finished in :"+((System.currentTimeMillis()-startIni)/1000.0));
-		return best;
+		List<Map<Integer, Integer>> ret = new LinkedList<>();
+		ret.add(best);
+		return ret;
 	}
 
-	public static Map<Integer, Integer> InitWeDiCOptimization(Fog f) {
+	public static List<Map<Integer, Integer>> InitWeDiCOptimization(Fog f) {
 		//TODO Part
 		System.out.println("------------------------------------------------------------------------");
 		System.out.println("----- D. Initial Weights Weighted Distance Clustering Optimization -----");
@@ -574,35 +703,45 @@ public class Methods {
 		int maxShare = 2;
 		double shareThreshold = (float) 0.3;
 		//GA
-		int size = getMinPtsSize(minPts);
-		int count = getMinPtsCount(minPts);
+		int size = getMinPtsSize(minPts,f.getScenario());
+		int count = getMinPtsCount(minPts,f.getScenario());
 		//Time start
 		long startIni = System.currentTimeMillis();
 		WeightedCls cls = new WeightedCls(f);
+		cls.resetGwWeights(1.0);
+		cls.resetAppWeights(1.0);
+		cls.initTrain(10,2);
 		Map<Integer,Integer> bestSolution = new HashMap<>();
 		Double bestUtil = 0.0;
-		
+		dataG.addTime((float)(System.currentTimeMillis()-startIni)/(float)1000.0);
+		dataG.addUtility((float)0.0);
 		//Iterative Solution
-		Map<Integer, Integer> best = IterWeDiCompOptimization(f, cls, null, minPts, maxShare, shareThreshold, size, count, bestUtil, bestSolution);
+		Map<Integer, Integer> best = IterWeDiCompOptimization(f, cls, null, minPts, maxShare, shareThreshold, size, count, bestUtil, bestSolution,startIni);
 		
 		//Final Write Out
 		System.out.println("Method Finished in :"+((System.currentTimeMillis()-startIni)/1000.0));
-		return best;
+		List<Map<Integer, Integer>> ret = new LinkedList<>();
+		ret.add(best);
+		return ret;
 		
 	}
 	
 	public static Map<Integer, Integer> IterWeDiCompOptimization(Fog f, WeightedCls cls,
 			List<Map<Integer, Integer>> bests, int minPts, int maxShare, double shareThreshold, int size, int count,
-			Double bestUtil, Map<Integer, Integer> bestSolution) {
+			Double bestUtil, Map<Integer, Integer> bestSolution,long startIni) {
 		Map<String, Float> prog = new HashMap<String, Float>();
 		boolean nextStep = true;
+		//cls.getWeight().showData();
 		// Loop here while Weighting Algorithm knows what to do next
 		while (cls.getWeight().getNextStep()) {
 			long start = System.currentTimeMillis();
 			// Put values to the new weights Calculation
+			System.out.println("-------------------------------------------");
+			System.out.println("New Iteration of Training Algorithm Started");
+			System.out.println("-------------------------------------------");
 			weightsCorrBasedTraining(cls, bests);
-			System.out.println();
-			System.out.println("--> New iter for Opt Started with: " + cls.getWeight().getChar() + " ----------");
+			System.out.println("Clustering Parameters: " + cls.getWeight().getChar() + " ----------");
+			cls.getWeight().showWeights();
 			// Try Clustering based on given weights If all eps failes then
 			// weights fail
 			if (WeightedClustering(f, cls, minPts)) {
@@ -610,7 +749,7 @@ public class Methods {
 				// displayClsAndRes(f);
 				// Do weighted Resource Allocation based algorithm
 				// Do Local GA, if Any fail then the method fails
-				List<Map<Integer, Integer>> tmpbests = Methods.GAClus(f, size, count, true);
+				List<Map<Integer, Integer>> tmpbests = Methods.GAClus(f, size, count, true,dataG);
 				if (tmpbests == null) {
 					System.out.println("Direction Clustering Failed!");
 					cls.getWeight().setGwFailed();
@@ -626,15 +765,19 @@ public class Methods {
 						bestUtil = getUtility(f, bests.get(0)).doubleValue();
 						bestSolution = bests.get(0);
 					}
+					dataG.addUtility(bestUtil.floatValue());
+					dataG.addTime((float)(System.currentTimeMillis()-startIni)/(float)1000.0);
 					cls.getWeight().attemptResult(getUtility(f, bests.get(0)));
 				}
 			} else {
 				System.out.println("Direction Clustering Failed!");
 				cls.getWeight().setAppFailed();
 			}
+			//cls.getWeight().showData();
 		}
 		System.out.println("Results: ");
-		for (String name : prog.keySet()) {
+		SortedSet<String> intKeys = new TreeSet<>(prog.keySet());
+		for (String name : intKeys) {
 			System.out.println(name + " = " + prog.get(name));
 		}
 		return bests.get(0);
@@ -650,9 +793,9 @@ public class Methods {
 			Map<String,Double> corrApp = cls.Correlation("Deployment",cls.allAppSimilarities(bests));
 			Map<String,Double> corrGw = cls.Correlation("Deployment",cls.allGwSimilarities(bests));
 			//SetCorrelation
-			System.out.println("Rand Apps Correlations: "+corrApp);
-			System.out.println("Rand Gws Correlations: "+corrGw);
-			cls.getWeight().correlationResults(corrApp,corrGw);
+			System.out.println("Apps Correlations: "+corrApp);
+			System.out.println("Gws Correlations: "+corrGw);
+			cls.getWeight().correlationResults(corrApp,corrGw);			
 		}
 		cls.setCorrelation(cls.getWeight().appWeights(),cls.getWeight().gwWeights());
 		//cls.setCorrelation(corrApp,corrGw,0.3);
@@ -665,7 +808,7 @@ public class Methods {
 		if (RandomClustering(f, cls,5,15)) {	
 			weightedResourceAlloc(f, cls, 3, 0.05);
 			displayClsAndRes(f);
-			List<Map<Integer, Integer>> tmp = Methods.GAClus(f, size, cnt, true);
+			List<Map<Integer, Integer>> tmp = Methods.GAClus(f, size, cnt, true,dataG);
 			System.out.println("Random Clust finished in :"+((System.currentTimeMillis()-start)/1000.0));
 			return tmp;
 		}else{
@@ -737,7 +880,7 @@ public class Methods {
 		if (RandomClustering(f, cls,5,20)) {	
 			weightedResourceAlloc(f, cls, 3, 0.05);
 			// displayClsAndRes(f);
-			bests = Methods.GAClus(f, 40, 150, true);
+			bests = Methods.GAClus(f, 40, 150, true,dataG);
 			System.out.println("Rand Clust Elapsed: " + (System.currentTimeMillis() - start) / (float) 1000);
 			corrApp = cls.Correlation("Deployment", cls.allAppSimilarities(bests));
 			corrGw = cls.Correlation("Deployment", cls.allGwSimilarities(bests));
@@ -754,7 +897,7 @@ public class Methods {
 			if (WeightedClustering(f, cls,5)) {	
 				weightedResourceAlloc(f, cls, 3, 0.05);
 				// displayClsAndRes(f);
-				bests = Methods.GAClus(f, 40, 100, true);
+				bests = Methods.GAClus(f, 40, 100, true,dataG);
 				System.out.println("Clustering Time: " + (System.currentTimeMillis() - start2) / (float) 1000);
 				if (bests == null) {
 					System.out.println("Failed Clustering GA");
@@ -792,7 +935,7 @@ public class Methods {
 			weightedResourceAlloc(f,cls,3,0.1);
 			//displayClsAndRes(f);
 			System.out.println("Clustering and Alloc Time: " + (System.currentTimeMillis() - start) / (float) 1000);
-			if (Methods.GAClus(f, 40, 150, true)==null){
+			if (Methods.GAClus(f, 40, 150, true,dataG)==null){
 				System.out.println("Failed Clustering GA");
 				return false;
 			}
@@ -864,12 +1007,13 @@ public class Methods {
 
 	public static Fog InitDelayFog(int appCnt) {
 		Fog f = new Fog("Delay Fog");
+		f.resetCounts();
 		f.setScenario("Delay");
 		float cloudGWRatio = (float) 0.1;
 		float[] lat = {(float)8.97,(float)30.897};
 		float[] lat2 = {(float)37.37,(float)87.89};
 		float[] lat3 = {(float)2.37,(float)6.89};
-		f.generateNewFogV2(appCnt,(float)30,(float)60,(float)0.2,(float)0.05,lat,cloudGWRatio,lat2,lat3,7,1,"Delay");
+		f.generateNewFogV2(appCnt,(float)30,(float)60,(float)0.2,(float)0.08,lat,cloudGWRatio,lat2,lat3,7,1,"Delay");
 		//Analysis part, of distributing Gw's to clusters		
 		return f;
 	}
@@ -877,13 +1021,14 @@ public class Methods {
 
 
 	public static Fog InitMultiFog(int appCnt) {
-		Fog f = new Fog("Delay Fog");
+		Fog f = new Fog("Multi Fog");
+		f.resetCounts();
 		f.setScenario("Multi");
 		float cloudGWRatio = (float) 0.1;
 		float[] lat = {(float)8.97,(float)30.897};
 		float[] lat2 = {(float)37.37,(float)87.89};
 		float[] lat3 = {(float)2.37,(float)6.89};
-		f.generateNewFogV2(appCnt,(float)30,(float)60,(float)0.2,(float)0.05,lat,cloudGWRatio,lat2,lat3,7,1,"Multi");
+		f.generateNewFogV2(appCnt,(float)30,(float)60,(float)0.2,(float)0.08,lat,cloudGWRatio,lat2,lat3,7,1,"Multi");
 		//Analysis part, of distributing Gw's to clusters		
 		return f;
 	}
@@ -892,18 +1037,424 @@ public class Methods {
 
 	public static Fog InitReqFog(int appCnt) {
 		Fog f = new Fog("Requirement Fog");
+		f.resetCounts();
 		f.setScenario("Capab");
 		float cloudGWRatio = (float) 0.1;
 		float[] lat = {(float)8.97,(float)30.897};
 		float[] lat2 = {(float)37.37,(float)87.89};
 		float[] lat3 = {(float)2.37,(float)6.89};
-		f.generateNewFogV2(appCnt,(float)30,(float)60,(float)0.2,(float)0.05,lat,cloudGWRatio,lat2,lat3,4,1,"Capab");
+		f.generateNewFogV2(appCnt,(float)30,(float)60,(float)0.2,(float)0.08,lat,cloudGWRatio,lat2,lat3,4,1,"Capab");
 		//Analysis part, of distributing Gw's to clusters		
 		return f;
 	}
 
-
-
-
+	public static void GAPopSizeEvaluation(int testType){
+		//Generation Size
+		int size = 5;
+		int iStep = 16;
+		
+		//Run Count
+		int kSize = 4;
+		
+		//Fog Size
+		int testSize = 6;
+		int startSize = 10;
+		int endSize = 60;
+		if (testType==3){
+			startSize = 5;
+			endSize = 25;			
+		}
+		int multi = (endSize-startSize)/testSize;
+		Map<Integer,Map<Integer,Float>> results = new HashMap<>();
+		System.out.println("Starting Tests, Total Nr of Tests: "+(size*kSize+1)*(testSize+1));
+		//Test
+		for (int j = 0;j<=testSize;j++){
+			//Innit
+			Map<Integer,Float> res = new HashMap<>();
+			for (int i=1;i<=size;i++){
+				res.put(i*iStep,(float)0.0);
+			}
+			//Generate Fog
+			//Fog f = Methods.InitDelayFog(startSize+j*multi);
+			Fog f = new Fog("Test");
+			float best =(float) 0.0;
+			while (best<1.0){
+				switch (testType) {
+				case 1:
+					f = Methods.InitDelayFog(startSize+j*multi);
+					break;
+				case 2:
+					f = Methods.InitMultiFog(startSize+j*multi);
+					break;
+				case 3:
+					f = Methods.InitReqFog(startSize+j*multi);
+					break;
+				default:
+					System.out.println("Default Init");
+					f = Methods.InitDelayFog(startSize+j*multi);
+					break;
+				}
+				best = Methods.GAGlobal(f,100,1000);
+			}
+			int progress = j*(size*kSize+1)+1;
+			System.out.println("Progress: "+progress+"/"+(size*kSize+1)*(testSize+1));
+			for (int k=0;k<kSize;k++){
+				for (int i=1; i<=size; i++){
+					int fail = 0;
+					float put = (float)0.0;
+					while (put<1.0  && fail<=5){
+						put = Methods.GAGlobal(f,i*iStep,best)/(float)kSize;
+						fail++;
+					}
+					if (put<1.0){
+						System.out.println("GA Max Failed!");
+						System.out.println("Progress: "+progress+"/"+(size*kSize+1)*(testSize+1));
+					}else{
+						progress = j*(size*kSize+1)+k*size+i+1;
+						System.out.println("Progress: "+progress+"/"+(size*kSize+1)*(testSize+1));
+						put+=res.get(i*iStep);
+						res.put(i*iStep,put);
+					}
+				}
+			}
+			System.out.print("------------->Results:");
+			System.out.println(res);
+			results.put(startSize+j*multi, res);
+		}
+		System.out.print("------------->Final Results:");
+		System.out.println(results);
+		matlabPrint(results);
+	}
 	
+	public static void GAStopCondEvaluation(int testType) {
+		//Generation Size
+		int size = 2;
+		int iStep = 16;
+		
+		//Run Count
+		int kSize = 4;
+		
+		//Fog Size
+		int testSize = 4;
+		int startSize = 10;
+		int endSize = 80;
+		if (testType==3){
+			startSize = 5;
+			endSize = 23;			
+		}
+		int multi = (endSize-startSize)/testSize;
+		Map<Integer,Map<Integer,Float>> results = new HashMap<>();
+		System.out.println("Starting Tests, Total Nr of Tests: "+(testSize+1));
+		//Test
+		for (int j = 0;j<=testSize;j++){
+			//Generate Fog
+			//Fog f = Methods.InitDelayFog(startSize+j*multi);
+			Fog f = new Fog("Test");
+			Map<Integer, Float> bests = null;
+			while (bests==null){
+				switch (testType) {
+				case 1:
+					f = Methods.InitDelayFog(startSize+j*multi);
+					break;
+				case 2:
+					f = Methods.InitMultiFog(startSize+j*multi);
+					break;
+				case 3:
+					f = Methods.InitReqFog(startSize+j*multi);
+					break;
+				default:
+					System.out.println("Default Init");
+					f = Methods.InitDelayFog(startSize+j*multi);
+					break;
+				}
+				int GAsize = getMinPtsSize(startSize+j*multi,f.getScenario());
+				bests = Methods.GAGlobalEndCnd(f,GAsize);
+			}
+			System.out.println("Bests: "+bests);
+			results.put(startSize+j*multi, bests);
+			System.out.println("Progress: "+(j+1)+"/"+(testSize+1));
+		}
+		matlabPrintV2(results);
+		
+	}
+
+	public static void ClustSizeEvaluation(int testType) {
+				
+				//Run Count
+				int kSize = 4;
+				
+				//Fog Size
+				int testSize = 8;
+				int startSize = 5;
+				int endSize = 80;
+				if (testType==3){
+					startSize = 5;
+					endSize = 30;			
+				}
+				int multi = (endSize-startSize)/testSize;
+				Map<Integer,Float> results = new HashMap<>();
+				System.out.println("Starting Tests, Total Nr of Tests: "+(testSize+1)*kSize);
+				//Test
+				for (int j = 0;j<=testSize;j++){
+					//Generate Fog
+					//Fog f = Methods.InitDelayFog(startSize+j*multi);
+					Fog f = new Fog("Test");
+					Float bests = (float)0.0;
+					for (int i =0; i<kSize;i++){
+						Float bUtil = null;
+						int fails = 0;
+						while (bUtil==null && fails < 5){
+							fails++;
+							switch (testType) {
+							case 1:
+								f = Methods.InitDelayFog(startSize+j*multi);
+								break;
+							case 2:
+								f = Methods.InitMultiFog(startSize+j*multi);
+								break;
+							case 3:
+								f = Methods.InitReqFog(startSize+j*multi);
+								break;
+							default:
+								System.out.println("Default Init");
+								f = Methods.InitDelayFog(startSize+j*multi);
+								break;
+							}
+							int GAsize = getMinPtsSize(startSize+j*multi,f.getScenario());
+							bUtil= Methods.GAGlobalSize(f,GAsize);
+							System.out.println("Progress: "+(kSize*j+i+1)+"/"+(testSize+1)*kSize);
+						}
+						if (bUtil==null){
+							System.out.println("Butil NULL!");
+							bests+=(float)0.0;
+						}else{
+							System.out.println("Butil: "+bUtil/kSize);
+							bests+=bUtil/kSize;
+						}
+					}
+					System.out.println("Bests: "+bests);
+					results.put(startSize+j*multi, bests);
+				}
+				matlabPrintV3(results);
+		
+	}
+	
+
+	public static void PerformanceAnalysis(int size, int testType, int single) {
+
+		System.out.println("Starting Performance Test.");
+		Fog f = new Fog("Test");
+		List<Map<Integer, Integer>> bests = null;
+		// dataG.setTestType("Perf");
+		int fail = 0;
+		List<Integer> sizes1 = new LinkedList<>();
+		sizes1.add(20);sizes1.add(80);sizes1.add(320);
+		List<Integer> sizes2 = new LinkedList<>();
+		sizes2.add(5);sizes2.add(20);sizes2.add(40);
+		String type = "Not Specified";
+		dataG.reset();
+		fail = 0;
+		int success = 0;
+		while (success!=5 && fail < 5) {
+			fail++;
+			switch (testType) {
+			case 1:
+				f = Methods.InitDelayFog(sizes1.get(size));
+				break;
+			case 2:
+				f = Methods.InitMultiFog(sizes1.get(size));
+				break;
+			case 3:
+				f = Methods.InitReqFog(sizes2.get(size));
+				break;
+			default:
+				System.out.println("Default Init");
+				f = Methods.InitDelayFog(size);
+				break;
+			}
+			for (int i = 1; i <= 5; i++) {
+				if (single != 0) {i = single;} // Override just in case you need it :))
+				switch (i) {
+				case 1:
+					dataG.newDataSet("GA");
+					bests = Methods.GAGlobal(f);
+					break;
+				case 2:
+					dataG.newDataSet("Dist");
+					bests = Methods.DistanceClusteringDeployment(f);
+					break;
+				case 3:
+					dataG.newDataSet("Sample");
+					bests = Methods.SampleWeDiCOptimization(f);
+					break;
+				case 4:
+					dataG.newDataSet("Init");
+					bests = Methods.InitWeDiCOptimization(f);
+					break;
+				case 5:
+					dataG.newDataSet("Random");
+					bests = Methods.RandomDeployment(f);
+					break;
+				default:
+					dataG.newDataSet("GA");
+					bests = Methods.GAGlobal(f);
+					break;
+				}
+				System.out.println(bests);
+				if (bests.size()!=0){success++;}
+				if (single != 0) {
+					dataG.getSinglePerfResults(size, testType);
+					break;
+					} // Override just in case you need it :))
+			}
+			if (single != 0) {break;} // Override just in case you need it :))
+			System.out.println("While:"+success+" - "+fail);
+		}
+		dataG.getBestUtils();
+		if (single == 0) {dataG.getPerfResults(size,testType);}
+	}
+	
+
+	public static void ScalabilityAnalysis(int size, int count ,int sceType,int meType) {
+		
+		List<Integer> sizes1 = new LinkedList<>();
+		sizes1.add(20);sizes1.add(40);sizes1.add(80);sizes1.add(160);sizes1.add(320);sizes1.add(480);sizes1.add(600);
+		List<Integer> sizes2 = new LinkedList<>();
+		sizes2.add(10);sizes2.add(20);sizes2.add(40);sizes2.add(80);sizes2.add(120);sizes2.add(180);sizes2.add(240);
+		
+		System.out.println("Starting Scalability Test.");
+		Fog f = new Fog("Test");
+		for (int i = 1; i <= count; i++) {
+			switch (sceType) {
+			case 1:
+				f = Methods.InitDelayFog(sizes1.get(size));
+				break;
+			case 2:
+				f = Methods.InitMultiFog(sizes1.get(size));
+				break;
+			case 3:
+				f = Methods.InitReqFog(sizes2.get(size));
+				break;
+			default:
+				System.out.println("Default Init");
+				f = Methods.InitDelayFog(size);
+				break;
+			}
+			
+			for (int j = 1; j <= 5; j++) {
+				if (meType != 0) {j = meType;} // Override just in case you need it :))
+				switch (j) {
+				case 1:
+					dataG.newDataSet("1-"+i);
+					Methods.GAGlobal(f);
+					break;
+				case 2:
+					dataG.newDataSet("2-"+i);
+					Methods.DistanceClusteringDeployment(f);
+					break;
+				case 3:
+					dataG.newDataSet("3-"+i);
+					Methods.SampleWeDiCOptimization(f);
+					break;
+				case 4:
+					dataG.newDataSet("4-"+i);
+					Methods.InitWeDiCOptimization(f);
+					break;
+				case 5:
+					dataG.newDataSet("5-"+i);
+					Methods.RandomDeployment(f);
+					break;
+				default:
+					dataG.newDataSet("1-"+i);
+					Methods.GAGlobal(f);
+					break;
+				}
+				if (meType != 0) {break;} // Override just in case you need it :))
+			}
+			System.out.println("Intermediate Results from iter "+i+"/"+count+":");
+			dataG.getScaleResults(size,sceType);
+		}
+		System.out.println("Final Results:");
+		dataG.getScaleResults(size,sceType);
+	}
+
+	public static void matlabPrint(Map<Integer,Map<Integer,Float>> results){
+		SortedSet<Integer> keys = new TreeSet<>(results.keySet());
+		
+		//Fog Sizes
+		System.out.print("rows = [ ");
+		for (Integer key:keys){
+			System.out.print(key+" ");
+		}
+		System.out.println("];");
+		
+		//Other Parameter
+		System.out.print("columns = [ ");
+		for (Integer key:keys){
+			SortedSet<Integer> intKeys = new TreeSet<>(results.get(key).keySet());
+			for (Integer iKey:intKeys){
+				System.out.print(iKey+" ");
+			}
+			break;
+		}
+		System.out.println("];");
+		
+		System.out.print("data = [ ");
+		for (Integer key:keys){
+			SortedSet<Integer> intKeys = new TreeSet<>(results.get(key).keySet());
+			for (Integer iKey:intKeys){
+				System.out.print(results.get(key).get(iKey)+" ");
+			}
+			System.out.print("; ");
+		}
+		System.out.println("];");
+	}
+
+	public static void matlabPrintV2(Map<Integer,Map<Integer,Float>> results){
+		SortedSet<Integer> keys = new TreeSet<>(results.keySet());
+		System.out.print("labels = [ ");
+		for (Integer key:keys){
+			System.out.print(key+" ");
+		}
+		System.out.println("];");
+		//Fog Sizes
+		System.out.print("X = [ ");
+		for (Integer key:keys){
+			SortedSet<Integer> intKeys = new TreeSet<>(results.get(key).keySet());
+			for (Integer ikey:intKeys){
+				System.out.print(ikey+" ");
+			}
+			System.out.print("; ");
+		}
+		System.out.println("];");
+		
+
+		System.out.print("Y = [ ");
+		for (Integer key:keys){
+			SortedSet<Integer> intKeys = new TreeSet<>(results.get(key).keySet());
+			for (Integer ikey:intKeys){
+				System.out.print(results.get(key).get(ikey)+" ");
+			}
+			System.out.print("; ");
+		}
+		System.out.println("];");
+	}
+	
+	public static void matlabPrintV3(Map<Integer,Float> results){
+		SortedSet<Integer> keys = new TreeSet<>(results.keySet());
+
+		System.out.print("X = [ ");
+		for (Integer key:keys){
+			System.out.print(key+" ");
+		}
+		System.out.println("];");
+		
+		System.out.print("Y = [ ");
+		for (Integer key:keys){
+			System.out.print(results.get(key)+" ");
+		}
+		System.out.println("];");
+		
+	}
+
 }

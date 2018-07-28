@@ -138,13 +138,33 @@ public class Spark{
 		//Fog f=Exporter.readJsonFog(readJson("C:/Users/Nandor/Documents/FogOfThings/Gateway Apps/spark-test/src/main/java/org/nandor/spark/deploy-W.json"));
 	    SparkConf conf = new SparkConf();
 	    JavaSparkContext sc = new JavaSparkContext(conf);
-	    String fogFile = args[0];    
-		Fog f = Methods.InitFog(Integer.valueOf(args[0]), 0);
+	    String type = args[0];    
+	    Integer size = Integer.parseInt(args[1]); 
+	    Integer sceType = Integer.parseInt(args[2]); 
+	    Integer meType = Integer.parseInt(args[3]);
+	    System.out.println("Args:"+args);
+		//Fog f = Methods.InitFog(Integer.valueOf(args[0]), 0);
+		
+		//Fog f = Methods.InitDelayFog(Integer.valueOf(args[0]));
+		//Fog f = Methods.InitMultiFog(Integer.valueOf(args[0]));
+		//Fog f = Methods.InitReqFog(Integer.valueOf(args[0]));
+		
 		//Methods.CorrelationClusterin(f);
-		Methods.GAGlobal(f);
-		Methods.SampleWeDiCOptimization(f);
+		//Methods.GAGlobal(f);
+		//Methods.SampleWeDiCOptimization(f);
 		//Methods.weightedDistanceClusteringOptimization(f);
-		f.setDeplpyment(Methods.SampleWeDiCOptimization(f));
+		//f.setDeplpyment(Methods.SampleWeDiCOptimization(f));
+		//Methods.GAPopSizeEvaluation(type);
+		//Methods.GAStopCondEvaluation(type);
+		//Methods.ClustSizeEvaluation(type);
+	    if (type=="Perf"){
+	    	Methods.PerformanceAnalysis(size,sceType,meType);
+	    }else{
+	    	int count = 5;
+	    	Methods.ScalabilityAnalysis(size,count,sceType,meType);
+	    }
 	}
+	
+
 	
 }

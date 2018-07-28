@@ -1,0 +1,69 @@
+package org.nandor.spark;
+
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
+
+
+public class DataGatherer {
+
+	
+	boolean utilBool = true;
+	boolean iterBool = true;
+	boolean timeBool = true;
+	String current = "Not Specified";
+	Map<String,List<Float>> utility = new HashMap<>();//LinkedList<>();
+	Map<String,List<Integer>> iteration = new HashMap<>();
+	Map<String,List<Float>> execTime = new HashMap<>();
+	//Set Test
+	public void setTestType(String type) {
+		
+		switch (type) {
+		case "Perf":
+			utilBool = true;
+			iterBool = false;
+			timeBool = true;
+			break;
+		
+		default:
+			break;
+		}
+	}
+
+
+	//Add Components
+	public void addUtility(float bestUtil) {
+		if (utilBool){
+			utility.get(current).add(bestUtil);
+		}	
+	}
+	public void addIteration(int i) {
+		if (iterBool){
+			iteration.get(current).add(i);
+		}
+	}
+	public void addTime(float f) {
+		if (timeBool){
+			execTime.get(current).add(f);
+		}
+	}
+	
+	public void reset() {
+		utility = new HashMap<>();
+		iteration = new HashMap<>();
+		execTime = new HashMap<>();
+	}
+	//print out Results
+	public void getResults() {
+		System.out.println(utility);
+		System.out.println(iteration);
+		System.out.println(execTime);
+	}
+
+
+	public void newDataSet(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+}

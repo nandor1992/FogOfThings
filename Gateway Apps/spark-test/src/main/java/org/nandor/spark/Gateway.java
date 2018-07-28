@@ -207,8 +207,8 @@ public class Gateway {
 		
 	}
 	
-	public void filleavenClusters(){
-		
+	public static void resetCount(){
+		count.set(0);
 	}
 	//Basic Setters and Getters for Gateway
 	public void clearClusters(){

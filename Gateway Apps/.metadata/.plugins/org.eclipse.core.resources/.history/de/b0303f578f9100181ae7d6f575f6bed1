@@ -1,0 +1,118 @@
+package org.nandor.spark;
+
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.SortedSet;
+import java.util.TreeSet;
+import java.util.HashMap;
+
+
+public class DataGatherer {
+
+	
+	boolean utilBool = true;
+	boolean iterBool = true;
+	boolean timeBool = true;
+	String current = "Not Specified";
+	Map<String,List<Float>> utility = new HashMap<>();//LinkedList<>();
+	Map<String,List<Integer>> iteration = new HashMap<>();
+	Map<String,List<Float>> execTime = new HashMap<>();
+	
+	//Set Test
+	public void setTestType(String type) {
+		
+		switch (type) {
+		case "Perf":
+			utilBool = true;
+			iterBool = false;
+			timeBool = true;
+			break;
+		
+		default:
+			break;
+		}
+	}
+
+	public void newDataSet(String string) {
+		current = string;
+		utility.put(current, new LinkedList<>());
+		iteration.put(current, new LinkedList<>());
+		execTime.put(current, new LinkedList<>());
+		
+	}
+
+	//Add Components
+	public void addUtility(float bestUtil) {
+		if (utilBool){
+			utility.get(current).add(bestUtil);
+		}	
+	}
+	public void addIteration(int i) {
+		if (iterBool){
+			iteration.get(current).add(i);
+		}
+	}
+	public void addTime(float f) {
+		if (timeBool){
+			execTime.get(current).add(f);
+		}
+	}
+	
+	public void reset() {
+		utility = new HashMap<>();
+		iteration = new HashMap<>();
+		execTime = new HashMap<>();
+	}
+	//print out Results
+	public void getPerfResults() {
+		int i=0;
+		for (String key:utility.keySet()){
+			i++;
+			System.out.print("X"+i+" = [");
+			for (Float item:utility.get(key)){
+			System.out.print(item+" ");
+			}
+			System.out.println("];");
+		}
+		i=0;
+		for (String key:execTime.keySet()){
+			i++;
+			System.out.print("Y"+i+" = [");
+			for (Float item:execTime.get(key)){
+			System.out.print(item+" ");
+			}
+			System.out.println("];");
+		}
+	}
+
+	public void getScaleResults(int i) {
+		// TODO Auto-generated method stub
+		SortedSet<String> keys = new TreeSet<>(utility.keySet());
+		int row = 0;
+		float sum = (float)0.0;
+		int count = 0;
+		for (String key:utility.keySet()){
+			System.out.println("Key:"+key);
+			if (row!=Integer.parseInt(key.split("-")[0])){
+				System.out.println("New Row");
+				if (row!=0){
+					System.out.print("Y("+row+","+i+") = "+sum);
+				}
+				utility.get(key).get(utility.get(key).size()-1);
+			}else{
+				sum+=utility.get(key).get(utility.get(key).size()-1);
+				count++;
+			}
+			System.out.print("Y("+Integer.parseInt(key)+","+i+") = "+utility.get(key).get(utility.get(key).size()-1));
+		}
+	}
+	
+	public void getBestUtils(){
+		System.out.println("Utilities...");
+		for (String key:utility.keySet()){
+			System.out.println(key+": "+utility.get(key).get(utility.get(key).size()-1));
+		}
+	}
+
+}
