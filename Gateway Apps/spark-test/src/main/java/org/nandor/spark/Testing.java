@@ -94,12 +94,30 @@ public class Testing {
 		Methods.ScalabilityAnalysis(size,count,sceType,meType);
 	}
 	
+	public static void timeDistributionRun(){
+		Methods.timeDistributionAnalysis();
+	}
+	
+	public static void ComponentEvals(){
+		int caseType = 1;
+		int clustType = 0; 
+		int allocType = 4;
+		Methods.ComponentAnalysis(caseType,clustType,allocType);
+	}
+	
+	public static void WeightsAnalysis(){
+		int caseType = 1;
+		Methods.WeightsAnalysis(caseType);
+	}
+	
 	public static void main (String[] args) {	
 		//fullRun();
 		//runGAValid();
 		//performanceRun();
-		scalabilityRun();
-		
+		//scalabilityRun();
+		//timeDistributionRun();
+		//ComponentEvals();
+		WeightsAnalysis();
 	}
 	
 }

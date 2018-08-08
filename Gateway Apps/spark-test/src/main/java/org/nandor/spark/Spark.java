@@ -142,7 +142,7 @@ public class Spark{
 	    Integer size = Integer.parseInt(args[1]); 
 	    Integer sceType = Integer.parseInt(args[2]); 
 	    Integer meType = Integer.parseInt(args[3]);
-	    System.out.println("Args:"+args);
+	    System.out.println("Args:["+type+"] Size:"+size+" sceType:"+sceType+" meType:"+meType);
 		//Fog f = Methods.InitFog(Integer.valueOf(args[0]), 0);
 		
 		//Fog f = Methods.InitDelayFog(Integer.valueOf(args[0]));
@@ -157,9 +157,10 @@ public class Spark{
 		//Methods.GAPopSizeEvaluation(type);
 		//Methods.GAStopCondEvaluation(type);
 		//Methods.ClustSizeEvaluation(type);
-	    if (type=="Perf"){
+	    if (type.contains("Perf")){
 	    	Methods.PerformanceAnalysis(size,sceType,meType);
-	    }else{
+	    }
+	    if (type.contains("Scal")){
 	    	int count = 5;
 	    	Methods.ScalabilityAnalysis(size,count,sceType,meType);
 	    }

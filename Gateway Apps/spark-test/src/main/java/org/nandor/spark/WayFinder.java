@@ -14,21 +14,17 @@ public class WayFinder {
 	
 	private Fog f;
 	private WeightedCls cls;
-	private int count;
-	private int size;
 	private int clsSize;
 	private int minSize;
 	private double proc;
 	private Map<String,Double> appWeights;
 	private Map<String,Double> gwWeights;
 	private int failCnt = 0;
-	private int maxFailCnt = 10;
+	private int maxFailCnt = 4;
 	
-	public WayFinder(Fog f, WeightedCls cls, int count, int size, double proc,int minSize){
+	public WayFinder(Fog f, WeightedCls cls, double proc,int minSize){
 		this.f=f;
 		this.cls=cls;
-		this.count=count;
-		this.size=size;
 		this.proc=proc;
 		this.clsSize = (int)(f.getApps().size()*proc);
 		if(this.clsSize<minSize){
@@ -197,10 +193,7 @@ public class WayFinder {
 		cls.setAppWeights(appWeights);
 		Methods.sampleResourceAlloc(f,cls);
 		//displayClsAndRes(f);
-		List<Map<Integer, Integer>> tmp = Methods.sampGAClus(f, size, count,false);
-		if (tmp!=null){
-			tmp = Methods.sampGAClus(f, size, count*10,false);
-		}
+		List<Map<Integer, Integer>> tmp = Methods.sampGAClus(f,false);
 		cls.clearWeights();
 		return  tmp;
 	}
@@ -217,10 +210,7 @@ public class WayFinder {
 		f.createClusters(clss);
 		Methods.sampleResourceAlloc(f,cls);
 		//displayClsAndRes(f);
-		List<Map<Integer, Integer>> tmp = Methods.sampGAClus(f, size, (int)(count*(1.0+0.5*failCnt)),false);
-		if (tmp!=null){
-			tmp = Methods.sampGAClus(f, size, count*10,false);
-		}
+		List<Map<Integer, Integer>> tmp = Methods.sampGAClus(f,false);
 		cls.clearWeights();
 		return  tmp;
 	}
@@ -244,7 +234,7 @@ public class WayFinder {
 		cls.resetAppWeights(1.0);
 		Methods.sampleResourceAlloc(f,cls);
 		//displayClsAndRes(f);
-		List<Map<Integer, Integer>> tmp = Methods.sampGAClus(f, size, count, true);
+		List<Map<Integer, Integer>> tmp = Methods.sampGAClus(f, true);
 		cls.clearWeights();
 		return tmp;
 	}
@@ -253,7 +243,7 @@ public class WayFinder {
 	public static void main(String[] args) {
 		Fog f = Methods.InitFog(40, 0);
 		WeightedCls cls = new WeightedCls(f);
-		WayFinder wf = new WayFinder(f, cls, 40, 50, 0.6, 10);
+		WayFinder wf = new WayFinder(f, cls, 0.6, 10);
 		System.out.println(wf.sampleFogAttempt());
 	}
 
