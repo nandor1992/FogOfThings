@@ -21,7 +21,7 @@ public class WeighTrainer {
 		private double procLim = 0.2; //Delete Later 
 		private double appProcLim = 0.2;
 		private double gwProcLim = 0.05;
-		private double diffLim = 0.04;
+		private double diffLim = 0.00001;
 		private int bestIter = 0;
 		private int prevBestIter = 0;
 		private  List<Float>utils = new ArrayList<>();
@@ -45,7 +45,9 @@ public class WeighTrainer {
 	
 	public void correlationResults(Map<String, Double> corrApp, Map<String, Double> corrGw) {
 		//Increase iter
-		//System.out.println("Corr");	
+		System.out.println("CorrResults: CorrApp:"+corrApp+" CorrGW:"+corrGw);	
+		System.out.println("Corrs: CorrApp:"+this.corrApp+" CorrGW:"+this.corrGw);
+		System.out.println(bestIter+1);
 		//Add Data
 		System.out.print(" -> Sorting Correlation Results");
 		if (fullStopCriterion()){
@@ -66,13 +68,13 @@ public class WeighTrainer {
 				if (appFailed==true){
 					//Make App changes
 					System.out.print(" - App Failed ");
-					makeAppChanges(this.corrApp.get(bestIter));
-					probe(this.corrApp.get(bestIter), this.corrGw.get(bestIter));
+					makeAppChanges(this.corrApp.get(bestIter+1));
+					probe(this.corrApp.get(bestIter+1), this.corrGw.get(bestIter+1));
 				}else if (gwFailed==true){
 					//Make Gw Changes
 					System.out.print(" - Gw Failed");
-					makeGwChanges(this.corrGw.get(bestIter));
-					probe(this.corrApp.get(bestIter), this.corrGw.get(bestIter));
+					makeGwChanges(this.corrGw.get(bestIter+1));
+					probe(this.corrApp.get(bestIter+1), this.corrGw.get(bestIter+1));
 				}else if ( bestIter==utils.size()-1){
 					System.out.println(" - Better Util");
 					//makeChanges(corrApp, corrGw);
@@ -82,9 +84,9 @@ public class WeighTrainer {
 				}else{
 					System.out.println(" - Worse Util");
 					//makeChanges(this.corrApp.get(bestIter), this.corrGw.get(bestIter));
-					makeAppChanges(this.corrApp.get(bestIter));
-					makeGwChanges(this.corrGw.get(bestIter));
-					probe(this.corrApp.get(bestIter), this.corrGw.get(bestIter));
+					makeAppChanges(this.corrApp.get(bestIter+1));
+					makeGwChanges(this.corrGw.get(bestIter+1));
+					probe(this.corrApp.get(bestIter+1), this.corrGw.get(bestIter+1));
 				}
 				appFailed=false;
 				gwFailed=false;
@@ -420,7 +422,7 @@ public class WeighTrainer {
 	private void probe(Map<String, Double> corrApp, Map<String, Double> corrGw){
 		Double appMax = 0.0;
 		Double gwMax = 0.0;
-		
+		//System.out.println("Probe:"+corrApp+" CorrGW:"+corrGw);
 		for (String name: corrApp.keySet()){
 			if (Math.abs(corrApp.get(name))>appMax){
 				appMax = Math.abs(corrApp.get(name));
@@ -479,7 +481,14 @@ public class WeighTrainer {
 		for (String name: gwWeights.get(i).keySet()){
 			gwWeights.get(i).put(name,gwWeights.get(i).get(name)/sum2);
 		}
-		
+		//System.out.println("GW Weights Probe:"+gwWeights.get(i)+" App Weights:"+appWeights.get(i));
+		//If all else fails set weights to 1 :-??
+		if (appWeights.get(i).size()==0){
+		appWeights.get(i).put("Constraints",0.1);appWeights.get(i).put("RequirementSim",0.1);appWeights.get(i).put("ResourceShare",0.1);appWeights.get(i).put("MessageRate",0.1);appWeights.get(i).put("UtilityWeights",0.1);appWeights.get(i).put("UnitLoad",0.1);appWeights.get(i).put("Distance",0.1);
+		}
+		if (gwWeights.get(i).size()==0){
+			gwWeights.get(i).put("Capabilities",0.1);gwWeights.get(i).put("SharedRes",0.1);gwWeights.get(i).put("PerfToULoad",0.1);gwWeights.get(i).put("BaseLoad",0.1);gwWeights.get(i).put("CapToULoad",0.1);
+		}
 	}
 	
 	private boolean dirStopCriterion(){

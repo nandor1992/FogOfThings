@@ -346,6 +346,7 @@ public class Methods {
 			f.setDeplpyment(ret.get(0));
 			f.deployFog();
 			dataG.addUtility(f.getFogCompoundUtility());	
+			dataG.setBestCluster(f.retreiveCluster());
 			float tot_sec=(System.currentTimeMillis()-start)/(float)1000;
 			System.out.println("Finished Clusering Part in:"+tot_sec);
 			System.out.println("Unalocated Apps: "+f.checkIfAppsAllocated());
@@ -367,7 +368,7 @@ public class Methods {
 			ret =  (int)(200+40.45*(double)minPts);
 			break;
 		case "Delay":
-			ret = (int)(176.88+11.168*(double)minPts);
+			ret = (int)(376.88+2.168*(double)minPts);
 			break;
 		default:
 			System.out.println("Default:");
@@ -441,6 +442,7 @@ public class Methods {
 		System.out.println("----- Clustering -----");
 		f.clearGwClustConns();
 		f.removeClusters();
+		f.clearAppToGws();
 		Clustering cls = new Clustering(f);
 		List<Set<Integer>> tmp = cls.DBScan(eps,minPts);//eps, minPts
 		if (tmp.size()<1){
@@ -452,7 +454,7 @@ public class Methods {
 		for (Integer i : f.getClusters().keySet()) {
 			System.out.println("Cluster "+i+" Apps: "+f.getClusters().get(i).getApps().keySet());
 		}
-		if(f.checkIfAppsAllocated().size()!=0 || (f.getClusters().size()==1 && f.getApps().size()>40)){
+		if(f.checkIfAppsAllocated().size()!=0 || (f.getClusters().size()<=1 && f.getApps().size()>40)){
 			System.out.println("Clustering Failed - Alloc ");
 			return false;
 		}else{
@@ -503,12 +505,13 @@ public class Methods {
 		System.out.println("-> Clustering");
 		f.clearGwClustConns();
 		f.removeClusters();
+		f.clearAppToGws();
 		f.createClusters(cls.DBScan(minPts));//eps, minPts
 		for (Integer i : f.getClusters().keySet()) {
 			System.out.println("Cluster "+i+" Size:"+f.getClusters().get(i).getApps().size()+" Apps: "+f.getClusters().get(i).getApps().keySet());
 		}
 		System.out.println("Unallocated Apps: "+f.checkIfAppsAllocated());
-		if(f.checkIfAppsAllocated().size()!=0 || f.getClusters().size()==0){
+		if(f.checkIfAppsAllocated().size()!=0 || f.getClusters().size()==0 || (f.getClusters().size()<=1 && f.getApps().size()>getMinPts(f)*4)){
 			System.out.println("Clustering Failed!");
 			return false;
 		}else{
@@ -521,6 +524,7 @@ public class Methods {
 		System.out.println("-> Clustering");
 		f.clearGwClustConns();
 		f.removeClusters();
+		f.clearAppToGws();
 		f.createClusters(cls.DBScan((float)0.0,minPts,maxPts));//eps, minPts
 		for (Integer i : f.getClusters().keySet()) {
 			System.out.println("Cluster "+i+" Apps: "+f.getClusters().get(i).getApps().keySet());
@@ -689,6 +693,9 @@ public class Methods {
 		Map<Integer, Integer> best = IterWeDiCompOptimization(f, cls, bests, minPts, maxShare, shareThreshold, bestUtil, bestSolution,startIni);
 		//Final Write Out
 		System.out.println("Method Finished in :"+((System.currentTimeMillis()-startIni)/1000.0));
+		if (best==null){
+			return null;
+		}
 		List<Map<Integer, Integer>> ret = new LinkedList<>();
 		ret.add(best);
 		return ret;
@@ -717,6 +724,11 @@ public class Methods {
 		cls.resetGwWeights(1.0);
 		cls.resetAppWeights(1.0);
 		cls.initTrain(10,2);
+		//Map<String,Double> corrApp = new HashMap<>();
+		//Map<String,Double> corrGw = new HashMap<>();
+		//corrApp.put("Constraints",0.1);corrApp.put("RequirementSim",0.1);corrApp.put("ResourceShare",0.1);corrApp.put("MessageRate",0.1);corrApp.put("UtilityWeights",0.1);corrApp.put("UnitLoad",0.1);corrApp.put("Distance",0.1);
+		//corrGw.put("Capabilities",0.1);corrGw.put("SharedRes",0.1);corrGw.put("PerfToULoad",0.1);corrGw.put("BaseLoad",0.1);corrGw.put("CapToULoad",0.1);
+		//cls.getWeight().correlationResults(corrApp,corrGw);
 		Map<Integer,Integer> bestSolution = new HashMap<>();
 		Double bestUtil = 0.0;
 		dataG.addTime((float)(System.currentTimeMillis()-startIni)/(float)1000.0);
@@ -726,6 +738,9 @@ public class Methods {
 		
 		//Final Write Out
 		System.out.println("Method Finished in :"+((System.currentTimeMillis()-startIni)/1000.0));
+		if (best==null){
+			return null;
+		}
 		List<Map<Integer, Integer>> ret = new LinkedList<>();
 		ret.add(best);
 		return ret;
@@ -782,6 +797,7 @@ public class Methods {
 						bestUtil = getUtility(f, bests.get(0)).doubleValue();
 						bestSolution = bests.get(0);
 						dataG.setBestWeight(dataG.getCurrent());
+						dataG.setBestCluster(f.retreiveCluster());
 					}
 					dataG.addUtility(bestUtil.floatValue());
 					dataG.addTime((float)(System.currentTimeMillis()-startIni)/(float)1000.0);
@@ -798,7 +814,10 @@ public class Methods {
 		for (String name : intKeys) {
 			System.out.println(name + " = " + prog.get(name));
 		}
-		return bests.get(0);
+		if (bests !=null)
+			{return bests.get(0);}
+		else
+			{return null;}
 	}
 
 
@@ -967,6 +986,7 @@ public class Methods {
 	
 	public static void ResourceAllocation(Fog f){
 		f.clearAppToGws();
+		f.clearGwClustConns();
 		f.distributeGw2Cluster();	
 	}
 	
@@ -980,6 +1000,7 @@ public class Methods {
 	}
 	
 	public static void weightedResourceAlloc(Fog f, WeightedCls cls,int maxShare,double shareThreshold) {
+		f.clearGwClustConns();
 		f.clearAppToGws();
 		cls.distributeGw2Cluster(maxShare,shareThreshold);
 		//displayClsAndRes(f);
@@ -1264,7 +1285,7 @@ public class Methods {
 		Fog f = new Fog("Test");
 		List<Map<Integer, Integer>> bests = null;
 		Integer sizes1 = 320;
-		Integer sizes2 = 200;
+		Integer sizes2 = 80;
 		int maxShare = 2;
 		double shareThreshold = (float) 0.3;
 		WeightedCls cls = new WeightedCls(f);
@@ -1291,11 +1312,15 @@ public class Methods {
 		Map<String, Double> gwW = new HashMap<>();
 		if (clustType==4 || allocType==4){
 			dataG.newDataSet("Init");
-			Methods.SampleWeDiCOptimization(f);
-			dataG.getBestWeApps();
-			appW = dataG.getBestWeApps();
-			gwW = dataG.getBestWeGws();
+			bests = Methods.SampleWeDiCOptimization(f);
 		}
+		if (bests==null){
+			System.out.println("Attempt Failed!");
+			return;
+		}
+		bests = null; //Reset after test
+		appW = dataG.getBestWeApps();
+		gwW = dataG.getBestWeGws();
 		System.out.println("Used Weights:");
 		System.out.println(appW);
 		System.out.println(gwW);
@@ -1311,8 +1336,6 @@ public class Methods {
 				//Random
 				System.out.println("--->Rand Clustering");
 				minPts = getMinPts(f);
-				f.clearGwClustConns();
-				f.removeClusters();
 				cls = new WeightedCls(f);
 				RandomClustering(f, cls,minPts,(int)((int)minPts*1.5));
 				break;
@@ -1419,12 +1442,12 @@ public class Methods {
 		}
 	}
 	
-	public static void WeightsAnalysis(int caseType) {
+	public static void WeightsAnalysis(int caseType,int choice) {
 		System.out.println("Weights Analysis.");
 		Fog f = new Fog("Test");
 		List<Map<Integer, Integer>> bests = null;
-		Integer sizes1 = 60;//320;
-		Integer sizes2 = 200;
+		Integer sizes1 = 320;//320;
+		Integer sizes2 = 120;//120;
 		int maxShare = 2;
 		double shareThreshold = (float) 0.3;
 		WeightedCls cls = new WeightedCls(f);
@@ -1445,15 +1468,16 @@ public class Methods {
 			f = Methods.InitDelayFog(sizes1);
 			break;
 		}
-		
-		//dataG.newDataSet("Sample");
-		//Methods.SampleWeDiCOptimization(f);
-
-		dataG.newDataSet("AllWeights");
-		Methods.InitWeDiCOptimization(f);
-		
+		if (choice == 2 || choice == 0){
+			dataG.newDataSet("WeightsFull");
+			Methods.InitWeDiCOptimization(f);
+		}
+		if (choice == 1 || choice == 0){
+			dataG.newDataSet("Sample");
+			Methods.SampleWeDiCOptimization(f);
+		}
 		dataG.getAllData();
-		dataG.getWeights();
+		dataG.getWeights(f,choice);
 	}
 	
 	
@@ -1465,15 +1489,19 @@ public class Methods {
 		// dataG.setTestType("Perf");
 		int fail = 0;
 		List<Integer> sizes1 = new LinkedList<>();
-		sizes1.add(20);sizes1.add(80);sizes1.add(320);
+		sizes1.add(20);
+		sizes1.add(80);
+		sizes1.add(320);
+		sizes1.add(640);
 		List<Integer> sizes2 = new LinkedList<>();
-		sizes2.add(10);sizes2.add(20);sizes2.add(60);
+		sizes2.add(10);
+		sizes2.add(20);
+		sizes2.add(60);
 		String type = "Not Specified";
 		dataG.reset();
 		fail = 0;
 		int success = 0;
-		while (success!=5 && fail < 5) {
-			fail++;
+		while (success == 0) {
 			switch (testType) {
 			case 1:
 				f = Methods.InitDelayFog(sizes1.get(size));
@@ -1490,46 +1518,69 @@ public class Methods {
 				break;
 			}
 			for (int i = 1; i <= 5; i++) {
-				if (single != 0) {i = single;} // Override just in case you need it :))
+				if (single != 0) {
+					i = single;
+				} // Override just in case you need it :))
+				bests = null;
 				switch (i) {
 				case 1:
-					dataG.newDataSet("GA");
-					bests = Methods.GAGlobal(f);
+					fail = 0;
+					while (bests == null & fail < 3) {
+						fail++;
+						dataG.newDataSet("GA");
+						bests = Methods.GAGlobal(f);
+					}
 					break;
 				case 2:
-					dataG.newDataSet("Dist");
-					bests = Methods.DistanceClusteringDeployment(f);
+					fail = 0;
+					while (bests == null & fail < 3) {
+						fail++;
+						dataG.newDataSet("Dist");
+						bests = Methods.DistanceClusteringDeployment(f);
+					}
 					break;
 				case 3:
-					dataG.newDataSet("Sample");
-					bests = Methods.SampleWeDiCOptimization(f);
+					fail = 0;
+					while (bests == null & fail < 3) {
+						fail++;
+						dataG.newDataSet("Sample");
+						bests = Methods.SampleWeDiCOptimization(f);
+					}
 					break;
 				case 4:
-					dataG.newDataSet("Init");
-					bests = Methods.InitWeDiCOptimization(f);
+					fail = 0;
+					while (bests == null & fail < 3) {
+						fail++;
+						dataG.newDataSet("Init");
+						bests = Methods.InitWeDiCOptimization(f);
+					}
 					break;
 				case 5:
-					dataG.newDataSet("Random");
-					bests = Methods.RandomDeployment(f);
+					fail = 0;
+					while (bests == null & fail < 3) {
+						fail++;
+						dataG.newDataSet("Random");
+						bests = Methods.RandomDeployment(f);
+					}
 					break;
 				default:
 					dataG.newDataSet("GA");
-					bests = Methods.GAGlobal(f);
+					//bests = Methods.GAGlobal(f);
 					break;
 				}
-				System.out.println(bests);
-				if (bests.size()!=0){success++;}
+
+				if (bests != null) {
+					success++;
+				}
 				if (single != 0) {
 					dataG.getSinglePerfResults(size, testType);
 					break;
-					} // Override just in case you need it :))
+				} // Override just in case you need it :))
 			}
-			if (single != 0) {break;} // Override just in case you need it :))
-			System.out.println("While:"+success+" - "+fail);
 		}
 		if (single == 0) {
 			dataG.getBestUtils();
-			dataG.getPerfResults(size,testType);
+			dataG.getPerfResults(size, testType);
 		}
 	}
 	
@@ -1537,9 +1588,9 @@ public class Methods {
 	public static void ScalabilityAnalysis(int size, int count ,int sceType,int meType) {
 		
 		List<Integer> sizes1 = new LinkedList<>();
-		sizes1.add(20);sizes1.add(40);sizes1.add(80);sizes1.add(160);sizes1.add(320);sizes1.add(480);sizes1.add(600);
+		sizes1.add(20);sizes1.add(40);sizes1.add(80);sizes1.add(160);sizes1.add(320);sizes1.add(480);
 		List<Integer> sizes2 = new LinkedList<>();
-		sizes2.add(10);sizes2.add(20);sizes2.add(40);sizes2.add(80);sizes2.add(120);sizes2.add(180);sizes2.add(240);
+		sizes2.add(10);sizes2.add(20);sizes2.add(40);sizes2.add(80);sizes2.add(120);sizes2.add(180);
 		
 		System.out.println("Starting Scalability Test.");
 		Fog f = new Fog("Test");
@@ -1695,4 +1746,6 @@ public class Methods {
 		System.out.println("];");
 		
 	}
-}
+	
+	
+	}

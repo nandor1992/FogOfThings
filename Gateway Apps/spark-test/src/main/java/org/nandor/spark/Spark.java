@@ -164,6 +164,12 @@ public class Spark{
 	    	int count = 5;
 	    	Methods.ScalabilityAnalysis(size,count,sceType,meType);
 	    }
+	    if (type.contains("Comp")){
+			Methods.ComponentAnalysis(size,sceType,meType);
+	    }
+	    if (type.contains("Weight")){
+	    	Methods.WeightsAnalysis(size,sceType);
+	    }
 	}
 	
 

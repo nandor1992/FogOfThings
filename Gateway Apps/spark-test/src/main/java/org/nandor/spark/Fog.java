@@ -1291,6 +1291,15 @@ public class Fog {
 		ScenarioType = scenarioType;
 	}
 
+	public List<Set<Integer>> retreiveCluster() {
+		List<Set<Integer>> clust = new ArrayList<>();
+		for( Integer clsI : this.getClusters().keySet()){
+			Set<Integer> cls = this.getClusters().get(clsI).getApps().keySet();	
+			clust.add(cls);
+		}
+		return clust;
+	}
+
 
 
 

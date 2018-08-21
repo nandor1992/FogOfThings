@@ -59,7 +59,7 @@ public class Testing {
 		
 		//Optimization Section
 		//Methods.GAGlobal(f);
-		//Methods.DistanceClusteringDeployment(f);
+		Methods.DistanceClusteringDeployment(f);
 		Methods.SampleWeDiCOptimization(f);
 		//Methods.InitWeDiCOptimization(f);
 		//Methods.RandomDeployment(f);
@@ -80,8 +80,8 @@ public class Testing {
 	}
 	
 	public static void performanceRun() {
-		int size = 0; //0-20;1-80;2-320;
-		int sceType = 1; //Scenario Type 1-Delay 2-Multi 3-Capab
+		int size = 2; //0-20;1-80;2-320;
+		int sceType = 3; //Scenario Type 1-Delay 2-Multi 3-Capab
 		int meType = 0; //MethodType //0Everything//1Ga//2Dist//3Samp//4Ini//5Random
 		Methods.PerformanceAnalysis(size,sceType,meType);
 	}
@@ -106,8 +106,46 @@ public class Testing {
 	}
 	
 	public static void WeightsAnalysis(){
-		int caseType = 1;
-		Methods.WeightsAnalysis(caseType);
+		int caseType = 3;
+		int choice = 0 ; //1 2
+		Methods.WeightsAnalysis(caseType,choice);
+	}
+	
+	public static void getSampleDeployments(){
+
+		
+		//Generate
+		Fog f = Methods.InitMultiFog(80);
+		
+		writeJson("C:/Users/Nandor/Documents/FogOfThings/Gateway Apps/spark-test/src/main/java/org/nandor/spark/deploy-Init.json",Exporter.writeJsonFog(f));
+		
+		//Optimization Section
+		Methods.dataG.newDataSet("Sample");
+		List<Map<Integer, Integer>> bests = Methods.SampleWeDiCOptimization(f);
+			
+		//Deploy
+		f.removeClusters();
+		f.createClusters(Methods.dataG.getbestClusters());
+		f.setDeplpyment(bests.get(0));
+		f.deployFog();
+		
+		//Write Results to File
+		writeJson("C:/Users/Nandor/Documents/FogOfThings/Gateway Apps/spark-test/src/main/java/org/nandor/spark/deploy-Sample.json",Exporter.writeJsonFog(f));
+		
+		
+		//Distance Optimization
+		Methods.dataG.newDataSet("Direction");
+		bests = Methods.DistanceClusteringDeployment(f);
+		
+		//Deploy
+		f.removeClusters();
+		f.createClusters(Methods.dataG.getbestClusters());
+		f.setDeplpyment(bests.get(0));
+		f.deployFog();
+				
+		//Write Results to File
+		writeJson("C:/Users/Nandor/Documents/FogOfThings/Gateway Apps/spark-test/src/main/java/org/nandor/spark/deploy-Direction.json",Exporter.writeJsonFog(f));
+			
 	}
 	
 	public static void main (String[] args) {	
@@ -117,7 +155,8 @@ public class Testing {
 		//scalabilityRun();
 		//timeDistributionRun();
 		//ComponentEvals();
-		WeightsAnalysis();
+		getSampleDeployments();
+		//WeightsAnalysis();
 	}
 	
 }

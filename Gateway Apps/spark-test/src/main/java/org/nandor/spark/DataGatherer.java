@@ -3,6 +3,7 @@ package org.nandor.spark;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
@@ -25,6 +26,7 @@ public class DataGatherer {
 	Map<String,List<Float>> execTime = new HashMap<>();
 	Map<String,List<Map<String, Double>>> weightApp =  new HashMap<>();
 	Map<String,List<Map<String, Double>>> weightGw =  new HashMap<>();
+	Map<String,List<Set<Integer>>> bestClusters = new HashMap<>();
 	//Set Test
 	public void setTestType(String type) {
 		
@@ -47,7 +49,7 @@ public class DataGatherer {
 		execTime.put(current, new LinkedList<>());
 		weightApp.put(current, new LinkedList<>());
 		weightGw.put(current, new LinkedList<>());
-		
+		bestClusters.put(current, new LinkedList<>());
 	}
 
 	//Add Components
@@ -68,6 +70,8 @@ public class DataGatherer {
 	}
 	
 	public void addWeightApp(Map<String, Double> weightApp) {
+		System.out.println("Add App Weights:"+weightApp);
+		System.out.println("To:"+this.weightApp.get(current));
 		this.weightApp.get(current).add(weightApp);
 	}
 	
@@ -131,7 +135,7 @@ public class DataGatherer {
 		int row = 0;
 		float sum = (float) 0.0;
 		int count = 0;
-		for (String key : utility.keySet()) {
+		for (String key : keys) {
 			//System.out.println("Key:" + key);
 			if (row != Integer.parseInt(key.split("-")[0])) {
 				//System.out.println("New Row");
@@ -158,7 +162,7 @@ public class DataGatherer {
 		row = 0;
 		sum = (float) 0.0;
 		count = 0;
-		for (String key : execTime.keySet()) {
+		for (String key : keys) {
 			//System.out.println("Key:" + key);
 			if (row != Integer.parseInt(key.split("-")[0])) {
 				//System.out.println("New Row");
@@ -201,7 +205,7 @@ public class DataGatherer {
 		}
 	}
 	
-	public void getWeights() {
+	public void getWeights(Fog f,int choice) {
 		// TODO Auto-generated method stub
 		List<String> appTypes = new LinkedList<>();
 		appTypes.add("Constraints");appTypes.add("RequirementSim");appTypes.add("ResourceShare");appTypes.add("MessageRate");appTypes.add("UtilityWeights");appTypes.add("UnitLoad");appTypes.add("Distance");
@@ -209,24 +213,28 @@ public class DataGatherer {
 		gwTypes.add("Capabilities");gwTypes.add("SharedRes");gwTypes.add("PerfToULoad");gwTypes.add("BaseLoad");gwTypes.add("CapToULoad");
 		SortedSet<String> keys = new TreeSet<>(weightApp.keySet());
 		//Lables
-		System.out.println("label1 = {");
+		String ftype = ""+f.getScenario().charAt(0); 
+		System.out.println("label"+ftype+"1 = {");
 			for (String key:appTypes){
 				System.out.print("'"+key+"';");
 			}
 		System.out.println("};");
-		System.out.println("label2 = {");
+		System.out.println("label"+ftype+"2 = {");
 		for (String key:gwTypes){
 			System.out.print("'"+key+"';");
 		}
 		System.out.println("};");
 		int cnt = 0;
+		if (choice == 2){
+			cnt = 1;
+		}
 		for (String key:keys){
 			cnt++;
 			int i=1;
 			int j=0;
 			for (String keyInt:appTypes){
 				j++;
-					System.out.print("DataA"+cnt+"("+j+","+i+")= 0.0;");
+					System.out.print("DataA"+ftype+cnt+"("+j+","+i+")= 0.0;");
 			}
 			System.out.println();
 			for(Map<String,Double> wAInt :weightApp.get(key)){
@@ -235,9 +243,9 @@ public class DataGatherer {
 				for (String keyInt:appTypes){
 					j++;
 					if (wAInt.containsKey(keyInt)){
-						System.out.print("DataA"+cnt+"("+j+","+i+")="+wAInt.get(keyInt)+";");
+						System.out.print("DataA"+ftype+cnt+"("+j+","+i+")="+wAInt.get(keyInt)+";");
 					}else{
-						System.out.print("DataA"+cnt+"("+j+","+i+")= 0.0;");
+						System.out.print("DataA"+ftype+cnt+"("+j+","+i+")= 0.0;");
 					}
 				}
 				System.out.println();
@@ -246,7 +254,7 @@ public class DataGatherer {
 			j=0;
 			for (String keyInt:gwTypes){
 				j++;
-					System.out.print("DataGw"+cnt+"("+j+","+i+")= 0.0;");
+					System.out.print("DataGw"+ftype+cnt+"("+j+","+i+")= 0.0;");
 			}
 			System.out.println();
 			for(Map<String,Double> wGwInt :weightGw.get(key)){
@@ -255,15 +263,15 @@ public class DataGatherer {
 				for (String keyInt:gwTypes){
 					j++;
 					if (wGwInt.containsKey(keyInt)){
-						System.out.print("DataGw"+cnt+"("+j+","+i+")="+wGwInt.get(keyInt)+";");
+						System.out.print("DataGw"+ftype+cnt+"("+j+","+i+")="+wGwInt.get(keyInt)+";");
 					}else{
-						System.out.print("DataGw"+cnt+"("+j+","+i+")= 0.0;");
+						System.out.print("DataGw"+ftype+cnt+"("+j+","+i+")= 0.0;");
 					}
 				}
 				System.out.println();
 			}
-		System.out.println("Best"+cnt+" = "+(bestCorrs.get(key)+1)+";");
-		System.out.print("Time"+cnt+" = [ 0.0 0.0 0.0 0.0 ");
+		System.out.println("Best"+ftype+cnt+" = "+(bestCorrs.get(key)+1)+";");
+		System.out.print("Time"+ftype+cnt+" = [ 0.0 0.0 0.0 0.0 ");
 		for (Float time:execTime.get(key)){
 			System.out.print(time+" ");
 		}
@@ -332,6 +340,14 @@ public class DataGatherer {
 			}
 		}
 		System.out.println("];");
+	}
+
+	public void setBestCluster(List<Set<Integer>> list) {
+		bestClusters.put(current, list);
+	}
+
+	public List<Set<Integer>> getbestClusters() {
+		return bestClusters.get(current);
 	}
 
 }
