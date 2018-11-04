@@ -115,7 +115,7 @@ public class Testing {
 
 		
 		//Generate
-		Fog f = Methods.InitMultiFog(80);
+		Fog f = Methods.InitMultiFog(10);
 		
 		writeJson("C:/Users/Nandor/Documents/FogOfThings/Gateway Apps/spark-test/src/main/java/org/nandor/spark/deploy-Init.json",Exporter.writeJsonFog(f));
 		
@@ -157,6 +157,7 @@ public class Testing {
 		//ComponentEvals();
 		getSampleDeployments();
 		//WeightsAnalysis();
+		
 	}
 	
 }
